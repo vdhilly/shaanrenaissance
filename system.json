@@ -1,0 +1,30 @@
+{
+    "name": "Shaan_Renaissance",
+    "title": "Shaan Renaissance",
+    "description": "Un système de jeu basé sur le système de Shaan Renaissance d'Igor Polouchine",
+    "authors": [{
+        "name": "Pouet"
+      }],
+    "version": 0.01,
+    "compatibility": {
+        "minimum": 10,
+        "verified": 10,
+        "maximum": 11
+    },
+    "esmodules": [
+        "shaanRenaissance.js"
+    ],
+    "styles":[
+        "shaanRenaissance.css"
+    ],
+    "packs": [
+
+    ],
+    "languages":[
+
+    ],
+    "gridDistance": 5,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "wounds",
+    "initiative": "1d10 + @shaan" 
+}
