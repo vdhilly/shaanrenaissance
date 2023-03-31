@@ -1,0 +1,52 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <div>
+        <table>
+            <tr>
+                <th>Catégorie</th>
+                <th>Trihn d'Esprit</th>
+                <th>Trihn d'Âme</th>
+                <th>Trihn de Corps</th>
+            </tr>
+            <tr>
+                <td>
+                    <p>{{data.type}}<p>
+                </td>
+                <td>
+                    <input name="data.trihnEsprit" type="text" value="{{data.system.trihnEsprit}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.trihnAme" type="text" value="{{data.system.trihnAme}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.trihnCorps" type="text" value="{{data.system.trihnCorps}}" data-dtype="Number"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Valeur</th>
+                <th>Prestige</th>
+                <th>Entretien</th>
+            </tr>
+            <tr>
+                <td>
+                    <input name="data.price" type="text" value="{{data.system.price}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.prestige" type="text" value="{{data.system.prestige}}" data-dtype="Number"/>
+                </td>
+                <td>
+                    <input name="data.entretien" type="text" value="{{data.system.entretien}}"/>
+                </td>
+            </tr>
+        </table>
+        <label>Bonus</label>
+        <input name="data.acquisBonus" type="text" value="{{data.system.acquisBonus}}"/>
+        <label>Effet</label>
+        <textarea name="data.acquisEffect">{{data.system.acquisEffect}}</textarea>
+        <label>Description</label>
+        <textarea name="data.description">{{data.system.description}}</textarea>
+    </div>
+</form>

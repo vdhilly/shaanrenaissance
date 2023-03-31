@@ -1,4 +1,105 @@
 {
-    "Actor": {},
-    "Item": {}
+    "Actor": {
+        "types": [
+            "Personnage",
+            "PNJ",
+            "Shaani",
+            "Renaissant",
+            "Armimale"
+        ],
+        "templates": {
+            "common": {
+                "attributes": {
+                    "hp": {
+                        "hpEsprit": {
+                            "value": 0,
+                            "temp": 0
+                        },
+                        "maxEsprit": {
+                            "value": 0,
+                            "temp": 0
+                        },
+                        "hpAme": {
+                            "value": 0,
+                            "temp": 0
+                        },
+                        "maxAme": {
+                            "value": 0,
+                            "temp": 0
+                        },
+                        "hpCorps": {
+                            "value": 0,
+                            "temp": 0
+                        },
+                        "maxCorps": {
+                            "value": 0,
+                            "temp=": 0
+                        }
+                    }
+                }
+            }
+        },
+        "character": {
+            "templates": [
+                "common"
+            ],
+            "protections": {
+                "esprit": {
+                    "value": 0
+                },
+                "ame": {
+                    "value": 0
+                },
+                "corps": {
+                    "value": 0
+                }
+            },
+            "details": {
+                "xp": {
+                    "value": 0
+                },
+                "xpMax": {
+                    "value": 0
+                }
+            }
+        }
+    },
+    "Item": {
+        "types": [
+            "Acquis"
+        ],
+        "templates": {
+            "itemDescription": {
+                "description": ""
+            }
+        },
+        "acquis": {
+            "templates":[
+                "itemDescription"
+            ],
+            "acquisBonus": 0,
+            "acquisEffect": 0,
+            "price": 0,
+            "trihnEsprit": 0,
+            "trihnAme": 0,
+            "trihnCorps": 0,
+            "prestige": 0,
+            "entretien": 0
+        },
+        "armimale": {
+            "templates":[
+                "itemDescription"
+            ],
+            "armimaleCategory": 0,
+            "armimaleTrihnEsprit": 0,
+            "armimaleTrihnAme": 0,
+            "armimaleTrihnCorps": 0,
+            "armimaleInstinct": 0,
+            "armimaleSpeed": 0,
+            "armimaleDescription": 0,
+            "armimalePrice": 0,
+            "armimalePrestige": 0,
+            "armimaleCapacity": 0
+        }
+    }
 }

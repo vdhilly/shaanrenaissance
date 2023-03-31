@@ -21,7 +21,12 @@
 
     ],
     "languages":[
-
+    {
+        "lang": "fr",
+        "name": "French",
+        "path": "lang/fr.json",
+        "flags": {}
+    }
     ],
     "gridDistance": 5,
     "gridUnits": "m",

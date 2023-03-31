@@ -1,0 +1,21 @@
+<form class="{{cssClass}}" autocomplete="off" style="display: flex; flex-direction: row;">
+    <aside>
+        <img class="logo" src="systems/Shaan_Renaissance/assets/logo-shaan.png" height="56" alt="Shaan Renaissance" srcset=""/>
+        <div class="sidebar" data-group="dashboard" data-tab="sidebar">
+            {{!-- Trihns --}}
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/health.hbs"}}
+
+            <!-- Armure  -->
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs"}}
+
+            <!-- Initiative -->
+
+            <!-- Jets -->
+
+            <!-- Initiative -->
+        </div>
+    </aside>
+
+    <!-- HEADER -->
+    {{> "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs"}}
+</form>
