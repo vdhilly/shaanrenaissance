@@ -1,0 +1,28 @@
+<div class="tab character" data-group="primary" data-tab="character">
+    <section class="character-details">
+        <div class="frame-container">
+            <div class="frame image-container">
+                <img class="player-image" alt="{{actor.name}}" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+                <a class="hover-icon" data-action="show-image"><i class="fas fa-image fa-fw"></i></a>
+                <h3 class="">Bonjour</h3>
+            </div>
+        </div>
+        <div class="detail-sheet">
+            <div class="pc pc_race item" data-item-id="{{race.id}}">
+                <span class="details-label">{{localize "ITEM.TypeRace"}}</span>
+                <span title="{{localize RACE.RaceTitle}}">
+                    <h3>
+                        <span class="value">{{race.name}}</span>
+                        {{#if @root.options.editable}}
+                            {{#if race}}
+                                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                            {{else}}
+                                <a class="open-compendium" data-compendium="shaanRenaissance.races"><i class="fas fa-fw fa-plus-circle"></i></a>
+                            {{/if}}
+                        {{/if}}
+                    </h3>
+                </span>
+            </div>
+        </div>
+    </section>
+</div>

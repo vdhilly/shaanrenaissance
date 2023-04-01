@@ -1,4 +1,4 @@
-<form class="{{cssClass}}" autocomplete="off" style="display: flex; flex-direction: row;">
+<form class="actor-sheet crb-style" autocomplete="off">
     <aside>
         <img class="logo" src="systems/Shaan_Renaissance/assets/logo-shaan.png" height="56" alt="Shaan Renaissance" srcset=""/>
         <div class="sidebar" data-group="dashboard" data-tab="sidebar">
@@ -9,13 +9,58 @@
             {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs"}}
 
             <!-- Initiative -->
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/initiative.hbs"}}
 
             <!-- Jets -->
-
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/jets.hbs"}}
             <!-- Initiative -->
         </div>
     </aside>
-
+    <div class="content">
     <!-- HEADER -->
     {{> "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs"}}
+
+    {{!-- SHEET NAVIGATION --}}
+ <nav class="sheet-navigation" data-group="primary">
+        <span class="navigation-title">{{localize "SRTabs.CharacterLabel"}}</span>
+        <a class="item" data-tab="character" title="{{localize "SRTabs.CharacterLabel"}}">
+            <i class="fas fa-address-card"></i>
+        </a>
+
+        <a class="item" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
+            <span class="action-icon">A</span>
+        </a>
+
+        <a class="item" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
+            <i class="fas fa-wand-magic-sparkles"></i>
+        </a>
+
+        <a class="item" data-tab="acquis" title="{{localize "SRTabs.AcquisLabel"}}">
+            <i class="fas fa-box-open"></i>
+        </a>
+
+        <a class="item" data-tab="biography" title="{{localize "PF2E.BiographyLabel"}}">
+            <i class="fas fa-book-reader"></i>
+        </a>
+
+        <a class="manage-tabs" data-action="manage-tabs" title="{{localize "SRTabs.ManageTabsLabel"}}">
+            <i class="fas fa-fw fa-ellipsis-v"></i>
+        </a>
+</nav>
+
+<section class="sheet-body">
+        <section class="sheet-content">
+            {{!-- Character --}}
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/general.hbs"}}
+            {{!-- Powers --}}
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/powers.hbs"}}
+            {{!-- Magic --}}
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs"}}
+            {{!-- Acquis --}}
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/acquis.hbs"}}
+            {{!-- Biography --}}
+            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/biography.hbs"}}
+        </section>
+ </section>
+</div>
 </form>

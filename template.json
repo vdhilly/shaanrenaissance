@@ -35,6 +35,9 @@
                             "value": 0,
                             "temp=": 0
                         }
+                    },
+                    "initiative": {
+                        "statistic": "Shaan"
                     }
                 }
             }
@@ -60,6 +63,38 @@
                 },
                 "xpMax": {
                     "value": 0
+                }
+            },
+            "skills": {
+                "Technique": {
+                    "rank": 0
+                },
+                "Savoir": {
+                    "rank": 0
+                },
+                "Social": {
+                    "rank": 0
+                },
+                "Arts": {
+                    "rank": 0
+                },
+                "Shaan": {
+                    "rank": 0
+                },
+                "Magie": {
+                    "rank": 0
+                },
+                "Rituels": {
+                    "rank": 0
+                },
+                "Survie": {
+                    "rank": 0
+                },
+                "Combat": {
+                    "rank": 0
+                },
+                "Nécrose": {
+                    "rank": 0
                 }
             }
         }

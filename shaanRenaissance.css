@@ -1,0 +1,52 @@
+.actor-sheet {
+    width: 100%;
+    height: 100%;
+        display: flex;
+        flex-direction: row;
+}
+aside {
+    background-color: red;
+    display: flex; 
+    flex-direction: column;
+    width: 220px;
+}
+.actor-sheet aside .logo {
+    border: none;
+    flex-shrink: 0;
+    margin: 5px -6px 0;
+    max-width: unset;
+    z-index: 10;
+    width: 220px;
+    object-fit: contain;
+}
+.actor-sheet .sidebar {
+    float: left;
+    width: 220px
+}
+.actor-sheet .content {
+    float: right;
+    width: calc(100% - 220px);
+    display: flex;
+    flex-direction: column;
+}
+.actor-sheet .content .char-header {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    margin-left: 10px;
+    justify-content: space-between;
+}
+.actor-sheet .sheet-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - 35px);
+    overflow: hidden
+}
+.actor-sheet .char-header .char-details .char-name {
+    border: none;
+}
+.actor-sheet .char-header .char-exp {
+    display: flex;
+}

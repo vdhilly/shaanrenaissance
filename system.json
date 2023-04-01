@@ -20,7 +20,7 @@
     "packs": [
 
     ],
-    "languages":[
+    "languages": [
     {
         "lang": "fr",
         "name": "French",
@@ -31,5 +31,5 @@
     "gridDistance": 5,
     "gridUnits": "m",
     "primaryTokenAttribute": "wounds",
-    "initiative": "1d10 + @shaan" 
+    "initiative": "1d10 + @Shaan" 
 }

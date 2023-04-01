@@ -8,7 +8,15 @@ async function preloadHandleBarTemplates()
     const templatePaths = [
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/health.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs"
+      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/initiative.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/jets.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/icons/d20.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/acquis.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/biography.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/general.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/powers.hbs"
     ];
     return loadTemplates( templatePaths );
 };
@@ -26,3 +34,6 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 });
+
+const tabs = new Tabs({navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "character"});
+tabs.bind(html);

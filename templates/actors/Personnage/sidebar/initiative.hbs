@@ -1,0 +1,16 @@
+<div class="sidebar_title">
+    <h2>{{localize "SRLabels.Initiative"}}</h2>
+</div>
+<div class="roll-data initiative-sidebar" data-attribute="initiative" style="display: flex; flex-direction: row;">
+    <a class="roll-icon roll-init">
+        {{> "systems/Shaan_Renaissance/templates/actors/Personnage/icons/d20.hbs"}}
+    </a>
+    <h4 class="initiative-select" style="margin-left:5px;">
+        <select> 
+                {{#each data.system.skills as |skill|}}
+                    <option value="{{skill.slug}}">{{@key}}</option>
+                    {{log @key}}
+                {{/each}}
+        </select>
+    </h4>
+</div>

@@ -1,10 +1,32 @@
 {
 
-"ACQUIS.acquisCategory": "Catégorie",
-"ACQUIS.acquisBonus": "Bonus",
-"ACQUIS.acquisEffect": "Effet",
-"ACQUIS.price": "Prix",
-"ACQUIS.trihnEsprit": "Trihn d'Esprit",
-"ACQUIS.trihnAme": "Trihn d'Âme",
-"ACQUIS.trihnCorps": "Trihn de Corps"
+    "SRLabels":{
+        "Trihns": "Trihns",
+        "Protections": "Protections",
+        "Initiative": "Initiative",
+        "Tests": "Tests",
+        "DomainTest": "Test de Domaine",
+        "NecroseTest": "Test de Nécrose",
+        "NecroseHTest": "Test de Nécrose Humaine"
+    },
+    "SRdomains": {
+        "Technique": "Technique",
+        "Savoir": "Savoir",
+        "Social": "Social",
+        "Arts": "Arts",
+        "Shaan": "Shaan",
+        "Magie": "Magie",
+        "Rituels": "Rituels",
+        "Surive": "Surive",
+        "Combat": "Combat",
+        "Nécrose": "Nécrose"
+    },
+    "SRTabs": {
+        "CharacterLabel": "Personnage",
+        "PowersLabel": "Pouvoirs",
+        "MagicLabel": "Magies",
+        "AcquisLabel": "Acquis",
+        "BiographyLabel": "Biographie",
+        "ManageTabsLabel": "Gérer les Tabs"
+    }
 }

@@ -2,7 +2,7 @@ export const shaanRenaissance = {};
 
 shaanRenaissance.acquis = {
     none: "",
-    acquisCategory: "ACQUIS.acquisCategory",
+    Initiative: "InitiativeLabel",
     acquisBonus: "shaanRenaissance.ACQUIS.acquisBonus",
     acquisEffect: "shaanRenaissance.ACQUIS.acquisEffect",
     price: "shaanRenaissance.ACQUIS.price",
@@ -10,4 +10,3 @@ shaanRenaissance.acquis = {
     trihnAme: "shaanRenaissance.ACQUIS.trihnAme",
     trihnCorps: "shaanRenaissance.ACQUIS.trihnCorps"
 }
-console.log(shaanRenaissance.acquis.acquisCategory)
