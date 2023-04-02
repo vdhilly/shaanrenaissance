@@ -229,7 +229,7 @@
     margin-top: 8px;
     padding-left: 12px
 }
-.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 {
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -241,16 +241,7 @@
     padding: 8px 4px 6px;
     width: calc(100% - 6px)
 }
-.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 a {
-    margin-left: auto
-}
-.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 a i {
-    float: right;
-    position: relative;
-    right: -2px;
-    top: -2px
-}
-.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 span.value {
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 span.value {
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;

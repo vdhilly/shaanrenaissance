@@ -18,6 +18,15 @@
         "shaanRenaissance.css"
     ],
     "packs": [
+        {
+            "name": "races",
+            "label": "Races",
+            "system": "shaanRenaissance",
+            "path": "packs/races.db",
+            "type": "Item",
+            "private": true,
+            "flags": {}
+        }
     ],
     "languages": [
     {
