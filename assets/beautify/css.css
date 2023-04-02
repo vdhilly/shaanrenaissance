@@ -54,26 +54,17 @@
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary)
 }
-/* ACTOR SHEET */
 .actor.sheet {
     width: 100%;
     height: 100%;
-    display: grid;
-    font-family: var(--body-serif);
-    grid: "sidebar header"75px "sidebar nav"minmax(min-content, max-content) "sidebar content"1fr/230px 1fr;
-    height: 100%
+    display: flex;
+    flex-direction: row;
 }
-/* ACTOR SHEET SIDEBAR */
 .actor.sheet.character aside {
     background-color: red;
-    color: var(--sidebar-label);
-    display: flex;
+    display: flex; 
     flex-direction: column;
-    font-family: var(--serif);
-    font-size: var(--font-size-10);
-    font-weight: 600;
-    grid-area: sidebar;
-    margin-left: 8px
+    width: 220px;
 }
 .actor.sheet.character aside .logo {
     border: none;
@@ -84,29 +75,34 @@
     width: 220px;
     object-fit: contain;
 }
+/* CHARACTER SIDEBAR */
 .actor.sheet.character .sidebar {
     float: left;
     width: 220px;
 }
-
 /* CHARACTER CONTENT */
 .actor.sheet.character .content {
     float: right;
     width: calc(100% - 220px);
+    display: flex;
+    flex-direction: column;
     padding-left: 5px;
 }
-
-
-
+.actor.sheet.character .sheet-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - 35px);
+    overflow: hidden 
+}
 /* CHARACTER CONTENT CHARACTER HEADER */
-.actor.sheet.character .char-header {
+.actor.sheet.character .content .char-header {
     display: flex;
     flex-direction: row;
     text-align: center;
     align-content: center;
     margin-left: 10px;
     justify-content: space-between;
-    grid-area: header;
 }
 .actor.sheet.character .char-header .char-details .char-name {
     border: none;
@@ -116,8 +112,6 @@
 }
 .actor.sheet.character .sheet-navigation {
     background-color: green;
-    grid-area: nav;
-    margin-left: -2px
 }
 .actor.sheet.character nav.sheet-navigation .manage-tabs {
     color: #fff;
@@ -126,31 +120,22 @@
 }
 
 /* CHARACTER CONTENT CHARACTER TAB */
-.actor.sheet.character .sheet-body {
-    background-color:rgba(0, 0, 0, .5);
-    grid-area: content;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    height: calc(100% - 35px);
-    overflow: hidden 
-}
-.tab.character.active {
+
+.tab.character {
     display: flex;
     flex-direction: column;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details {
+.actor.sheet.character .content .sheet-body .sheet-content .tab.character .character-details {
     display: grid;
     grid: "img alignment deity"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
+.actor.sheet.character .content .sheet-body .sheet-content .tab.character .character-details .frame-container {
     grid-area: img;
     margin-left: 5px
 }
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame .player-image {
+.actor.sheet.character .content .sheet-body .sheet-content .tab.character .character-details .frame .player-image {
     border: none;
     border-radius: 0;
     box-shadow: 0 0 0 1px #918c88, 0 0 0 2px #e1d8cf, 0 0 0 3px #a98f39, inset 0 0 8px rgba(0, 0, 0, .5), 0 0 8px #000;

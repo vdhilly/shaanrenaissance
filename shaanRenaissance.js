@@ -34,6 +34,3 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 });
-
-const tabs = new Tabs({navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "character"});
-tabs.bind(html);
