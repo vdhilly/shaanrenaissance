@@ -6,10 +6,18 @@
                 <a class="hover-icon" data-action="show-image"><i class="fas fa-image fa-fw"></i></a>
             </div>
         </div>
+        <div class="vide">
+
+        </div>
+        <div class="pc pc_shaani">
+            <label class="details-input details-label" for="{{options.id}}-pc-shaani">{{localize "SR.Shaani"}}</label>
+            <input type="text" class="details-input" title="{{localize "SR.ShaaniTitle"}}" id="{{options.id}}-pc-shaani" name="system.details.shaani.value" value="{{data.system.details.shaani.value}}"/>
+        </div>
         <div class="detail-sheet">
+            {{!-- race --}}
             <div class="pc pc_race item" data-item-id="{{race.id}}">
                 <span class="details-label">{{localize "ITEM.TypeRace"}}</span>
-                <span title="{{localize RACE.RaceTitle}}">
+                <span title="{{localize SR.RaceTitle}}">
                     <h3>
                         <span class="value">{{race.name}}</span>
                         {{#if @root.options.editable}}
@@ -17,6 +25,54 @@
                                 <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
                             {{else}}
                                 <a class="open-compendium" data-compendium="shaanRenaissance.races"><i class="fas fa-fw fa-plus-circle"></i></a>
+                            {{/if}}
+                        {{/if}}
+                    </h3>
+                </span>
+            </div>
+            {{!-- peuple --}}
+            <div class="pc pc_people item" data-item-id="{{people.id}}">
+                <span class="details-label">{{localize "ITEM.TypePeople"}}</span>
+                <span title="{{localize SR.PeopleTitle}}">
+                    <h3>
+                        <span class="value">{{people.name}}</span>
+                        {{#if @root.options.editable}}
+                            {{#if race}}
+                                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                            {{else}}
+                                <a class="open-compendium" data-compendium="shaanRenaissance.people"><i class="fas fa-fw fa-plus-circle"></i></a>
+                            {{/if}}
+                        {{/if}}
+                    </h3>
+                </span>
+            </div>
+            {{!-- caste --}}
+            <div class="pc pc_caste item" data-item-id="{{caste.id}}">
+                <span class="details-label">{{localize "ITEM.TypeCaste"}}</span>
+                <span title="{{localize SR.CasteTitle}}">
+                    <h3>
+                        <span class="value">{{caste.name}}</span>
+                        {{#if @root.options.editable}}
+                            {{#if caste}}
+                                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                            {{else}}
+                                <a class="open-compendium" data-compendium="shaanRenaissance.castes"><i class="fas fa-fw fa-plus-circle"></i></a>
+                            {{/if}}
+                        {{/if}}
+                    </h3>
+                </span>
+            </div>
+            {{!-- métier --}}
+            <div class="pc pc_job item" data-item-id="{{job.id}}">
+                <span class="details-label">{{localize "ITEM.TypeJob"}}</span>
+                <span title="{{localize SR.JobTitle}}">
+                    <h3>
+                        <span class="value">{{job.name}}</span>
+                        {{#if @root.options.editable}}
+                            {{#if job}}
+                                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                            {{else}}
+                                <a class="open-compendium" data-compendium="shaanRenaissance.jobs"><i class="fas fa-fw fa-plus-circle"></i></a>
                             {{/if}}
                         {{/if}}
                     </h3>

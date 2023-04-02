@@ -28,5 +28,20 @@
         "AcquisLabel": "Acquis",
         "BiographyLabel": "Biographie",
         "ManageTabsLabel": "Gérer les Tabs"
+    },
+    "ITEM": {
+        "TypeRace": "Race",
+        "TypePeople": "Peuple",
+        "TypeCaste": "Caste",
+        "TypeJob": "Métier"
+    },
+    "SR": {
+        "Shaani": "Shaani",
+        "ShaaniTitle": "Le nom de ton Shaani",
+        "RaceTitle": "La Race de ton Personnage",
+        "PeopleTitle": "Le Peuple de ton Personnage",
+        "CasteTitle": "La Caste de ton Personnage",
+        "JobTitle": "Le Métier de ton Personnage"
+
     }
 }

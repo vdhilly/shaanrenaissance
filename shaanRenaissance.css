@@ -65,7 +65,7 @@
 }
 /* ACTOR SHEET SIDEBAR */
 .actor.sheet.character aside {
-    background-color: red;
+    background-color: var(--color-necrose);
     color: var(--sidebar-label);
     display: flex;
     flex-direction: column;
@@ -107,6 +107,7 @@
     margin-left: 10px;
     justify-content: space-between;
     grid-area: header;
+    background-color: var(--color-corps);
 }
 .actor.sheet.character .char-header .char-details .char-name {
     border: none;
@@ -114,10 +115,50 @@
 .actor.sheet.character .char-header .char-exp {
     display: flex;
 }
+/* ACTOR SHEET NAVIGATION */
 .actor.sheet.character .sheet-navigation {
-    background-color: green;
+    background-color: var(--color-esprit);
     grid-area: nav;
     margin-left: -2px
+}
+.actor.sheet nav.sheet-navigation {
+    align-items: center;
+    background: var(--secondary);
+    background: url(../assets/sheet/border-pattern.webp) repeat-x top, url(../assets/sheet/border-pattern.webp) repeat-x bottom, var(--secondary);
+    border-bottom: 1px solid hsla(0, 0%, 100%, .5);
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, .25);
+    display: inline-flex;
+    height: 20px;
+    justify-content: center;
+    position: relative;
+    transition: all .1s ease-out
+}
+.actor.sheet nav.sheet-navigation .navigation-title {
+    color: var(--text-light);
+    margin-right: auto;
+    padding-left: 1em;
+    white-space: nowrap;
+    width: 7em
+}
+.actor.sheet nav.sheet-navigation .item {
+    fill: var(--tertiary);
+    background-image: url(../assets/sheet/nav-item-inactive.webp);
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, .25);
+    color: var(--tertiary);
+    height: 24px;
+    transition: all .1s ease-out;
+    width: 24px;
+    z-index: 1
+}
+.actor.sheet nav.sheet-navigation>a {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-12);
+    justify-content: center;
+    margin: 0 6px
 }
 .actor.sheet.character nav.sheet-navigation .manage-tabs {
     color: #fff;
@@ -125,16 +166,27 @@
     padding: 0 6px
 }
 
-/* CHARACTER CONTENT CHARACTER TAB */
+/* CHARACTER CONTENT */
 .actor.sheet.character .sheet-body {
-    background-color:rgba(0, 0, 0, .5);
+    background-color: var(--color-ame);
     grid-area: content;
     position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     height: calc(100% - 35px);
-    overflow: hidden 
+    overflow: hidden;
+    margin-left: 10px;
+}
+.crb-style .details-label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .625rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
 }
 .tab.character.active {
     display: flex;
@@ -142,9 +194,10 @@
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details {
     display: grid;
-    grid: "img alignment deity"46px "img details details"auto/120px 130px 1fr;
+    grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
 }
+/* General tab img */
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
     grid-area: img;
     margin-left: 5px
@@ -159,4 +212,48 @@
     object-fit: cover;
     object-position: top;
     width: 100%
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .vide {
+    grid-area: vide;
+}
+/* General Tab */
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .pc.pc_shaani{
+    grid-area: shaani;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-details .detail-sheet {
+    grid-row-gap: 8px;
+    display: grid;
+    grid-area: details;
+    grid-template-columns: 44% 55%;
+    grid-template-rows: repeat(2, 42px);
+    margin-top: 8px;
+    padding-left: 12px
+}
+.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    grid-area: mod;
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: calc(100% - 6px)
+}
+.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 a {
+    margin-left: auto
+}
+.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 a i {
+    float: right;
+    position: relative;
+    right: -2px;
+    top: -2px
+}
+.actor.sheet.character.crb-style .sheet-body .sheet-content .tab.character .pc h3 span.value {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 87%
 }
