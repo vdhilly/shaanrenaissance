@@ -10,20 +10,25 @@ export default class ShaanRActorsSheet extends ActorSheet {
     get template(){
         return `systems/Shaan_Renaissance/templates/actors/${this.actor.type}/sheet.hbs`;
     }
-    getData() {
-        const data = super.getData();
-        let sheetData = {
-            cssClass: this.actor.isOwner ? "editable" : "locked",
-            editable: this.isEditable,
-            document: this.actor,
-            limited: this.actor.limited,
-            owner: this.actor.isOwner,
-            title: this.title,
-            actor: data.actor,
-            data: data.data,
-            config: CONFIG.shaanRenaissance
-        };
+    async getData(options = this.options) {
+        options.id || (options.id = this.id);
+        const actorData = this.actor.toObject(!1),
+            sheetData = {
+                cssClass: this.actor.isOwner ? "editable" : "locked",
+                editable: this.isEditable,
+                document: this.actor,
+                limited: this.actor.limited,
+                owner: this.actor.isOwner,
+                title: this.title,
+                actor: actorData,
+                data: actorData.system,
+                items: actorData.items,
+                config: CONFIG.shaanRenaissance,
+                user: {
+                    isGM: game.user.isGM
+                },
+            };
         console.log(sheetData);
-        return sheetData;
+        return await sheetData;
     }
 }

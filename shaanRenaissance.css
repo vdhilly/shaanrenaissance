@@ -52,7 +52,7 @@
     --header-color: var(--text-light);
     --header-bg: var(--secondary);
     --sidebar-label: var(--tertiary-dark);
-    --sidebar-title: var(--tertiary)
+    --sidebar-title: var(--tertiary);
 }
 /* ACTOR SHEET */
 .actor.sheet {
@@ -197,12 +197,15 @@
     grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
 }
+
 /* General tab img */
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
     grid-area: img;
     margin-left: 5px
 }
-
+.actor.sheet.character .crb-style .sheet-body .sheet-content .tab.character hr {
+    margin: 10px 6px 10px 0
+}
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame .player-image {
     border: none;
     border-radius: 0;
@@ -212,6 +215,13 @@
     object-fit: cover;
     object-position: top;
     width: 100%
+}
+.actor.sheet .image-container .hover-icon {
+    display: none;
+    font-size: var(--font-size-16)
+}
+.actor.sheet .image-container:hover .hover-icon {
+    display: block
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .vide {
     grid-area: vide;
@@ -241,10 +251,4 @@
     padding: 8px 4px 6px;
     width: calc(100% - 6px)
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 span.value {
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 87%
-}
+

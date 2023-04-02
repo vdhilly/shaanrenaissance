@@ -1,13 +1,17 @@
 {
 
     "SRLabels":{
+        "Esprit":"Esprit",
+        "Ame":"Âme",
+        "Corps":"Corps",
         "Trihns": "Trihns",
         "Protections": "Protections",
         "Initiative": "Initiative",
         "Tests": "Tests",
         "DomainTest": "Test de Domaine",
         "NecroseTest": "Test de Nécrose",
-        "NecroseHTest": "Test de Nécrose Humaine"
+        "NecroseHTest": "Test de Nécrose Humaine",
+        "Experience": "Expérience"
     },
     "SRdomains": {
         "Technique": "Technique",

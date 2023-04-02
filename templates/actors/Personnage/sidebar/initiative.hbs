@@ -7,7 +7,7 @@
     </a>
     <h4 class="initiative-select" style="margin-left:5px;">
         <select> 
-                {{#each data.system.skills as |skill|}}
+                {{#each data.skills as |skill|}}
                     <option value="{{skill.slug}}">{{@key}}</option>
                     {{log @key}}
                 {{/each}}

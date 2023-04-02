@@ -7,41 +7,48 @@
             </div>
         </div>
         <div class="vide">
-
+            <p>{{localize "SRdomains.Technique"}}</p>
         </div>
         <div class="pc pc_shaani">
             <label class="details-input details-label" for="{{options.id}}-pc-shaani">{{localize "SR.Shaani"}}</label>
-            <input type="text" class="details-input" title="{{localize "SR.ShaaniTitle"}}" id="{{options.id}}-pc-shaani" name="system.general.shaani.value" value="{{data.system.general.shaani.value}}"/>
+            <input type="text" class="details-input" title="{{localize "SR.ShaaniTitle"}}" id="{{options.id}}-pc-shaani" name="system.general.shaani.value" value="{{data.general.shaani.value}}"/>
         </div>
         <div class="detail-sheet">
             {{!-- race --}}
             <div class="pc pc_race item">
                 <span class="details-label">{{localize "ITEM.TypeRace"}}</span>
                 <span title="{{localize SR.RaceTitle}}">
-                        <input type="text" class="details-input" title="{{localize "SR.RaceTitle"}}" id="{{options.id}}-pc-race" name="system.general.race.value" value="{{data.system.general.race.value}}"/>
+                        <input type="text" class="details-input" title="{{localize "SR.RaceTitle"}}" id="{{options.id}}-pc-race" name="system.general.race.value" value="{{data.general.race.value}}"/>
                 </span>
             </div>
             {{!-- peuple --}}
             <div class="pc pc_people item">
                 <span class="details-label">{{localize "ITEM.TypePeople"}}</span>
                 <span title="{{localize SR.PeopleTitle}}">
-                        <input type="text" class="details-input" title="{{localize "SR.PeopleTitle"}}" id="{{options.id}}-pc-people" name="system.general.people.value" value="{{data.system.general.people.value}}"/>
+                        <input type="text" class="details-input" title="{{localize "SR.PeopleTitle"}}" id="{{options.id}}-pc-people" name="system.general.people.value" value="{{data.general.people.value}}"/>
                 </span>
             </div>
             {{!-- caste --}}
             <div class="pc pc_caste item">
                 <span class="details-label">{{localize "ITEM.TypeCaste"}}</span>
                 <span title="{{localize SR.CasteTitle}}">
-                        <input type="text" class="details-input" title="{{localize "SR.CasteTitle"}}" id="{{options.id}}-pc-caste" name="system.general.caste.value" value="{{data.system.general.caste.value}}"/>
+                        <input type="text" class="details-input" title="{{localize "SR.CasteTitle"}}" id="{{options.id}}-pc-caste" name="system.general.caste.value" value="{{data.general.caste.value}}"/>
                 </span>
             </div>
             {{!-- métier --}}
             <div class="pc pc_job item">
                 <span class="details-label">{{localize "ITEM.TypeJob"}}</span>
                 <span title="{{localize SR.JobTitle}}">
-                        <input type="text" class="details-input" title="{{localize "SR.JobTitle"}}" id="{{options.id}}-pc-job" name="system.general.job.value" value="{{data.system.general.job.value}}"/>
+                        <input type="text" class="details-input" title="{{localize "SR.JobTitle"}}" id="{{options.id}}-pc-job" name="system.general.job.value" value="{{data.general.job.value}}"/>
                 </span>
             </div>
         </div>
     </section>
+
+    <hr />
+
+    <section class="character-background">
+                            <input name="system.skills.Technique.rank" id="{{option.id}}-pc-technique" type="number" value="{{data.skills.Technique.rank}}" placeholder="{{data.skills.Technique.rank}}">
+    </section>
 </div>
+

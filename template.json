@@ -66,23 +66,6 @@
                     "value": 0
                 }
             },
-            "general": {
-                "shaani": {
-                    "value": 0
-                },
-                "race": {
-                    "value": 0
-                },
-                "people": {
-                    "value": 0
-                },
-                "caste": {
-                    "value": 0
-                },
-                "metier": {
-                    "value": 0
-                }
-            },
             "skills": {
                 "Technique": {
                     "rank": 0
@@ -113,6 +96,23 @@
                 },
                 "Nécrose": {
                     "rank": 0
+                }
+            },
+            "general": {
+                "shaani": {
+                    "value": 0
+                },
+                "race": {
+                    "value": 0
+                },
+                "people": {
+                    "value": 0
+                },
+                "caste": {
+                    "value": 0
+                },
+                "job": {
+                    "value": 0
                 }
             }
         }
