@@ -70,6 +70,7 @@
                 "Technique": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "engrenages": {
                             "bonus": 0,
@@ -116,6 +117,7 @@
                 "Savoir": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "alchimie": {
                             "bonus": 0,
@@ -162,6 +164,7 @@
                 "Social": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "arpege": {
                             "bonus": 0,
@@ -208,6 +211,7 @@
                 "Arts": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "artsappliques": {
                             "bonus": 0,
@@ -254,6 +258,7 @@
                 "Shaan": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "embiose": {
                             "bonus": 0,
@@ -300,6 +305,7 @@
                 "Magie": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "arcanes": {
                             "bonus": 0,
@@ -346,6 +352,7 @@
                 "Rituels": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "ritedarts": {
                             "bonus": 0,
@@ -392,6 +399,7 @@
                 "Survie": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "acrobatie": {
                             "bonus": 0,
@@ -438,6 +446,7 @@
                 "Combat": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "armeslancees": {
                             "bonus": 0,
@@ -484,6 +493,7 @@
                 "Nécrose": {
                     "rank": 0,
                     "temp": 0,
+                    "exp": 0,
                     "specialisations":{
                         "armeshumaines": {
                             "bonus": 0,

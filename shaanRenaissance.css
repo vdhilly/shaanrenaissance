@@ -302,9 +302,9 @@
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-necrose {
     display: grid;
-    grid: "label label" "base actuel";
+    grid: "label label label" "base actuel xp";
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base {
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-exp{
     flex: 50%;
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel {
@@ -313,7 +313,11 @@
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base {
     grid-area: base;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel {
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-exp {
+    grid-area: xp;
+    
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-exp{
     color: var(--primary);
     font-family: var(--sans-serif);
     font-size: .625rem;
@@ -402,14 +406,13 @@
     display: grid;
     grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
     gap: 1%;
-    margin-bottom: 10px;
 }
 /* General Tab Specialisations Grid */
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-necrose {
     display: grid;
-    grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2";
+    grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2" "spé3 spé3 spé3" "spé4 spé4 spé4" "spé5 spé5 spé5" "spé6 spé6 spé6" "spé7 spé7 spé7" "spé8 spé8 spé8" "spé9 spé9 spé9" "spé10 spé10 spé10";
     column-gap: 1%;
-    row-gap: 1%;
+    row-gap: 3px;
     color: black;
     font-family: var(--sans-serif);
     font-size: .7rem;
@@ -424,6 +427,21 @@
     display: grid;
     grid: "spéInsideTitre spéInsideAcquis";
     color: var(--tertiary);
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-ame .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-ame);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: var(--secondary);
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;

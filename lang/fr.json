@@ -22,7 +22,8 @@
         "DomainBase": "Base",
         "DomainActuel": "Actuel",
         "BonusLabel": "Bonus",
-        "AcquisBonusLabel": "Acquis"
+        "AcquisBonusLabel": "Acquis",
+        "DomainExp": "xp"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -67,6 +68,81 @@
         "psychologie": "Psychologie",
         "seduction": "Séduction",
         "vieurbaine": "Vie Urbaine"
+        "artsappliques"
+        "artsdufeu"
+        "chant"
+        "comedie"
+        "deguisement"
+        "gastronomie"
+        "langageducorps"
+        "lettres"
+        "musique"
+        "trucages"
+        "embiose"
+        "empathieanimale"
+        "empathieantheenne"
+        "empathieminerale"
+        "empathievegetale"
+        "intuition"
+        "reve"
+        "soinsdelame"
+        "soinsdelesprit"
+        "soinsducorps"
+        "arcanes"
+        "conjuration"
+        "defensemagique"
+        "enchantement"
+        "invocation"
+        "incandescence"
+        "maitrisedesschemes"
+        "regenerationdetrihn"
+        "transfert"
+        "voile"
+        "ritedarts"
+        "ritedecombat"
+        "ritedelanimal"
+        "ritedemagie"
+        "ritedenecrose"
+        "ritedesavoir"
+        "ritedeshaan"
+        "ritedesocial"
+        "ritedesurvie"
+        "ritedetechnique"
+        "acrobatie"
+        "caravane"
+        "cultureheossienne"
+        "culturenecrosienne"
+        "discretion"
+        "educationphysique"
+        "monture"
+        "navigation"
+        "viesauvage"
+        "vigilance"
+        "armeslancees"
+        "armesdemelee"
+        "armesaprojectiles"
+        "armimales"
+        "enginsdeguerre"
+        "esquive"
+        "forcer"
+        "intimidation"
+        "pugilat"
+        "strategie"
+        "armeshumaines"
+        "biomorphie"
+        "cauchemar"
+        "contrebande"
+        "corruption"
+        "explosifs"
+        "fraude"
+        "harcelement"
+        "larcin"
+        "pactenecrotique"
+
+
+
+
+
     },
     "SRTabs": {
         "CharacterLabel": "Personnage",
