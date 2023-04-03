@@ -305,7 +305,6 @@ hr {
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-necrose {
     display: grid;
     grid: "label label" "base actuel";
-    
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base {
     flex: 50%;
@@ -384,3 +383,32 @@ hr {
     text-transform: uppercase;
     white-space: nowrap
 }
+
+
+/* General Tab Specialisations */
+
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .SpecialisationsLabel {
+    grid-area: spésTitre;
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid var(--primary)
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations {
+    display: grid;
+    grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
+    gap: 1%;
+    margin-bottom: 10px;
+}
+/* General Tab Specialisations Grid */
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-necrose {
+    display: grid;
+    grid: "spéInTitre BonusTitre AcquisTitre" "spé1 spé1 spé1"
+}
+

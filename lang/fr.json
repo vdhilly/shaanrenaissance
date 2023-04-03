@@ -18,8 +18,11 @@
         "Poids": "Poids",
         "Motivations": "Motivations",
         "DomainsTitle": "Domaines",
+        "SpecialisationsTitle": "Spécialisations",
         "DomainBase": "Base",
-        "DomainActuel": "Actuel"
+        "DomainActuel": "Actuel",
+        "BonusLabel": "Bonus",
+        "AcquisBonusLabel": "Acquis"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -32,6 +35,11 @@
         "Survie": "Survie",
         "Combat": "Combat",
         "Nécrose": "Nécrose"
+    },
+    "SRspecialisations": {
+        "engrenages": "Engrenages",
+        "pilotage": "Pilotage",
+        "recuperation": "Récupérations"
     },
     "SRTabs": {
         "CharacterLabel": "Personnage",

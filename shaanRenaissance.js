@@ -19,7 +19,8 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/powers.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/background.hbs",
       "systems/Shaan_Renaissance/templates/sheet/Race-sheet.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs"
+      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs"
     ];
     return loadTemplates( templatePaths );
 };
