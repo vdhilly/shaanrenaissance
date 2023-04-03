@@ -54,9 +54,7 @@
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary);
 }
-hr {
-    display: block;
-}
+
 /* ACTOR SHEET */
 .actor.sheet {
     width: 100%;
@@ -409,6 +407,39 @@ hr {
 /* General Tab Specialisations Grid */
 .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-necrose {
     display: grid;
-    grid: "spéInTitre BonusTitre AcquisTitre" "spé1 spé1 spé1"
+    grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2";
+    column-gap: 1%;
+    row-gap: 1%;
+    color: black;
+    font-family: var(--sans-serif);
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .specialisations-esprit .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-esprit);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: var(--tertiary);
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .pc .specialisations-bonus-label {
+    font-size: .6rem;
+    align-self: center;
+    text-align: right;
+    padding-right: 1px;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-specialisations .pc .specialisation-label {
+    align-self: center;
 }
 
