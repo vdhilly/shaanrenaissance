@@ -54,6 +54,9 @@
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary);
 }
+hr {
+    display: block;
+}
 /* ACTOR SHEET */
 .actor.sheet {
     width: 100%;
@@ -168,7 +171,7 @@
 
 /* CHARACTER CONTENT */
 .actor.sheet.character .sheet-body {
-    background-color: var(--color-ame);
+    /* background-color: var(--color-ame); */
     grid-area: content;
     position: relative;
     display: flex;
@@ -197,13 +200,16 @@
     grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
 }
+.actor.sheet .sheet-body .sheet-content>.tab {
+    padding: .6rem .6rem 0
+}
 
 /* General tab img */
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
     grid-area: img;
     margin-left: 5px
 }
-.actor.sheet.character .crb-style .sheet-body .sheet-content .tab.character hr {
+.actor.sheet.character .sheet-body .sheet-content .tab.character hr {
     margin: 10px 6px 10px 0
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame .player-image {
@@ -227,18 +233,6 @@
     grid-area: vide;
 }
 /* General Tab */
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .pc.pc_shaani{
-    grid-area: shaani;
-}
-.actor.sheet.character .sheet-body .sheet-content .tab.character .character-details .detail-sheet {
-    grid-row-gap: 8px;
-    display: grid;
-    grid-area: details;
-    grid-template-columns: 44% 55%;
-    grid-template-rows: repeat(2, 42px);
-    margin-top: 8px;
-    padding-left: 12px
-}
 .actor.sheet.character .sheet-body .sheet-content .tab.character .pc input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
@@ -251,4 +245,42 @@
     padding: 8px 4px 6px;
     width: calc(100% - 6px)
 }
+
+/* General Tab Details */
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .pc.pc_shaani{
+    grid-area: shaani;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-details .detail-sheet {
+    grid-row-gap: 8px;
+    display: grid;
+    grid-area: details;
+    grid-template-columns: 44% 55%;
+    grid-template-rows: repeat(2, 42px);
+    margin-top: 8px;
+    padding-left: 12px
+}
+
+/* General Tab Bio */
+
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-background {
+    display: flex;
+    flex-wrap: wrap
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-background .pc {
+    align-items: start;
+    display: flex;
+    flex: 20%;
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 8px
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-background .pc span {
+    width: 100%
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-background .pc_motivations {
+    flex: 100%;
+    margin-bottom: 0
+}
+
+
 

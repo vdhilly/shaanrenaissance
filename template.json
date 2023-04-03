@@ -113,6 +113,21 @@
                 },
                 "job": {
                     "value": 0
+                },
+                "genre": {
+                    "value": 0
+                },
+                "age": {
+                    "value": 0
+                },
+                "taille": {
+                    "value": 0
+                },
+                "poids": {
+                    "value": 0
+                },
+                "motivations": {
+                    "value": 0
                 }
             }
         }

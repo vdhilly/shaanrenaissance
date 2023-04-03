@@ -11,7 +11,12 @@
         "DomainTest": "Test de Domaine",
         "NecroseTest": "Test de Nécrose",
         "NecroseHTest": "Test de Nécrose Humaine",
-        "Experience": "Expérience"
+        "Experience": "Expérience",
+        "Genre": "Genre",
+        "Age": "Âge",
+        "Taille": "Taille",
+        "Poids": "Poids",
+        "Motivations": "Motivations"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -41,11 +46,15 @@
     },
     "SR": {
         "Shaani": "Shaani",
-        "ShaaniTitle": "Le nom de ton Shaani",
-        "RaceTitle": "La Race de ton Personnage",
-        "PeopleTitle": "Le Peuple de ton Personnage",
-        "CasteTitle": "La Caste de ton Personnage",
-        "JobTitle": "Le Métier de ton Personnage"
-
+        "ShaaniTitle": "Le Nom de ton phaani",
+        "RaceTitle": "La Race de ton personnage",
+        "PeopleTitle": "Le Peuple de ton personnage",
+        "CasteTitle": "La Caste de ton personnage",
+        "JobTitle": "Le Métier de ton personnage",
+        "GenreTitle": "Le Genre de ton personnage",
+        "AgeTitle": "L'Âge de ton personnage",
+        "TailleTitle": "La Taille de ton personnage",
+        "PoidsTitle": "Le Poids de ton personnage",
+        "MotivationsTitle": "Les Motivations de ton personnage"
     }
 }
