@@ -15,7 +15,7 @@
     <span><input type="number" class="details-input" title="{{localize "SR.RecuperationTitle"}}" id="{{options.id}}-pc-technique-spé3-bonus" name="system.skills.Technique.specialisations.recuperation.bonus" value="{{data.skills.Technique.specialisations.recuperation.bonus}}"/></span>
     <span><input type="number" class="details-input" title="{{localize "SR.RecuperationAcquisTitle"}}" id="{{options.id}}-pc-technique-spé3-acquisBonus" name="system.skills.Technique.specialisations.recuperation.acquis" value="{{data.skills.Technique.specialisations.recuperation.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-technique-spé4-bonus {{options.id}}-pc-technique-spé4-acquisBonus">{{localize "SRspecialisations.sensdelapierre"}}</label>
+    <label class="specialisation-label" for="{{options.id}}-pc-technique-spé4-bonus {{options.id}}-pc-technique-spé4-acquisBonus">{{localize "SRspecialisations.sensdelapierre1"}}<br>{{localize "SRspecialisations.sensdelapierre2"}}</label>
     <span><input type="number" class="details-input" title="{{localize "SR.SensDeLaPierreTitle"}}" id="{{options.id}}-pc-technique-spé4-bonus" name="system.skills.Technique.specialisations.sensdelapierre.bonus" value="{{data.skills.Technique.specialisations.sensdelapierre.bonus}}"/></span>
     <span><input type="number" class="details-input" title="{{localize "SR.SensDeLaPierreAcquisTitle"}}" id="{{options.id}}-pc-technique-spé4-acquisBonus" name="system.skills.Technique.specialisations.sensdelapierre.acquis" value="{{data.skills.Technique.specialisations.sensdelapierre.acquis}}"/></span>
 
@@ -120,7 +120,7 @@
     <span><input type="number" class="details-input" title="{{localize "SR.langageprimalTitle"}}" id="{{options.id}}-pc-Social-spé6-bonus" name="system.skills.Social.specialisations.langageprimal.bonus" value="{{data.skills.Social.specialisations.langageprimal.bonus}}"/></span>
     <span><input type="number" class="details-input" title="{{localize "SR.langageprimalTitle"}}" id="{{options.id}}-pc-Social-spé6-acquisBonus" name="system.skills.Social.specialisations.langageprimal.acquis" value="{{data.skills.Social.specialisations.langageprimal.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Social-spé7-bonus {{options.id}}-pc-Social-spé7-acquisBonus">{{localize "SRspecialisations.languesexotiques"}}</label>
+    <label class="specialisation-label" for="{{options.id}}-pc-Social-spé7-bonus {{options.id}}-pc-Social-spé7-acquisBonus">{{localize "SRspecialisations.languesexotiques1"}}<br>{{localize "SRspecialisations.languesexotiques2"}}</label>
     <span><input type="number" class="details-input" title="{{localize "SR.languesexotiquesTitle"}}" id="{{options.id}}-pc-Social-spé7-bonus" name="system.skills.Social.specialisations.languesexotiques.bonus" value="{{data.skills.Social.specialisations.languesexotiques.bonus}}"/></span>
     <span><input type="number" class="details-input" title="{{localize "SR.languesexotiquesTitle"}}" id="{{options.id}}-pc-Social-spé7-acquisBonus" name="system.skills.Social.specialisations.languesexotiques.acquis" value="{{data.skills.Social.specialisations.languesexotiques.acquis}}"/></span>
 
@@ -143,47 +143,323 @@
         <span class="specialisations-label">{{localize "SRdomains.Arts"}}</span>
         <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
     </div>
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé1-bonus {{options.id}}-pc-Arts-spé1-acquisBonus">{{localize "SRspecialisations.arpege"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.arpegeTitle"}}" id="{{options.id}}-pc-Arts-spé1-bonus" name="system.skills.Arts.specialisations.arpege.bonus" value="{{data.skills.Arts.specialisations.arpege.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.arpegeAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé1-acquisBonus" name="system.skills.Arts.specialisations.arpege.acquis" value="{{data.skills.Arts.specialisations.arpege.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé1-bonus {{options.id}}-pc-Arts-spé1-acquisBonus">{{localize "SRspecialisations.artsappliques"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.artsappliquesTitle"}}" id="{{options.id}}-pc-Arts-spé1-bonus" name="system.skills.Arts.specialisations.artsappliques.bonus" value="{{data.skills.Arts.specialisations.artsappliques.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.artsappliquesAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé1-acquisBonus" name="system.skills.Arts.specialisations.artsappliques.acquis" value="{{data.skills.Arts.specialisations.artsappliques.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé2-bonus {{options.id}}-pc-Arts-spé2-acquisBonus">{{localize "SRspecialisations.bluff"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.bluffTitle"}}" id="{{options.id}}-pc-Arts-spé2-bonus" name="system.skills.Arts.specialisations.bluff.bonus" value="{{data.skills.Arts.specialisations.bluff.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.bluffAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé2-acquisBonus" name="system.skills.Arts.specialisations.bluff.acquis" value="{{data.skills.Arts.specialisations.bluff.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé2-bonus {{options.id}}-pc-Arts-spé2-acquisBonus">{{localize "SRspecialisations.artsdufeu"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.artsdufeuTitle"}}" id="{{options.id}}-pc-Arts-spé2-bonus" name="system.skills.Arts.specialisations.artsdufeu.bonus" value="{{data.skills.Arts.specialisations.artsdufeu.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.artsdufeuAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé2-acquisBonus" name="system.skills.Arts.specialisations.artsdufeu.acquis" value="{{data.skills.Arts.specialisations.artsdufeu.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé3-bonus {{options.id}}-pc-Arts-spé3-acquisBonus">{{localize "SRspecialisations.commerce"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.commerceTitle"}}" id="{{options.id}}-pc-Arts-spé3-bonus" name="system.skills.Arts.specialisations.commerce.bonus" value="{{data.skills.Arts.specialisations.commerce.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.commerceAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé3-acquisBonus" name="system.skills.Arts.specialisations.commerce.acquis" value="{{data.skills.Arts.specialisations.commerce.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé3-bonus {{options.id}}-pc-Arts-spé3-acquisBonus">{{localize "SRspecialisations.chant"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.chantTitle"}}" id="{{options.id}}-pc-Arts-spé3-bonus" name="system.skills.Arts.specialisations.chant.bonus" value="{{data.skills.Arts.specialisations.chant.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.chantAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé3-acquisBonus" name="system.skills.Arts.specialisations.chant.acquis" value="{{data.skills.Arts.specialisations.chant.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé4-bonus {{options.id}}-pc-Arts-spé4-acquisBonus">{{localize "SRspecialisations.diplomatie"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.diplomatieTitle"}}" id="{{options.id}}-pc-Arts-spé4-bonus" name="system.skills.Arts.specialisations.diplomatie.bonus" value="{{data.skills.Arts.specialisations.diplomatie.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.diplomatieAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé4-acquisBonus" name="system.skills.Arts.specialisations.diplomatie.acquis" value="{{data.skills.Arts.specialisations.diplomatie.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé4-bonus {{options.id}}-pc-Arts-spé4-acquisBonus">{{localize "SRspecialisations.comedie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.comedieTitle"}}" id="{{options.id}}-pc-Arts-spé4-bonus" name="system.skills.Arts.specialisations.comedie.bonus" value="{{data.skills.Arts.specialisations.comedie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.comedieAcquisTitle"}}" id="{{options.id}}-pc-Arts-spé4-acquisBonus" name="system.skills.Arts.specialisations.comedie.acquis" value="{{data.skills.Arts.specialisations.comedie.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé5-bonus {{options.id}}-pc-Arts-spé5-acquisBonus">{{localize "SRspecialisations.enseignement"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.enseignementTitle"}}" id="{{options.id}}-pc-Arts-spé5-bonus" name="system.skills.Arts.specialisations.enseignement.bonus" value="{{data.skills.Arts.specialisations.enseignement.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.enseignementTitle"}}" id="{{options.id}}-pc-Arts-spé5-acquisBonus" name="system.skills.Arts.specialisations.enseignement.acquis" value="{{data.skills.Arts.specialisations.enseignement.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé5-bonus {{options.id}}-pc-Arts-spé5-acquisBonus">{{localize "SRspecialisations.deguisement"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.deguisementTitle"}}" id="{{options.id}}-pc-Arts-spé5-bonus" name="system.skills.Arts.specialisations.deguisement.bonus" value="{{data.skills.Arts.specialisations.deguisement.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.deguisementTitle"}}" id="{{options.id}}-pc-Arts-spé5-acquisBonus" name="system.skills.Arts.specialisations.deguisement.acquis" value="{{data.skills.Arts.specialisations.deguisement.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé6-bonus {{options.id}}-pc-Arts-spé6-acquisBonus">{{localize "SRspecialisations.langageprimal"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.langageprimalTitle"}}" id="{{options.id}}-pc-Arts-spé6-bonus" name="system.skills.Arts.specialisations.langageprimal.bonus" value="{{data.skills.Arts.specialisations.langageprimal.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.langageprimalTitle"}}" id="{{options.id}}-pc-Arts-spé6-acquisBonus" name="system.skills.Arts.specialisations.langageprimal.acquis" value="{{data.skills.Arts.specialisations.langageprimal.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé6-bonus {{options.id}}-pc-Arts-spé6-acquisBonus">{{localize "SRspecialisations.gastronomie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.gastronomieTitle"}}" id="{{options.id}}-pc-Arts-spé6-bonus" name="system.skills.Arts.specialisations.gastronomie.bonus" value="{{data.skills.Arts.specialisations.gastronomie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.gastronomieTitle"}}" id="{{options.id}}-pc-Arts-spé6-acquisBonus" name="system.skills.Arts.specialisations.gastronomie.acquis" value="{{data.skills.Arts.specialisations.gastronomie.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé7-bonus {{options.id}}-pc-Arts-spé7-acquisBonus">{{localize "SRspecialisations.languesexotiques"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.languesexotiquesTitle"}}" id="{{options.id}}-pc-Arts-spé7-bonus" name="system.skills.Arts.specialisations.languesexotiques.bonus" value="{{data.skills.Arts.specialisations.languesexotiques.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.languesexotiquesTitle"}}" id="{{options.id}}-pc-Arts-spé7-acquisBonus" name="system.skills.Arts.specialisations.languesexotiques.acquis" value="{{data.skills.Arts.specialisations.languesexotiques.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé7-bonus {{options.id}}-pc-Arts-spé7-acquisBonus">{{localize "SRspecialisations.langageducorps1"}}<br>{{localize "SRspecialisations.langageducorps2"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.langageducorpsTitle"}}" id="{{options.id}}-pc-Arts-spé7-bonus" name="system.skills.Arts.specialisations.langageducorps.bonus" value="{{data.skills.Arts.specialisations.langageducorps.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.langageducorpsTitle"}}" id="{{options.id}}-pc-Arts-spé7-acquisBonus" name="system.skills.Arts.specialisations.langageducorps.acquis" value="{{data.skills.Arts.specialisations.langageducorps.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé8-bonus {{options.id}}-pc-Arts-spé8-acquisBonus">{{localize "SRspecialisations.psychologie"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.psychologieTitle"}}" id="{{options.id}}-pc-Arts-spé8-bonus" name="system.skills.Arts.specialisations.psychologie.bonus" value="{{data.skills.Arts.specialisations.psychologie.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.psychologieTitle"}}" id="{{options.id}}-pc-Arts-spé8-acquisBonus" name="system.skills.Arts.specialisations.psychologie.acquis" value="{{data.skills.Arts.specialisations.psychologie.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé8-bonus {{options.id}}-pc-Arts-spé8-acquisBonus">{{localize "SRspecialisations.lettres"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.lettresTitle"}}" id="{{options.id}}-pc-Arts-spé8-bonus" name="system.skills.Arts.specialisations.lettres.bonus" value="{{data.skills.Arts.specialisations.lettres.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.lettresTitle"}}" id="{{options.id}}-pc-Arts-spé8-acquisBonus" name="system.skills.Arts.specialisations.lettres.acquis" value="{{data.skills.Arts.specialisations.lettres.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé9-bonus {{options.id}}-pc-Arts-spé9-acquisBonus">{{localize "SRspecialisations.seduction"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.seductionTitle"}}" id="{{options.id}}-pc-Arts-spé9-bonus" name="system.skills.Arts.specialisations.seduction.bonus" value="{{data.skills.Arts.specialisations.seduction.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.seductionTitle"}}" id="{{options.id}}-pc-Arts-spé9-acquisBonus" name="system.skills.Arts.specialisations.seduction.acquis" value="{{data.skills.Arts.specialisations.seduction.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé9-bonus {{options.id}}-pc-Arts-spé9-acquisBonus">{{localize "SRspecialisations.musique"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.musiqueTitle"}}" id="{{options.id}}-pc-Arts-spé9-bonus" name="system.skills.Arts.specialisations.musique.bonus" value="{{data.skills.Arts.specialisations.musique.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.musiqueTitle"}}" id="{{options.id}}-pc-Arts-spé9-acquisBonus" name="system.skills.Arts.specialisations.musique.acquis" value="{{data.skills.Arts.specialisations.musique.acquis}}"/></span>
 
-    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé10-bonus {{options.id}}-pc-Arts-spé10-acquisBonus">{{localize "SRspecialisations.vieurbaine"}}</label>
-    <span><input type="number" class="details-input" title="{{localize "SR.vieurbaineTitle"}}" id="{{options.id}}-pc-Arts-spé10-bonus" name="system.skills.Arts.specialisations.vieurbaine.bonus" value="{{data.skills.Arts.specialisations.vieurbaine.bonus}}"/></span>
-    <span><input type="number" class="details-input" title="{{localize "SR.vieurbaineTitle"}}" id="{{options.id}}-pc-Arts-spé10-acquisBonus" name="system.skills.Arts.specialisations.vieurbaine.acquis" value="{{data.skills.Arts.specialisations.vieurbaine.acquis}}"/></span>
+    <label class="specialisation-label" for="{{options.id}}-pc-Arts-spé10-bonus {{options.id}}-pc-Arts-spé10-acquisBonus">{{localize "SRspecialisations.trucages"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.trucagesTitle"}}" id="{{options.id}}-pc-Arts-spé10-bonus" name="system.skills.Arts.specialisations.trucages.bonus" value="{{data.skills.Arts.specialisations.trucages.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.trucagesTitle"}}" id="{{options.id}}-pc-Arts-spé10-acquisBonus" name="system.skills.Arts.specialisations.trucages.acquis" value="{{data.skills.Arts.specialisations.trucages.acquis}}"/></span>
 
 
 </div>
+<div class="pc pc_specialisations-Shaan specialisations-ame">
+        <div class="specialisations-title">
+        <span class="specialisations-label">{{localize "SRdomains.Shaan"}}</span>
+        <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+    </div>
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé1-bonus {{options.id}}-pc-Shaan-spé1-acquisBonus">{{localize "SRspecialisations.embiose"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.embioseTitle"}}" id="{{options.id}}-pc-Shaan-spé1-bonus" name="system.skills.Shaan.specialisations.embiose.bonus" value="{{data.skills.Shaan.specialisations.embiose.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.embioseAcquisTitle"}}" id="{{options.id}}-pc-Shaan-spé1-acquisBonus" name="system.skills.Shaan.specialisations.embiose.acquis" value="{{data.skills.Shaan.specialisations.embiose.acquis}}"/></span>
 
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé2-bonus {{options.id}}-pc-Shaan-spé2-acquisBonus">{{localize "SRspecialisations.empathieanimale"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathieanimaleTitle"}}" id="{{options.id}}-pc-Shaan-spé2-bonus" name="system.skills.Shaan.specialisations.empathieanimale.bonus" value="{{data.skills.Shaan.specialisations.empathieanimale.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathieanimaleAcquisTitle"}}" id="{{options.id}}-pc-Shaan-spé2-acquisBonus" name="system.skills.Shaan.specialisations.empathieanimale.acquis" value="{{data.skills.Shaan.specialisations.empathieanimale.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé3-bonus {{options.id}}-pc-Shaan-spé3-acquisBonus">{{localize "SRspecialisations.empathieantheenne1"}}<br>{{localize "SRspecialisations.empathieantheenne2"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathieantheenneTitle"}}" id="{{options.id}}-pc-Shaan-spé3-bonus" name="system.skills.Shaan.specialisations.empathieantheenne.bonus" value="{{data.skills.Shaan.specialisations.empathieantheenne.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathieantheenneAcquisTitle"}}" id="{{options.id}}-pc-Shaan-spé3-acquisBonus" name="system.skills.Shaan.specialisations.empathieantheenne.acquis" value="{{data.skills.Shaan.specialisations.empathieantheenne.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé4-bonus {{options.id}}-pc-Shaan-spé4-acquisBonus">{{localize "SRspecialisations.empathieminerale"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathiemineraleTitle"}}" id="{{options.id}}-pc-Shaan-spé4-bonus" name="system.skills.Shaan.specialisations.empathieminerale.bonus" value="{{data.skills.Shaan.specialisations.empathieminerale.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathiemineraleAcquisTitle"}}" id="{{options.id}}-pc-Shaan-spé4-acquisBonus" name="system.skills.Shaan.specialisations.empathieminerale.acquis" value="{{data.skills.Shaan.specialisations.empathieminerale.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé5-bonus {{options.id}}-pc-Shaan-spé5-acquisBonus">{{localize "SRspecialisations.empathievegetale"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathievegetaleTitle"}}" id="{{options.id}}-pc-Shaan-spé5-bonus" name="system.skills.Shaan.specialisations.empathievegetale.bonus" value="{{data.skills.Shaan.specialisations.empathievegetale.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.empathievegetaleTitle"}}" id="{{options.id}}-pc-Shaan-spé5-acquisBonus" name="system.skills.Shaan.specialisations.empathievegetale.acquis" value="{{data.skills.Shaan.specialisations.empathievegetale.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé6-bonus {{options.id}}-pc-Shaan-spé6-acquisBonus">{{localize "SRspecialisations.intuition"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.intuitionTitle"}}" id="{{options.id}}-pc-Shaan-spé6-bonus" name="system.skills.Shaan.specialisations.intuition.bonus" value="{{data.skills.Shaan.specialisations.intuition.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.intuitionTitle"}}" id="{{options.id}}-pc-Shaan-spé6-acquisBonus" name="system.skills.Shaan.specialisations.intuition.acquis" value="{{data.skills.Shaan.specialisations.intuition.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé7-bonus {{options.id}}-pc-Shaan-spé7-acquisBonus">{{localize "SRspecialisations.reve"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.reveTitle"}}" id="{{options.id}}-pc-Shaan-spé7-bonus" name="system.skills.Shaan.specialisations.reve.bonus" value="{{data.skills.Shaan.specialisations.reve.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.reveTitle"}}" id="{{options.id}}-pc-Shaan-spé7-acquisBonus" name="system.skills.Shaan.specialisations.reve.acquis" value="{{data.skills.Shaan.specialisations.reve.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé8-bonus {{options.id}}-pc-Shaan-spé8-acquisBonus">{{localize "SRspecialisations.soinsdelame"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.soinsdelameTitle"}}" id="{{options.id}}-pc-Shaan-spé8-bonus" name="system.skills.Shaan.specialisations.soinsdelame.bonus" value="{{data.skills.Shaan.specialisations.soinsdelame.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.soinsdelameTitle"}}" id="{{options.id}}-pc-Shaan-spé8-acquisBonus" name="system.skills.Shaan.specialisations.soinsdelame.acquis" value="{{data.skills.Shaan.specialisations.soinsdelame.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé9-bonus {{options.id}}-pc-Shaan-spé9-acquisBonus">{{localize "SRspecialisations.soinsdelesprit"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.soinsdelespritTitle"}}" id="{{options.id}}-pc-Shaan-spé9-bonus" name="system.skills.Shaan.specialisations.soinsdelesprit.bonus" value="{{data.skills.Shaan.specialisations.soinsdelesprit.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.soinsdelespritTitle"}}" id="{{options.id}}-pc-Shaan-spé9-acquisBonus" name="system.skills.Shaan.specialisations.soinsdelesprit.acquis" value="{{data.skills.Shaan.specialisations.soinsdelesprit.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Shaan-spé10-bonus {{options.id}}-pc-Shaan-spé10-acquisBonus">{{localize "SRspecialisations.soinsducorps"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.soinsducorpsTitle"}}" id="{{options.id}}-pc-Shaan-spé10-bonus" name="system.skills.Shaan.specialisations.soinsducorps.bonus" value="{{data.skills.Shaan.specialisations.soinsducorps.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.soinsducorpsTitle"}}" id="{{options.id}}-pc-Shaan-spé10-acquisBonus" name="system.skills.Shaan.specialisations.soinsducorps.acquis" value="{{data.skills.Shaan.specialisations.soinsducorps.acquis}}"/></span>
+
+
+</div>
+<div class="pc pc_specialisations-Magie specialisations-ame">
+        <div class="specialisations-title">
+        <span class="specialisations-label">{{localize "SRdomains.Magie"}}</span>
+        <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+    </div>
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé1-bonus {{options.id}}-pc-Magie-spé1-acquisBonus">{{localize "SRspecialisations.arcanes"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.arcanesTitle"}}" id="{{options.id}}-pc-Magie-spé1-bonus" name="system.skills.Magie.specialisations.arcanes.bonus" value="{{data.skills.Magie.specialisations.arcanes.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.arcanesAcquisTitle"}}" id="{{options.id}}-pc-Magie-spé1-acquisBonus" name="system.skills.Magie.specialisations.arcanes.acquis" value="{{data.skills.Magie.specialisations.arcanes.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé2-bonus {{options.id}}-pc-Magie-spé2-acquisBonus">{{localize "SRspecialisations.conjuration"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.conjurationTitle"}}" id="{{options.id}}-pc-Magie-spé2-bonus" name="system.skills.Magie.specialisations.conjuration.bonus" value="{{data.skills.Magie.specialisations.conjuration.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.conjurationAcquisTitle"}}" id="{{options.id}}-pc-Magie-spé2-acquisBonus" name="system.skills.Magie.specialisations.conjuration.acquis" value="{{data.skills.Magie.specialisations.conjuration.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé3-bonus {{options.id}}-pc-Magie-spé3-acquisBonus">{{localize "SRspecialisations.defensemagique"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.defensemagiqueTitle"}}" id="{{options.id}}-pc-Magie-spé3-bonus" name="system.skills.Magie.specialisations.defensemagique.bonus" value="{{data.skills.Magie.specialisations.defensemagique.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.defensemagiqueAcquisTitle"}}" id="{{options.id}}-pc-Magie-spé3-acquisBonus" name="system.skills.Magie.specialisations.defensemagique.acquis" value="{{data.skills.Magie.specialisations.defensemagique.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé4-bonus {{options.id}}-pc-Magie-spé4-acquisBonus">{{localize "SRspecialisations.enchantement"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.enchantementTitle"}}" id="{{options.id}}-pc-Magie-spé4-bonus" name="system.skills.Magie.specialisations.enchantement.bonus" value="{{data.skills.Magie.specialisations.enchantement.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.enchantementAcquisTitle"}}" id="{{options.id}}-pc-Magie-spé4-acquisBonus" name="system.skills.Magie.specialisations.enchantement.acquis" value="{{data.skills.Magie.specialisations.enchantement.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé5-bonus {{options.id}}-pc-Magie-spé5-acquisBonus">{{localize "SRspecialisations.invocation"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.invocationTitle"}}" id="{{options.id}}-pc-Magie-spé5-bonus" name="system.skills.Magie.specialisations.invocation.bonus" value="{{data.skills.Magie.specialisations.invocation.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.invocationTitle"}}" id="{{options.id}}-pc-Magie-spé5-acquisBonus" name="system.skills.Magie.specialisations.invocation.acquis" value="{{data.skills.Magie.specialisations.invocation.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé6-bonus {{options.id}}-pc-Magie-spé6-acquisBonus">{{localize "SRspecialisations.incandescence"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.incandescenceTitle"}}" id="{{options.id}}-pc-Magie-spé6-bonus" name="system.skills.Magie.specialisations.incandescence.bonus" value="{{data.skills.Magie.specialisations.incandescence.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.incandescenceTitle"}}" id="{{options.id}}-pc-Magie-spé6-acquisBonus" name="system.skills.Magie.specialisations.incandescence.acquis" value="{{data.skills.Magie.specialisations.incandescence.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé7-bonus {{options.id}}-pc-Magie-spé7-acquisBonus">{{localize "SRspecialisations.maitrisedesschemes1"}}<br>{{localize "SRspecialisations.maitrisedesschemes2"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.maitrisedesschemesTitle"}}" id="{{options.id}}-pc-Magie-spé7-bonus" name="system.skills.Magie.specialisations.maitrisedesschemes.bonus" value="{{data.skills.Magie.specialisations.maitrisedesschemes.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.maitrisedesschemesTitle"}}" id="{{options.id}}-pc-Magie-spé7-acquisBonus" name="system.skills.Magie.specialisations.maitrisedesschemes.acquis" value="{{data.skills.Magie.specialisations.maitrisedesschemes.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé8-bonus {{options.id}}-pc-Magie-spé8-acquisBonus">{{localize "SRspecialisations.regenerationdetrihn1"}}<br>{{localize "SRspecialisations.regenerationdetrihn2"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.regenerationdetrihnTitle"}}" id="{{options.id}}-pc-Magie-spé8-bonus" name="system.skills.Magie.specialisations.regenerationdetrihn.bonus" value="{{data.skills.Magie.specialisations.regenerationdetrihn.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.regenerationdetrihnTitle"}}" id="{{options.id}}-pc-Magie-spé8-acquisBonus" name="system.skills.Magie.specialisations.regenerationdetrihn.acquis" value="{{data.skills.Magie.specialisations.regenerationdetrihn.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé9-bonus {{options.id}}-pc-Magie-spé9-acquisBonus">{{localize "SRspecialisations.transfert"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.transfertTitle"}}" id="{{options.id}}-pc-Magie-spé9-bonus" name="system.skills.Magie.specialisations.transfert.bonus" value="{{data.skills.Magie.specialisations.transfert.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.transfertTitle"}}" id="{{options.id}}-pc-Magie-spé9-acquisBonus" name="system.skills.Magie.specialisations.transfert.acquis" value="{{data.skills.Magie.specialisations.transfert.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Magie-spé10-bonus {{options.id}}-pc-Magie-spé10-acquisBonus">{{localize "SRspecialisations.voile"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.voileTitle"}}" id="{{options.id}}-pc-Magie-spé10-bonus" name="system.skills.Magie.specialisations.voile.bonus" value="{{data.skills.Magie.specialisations.voile.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.voileTitle"}}" id="{{options.id}}-pc-Magie-spé10-acquisBonus" name="system.skills.Magie.specialisations.voile.acquis" value="{{data.skills.Magie.specialisations.voile.acquis}}"/></span>
+
+
+</div>
+<div class="pc pc_specialisations-Rituels specialisations-corps">
+        <div class="specialisations-title">
+        <span class="specialisations-label">{{localize "SRdomains.Rituels"}}</span>
+        <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+    </div>
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé1-bonus {{options.id}}-pc-Rituels-spé1-acquisBonus">{{localize "SRspecialisations.ritedarts"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedartsTitle"}}" id="{{options.id}}-pc-Rituels-spé1-bonus" name="system.skills.Rituels.specialisations.ritedarts.bonus" value="{{data.skills.Rituels.specialisations.ritedarts.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedartsAcquisTitle"}}" id="{{options.id}}-pc-Rituels-spé1-acquisBonus" name="system.skills.Rituels.specialisations.ritedarts.acquis" value="{{data.skills.Rituels.specialisations.ritedarts.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé2-bonus {{options.id}}-pc-Rituels-spé2-acquisBonus">{{localize "SRspecialisations.ritedecombat"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedecombatTitle"}}" id="{{options.id}}-pc-Rituels-spé2-bonus" name="system.skills.Rituels.specialisations.ritedecombat.bonus" value="{{data.skills.Rituels.specialisations.ritedecombat.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedecombatAcquisTitle"}}" id="{{options.id}}-pc-Rituels-spé2-acquisBonus" name="system.skills.Rituels.specialisations.ritedecombat.acquis" value="{{data.skills.Rituels.specialisations.ritedecombat.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé3-bonus {{options.id}}-pc-Rituels-spé3-acquisBonus">{{localize "SRspecialisations.ritedelanimal"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedelanimalTitle"}}" id="{{options.id}}-pc-Rituels-spé3-bonus" name="system.skills.Rituels.specialisations.ritedelanimal.bonus" value="{{data.skills.Rituels.specialisations.ritedelanimal.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedelanimalAcquisTitle"}}" id="{{options.id}}-pc-Rituels-spé3-acquisBonus" name="system.skills.Rituels.specialisations.ritedelanimal.acquis" value="{{data.skills.Rituels.specialisations.ritedelanimal.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé4-bonus {{options.id}}-pc-Rituels-spé4-acquisBonus">{{localize "SRspecialisations.ritedemagie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedemagieTitle"}}" id="{{options.id}}-pc-Rituels-spé4-bonus" name="system.skills.Rituels.specialisations.ritedemagie.bonus" value="{{data.skills.Rituels.specialisations.ritedemagie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedemagieAcquisTitle"}}" id="{{options.id}}-pc-Rituels-spé4-acquisBonus" name="system.skills.Rituels.specialisations.ritedemagie.acquis" value="{{data.skills.Rituels.specialisations.ritedemagie.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé5-bonus {{options.id}}-pc-Rituels-spé5-acquisBonus">{{localize "SRspecialisations.ritedenecrose"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedenecroseTitle"}}" id="{{options.id}}-pc-Rituels-spé5-bonus" name="system.skills.Rituels.specialisations.ritedenecrose.bonus" value="{{data.skills.Rituels.specialisations.ritedenecrose.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedenecroseTitle"}}" id="{{options.id}}-pc-Rituels-spé5-acquisBonus" name="system.skills.Rituels.specialisations.ritedenecrose.acquis" value="{{data.skills.Rituels.specialisations.ritedenecrose.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé6-bonus {{options.id}}-pc-Rituels-spé6-acquisBonus">{{localize "SRspecialisations.ritedesavoir"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedesavoirTitle"}}" id="{{options.id}}-pc-Rituels-spé6-bonus" name="system.skills.Rituels.specialisations.ritedesavoir.bonus" value="{{data.skills.Rituels.specialisations.ritedesavoir.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedesavoirTitle"}}" id="{{options.id}}-pc-Rituels-spé6-acquisBonus" name="system.skills.Rituels.specialisations.ritedesavoir.acquis" value="{{data.skills.Rituels.specialisations.ritedesavoir.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé7-bonus {{options.id}}-pc-Rituels-spé7-acquisBonus">{{localize "SRspecialisations.ritedeshaan"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedeshaanTitle"}}" id="{{options.id}}-pc-Rituels-spé7-bonus" name="system.skills.Rituels.specialisations.ritedeshaan.bonus" value="{{data.skills.Rituels.specialisations.ritedeshaan.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedeshaanTitle"}}" id="{{options.id}}-pc-Rituels-spé7-acquisBonus" name="system.skills.Rituels.specialisations.ritedeshaan.acquis" value="{{data.skills.Rituels.specialisations.ritedeshaan.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé8-bonus {{options.id}}-pc-Rituels-spé8-acquisBonus">{{localize "SRspecialisations.ritedesocial"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedesocialTitle"}}" id="{{options.id}}-pc-Rituels-spé8-bonus" name="system.skills.Rituels.specialisations.ritedesocial.bonus" value="{{data.skills.Rituels.specialisations.ritedesocial.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedesocialTitle"}}" id="{{options.id}}-pc-Rituels-spé8-acquisBonus" name="system.skills.Rituels.specialisations.ritedesocial.acquis" value="{{data.skills.Rituels.specialisations.ritedesocial.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé9-bonus {{options.id}}-pc-Rituels-spé9-acquisBonus">{{localize "SRspecialisations.ritedesurvie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedesurvieTitle"}}" id="{{options.id}}-pc-Rituels-spé9-bonus" name="system.skills.Rituels.specialisations.ritedesurvie.bonus" value="{{data.skills.Rituels.specialisations.ritedesurvie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedesurvieTitle"}}" id="{{options.id}}-pc-Rituels-spé9-acquisBonus" name="system.skills.Rituels.specialisations.ritedesurvie.acquis" value="{{data.skills.Rituels.specialisations.ritedesurvie.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Rituels-spé10-bonus {{options.id}}-pc-Rituels-spé10-acquisBonus">{{localize "SRspecialisations.ritedetechnique"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedetechniqueTitle"}}" id="{{options.id}}-pc-Rituels-spé10-bonus" name="system.skills.Rituels.specialisations.ritedetechnique.bonus" value="{{data.skills.Rituels.specialisations.ritedetechnique.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.ritedetechniqueTitle"}}" id="{{options.id}}-pc-Rituels-spé10-acquisBonus" name="system.skills.Rituels.specialisations.ritedetechnique.acquis" value="{{data.skills.Rituels.specialisations.ritedetechnique.acquis}}"/></span>
+</div>
+
+<div class="pc pc_specialisations-Survie specialisations-corps">
+        <div class="specialisations-title">
+        <span class="specialisations-label">{{localize "SRdomains.Survie"}}</span>
+        <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+    </div>
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé1-bonus {{options.id}}-pc-Survie-spé1-acquisBonus">{{localize "SRspecialisations.acrobatie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.acrobatieTitle"}}" id="{{options.id}}-pc-Survie-spé1-bonus" name="system.skills.Survie.specialisations.acrobatie.bonus" value="{{data.skills.Survie.specialisations.acrobatie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.acrobatieAcquisTitle"}}" id="{{options.id}}-pc-Survie-spé1-acquisBonus" name="system.skills.Survie.specialisations.acrobatie.acquis" value="{{data.skills.Survie.specialisations.acrobatie.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé2-bonus {{options.id}}-pc-Survie-spé2-acquisBonus">{{localize "SRspecialisations.caravane"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.caravaneTitle"}}" id="{{options.id}}-pc-Survie-spé2-bonus" name="system.skills.Survie.specialisations.caravane.bonus" value="{{data.skills.Survie.specialisations.caravane.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.caravaneAcquisTitle"}}" id="{{options.id}}-pc-Survie-spé2-acquisBonus" name="system.skills.Survie.specialisations.caravane.acquis" value="{{data.skills.Survie.specialisations.caravane.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé3-bonus {{options.id}}-pc-Survie-spé3-acquisBonus">{{localize "SRspecialisations.cultureheossienne"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.cultureheossienneTitle"}}" id="{{options.id}}-pc-Survie-spé3-bonus" name="system.skills.Survie.specialisations.cultureheossienne.bonus" value="{{data.skills.Survie.specialisations.cultureheossienne.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.cultureheossienneAcquisTitle"}}" id="{{options.id}}-pc-Survie-spé3-acquisBonus" name="system.skills.Survie.specialisations.cultureheossienne.acquis" value="{{data.skills.Survie.specialisations.cultureheossienne.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé5-bonus {{options.id}}-pc-Survie-spé5-acquisBonus">{{localize "SRspecialisations.culturenecrosienne"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.culturenecrosienneTitle"}}" id="{{options.id}}-pc-Survie-spé5-bonus" name="system.skills.Survie.specialisations.culturenecrosienne.bonus" value="{{data.skills.Survie.specialisations.culturenecrosienne.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.culturenecrosienneTitle"}}" id="{{options.id}}-pc-Survie-spé5-acquisBonus" name="system.skills.Survie.specialisations.culturenecrosienne.acquis" value="{{data.skills.Survie.specialisations.culturenecrosienne.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé6-bonus {{options.id}}-pc-Survie-spé6-acquisBonus">{{localize "SRspecialisations.discretion"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.discretionTitle"}}" id="{{options.id}}-pc-Survie-spé6-bonus" name="system.skills.Survie.specialisations.discretion.bonus" value="{{data.skills.Survie.specialisations.discretion.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.discretionTitle"}}" id="{{options.id}}-pc-Survie-spé6-acquisBonus" name="system.skills.Survie.specialisations.discretion.acquis" value="{{data.skills.Survie.specialisations.discretion.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé7-bonus {{options.id}}-pc-Survie-spé7-acquisBonus">{{localize "SRspecialisations.educationphysique"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.educationphysiqueTitle"}}" id="{{options.id}}-pc-Survie-spé7-bonus" name="system.skills.Survie.specialisations.educationphysique.bonus" value="{{data.skills.Survie.specialisations.educationphysique.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.educationphysiqueTitle"}}" id="{{options.id}}-pc-Survie-spé7-acquisBonus" name="system.skills.Survie.specialisations.educationphysique.acquis" value="{{data.skills.Survie.specialisations.educationphysique.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé8-bonus {{options.id}}-pc-Survie-spé8-acquisBonus">{{localize "SRspecialisations.monture"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.montureTitle"}}" id="{{options.id}}-pc-Survie-spé8-bonus" name="system.skills.Survie.specialisations.monture.bonus" value="{{data.skills.Survie.specialisations.monture.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.montureTitle"}}" id="{{options.id}}-pc-Survie-spé8-acquisBonus" name="system.skills.Survie.specialisations.monture.acquis" value="{{data.skills.Survie.specialisations.monture.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé4-bonus {{options.id}}-pc-Survie-spé4-acquisBonus">{{localize "SRspecialisations.navigation"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.navigationTitle"}}" id="{{options.id}}-pc-Survie-spé4-bonus" name="system.skills.Survie.specialisations.navigation.bonus" value="{{data.skills.Survie.specialisations.navigation.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.navigationAcquisTitle"}}" id="{{options.id}}-pc-Survie-spé4-acquisBonus" name="system.skills.Survie.specialisations.navigation.acquis" value="{{data.skills.Survie.specialisations.navigation.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé9-bonus {{options.id}}-pc-Survie-spé9-acquisBonus">{{localize "SRspecialisations.viesauvage"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.viesauvageTitle"}}" id="{{options.id}}-pc-Survie-spé9-bonus" name="system.skills.Survie.specialisations.viesauvage.bonus" value="{{data.skills.Survie.specialisations.viesauvage.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.viesauvageTitle"}}" id="{{options.id}}-pc-Survie-spé9-acquisBonus" name="system.skills.Survie.specialisations.viesauvage.acquis" value="{{data.skills.Survie.specialisations.viesauvage.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Survie-spé10-bonus {{options.id}}-pc-Survie-spé10-acquisBonus">{{localize "SRspecialisations.vigilance"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.vigilanceTitle"}}" id="{{options.id}}-pc-Survie-spé10-bonus" name="system.skills.Survie.specialisations.vigilance.bonus" value="{{data.skills.Survie.specialisations.vigilance.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.vigilanceTitle"}}" id="{{options.id}}-pc-Survie-spé10-acquisBonus" name="system.skills.Survie.specialisations.vigilance.acquis" value="{{data.skills.Survie.specialisations.vigilance.acquis}}"/></span>
+</div>
+
+<div class="pc pc_specialisations-Combat specialisations-corps">
+        <div class="specialisations-title">
+        <span class="specialisations-label">{{localize "SRdomains.Combat"}}</span>
+        <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+    </div>
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé1-bonus {{options.id}}-pc-Combat-spé1-acquisBonus">{{localize "SRspecialisations.armeslancees"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.armeslanceesTitle"}}" id="{{options.id}}-pc-Combat-spé1-bonus" name="system.skills.Combat.specialisations.armeslancees.bonus" value="{{data.skills.Combat.specialisations.armeslancees.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.armeslanceesAcquisTitle"}}" id="{{options.id}}-pc-Combat-spé1-acquisBonus" name="system.skills.Combat.specialisations.armeslancees.acquis" value="{{data.skills.Combat.specialisations.armeslancees.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé2-bonus {{options.id}}-pc-Combat-spé2-acquisBonus">{{localize "SRspecialisations.armesdemelee"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.armesdemeleeTitle"}}" id="{{options.id}}-pc-Combat-spé2-bonus" name="system.skills.Combat.specialisations.armesdemelee.bonus" value="{{data.skills.Combat.specialisations.armesdemelee.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.armesdemeleeAcquisTitle"}}" id="{{options.id}}-pc-Combat-spé2-acquisBonus" name="system.skills.Combat.specialisations.armesdemelee.acquis" value="{{data.skills.Combat.specialisations.armesdemelee.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé3-bonus {{options.id}}-pc-Combat-spé3-acquisBonus">{{localize "SRspecialisations.armesaprojectiles1"}}<br>{{localize "SRspecialisations.armesaprojectiles2"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.armesaprojectilesTitle"}}" id="{{options.id}}-pc-Combat-spé3-bonus" name="system.skills.Combat.specialisations.armesaprojectiles.bonus" value="{{data.skills.Combat.specialisations.armesaprojectiles.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.armesaprojectilesAcquisTitle"}}" id="{{options.id}}-pc-Combat-spé3-acquisBonus" name="system.skills.Combat.specialisations.armesaprojectiles.acquis" value="{{data.skills.Combat.specialisations.armesaprojectiles.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé4-bonus {{options.id}}-pc-Combat-spé4-acquisBonus">{{localize "SRspecialisations.armimales"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.armimalesTitle"}}" id="{{options.id}}-pc-Combat-spé4-bonus" name="system.skills.Combat.specialisations.armimales.bonus" value="{{data.skills.Combat.specialisations.armimales.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.armimalesAcquisTitle"}}" id="{{options.id}}-pc-Combat-spé4-acquisBonus" name="system.skills.Combat.specialisations.armimales.acquis" value="{{data.skills.Combat.specialisations.armimales.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé5-bonus {{options.id}}-pc-Combat-spé5-acquisBonus">{{localize "SRspecialisations.enginsdeguerre"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.enginsdeguerreTitle"}}" id="{{options.id}}-pc-Combat-spé5-bonus" name="system.skills.Combat.specialisations.enginsdeguerre.bonus" value="{{data.skills.Combat.specialisations.enginsdeguerre.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.enginsdeguerreTitle"}}" id="{{options.id}}-pc-Combat-spé5-acquisBonus" name="system.skills.Combat.specialisations.enginsdeguerre.acquis" value="{{data.skills.Combat.specialisations.enginsdeguerre.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé6-bonus {{options.id}}-pc-Combat-spé6-acquisBonus">{{localize "SRspecialisations.esquive"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.esquiveTitle"}}" id="{{options.id}}-pc-Combat-spé6-bonus" name="system.skills.Combat.specialisations.esquive.bonus" value="{{data.skills.Combat.specialisations.esquive.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.esquiveTitle"}}" id="{{options.id}}-pc-Combat-spé6-acquisBonus" name="system.skills.Combat.specialisations.esquive.acquis" value="{{data.skills.Combat.specialisations.esquive.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé7-bonus {{options.id}}-pc-Combat-spé7-acquisBonus">{{localize "SRspecialisations.forcer"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.forcerTitle"}}" id="{{options.id}}-pc-Combat-spé7-bonus" name="system.skills.Combat.specialisations.forcer.bonus" value="{{data.skills.Combat.specialisations.forcer.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.forcerTitle"}}" id="{{options.id}}-pc-Combat-spé7-acquisBonus" name="system.skills.Combat.specialisations.forcer.acquis" value="{{data.skills.Combat.specialisations.forcer.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé8-bonus {{options.id}}-pc-Combat-spé8-acquisBonus">{{localize "SRspecialisations.intimidation"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.intimidationTitle"}}" id="{{options.id}}-pc-Combat-spé8-bonus" name="system.skills.Combat.specialisations.intimidation.bonus" value="{{data.skills.Combat.specialisations.intimidation.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.intimidationTitle"}}" id="{{options.id}}-pc-Combat-spé8-acquisBonus" name="system.skills.Combat.specialisations.intimidation.acquis" value="{{data.skills.Combat.specialisations.intimidation.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé9-bonus {{options.id}}-pc-Combat-spé9-acquisBonus">{{localize "SRspecialisations.pugilat"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.pugilatTitle"}}" id="{{options.id}}-pc-Combat-spé9-bonus" name="system.skills.Combat.specialisations.pugilat.bonus" value="{{data.skills.Combat.specialisations.pugilat.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.pugilatTitle"}}" id="{{options.id}}-pc-Combat-spé9-acquisBonus" name="system.skills.Combat.specialisations.pugilat.acquis" value="{{data.skills.Combat.specialisations.pugilat.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Combat-spé10-bonus {{options.id}}-pc-Combat-spé10-acquisBonus">{{localize "SRspecialisations.strategie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.strategieTitle"}}" id="{{options.id}}-pc-Combat-spé10-bonus" name="system.skills.Combat.specialisations.strategie.bonus" value="{{data.skills.Combat.specialisations.strategie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.strategieTitle"}}" id="{{options.id}}-pc-Combat-spé10-acquisBonus" name="system.skills.Combat.specialisations.strategie.acquis" value="{{data.skills.Combat.specialisations.strategie.acquis}}"/></span>
+</div>
+
+<div class="pc pc_specialisations-Nécrose specialisations-nécrose">
+        <div class="specialisations-title">
+        <span class="specialisations-label">{{localize "SRdomains.Nécrose"}}</span>
+        <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+    </div>
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé1-bonus {{options.id}}-pc-Nécrose-spé1-acquisBonus">{{localize "SRspecialisations.armeshumaines"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.armeshumainesTitle"}}" id="{{options.id}}-pc-Nécrose-spé1-bonus" name="system.skills.Nécrose.specialisations.armeshumaines.bonus" value="{{data.skills.Nécrose.specialisations.armeshumaines.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.armeshumainesAcquisTitle"}}" id="{{options.id}}-pc-Nécrose-spé1-acquisBonus" name="system.skills.Nécrose.specialisations.armeshumaines.acquis" value="{{data.skills.Nécrose.specialisations.armeshumaines.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé2-bonus {{options.id}}-pc-Nécrose-spé2-acquisBonus">{{localize "SRspecialisations.biomorphie"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.biomorphieTitle"}}" id="{{options.id}}-pc-Nécrose-spé2-bonus" name="system.skills.Nécrose.specialisations.biomorphie.bonus" value="{{data.skills.Nécrose.specialisations.biomorphie.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.biomorphieAcquisTitle"}}" id="{{options.id}}-pc-Nécrose-spé2-acquisBonus" name="system.skills.Nécrose.specialisations.biomorphie.acquis" value="{{data.skills.Nécrose.specialisations.biomorphie.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé3-bonus {{options.id}}-pc-Nécrose-spé3-acquisBonus">{{localize "SRspecialisations.cauchemar"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.cauchemarTitle"}}" id="{{options.id}}-pc-Nécrose-spé3-bonus" name="system.skills.Nécrose.specialisations.cauchemar.bonus" value="{{data.skills.Nécrose.specialisations.cauchemar.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.cauchemarAcquisTitle"}}" id="{{options.id}}-pc-Nécrose-spé3-acquisBonus" name="system.skills.Nécrose.specialisations.cauchemar.acquis" value="{{data.skills.Nécrose.specialisations.cauchemar.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé4-bonus {{options.id}}-pc-Nécrose-spé4-acquisBonus">{{localize "SRspecialisations.contrebande"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.contrebandeTitle"}}" id="{{options.id}}-pc-Nécrose-spé4-bonus" name="system.skills.Nécrose.specialisations.contrebande.bonus" value="{{data.skills.Nécrose.specialisations.contrebande.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.contrebandeAcquisTitle"}}" id="{{options.id}}-pc-Nécrose-spé4-acquisBonus" name="system.skills.Nécrose.specialisations.contrebande.acquis" value="{{data.skills.Nécrose.specialisations.contrebande.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé5-bonus {{options.id}}-pc-Nécrose-spé5-acquisBonus">{{localize "SRspecialisations.corruption"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.corruptionTitle"}}" id="{{options.id}}-pc-Nécrose-spé5-bonus" name="system.skills.Nécrose.specialisations.corruption.bonus" value="{{data.skills.Nécrose.specialisations.corruption.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.corruptionTitle"}}" id="{{options.id}}-pc-Nécrose-spé5-acquisBonus" name="system.skills.Nécrose.specialisations.corruption.acquis" value="{{data.skills.Nécrose.specialisations.corruption.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé6-bonus {{options.id}}-pc-Nécrose-spé6-acquisBonus">{{localize "SRspecialisations.explosifs"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.explosifsTitle"}}" id="{{options.id}}-pc-Nécrose-spé6-bonus" name="system.skills.Nécrose.specialisations.explosifs.bonus" value="{{data.skills.Nécrose.specialisations.explosifs.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.explosifsTitle"}}" id="{{options.id}}-pc-Nécrose-spé6-acquisBonus" name="system.skills.Nécrose.specialisations.explosifs.acquis" value="{{data.skills.Nécrose.specialisations.explosifs.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé7-bonus {{options.id}}-pc-Nécrose-spé7-acquisBonus">{{localize "SRspecialisations.fraude"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.fraudeTitle"}}" id="{{options.id}}-pc-Nécrose-spé7-bonus" name="system.skills.Nécrose.specialisations.fraude.bonus" value="{{data.skills.Nécrose.specialisations.fraude.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.fraudeTitle"}}" id="{{options.id}}-pc-Nécrose-spé7-acquisBonus" name="system.skills.Nécrose.specialisations.fraude.acquis" value="{{data.skills.Nécrose.specialisations.fraude.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé8-bonus {{options.id}}-pc-Nécrose-spé8-acquisBonus">{{localize "SRspecialisations.harcelement"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.harcelementTitle"}}" id="{{options.id}}-pc-Nécrose-spé8-bonus" name="system.skills.Nécrose.specialisations.harcelement.bonus" value="{{data.skills.Nécrose.specialisations.harcelement.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.harcelementTitle"}}" id="{{options.id}}-pc-Nécrose-spé8-acquisBonus" name="system.skills.Nécrose.specialisations.harcelement.acquis" value="{{data.skills.Nécrose.specialisations.harcelement.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé9-bonus {{options.id}}-pc-Nécrose-spé9-acquisBonus">{{localize "SRspecialisations.larcin"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.larcinTitle"}}" id="{{options.id}}-pc-Nécrose-spé9-bonus" name="system.skills.Nécrose.specialisations.larcin.bonus" value="{{data.skills.Nécrose.specialisations.larcin.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.larcinTitle"}}" id="{{options.id}}-pc-Nécrose-spé9-acquisBonus" name="system.skills.Nécrose.specialisations.larcin.acquis" value="{{data.skills.Nécrose.specialisations.larcin.acquis}}"/></span>
+
+    <label class="specialisation-label" for="{{options.id}}-pc-Nécrose-spé10-bonus {{options.id}}-pc-Nécrose-spé10-acquisBonus">{{localize "SRspecialisations.pactenecrotique"}}</label>
+    <span><input type="number" class="details-input" title="{{localize "SR.pactenecrotiqueTitle"}}" id="{{options.id}}-pc-Nécrose-spé10-bonus" name="system.skills.Nécrose.specialisations.pactenecrotique.bonus" value="{{data.skills.Nécrose.specialisations.pactenecrotique.bonus}}"/></span>
+    <span><input type="number" class="details-input" title="{{localize "SR.pactenecrotiqueTitle"}}" id="{{options.id}}-pc-Nécrose-spé10-acquisBonus" name="system.skills.Nécrose.specialisations.pactenecrotique.acquis" value="{{data.skills.Nécrose.specialisations.pactenecrotique.acquis}}"/></span>
+</div>
 </div>

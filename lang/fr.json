@@ -41,7 +41,9 @@
         "engrenages": "Engrenages",
         "pilotage": "Pilotage",
         "recuperation": "Récupérations",
-        "sensdelapierre": "Sens de la pierre",
+        "sensdelapierrefull": "Sens de la pierre",
+        "sensdelapierre1": "Sens de la",
+        "sensdelapierre2": "pierre",
         "sensdubois": "Sens du bois",
         "sensducuir": "Sens du cuir",
         "sensdumetal": "Sens du métal",
@@ -64,80 +66,92 @@
         "diplomatie": "Diplomatie",
         "enseignement": "Enseignement",
         "langageprimal": "Langage Primal",
-        "languesexotiques": "Langues Exotiques",
+        "languesexotiquesfull": "Langues Exotiques",
+        "languesexotiques1": "Langues",
+        "languesexotiques2": "Exotiques",
         "psychologie": "Psychologie",
         "seduction": "Séduction",
-        "vieurbaine": "Vie Urbaine"
-        "artsappliques"
-        "artsdufeu"
-        "chant"
-        "comedie"
-        "deguisement"
-        "gastronomie"
-        "langageducorps"
-        "lettres"
-        "musique"
-        "trucages"
-        "embiose"
-        "empathieanimale"
-        "empathieantheenne"
-        "empathieminerale"
-        "empathievegetale"
-        "intuition"
-        "reve"
-        "soinsdelame"
-        "soinsdelesprit"
-        "soinsducorps"
-        "arcanes"
-        "conjuration"
-        "defensemagique"
-        "enchantement"
-        "invocation"
-        "incandescence"
-        "maitrisedesschemes"
-        "regenerationdetrihn"
-        "transfert"
-        "voile"
-        "ritedarts"
-        "ritedecombat"
-        "ritedelanimal"
-        "ritedemagie"
-        "ritedenecrose"
-        "ritedesavoir"
-        "ritedeshaan"
-        "ritedesocial"
-        "ritedesurvie"
-        "ritedetechnique"
-        "acrobatie"
-        "caravane"
-        "cultureheossienne"
-        "culturenecrosienne"
-        "discretion"
-        "educationphysique"
-        "monture"
-        "navigation"
-        "viesauvage"
-        "vigilance"
-        "armeslancees"
-        "armesdemelee"
-        "armesaprojectiles"
-        "armimales"
-        "enginsdeguerre"
-        "esquive"
-        "forcer"
-        "intimidation"
-        "pugilat"
-        "strategie"
-        "armeshumaines"
-        "biomorphie"
-        "cauchemar"
-        "contrebande"
-        "corruption"
-        "explosifs"
-        "fraude"
-        "harcelement"
-        "larcin"
-        "pactenecrotique"
+        "vieurbaine": "Vie Urbaine",
+        "artsappliques": "Arts Appliqués",
+        "artsdufeu": "Arts du feu",
+        "chant": "Chant",
+        "comedie": "Comédie",
+        "deguisement": "Déguisement",
+        "gastronomie": "Gastronomie",
+        "langageducorpsfull": "Langage du corps",
+        "langageducorps1": "Langage du",
+        "langageducorps2": "corps",
+        "lettres": "Lettres",
+        "musique": "Musique",
+        "trucages": "Trucages",
+        "embiose": "Embiose",
+        "empathieanimale": "Empathie Animale",
+        "empathieantheennefull": "Empathie Anthéenne",
+        "empathieantheenne1": "Empathie",
+        "empathieantheenne2": "Anthéenne",
+        "empathieminerale": "Empathie Minérale",
+        "empathievegetale": "Empathie Végétale",
+        "intuition": "Intuition",
+        "reve": "Rêve",
+        "soinsdelame": "Soins de l'Âme",
+        "soinsdelesprit": "Soins de l'Esprit",
+        "soinsducorps": "Soins du Corps",
+        "arcanes": "Arcanes",
+        "conjuration": "Conjuration",
+        "defensemagique": "Défense magique",
+        "enchantement": "Enchantement",
+        "invocation": "Invocation",
+        "incandescence": "Incandescence",
+        "maitrisedesschemesfull": "Maîtrise des schèmes",
+        "maitrisedesschemes1": "Maîtrise des",
+        "maitrisedesschemes2": "schèmes",
+        "regenerationdetrihnfull": "Régénération de Trihn",
+        "regenerationdetrihn1": "Régénération de",
+        "regenerationdetrihn2": "Trihn",
+        "transfert": "Transfert",
+        "voile": "Voile",
+        "ritedarts": "Rite d'Arts",
+        "ritedecombat": "Rite de Combat",
+        "ritedelanimal": "Rite de l'Animal",
+        "ritedemagie": "Rite de Magie",
+        "ritedenecrose": "Rite de Nécrose",
+        "ritedesavoir": "Rite de Savoir",
+        "ritedeshaan": "Rite de Shaan",
+        "ritedesocial": "Rite de Social",
+        "ritedesurvie": "Rite de Survie",
+        "ritedetechnique": "Rite de Technique",
+        "acrobatie": "Acrobatie",
+        "caravane": "Caravane",
+        "cultureheossienne": "Culture Héossienne",
+        "culturenecrosienne": "Culture Nécrosienne",
+        "discretion": "Discretion",
+        "educationphysique": "Éducation Physique",
+        "monture": "Monture",
+        "navigation": "Navigation",
+        "viesauvage": "Vie Sauvage",
+        "vigilance": "Vigilance",
+        "armeslancees": "Armes lancées",
+        "armesdemelee": "Armes de mélée",
+        "armesaprojectilesfull": "Armes à projectiles",
+        "armesaprojectiles1": "Armes à",
+        "armesaprojectiles2": "projectiles",
+        "armimales": "Armimales",
+        "enginsdeguerre": "Engins de guerre",
+        "esquive": "Esquive",
+        "forcer": "Forcer",
+        "intimidation": "Intimidation",
+        "pugilat": "Pugilat",
+        "strategie": "Stratégie",
+        "armeshumaines": "Armes humaines",
+        "biomorphie": "Biomorphie",
+        "cauchemar": "Cauchemar",
+        "contrebande": "Contrebande",
+        "corruption": "Corruption",
+        "explosifs": "Explosifs",
+        "fraude": "Fraude",
+        "harcelement": "Harcèlement",
+        "larcin": "Larcin",
+        "pactenecrotique": "Pacte Nécrotique"
 
 
 
