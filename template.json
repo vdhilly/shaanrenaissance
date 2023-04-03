@@ -68,34 +68,44 @@
             },
             "skills": {
                 "Technique": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Savoir": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Social": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Arts": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Shaan": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Magie": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Rituels": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Survie": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Combat": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 },
                 "Nécrose": {
-                    "rank": 0
+                    "rank": 0,
+                    "temp": 0
                 }
             },
             "general": {

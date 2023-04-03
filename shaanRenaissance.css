@@ -127,7 +127,6 @@ hr {
 .actor.sheet nav.sheet-navigation {
     align-items: center;
     background: var(--secondary);
-    background: url(../assets/sheet/border-pattern.webp) repeat-x top, url(../assets/sheet/border-pattern.webp) repeat-x bottom, var(--secondary);
     border-bottom: 1px solid hsla(0, 0%, 100%, .5);
     border-top: 1px solid hsla(0, 0%, 100%, .1);
     box-shadow: 0 -1px 1px rgba(0, 0, 0, .25);
@@ -146,8 +145,6 @@ hr {
 }
 .actor.sheet nav.sheet-navigation .item {
     fill: var(--tertiary);
-    background-image: url(../assets/sheet/nav-item-inactive.webp);
-    background-size: contain;
     border-radius: 50%;
     box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, .25);
     color: var(--tertiary);
@@ -180,6 +177,7 @@ hr {
     height: calc(100% - 35px);
     overflow: hidden;
     margin-left: 10px;
+    overflow-y: scroll
 }
 .crb-style .details-label {
     color: var(--primary);
@@ -282,5 +280,107 @@ hr {
     margin-bottom: 0
 }
 
+/* General Tab Domaines */
 
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .DomainsLabel {
+    grid-area: titre;
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid var(--primary)
+}
 
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains {
+    display: grid;
+    grid: "titre titre titre" "technique arts rituels" "savoir shaan survie" "social magie combat" "vide2 necrose vide3";
+    gap: 1%;
+    margin-bottom: 10px;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-necrose {
+    display: grid;
+    grid: "label label" "base actuel";
+    
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base {
+    flex: 50%;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel {
+    grid-area: actuel;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base {
+    grid-area: base;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-actuel {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .625rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-label {
+    grid-area: label;
+    text-align: center;
+    flex: 100%
+}
+
+/* General Tab domaines Esprit */
+
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-esprit .domain-label{
+    background: var(--color-esprit);
+    color: var(--tertiary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* General Tab domaines Ame */
+
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-ame .domain-label{
+    background: var(--color-ame);
+    color: var(--secondary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* General Tab domaines Corps */
+
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-corps .domain-label{
+    background: var(--color-corps);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* General Tab domaine Necrose */
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-necrose {
+    grid-area: necrose;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .character-domains .domain-necrose .domain-label {
+    background: var(--color-necrose);
+    color: black;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
