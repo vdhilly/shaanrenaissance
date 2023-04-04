@@ -38,3 +38,4 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 });
+

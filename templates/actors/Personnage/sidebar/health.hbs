@@ -2,39 +2,33 @@
     <h2>{{localize "SRLabels.Trihns"}}</h2>
 </div>
 <div class="HP">
-    <div class="hp-big" style="display:flex; flex-direction: row;">
+    <div class="hp-big">
         <div class="container hpEsprit">
-            <label for="{{options.id}}-pc-hp-esprit-temp {{options.id}}-pc-hp-esprit-max" class="sidebar_label">{{localize "SRLabels.Esprit"}}</label>
-            <div style="display:flex; flex-direction: row;">
-                <div class="data-value" title="Esprit Actuel">
+            <div>
+                <div class="data-value hpActuel-esprit" title="Esprit Actuel">
                     <input name="system.attributes.hpEsprit.temp" id="{{option.id}}-pc-hp-esprit-temp" type="number" value="{{data.attributes.hpEsprit.temp}}" placeholder="{{data.attributes.hpEsprit.temp}}" max="{{data.attributes.maxEsprit.temp}}">
                 </div>
-                <span> / </span>
-                <div class="data-value" title="Esprit Max">
+                <div class="data-value hpMax-esprit" title="Esprit Max">
                     <input name="system.attributes.maxEsprit.temp" id="{{option.id}}-pc-hp-esprit-max" type="number" value="{{data.attributes.maxEsprit.temp}}" placeholder="{{data.attributes.maxEsprit.temp}}">
                 </div>
             </div>
         </div>
         <div class="container hpAme">
-            <label for="{{options.id}}-pc-hp-ame-temp {{options.id}}-pc-hp-ame-max" class="sidebar_label">{{localize "SRLabels.Ame"}}</label>
-            <div style="display:flex; flex-direction: row;">
-                <div class="data-value" title="Âme Actuel">
+            <div>
+                <div class="data-value hpActuel-ame" title="Âme Actuel">
                     <input name="system.attributes.hpAme.temp" id="{{option.id}}-pc-hp-ame-temp" type="number" value="{{data.attributes.hpAme.temp}}" placeholder="{{data.attributes.hpAme.temp}}" max="{{data.attributes.maxAme.temp}}">
                 </div>
-                <span> / </span>
-                <div class="data-value" title="Âme Max">
+                <div class="data-value hpMax-ame" title="Âme Max">
                     <input name="system.attributes.maxAme.temp" id="{{option.id}}-pc-hp-ame-max" type="number" value="{{data.attributes.maxAme.temp}}" placeholder="{{data.attributes.maxAme.temp}}">
                 </div>
             </div>
         </div>
         <div class="container hpCorps">
-            <label for="{{options.id}}-pc-hp-corps-temp {{options.id}}-pc-hp-corps-max" class="sidebar_label">{{localize "SRLabels.Corps"}}</label>
-            <div style="display:flex; flex-direction: row;">
-                <div class="data-value" title="Corps Actuel">
+            <div>
+                <div class="data-value hpActuel-corps" title="Corps Actuel">
                     <input name="system.attributes.hpCorps.temp" id="{{option.id}}-pc-hp-corps-temp" type="number" value="{{data.attributes.hpCorps.temp}}" placeholder="{{data.attributes.hpCorps.temp}}" max="{{data.attributes.maxCorps.temp}}">
                 </div>
-                <span> / </span>
-                <div class="data-value" title="Corps Max">
+                <div class="data-value hpMax-corps" title="Corps Max">
                     <input name="system.attributes.maxCorps.temp" id="{{option.id}}-pc-hp-corps-max" type="number" value="{{data.attributes.maxCorps.temp}}" placeholder="{{data.attributes.maxCorps.temp}}">
                 </div>
             </div>
