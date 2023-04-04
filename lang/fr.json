@@ -153,10 +153,6 @@
         "larcin": "Larcin",
         "pactenecrotique": "Pacte Nécrotique"
 
-
-
-
-
     },
     "SRTabs": {
         "CharacterLabel": "Personnage",
@@ -183,6 +179,37 @@
         "AgeTitle": "L'Âge de ton personnage",
         "TailleTitle": "La Taille de ton personnage",
         "PoidsTitle": "Le Poids de ton personnage",
-        "MotivationsTitle": "Les Motivations de ton personnage"
+        "MotivationsTitle": "Les Motivations de ton personnage",
+        "TechniqueTitleBase": "Le niveau de Technique de base de ton personnage",
+        "TechniqueTitleActuel": "Le niveau de Technique actuel de ton personnage",
+        "TechniqueTitleExp": "L'expérience en Technique de ton personnage",
+        "SavoirTitleBase": "Le niveau de Savoir de base de ton personnage",
+        "SavoirTitleActuel": "Le niveau de Savoir actuel de ton personnage",
+        "SavoirTitleExp": "L'expérience en Savoir de ton personnage",
+        "SocialTitleBase": "Le niveau de Social de base de ton personnage",
+        "SocialTitleActuel": "Le niveau de Social actuel de ton personnage",
+        "SocialTitleExp": "L'expérience de ton personnage",
+        "ShaanTitleBase": "Le niveau de Shaan de base de ton personnage",
+        "ShaanTitleActuel": "Le niveau de Shaan actuel de ton personnage",
+        "ShaanTitleExp": "L'expérience en Shaan de ton personnage",
+        "ArtsTitleBase": "Le niveau d'Arts de base de ton personnage",
+        "ArtsTitleActuel": "Le niveau d'Arts actuel de ton personnage",
+        "ArtsTitleExp": "L'expérience en Arts de ton personnage",
+        "MagieTitleBase": "Le niveau de Magie de base de ton personnage",
+        "MagieTitleActuel": "Le niveau de Magie actuel de ton personnage",
+        "MagieTitleExp": "L'expérience en Magie de ton personnage",
+        "RituelsTitleBase": "Le niveau de Rituels de base de ton personnage",
+        "RituelsTitleActuel": "Le niveau de Rituels actuel de ton personnage",
+        "RituelsTitleExp": "L'expérience en Rituels de ton personnage",
+        "SurvieTitleBase": "Le niveau de Survie de base ton personnage",
+        "SurvieTitleActuel": "Le niveau de Survie actuel de ton personnage",
+        "SurvieTitleExp": "L'expérience en Survie de ton personnage",
+        "CombatTitleBase": "Le niveau de Combat de base de ton personnage",
+        "CombatTitleActuel": "Le niveau de Combat actuel de ton personnage",
+        "CombatTitleExp": "L'expérience en Combat de ton personnage",
+        "NécroseTitleBase": "Le niveau de Nécrose de base de ton personnage",
+        "NécroseTitleActuel": "Le niveau de Nécrose actuel de ton personnage",
+        "NécroseTitleExp": "L'expérience en Nécrose de ton personnage"
+
     }
 }
