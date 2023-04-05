@@ -616,6 +616,19 @@
     grid-area: rang;
     display: grid;
 }
+.item.sheet.pouvoir select {
+    border: none;
+    border-radius: 0;
+}
+.item.sheet.pouvoir select:focus {
+    box-shadow: none;
+}
+.item.sheet.pouvoir .select {
+    width: 99%
+}
+.item.sheet .pouvoir-rank .locked-input-rank {
+    width: 165px;
+}
 .item.sheet .pouvoir-rank input {
     width: 60px;
     font-weight: bold

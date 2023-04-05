@@ -10,37 +10,122 @@
     <div class="pouvoir-rank">
         <p>
             <i>
-                {{localize "SR.Astucede"}}
-                <b><input name="system.rang.value" type="text" value="{{data.rang.value}}" placeholder="Rang" spellcheck="false"/></b>
+                {{#if editable}}
+                <select name="system.pouvoir.value">
+                        {{#select data.pouvoir.value}}
+                        {{#each config.pouvoirs.pouvoirSelect as |skill|}}
+                        <option value="{{skill}}">{{localize skill}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{else}}
+                    <input class="locked-input-rank" name="system.pouvoir.value" type="text" value="{{data.pouvoir.value}}"/>
+                {{/if}}
+                <b>{{#if editable}}
+                <select name="system.rang.value">
+                        {{#select data.rang.value}}
+                        {{#each config.pouvoirs.pouvoirRank as |skill|}}
+                        <option value="{{skill}}">{{localize skill}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{else}}
+                    <input class="locked-input-rank" name="system.rang.value" type="text" value="{{data.rang.value}}"/>
+                {{/if}}</b>
             </i>
+            
         </p>
     </div>
     <div class="pouvoir-details">
-        <div class="pouvoir-type">
-            <h3>
-                <label for="{{options.id}}-pouvoir-type">{{localize "SR.pouvoirType"}}</label><input name="system.PouvoirType.value" id="{{options.id}}-pouvoir-type" type="text" value="{{data.PouvoirType.value}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="pouvoir-fréquence">
-            <h3>
-                <label for="{{options.id}}-pouvoir-fréquence">{{localize "SR.pouvoirFréquence"}}</label><input name="system.fréquence.value" id="{{options.id}}-pouvoir-fréquence" type="text" value="{{data.fréquence.value}}" spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="pouvoir-activation">
-            <h3>
-                <label for="{{options.id}}-pouvoir-activation">{{localize "SR.pouvoirActivation"}}</label><input name="system.activation.value" id="{{options.id}}-pouvoir-activation" type="text" value="{{data.activation.value}}" spellcheck="false"/>
-            </h3>
-        </div>
+            {{#if editable}}
+            <div class="pouvoir-type">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-type-select">{{localize "SR.pouvoirType"}}</label><br>
+                    <select class="select" name="system.PouvoirType.value" id="{{options.id}}-pouvoir-type-select">
+                        {{#select data.PouvoirType.value}}
+                        {{#each config.pouvoirs.pouvoirType as |skill|}}
+                        <option value="{{skill}}">{{localize skill}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                </h3>
+                </div>
+                {{else}}
+                <div class="pouvoir-type">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-type">{{localize "SR.pouvoirType"}}</label>
+                    <input name="system.PouvoirType.value" id="{{options.id}}-pouvoir-type" type="text" value="{{data.PouvoirType.value}}"spellcheck="false"/>
+                </h3>
+                </div>
+                {{/if}}
+            {{#if editable}}
+            <div class="pouvoir-fréquence">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-fréquence-select">{{localize "SR.pouvoirFréquence"}}</label><br>
+                    <select class="select" name="system.fréquence.value" id="{{options.id}}-pouvoir-fréquence-select">
+                        {{#select data.fréquence.value}}
+                        {{#each config.pouvoirs.pouvoirFréquence as |skill|}}
+                        <option value="{{skill}}">{{localize skill}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                </h3>
+                </div>
+                {{else}}
+                <div class="pouvoir-fréquence">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-fréquence">{{localize "SR.pouvoirFréquence"}}</label>
+                    <input name="system.fréquence.value" id="{{options.id}}-pouvoir-fréquence" type="text" value="{{data.fréquence.value}}"spellcheck="false"/>
+                </h3>
+                </div>
+                {{/if}}
+            {{#if editable}}
+            <div class="pouvoir-activation">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-activation-select">{{localize "SR.pouvoirActivation"}}</label><br>
+                    <select class="select" name="system.activation.value" id="{{options.id}}-pouvoir-activation-select">
+                        {{#select data.activation.value}}
+                        {{#each config.pouvoirs.pouvoirActivation as |skill|}}
+                        <option value="{{skill}}">{{localize skill}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                </h3>
+                </div>
+                {{else}}
+                <div class="pouvoir-activation">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-activation">{{localize "SR.pouvoirActivation"}}</label>
+                    <input name="system.activation.value" id="{{options.id}}-pouvoir-activation" type="text" value="{{data.activation.value}}"spellcheck="false"/>
+                </h3>
+                </div>
+                {{/if}}
         <div class="pouvoir-durée">
             <h3>
                 <label for="{{options.id}}-pouvoir-durée">{{localize "SR.pouvoirDurée"}}</label><input name="system.durée.value" id="{{options.id}}-pouvoir-durée" type="text" value="{{data.durée.value}}" spellcheck="false"/>
                 </h3>
         </div>
-        <div class="pouvoir-portée">
-            <h3>
-                <label for="{{options.id}}-pouvoir-portée">{{localize "SR.pouvoirPortée"}}</label><input name="system.portée.value" id="{{options.id}}-pouvoir-portée" type="text" value="{{data.portée.value}}" spellcheck="false"/>
-            </h3>
-        </div>
+        {{#if editable}}
+            <div class="pouvoir-portée">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-portée-select">{{localize "SR.pouvoirPortée"}}</label><br>
+                    <select class="select" name="system.portée.value" id="{{options.id}}-pouvoir-portée-select">
+                        {{#select data.portée.value}}
+                        {{#each config.pouvoirs.pouvoirPortée as |skill|}}
+                        <option value="{{skill}}">{{localize skill}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                </h3>
+                </div>
+                {{else}}
+                <div class="pouvoir-portée">
+                <h3>
+                    <label for="{{options.id}}-pouvoir-portée">{{localize "SR.pouvoirPortée"}}</label>
+                    <input name="system.portée.value" id="{{options.id}}-pouvoir-portée" type="text" value="{{data.portée.value}}"spellcheck="false"/>
+                </h3>
+                </div>
+                {{/if}}
         <div class="pouvoir-nbcibles">
             <h3>
                 <label for="{{options.id}}-pouvoir-nbcibles">{{localize "SR.pouvoirNbcibles"}}</label><input name="system.nbcibles.value" id="{{options.id}}-pouvoir-nbcibles" type="text" value="{{data.nbcibles.value}}" spellcheck="false"/>
