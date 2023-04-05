@@ -1,0 +1,66 @@
+<form class="item sheet crb-style pouvoir" autocomplete="off">
+    <header class="pouvoir-header">
+        <h2 class="pouvoir-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du Pouvoir" spellcheck="false" />
+        </h2>
+        <span class="pouvoir-source">
+            <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
+        </span>
+    </header>
+    <div class="pouvoir-rank">
+        <p>
+            <i>
+                {{localize "SR.Astucede"}}
+                <b><input name="system.rang.value" type="text" value="{{data.rang.value}}" placeholder="Rang" spellcheck="false"/></b>
+            </i>
+        </p>
+    </div>
+    <div class="pouvoir-details">
+        <div class="pouvoir-type">
+            <h3>
+                <label for="{{options.id}}-pouvoir-type">{{localize "SR.pouvoirType"}}</label><input name="system.PouvoirType.value" id="{{options.id}}-pouvoir-type" type="text" value="{{data.PouvoirType.value}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="pouvoir-fréquence">
+            <h3>
+                <label for="{{options.id}}-pouvoir-fréquence">{{localize "SR.pouvoirFréquence"}}</label><input name="system.fréquence.value" id="{{options.id}}-pouvoir-fréquence" type="text" value="{{data.fréquence.value}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="pouvoir-activation">
+            <h3>
+                <label for="{{options.id}}-pouvoir-activation">{{localize "SR.pouvoirActivation"}}</label><input name="system.activation.value" id="{{options.id}}-pouvoir-activation" type="text" value="{{data.activation.value}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="pouvoir-durée">
+            <h3>
+                <label for="{{options.id}}-pouvoir-durée">{{localize "SR.pouvoirDurée"}}</label><input name="system.durée.value" id="{{options.id}}-pouvoir-durée" type="text" value="{{data.durée.value}}" spellcheck="false"/>
+                </h3>
+        </div>
+        <div class="pouvoir-portée">
+            <h3>
+                <label for="{{options.id}}-pouvoir-portée">{{localize "SR.pouvoirPortée"}}</label><input name="system.portée.value" id="{{options.id}}-pouvoir-portée" type="text" value="{{data.portée.value}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="pouvoir-nbcibles">
+            <h3>
+                <label for="{{options.id}}-pouvoir-nbcibles">{{localize "SR.pouvoirNbcibles"}}</label><input name="system.nbcibles.value" id="{{options.id}}-pouvoir-nbcibles" type="text" value="{{data.nbcibles.value}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="pouvoir-score">
+            <h3>
+                <label for="{{options.id}}-pouvoir-score">{{localize "SR.pouvoirScore"}}</label><input name="system.score.value" id="{{options.id}}-pouvoir-score" type="text" value="{{data.score.value}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="pouvoir-résumé">
+            <p>
+                <i>
+                    <label for="{{options.id}}-pouvoir-résumé">{{localize "SR.pouvoirRésumé"}}</label><input name="system.résumé.value" id="{{options.id}}-pouvoir-résumé" type="text" value="{{data.résumé.value}}" spellcheck="false"/>
+                </i>
+            </p>
+        </div>
+        <div class="pouvoir-déscription">
+            <label for="{{options.id}}-pouvoir-Déscription">{{localize "SR.pouvoirDéscription"}}</label>
+            <textarea name="system.description.value" id="{{options.id}}-pouvoir-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+        </div>
+    </div>
+</form>

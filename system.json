@@ -19,10 +19,10 @@
     ],
     "packs": [
         {
-            "name": "races",
-            "label": "Races",
+            "name": "pouvoirs",
+            "label": "Pouvoirs",
             "system": "shaanRenaissance",
-            "path": "packs/races.db",
+            "path": "packs/pouvoirs.db",
             "type": "Item",
             "private": true,
             "flags": {}

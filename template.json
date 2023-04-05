@@ -574,11 +574,19 @@
     },
     "Item": {
         "types": [
-            "Acquis"
+            "Acquis",
+            "Armimale",
+            "Pouvoir"
         ],
         "templates": {
-            "itemDescription": {
-                "description": ""
+            "common": {
+                "description": {
+                    "gm": "",
+                    "value": ""
+                },
+                "source": {
+                    "value":""
+                }
             }
         },
         "acquis": {
@@ -608,6 +616,41 @@
             "armimalePrice": 0,
             "armimalePrestige": 0,
             "armimaleCapacity": 0
+        },
+        "Pouvoir": {
+            "templates": [
+                "common"
+            ],
+            "general": {
+                "PouvoirType": {
+                    "value": ""
+                },
+                "rang":{
+                    "value": ""
+                },
+                "fréquence": {
+                    "value":""
+                },
+                "activation": {
+                    "value":""
+                },
+                "score": {
+                    "value":""
+                },
+                "portée": {
+                    "value":""
+                },
+                "nbcibles": {
+                    "value":""
+                },
+                "durée": {
+                    "value":""
+                },
+                "résumé": {
+                    "value":""
+                }
+            }
+            
         }
     }
 }

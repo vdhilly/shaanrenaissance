@@ -1,11 +1,12 @@
 import { shaanRenaissance } from "./module/config.js";
-import ShaanRItemSheet from "./module/sheets/ShaanRitemSheet.js";
+import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
 import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 
 async function preloadHandleBarTemplates() 
 {
     // register templates parts
     const templatePaths = [
+      // Character sheet
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/health.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs",
@@ -21,6 +22,8 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/sheet/Race-sheet.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs"
+      // Power sheet
+
     ];
     return loadTemplates( templatePaths );
 };

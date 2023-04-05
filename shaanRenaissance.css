@@ -87,7 +87,7 @@
 }
 .actor.sheet.character .sidebar .sidebar_title h2 {
     font-family: var(--sans-serif);
-    color: var(--primary);
+    color: black;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -204,7 +204,7 @@
 }
 /* ACTOR SHEET NAVIGATION */
 .actor.sheet.character .sheet-navigation {
-    background-color: var(--color-esprit);
+    background-color: var(--secondary);
     grid-area: nav;
     margin-left: -2px
 }
@@ -580,3 +580,79 @@
     align-self: center;
 }
 
+/* ITEM POUVOIR SHEET */
+.item.sheet {
+    width: 100%;
+    height: 100%;
+    font-family: var(--body-serif);
+    display: grid;
+    flex-direction: column;
+    grid: "pouvoir-header"50px "rang"minmax(min-content, max-content) "content";
+}
+/* POUVOIR INPUT */
+.item.sheet input {
+    border-radius: 0;
+    border: none;
+}
+.item.sheet input:focus {
+    box-shadow: none;
+}
+/* POUVOIR HEADER */
+.item.sheet .pouvoir-header {
+    grid-area: pouvoir-header;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary);
+    width: 100%;
+    align-items: center;
+}
+.item.sheet .pouvoir-header .pouvoir-name {
+    display: flex;
+    width: 70%;
+    align-items: center;
+}
+/* POUVOIR CONTENT */
+.item.sheet .pouvoir-rank {
+    grid-area: rang;
+    display: grid;
+}
+.item.sheet .pouvoir-rank input {
+    width: 60px;
+    font-weight: bold
+}
+.item.sheet .pouvoir-header h2 {
+    border: none;
+    margin-bottom: 0;
+}
+.item.sheet .pouvoir-details {
+    grid-area: content;
+    display: grid;
+    grid: "pouvoirType pouvoirFréquence pouvoirActivation pouvoirDurée"minmax(min-content, max-content) "pouvoirPortée pouvoirNbCibles pouvoirScore pouvoirScore"minmax(min-content, max-content) "pouvoirRésumé pouvoirRésumé pouvoirRésumé pouvoirRésumé"minmax(min-content, max-content) "pouvoirDéscription pouvoirDéscription pouvoirDéscription pouvoirDéscription"minmax(min-content, max-content);
+}
+.item.sheet .pouvoir-details .pouvoir-score {
+    grid-area: pouvoirScore
+}
+.item.sheet .pouvoir-details .pouvoir-résumé {
+    grid-area: pouvoirRésumé
+}
+.item.sheet .pouvoir-details .pouvoir-déscription {
+    grid-area: pouvoirDéscription;
+}
+.item.sheet .pouvoir-details .pouvoir-déscription textarea {
+    width: 100% !important;
+    height: 150px;
+    border: none;
+    margin-bottom: 0;
+}
+.item.sheet .pouvoir-details label{
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase;
+}
+
+.item.sheet .pouvoir-details h3 {
+    border: none;
+    margin-bottom: 0;
+}

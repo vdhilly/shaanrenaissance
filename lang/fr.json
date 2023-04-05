@@ -209,7 +209,21 @@
         "CombatTitleExp": "L'expérience en Combat de ton personnage",
         "NécroseTitleBase": "Le niveau de Nécrose de base de ton personnage",
         "NécroseTitleActuel": "Le niveau de Nécrose actuel de ton personnage",
-        "NécroseTitleExp": "L'expérience en Nécrose de ton personnage"
+        "NécroseTitleExp": "L'expérience en Nécrose de ton personnage",
+        "Astucede": "Astuce de Technique de ",
+        "Rank1": "Rang 1",
+        "Rank2":"Rang 2",
+        "Rank3":"Rang 3",
+        "Rank4":"Rang 4",
+        "pouvoirType": "Type",
+        "pouvoirFréquence": "Fréquence",
+        "pouvoirActivation": "Activation",
+        "pouvoirScore": "Score",
+        "pouvoirPortée": "Portée",
+        "pouvoirNbcibles": "Nb Cibles",
+        "pouvoirDurée": "Durée",
+        "pouvoirRésumé": "Résumé",
+        "pouvoirDéscription": "Description"
 
     }
 }
