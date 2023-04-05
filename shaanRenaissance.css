@@ -70,6 +70,13 @@
 .actor.sheet input:focus {
     box-shadow: none;
 }
+.actor.sheet select {
+    border: none;
+    border-radius: 0;
+}
+.actor.sheet select:focus {
+    box-shadow: none;
+}
 /* ACTOR SHEET SIDEBAR */
 .actor.sheet.character aside {
     color: black;
@@ -86,7 +93,7 @@
 }
 .actor.sheet.character .sidebar .sidebar_title h2 {
     font-family: var(--sans-serif);
-    color: black;
+    color: var(--primary);
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -618,12 +625,19 @@
 .item.sheet.pouvoir select {
     border: none;
     border-radius: 0;
+    font: 700 var(--font-size-14) var(--body-serif);
 }
 .item.sheet.pouvoir select:focus {
     box-shadow: none;
 }
 .item.sheet.pouvoir .select {
     width: 99%
+}
+.item.sheet.pouvoir input {
+    font: 700 var(--font-size-14) var(--body-serif);
+}
+.item.sheet.pouvoir textarea {
+    font: 600 var(--font-size-12) var(--body-serif);
 }
 .item.sheet .pouvoir-rank .locked-input-rank {
     width: 165px;
