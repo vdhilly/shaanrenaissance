@@ -73,7 +73,7 @@
 /* ACTOR SHEET SIDEBAR */
 .actor.sheet.character aside {
     /* background-color: var(--color-necrose); */
-    color: var(--sidebar-label);
+    color: black;
     font-family: var(--serif);
     font-size: var(--font-size-10);
     font-weight: 600;
