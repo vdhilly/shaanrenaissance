@@ -41,21 +41,41 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if (this.isEditable) {
             // html.find(".power-create").click(this._onItemCreate.bind(this));
             // html.find(".power-edit").click(this._onItemEdit.bind(this));
-            // html.find(".power-delete").click(this._ononItemDelete.bind(this));
-        }
+            // html.find(".power-delete").on("click", (event => {
+            //     var _a;
+            //     null === (_a = this.getItemFromEvent(event)) || void 0 === _a || _a.delete() }));
+        
         super.activateListeners(html);
+    }
     }
     // _onItemCreate(event) {
     //     event.preventDefault();
-    //     let element = event.currentTarget;
-    
+    //     const espritBtn = event.target.closest("#Esprit-add")
+    //     const ameBtn = event.target.closest("#Ame-add")
+    //     const corpsBtn = event.target.closest("#Corps-add")
+    //     const necroseBtn = event.target.closest("#Nécrose-add")
+    //     console.log(espritBtn)
+    //     console.log(ameBtn)
+        
+    //     if (espritBtn) {
+    //         let itemData = {
+    //       name: "Nouveau pouvoir d'Esprit",
+    //       type: "Pouvoir"       
+    //     };
+
+    //     return this.actor.createEmbeddedDocuments("Item", [itemData]);
+
+    //     }
+
+    //     if (ameBtn) {
     //     let itemData = {
-    //       name: game.i18n.localize("shaanRenaissance.sheet.newItem"),
-    //       type: "Pouvoir"
+    //       name: "Nouveau pouvoir d'Âme",
+    //       type: "Pouvoir",
           
     //     };
-    
-    //     return this.actor.createEmbeddedDocuments("Item", [itemData]);
-    //   }
-    
+    //         return this.actor.createEmbeddedDocuments("Item", [itemData]);
+
+    //     }
+
+
 }

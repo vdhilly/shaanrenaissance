@@ -108,7 +108,7 @@
 }
 /* SIDEBAR HP */
 .actor.sheet aside .sidebar .HP .hp-big {
-    background-image: url(systems/Shaan_Renaissance/assets/sheet/Trihns.webp);
+    background-image: url(../assets/sheet/trihns.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -644,7 +644,6 @@
     display: grid;
     grid: "power-item-header" "power-item-résumé";
     background-color: rgba(28, 28, 28, .1);
-    margin-bottom: 2px;
     padding: 0.5em;
 }
 .actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
@@ -662,6 +661,10 @@
 .actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
     grid-area: pouvoir-item-controls;
     float: right;
+}
+.actor.sheet.character .tab.powers .liste-pouvoir {
+    display: grid;
+    grid-gap: 2px;
 }
 .actor.sheet.character .tab.powers .Esprit .liste-pouvoir {
     border: 3px solid var(--color-esprit);
@@ -686,9 +689,6 @@
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
-}
-.actor.sheet.character .tab.powers .pouvoirTrihn {
-    
 }
 
 
