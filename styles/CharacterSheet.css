@@ -233,8 +233,29 @@
     white-space: nowrap;
     width: 7em
 }
+.actor.sheet nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
+    fill: var(--text-light);
+    background-image: url(../assets/sheet/nav-item.webp);
+    color: var(--text-light);
+    transform: scale(1.2);
+    z-index: 2;
+}
+.actor.sheet nav.sheet-navigation .item:last-child {
+    margin-right: 10px
+}
+.actor.sheet nav.sheet-navigation .item .fas {
+    padding-bottom: 0
+}
+.actor.sheet.character .sheet-body .sheet-content nav:after, .actor.sheet.character .sheet-body .sheet-content nav:before {
+    background: url(../assets/sheet/sub-nav-decoration.png);
+    content: "";
+    height: 16px;
+    margin: 0 16px;
+    width: 37px
+}
 .actor.sheet nav.sheet-navigation .item {
     fill: var(--tertiary);
+    background-image: url(../assets/sheet/nav-item-inactive.webp);
     border-radius: 50%;
     box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, .25);
     color: var(--tertiary);
@@ -248,7 +269,7 @@
     display: flex;
     font-size: var(--font-size-12);
     justify-content: center;
-    margin: 0 6px
+    margin: 0 6px;
 }
 .actor.sheet.character nav.sheet-navigation .manage-tabs {
     color: #fff;

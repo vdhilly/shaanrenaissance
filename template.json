@@ -1101,17 +1101,13 @@
                     }
                 },
                 "classe": "Classe 1",
-                "trihn": [
-                    "Esprit",
-                    "Ame",
-                    "Corps",
-                    "Nécrose"
-                ]
-                
+                "trihn": 0
             }
         },
         "Armement": {
-            
+            "templates": [
+                "common"
+            ]
         },
         "Armimale": {
             

@@ -30,12 +30,12 @@ export default class ShaanRActorsSheet extends ActorSheet {
             };
             // Filtres catégorie pouvoir
 
+            sheetData.items = actorData.items.filter(function (item) { return item.type != "Pouvoir" && item.system.trihn == "" || item.system.pouvoir.value == ""}),
 
-
-            sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
-            sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
-            sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
-            sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"}),
+            sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
+            sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
+            sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
+            sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
 
 
         console.log(sheetData);
@@ -45,9 +45,21 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if (this.isEditable) {
             html.find(".power-create").click(this._onItemCreate.bind(this));
             html.find(".power-edit").click(this._onItemEdit.bind(this));
-            html.find(".power-delete").click(this._onItemDelete.bind(this));     
+            html.find(".power-delete").click(this._onItemDelete.bind(this));  
+            const title = $(".sheet-navigation .active").attr("title");
+                title && html.find(".navigation-title").text(title)
+                        
+                        html.find(".sheet-navigation").on("mouseover", ".item,.manage-tabs", (event => {
+                            const title = event.target.title;
+                            title && $(event.target).parents(".sheet-navigation").find(".navigation-title").text(title)
+                        })), html.find(".sheet-navigation").on("mouseout", ".item,.manage-tabs", (event => {
+                            const parent = $(event.target).parents(".sheet-navigation"),
+                                title = parent.find(".item.active").attr("title");
+                            title && parent.find(".navigation-title").text(title)
+                        })),
+        
         super.activateListeners(html);
-    }
+        }
     }
     _onItemCreate(event) {
         event.preventDefault();
