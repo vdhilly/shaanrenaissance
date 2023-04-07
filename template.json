@@ -573,8 +573,17 @@
     },
     "Item": {
         "types": [
-            "Acquis",
+            "Armement",
             "Armimale",
+            "Artefact",
+            "Manuscrit",
+            "Outil",
+            "Protection",
+            "Relation",
+            "Ressource",
+            "Richesse",
+            "Technologie",
+            "Transport",
             "Pouvoir"
         ],
         "templates": {
@@ -1058,36 +1067,104 @@
                             }
                         }
                     }
-                }
+                },
+                "category": {
+                    "Armement": {
+                        "value":"Armement"
+                    },
+                    "Armimale": {
+                        "value":"Armimale"
+                    },
+                    "Artefact": {
+                        "value":"Artefact"
+                    },
+                    "Manuscrit": {
+                        "value":"Manuscrit"
+                    },
+                    "Outil": {
+                        "value":"Outil"
+                    },
+                    "Protection": {
+                        "value":"Protection"
+                    },
+                    "Relation": {
+                        "value":"Relation"
+                    },
+                    "Richesse": {
+                        "value":"Richesse"
+                    },
+                    "Technologie": {
+                        "value":"Technologie"
+                    },
+                    "Transport": {
+                        "value":"Transport"
+                    }
+                },
+                "classe": "Classe 1",
+                "trihn": ""
             }
         },
-        "acquis": {
-            "templates":[
-                "itemDescription"
-            ],
-            "acquisBonus": 0,
-            "acquisEffect": 0,
-            "price": 0,
-            "trihnEsprit": 0,
-            "trihnAme": 0,
-            "trihnCorps": 0,
-            "prestige": 0,
-            "entretien": 0
+        "Armement": {
+            
         },
-        "armimale": {
-            "templates":[
-                "itemDescription"
-            ],
-            "armimaleCategory": 0,
-            "armimaleTrihnEsprit": 0,
-            "armimaleTrihnAme": 0,
-            "armimaleTrihnCorps": 0,
-            "armimaleInstinct": 0,
-            "armimaleSpeed": 0,
-            "armimaleDescription": 0,
-            "armimalePrice": 0,
-            "armimalePrestige": 0,
-            "armimaleCapacity": 0
+        "Armimale": {
+            
+        },
+        "Artefact": {
+            
+        },
+        "Manuscrit": {
+            
+        },
+        "Outil": {
+            
+        },
+        "Protection": {
+            
+        },
+        "Ressource": {
+            "Verre":{
+                "value":""
+            },
+            "Bois":{
+                "value":""
+            },
+            "Or":{
+                "value":""
+            },
+            "Population":{
+                "value":""
+            },
+            "Pierre":{
+                "value":""
+            },
+            "Trihnite":{
+                "value":""
+            },
+            "Animal":{
+                "value":""
+            },
+            "Cultures":{
+                "value":""
+            },
+            "Métal":{
+                "value":""
+            },
+            "Hydrocarbures":{
+                "value":""
+            }
+        },
+        "Relation": {
+            
+        },
+        "Richesse": {
+            
+        },
+        "Technologie": {
+            
+        },
+        "Transport": {
+    
         },
         "Pouvoir": {
             "templates": [
@@ -1124,5 +1201,4 @@
                 "value":""
             }     
         }
-    }
-}
+    }}

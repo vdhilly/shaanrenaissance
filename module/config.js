@@ -14,6 +14,12 @@ shaanRenaissance.skills = {
     Nécrose: "SRdomains.Nécrose",
     }
 shaanRenaissance.pouvoirs = {
+    trihns: {
+        esprit: "Esprit",
+        ame: "Âme",
+        corps: "Corps",
+        necrose: "Nécrose"
+    },
     pouvoirSelect: {
         none: "",
         AstucedeTechnique: "Astuce de Technique",

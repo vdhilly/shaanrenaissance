@@ -108,7 +108,7 @@
 }
 /* SIDEBAR HP */
 .actor.sheet aside .sidebar .HP .hp-big {
-    background-image: url(assets/sheet/Trihns.webp);
+    background-image: url(systems/Shaan_Renaissance/assets/sheet/Trihns.webp);
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -586,7 +586,113 @@
     align-self: center;
 }
 
-/* ACTOR SHEET CHARACTER BIOGRAPHY */
+
+
+
+
+
+/* ACTOR SHEET CHARACTER POWERS TAB*/
+
+/* POWER TAB TRIHN HEADER */
+.actor.sheet.character .tab.powers .trihn-header {
+    display: grid; 
+    grid: "powerTrihn power-add" "content content";
+    border-top-right-radius: 5px;
+}
+.actor.sheet.character .tab.powers .Esprit .trihn-header {
+    background-color: var(--color-esprit);
+}
+.actor.sheet.character .tab.powers .Ame .trihn-header {
+    background-color: var(--color-ame);
+}
+.actor.sheet.character .tab.powers .Corps .trihn-header {
+    background-color: var(--color-corps);
+}
+.actor.sheet.character .tab.powers .Nécrose .trihn-header {
+    background-color: var(--color-necrose);
+}
+.actor.sheet.character .tab.powers .trihn-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--sans-serif);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.character .tab.powers .trihn-header .item-controls {
+    padding-right: 10px;
+    justify-self: right;
+    align-self: center;
+}
+.actor.sheet.character .tab.powers .item-control i.fas::before:hover {
+    box-shadow: none;
+}
+
+/* POWER TAB TRIHN CONTENT */
+.actor.sheet.character .tab.powers .liste-pouvoir img {
+    max-width: 100%;
+    border: none;
+}
+.actor.sheet.character .tab.powers ol {
+    list-style-type: none;
+    padding: 0;
+}
+.actor.sheet.character .tab.powers .liste-pouvoir li {
+    display: grid;
+    grid: "power-item-header" "power-item-résumé";
+    background-color: rgba(28, 28, 28, .1);
+    margin-bottom: 2px;
+    padding: 0.5em;
+}
+.actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
+    display: grid;
+    grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
+    grid-template-columns: 40px 368.812px 40px;
+}
+.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header img {
+    grid-area: pouvoir-item-img;
+}
+.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header span {
+    font: 700 var(--font-size-16) var(--body-serif);
+    align-self: center;
+}
+.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
+    grid-area: pouvoir-item-controls;
+    float: right;
+}
+.actor.sheet.character .tab.powers .Esprit .liste-pouvoir {
+    border: 3px solid var(--color-esprit);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.character .tab.powers .Ame .liste-pouvoir {
+    border: 3px solid var(--color-ame);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.character .tab.powers .Corps .liste-pouvoir {
+    border: 3px solid var(--color-corps);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.character .tab.powers .Nécrose .liste-pouvoir {
+    border: 3px solid var(--color-necrose);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.character .tab.powers .pouvoirTrihn {
+    
+}
+
+
+
 
 
 /* ITEM POUVOIR SHEET */

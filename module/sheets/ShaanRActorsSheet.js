@@ -28,7 +28,34 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
+            // Filtres catégorie pouvoir
+            sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.system.pouvoir.value == "Secret de Savoir"  || item.system.pouvoir.value == "Privilège de Social" || item.system.pouvoir.value == "Astuce de Technique"});
+            sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.system.pouvoir.value == "Création d'Arts"  || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"});
+            sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.system.pouvoir.value == "Transe de Rituels"  || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"});
+            sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.system.pouvoir.value == "Tourment de Nécrose"});
+                
         console.log(sheetData);
         return await sheetData;
     }
+    activateListeners(html) {
+        if (this.isEditable) {
+            // html.find(".power-create").click(this._onItemCreate.bind(this));
+            // html.find(".power-edit").click(this._onItemEdit.bind(this));
+            // html.find(".power-delete").click(this._ononItemDelete.bind(this));
+        }
+        super.activateListeners(html);
+    }
+    // _onItemCreate(event) {
+    //     event.preventDefault();
+    //     let element = event.currentTarget;
+    
+    //     let itemData = {
+    //       name: game.i18n.localize("shaanRenaissance.sheet.newItem"),
+    //       type: "Pouvoir"
+          
+    //     };
+    
+    //     return this.actor.createEmbeddedDocuments("Item", [itemData]);
+    //   }
+    
 }

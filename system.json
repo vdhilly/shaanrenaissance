@@ -15,7 +15,7 @@
         "shaanRenaissance.js"
     ],
     "styles":[
-        "shaanRenaissance.css"
+        "styles/CharacterSheet.css"
     ],
     "packs": [
         {

@@ -2,8 +2,12 @@
 
     "SRLabels":{
         "Esprit":"Esprit",
+        "pouvoirsEsprit": "Pouvoirs d'Esprit",
         "Ame":"Âme",
+        "pouvoirsAme": "Pouvoirs d'Âme",
         "Corps":"Corps",
+        "pouvoirsCorps": "Pouvoirs de Corps",
+        "pouvoirsNecrose": "Pouvoirs de Nécrose",
         "Trihns": "Trihns",
         "Protections": "Protections",
         "Initiative": "Initiative",
@@ -23,7 +27,8 @@
         "DomainActuel": "Actuel",
         "BonusLabel": "Bonus",
         "AcquisBonusLabel": "Acquis",
-        "DomainExp": "xp"
+        "DomainExp": "xp",
+        "résumé": "Résumé"
     },
     "SRdomains": {
         "Technique": "Technique",
