@@ -649,7 +649,7 @@
 .actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 40px 368.812px 40px;
+    grid-template-columns: 40px 369.812px 40px;
 }
 .actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;

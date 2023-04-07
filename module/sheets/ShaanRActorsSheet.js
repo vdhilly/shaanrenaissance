@@ -22,21 +22,20 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 title: this.title,
                 actor: actorData,
                 data: actorData.system,
-                items: {
-                    powerCategory: {
-                        pouvoirEsprit: actorData.items.filter(function (item) { return item.system.trihn == "Esprit"}),
-                        pouvoirAme: actorData.items.filter(function (item) { return item.system.trihn == "Âme" }),
-                        pouvoirCorps: actorData.items.filter(function (item) { return item.system.trihn == "Corps"}),
-                        pouvoirNecrose: actorData.items.filter(function (item) { return item.system.trihn == "Nécrose"}),
-                    },
-                },
+                items: actorData.items,
                 config: CONFIG.shaanRenaissance,
                 user: {
                     isGM: game.user.isGM
                 },
             };
             // Filtres catégorie pouvoir
-            sheetData.items.powerCategory.pouvoirEsprit = actorData.items.filter(function (item) { return item.system.trihn == "Esprit" });
+
+
+
+            sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
+            sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
+            sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
+            sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"}),
 
 
         console.log(sheetData);
@@ -123,4 +122,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemId = element.closest(".pouvoir").dataset.itemId;
         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
     }
+
+    
+    
 }

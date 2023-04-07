@@ -11,9 +11,9 @@
                     </div>
                 {{/ifeq}}
             </div>
-            <ol class="liste-pouvoir liste-pouvoirEsprit">
-                {{#each items.powerCategory.pouvoirEsprit as |pouvoir|}}
-                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
+            <ol class="item-list liste-pouvoir liste-pouvoirEsprit">
+                {{#each pouvoirEsprit as |pouvoir|}}
+                <li class="item pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
                     <span class="pouvoir-name">
@@ -43,7 +43,7 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirAme">
-                {{#each items.powerCategory.pouvoirAme as |pouvoir|}}
+                {{#each pouvoirAme as |pouvoir|}}
                 <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
@@ -74,7 +74,7 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirCorps">
-                {{#each items.powerCategory.pouvoirCorps as |pouvoir|}}
+                {{#each pouvoirCorps as |pouvoir|}}
                 <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
@@ -105,7 +105,7 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirNécrose">
-                {{#each items.powerCategory.pouvoirNecrose as |pouvoir|}}
+                {{#each pouvoirNecrose as |pouvoir|}}
                 <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
@@ -124,11 +124,6 @@
                 {{/each}}
             </ol>
         </li>
-
-
-
-
-
 
 
     </ol>
