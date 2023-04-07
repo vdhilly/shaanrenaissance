@@ -24,6 +24,9 @@ export default class ShaanRItemSheet extends ItemSheet {
                     isGM: game.user.isGM
                 },
             };
+            if (sheetData.item.system.pouvoir.value == "Astuce de Technique" || sheetData.item.system.pouvoir.value == "Secret de Savoir" || sheetData.item.system.pouvoir.value == "Privilège de Social" ) {
+                sheetData.item.system.trihn = "Esprit"
+            }
         console.log(sheetData);
         return sheetData;
     }

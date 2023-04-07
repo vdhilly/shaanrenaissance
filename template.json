@@ -1101,7 +1101,11 @@
                     }
                 },
                 "classe": "Classe 1",
-                "trihn": ""
+                "trihn": {
+                    "pouvoirs":{
+                        "pouvoirEsprit":{}
+                    }
+                }
             }
         },
         "Armement": {

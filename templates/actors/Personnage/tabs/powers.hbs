@@ -12,11 +12,11 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirEsprit">
-                {{#each pouvoirEsprit as |pouvoir id|}}
-                <li draggable="true">
+                {{#each items.powerCategory.pouvoirEsprit as |pouvoir|}}
+                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
-                    <span class="pouvoir-name" id="{{id}}">
+                    <span class="pouvoir-name">
                         {{pouvoir.name}}
                     </span>
                     <div class="item-controls">
@@ -43,11 +43,11 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirAme">
-                {{#each pouvoirAme as |pouvoir id|}}
-                <li draggable="true">
+                {{#each items.powerCategory.pouvoirAme as |pouvoir|}}
+                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
-                    <span class="pouvoir-name" id="{{id}}">
+                    <span class="pouvoir-name">
                         {{pouvoir.name}}
                     </span>
                     <div class="item-controls">
@@ -74,11 +74,11 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirCorps">
-                {{#each pouvoirCorps as |pouvoir id|}}
-                <li draggable="true">
+                {{#each items.powerCategory.pouvoirCorps as |pouvoir|}}
+                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
-                    <span class="pouvoir-name" id="{{id}}">
+                    <span class="pouvoir-name">
                         {{pouvoir.name}}
                     </span>
                     <div class="item-controls">
@@ -105,8 +105,8 @@
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirNécrose">
-                {{#each pouvoirNecrose as |pouvoir id|}}
-                <li draggable="true" data-item-id="{{id}}">
+                {{#each items.powerCategory.pouvoirNecrose as |pouvoir|}}
+                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
                     <span class="pouvoir-name">
