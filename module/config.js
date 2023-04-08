@@ -75,6 +75,7 @@ shaanRenaissance.pouvoirs = {
     },
     pouvoirPortée: {
         none: "",
+        soi: "Soi",
         contact: "Contact",
         interaction: "Interaction",
         distance: "Distance",

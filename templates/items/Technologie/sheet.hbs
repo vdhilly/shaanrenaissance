@@ -1,0 +1,129 @@
+<form class="item sheet crb-style technologie" autocomplete="off">
+    {{!-- HEADER --}}
+    {{> "systems/Shaan_Renaissance/templates/items/partials/header.hbs"}}
+
+    <div class="technologie-rank">
+        <p>
+            <i>
+                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                {{#if editable}}
+                <select name="system.acquis.caste">
+                        {{#select data.acquis.caste}}
+                        {{#each config.acquis.caste as |caste|}}
+                        <option value="{{caste}}">{{localize caste}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{localize "SR.de"}}
+                {{else}}
+                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                {{/if}}
+                <b>{{#if editable}}
+                <select name="system.class">
+                        {{#select data.class}}
+                        {{#each config.acquis.class as |class|}}
+                        <option value="{{class}}">{{localize class}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{else}}
+                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                {{/if}}</b>
+            </i>
+        </p>
+    </div>
+    <div class="technologie-details">
+        <div class="technologie-trihns">
+            <div class="trihn-Esprit">
+                <label for="{{options.id}}-technologie-trihn-Esprit">{{localize "SRLabels.Esprit"}}</label>
+                <input name="system.acquis.trihn.Esprit" id="{{options.id}}-technologie-trihn-Esprit" type="text" value="{{data.acquis.trihn.Esprit}}"spellcheck="false"/>
+            </div>
+            <div class="trihn-Ame">
+                <label for="{{options.id}}-technologie-trihn-Ame">{{localize "SRLabels.Ame"}}</label>
+                <input name="system.acquis.trihn.Ame" id="{{options.id}}-technologie-trihn-Ame" type="text" value="{{data.acquis.trihn.Ame}}"spellcheck="false"/>
+            </div>
+            <div class="trihn-Corps">
+                <label for="{{options.id}}-technologie-trihn-Corps">{{localize "SRLabels.Corps"}}</label>
+                <input name="system.acquis.trihn.Corps" id="{{options.id}}-technologie-trihn-Corps" type="text" value="{{data.acquis.trihn.Corps}}"spellcheck="false"/>
+            </div>
+        </div>
+        <div class="technologie-capacité">
+            <h3>
+                <label for="{{options.id}}-technologie-capacité">{{localize "SR.capacité"}}</label>
+                <input name="system.acquis.capacité" id="{{options.id}}-technologie-capacité" type="text" value="{{data.acquis.capacité}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-portée">
+                </h3>
+                <label for="{{options.id}}-technologie-portée-select">{{localize "SR.Portée"}}</label><br>
+                <select class="select" name="system.acquis.portée" id="{{options.id}}-technologie-portée-select">
+                    {{#select data.acquis.portée}}
+                        {{#each config.pouvoirs.pouvoirPortée as |portée|}}
+                        <option value="{{portée}}">{{localize portée}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+                </h3>
+        </div>
+        <div class="technologie-spécialisations">
+            <h3>
+                <label for="{{options.id}}-technologie-spécialisations">{{localize "SR.spécialisations"}}</label>
+                <input name="system.acquis.spécialisations" id="{{options.id}}-technologie-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-autonomie">
+            <h3>
+                <label for="{{options.id}}-technologie-autonomie">{{localize "SRLabels.autonomie"}}</label>
+                <input name="system.acquis.autonomie" id="{{options.id}}-technologie-autonomie" type="text" value="{{data.acquis.autonomie}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-places">
+                <h3>
+                    <label for="{{options.id}}-technologie-places">{{localize "SRLabels.places"}}</label>
+                    <input name="system.acquis.places" id="{{options.id}}-technologie-places" type="text" value="{{data.acquis.places}}"spellcheck="false"/>
+                </h3>
+        </div>
+        <div class="technologie-speed">
+            <h3>
+                <label for="{{options.id}}-technologie-speed">{{localize "SRLabels.speed"}}</label>
+                <input name="system.acquis.speed" id="{{options.id}}-technologie-speed" type="text" value="{{data.acquis.speed}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-valeur">
+            <h3>
+                <label for="{{options.id}}-technologie-valeur">{{localize "SR.valeur"}}</label>
+                <input name="system.acquis.valeur" id="{{options.id}}-technologie-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-préstige">
+            <h3>
+                <label for="{{options.id}}-technologie-préstige">{{localize "SR.préstige"}}</label>
+                <input name="system.acquis.préstige" id="{{options.id}}-technologie-préstige" type="text" value="{{data.acquis.préstige}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-déscription">
+            <label for="{{options.id}}-technologie-Déscription">{{localize "SR.Déscription"}}</label>
+            <textarea name="system.description.value" resize="none" id="{{options.id}}-technologie-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+        </div>
+        <div class="technologie-ressources">
+            <h3>
+                <label for="{{options.id}}-technologie-ressources">{{localize "SR.ressources"}}</label>
+                <input name="system.acquis.ressources" id="{{options.id}}-technologie-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-entretien">
+            <h3>
+                <label for="{{options.id}}-technologie-entretien">{{localize "SR.entretien"}}</label>
+                <input name="system.acquis.entretien" id="{{options.id}}-technologie-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="technologie-fabrication">
+            <h3>
+                <label for="{{options.id}}-technologie-fabrication">{{localize "SR.fabrication"}}</label>
+                <input name="system.acquis.fabrication" id="{{options.id}}-technologie-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+            </h3>
+        </div>
+    </div>
+
+
+</form>

@@ -34,7 +34,8 @@
         "voie": "Voie",
         "speed": "Vitesse",
         "places": "Places à bord",
-        "distance": "Distance"
+        "distance": "Distance",
+        "autonomie": "Autonomie"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -254,6 +255,7 @@
         "entretien": "Entretien",
         "dressage": "Dressage",
         "peupleorigine": "Peuple d'origine",
-        "instinct": "Instinct"
+        "instinct": "Instinct",
+        "miseRelation": "Mise en Relation"
     }
 }

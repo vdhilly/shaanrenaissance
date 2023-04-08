@@ -1,0 +1,63 @@
+<form class="item sheet crb-style relation" autocomplete="off">
+    {{!-- HEADER --}}
+    {{> "systems/Shaan_Renaissance/templates/items/partials/header.hbs"}}
+
+    <div class="relation-rank">
+        <p>
+            <i>
+                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                {{#if editable}}
+                <select name="system.acquis.caste">
+                        {{#select data.acquis.caste}}
+                        {{#each config.acquis.caste as |caste|}}
+                        <option value="{{caste}}">{{localize caste}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{localize "SR.de"}}
+                {{else}}
+                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                {{/if}}
+                <b>{{#if editable}}
+                <select name="system.class">
+                        {{#select data.class}}
+                        {{#each config.acquis.class as |class|}}
+                        <option value="{{class}}">{{localize class}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{else}}
+                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                {{/if}}</b>
+            </i>
+        </p>
+    </div>
+    <div class="relation-details">
+        <div class="relation-spécialisations">
+            <h3>
+                <label for="{{options.id}}-relation-spécialisations">{{localize "SR.spécialisations"}}</label>
+                <input name="system.acquis.spécialisations" id="{{options.id}}-relation-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="relation-déscription">
+            <label for="{{options.id}}-relation-Déscription">{{localize "SR.Déscription"}}</label>
+            <textarea name="system.description.value" resize="none" id="{{options.id}}-relation-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+        </div>
+        <div class="relation-prestige">
+            <h3>
+                <label for="{{options.id}}-relation-prestige">{{localize "SR.préstige"}}</label>
+                <input name="system.acquis.prestige" id="{{options.id}}-relation-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="relation-fabrication">
+            <h3>
+                <label for="{{options.id}}-relation-fabrication">{{localize "SR.miseRelation"}}</label>
+                <input name="system.acquis.fabrication" id="{{options.id}}-relation-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+            </h3>
+        </div>
+
+
+        </div>
+
+
+</form>

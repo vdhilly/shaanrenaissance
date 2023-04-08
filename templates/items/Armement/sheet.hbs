@@ -39,6 +39,7 @@
                 </h3>
             </div>
             <div class="armement-portée">
+                </h3>
                 <label for="{{options.id}}-armement-portée-select">{{localize "SR.Portée"}}</label><br>
                 <select class="select" name="system.acquis.portée" id="{{options.id}}-armement-portée-select">
                     {{#select data.acquis.portée}}
@@ -47,6 +48,7 @@
                         {{/each}}
                     {{/select}}
                 </select>
+                </h3>
             </div>
             <div class="armement-capacité">
                 <h3>
@@ -67,20 +69,26 @@
                 </h3>
             </div>
             <div class="armement-déscription">
-                <label for="{{options.id}}-armement-Déscription">{{localize "SR.Déscription"}}</label>
-                <textarea name="system.description.value" resize="none" id="{{options.id}}-armement-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                <h3>
+                    <label for="{{options.id}}-armement-Déscription">{{localize "SR.Déscription"}}</label>
+                    <textarea name="system.description.value" resize="none" id="{{options.id}}-armement-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                </h3>
             </div>
             <div class="armement-fabrication">
+                <h3>
                 <label for="{{options.id}}-armement-fabrication">{{localize "SR.fabrication"}}</label>
                 <input name="system.acquis.fabrication" id="{{options.id}}-armement-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                </h3>
             </div>
             <div class="armement-ressources">
                 <label for="{{options.id}}-armement-ressources">{{localize "SR.ressources"}}</label>
                 <input name="system.acquis.ressources" id="{{options.id}}-armement-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
             </div>
             <div class="armement-entretien">
+                <h3>
                 <label for="{{options.id}}-armement-entretien">{{localize "SR.entretien"}}</label>
                 <input name="system.acquis.entretien" id="{{options.id}}-armement-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
+                </h3>
             </div>
     </div>
 </form>
