@@ -39,5 +39,7 @@
     "gridDistance": 5,
     "gridUnits": "m",
     "primaryTokenAttribute": "wounds",
-    "initiative": "1d10 + @Shaan" 
+    "initiative": "1d10 + @Shaan",
+    "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
+    "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"
 }
