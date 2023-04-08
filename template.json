@@ -1069,7 +1069,10 @@
                     }
                 },
                 "class": "Classe 1",
-                "trihn": 0
+                "trihn": 0,
+                "pouvoir": {
+                    "value": null
+                }
             },
             "acquis": {
                 "caste": 0,
@@ -1153,9 +1156,6 @@
                 "common",
                 "acquis"
             ],
-            "pouvoir": {
-                "value": ""
-            },
             "PouvoirType": {
                     "value": ""
             },
