@@ -1083,7 +1083,16 @@
                 "ressources": 0,
                 "fabrication": 0,
                 "entretien": 0,
-                "capacité": 0
+                "capacité": 0,
+                "trihns": {
+                    "Esprit":0,
+                    "Ame":0,
+                    "Corps":0
+                },
+                "places":0,
+                "voie":0,
+                "speed":0,
+                "protéction":0
             }
         },
         "Armement": {
@@ -1093,7 +1102,12 @@
             ]
         },
         "Armimale": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ],
+            "peuple":0,
+            "instinct":0
         },
         "Artefact": {
             

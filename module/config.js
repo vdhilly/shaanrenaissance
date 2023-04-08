@@ -101,5 +101,11 @@ shaanRenaissance.acquis = {
         Voyageur: "Voyageur",
         Combattant: "Combattant",
         Ombre: "Ombre"
+    },
+    voie:{
+        none: "",
+        terrestre: "Terrestre",
+        aerienne: "Aérienne",
+        maritime: "Maritime"
     }
 }

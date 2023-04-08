@@ -1,3 +1,138 @@
-<div>
-    test
-</div>
+<form class="item sheet crb-style armimale" autocomplete="off">
+    {{!-- HEADER --}}
+    {{> "systems/Shaan_Renaissance/templates/items/partials/header.hbs"}}
+    <div class="armimale-rank">
+        <p>
+            <i>
+                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                {{#if editable}}
+                <select name="system.acquis.caste">
+                        {{#select data.acquis.caste}}
+                        {{#each config.acquis.caste as |caste|}}
+                        <option value="{{caste}}">{{localize caste}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{localize "SR.de"}}
+                {{else}}
+                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                {{/if}}
+                <b>{{#if editable}}
+                <select name="system.class">
+                        {{#select data.class}}
+                        {{#each config.acquis.class as |class|}}
+                        <option value="{{class}}">{{localize class}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+                {{else}}
+                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                {{/if}}</b>
+            </i>
+        </p>
+    </div>
+        <div class="armimale-details">
+            <div class="armimale-trihns">
+                <div class="trihn-Esprit">
+                    <label for="{{options.id}}-armimale-trihn-Esprit">{{localize "SRLabels.Esprit"}}</label>
+                    <input name="system.acquis.trihn.Esprit" id="{{options.id}}-armimale-trihn-Esprit" type="text" value="{{data.acquis.trihn.Esprit}}"spellcheck="false"/>
+                </div>
+                <div class="trihn-Ame">
+                    <label for="{{options.id}}-armimale-trihn-Ame">{{localize "SRLabels.Ame"}}</label>
+                    <input name="system.acquis.trihn.Ame" id="{{options.id}}-armimale-trihn-Ame" type="text" value="{{data.acquis.trihn.Ame}}"spellcheck="false"/>
+                </div>
+                <div class="trihn-Corps">
+                    <label for="{{options.id}}-armimale-trihn-Corps">{{localize "SRLabels.Corps"}}</label>
+                    <input name="system.acquis.trihn.Corps" id="{{options.id}}-armimale-trihn-Corps" type="text" value="{{data.acquis.trihn.Corps}}"spellcheck="false"/>
+                </div>
+            </div>
+            <div class="armimale-protéction">
+                <h3>
+                    <label for="{{options.id}}-armimale-protéction">{{localize "SRLabels.protéction"}}</label>
+                    <input name="system.acquis.protéction" id="{{options.id}}-armimale-protéction" type="text" value="{{data.acquis.protéction}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-capacité">
+                <h3>
+                    <label for="{{options.id}}-armimale-capacité">{{localize "SR.capacité"}}</label>
+                    <input name="system.acquis.capacité" id="{{options.id}}-armimale-capacité" type="text" value="{{data.acquis.capacité}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-spécialisations">
+                <h3>
+                    <label for="{{options.id}}-armimale-spécialisations">{{localize "SR.spécialisations"}}</label>
+                    <input name="system.acquis.spécialisations" id="{{options.id}}-armimale-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-voie">
+                <label for="{{options.id}}-armimale-voie-select">{{localize "SRLabels.voie"}}</label><br>
+                <select class="select" name="system.acquis.voie" id="{{options.id}}-armimale-voie-select">
+                    {{#select data.acquis.voie}}
+                        {{#each config.acquis.voie as |voie|}}
+                        <option value="{{voie}}">{{localize voie}}</option>
+                        {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+            <div class="armimale-places">
+                <h3>
+                    <label for="{{options.id}}-armimale-places">{{localize "SRLabels.places"}}</label>
+                    <input name="system.acquis.places" id="{{options.id}}-armimale-places" type="text" value="{{data.acquis.places}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-speed">
+                <h3>
+                    <label for="{{options.id}}-armimale-speed">{{localize "SRLabels.speed"}}</label>
+                    <input name="system.acquis.speed" id="{{options.id}}-armimale-speed" type="text" value="{{data.acquis.speed}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-distance">
+                <h3>
+                    <label for="{{options.id}}-armimale-distance">{{localize "SRLabels.distance"}}</label>
+                    <input name="system.acquis.distance" id="{{options.id}}-armimale-distance" type="text" value="{{data.acquis.distance}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-valeur">
+                <h3>
+                    <label for="{{options.id}}-armimale-valeur">{{localize "SR.valeur"}}</label>
+                    <input name="system.acquis.valeur" id="{{options.id}}-armimale-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-préstige">
+                <h3>
+                    <label for="{{options.id}}-armimale-préstige">{{localize "SR.préstige"}}</label>
+                    <input name="system.acquis.préstige" id="{{options.id}}-armimale-préstige" type="text" value="{{data.acquis.préstige}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-peuple">
+                <h3>
+                    <label for="{{options.id}}-armimale-peuple">{{localize "SR.peupleorigine"}}</label>
+                    <input name="system.acquis.peuple" id="{{options.id}}-armimale-peuple" type="text" value="{{data.acquis.peuple}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-déscription">
+                <label for="{{options.id}}-armimale-Déscription">{{localize "SR.Déscription"}}</label>
+                <textarea name="system.description.value" resize="none" id="{{options.id}}-armimale-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+            </div>
+            <div class="armimale-entretien">
+                <h3>
+                    <label for="{{options.id}}-armimale-entretien">{{localize "SR.entretien"}}</label>
+                    <input name="system.acquis.entretien" id="{{options.id}}-armimale-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-instinct">
+                <h3>
+                    <label for="{{options.id}}-armimale-instinct">{{localize "SR.instinct"}}</label>
+                    <input name="system.acquis.instinct" id="{{options.id}}-armimale-instinct" type="text" value="{{data.acquis.instinct}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="armimale-dressage">
+                <h3>
+                    <label for="{{options.id}}-armimale-dressage">{{localize "SR.dressage"}}</label>
+                    <input name="system.acquis.fabrication" id="{{options.id}}-armimale-dressage" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                </h3>
+            </div>
+    </div>
+
+
+</form>

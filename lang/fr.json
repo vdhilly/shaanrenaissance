@@ -10,6 +10,7 @@
         "pouvoirsNecrose": "Pouvoirs de Nécrose",
         "Trihns": "Trihns",
         "Protections": "Protections",
+        "protéction": "Protéction",
         "Initiative": "Initiative",
         "Tests": "Tests",
         "DomainTest": "Test de Domaine",
@@ -29,7 +30,11 @@
         "AcquisBonusLabel": "Acquis",
         "DomainExp": "xp",
         "résumé": "Résumé",
-        "acquis": "Acquis"
+        "acquis": "Acquis",
+        "voie": "Voie",
+        "speed": "Vitesse",
+        "places": "Places à bord",
+        "distance": "Distance"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -246,6 +251,9 @@
         "préstige": "Préstige",
         "ressources": "Ressources",
         "fabrication": "Fabrication",
-        "entretien": "Entretien"
+        "entretien": "Entretien",
+        "dressage": "Dressage",
+        "peupleorigine": "Peuple d'origine",
+        "instinct": "Instinct"
     }
 }
