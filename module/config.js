@@ -80,4 +80,26 @@ shaanRenaissance.pouvoirs = {
         distance: "Distance",
         horizon: "Horizon",
     }
+};
+shaanRenaissance.acquis = {
+    class:{
+        class1: "Classe 1",
+        class2: "Classe 2",
+        class3: "Classe 3",
+        class4: "Classe 4",
+        class5: "Classe 5"
+    },
+    caste:{
+        none: "",
+        Novateur: "Novateur",
+        Erudit: "Erudit",
+        Négociant: "Négociant",
+        Artiste: "Artiste",
+        Shaaniste: "Shaaniste",
+        Magicien: "Magicien",
+        Elementaliste: "Elementaliste",
+        Voyageur: "Voyageur",
+        Combattant: "Combattant",
+        Ombre: "Ombre"
+    }
 }

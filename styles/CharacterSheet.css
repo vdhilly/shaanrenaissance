@@ -717,7 +717,7 @@
 
 
 /* ITEM POUVOIR SHEET */
-.item.sheet {
+.item.sheet.pouvoir {
     width: 100%;
     height: 100%;
     font-family: var(--body-serif);
@@ -725,6 +725,7 @@
     flex-direction: column;
     grid: "pouvoir-header"70px "rang"minmax(min-content, max-content) "content";
 }
+
 /* POUVOIR INPUT */
 .item.sheet input {
     border-radius: 0;
@@ -733,8 +734,8 @@
 .item.sheet input:focus {
     box-shadow: none;
 }
-/* POUVOIR HEADER */
-.item.sheet .sheet-header {
+/* ITEM HEADER */
+.item.sheet.pouvoir .sheet-header {
     grid-area: pouvoir-header;
     display: flex;
     justify-content: space-between;
@@ -742,12 +743,12 @@
     width: 100%;
     align-items: center;
 }
-.item.sheet .sheet-header .pouvoir-name {
+.item.sheet .sheet-header .item-name {
     display: flex;
     align-items: center;
     margin-right: 10px;
 }
-.item.sheet .sheet-header .pouvoir-name input {
+.item.sheet .sheet-header .item-name input {
     height: 50px;
     font: 700 var(--font-size-22) var(--body-serif);
 }
@@ -766,25 +767,25 @@
     text-align: end;
 }
 /* POUVOIR CONTENT */
-.item.sheet .pouvoir-rank {
+.item.sheet.pouvoir .pouvoir-rank {
     grid-area: rang;
     display: grid;
 }
-.item.sheet.pouvoir select {
+.item.sheet select {
     border: none;
     border-radius: 0;
     font: 700 var(--font-size-14) var(--body-serif);
 }
-.item.sheet.pouvoir select:focus {
+.item.sheet select:focus {
     box-shadow: none;
 }
-.item.sheet.pouvoir .select {
+.item.sheet .select {
     width: 99%
 }
-.item.sheet.pouvoir input {
+.item.sheet input {
     font: 700 var(--font-size-14) var(--body-serif);
 }
-.item.sheet.pouvoir textarea {
+.item.sheet textarea {
     font: 600 var(--font-size-12) var(--body-serif);
 }
 .item.sheet .pouvoir-rank .locked-input-rank {
@@ -798,7 +799,7 @@
     border: none;
     margin-bottom: 0;
 }
-.item.sheet .pouvoir-details {
+.item.sheet.pouvoir .pouvoir-details {
     grid-area: content;
     display: grid;
     grid: "pouvoirType pouvoirFréquence pouvoirActivation pouvoirDurée"minmax(min-content, max-content) "pouvoirPortée pouvoirNbCibles pouvoirScore pouvoirScore"minmax(min-content, max-content) "pouvoirRésumé pouvoirRésumé pouvoirRésumé pouvoirRésumé"minmax(min-content, max-content) "pouvoirDéscription pouvoirDéscription pouvoirDéscription pouvoirDéscription"minmax(min-content, max-content);
@@ -827,6 +828,80 @@
 }
 
 .item.sheet .pouvoir-details h3 {
+    border: none;
+    margin-bottom: 0;
+}
+
+
+/* ARMEMENT CONTENT */
+
+.item.sheet.armement {
+    width: 100%;
+    height: 100%;
+    font-family: var(--body-serif);
+    display: grid;
+    flex-direction: column;
+    grid: "armementHeader"70px "armementRang"minmax(min-content, max-content) "armementContent";
+}
+.item.sheet.armement .sheet-header {
+    grid-area: armementHeader;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary);
+    width: 100%;
+    align-items: center;
+}
+.item.sheet.armement .armement-rank {
+    grid-area: armementRang;
+    display: grid;
+}
+.item.sheet.armement .armement-details {
+    grid-area: armementContent;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, minmax(min-content max-content)) minmax(min-content max-content) repeat(2, minmax(min-content max-content));
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;}
+.item.sheet.armement .armement-spécialisations {
+    grid-area: 1 / 1 / 2 / 5;
+}
+.item.sheet.armement .armement-portée {
+    grid-area: 1 / 5 / 2 / 6;
+}
+.item.sheet.armement .armement-capacité {
+    grid-area: 2 / 1 / 3 / 4;
+}
+.item.sheet.armement .armement-déscription {
+    grid-area: 3 / 1 / 4 / 6; 
+}
+.item.sheet.armement .armement-fabrication {
+    grid-area: 4 / 1 / 5 / 4; 
+}
+.item.sheet.armement .armement-ressources {
+    grid-area: 4 / 4 / 5 / 6;
+}
+.item.sheet.armement .armement-entretien{
+    grid-area: 5 / 1 / 6 / 2;
+}
+.item.sheet.armement .armement-déscription textarea {
+    width: 100% !important;
+    height: 100px !important;
+    resize: none;
+    border-radius: 0;
+    border: 0;
+}
+.item.sheet.armement .armement-déscription textarea:focus {
+    box-shadow: none;
+}
+.item.sheet .armement-details label{
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase;
+}
+
+.item.sheet .armement-details h3 {
     border: none;
     margin-bottom: 0;
 }

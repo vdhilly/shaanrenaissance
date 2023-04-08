@@ -1,13 +1,6 @@
 <form class="item sheet crb-style pouvoir" autocomplete="off">
-    <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img">
-        <h2 class="pouvoir-name">
-            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du Pouvoir" spellcheck="false" />
-        </h2>
-        <span class="pouvoir-source">
-            <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
-        </span>
-    </header>
+    {{!-- HEADER --}}
+    {{> "systems/Shaan_Renaissance/templates/items/partials/header.hbs"}}
     <div class="pouvoir-rank">
         <p>
             <i>
@@ -110,8 +103,8 @@
             <div class="pouvoir-portée">
                 <h3>
                     <label for="{{options.id}}-pouvoir-portée-select">{{localize "SR.pouvoirPortée"}}</label><br>
-                    <select class="select" name="system.portée.value" id="{{options.id}}-pouvoir-portée-select">
-                        {{#select data.portée.value}}
+                    <select class="select" name="system.acquis.portée" id="{{options.id}}-pouvoir-portée-select">
+                        {{#select data.acquis.portée}}
                         {{#each config.pouvoirs.pouvoirPortée as |skill|}}
                         <option value="{{skill}}">{{localize skill}}</option>
                     {{/each}}
@@ -122,8 +115,8 @@
                 {{else}}
                 <div class="pouvoir-portée">
                 <h3>
-                    <label for="{{options.id}}-pouvoir-portée">{{localize "SR.pouvoirPortée"}}</label>
-                    <input name="system.portée.value" id="{{options.id}}-pouvoir-portée" type="text" value="{{data.portée.value}}"spellcheck="false"/>
+                    <label for="{{options.id}}-pouvoir-portée">{{localize "SR.Portée"}}</label>
+                    <input name="system.acquis.portée" id="{{options.id}}-pouvoir-portée" type="text" value="{{data.acquis.portée}}"spellcheck="false"/>
                 </h3>
                 </div>
                 {{/if}}
@@ -140,12 +133,12 @@
         <div class="pouvoir-résumé">
             <p>
                 <i>
-                    <label for="{{options.id}}-pouvoir-résumé">{{localize "SR.pouvoirRésumé"}}</label><input name="system.résumé.value" id="{{options.id}}-pouvoir-résumé" type="text" value="{{data.résumé.value}}" spellcheck="false"/>
+                    <label for="{{options.id}}-pouvoir-résumé">{{localize "SR.Résumé"}}</label><input name="system.résumé.value" id="{{options.id}}-pouvoir-résumé" type="text" value="{{data.résumé.value}}" spellcheck="false"/>
                 </i>
             </p>
         </div>
         <div class="pouvoir-déscription">
-            <label for="{{options.id}}-pouvoir-Déscription">{{localize "SR.pouvoirDéscription"}}</label>
+            <label for="{{options.id}}-pouvoir-Déscription">{{localize "SR.Déscription"}}</label>
             <textarea name="system.description.value" id="{{options.id}}-pouvoir-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
         </div>
     </div>

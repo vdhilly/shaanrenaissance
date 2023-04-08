@@ -28,7 +28,8 @@
         "BonusLabel": "Bonus",
         "AcquisBonusLabel": "Acquis",
         "DomainExp": "xp",
-        "résumé": "Résumé"
+        "résumé": "Résumé",
+        "acquis": "Acquis"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -234,11 +235,17 @@
         "pouvoirFréquence": "Fréquence",
         "pouvoirActivation": "Activation",
         "pouvoirScore": "Score",
-        "pouvoirPortée": "Portée",
+        "Portée": "Portée",
         "pouvoirNbcibles": "Nb Cibles",
         "pouvoirDurée": "Durée",
-        "pouvoirRésumé": "Résumé",
-        "pouvoirDéscription": "Description"
-
+        "Résumé": "Résumé",
+        "Déscription": "Description",
+        "spécialisations": "Spécialisations",
+        "capacité": "Capacité",
+        "valeur": "Valeur",
+        "préstige": "Préstige",
+        "ressources": "Ressources",
+        "fabrication": "Fabrication",
+        "entretien": "Entretien"
     }
 }
