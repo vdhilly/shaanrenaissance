@@ -1,17 +1,16 @@
 export const shaanRenaissance = {};
 
-shaanRenaissance.skills = {
-    none: "",
-    Technique: "SRdomains.Technique",
-    Savoir: "SRdomains.Savoir",
-    Social: "SRdomains.Social",
-    Arts: "SRdomains.Arts",
-    Shaan: "SRdomains.Shaan",
-    Magie: "SRdomains.Magie",
-    Rituels: "SRdomains.Rituels",
-    Survie: "SRdomains.Survie",
-    Combat: "SRdomains.Combat",
-    Nécrose: "SRdomains.Nécrose",
+shaanRenaissance.SRdomains = {
+    Shaan: "Shaan",
+    Technique: "Technique",
+    Savoir: "Savoir",
+    Social: "Social",
+    Arts: "Arts",
+    Magie: "Magie",
+    Rituels: "Rituels",
+    Survie: "Survie",
+    Combat: "Combat",
+    Nécrose: "Nécrose",
     }
 shaanRenaissance.pouvoirs = {
     trihns: {

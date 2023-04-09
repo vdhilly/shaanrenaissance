@@ -4,8 +4,7 @@
             "Personnage",
             "PNJ",
             "Shaani",
-            "Renaissant",
-            "Armimale"
+            "Renaissant"
             
         ],
         "templates": {
@@ -510,7 +509,7 @@
                         }
                     },
                     "initiative": {
-                        "statistic": "Shaan"
+                        "statistic": "Technique"
                     }
                 },
                 "Ressource": {
@@ -605,6 +604,7 @@
     },
     "Item": {
         "types": [
+            
             "Armement",
             "Armimale",
             "Artefact",
@@ -612,7 +612,6 @@
             "Outil",
             "Protection",
             "Relation",
-            "Ressource",
             "Richesse",
             "Technologie",
             "Transport",

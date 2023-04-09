@@ -7,12 +7,16 @@ async function preloadHandleBarTemplates()
     // register templates parts
     const templatePaths = [
       // Character sheet
+      // Sidebar
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/health.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/initiative.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/jets.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/icons/d20.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/reserve.hbs",
+
+      // Content
       "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/acquis.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/biography.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/general.hbs",
@@ -22,6 +26,7 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/sheet/Race-sheet.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs",
+
       // Item sheets
       "systems/Shaan_Renaissance/templates/items/partials/header.hbs"
 
@@ -53,3 +58,5 @@ Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
 });
+
+

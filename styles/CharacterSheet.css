@@ -176,13 +176,35 @@
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
-    text-transform: uppercase;
-    
+    text-transform: uppercase; 
 }
 .actor.sheet aside .sidebar .protections input {
     font: 700 var(--font-size-14) var(--body-serif)
 }
 
+/* SIDEBAR RESERVE */
+.actor.sheet aside .sidebar .reserve-sidebar {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.reserve-line-1 { grid-area: 1 / 1 / 2 / 6; display: flex; flex-direction: row; justify-content: center;}
+.reserve-line-2  { grid-area: 2 / 2 / 3 / 5; display: flex; flex-direction: row; justify-content: center;}
+.reserve-line-3  { grid-area: 3 / 3 / 4 / 4; display: flex; flex-direction: row; justify-content: center;}
+
+.actor.sheet aside .sidebar .reserve-sidebar label{
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase; 
+}
+.actor.sheet aside .sidebar .reserve-sidebar input[type=checkbox]{
+    border: 5px solid var(--body);
+}
 
 /* CHARACTER CONTENT */
 .actor.sheet.character .content {

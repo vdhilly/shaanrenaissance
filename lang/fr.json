@@ -35,7 +35,8 @@
         "speed": "Vitesse",
         "places": "Places à bord",
         "distance": "Distance",
-        "autonomie": "Autonomie"
+        "autonomie": "Autonomie",
+        "reserve": "Réserve"
     },
     "SRdomains": {
         "Technique": "Technique",

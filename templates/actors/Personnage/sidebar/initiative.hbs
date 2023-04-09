@@ -6,10 +6,12 @@
         {{> "systems/Shaan_Renaissance/templates/actors/Personnage/icons/d20.hbs"}}
     </a>
     <h4 class="initiative-select" style="margin-left:5px;">
-        <select> 
-                {{#each data.skills as |skill|}}
-                    <option value="{{skill.slug}}">{{@key}}</option>
+        <select name="system.attributes.initiative.statistic"> 
+                {{#select data.attributes.initiative.statistic}}
+                {{#each config.SRdomains as |skill|}}
+                    <option value="{{skill}}">{{skill}}</option>
                 {{/each}}
+                {{/select}}
         </select>
     </h4>
 </div>
