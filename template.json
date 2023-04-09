@@ -36,6 +36,11 @@
                             "temp=": 0
                         }
                     }},
+                    "initiative": {
+                        "statistic": "Technique"
+                    }
+                },
+                "spés":{
                     "skills": {
                         "Technique": {
                             "rank": 0,
@@ -507,12 +512,9 @@
                                 }
                             }
                         }
-                    },
-                    "initiative": {
-                        "statistic": "Technique"
                     }
                 },
-                "Ressource": {
+                "Ressources": {
                     "Verre":{
                         "value":""
                     },
@@ -547,7 +549,9 @@
             },
         "character": {
             "templates": [
-                "common"
+                "common",
+                "spés",
+                "Ressources"
             ],
             "protections": {
                 "esprit": {
@@ -627,6 +631,13 @@
                     "value":""
                 },
                 "slug": null,
+                "class": "Classe 1",
+                "trihn": 0,
+                "pouvoir": {
+                    "value": null
+                }
+            },
+            "spés":{
                 "skills": {
                     "Technique": {
                         "rank": 0,
@@ -1098,11 +1109,6 @@
                             }
                         }
                     }
-                },
-                "class": "Classe 1",
-                "trihn": 0,
-                "pouvoir": {
-                    "value": null
                 }
             },
             "acquis": {
