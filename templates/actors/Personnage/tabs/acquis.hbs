@@ -11,7 +11,7 @@
                 {{/ifeq}}
             </div>
             <ol class="item-list liste-items liste-item {{@key}}">
-                {{#each Category as |acquis|}}
+                {{#each Category as |acquis id|}}
                 <li class="item acquis" draggable="true" data-item-id="{{acquis._id}}">
                 <div class="acquis-header">
                         <img src="{{acquis.img}}" data-edit="img">

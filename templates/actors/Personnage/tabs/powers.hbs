@@ -38,21 +38,21 @@
                 </h3>
                 {{#ifeq editable true}}
                     <div class="item-controls">
-                        <a class="item-control power-create"><i class="fas fa-fw fa-plus" id="Ame-add"></i></a>
+                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="Ame-add"></i></a>
                     </div>
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirAme">
                 {{#each pouvoirAme as |pouvoir|}}
-                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
+                <li class="item pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
                     <span class="pouvoir-name">
                         {{pouvoir.name}}
                     </span>
                     <div class="item-controls">
-                        <a class="item-control power-edit"><i class="fas fa-fw fa-edit"></i></a>
-                        <a class="item-control power-delete"><i class="fas fa-fw fa-trash"></i></a>
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                     </div>
                 </div>
                 <div class="résumé">
@@ -69,21 +69,21 @@
                 </h3>
                 {{#ifeq editable true}}
                     <div class="item-controls">
-                        <a class="item-control power-create"><i class="fas fa-fw fa-plus" id="Corps-add"></i></a>
+                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="Corps-add"></i></a>
                     </div>
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirCorps">
                 {{#each pouvoirCorps as |pouvoir|}}
-                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
+                <li class="item pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
                     <span class="pouvoir-name">
                         {{pouvoir.name}}
                     </span>
                     <div class="item-controls">
-                        <a class="item-control power-edit"><i class="fas fa-fw fa-edit"></i></a>
-                        <a class="item-control power-delete"><i class="fas fa-fw fa-trash"></i></a>
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                     </div>
                 </div>
                 <div class="résumé">
@@ -100,21 +100,21 @@
                 </h3>
                 {{#ifeq editable true}}
                     <div class="item-controls">
-                        <a class="item-control power-create"><i class="fas fa-fw fa-plus" id="Nécrose-add"></i></a>
+                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="Nécrose-add"></i></a>
                     </div>
                 {{/ifeq}}
             </div>
             <ol class="liste-pouvoir liste-pouvoirNécrose">
                 {{#each pouvoirNecrose as |pouvoir|}}
-                <li class="pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
+                <li class="item pouvoir" draggable="true" data-item-id="{{pouvoir._id}}">
                 <div class="pouvoir-header">
                         <img src="{{pouvoir.img}}" data-edit="img">
                     <span class="pouvoir-name">
                         {{pouvoir.name}}
                     </span>
                     <div class="item-controls">
-                        <a class="item-control power-edit"><i class="fas fa-fw fa-edit"></i></a>
-                        <a class="item-control power-delete"><i class="fas fa-fw fa-trash"></i></a>
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                     </div>
                 </div>
                 <div class="résumé">

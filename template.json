@@ -1147,22 +1147,40 @@
             ]
         },
         "Manuscrit": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ]
         },
         "Outil": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ]
         },
         "Protection": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ]
         },
         "Relation": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ]
         },
         "Richesse": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ]
         },
         "Technologie": {
-            
+            "templates": [
+                "common",
+                "acquis"
+            ]
         },
         "Transport": {
             "templates": [

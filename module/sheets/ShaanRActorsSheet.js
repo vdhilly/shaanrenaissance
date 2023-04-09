@@ -38,13 +38,13 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.items.Category.Manuscrits = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
                 sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" }),
                 sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" }),
-                sheetData.items.Category.Relation = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
+                sheetData.items.Category.Relation = actorData.items.filter(function (item) { return item.type == "Relation" }),
                 sheetData.items.Category.Richesse = actorData.items.filter(function (item) { return item.type == "Richesse" }),
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
                 sheetData.items.Category.Transport = actorData.items.filter(function (item) { return item.type == "Transport" }),
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
-                sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
+                sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
                 sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
                 sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
     
@@ -247,7 +247,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     _onItemEdit(event) {
         event.preventDefault();
         let element = event.target
-        let itemId = element.closest(".pouvoir").dataset.itemId;
+        let itemId = element.closest(".item").dataset.itemId;
         let item = this.actor.items.get(itemId);
 
         item.sheet.render(true);
@@ -255,7 +255,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     _onItemDelete(event) {
         event.preventDefault();
         let element = event.target
-        let itemId = element.closest(".pouvoir").dataset.itemId;
+        let itemId = element.closest(".item").dataset.itemId;
         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
     }
 
