@@ -101,6 +101,9 @@
     border: none;
     margin-bottom: 0;
 }
+.item.sheet .pouvoir-details .pouvoir-déscription textarea:focus {
+    box-shadow: none;
+}
 .item.sheet .pouvoir-details label{
     color: var(--primary);
     font-family: var(--sans-serif);
