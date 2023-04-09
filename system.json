@@ -5,7 +5,7 @@
     "authors": [{
         "name": "Pouet"
       }],
-    "version": 0.04,
+    "version": 0.05,
     "compatibility": {
         "minimum": 10,
         "verified": 10,
