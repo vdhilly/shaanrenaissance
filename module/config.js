@@ -119,5 +119,17 @@ shaanRenaissance.acquis = {
         terrestre: "Terrestre",
         aerienne: "Aérienne",
         maritime: "Maritime"
+    },
+    Ressources: {
+        Verre: "Verre",
+        Bois: "Bois",
+        Or: "Or",
+        Population: "Population",
+        Pierre: "Pierre",
+        Trihnite: "Trihnite",
+        Animal: "Animal",
+        Cultures: "Cultures",
+        Métal: "Métal",
+        Hydrocarbure: "Hydrocarbure"
     }
 }

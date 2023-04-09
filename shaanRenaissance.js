@@ -26,6 +26,7 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/sheet/Race-sheet.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/ressources.hbs",
 
       // Item sheets
       "systems/Shaan_Renaissance/templates/items/partials/header.hbs"
