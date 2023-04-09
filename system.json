@@ -1,5 +1,5 @@
 {
-    "name": "Shaan_Renaissance",
+    "id": "Shaan_Renaissance",
     "title": "Shaan Renaissance",
     "description": "Un système de jeu basé sur le système de Shaan Renaissance d'Igor Polouchine édité par Origames",
     "authors": [{
@@ -8,7 +8,7 @@
     "version": 0.05,
     "compatibility": {
         "minimum": 10,
-        "verified": 10,
+        "verified": 10.291,
         "maximum": 11
     },
     "esmodules": [

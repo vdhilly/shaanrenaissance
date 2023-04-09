@@ -34,7 +34,9 @@
                         "maxCorps": {
                             "value": 0,
                             "temp=": 0
-                        }
+                        },
+                        "préstige": 0,
+                        "credos": 0
                     }},
                     "initiative": {
                         "statistic": "Technique"

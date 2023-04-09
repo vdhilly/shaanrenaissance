@@ -36,7 +36,10 @@
         "places": "Places à bord",
         "distance": "Distance",
         "autonomie": "Autonomie",
-        "reserve": "Réserve"
+        "reserve": "Réserve",
+        "Crédos": "Crédos",
+        "CrédosTitle": "Les Crédos de ton personnage"
+
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -251,6 +254,7 @@
         "capacité": "Capacité",
         "valeur": "Valeur",
         "préstige": "Préstige",
+        "préstigeTitle": "Le Préstige de ton personnage",
         "ressources": "Ressources",
         "fabrication": "Fabrication",
         "entretien": "Entretien",
