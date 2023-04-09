@@ -517,36 +517,16 @@
                     }
                 },
                 "Ressources": {
-                    "Verre":{
-                        "value":""
-                    },
-                    "Bois":{
-                        "value":""
-                    },
-                    "Or":{
-                        "value":""
-                    },
-                    "Population":{
-                        "value":""
-                    },
-                    "Pierre":{
-                        "value":""
-                    },
-                    "Trihnite":{
-                        "value":""
-                    },
-                    "Animal":{
-                        "value":""
-                    },
-                    "Cultures":{
-                        "value":""
-                    },
-                    "Métal":{
-                        "value":""
-                    },
-                    "Hydrocarbures":{
-                        "value":""
-                    }
+                    "Verre":0,
+                    "Bois":0,
+                    "Or":0,
+                    "Population":0,
+                    "Pierre":0,
+                    "Trihnite":0,
+                    "Animal":0,
+                    "Cultures":0,
+                    "Métal":0,
+                    "Hydrocarbures":0
                 }
             },
         "character": {
