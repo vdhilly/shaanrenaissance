@@ -56,9 +56,9 @@ export default class ShaanRActorsSheet extends ActorSheet {
     }
     activateListeners(html) {
         if (this.isEditable) {
-            html.find(".power-create").click(this._onItemCreate.bind(this));
-            html.find(".power-edit").click(this._onItemEdit.bind(this));
-            html.find(".power-delete").click(this._onItemDelete.bind(this));  
+            html.find(".item-create").click(this._onItemCreate.bind(this));
+            html.find(".item-edit").click(this._onItemEdit.bind(this));
+            html.find(".item-delete").click(this._onItemDelete.bind(this));  
             const title = $(".sheet-navigation .active").attr("title");
                 title && html.find(".navigation-title").text(title)
                         
@@ -80,7 +80,118 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const ameBtn = event.target.closest("#Ame-add")
         const corpsBtn = event.target.closest("#Corps-add")
         const necroseBtn = event.target.closest("#Nécrose-add")
+        const armementBtn = event.target.closest("#Armement-add")
+        const armimaleBtn = event.target.closest("#Armimales-add")
+        const artefactBtn = event.target.closest("#Artefacts-add")
+        const manuscritBtn = event.target.closest("#Manuscrits-add")
+        const outilBtn = event.target.closest("#Outils-add")
+        const protectionBtn = event.target.closest("#Protection-sadd")
+        const relationBtn = event.target.closest("#Relations-add")
+        const richesseBtn = event.target.closest("#Richesses-add")
+        const technologieBtn = event.target.closest("#Technologie-add")
+        const transportBtn = event.target.closest("#Transport-add")
         
+
+        if(armementBtn) {
+            let itemData = {
+                name: "Nouvel Armement",
+                type: "Armement"
+              };
+      
+              return this.actor.createEmbeddedDocuments("Item", [itemData]);
+              }
+              this.actor.sheet.render();
+
+        if(armimaleBtn) {
+            let itemData = {
+                name: "Nouvelle Armimale",
+                type: "Armimale"
+                };
+          
+                return this.actor.createEmbeddedDocuments("Item", [itemData]);
+                }
+                this.actor.sheet.render();
+
+        if(artefactBtn) {
+            let itemData = {
+                name: "Nouvel Artefact",
+                type: "Artefact"
+                };
+        
+                return this.actor.createEmbeddedDocuments("Item", [itemData]);
+                }
+                this.actor.sheet.render();
+
+        if(manuscritBtn) {
+            let itemData = {
+                name: "Nouveau Manuscrit",
+                type: "Manuscrit"
+            };
+            
+            return this.actor.createEmbeddedDocuments("Item", [itemData]);
+            }
+            this.actor.sheet.render();
+
+        if(outilBtn) {
+            let itemData = {
+                name: "Nouvel Outil",
+                type: "Outil"
+            };
+            
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if(protectionBtn) {
+            let itemData = {
+                name: "Nouvelle Protection",
+                type: "Protection"
+            };
+            
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if(relationBtn) {
+        let itemData = {
+            name: "Nouvelle Relation",
+            type: "Relation"
+            };
+    
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if(richesseBtn) {
+        let itemData = {
+            name: "Nouvelle Richesse",
+            type: "Richesse"
+            };
+    
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if(technologieBtn) {
+        let itemData = {
+            name: "Nouvelle Technologie",
+            type: "Technologie"
+            };
+    
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if(transportBtn) {
+        let itemData = {
+            name: "Nouveau Transport",
+            type: "Transport"
+            };
+    
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
         if (espritBtn) {
             let itemData = {
           name: "Nouveau pouvoir d'Esprit",

@@ -202,9 +202,6 @@
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet aside .sidebar .reserve-sidebar input[type=checkbox]{
-    border: 5px solid var(--body);
-}
 
 /* CHARACTER CONTENT */
 .actor.sheet.character .content {
@@ -638,9 +635,6 @@
 }
 
 
-
-
-
 /* ACTOR SHEET CHARACTER POWERS TAB*/
 
 /* POWER TAB TRIHN HEADER */
@@ -742,3 +736,82 @@
     margin-bottom: 10px;
 }
 
+
+
+/* ACTOR TAB CHARACTER ACQUIS */
+
+/* ACQUIS CATEGORY HEADER */
+
+.actor.sheet.character .tab.acquis .category-header {
+    display: grid; 
+    grid: "acquisCategory power-add" "acquisContent acquisContent";
+    border-top-right-radius: 5px;
+}
+.actor.sheet.character .tab.acquis .itemCategory .category-header {
+    background-color: #755137;
+}
+
+.actor.sheet.character .tab.acquis .category-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--sans-serif);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.character .tab.acquis .category-header .item-controls {
+    padding-right: 10px;
+    justify-self: right;
+    align-self: center;
+}
+.actor.sheet.character .tab.acquis .item-control i.fas::before:hover {
+    box-shadow: none;
+}
+
+
+/* ACQUIS TAB CATEGORY CONTENT */
+
+.actor.sheet.character .tab.acquis .liste-items img {
+    max-width: 100%;
+    border: none;
+}
+.actor.sheet.character .tab.acquis ol {
+    list-style-type: none;
+    padding: 0;
+}
+.actor.sheet.character .tab.acquis .liste-items li {
+    display: grid;
+    grid: "acquis-item-header" "acquis-item-résumé";
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+}
+.actor.sheet.character .tab.acquis .liste-items li .acquis-header {
+    display: grid;
+    grid: "acquis-item-img acquis-item-name acquis-item-controls";
+    grid-template-columns: 40px 369.812px 40px;
+}
+.actor.sheet.character .tab.acquis .liste-items .acquis-header img {
+    grid-area: acquis-item-img;
+}
+.actor.sheet.character .tab.acquis .liste-items .acquis-header span {
+    font: 700 var(--font-size-16) var(--body-serif);
+    align-self: center;
+    padding-left: 5px;
+}
+.actor.sheet.character .tab.acquis .liste-items .acquis-header .item-controls {
+    grid-area: acquis-item-controls;
+    float: right;
+}
+.actor.sheet.character .tab.acquis .liste-items {
+    display: grid;
+    grid-gap: 2px;
+}
+.actor.sheet.character .tab.acquis .liste-items {
+    border: 3px solid #755137;
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
