@@ -82,6 +82,18 @@ shaanRenaissance.pouvoirs = {
     }
 };
 shaanRenaissance.acquis = {
+    category:{
+        Armement: "Armement",
+        Armimales: "Armimales",
+        Artefacts: "Artefacts",
+        Manuscrits: "Manuscrits",
+        Outils: "Outils",
+        Protections: "Protections",
+        Relations: "Relations",
+        Richesses: "Richesses",
+        Technologie: "Technologie",
+        Transport: "Transport"
+    },
     class:{
         class1: "Classe 1",
         class2: "Classe 2",

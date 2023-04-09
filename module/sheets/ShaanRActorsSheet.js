@@ -31,7 +31,17 @@ export default class ShaanRActorsSheet extends ActorSheet {
             // Filtres catégorie pouvoir
 
             if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== 'undefined') {
-                sheetData.items = actorData.items.filter(function (item) { return item.type != "Pouvoir" && item.system.trihn == "" || item.system.pouvoir.value == ""}),
+                sheetData.items.Category = {},
+                sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" }),
+                sheetData.items.Category.Armimales = actorData.items.filter(function (item) { return item.type == "Armimale" }),
+                sheetData.items.Category.Artefacts = actorData.items.filter(function (item) { return item.type == "Artefact" }),
+                sheetData.items.Category.Manuscrits = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
+                sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" }),
+                sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" }),
+                sheetData.items.Category.Relation = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
+                sheetData.items.Category.Richesse = actorData.items.filter(function (item) { return item.type == "Richesse" }),
+                sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
+                sheetData.items.Category.Transport = actorData.items.filter(function (item) { return item.type == "Transport" }),
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
                 sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
