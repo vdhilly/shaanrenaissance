@@ -1,8 +1,8 @@
-#pause img{
+.system-Shaan_Renaissance #pause img{
     content:url("../assets/symbole_pause.webp");
     object-fit: contain;
 }
-#ui-left img {
+.system-Shaan_Renaissance #ui-left img {
     content: url("../assets/logo-shaan.webp");
     height: 100px;
     object-fit: contain;

@@ -60,10 +60,9 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));  
             const title = $(".sheet-navigation .active").attr("title");
-                title && html.find(".navigation-title").text(title)
-                        
+                title && html.find(".navigation-title").text(title)                  
                         html.find(".sheet-navigation").on("mouseover", ".item,.manage-tabs", (event => {
-                            const title = event.target.title;
+                            const title = event.target.title;  
                             title && $(event.target).parents(".sheet-navigation").find(".navigation-title").text(title)
                         })), html.find(".sheet-navigation").on("mouseout", ".item,.manage-tabs", (event => {
                             const parent = $(event.target).parents(".sheet-navigation"),

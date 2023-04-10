@@ -270,7 +270,8 @@
     margin-right: 10px
 }
 .actor.sheet nav.sheet-navigation .item .fas {
-    padding-bottom: 0
+    padding-bottom: 0;
+    display: inline-block
 }
 .actor.sheet.character .sheet-body .sheet-content nav:after, .actor.sheet.character .sheet-body .sheet-content nav:before {
     background: url(../assets/sheet/sub-nav-decoration.png);
