@@ -1,5 +1,8 @@
 {
-
+    "ACTOR": {
+        "TypePersonnage": "Personnage",
+        "TypePnj": "PNJ"
+    },
     "SRLabels":{
         "Esprit":"Esprit",
         "pouvoirsEsprit": "Pouvoirs d'Esprit",

@@ -171,6 +171,9 @@
     top: 34px;
     left: 113px;
 }
+.actor.sheet aside .sidebar .initiative-sidebar {
+    align-items: center;
+}
 /* SIDEBAR PROTECTIONS */
 .actor.sheet aside .sidebar .protections {
     margin-bottom: 5px;

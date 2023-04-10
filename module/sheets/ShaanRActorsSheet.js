@@ -1,7 +1,11 @@
+import * as Dice from "../jets/dice.js";
+
 export default class ShaanRActorsSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
+        console.log(options)
         return options.classes = [...options.classes, "character"], options.width = 750, options.height = 800, options.scrollY.push(".tab.active .tab-content"), options.tabs = [{
+
             navSelector: ".sheet-navigation",
             contentSelector: ".sheet-content",
             initial: "character"
@@ -68,11 +72,39 @@ export default class ShaanRActorsSheet extends ActorSheet {
                             const parent = $(event.target).parents(".sheet-navigation"),
                                 title = parent.find(".item.active").attr("title");
                             title && parent.find(".navigation-title").text(title)
-                        })),
-        
+                        }));
+
+
         super.activateListeners(html);
         }
+        if (this.actor.isOwner) {
+            html.find(".roll-initiative").click(this._onInitiative.bind(this));
+        }
     }
+
+    _onInitiative(event) {
+        const dataset = event.currentTarget.dataset;
+        let actor = this.actor
+
+        Dice.Initiative({
+            actor,
+            domain: dataset.domain,
+            domainLevel: dataset.domainLevel
+        });
+        // let rollFormula = "1d10 + @domainLevel";
+        // const domain = this.actor.system.attributes.initiative.statistic;
+        // const domainLevel = this.actor.system.skills[domain].rank
+        // let rollData = {
+        //     domainLevel: domainLevel
+        // };
+        
+        // let messageData = {
+        //     speaker: ChatMessage.getSpeaker()
+        // }
+        // await new Roll(rollFormula, rollData).roll().toMessage(messageData)
+
+    }
+
     _onItemCreate(event) {
         event.preventDefault();
         const espritBtn = event.target.closest("#Esprit-add")
@@ -257,7 +289,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemId = element.closest(".item").dataset.itemId;
         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
     }
-
     
     
 }
