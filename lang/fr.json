@@ -198,6 +198,13 @@
         "TypeCaste": "Caste",
         "TypeJob": "Métier"
     },
+    "chat": {
+        "initiative": {
+            "title": "Jet d'Initiative",
+            "actionResult": "Résultat: {result}",
+            "outcome": "Outcome: {outcome}"
+        }
+    },
     "SR": {
         "Shaani": "Shaani",
         "ShaaniTitle": "Le Nom de ton phaani",

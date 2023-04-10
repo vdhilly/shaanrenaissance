@@ -7,3 +7,20 @@
     height: 100px;
     object-fit: contain;
 }
+
+
+
+
+
+
+
+
+
+
+/* JETS */
+
+/* INITIATIVE */
+.chat-message .dice-roll {
+    display: flex;
+    flex-direction: column;
+}

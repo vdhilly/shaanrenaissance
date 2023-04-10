@@ -1,1 +1,12 @@
-test
+<div class="dice-roll SR initiative chat-card" data-actor-id="{{actorID}}">
+  <h2 class="title">
+    <div class="check-type">{{localize "chat.initiative.title" type=type}}</div>
+  </h2>
+  <div class="roll-summary">
+    <div class="dice-formula">{{roll.formula}}</div>
+    {{{tooltip}}}
+    <h4 class="dice-total action-result" data-action-result="{{roll.total}}">
+      {{localize "chat.initiative.actionResult" result=roll.total}}
+    </h4>
+  </div>
+</div>
