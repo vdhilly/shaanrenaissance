@@ -1,0 +1,25 @@
+<form>
+  <div class="form-group">
+    <label>{{localize "chat.domainTest.options.domain"}}</label>
+    <select name="domain" value="{{domain}}">
+        {{#each domainList as |domain|}}
+        <option>test</option>
+        {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize "chat.domainTest.options.spécialisation"}}</label>
+    <select name="spé" value="{{spé}}">
+
+    </select>
+  </div>
+  <div class="form-group">
+    <label>{{localize "chat.domainTest.options.difficulty"}}</label>
+    <input type="text" name="difficulty" value="{{difficulty}}"/>
+  </div>
+  <div class="form-group">
+    <label>{{localize "chat.domainTest.options.closedRoll"}}</label>
+    <input type="checkbox" name="closedRoll" {{#if closedRoll}} checked {{/if}} />
+  </div>
+
+</form>

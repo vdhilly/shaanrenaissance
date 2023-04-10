@@ -199,10 +199,22 @@
         "TypeJob": "Métier"
     },
     "chat": {
+        "actions": {
+            "roll": "Lancer",
+            "cancel": "Annuler"
+        },
         "initiative": {
             "title": "Jet d'Initiative",
-            "actionResult": "Résultat: {result}",
-            "outcome": "Outcome: {outcome}"
+            "actionResult": "Résultat: {result}"
+        },
+        "domainTest": {
+            "title": "Test de Domaine",
+            "options": {
+                "domain": "Domaine: ",
+                "spécialisation": "Spécialisation: ",
+                "difficulty": "Difficulté: ",
+                "closedRoll": "Test caché ?"
+            }
         }
     },
     "SR": {

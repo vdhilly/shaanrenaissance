@@ -33,7 +33,9 @@ async function preloadHandleBarTemplates()
       // Item sheets
       "systems/Shaan_Renaissance/templates/items/partials/header.hbs",
 
-      "systems/Shaan_Renaissance/templates/chat/initiative.hbs"
+      // JETS
+      "systems/Shaan_Renaissance/templates/chat/initiative.hbs",
+      "systems/Shaan_Renaissance/templates/chat/domainTest-dialog.hbs"
 
     ];
     return loadTemplates( templatePaths );

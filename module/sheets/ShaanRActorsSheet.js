@@ -79,6 +79,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         }
         if (this.actor.isOwner) {
             html.find(".roll-initiative").click(this._onInitiative.bind(this));
+            html.find(".roll-icon").click(this._onTest.bind(this));
         }
     }
 
@@ -91,17 +92,17 @@ export default class ShaanRActorsSheet extends ActorSheet {
             domain: dataset.domain,
             domainLevel: dataset.domainLevel
         });
-        // let rollFormula = "1d10 + @domainLevel";
-        // const domain = this.actor.system.attributes.initiative.statistic;
-        // const domainLevel = this.actor.system.skills[domain].rank
-        // let rollData = {
-        //     domainLevel: domainLevel
-        // };
-        
-        // let messageData = {
-        //     speaker: ChatMessage.getSpeaker()
-        // }
-        // await new Roll(rollFormula, rollData).roll().toMessage(messageData)
+    }
+    _onTest(event) {
+        const dataset = event.target.closest(".roll-data").dataset.itemId;
+        let actor = this.actor
+
+        if(dataset == "domainTest" || "necroseTest" || "necroseHTest") {
+            Dice[dataset]({
+                actor,
+                checkType: dataset
+            })
+        }
 
     }
 
