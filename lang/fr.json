@@ -38,7 +38,18 @@
         "autonomie": "Autonomie",
         "reserve": "Réserve",
         "Crédos": "Crédos",
-        "CrédosTitle": "Les Crédos de ton personnage"
+        "CrédosTitle": "Les Crédos de ton personnage",
+        "apparence": "Apparence",
+        "histoire": "Vécu",
+        "personnalité": "Personnalité",
+        "temper": "Tempêrament",
+        "element1": "Élément Primaire",
+        "element2": "Élément Secondaire",
+        "culte": "Culte",
+        "campaign": "Notes de Campagne",
+        "notes": "Notes",
+        "allies": "Alliés",
+        "enemies": "Ennemis"
 
     },
     "SRdomains": {

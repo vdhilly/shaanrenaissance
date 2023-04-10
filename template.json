@@ -527,6 +527,22 @@
                     "Cultures":0,
                     "Métal":0,
                     "Hydrocarbures":0
+                },
+                "biography": {
+                    "apparence":0,
+                    "histoire":0,
+                    "personnalité": {
+                        "temper":0,
+                        "element1":0,
+                        "element2":0,
+                        "culte":0
+                    },
+                    "campagne": {
+                        "notes":0,
+                        "allies":0,
+                        "enemies":0,
+                        "gm":0
+                    }
                 }
             },
         "character": {
