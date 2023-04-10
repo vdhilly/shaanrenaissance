@@ -1,46 +1,50 @@
 {
-    "id": "Shaan_Renaissance",
-    "title": "Shaan Renaissance",
-    "description": "Un système de jeu basé sur le système de Shaan Renaissance d'Igor Polouchine édité par Origames",
-    "authors": [{
-        "name": "Pouet"
-      }],
-    "version": 0.06,
-    "compatibility": {
-        "minimum": 10,
-        "verified": 10.291,
-        "maximum": 11
-    },
-    "esmodules": [
-        "shaanRenaissance.js"
-    ],
-    "styles":[
-        "styles/CharacterSheet.css",
-        "styles/ItemSheet.css"
-    ],
-    "packs": [
-        {
-            "name": "pouvoirs",
-            "label": "Pouvoirs",
-            "system": "shaanRenaissance",
-            "path": "packs/pouvoirs.db",
-            "type": "Item",
-            "private": true,
-            "flags": {}
-        }
-    ],
-    "languages": [
+  "id": "Shaan_Renaissance",
+  "title": "Shaan Renaissance",
+  "description": "Un système de jeu basé sur le système de Shaan Renaissance d'Igor Polouchine édité par Origames",
+  "authors": [
     {
-        "lang": "fr",
-        "name": "French",
-        "path": "lang/fr.json",
-        "flags": {}
+      "name": "Pouet",
+      "flags": {}
     }
-    ],
-    "gridDistance": 5,
-    "gridUnits": "m",
-    "primaryTokenAttribute": "wounds",
-    "initiative": "1d10 + @Shaan",
-    "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
-    "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"
+  ],
+  "version": "0.06",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10.291",
+    "maximum": "11"
+  },
+  "esmodules": [
+    "shaanRenaissance.js"
+  ],
+  "styles": [
+    "styles/ui.css",
+    "styles/CharacterSheet.css",
+    "styles/ItemSheet.css"
+  ],
+  "packs": [
+    {
+      "name": "pouvoirs",
+      "label": "Pouvoirs",
+      "system": "shaanRenaissance",
+      "path": "packs/pouvoirs.db",
+      "type": "Item",
+      "private": true,
+      "flags": {}
+    }
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "lang/fr.json",
+      "flags": {}
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "wounds",
+  "initiative": "1d10 + @Shaan",
+  "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
+  "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"
 }
