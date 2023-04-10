@@ -569,7 +569,6 @@
                 "xpMax": {
                     "value": 0
                 }
-            }
             },
             "general": {
                 "shaani": {
@@ -603,6 +602,15 @@
                     "value": 0
                 }
             }
+        },
+        "PNJ":{
+            "templates": [
+                "common",
+                "spés",
+                "biography"
+            ]
+        }
+        
     },
     "Item": {
         "types": [
