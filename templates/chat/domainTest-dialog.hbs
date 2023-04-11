@@ -1,15 +1,23 @@
 <form>
   <div class="form-group">
     <label>{{localize "chat.domainTest.options.domain"}}</label>
-    <select name="domain" value="{{domain}}">
-      <option>Test</option>
-      <option>Test2</option>
+    <select class="domainCheck-domain" name="domain" value="{{domain}}">
+      {{#each actor.system.skills as |domainItem|}}
+      <option value="{{@key}}">{{@key}}</option>
+      {{/each}}
     </select>
   </div>
   <div class="form-group">
     <label>{{localize "chat.domainTest.options.spécialisation"}}</label>
-    <select name="spé" value="{{spé}}">
-
+    <select name="spécialisation" value="{{spécialisation}}">
+      {{#each actor.system.skills as |domainItem|}}
+      {{log @key}}
+      <optgroup label="{{@key}}">
+          {{#each domainItem.specialisations as |spé|}}
+            <option value="{{@key}}">{{@key}}</option>
+          {{/each}}
+      </optgroup> 
+      {{/each}}
     </select>
   </div>
   <div class="form-group">

@@ -37,12 +37,11 @@ export async function domainTest ({
     extraMessageData = {},
     sendMessage = true,
     domain = null,
-    difficulty = 0,
+    difficulty = null,
     spécialisation = null,
 } = {}) {
-    const messageTemplate = "";
+    const messageTemplate = "systems/Shaan_Renaissance/templates/chat/domainTest.hbs";
     const actorData = actor ? actor.system : null;
-    let domainList = actorData.skills;
 
     let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
 
@@ -54,20 +53,41 @@ export async function domainTest ({
     spécialisation = checkOptions.spécialisation;
     difficulty = checkOptions.difficulty;
 
+    let corps = "1d10[red]";
+    let ame = "1d10[blue]";
+    let esprit = "1d10[yellow]";
+    let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
+
+    let rollData = {
+      ...actorData,
+      domain: domain,
+      spécialisation: spécialisation
+    };
+    let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
+
+    if (sendMessage) {
+      RollToCustomMessage(actor, rollResult, messageTemplate, {
+        ...extraMessageData,
+        domain: domain,
+        spécialisation: spécialisation,
+        actorID: actor.uuid,
+      });
+    }
+
     async function GetRollOptions({
         domain = null,
         spécialisation = null,
         difficulty = 0,
         template = "systems/Shaan_Renaissance/templates/chat/domainTest-dialog.hbs" } = {}) {
-        const html = await renderTemplate(template, { domain, spécialisation, difficulty });
+        const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
+        const actorData = actor.toObject(!1);
+          const config = CONFIG.shaanRenaissance;
 
         return new Promise(resolve => {
-          const actorData = actor.toObject(!1);
-          const config = CONFIG.shaanRenaissance;
             const data = {
               title: game.i18n.format("chat.domainTest.title"),
               content: html,
-              config: config,
+              domains: config.SRdomains,
               actor: actorData,
               buttons: {
                 normal: {
@@ -82,13 +102,14 @@ export async function domainTest ({
               default: "normal",
               close: () => resolve({ cancelled: true }),
             };
+            console.log(data)
+            new Dialog(data,null).render(true);
 
-            new Dialog(data, null).render(true);
-            
           });
         }
         function _processdomainTestOptions(form) {
-          console.log(form.domain?.value)
+          console.log(form.domain?.value);
+          console.log(form.spécialisation?.value)
             return {
               difficulty: parseInt(form.difficulty?.value),
               domain: parseInt(form.domain?.value),

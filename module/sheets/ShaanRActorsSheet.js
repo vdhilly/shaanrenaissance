@@ -74,13 +74,19 @@ export default class ShaanRActorsSheet extends ActorSheet {
                             title && parent.find(".navigation-title").text(title)
                         }));
 
-
         super.activateListeners(html);
         }
         if (this.actor.isOwner) {
             html.find(".roll-initiative").click(this._onInitiative.bind(this));
             html.find(".roll-icon").click(this._onTest.bind(this));
+
         }
+    }
+    
+
+
+    _onDomainChose(event) {
+
     }
 
     _onInitiative(event) {
