@@ -4,7 +4,7 @@
 export async function Initiative({
     actor = null,
     extraMessageData = {},
-    sendMessage = true
+    sendMessage = true,
 } = {}) {
         const messageTemplate = "systems/Shaan_Renaissance/templates/chat/initiative.hbs";
         const actorData = actor ? actor.system : null;
@@ -30,7 +30,6 @@ export async function Initiative({
           actorID: actor.uuid,
         });
       }
-      console.log(rollresult);
       return rollresult;
     }
 export async function domainTest ({
@@ -40,14 +39,12 @@ export async function domainTest ({
     domain = null,
     difficulty = 0,
     spécialisation = null,
-    closedRoll = false
 } = {}) {
     const messageTemplate = "";
     const actorData = actor ? actor.system : null;
     let domainList = actorData.skills;
-    console.log(domainList)
 
-    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, closedRoll })
+    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
 
     if(checkOptions.cancelled){
         return;
@@ -56,20 +53,22 @@ export async function domainTest ({
     domain = checkOptions.domain;
     spécialisation = checkOptions.spécialisation;
     difficulty = checkOptions.difficulty;
-    closedRoll = checkOptions.closedRoll;
 
     async function GetRollOptions({
         domain = null,
         spécialisation = null,
         difficulty = 0,
-        closedRoll = false,
         template = "systems/Shaan_Renaissance/templates/chat/domainTest-dialog.hbs" } = {}) {
-        const html = await renderTemplate(template, { domain, spécialisation, difficulty, closedRoll });
+        const html = await renderTemplate(template, { domain, spécialisation, difficulty });
 
         return new Promise(resolve => {
+          const actorData = actor.toObject(!1);
+          const config = CONFIG.shaanRenaissance;
             const data = {
               title: game.i18n.format("chat.domainTest.title"),
               content: html,
+              config: config,
+              actor: actorData,
               buttons: {
                 normal: {
                   label: game.i18n.localize("chat.actions.roll"),
@@ -81,7 +80,7 @@ export async function domainTest ({
                 }
               },
               default: "normal",
-              close: () => resolve({ cancelled: true })
+              close: () => resolve({ cancelled: true }),
             };
 
             new Dialog(data, null).render(true);
@@ -89,11 +88,11 @@ export async function domainTest ({
           });
         }
         function _processdomainTestOptions(form) {
+          console.log(form.domain?.value)
             return {
               difficulty: parseInt(form.difficulty?.value),
               domain: parseInt(form.domain?.value),
-              spécialisation: parseInt(form.spécialisation?.value),
-              closedRoll: form.closedRoll?.checked
+              spécialisation: parseInt(form.spécialisation?.value)
             }
           }
           
