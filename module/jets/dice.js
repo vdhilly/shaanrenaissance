@@ -108,15 +108,13 @@ export async function domainTest ({
           });
         }
         function _processdomainTestOptions(form) {
-          console.log(form.domain?.value);
-          console.log(form.spécialisation?.value)
             return {
               difficulty: parseInt(form.difficulty?.value),
               domain: parseInt(form.domain?.value),
               spécialisation: parseInt(form.spécialisation?.value)
             }
           }
-          
+          // console.log(domain)
     }
 export async function RollToCustomMessage(actor = null, rollResult, template, extraData) {
     let templateContext = {
@@ -128,11 +126,12 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
     let chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({actor}),
-        roll: rollResult,
+        // roll: rollResult,
         content: await renderTemplate(template, templateContext),
         sound: CONFIG.sounds.dice,
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
     }
+    console.log(rollResult)
 
     ChatMessage.create(chatData);
 }
