@@ -71,7 +71,8 @@ export async function domainTest ({
       domainLevel: domainLevel,
       spéBonus: spéBonus,
       spéAcquis: spéAcquis,
-      spécialisation: spécialisation
+      spécialisation: spécialisation,
+      difficulty: difficulty
     };
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
 
@@ -159,7 +160,8 @@ export async function SpéTest ({
     domainLevel: domainLevel,
     spécialisation: spécialisation,
     spéBonus: spéBonus,
-    spéAcquis: spéAcquis
+    spéAcquis: spéAcquis,
+    difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
 
@@ -257,7 +259,8 @@ export async function SpéTestNécr ({
     domainLevel: domainLevel,
     spécialisation: spécialisation,
     spéBonus: spéBonus,
-    spéAcquis: spéAcquis
+    spéAcquis: spéAcquis,
+    difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
 
