@@ -47,3 +47,21 @@
     flex-direction: column;
     margin-top: 5px;
 }
+
+.chat-message .dice-roll.necroseTest .domainDice{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.chat-message .dice-roll.necroseTest .domainDice .Nécrose { grid-area: 1 / 1 / 2 / 2; justify-self: center; }
+.chat-message .dice-roll.necroseTest .domainDice .Nécrose img {
+    border: 0;
+}
+
+.chat-message .dice-roll.necroseTest .domainInfos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}

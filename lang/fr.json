@@ -217,6 +217,9 @@
                 "difficulty": "Difficulté: ",
                 "closedRoll": "Test caché ?"
             }
+        },
+        "necroseTest": {
+            "title": "Test de Nécrose"
         }
     },
     "SR": {
