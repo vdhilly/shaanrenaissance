@@ -42,10 +42,10 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.items.Category.Manuscrits = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
                 sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" }),
                 sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" }),
-                sheetData.items.Category.Relation = actorData.items.filter(function (item) { return item.type == "Relation" }),
-                sheetData.items.Category.Richesse = actorData.items.filter(function (item) { return item.type == "Richesse" }),
+                sheetData.items.Category.Relations = actorData.items.filter(function (item) { return item.type == "Relation" }),
+                sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
-                sheetData.items.Category.Transport = actorData.items.filter(function (item) { return item.type == "Transport" }),
+                sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" }),
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
                 sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
@@ -79,14 +79,24 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if (this.actor.isOwner) {
             html.find(".roll-initiative").click(this._onInitiative.bind(this));
             html.find(".roll-icon").click(this._onTest.bind(this));
+            html.find(".spéTest").click(this._onSpéTest.bind(this));
 
         }
     }
     
 
 
-    _onDomainChose(event) {
+    _onSpéTest(event) {
+        let actor = this.actor
+        let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
+        let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        console.log(spécialisation)
 
+        Dice.SpéTest({
+            actor,
+            domain: domain,
+            spécialisation: spécialisation
+        });
     }
 
     _onInitiative(event) {

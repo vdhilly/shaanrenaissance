@@ -4,7 +4,7 @@
   </h2>
   <div class="domainDice">
   {{#with roll.terms as |data|}}
-    {{#each data as |dice|}}
+    {{#each data as |dice| }}
         {{#with dice.rolls as |die|}}
             {{#each die as |dieInfo|}}
             {{#ifeq dieInfo.formula "1d10[yellow]"}}
@@ -34,6 +34,9 @@
       <span>{{localize "chat.domainTest.options.bonus"}}: {{#ifeq roll.data.spéBonus null}}+ 0{{/ifeq}}{{#if roll.data.spéBonus }}+ {{roll.data.spéBonus}}{{/if}}</span>
       <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ {{roll.data.spéAcquis }}{{/if}}</span>
     </div>
+</div>
+
+</div>
 </div>
 
 </div>

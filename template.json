@@ -57,7 +57,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "recuperation": {
+                                "récuperation": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -73,7 +73,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "sensdumetal": {
+                                "sensdumétal": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -100,7 +100,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "bibliotheque": {
+                                "bibliothèque": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -112,19 +112,19 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "esoterisme": {
+                                "ésotérisme": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "geologie": {
+                                "géologie": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "histoiredheos": {
+                                "histoired'héos": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "medecine": {
+                                "médecine": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -143,7 +143,7 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "arpege": {
+                                "arpège": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -175,7 +175,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "seduction": {
+                                "séduction": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -190,7 +190,7 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "artsappliques": {
+                                "artsappliqués": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -202,11 +202,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "comedie": {
+                                "comédie": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "deguisement": {
+                                "déguisement": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -245,15 +245,15 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "empathieantheenne": {
+                                "empathieanthéenne": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "empathieminerale": {
+                                "empathieminérale": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "empathievegetale": {
+                                "empathievégétale": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -265,11 +265,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "soinsdelame": {
+                                "soinsdel'âme": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "soinsdelesprit": {
+                                "soinsdel'esprit": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -292,7 +292,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "defensemagique": {
+                                "défensemagique": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -308,11 +308,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "maitrisedesschemes": {
+                                "maîtrisedesschèmes": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "regenerationdetrihn": {
+                                "régénérationdetrihn": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -331,7 +331,7 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "ritedarts": {
+                                "rited'arts": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -339,7 +339,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "ritedelanimal": {
+                                "ritedel'animal": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -347,7 +347,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "ritedenecrose": {
+                                "ritedenécrose": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -386,11 +386,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "cultureheossienne": {
+                                "culturehéossienne": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "culturenecrosienne": {
+                                "culturenécrosienne": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -398,7 +398,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "educationphysique": {
+                                "éducationphysique": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -425,15 +425,15 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "armeslancees": {
+                                "armeslancées": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "armesdemelee": {
+                                "armesdemélée": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "armesaprojectiles": {
+                                "armesàprojectiles": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -461,7 +461,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "strategie": {
+                                "stratégie": {
                                     "bonus": 0,
                                     "acquis": 0
                                 }
@@ -500,7 +500,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "harcelement": {
+                                "harcelèment": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -508,7 +508,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "pactenecrotique": {
+                                "pactenécrotique": {
                                     "bonus": 0,
                                     "acquis": 0
                                 }

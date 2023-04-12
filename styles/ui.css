@@ -40,5 +40,10 @@
 
 .chat-message .dice-roll.domainTest .domainDice .Esprit img, .chat-message .dice-roll.domainTest .domainDice .Ame img, .chat-message .dice-roll.domainTest .domainDice .Corps img {
     border: 0;
-    background-image: url(systems/Shaan_Renaissance/assets/icons/dice-result/ombre.png)
+}
+
+.chat-message .dice-roll.domainTest .domainInfos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
 }

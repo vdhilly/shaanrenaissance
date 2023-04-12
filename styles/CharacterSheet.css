@@ -662,13 +662,19 @@ input[type="checkbox"] {
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisations-bonus-label {
+.pc a {
+    box-shadow: 0;
+}
+a.spéTest label {
+    cursor: pointer;
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisations-bonus-label{
     font-size: .6rem;
     align-self: center;
     text-align: right;
     padding-right: 1px;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisation-label {
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc a {
     align-self: center;
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations input, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains {

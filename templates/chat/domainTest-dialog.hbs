@@ -2,19 +2,20 @@
   <div class="form-group">
     <label>{{localize "chat.domainTest.options.domain"}}</label>
     <select class="domainCheck-domain" name="domain" value="{{domain}}">
+      {{#select domain}}
       {{#each actor.system.skills as |domainItem|}}
       <option value="{{@key}}">{{@key}}</option>
       {{/each}}
+      {{/select}}
     </select>
   </div>
   <div class="form-group">
     <label>{{localize "chat.domainTest.options.spécialisation"}}</label>
     <select name="spécialisation" value="{{spécialisation}}">
       {{#each actor.system.skills as |domainItem|}}
-      {{log @key}}
       <optgroup label="{{@key}}">
           {{#each domainItem.specialisations as |spé|}}
-            <option value="{{@key}}">{{@key}}</option>
+            <option value="{{@key}}">{{localize @key}}</option>
           {{/each}}
       </optgroup> 
       {{/each}}
