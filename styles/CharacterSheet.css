@@ -22,7 +22,7 @@
     --journal-cursive: "La Belle Aurore", cursive;
     --journal-serif: "Vollkorn", var(--serif);
     --primary: #5e0000;
-    --secondary: #171f69;
+    --secondary: #082c08;
     --tertiary: #d3c378;
     --color-esprit: #b8985a;
     --color-ame: #4263a3;
@@ -360,7 +360,7 @@ input[type="checkbox"] {
 }
 /* ACTOR SHEET NAVIGATION */
 .actor.sheet.character .sheet-navigation {
-    background-color: #082c08;
+    background-color: var(--secondary);
     grid-area: nav;
     margin-left: -2px
 }
