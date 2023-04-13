@@ -1,6 +1,3 @@
-
-
-
 export async function Initiative({
     actor = null,
     extraMessageData = {},
@@ -50,7 +47,7 @@ export async function domainTest ({
     }
 
     domain = checkOptions.domain;
-    spécialisation = checkOptions.spécialisation;
+    const spé = checkOptions.spécialisation;
     difficulty = checkOptions.difficulty;
 
 
@@ -62,9 +59,17 @@ export async function domainTest ({
 
 
     const domainLevel = actorData.skills[domain].temp
-    
-    const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus
-    const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis
+    let spéDomain
+    let données
+    for (const [category, details] of Object.entries(actorData.skills)) {
+      if (details.specialisations && details.specialisations[spé]) {
+       spéDomain = category;
+       données = details.specialisations[spé];
+        break;
+      }
+    }
+    const  spéBonus = données.bonus
+    const spéAcquis = données.acquis
 
     let rollData = {
       ...actorData,
@@ -72,7 +77,7 @@ export async function domainTest ({
       domainLevel: domainLevel,
       spéBonus: spéBonus,
       spéAcquis: spéAcquis,
-      spécialisation: spécialisation,
+      spécialisation: spé,
       difficulty: difficulty
     };
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
@@ -245,7 +250,7 @@ export async function necroseTest ({
   }
 
   domain = checkOptions.domain;
-  spécialisation = checkOptions.spécialisation;
+  const spé = checkOptions.spécialisation;
   difficulty = checkOptions.difficulty;
 
   let nécrose = "1d10[black]";
@@ -253,11 +258,17 @@ export async function necroseTest ({
 
 
   const domainLevel = actorData.skills[domain].temp
-  console.log(spécialisation)
-  const spéBonus = $(actorData.skills).find(spécialisation).bonus
-  const spéAcquis = $(actorData.skills).find(spécialisation)
-  console.log(spéBonus)
-  console.log(spéAcquis)
+  let spéDomain
+    let données
+    for (const [category, details] of Object.entries(actorData.skills)) {
+      if (details.specialisations && details.specialisations[spé]) {
+       spéDomain = category;
+       données = details.specialisations[spé];
+        break;
+      }
+    }
+    const  spéBonus = données.bonus
+    const spéAcquis = données.acquis
 
   let rollData = {
     ...actorData,
@@ -265,7 +276,7 @@ export async function necroseTest ({
     domainLevel: domainLevel,
     spéBonus: spéBonus,
     spéAcquis: spéAcquis,
-    spécialisation: spécialisation,
+    spécialisation: spé,
     difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 

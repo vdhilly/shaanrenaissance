@@ -26,7 +26,7 @@
     {
       "name": "pouvoirs",
       "label": "Pouvoirs",
-      "system": "shaanRenaissance",
+      "system": "Shaan_Renaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
       "private": true,

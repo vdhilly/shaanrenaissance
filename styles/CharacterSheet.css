@@ -68,7 +68,7 @@ a:hover {
     font-family: GodOfWaraccent2;
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
 }
-.window-app .window-content {
+.window-app.sheet.character .window-content {
     padding: 0 !important;
 }
 h2 {
