@@ -17,9 +17,9 @@
         "Initiative": "Initiative",
         "Tests": "Tests",
         "DomainTest": "Test de Domaine",
-        "NecroseTest": "Test de Nécrose",
-        "NecroseHTest": "Test de Nécrose Humaine",
-        "Experience": "Expérience",
+        "NecroseTest": "Test de Necrose",
+        "NecroseHTest": "Test de Necrose Humaine",
+        "Experience": "Experience",
         "Genre": "Genre",
         "Age": "Âge",
         "Taille": "Taille",
@@ -219,7 +219,7 @@
             }
         },
         "necroseTest": {
-            "title": "Test de Nécrose"
+            "title": "Test de Necrose"
         }
     },
     "SR": {
