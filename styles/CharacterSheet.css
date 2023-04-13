@@ -23,7 +23,7 @@
     --journal-serif: "Vollkorn", var(--serif);
     --primary: #5e0000;
     --secondary: #171f69;
-    --tertiary: #e9d7a1;
+    --tertiary: #d3c378;
     --color-esprit: #b8985a;
     --color-ame: #4263a3;
     --color-corps: #c95b40;
@@ -53,6 +53,23 @@
     --header-bg: var(--secondary);
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary);
+    --title: "GodOfWaraccent2";
+}
+@font-face {
+    font-family: GodOfWaraccent2;
+    src: url(../fonts/GodOfWaraccent-Regular.ttf);
+}
+.window-app .window-content {
+    padding: 0 !important;
+}
+h2 {
+    font-family: var(--title);
+    font-weight: 400;
+}
+h3 {
+    font-family: var(--title);
+    font-weight: 400;
+    border: 0;
 }
 /* ACTOR SHEET */
 .actor.sheet {
@@ -61,7 +78,6 @@
     display: grid;
     font-family: var(--body-serif);
     grid: "sidebar header"75px "sidebar nav"minmax(min-content, max-content) "sidebar content"1fr/230px 1fr;
-    height: 100%
 }
 .actor.sheet input {
     border-radius: 0;
@@ -79,23 +95,37 @@
 }
 /* ACTOR SHEET SIDEBAR */
 .actor.sheet.character aside {
+    background-image: url(../assets/sheet/shaan-navig-vert-top.jpg), url(../assets/sheet/shaan-navig-vert-bottom.jpg);
+    background-position: center calc(100% - 172px), bottom;
+    background-repeat: no-repeat;
+    background-size: 230px 100%, 230px 172px;
     color: black;
     font-family: var(--serif);
     font-size: var(--font-size-10);
     font-weight: 600;
     grid-area: sidebar;
-    margin-left: 8px
+    /* margin-left: 8px */
 }
 .actor.sheet.character .sidebar {
+    margin-left: 25px;
     float: left;
-    width: 220px;
+    width: 180px;
     margin-top: 5px;
 }
+.actor.sheet.character .sidebar input {
+    border: 2px solid #293011; 
+    background: #d9d2b5;
+}
+.actor.sheet.character .sidebar select {
+    border: 2px solid #293011; 
+    background: #d9d2b5;
+}
 .actor.sheet.character .sidebar .sidebar_title h2 {
-    font-family: var(--sans-serif);
-    color: var(--primary);
-    font-weight: 800;
-    text-transform: uppercase;
+    font-family: var(--title);
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+    font-weight: 400;
+    /* text-transform: uppercase; */
 }
 .actor.sheet.character aside .logo {
     display: flex;
@@ -104,92 +134,97 @@
 .actor.sheet.character aside .logo-img {
     border: none;
     flex-shrink: 0;
-    margin: 0;
+    margin-top: 10px;
     max-width: unset;
     z-index: 10;
     object-fit:cover;
-    width: 62%;
     
 }
 /* SIDEBAR HP */
+.actor.sheet aside .sidebar .HP {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .actor.sheet aside .sidebar .HP .hp-big {
-    background-image: url(../assets/sheet/trihns.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
     width: 100%;
-    height: 300px;
-    margin-bottom: -80px;
-    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
 }
-.actor.sheet aside .sidebar .HP .hp-big .hpEsprit, .actor.sheet aside .sidebar .HP .hp-big .hpAme, .actor.sheet aside .sidebar .HP .hp-big .hpCorps {
-    text-align: center;
-}
-.actor.sheet aside .sidebar .HP .hp-big .hpEsprit .hpActuel-esprit, .actor.sheet aside .sidebar .HP .hp-big .hpAme .hpActuel-ame, .actor.sheet aside .sidebar .HP .hp-big .hpCorps .hpActuel-corps {
-    width: 40px;
-    height: 30px;
-    font-size: 30px;
-}
-.actor.sheet aside .sidebar .HP .hp-big .hpEsprit .hpActuel-esprit input, .actor.sheet aside .sidebar .HP .hp-big .hpAme .hpActuel-ame input, .actor.sheet aside .sidebar .HP .hp-big .hpCorps .hpActuel-corps input {
-    height: 36px;
-    vertical-align:middle;
-}
-.actor.sheet aside .sidebar .HP .hp-big .hpEsprit .hpMax-esprit, .actor.sheet aside .sidebar .HP .hp-big .hpAme .hpMax-ame, .actor.sheet aside .sidebar .HP .hp-big .hpCorps .hpMax-corps{
-    width: 30px;
-    font-size: 20px;
-}
-
-.actor.sheet aside .sidebar .HP .hp-big .hpEsprit .hpActuel-esprit {
-    position: relative;
-    top: 107px;
-    left: 38px;
-}
-
-.actor.sheet aside .sidebar .HP .hp-big .hpEsprit .hpMax-esprit {
-    position: relative;
-    top: 120px;
-    left: 16px;
-}
-.actor.sheet aside .sidebar .HP .hp-big .hpAme .hpActuel-ame {
-    position: relative;
-    top: -23px;
-    left: 98px;
-}
-
-.actor.sheet aside .sidebar .HP .hp-big .hpAme .hpMax-ame {
-    position: relative;
-    top: -12px;
-    left: 76px;
-}
-.actor.sheet aside .sidebar .HP .hp-big .hpCorps .hpActuel-corps {
-    position: relative;
-    top: 21px;
-    left: 141px;
-}
-
-.actor.sheet aside .sidebar .HP .hp-big .hpCorps .hpMax-corps {
-    position: relative;
-    top: 34px;
-    left: 113px;
-}
-.actor.sheet aside .sidebar .initiative-sidebar {
+.actor.sheet aside .sidebar .HP .hp-big .container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
     align-items: center;
 }
+.actor.sheet aside .sidebar .HP .hp-big .container .sidebar_label{
+    color: var(--tertiary);
+    font-family: var(--title);
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+.actor.sheet aside .sidebar .HP .hp-big .container span {
+    width: 50%;
+    justify-content: center;
+}
+
+
+
+.actor.sheet aside .sidebar .initiative-sidebar {
+    align-items: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 2px solid var(--tertiary);
+    border-bottom: 2px solid var(--tertiary);
+}
+.actor.sheet aside .sidebar .initiative-sidebar a {
+    box-shadow: 0;
+}
+.actor.sheet aside .sidebar .initiative-sidebar h2 {
+    font-family: var(--title);
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+    font-weight: 400;
+    border: 0;
+    margin: 0;
+}
+.actor.sheet aside .sidebar .initiative-sidebar h4 {
+    margin: 0;
+}
+
 /* SIDEBAR PROTECTIONS */
+.actor.sheet.character .sidebar .protection-title {
+    margin-top: 10px;
+}
 .actor.sheet aside .sidebar .protections {
     margin-bottom: 5px;
     text-align: center;
 }
 .actor.sheet aside .sidebar .protections label{
-    color: var(--primary);
-    font-family: var(--sans-serif);
-    font-weight: 800;
+    color: var(--tertiary);
+    font-family: var(--title);
+    font-weight: 400;
     font-size: .625rem;
     text-transform: uppercase; 
 }
 .actor.sheet aside .sidebar .protections input {
     font: 700 var(--font-size-14) var(--body-serif)
 }
-
+/* SIDEBAR JETS */
+.actor.sheet aside .sidebar .tests-sidebar {
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.actor.sheet aside .sidebar .tests-sidebar h3 {
+    color: var(--tertiary);
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+}
+.actor.sheet aside .sidebar .tests-sidebar .roll-icon {
+    align-self: center
+}
 /* SIDEBAR RESERVE */
 .actor.sheet aside .sidebar .reserve-sidebar {
     text-align: center;
@@ -204,7 +239,7 @@
 .reserve-line-3  { grid-area: 3 / 3 / 4 / 4; display: flex; flex-direction: row; justify-content: center;}
 
 .actor.sheet aside .sidebar .reserve-sidebar label{
-    color: var(--primary);
+    color: var(--tertiary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
@@ -213,7 +248,7 @@
 input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
-    background-color: rgba(28, 28, 28, .1);
+    background-color: #d9d2b5;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 1px;
@@ -255,14 +290,17 @@ input[type="checkbox"] {
 
 /* CHARACTER CONTENT CHARACTER HEADER */
 .actor.sheet.character .char-header {
+    background: url(../assets/sheet/shaan-navig-horiz.jpg);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-size: auto 78px, cover;
     display: flex;
     flex-direction: row;
     text-align: center;
     align-content: center;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     justify-content: space-between;
     grid-area: header;
-    background-color: var(--color-corps);
 }
 .actor.sheet.character .char-header .char-details .char-name {
     border: none;

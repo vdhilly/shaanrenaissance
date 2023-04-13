@@ -4,9 +4,9 @@
     <select class="domainCheck-domain" name="domain" value="{{domain}}">
       {{#select domain}}
       {{#each actor.system.skills as |domainItem|}}
-      {{#ifnoteq @key "Nécrose"}}
+      {{#ifeq @key "Nécrose"}}
       <option value="{{@key}}">{{@key}}</option>
-      {{/ifnoteq}}
+      {{/ifeq}}
       {{/each}}
       {{/select}}
     </select>
