@@ -2,7 +2,7 @@ export default class ShaanNPCSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
         console.log(options)
-        return options.classes = [...options.classes, "PNJ"], options.width = 750, options.height = 800, options
+        return options.classes = [...options.classes, "PNJ"], options.width = 900, options.height = 700, options
     }
     get template(){
         return `systems/Shaan_Renaissance/templates/actors/${this.actor.type}/sheet.hbs`;

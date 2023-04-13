@@ -81,7 +81,7 @@ h3 {
     border: 0;
 }
 /* ACTOR SHEET */
-.actor.sheet {
+.actor.sheet.character {
     width: 100%;
     height: 100%;
     display: grid;

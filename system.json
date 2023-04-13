@@ -20,7 +20,8 @@
   "styles": [
     "styles/ui.css",
     "styles/CharacterSheet.css",
-    "styles/ItemSheet.css"
+    "styles/ItemSheet.css",
+    "styles/NPCSheet.css"
   ],
   "packs": [
     {

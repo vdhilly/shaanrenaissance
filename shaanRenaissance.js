@@ -30,6 +30,15 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/ressources.hbs",
 
+      // NPC
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/cercle.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/general.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/powers.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/acquis.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/spés.hbs",
+
+
       // Item sheets
       "systems/Shaan_Renaissance/templates/items/partials/header.hbs",
 
