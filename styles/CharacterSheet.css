@@ -761,7 +761,7 @@ input[type="checkbox"] {
 .pc a {
     box-shadow: 0;
 }
-a.spéTest label {
+a.spéTest label, a.spéTestNécr label {
     cursor: pointer;
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisations-bonus-label{
