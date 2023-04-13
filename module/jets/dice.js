@@ -240,7 +240,7 @@ export async function necroseTest ({
   difficulty = null,
   spécialisation = null,
 } = {}) {
-  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/domainTest.hbs";
+  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/nécroseTest.hbs";
   const actorData = actor ? actor.system : null;
 
   let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
@@ -253,8 +253,17 @@ export async function necroseTest ({
   const spé = checkOptions.spécialisation;
   difficulty = checkOptions.difficulty;
 
-  let nécrose = "1d10[black]";
-  let rollFormula = `${nécrose}`;
+  let rollFormula
+
+  if(actorData.general.race == "Humain" || "Humaine") {
+    let nécrose = "1d10[black]";
+    let esprit = "1d10[yellow]";
+    rollFormula = `{${nécrose}, ${esprit}}`;
+  }
+  else{
+    let nécrose = "1d10[black]";
+    rollFormula = `${nécrose}`;
+  }
 
 
   const domainLevel = actorData.skills[domain].temp
@@ -341,7 +350,7 @@ export async function SpéTestNécr ({
   difficulty = null,
   spécialisation = null,
 } = {}) {
-  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/nécroseTest.hbs";
+  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/spéTestNécr.hbs";
   const actorData = actor ? actor.system : null;
   const domainLevel = actorData.skills[domain].temp;
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
@@ -355,8 +364,17 @@ export async function SpéTestNécr ({
 
   difficulty = checkOptions.difficulty;
 
-  let nécrose = "1d10[black]";
-  let rollFormula = `${nécrose}`;
+  let rollFormula
+
+  if(actorData.general.race == "Humain" || "Humaine") {
+    let nécrose = "1d10[black]";
+    let esprit = "1d10[yellow]";
+    rollFormula = `{${nécrose}, ${esprit}}`;
+  }
+  else{
+    let nécrose = "1d10[black]";
+    rollFormula = `${nécrose}`;
+  }
 
   let rollData = {
     ...actorData,

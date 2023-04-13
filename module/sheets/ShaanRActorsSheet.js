@@ -126,7 +126,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const dataset = event.target.closest(".roll-data").dataset.itemId;
         let actor = this.actor
 
-        if(dataset == "domainTest" || "necroseTest" || "necroseHTest") {
+        if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({
                 actor,
                 checkType: dataset
