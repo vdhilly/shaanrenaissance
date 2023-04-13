@@ -22,7 +22,7 @@
     --journal-cursive: "La Belle Aurore", cursive;
     --journal-serif: "Vollkorn", var(--serif);
     --primary: #5e0000;
-    --secondary: #082c08;
+    --secondary: #0d2408;
     --tertiary: #d3c378;
     --color-esprit: #b8985a;
     --color-ame: #4263a3;
@@ -54,6 +54,15 @@
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary);
     --title: "GodOfWaraccent2";
+}
+::-webkit-scrollbar-thumb {
+    outline: none;
+    border-radius: 3px;
+    background: var(--primary);
+    border: 0;
+}
+a:hover {
+    text-shadow: none !important;
 }
 @font-face {
     font-family: GodOfWaraccent2;
@@ -326,7 +335,7 @@ input[type="checkbox"] {
 }
 .actor.sheet.character .char-header .char-details {
     align-self: center;
-    width: 60%
+    width: 70%
 }
 .actor.sheet.character .char-header .char-details .char-name {
     border: none;
@@ -334,7 +343,7 @@ input[type="checkbox"] {
     text-align: left;
     margin: 0;
     padding-left: 40px;
-    width: 80%;
+    width: 100%;
 }
 .actor.sheet.character .char-header .char-details .char-name input {
     color: var(--tertiary);
