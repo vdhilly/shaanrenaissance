@@ -1,5 +1,8 @@
 <form class="actor sheet crb-style npc" autocomplete="off">
     <div class="npc-stats">
+        <section class="npc-HP">
+        
+        </section>
         <section class="npc-cercle">
         <span class="DomainsLabel">{{localize "SRLabels.DomainsTitle"}}</span>
         {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/cercle.hbs"}}
@@ -15,7 +18,13 @@
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/general.hbs"}}
         </div>
         <div class="npc-dice">
-
+                <img src="">
+            {{#ifnoteq data.general.race.value "Humain"}}
+                <img src="">
+            {{/ifnoteq}}
+            {{#ifeq data.general.race.value "Humain"}}
+                <img src="">
+            {{/ifeq}}
         </div>
         <div class="npc-bio">
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs"}}

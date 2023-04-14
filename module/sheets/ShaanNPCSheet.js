@@ -27,25 +27,9 @@ export default class ShaanNPCSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
-            if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== 'undefined') {
-                sheetData.items.Category = {},
-                sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" }),
-                sheetData.items.Category.Armimales = actorData.items.filter(function (item) { return item.type == "Armimale" }),
-                sheetData.items.Category.Artefacts = actorData.items.filter(function (item) { return item.type == "Artefact" }),
-                sheetData.items.Category.Manuscrits = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
-                sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" }),
-                sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" }),
-                sheetData.items.Category.Relations = actorData.items.filter(function (item) { return item.type == "Relation" }),
-                sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
-                sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
-                sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" }),
-
-                sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
-                sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
-                sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
-                sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
-    
-            }
+            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" });
+        
+            sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
 
         console.log(sheetData);
@@ -119,173 +103,22 @@ export default class ShaanNPCSheet extends ActorSheet {
 
     _onItemCreate(event) {
         event.preventDefault();
-        const espritBtn = event.target.closest("#Esprit-add")
-        const ameBtn = event.target.closest("#Ame-add")
-        const corpsBtn = event.target.closest("#Corps-add")
-        const necroseBtn = event.target.closest("#Nécrose-add")
-        const armementBtn = event.target.closest("#Armement-add")
-        const armimaleBtn = event.target.closest("#Armimales-add")
-        const artefactBtn = event.target.closest("#Artefacts-add")
-        const manuscritBtn = event.target.closest("#Manuscrits-add")
-        const outilBtn = event.target.closest("#Outils-add")
-        const protectionBtn = event.target.closest("#Protection-sadd")
-        const relationBtn = event.target.closest("#Relations-add")
-        const richesseBtn = event.target.closest("#Richesses-add")
-        const technologieBtn = event.target.closest("#Technologie-add")
-        const transportBtn = event.target.closest("#Transport-add")
-        
+        const pouvoirBtn = event.target.closest("#pouvoir-add")
+        const acquisBtn = event.target.closest("#acquis-add")
 
-        if(armementBtn) {
+        if (pouvoirBtn) {
             let itemData = {
-                name: "Nouvel Armement",
-                type: "Armement"
-              };
-      
-              return this.actor.createEmbeddedDocuments("Item", [itemData]);
-              }
-              this.actor.sheet.render();
+          name: "Nouveau pouvoir",
+          type: "Pouvoir"
+        };
 
-        if(armimaleBtn) {
-            let itemData = {
-                name: "Nouvelle Armimale",
-                type: "Armimale"
-                };
-          
-                return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                }
-                this.actor.sheet.render();
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
 
-        if(artefactBtn) {
-            let itemData = {
-                name: "Nouvel Artefact",
-                type: "Artefact"
-                };
-        
-                return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                }
-                this.actor.sheet.render();
-
-        if(manuscritBtn) {
-            let itemData = {
-                name: "Nouveau Manuscrit",
-                type: "Manuscrit"
-            };
+        if(acquisBtn) {
             
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-
-        if(outilBtn) {
-            let itemData = {
-                name: "Nouvel Outil",
-                type: "Outil"
-            };
-            
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
-        this.actor.sheet.render();
-
-        if(protectionBtn) {
-            let itemData = {
-                name: "Nouvelle Protection",
-                type: "Protection"
-            };
-            
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(relationBtn) {
-        let itemData = {
-            name: "Nouvelle Relation",
-            type: "Relation"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(richesseBtn) {
-        let itemData = {
-            name: "Nouvelle Richesse",
-            type: "Richesse"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(technologieBtn) {
-        let itemData = {
-            name: "Nouvelle Technologie",
-            type: "Technologie"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(transportBtn) {
-        let itemData = {
-            name: "Nouveau Transport",
-            type: "Transport"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if (espritBtn) {
-            let itemData = {
-          name: "Nouveau pouvoir d'Esprit",
-          type: "Pouvoir",
-          system: {
-            trihn: "Esprit"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if (ameBtn) {
-            let itemData = {
-          name: "Nouveau pouvoir d'Âme",
-          type: "Pouvoir",
-          system: {
-            trihn: "Âme"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if (corpsBtn) {
-            let itemData = {
-          name: "Nouveau pouvoir de Corps",
-          type: "Pouvoir",
-          system: {
-            trihn: "Corps"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if (necroseBtn) {
-            let itemData = {
-          name: "Nouveau pouvoir de Nécrose",
-          type: "Pouvoir",
-          system: {
-            trihn: "Nécrose"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
     }
     _onItemEdit(event) {
         event.preventDefault();

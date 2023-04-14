@@ -557,7 +557,7 @@ input[type="checkbox"] {
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .DomainsLabel {
     grid-area: titre;
     color: var(--primary);
-    font-family: var(--sans-serif);
+    font-family: var(--title);
     font-size: 1rem;
     font-weight: 800;
     line-height: 1;
@@ -666,7 +666,7 @@ input[type="checkbox"] {
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .SpecialisationsLabel {
     grid-area: spésTitre;
     color: var(--primary);
-    font-family: var(--sans-serif);
+    font-family: var(--title);
     font-size: 1rem;
     font-weight: 800;
     line-height: 1;
@@ -808,7 +808,7 @@ a.spéTest label, a.spéTestNécr label {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: var(--font-size-17);
-    font-family: var(--sans-serif);
+    font-family: var(--title);
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -950,7 +950,7 @@ a.spéTest label, a.spéTestNécr label {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: var(--font-size-17);
-    font-family: var(--sans-serif);
+    font-family: var(--title);
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -977,7 +977,7 @@ a.spéTest label, a.spéTestNécr label {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: var(--font-size-17);
-    font-family: var(--sans-serif);
+    font-family: var(--title);
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -1010,7 +1010,7 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.character .tab.acquis .liste-items li .acquis-header {
     display: grid;
     grid: "acquis-item-img acquis-item-name acquis-item-controls";
-    grid-template-columns: 40px 369.812px 40px;
+    grid-template-columns: 10% 80% 10%;
 }
 .actor.sheet.character .tab.acquis .liste-items .acquis-header img {
     grid-area: acquis-item-img;

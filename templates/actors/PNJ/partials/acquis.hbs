@@ -1,0 +1,29 @@
+        <div class="item item-container itemCategory">
+            <div class="category-header">
+                <h3 class="item-name">{{localize "SRLabels.acquis"}}</h3>
+                {{#ifeq @root.editable true}}
+                    <div class="item-controls">
+                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="acquis-add"></i></a>
+                    </div>
+                {{/ifeq}}
+            </div>
+            <ol class="item-list liste-items liste-item">
+                {{#each acquis as |acquis id|}}
+                <li class="item acquis" draggable="true" data-item-id="{{acquis._id}}">
+                <div class="acquis-header">
+                        <img src="{{acquis.img}}" data-edit="img">
+                    <span class="acquis-name">
+                        {{acquis.name}}
+                    </span>
+                    <div class="item-controls">
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
+                    </div>
+                </div>
+                <div class="spécialisations">
+                    <i>{{localize "SRLabels.BonusLabel"}}: {{acquis.system.acquis.spécialisations}}</i>
+                </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>

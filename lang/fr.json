@@ -52,8 +52,8 @@
         "campaign": "Notes de Campagne",
         "notes": "Notes",
         "allies": "Alliés",
-        "enemies": "Ennemis"
-
+        "enemies": "Ennemis",
+        "pouvoirs": "Pouvoirs"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -280,7 +280,7 @@
         "Rank3":"Rang 3",
         "Rank4":"Rang 4",
         "pouvoirType": "Type",
-        "Sens Du Bois": "Fréquence",
+        "pouvoirFréquence": "Fréquence",
         "pouvoirActivation": "Activation",
         "pouvoirScore": "Score",
         "Portée": "Portée",
