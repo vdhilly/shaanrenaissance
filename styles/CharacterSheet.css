@@ -69,6 +69,7 @@ a:hover {
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
 }
 .window-app.sheet.character .window-content {
+    background: url(../assets/sheet/template_shaan_background1.png);
     padding: 0 !important;
 }
 h2 {
@@ -107,7 +108,7 @@ h3 {
     background-image: url(../assets/sheet/shaan-navig-vert-top.jpg), url(../assets/sheet/shaan-navig-vert-bottom.jpg);
     background-position: center calc(100% - 172px), bottom;
     background-repeat: no-repeat;
-    background-size: 230px 100%, 230px 172px;
+    background-size: 231px 100%, 231px 172px;
     color: black;
     font-family: var(--serif);
     font-size: var(--font-size-10);
