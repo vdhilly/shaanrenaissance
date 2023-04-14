@@ -608,9 +608,59 @@
                 "common",
                 "spés",
                 "biography"
-            ]
+            ],
+            "protections": {
+                "esprit": {
+                    "value": 0
+                },
+                "ame": {
+                    "value": 0
+                },
+                "corps": {
+                    "value": 0
+                }
+            },
+            "details": {
+                "xp": {
+                    "value": 0
+                },
+                "xpMax": {
+                    "value": 0
+                }
+            },
+            "general": {
+                "shaani": {
+                    "value": 0
+                },
+                "race": {
+                    "value": 0
+                },
+                "people": {
+                    "value": 0
+                },
+                "caste": {
+                    "value": 0
+                },
+                "job": {
+                    "value": 0
+                },
+                "genre": {
+                    "value": 0
+                },
+                "age": {
+                    "value": 0
+                },
+                "taille": {
+                    "value": 0
+                },
+                "poids": {
+                    "value": 0
+                },
+                "motivations": {
+                    "value": 0
+                }
+            }
         }
-        
     },
     "Item": {
         "types": [
