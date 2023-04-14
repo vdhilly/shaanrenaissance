@@ -36,7 +36,7 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/powers.hbs",
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs",
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/spés.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/specialisations.hbs",
 
 
       // Item sheets
