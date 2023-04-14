@@ -201,7 +201,8 @@
     "chat": {
         "actions": {
             "roll": "Lancer",
-            "cancel": "Annuler"
+            "cancel": "Annuler",
+            "create": "Créer"
         },
         "initiative": {
             "title": "Jet d'Initiative",
@@ -400,5 +401,7 @@
         "fraude": "Fraude",
         "harcelement": "Harcèlement",
         "larcin": "Larcin",
-        "pactenecrotique": "Pacte Nécrotique"
+        "pactenecrotique": "Pacte Nécrotique",
+        "GetAcquisOptions": "Création d'Acquis",
+        "TypeAcquis": "Type d'Acquis"
 }

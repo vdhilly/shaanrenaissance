@@ -35,10 +35,9 @@ export default class ShaanNPCSheet extends ActorSheet {
         console.log(sheetData);
         return await sheetData;
     }
-
     activateListeners(html) {
         if (this.isEditable) {
-            html.find(".item-create").click(this._onItemCreate.bind(this));
+            html.find(".item-createNPC").click(this._onItemCreateNPC.bind(this)); 
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));  
 
@@ -101,10 +100,10 @@ export default class ShaanNPCSheet extends ActorSheet {
 
     }
 
-    _onItemCreate(event) {
+    _onItemCreateNPC(event) {
         event.preventDefault();
-        const pouvoirBtn = event.target.closest("#pouvoir-add")
-        const acquisBtn = event.target.closest("#acquis-add")
+        const pouvoirBtn = event.target.closest("#pouvoir-add");
+        const acquisBtn = event.target.closest("#acquis-add");
 
         if (pouvoirBtn) {
             let itemData = {
@@ -116,10 +115,77 @@ export default class ShaanNPCSheet extends ActorSheet {
         }
         this.actor.sheet.render();
 
-        if(acquisBtn) {
+        if(acquisBtn) { 
+        let actor = this.actor
+
+        acquisCreate({
+            actor,
+        })
+        
+
+        async function acquisCreate ({
+            actor = null,
+            type = null
+        } = {}) {
             
+        const actorData = actor ? actor.system : null;
+        let checkOptions = await GetAcquisOptions ({type})
+
+        if (checkOptions.cancelled) {
+            return;
         }
+
+        type = checkOptions.type
+
+        // console.log(type)
+        let itemData = {
+          name: "Nouvel Item",
+          type: type
+        };
+        return actor.createEmbeddedDocuments("Item", [itemData]);
+
+        async function GetAcquisOptions({
+            type = null,
+            template = "systems/Shaan_Renaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
+                const actorData = actor.toObject(!1);
+                actorData.itemTypes = {
+                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}
+                }
+                const html = await renderTemplate(template, { actor, type });
+
+                return new Promise(resolve => {
+                    const data = {
+                        title: game.i18n.format("Création d'Acquis"),
+                        content: html,
+                        actor: actorData,
+                        buttons: {
+                            normal: {
+                              label: game.i18n.localize("chat.actions.create"),
+                              callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                            },
+                            cancel: {
+                              label: game.i18n.localize("chat.actions.cancel"),
+                              callback: html => resolve({ cancelled: true })
+                            }
+                          },
+                          default: "normal",
+                          close: () => resolve({ cancelled: true }),
+                        };
+                        console.log(data)
+                        new Dialog(data,null).render(true);
+            
+                      });
+            }
+            function _processAcquisCreateOptions(form) {
+                return {
+                 type: form.type?.value
+                }
+              }
+        }
+        this.actor.sheet.render() 
     }
+    }
+    
     _onItemEdit(event) {
         event.preventDefault();
         let element = event.target

@@ -119,7 +119,7 @@ export async function domainTest ({
               default: "normal",
               close: () => resolve({ cancelled: true }),
             };
-            console.log(data)
+            
             new Dialog(data,null).render(true);
 
           });
