@@ -53,13 +53,23 @@
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/general.hbs"}}
         </div>
         <div class="npc-dice">
-                <img src="">
-            {{#ifnoteq data.general.race.value "Humain"}}
-                <img src="">
-            {{/ifnoteq}}
-            {{#ifeq data.general.race.value "Humain"}}
-                <img src="">
-            {{/ifeq}}
+            <div class="roll-data domain-test" data-item-id="domainTest" style="display: flex; flex-direction: row;">
+                <a class="roll-icon">
+                    <img src="systems/Shaan_Renaissance/assets/sheet/dés_domaine.png">
+                </a>
+            <h3>{{localize "SRLabels.DomainTest"}}</h3>
+            </div>
+            <div class="roll-data necrose-test" data-item-id="necroseTest" style="display: flex; flex-direction: row;">
+                <a class="roll-icon">
+                {{#ifeq data.general.race.value "Humain"}}
+                <img src="systems/Shaan_Renaissance/assets/sheet/dés_nécroseH.png">
+                {{/ifeq}}   
+                {{#ifnoteq data.general.race.value "Humain"}}
+                <img src="systems/Shaan_Renaissance/assets/sheet/dés_nécrose.png">
+                {{/ifnoteq}}   
+                </a>
+                <h3>{{localize "SRLabels.NecroseTest"}}</h3>
+            </div>
         </div>
         <div class="npc-bio">
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs"}}

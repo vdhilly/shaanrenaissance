@@ -40,6 +40,9 @@
     font: 700 var(--font-size-14) var(--body-serif);
     text-align: center;
 }
+.actor.sheet.npc .npc-bio textarea {
+    font: 700 var(--font-size-14) var(--body-serif);
+}
 .actor.sheet.npc .npc-stats .npc-cercle label {
     text-align: center;
 }
@@ -187,7 +190,25 @@
     text-align: center;
     flex: 100%;
 }
-
+/* NPC jets */
+.actor.sheet.npc .npc-dice {
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.actor.sheet.npc .npc-dice h3 {
+    color: var(--primary);
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+}
+.actor.sheet.npc .npc-dice .roll-icon {
+    align-self: center;
+    margin-left: 3px;
+}
+.actor.sheet.npc .npc-dice .roll-icon img {
+    border: 0;
+}
 /*  domaines Esprit */
 
 .actor.sheet.npc .domain-esprit .domain-label{

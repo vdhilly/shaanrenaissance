@@ -252,7 +252,11 @@ h3 {
     align-self: center;
 }
 .actor.sheet aside .sidebar .tests-sidebar .roll-icon {
-    align-self: center
+    align-self: center;
+    margin-left: 3px;
+}
+.actor.sheet aside .sidebar .tests-sidebar .roll-icon img {
+    border: 0;
 }
 /* SIDEBAR RESERVE */
 .actor.sheet aside .sidebar .reserve-sidebar {
