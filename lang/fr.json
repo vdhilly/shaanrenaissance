@@ -4,6 +4,8 @@
         "TypePnj": "PNJ"
     },
     "SRLabels":{
+        "HPMax": "Base",
+        "HPActuel": "Actuel",
         "Esprit":"Esprit",
         "pouvoirsEsprit": "Pouvoirs d'Esprit",
         "Ame":"Âme",

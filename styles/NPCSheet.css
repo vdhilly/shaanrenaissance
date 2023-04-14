@@ -5,7 +5,7 @@
 }
 .actor.sheet.npc {
     background: url(../assets/sheet/template_shaan_background1.jpg);
-    background-size: auto auto;
+    background-size: auto 1750px;
     width: 100%;
     height: 100% ;
     display: grid;
@@ -22,9 +22,99 @@
     margin: 10px 6px 10px 0
 }
 
-.actor.sheet.npc .npc-stats { grid-area: 1 / 1 / 5 / 4; margin-bottom: 80px; display: flex; flex-direction: column;}
-.actor.sheet.npc .npc-infos {grid-area: 1 / 4 / 5 / 7; display: flex; flex-direction: column; }
+.actor.sheet.npc .npc-stats { grid-area: 1 / 4 / 5 / 7; margin-bottom: 80px; display: flex; flex-direction: column; margin-left: 10px;}
+.actor.sheet.npc .npc-infos {grid-area: 1 / 1 / 5 / 4; display: flex; flex-direction: column; }
 
+/* NPC HP */
+
+.actor.sheet.npc .npc-HP {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 17px repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-bottom: 5px;
+    color: var(--primary)
+}
+.actor.sheet.npc .npc-HP input, .actor.sheet.npc .npc-general input, .actor.sheet.npc .npc-bio input, .actor.sheet.npc .npc-stats input {
+    font: 700 var(--font-size-14) var(--body-serif);
+    text-align: center;
+}
+.actor.sheet.npc .npc-stats .npc-cercle label {
+    text-align: center;
+}
+.actor.sheet.npc .char-name input {
+    font-family: var(--title) !important;
+    font-size: var(--font-size-20)
+}
+.actor.sheet.npc .npc-HP h3 {
+    margin: 0;
+}
+.actor.sheet.npc .npc-HP .hp-esprit { 
+    margin-top: 2px;
+    grid-area: 2 / 1 / 3 / 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.actor.sheet.npc .npc-HP .hp-ame { 
+    margin-top: 2px;
+    grid-area: 2 / 2 / 3 / 3;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+ }
+.actor.sheet.npc .npc-HP .hp-corps { 
+    margin-top: 2px;
+    grid-area: 2 / 3 / 3 / 4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+.esprit-label {
+    grid-area: 1 / 1 / 2 / 3; 
+}
+.ame-label {
+    grid-area: 1 / 1 / 2 / 3;
+}
+.corps-label {
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+.hpActuel-esprit {grid-area: 2 / 2 / 3 / 3; }
+.hpActuel-ame {grid-area: 2 / 2 / 3 / 3; }
+.hpActuel-corps {grid-area: 2 / 2 / 3 / 3; }
+
+.hpMax-esprit {grid-area: 3 / 2 / 4 / 3;}
+.hpMax-ame {grid-area: 3 / 2 / 4 / 3;}
+.hpMax-corps {grid-area: 3 / 2 / 4 / 3;}
+
+.actor.sheet.npc .npc-HP .TrihnsLabel {
+    grid-area: 1 / 1 / 2 / 4;
+    color: var(--primary);
+    font-family: var(--title);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--primary);
+}
 
 /* NPC Cercle  */
 .actor.sheet.npc .npc-cercle {
@@ -33,7 +123,6 @@
     grid-template-rows: 20px repeat(4, 0.1fr);
     gap: 1%;
     margin-bottom: 10px;
-    margin-right: 10px;
 }
 .actor.sheet.npc .npc-cercle .DomainsLabel { 
     grid-area: 1 / 1 / 2 / 4;
