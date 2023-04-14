@@ -40,6 +40,9 @@
     font: 700 var(--font-size-14) var(--body-serif);
     text-align: center;
 }
+.actor.sheet.npc .npc-general input {
+    text-align: start !important;
+}
 .actor.sheet.npc .npc-bio textarea {
     font: 700 var(--font-size-14) var(--body-serif);
 }
@@ -422,28 +425,6 @@
 
 /* NPC Acquis */
 
-.actor.sheet.npc .ressources-header {
-    border-top-right-radius: 5px;
-    background-color: #755137;
-}
-.actor.sheet.npc .ressources-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.actor.sheet.npc .ressources-content {
-    border: 3px solid #755137;
-    border-top: none;
-    padding: 0.5rem;
-    margin: 0;
-    margin-bottom: 10px;
-}
 .actor.sheet.npc .category-header {
     display: grid; 
     grid: "acquisCategory power-add" "acquisContent acquisContent";
@@ -480,6 +461,8 @@
 .actor.sheet.npc ol {
     list-style-type: none;
     padding: 0;
+    max-height: 522.588px;
+    overflow-y: scroll;
 }
 .actor.sheet.npc .liste-items li {
     display: grid;
@@ -557,6 +540,8 @@
 .actor.sheet.npc ol {
     list-style-type: none;
     padding: 0;
+    max-height: 522.588px;
+    overflow-y: scroll;
 }
 .actor.sheet.npc .liste-pouvoir li {
     display: grid;
