@@ -610,7 +610,7 @@ input[type="checkbox"] {
 
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit .domain-label{
     background: var(--color-esprit);
-    color: var(--tertiary);
+    color: #e9d7a1;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
@@ -700,7 +700,7 @@ input[type="checkbox"] {
     background-color: var(--color-esprit);
     display: grid;
     grid: "spéInsideTitre spéInsideAcquis";
-    color: var(--tertiary);
+    color: #e9d7a1;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;

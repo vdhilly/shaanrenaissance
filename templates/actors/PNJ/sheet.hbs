@@ -1,22 +1,33 @@
 <form class="actor sheet crb-style npc" autocomplete="off">
-
-        <div class="npc-cercle">
-            cercle
-        </div>
+    <div class="npc-stats">
+        <section class="npc-cercle">
+        <span class="DomainsLabel">{{localize "SRLabels.DomainsTitle"}}</span>
+        {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/cercle.hbs"}}
+        </section>
+        <hr/>
+        <section class="npc-spés">
+            <span class="SpecialisationsLabel">{{localize "SRLabels.SpecialisationsTitle"}}</span>
+            {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/specialisations.hbs"}}
+        </section>
+    </div>
+    <div class="npc-infos">
         <div class="npc-general">
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/general.hbs"}}
+        </div>
+        <div class="npc-dice">
+            
+        </div>
+        <div class="npc-bio">
+            {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs"}}
         </div>
         <div class="npc-powers">
             powers
         </div>
-        <div class="npc-bio">
-            bio 
-        </div>
+
+
         <div class="npc-acquis">
             acquis
         </div>
-        <div class="npc-spés">
-            spés
-        </div>
-
+        
+    </div>
 </form>

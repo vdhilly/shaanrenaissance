@@ -1,39 +1,286 @@
 
 /* NPC WINDOW */
+.window-app.sheet.PNJ .window-content {
+    padding: 0 !important;
+}
 .actor.sheet.npc {
+    background: url(../assets/sheet/template_shaan_background1.jpg);
+    background-size: auto 1630px;
     width: 100%;
     height: 100% ;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-
-.actor.sheet.npc .npc-cercle { grid-area: 1 / 1 / 4 / 4; 
-    background: url(../assets/sheet/cercle_pnj.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+.window-app.sheet.PNJ .window-content form {
+    padding: 10px;
+    height: auto;
 }
+.actor.sheet.npc hr {
+    margin: 10px 6px 10px 0
+}
+
+.actor.sheet.npc .npc-stats { grid-area: 1 / 1 / 5 / 4; margin-bottom: 80px; display: flex; flex-direction: column;}
+.actor.sheet.npc .npc-infos {grid-area: 1 / 4 / 5 / 7; display: flex; flex-direction: column; }
+
+
+/* NPC Cercle  */
+.actor.sheet.npc .npc-cercle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20px repeat(4, 0.1fr);
+    gap: 1%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.actor.sheet.npc .npc-cercle .DomainsLabel { 
+    grid-area: 1 / 1 / 2 / 4;
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--primary);
+}
+.actor.sheet.npc .npc-cercle .npc_domain-technique  { grid-area: 2 / 1 / 3 / 2; }
+.actor.sheet.npc .npc-cercle .npc_domain-savoir  { grid-area: 2 / 2 / 3 / 3; }
+.actor.sheet.npc .npc-cercle .npc_domain-social  { grid-area: 2 / 3 / 3 / 4; }
+.actor.sheet.npc .npc-cercle .npc_domain-arts  { grid-area: 3 / 1 / 4 / 2; }
+.actor.sheet.npc .npc-cercle .npc_domain-shaan  { grid-area: 3 / 2 / 4 / 3; }
+.actor.sheet.npc .npc-cercle .npc_domain-magie  { grid-area: 3 / 3 / 4 / 4; }
+.actor.sheet.npc .npc-cercle .npc_domain-rituels  { grid-area: 4 / 1 / 5 / 2; }
+.actor.sheet.npc .npc-cercle .npc_domain-survie  { grid-area: 4 / 2 / 5 / 3; }
+.actor.sheet.npc .npc-cercle .npc_domain-combat  { grid-area: 4 / 3 / 5 / 4; }
+.actor.sheet.npc .npc-cercle .npc_domain-necrose  { grid-area: 5 / 2 / 6 / 3; }
+
+.actor.sheet.npc .npc-cercle .domain-esprit, .actor.sheet.npc .npc-cercle .domain-ame, .actor.sheet.npc .npc-cercle .domain-corps, .actor.sheet.npc .npc-cercle .domain-necrose {
+    display: grid;
+    grid: "label label label"15px "base actuel xp"
+}
+.actor.sheet.npc .npc-cercle .domain-actuel, .actor.sheet.npc .npc-cercle .domain-base, .actor.sheet.npc .npc-cercle .domain-exp{
+    flex: 50%;
+}
+.actor.sheet.npc .npc-cercle .domain-actuel {
+    grid-area: actuel;
+    display: flex;
+    flex-direction: column;
+}
+.actor.sheet.npc .npc-cercle .domain-base {
+    grid-area: base;
+    display: flex;
+    flex-direction: column;
+}
+.actor.sheet.npc .npc-cercle .domain-exp {
+    grid-area: xp;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.actor.sheet.npc .domain-base, .actor.sheet.npc .domain-actuel, .actor.sheet.npc .domain-exp{
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .625rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+.actor.sheet.npc .domain-label {
+    grid-area: label;
+    text-align: center;
+    flex: 100%;
+}
+
+/*  domaines Esprit */
+
+.actor.sheet.npc .domain-esprit .domain-label{
+    background: var(--color-esprit);
+    color: #e9d7a1;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/*  domaines Ame */
+
+.actor.sheet.npc .domain-ame .domain-label{
+    background: var(--color-ame);
+    color: var(--secondary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/*  domaines Corps */
+
+.actor.sheet.npc .domain-corps .domain-label{
+    background: var(--color-corps);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* domaine Necrose */
+.actor.sheet.npc .domain-necrose {
+    grid-area: necrose;
+}
+.actor.sheet.npc .domain-necrose .domain-label {
+    background: var(--color-necrose);
+    color: black;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+
+
+/* NPC Spécialisations */
+
+.actor.sheet.npc .npc-spés .SpecialisationsLabel {
+    grid-area: spésTitre;
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid var(--primary)
+}
+.actor.sheet.npc .npc-spés {
+    grid-template-columns: repeat(3, 140.141px);
+    display: grid;
+    grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
+    gap: 1%;
+}
+.actor.sheet.npc .specialisations-esprit, .actor.sheet.npc .npc-spés .specialisations-ame, .actor.sheet.npc .npc-spés .specialisations-corps, .actor.sheet.npc .npc-spés .specialisations-nécrose {
+    display: grid;
+    grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2" "spé3 spé3 spé3" "spé4 spé4 spé4" "spé5 spé5 spé5" "spé6 spé6 spé6" "spé7 spé7 spé7" "spé8 spé8 spé8" "spé9 spé9 spé9" "spé10 spé10 spé10";
+    column-gap: 1%;
+    row-gap: 3px;
+    color: black;
+    font-family: var(--sans-serif);
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.actor.sheet.npc .npc-spés .specialisations-esprit .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-esprit);
+    display: grid;
+    grid: "spéInsideTitre";
+    color: #e9d7a1;
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.npc .npc-spés .specialisations-ame .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-ame);
+    color: var(--secondary);
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.npc .npc-spés .specialisations-corps .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-corps);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.npc .npc-spés .specialisations-corps .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-corps);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.npc .npc-spés .specialisations-nécrose {
+    grid-area: spésnecrose;
+}
+.actor.sheet.npc .npc-spés .specialisations-nécrose .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-necrose);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: black;
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.npc .npc-spés .npc a {
+    align-self: center;
+}
+.actor.sheet.npc .npc-spés .npc a label {
+    font-size: 10px
+}
+
+/* NPC General */
 .actor.sheet.npc .npc-general { 
-    grid-area: 1 / 4 / 2 / 7; 
     display: grid;
     grid-template-columns: 0.4fr 0.4fr repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;}
-.actor.sheet.npc .npc-powers { grid-area: 2 / 4 / 4 / 6; }
-.actor.sheet.npc .npc-bio { grid-area: 4 / 1 / 6 / 4; }
-.actor.sheet.npc .npc-acquis { grid-area: 4 / 4 / 6 / 6; }
-.actor.sheet.npc .npc-spés { grid-area: 2 / 6 / 6 / 7; }
 
-/* NPC General */
-    
 .actor.sheet.npc .npc-general .npc_frame-container { 
     grid-area: 1 / 1 / 4 / 3; 
     align-self: center;
     justify-self: center;
+    margin-right: 10px;
 }
 .actor.sheet.npc .npc-general .npc_frame-container .frame .player-image {
     border: none;
@@ -50,3 +297,12 @@
 .actor.sheet.npc .npc-general .npc_caste { grid-area: 2 / 4 / 3 / 5; }
 .actor.sheet.npc .npc-general .npc_people { grid-area: 3 / 3 / 4 / 4; }
 .actor.sheet.npc .npc-general .npc_job { grid-area: 3 / 4 / 4 / 5; }
+
+/* NPC Bio */
+.actor.sheet.npc .npc-bio textarea {
+    min-height: 240px;
+    min-width: 100%;
+    resize: none;
+    border: none;
+    border-radius: 0;
+}
