@@ -656,6 +656,48 @@
                 "spés",
                 "biography"
             ],
+            "shaandars": {
+                "shaandar1":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar2":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar3":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar4":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar5":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar6":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar7":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar8":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar9":{
+                    "name":"",
+                    "domain":""
+                },
+                "shaandar10":{
+                    "name":"",
+                    "domain":""
+                }
+            },
             "soucheCorps":0,
             "soucheAme":0,
             "soucheEsprit":0,

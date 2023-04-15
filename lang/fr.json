@@ -56,7 +56,9 @@
         "allies": "Alliés",
         "enemies": "Ennemis",
         "pouvoirs": "Pouvoirs",
-        "decisions": "Mode de décisions"
+        "decisions": "Mode de décisions",
+        "ShaandarName": "Nom du Shaandar",
+        "ShaandarDomain": "Domaine/Trihn"
     },
     "SRdomains": {
         "Technique": "Technique",
