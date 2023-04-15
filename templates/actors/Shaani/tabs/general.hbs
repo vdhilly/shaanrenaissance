@@ -1,4 +1,19 @@
 <div class="tab character" data-group="primary" data-tab="character">
+    <section class="shaani-souches">
+        <span class="SouchesLabel">{{localize "SRLabels.Souches"}}</span>
+        <div class="souche-esprit shaani-souche">
+            <label class="details-label">{{localize "SRLabels.Esprit"}}</label>
+            <input class="details-input" name="system.soucheEsprit" value="{{data.soucheEsprit}}">
+        </div>
+        <div class="souche-ame shaani-souche">
+            <label class="details-label">{{localize "SRLabels.Ame"}}</label>
+            <input class="details-input" name="system.soucheAme" value="{{data.soucheAme}}">
+        </div>
+        <div class="souche-corps shaani-souche">
+            <label class="details-label">{{localize "SRLabels.Corps"}}</label>
+            <input class="details-input" name="system.soucheCorps" value="{{data.soucheCorps}}">
+        </div>
+    </section>
     <section class="character-domains">
         <span class="DomainsLabel">{{localize "SRLabels.DomainsTitle"}}</span>
         {{> "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs"}}

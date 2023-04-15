@@ -514,6 +514,39 @@ input[type="checkbox"] {
 }
 
 /* General Tab Domaines */
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .shaani-souches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 15px 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: center;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .shaani-souches .shaani-souche .details-input {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: calc(100% - 6px)
+}
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .shaani-souches .SouchesLabel {
+    grid-area: 1 / 1 / 2 / 4;
+    color: var(--primary);
+    font-family: var(--title);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid var(--primary)
+}
 
 .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .DomainsLabel {
     grid-area: titre;

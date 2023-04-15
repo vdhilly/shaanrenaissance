@@ -58,7 +58,8 @@
         "pouvoirs": "Pouvoirs",
         "decisions": "Mode de décisions",
         "ShaandarName": "Nom du Shaandar",
-        "ShaandarDomain": "Domaine/Trihn"
+        "ShaandarDomain": "Domaine/Trihn",
+        "Souches": "Souches"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -191,6 +192,7 @@
     },
     "SRTabs": {
         "CharacterLabel": "Personnage",
+        "ShaaniLabel": "Shaani",
         "PowersLabel": "Pouvoirs",
         "MagicLabel": "Magies",
         "AcquisLabel": "Acquis",
