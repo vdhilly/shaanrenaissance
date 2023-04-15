@@ -149,13 +149,13 @@
     border-bottom: 2px solid var(--primary);
 }
 .actor.sheet.npc .npc-cercle .npc_domain-technique  { grid-area: 2 / 1 / 3 / 2; }
-.actor.sheet.npc .npc-cercle .npc_domain-savoir  { grid-area: 2 / 2 / 3 / 3; }
-.actor.sheet.npc .npc-cercle .npc_domain-social  { grid-area: 2 / 3 / 3 / 4; }
-.actor.sheet.npc .npc-cercle .npc_domain-arts  { grid-area: 3 / 1 / 4 / 2; }
+.actor.sheet.npc .npc-cercle .npc_domain-arts  { grid-area: 2 / 2 / 3 / 3; }
+.actor.sheet.npc .npc-cercle .npc_domain-rituels  { grid-area: 2 / 3 / 3 / 4; }
+.actor.sheet.npc .npc-cercle .npc_domain-savoir { grid-area: 3 / 1 / 4 / 2; }
 .actor.sheet.npc .npc-cercle .npc_domain-shaan  { grid-area: 3 / 2 / 4 / 3; }
-.actor.sheet.npc .npc-cercle .npc_domain-magie  { grid-area: 3 / 3 / 4 / 4; }
-.actor.sheet.npc .npc-cercle .npc_domain-rituels  { grid-area: 4 / 1 / 5 / 2; }
-.actor.sheet.npc .npc-cercle .npc_domain-survie  { grid-area: 4 / 2 / 5 / 3; }
+.actor.sheet.npc .npc-cercle .npc_domain-survie  { grid-area: 3 / 3 / 4 / 4; }
+.actor.sheet.npc .npc-cercle .npc_domain-social  { grid-area: 4 / 1 / 5 / 2; }
+.actor.sheet.npc .npc-cercle .npc_domain-magie  { grid-area: 4 / 2 / 5 / 3; }
 .actor.sheet.npc .npc-cercle .npc_domain-combat  { grid-area: 4 / 3 / 5 / 4; }
 .actor.sheet.npc .npc-cercle .npc_domain-necrose  { grid-area: 5 / 2 / 6 / 3; }
 
