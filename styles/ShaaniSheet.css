@@ -1,0 +1,1068 @@
+.window-app.sheet.Shaani .window-content {
+    background: url(../assets/sheet/template_shaan_background1.jpg);
+    background-position: center;
+    padding: 0 !important;
+}
+/* ACTOR SHEET */
+.actor.sheet.shaani {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    font-family: var(--body-serif);
+    grid: "sidebar header"75px "sidebar nav"minmax(min-content, max-content) "sidebar content"1fr/230px 1fr;
+}
+.actor.sheet input {
+    border-radius: 0;
+    border: none;
+}
+.actor.sheet input:focus {
+    box-shadow: none;
+}
+.actor.sheet select {
+    border: none;
+    border-radius: 0;
+}
+.actor.sheet select:focus {
+    box-shadow: none;
+}
+/* ACTOR SHEET */
+.actor.sheet.shaani {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    font-family: var(--body-serif);
+    grid: "sidebar header"75px "sidebar nav"minmax(min-content, max-content) "sidebar content"1fr/230px 1fr;
+}
+.actor.sheet input {
+    border-radius: 0;
+    border: none;
+}
+.actor.sheet input:focus {
+    box-shadow: none;
+}
+.actor.sheet select {
+    border: none;
+    border-radius: 0;
+}
+.actor.sheet select:focus {
+    box-shadow: none;
+}
+/* ACTOR SHEET SIDEBAR */
+.actor.sheet.shaani aside {
+    background-image: url(../assets/sheet/shaan-navig-vert-top.jpg), url(../assets/sheet/shaan-navig-vert-bottom.jpg);
+    background-position: center calc(100% - 172px), bottom;
+    background-repeat: no-repeat;
+    background-size: 231px 100%, 231px 172px;
+    color: black;
+    font-family: var(--serif);
+    font-size: var(--font-size-10);
+    font-weight: 600;
+    grid-area: sidebar;
+    /* margin-left: 8px */
+}
+.actor.sheet.shaani .sidebar {
+    margin-left: 25px;
+    float: left;
+    width: 180px;
+    margin-top: 5px;
+}
+.actor.sheet.shaani .sidebar input {
+    border: 2px solid #293011; 
+    background: #d9d2b5;
+    font: 400 var(--font-size-14) var(--body-serif);
+}
+.actor.sheet.shaani .sidebar select {
+    border: 2px solid #293011; 
+    background: #d9d2b5;
+}
+.actor.sheet.shaani .sidebar .sidebar_title h2 {
+    font-family: var(--title);
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+    font-weight: 400;
+    padding-left: 3px;
+    /* text-transform: uppercase; */
+}
+.actor.sheet.shaani aside .logo {
+    display: flex;
+    justify-content: center;
+}
+.actor.sheet.shaani aside .logo-img {
+    border: none;
+    flex-shrink: 0;
+    margin-top: 10px;
+    max-width: unset;
+    z-index: 10;
+    object-fit:cover;
+    
+}
+/* SIDEBAR HP */
+.actor.sheet aside .sidebar .HP {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.actor.sheet aside .sidebar .HP .hp-big {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.actor.sheet aside .sidebar .HP .hp-big .container {
+    display:flex;
+    align-items: center;
+}
+.actor.sheet aside .sidebar .HP .hp-big .esprit-label { grid-area: 1 / 1 / 2 / 2; }
+.actor.sheet aside .sidebar .HP .hp-big .hpActuel-esprit { grid-area: 1 / 2 / 2 / 3; }
+.actor.sheet aside .sidebar .HP .hp-big .hpMax-esprit { grid-area: 1 / 3 / 2 / 4; }
+.actor.sheet aside .sidebar .HP .hp-big .ame-label { grid-area: 2 / 1 / 3 / 2; }
+.actor.sheet aside .sidebar .HP .hp-big .hpActuel-ame { grid-area: 2 / 2 / 3 / 3; }
+.actor.sheet aside .sidebar .HP .hp-big  .hpMax-ame{ grid-area: 2 / 3 / 3 / 4; }
+.actor.sheet aside .sidebar .HP .hp-big .corps-label{ grid-area: 3 / 1 / 4 / 2; }
+.actor.sheet aside .sidebar .HP .hp-big  .hpActuel-corps{ grid-area: 3 / 2 / 4 / 3; }
+.actor.sheet aside .sidebar .HP .hp-big .hpMax-corps { grid-area: 3 / 3 / 4 / 4; }
+
+.actor.sheet.shaani .sidebar .HP .hp-big .container span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.actor.sheet aside .sidebar .HP .hp-big .sidebar_label{
+    color: var(--tertiary);
+    font-family: var(--title);
+    font-weight: 400;
+    margin: 0;
+}
+.actor.sheet aside .sidebar .HP .hp-big span {
+    justify-self: center;
+    align-self: center;
+}
+.actor.sheet aside .sidebar .HP .hp-big input {
+    font: 700 var(--font-size-14) var(--body-serif);
+    text-align: center
+}
+.actor.sheet aside .sidebar .HP .hp-big .hpMax-corps, .actor.sheet aside .sidebar .HP .hp-big .hpMax-esprit, .actor.sheet aside .sidebar .HP .hp-big .hpMax-ame {
+    align-self: center;
+    justify-self: center;
+}
+.actor.sheet aside .sidebar .HP .hp-big .data-value h2 {
+    margin: 0;
+    color: var(--tertiary);
+    align-self: center;
+    justify-self: center;
+    border: 0;
+}
+
+
+
+.actor.sheet aside .sidebar .initiative-sidebar {
+    align-items: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top: 2px solid var(--tertiary);
+    border-bottom: 2px solid var(--tertiary);
+}
+.actor.sheet aside .sidebar .initiative-sidebar a {
+    box-shadow: 0;
+}
+.actor.sheet aside .sidebar .initiative-sidebar h2 {
+    font-family: var(--title);
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+    font-weight: 400;
+    border: 0;
+    margin: 0;
+    padding-left: 3px;
+}
+.actor.sheet aside .sidebar .initiative-sidebar h4 {
+    margin: 0;
+}
+
+/* SIDEBAR PROTECTIONS */
+.actor.sheet.shaani .sidebar .protection-title {
+    margin-top: 10px;
+}
+.actor.sheet aside .sidebar .protections {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.actor.sheet aside .sidebar .protections label{
+    color: var(--tertiary);
+    font-family: var(--title);
+    font-weight: 400;
+    font-size: .625rem;
+    text-transform: uppercase; 
+}
+.actor.sheet aside .sidebar .protections input {
+    font: 700 var(--font-size-14) var(--body-serif)
+}
+/* SIDEBAR JETS */
+.actor.sheet aside .sidebar .tests-sidebar {
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.actor.sheet aside .sidebar .tests-sidebar h3 {
+    color: var(--tertiary);
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+}
+.actor.sheet aside .sidebar .tests-sidebar .roll-icon {
+    align-self: center;
+    margin-left: 3px;
+}
+.actor.sheet aside .sidebar .tests-sidebar .roll-icon img {
+    border: 0;
+}
+/* SIDEBAR RESERVE */
+.actor.sheet aside .sidebar .reserve-sidebar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.reserve-line-1 { grid-area: 1 / 1 / 2 / 6; display: flex; flex-direction: row; justify-content: center;}
+.reserve-line-2  { grid-area: 2 / 2 / 3 / 5; display: flex; flex-direction: row; justify-content: center;}
+.reserve-line-3  { grid-area: 3 / 3 / 4 / 4; display: flex; flex-direction: row; justify-content: center;}
+
+.actor.sheet aside .sidebar .reserve-sidebar .reserve-1 {
+    width: 100%
+}
+.actor.sheet aside .sidebar .reserve-sidebar label{
+    color: var(--tertiary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase; 
+}
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #d9d2b5;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 1px;
+  
+    font: inherit;
+    color: currentColor;
+    width: 2em;
+    height: 2em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary);
+    background-color: CanvasText;
+  }
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+
+/* CHARACTER CONTENT */
+.actor.sheet.shaani .content {
+    float: right;
+    width: calc(100% - 220px);
+    padding-left: 5px;
+}
+
+
+/* CHARACTER CONTENT CHARACTER HEADER */
+.actor.sheet.shaani .char-header {
+    background: url(../assets/sheet/shaan-navig-horiz.jpg);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-size: auto 78px, cover;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
+    /* margin-left: 10px; */
+    justify-content: space-between;
+    grid-area: header;
+    color: var(--tertiary);
+    font-family: var(--title);
+}
+.actor.sheet.shaani .char-header .char-details {
+    align-self: center;
+    width: 70%
+}
+.actor.sheet.shaani .char-header .char-details .char-name {
+    border: none;
+    align-self: center;
+    text-align: left;
+    margin: 0;
+    padding-left: 40px;
+    width: 100%;
+}
+.actor.sheet.shaani .char-header .char-details .char-name input {
+    color: var(--tertiary);
+    font-family: var(--title);
+    font-size: var(--font-size-26);
+    align-self: center;
+    height: 40px;
+    width: 100%
+}
+.actor.sheet.shaani .char-header .char-exp {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    width:30%;
+}
+.actor.sheet.shaani .char-header .char-exp span {
+    align-self: center;
+}
+.actor.sheet.shaani .char-header .char-exp input {
+    border: 2px solid #293011; 
+    background: #d9d2b5;
+    width: 50px;
+}
+/* ACTOR SHEET NAVIGATION */
+.actor.sheet.shaani .sheet-navigation {
+    background-color: var(--secondary);
+    grid-area: nav;
+    margin-left: -2px
+}
+.actor.sheet nav.sheet-navigation {
+    align-items: center;
+    background: #9a9555;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .5);
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, .25);
+    display: inline-flex;
+    height: 20px;
+    justify-content: center;
+    position: relative;
+    transition: all .1s ease-out
+}
+.actor.sheet nav.sheet-navigation .navigation-title {
+    color: var(--text-light);
+    margin-right: auto;
+    padding-left: 1em;
+    white-space: nowrap;
+    width: 7em
+}
+.actor.sheet nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
+    fill: var(--text-light);
+    background-image: url(../assets/sheet/nav-item.webp);
+    color: var(--text-light);
+    transform: scale(1.2);
+    z-index: 2;
+}
+.actor.sheet nav.sheet-navigation .item:last-child {
+    margin-right: 10px
+}
+.actor.sheet nav.sheet-navigation .item .fas {
+    padding-bottom: 0;
+    display: inline-block
+}
+.actor.sheet.shaani .sheet-body .sheet-content nav:after, .actor.sheet.shaani .sheet-body .sheet-content nav:before {
+    background: url(../assets/sheet/sub-nav-decoration.png);
+    content: "";
+    height: 16px;
+    margin: 0 16px;
+    width: 37px
+}
+.actor.sheet nav.sheet-navigation .item {
+    fill: var(--tertiary);
+    background-image: url(../assets/sheet/nav-item-inactive.webp);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, .25);
+    color: var(--tertiary);
+    height: 24px;
+    transition: all .1s ease-out;
+    width: 24px;
+    z-index: 1
+}
+.actor.sheet nav.sheet-navigation>a {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-12);
+    justify-content: center;
+    margin: 0 6px;
+}
+.actor.sheet.shaani nav.sheet-navigation .manage-tabs {
+    color: #fff;
+    margin: 0;
+    padding: 0 6px
+}
+
+
+/* CHARACTER CONTENT */
+.actor.sheet.shaani .sheet-body {
+    /* background-color: var(--color-ame); */
+    grid-area: content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: calc(100% - 35px);
+    overflow: hidden;
+    margin-left: 10px;
+    overflow-y: scroll
+}
+.crb-style .details-label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .625rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+.tab.character.active {
+    display: flex;
+    flex-direction: column;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details {
+    display: grid;
+    grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
+    margin-top: 4px
+}
+.actor.sheet .sheet-body .sheet-content>.tab {
+    padding: .6rem .6rem 0
+}
+
+/* General tab img */
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
+    grid-area: img;
+    margin-left: 5px
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active hr {
+    margin: 10px 6px 10px 0
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .frame .player-image {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px #918c88, 0 0 0 2px #e1d8cf, 0 0 0 3px #a98f39, inset 0 0 8px rgba(0, 0, 0, .5), 0 0 8px #000;
+    cursor: pointer;
+    max-height: 178px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%
+}
+.actor.sheet .image-container .hover-icon {
+    display: none;
+    font-size: var(--font-size-16)
+}
+.actor.sheet .image-container:hover .hover-icon {
+    display: block
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active.active .vide {
+    grid-area: vide;
+}
+/* General Tab */
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .pc input {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    grid-area: mod;
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: calc(100% - 6px)
+}
+
+/* General Tab Details */
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active.active .character-details .pc.pc_shaani{
+    grid-area: shaani;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .detail-sheet {
+    grid-row-gap: 8px;
+    display: grid;
+    grid-area: details;
+    grid-template-columns: 44% 55%;
+    grid-template-rows: repeat(2, 42px);
+    margin-top: 8px;
+    padding-left: 12px
+}
+
+/* General Tab Bio */
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background {
+    display: flex;
+    flex-wrap: wrap
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc {
+    align-items: start;
+    display: flex;
+    flex: 20%;
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 8px
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc span {
+    width: 100%
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc_motivations {
+    flex: 100%;
+    margin-bottom: 0
+}
+
+/* General Tab Domaines */
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .DomainsLabel {
+    grid-area: titre;
+    color: var(--primary);
+    font-family: var(--title);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid var(--primary)
+}
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains {
+    display: grid;
+    grid: "titre titre titre" "technique arts rituels" "savoir shaan survie" "social magie combat" "vide2 necrose vide3";
+    gap: 1%;
+    margin-bottom: 10px;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose {
+    display: grid;
+    grid: "label label label" "base actuel xp";
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
+    flex: 50%;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel {
+    grid-area: actuel;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base {
+    grid-area: base;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp {
+    width: 20px;
+    grid-area: xp;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp input {
+    height: 20px;
+    background: none;
+    border-bottom: 1px solid black;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .625rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-label {
+    grid-area: label;
+    text-align: center;
+    flex: 100%
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base input {
+    font: 800 var(--font-size-19) var(--body-serif);
+}
+/* General Tab domaines Esprit */
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit .domain-label{
+    background: var(--color-esprit);
+    color: #fffcdb;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* General Tab domaines Ame */
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame .domain-label{
+    background: var(--color-ame);
+    color: #d5eefc;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* General Tab domaines Corps */
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps .domain-label{
+    background: var(--color-corps);
+    color: #fbdaca;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+/* General Tab domaine Necrose */
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose {
+    grid-area: necrose;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose .domain-label {
+    background: var(--color-necrose);
+    color: black;
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+
+/* General Tab Specialisations */
+
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .SpecialisationsLabel {
+    grid-area: spésTitre;
+    color: var(--primary);
+    font-family: var(--title);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    border-bottom: 2px solid var(--primary)
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations {
+    display: grid;
+    grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
+    gap: 1%;
+}
+/* General Tab Specialisations Grid */
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-esprit, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-ame, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-corps, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose {
+    display: grid;
+    grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2" "spé3 spé3 spé3" "spé4 spé4 spé4" "spé5 spé5 spé5" "spé6 spé6 spé6" "spé7 spé7 spé7" "spé8 spé8 spé8" "spé9 spé9 spé9" "spé10 spé10 spé10";
+    column-gap: 1%;
+    row-gap: 3px;
+    color: black;
+    font-family: var(--sans-serif);
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-esprit .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-esprit);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: #fffcdb;
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-ame .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-ame);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: #d5eefc;
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-corps .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-corps);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: #fbdaca;
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose {
+    grid-area: spésnecrose;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose .specialisations-title {
+    grid-area: spéInTitre;
+    background-color: var(--color-necrose);
+    display: grid;
+    grid: "spéInsideTitre spéInsideAcquis";
+    color: black;
+    font-family: var(--sans-serif);
+    column-gap: 1%;
+    font-size: .7rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.pc a {
+    box-shadow: 0;
+}
+a.spéTest label, a.spéTestNécr label {
+    cursor: pointer;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisations-bonus-label{
+    font-size: .6rem;
+    align-self: center;
+    text-align: right;
+    padding-right: 1px;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .pc a {
+    align-self: center;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations input, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains {
+    text-align: center;
+}
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains input {
+    width: 100%
+}
+
+
+/* ACTOR SHEET CHARACTER POWERS TAB*/
+
+/* POWER TAB TRIHN HEADER */
+.actor.sheet.shaani .tab.powers .trihn-header {
+    display: grid; 
+    grid: "powerTrihn power-add" "content content";
+    border-top-right-radius: 5px;
+}
+.actor.sheet.shaani .tab.powers .Esprit .trihn-header {
+    background-color: var(--color-esprit);
+}
+.actor.sheet.shaani .tab.powers .Ame .trihn-header {
+    background-color: var(--color-ame);
+}
+.actor.sheet.shaani .tab.powers .Corps .trihn-header {
+    background-color: var(--color-corps);
+}
+.actor.sheet.shaani .tab.powers .Nécrose .trihn-header {
+    background-color: var(--color-necrose);
+}
+.actor.sheet.shaani .tab.powers .trihn-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.shaani .tab.powers .trihn-header .item-controls {
+    padding-right: 10px;
+    justify-self: right;
+    align-self: center;
+}
+.actor.sheet.shaani .tab.powers .item-control i.fas::before:hover {
+    box-shadow: none;
+}
+
+/* POWER TAB TRIHN CONTENT */
+.actor.sheet.shaani .tab.powers .liste-pouvoir img {
+    max-width: 100%;
+    border: none;
+}
+.actor.sheet.shaani .tab.powers ol {
+    list-style-type: none;
+    padding: 0;
+}
+.actor.sheet.shaani .tab.powers .liste-pouvoir li {
+    display: grid;
+    grid: "power-item-header" "power-item-résumé";
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+}
+.actor.sheet.shaani .tab.powers .liste-pouvoir li .pouvoir-header {
+    display: grid;
+    grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
+    grid-template-columns: 10% 80% 10%;
+}
+.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header img {
+    grid-area: pouvoir-item-img;
+}
+.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header span {
+    font: 700 var(--font-size-16) var(--body-serif);
+    align-self: center;
+    padding-left: 5px;
+}
+.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
+    grid-area: pouvoir-item-controls;
+    float: right;
+}
+.actor.sheet.shaani .tab.powers .liste-pouvoir {
+    display: grid;
+    grid-gap: 2px;
+}
+.actor.sheet.shaani .tab.powers .Esprit .liste-pouvoir {
+    border: 3px solid var(--color-esprit);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.shaani .tab.powers .Ame .liste-pouvoir {
+    border: 3px solid var(--color-ame);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.shaani .tab.powers .Corps .liste-pouvoir {
+    border: 3px solid var(--color-corps);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.shaani .tab.powers .Nécrose .liste-pouvoir {
+    border: 3px solid var(--color-necrose);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+
+/* ACTOR TAB CHARACTER ACQUIS */
+
+.actor.sheet.shaani .tab.acquis .acquis-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money label, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-préstige label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase; 
+}
+.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money input, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-préstige input {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: calc(100% - 6px)
+}
+.actor.sheet.shaani .tab.acquis .acquis-ressources .ressources-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.ressource.Verre { grid-area: 1 / 1 / 2 / 2; }
+.ressource.Bois { grid-area: 1 / 2 / 2 / 3; }
+.ressource.Or { grid-area: 1 / 3 / 2 / 4; }
+.ressource.Population { grid-area: 1 / 4 / 2 / 5; }
+.ressource.Pierre { grid-area: 1 / 5 / 2 / 6; }
+.ressource.Trihnite { grid-area: 2 / 1 / 3 / 2; }
+.ressource.Animal { grid-area: 2 / 2 / 3 / 3; }
+.ressource.Cultures { grid-area: 2 / 3 / 3 / 4; }
+.ressource.Métal { grid-area: 2 / 4 / 3 / 5; }
+.ressource.Hydrocarbures { grid-area: 2 / 5 / 3 / 6; }
+
+.actor.sheet.shaani .tab.acquis .acquis-ressources .ressource {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+.actor.sheet.shaani .tab.acquis .acquis-ressources .ressource img{
+    max-width: 100%;
+    border: none;
+}
+/* ACQUIS CATEGORY HEADER */
+
+.actor.sheet.shaani .tab.acquis .ressources-header {
+    border-top-right-radius: 5px;
+    background-color: #755137;
+}
+.actor.sheet.shaani .tab.acquis .ressources-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.shaani .tab.acquis .ressources-content {
+    border: 3px solid #755137;
+    border-top: none;
+    padding: 0.5rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.shaani .tab.acquis .category-header {
+    display: grid; 
+    grid: "acquisCategory power-add" "acquisContent acquisContent";
+    border-top-right-radius: 5px;
+}
+.actor.sheet.shaani .tab.acquis .itemCategory .category-header {
+    background-color: #755137;
+}
+
+.actor.sheet.shaani .tab.acquis .category-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.shaani .tab.acquis .category-header .item-controls {
+    padding-right: 10px;
+    justify-self: right;
+    align-self: center;
+}
+.actor.sheet.shaani .tab.acquis .item-control i.fas::before:hover {
+    box-shadow: none;
+}
+
+
+/* ACQUIS TAB CATEGORY CONTENT */
+
+.actor.sheet.shaani .tab.acquis .liste-items img {
+    max-width: 100%;
+    border: none;
+}
+.actor.sheet.shaani .tab.acquis ol {
+    list-style-type: none;
+    padding: 0;
+}
+.actor.sheet.shaani .tab.acquis .liste-items li {
+    display: grid;
+    grid: "acquis-item-header" "acquis-item-résumé";
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+}
+.actor.sheet.shaani .tab.acquis .liste-items li .acquis-header {
+    display: grid;
+    grid: "acquis-item-img acquis-item-name acquis-item-controls";
+    grid-template-columns: 10% 80% 10%;
+}
+.actor.sheet.shaani .tab.acquis .liste-items .acquis-header img {
+    grid-area: acquis-item-img;
+}
+.actor.sheet.shaani .tab.acquis .liste-items .acquis-header span {
+    font: 700 var(--font-size-16) var(--body-serif);
+    align-self: center;
+    padding-left: 5px;
+}
+.actor.sheet.shaani .tab.acquis .liste-items .acquis-header .item-controls {
+    grid-area: acquis-item-controls;
+    float: right;
+}
+.actor.sheet.shaani .tab.acquis .liste-items {
+    display: grid;
+    grid-gap: 2px;
+}
+.actor.sheet.shaani .tab.acquis .liste-items {
+    border: 3px solid #755137;
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+/* BIOGRAPHY TAB */
+
+.actor.sheet.shaani .tab.biography label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase; 
+}
+.actor.sheet.shaani .tab.biography header h2 {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.actor.sheet.shaani .tab.biography input {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: 100%
+}
+
+.actor.sheet.shaani .tab.biography textarea {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    min-height: 100px;
+    width: 100% !important;
+    border-radius: 0
+}
+.actor.sheet.shaani .tab.biography textarea:focus {
+    box-shadow: none;
+}
+
+.actor.sheet.shaani .biographyCategory.personnalité {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.7fr repeat(2, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.actor.sheet.shaani .biographyCategory.personnalité header { grid-area: 1 / 1 / 2 / 3; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-temper{ grid-area: 2 / 1 / 3 / 2; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-element1{ grid-area: 3 / 1 / 4 / 2; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-element2{ grid-area: 3 / 2 / 4 / 3; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-culte{ grid-area: 2 / 2 / 3 / 3; }
+
+

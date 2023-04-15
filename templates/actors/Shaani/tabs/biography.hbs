@@ -1,0 +1,52 @@
+<div class="tab biography" data-group="primary" data-tab="biography">
+    <div class="biography-top">
+        <div class="biographyCategory apparence">
+            <label class="apparence-label" for="{{actor.id}}-pc-apparence">{{localize "SRLabels.apparence"}}</label>
+            <textarea class="apparence-textarea" id="{{actor.id}}-pc-apparence" name="system.biography.apparence" value="{{data.biography.apparence}}">{{data.biography.apparence}}</textarea>
+        </div>
+        <div class="biography-histoire">
+            <label class="histoire-label" for="{{actor.id}}-pc-histoire">{{localize "SRLabels.histoire"}}</label>
+            <textarea class="histoire-textarea" id="{{actor.id}}-pc-histoire" name="system.biography.histoire" value="{{data.biography.histoire}}">{{data.biography.histoire}}</textarea>
+        </div>
+    </div>
+    <hr />
+    <div class="biographyCategory personnalité">
+        <header>
+            <h2>{{localize "SRLabels.personnalité"}}</h2>
+        </header>
+        <div class="biography-temper">
+            <label class="temper-label" for="{{actor.id}}-pc-temper">{{localize "SRLabels.temper"}}</label>
+            <input class="temper-input" id="{{actor.id}}-pc-temper" name="system.biography.personnalité.temper" value="{{data.biography.personnalité.temper}}"/>
+        </div>
+        <div class="biography-element1">
+            <label class="element1-label" for="{{actor.id}}-pc-element1">{{localize "SRLabels.element1"}}</label>
+            <input class="element1-input" id="{{actor.id}}-pc-element1" name="system.biography.personnalité.element1" value="{{data.biography.personnalité.element1}}"/>
+        </div>
+        <div class="biography-element2">
+            <label class="element2-label" for="{{actor.id}}-pc-element2">{{localize "SRLabels.element2"}}</label>
+            <input class="element2-input" id="{{actor.id}}-pc-element2" name="system.biography.personnalité.element2" value="{{data.biography.personnalité.element2}}"/>
+        </div>
+        <div class="biography-culte">
+            <label class="culte-label" for="{{actor.id}}-pc-culte">{{localize "SRLabels.culte"}}</label>
+            <input class="culte-input" id="{{actor.id}}-pc-culte" name="system.biography.personnalité.culte" value="{{data.biography.personnalité.culte}}"/>
+        </div>
+    </div>
+    <hr />
+    <div class="biographyCategory campagne">
+        <header>
+           <h2>{{localize "SRLabels.campaign"}}</h2>
+        </header>
+        <div class="biography-notes">
+            <label class="notes-label" for="{{actor.id}}-pc-notes">{{localize "SRLabels.notes"}}</label>
+            <textarea class="notes-textarea" id="{{actor.id}}-pc-notes" name="system.biography.campagne.notes" value="{{data.biography.campagne.notes}}">{{data.biography.campagne.notes}}</textarea>
+        </div>
+        <div class="biography-allies">
+            <label class="allies-label" for="{{actor.id}}-pc-allies">{{localize "SRLabels.allies"}}</label>
+            <textarea class="allies-textarea" id="{{actor.id}}-pc-allies" name="system.biography.campagne.allies" value="{{data.biography.campagne.allies}}">{{data.biography.campagne.allies}}</textarea>
+        </div>
+        <div class="biography-enemies">
+            <label class="enemies-label" for="{{actor.id}}-pc-enemies">{{localize "SRLabels.enemies"}}</label>
+            <textarea class="enemies-textarea" id="{{actor.id}}-pc-enemies" name="system.biography.campagne.enemies" value="{{data.biography.campagne.enemies}}">{{data.biography.campagne.enemies}}</textarea>
+        </div>
+    </div>
+</div>

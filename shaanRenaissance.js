@@ -26,7 +26,6 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/powers.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/background.hbs",
-      "systems/Shaan_Renaissance/templates/sheet/Race-sheet.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/ressources.hbs",
@@ -38,6 +37,27 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs",
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/acquis.hbs",
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/specialisations.hbs",
+
+      // Shaani
+      // Sidebar
+      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/health.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/armor.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/header.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/initiative.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/jets.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/icons/d20.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/reserve.hbs",
+
+      // Content
+      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/acquis.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/biography.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/general.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/symbioses.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/powers.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/background.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/domaincircle.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/specialisations.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/ressources.hbs",
 
 
       // Item sheets

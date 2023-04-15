@@ -86,11 +86,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         }
     }
     
-    
 
-    _onTrihnsHP(event) {
-        console.log("oui")
-    }
 
     _onSpéTest(event) {
         let actor = this.actor
