@@ -48,7 +48,7 @@ async function preloadHandleBarTemplates()
 
       // Content
       "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/biography.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/details.hbs",
       "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/general.hbs",
       "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/symbioses.hbs",
       "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/powers.hbs",

@@ -196,7 +196,8 @@
         "AcquisLabel": "Acquis",
         "BiographyLabel": "Biographie",
         "symbioses": "Symbioses",
-        "ManageTabsLabel": "Gérer les Tabs"
+        "ManageTabsLabel": "Gérer les Tabs",
+        "DetailsLabel": "Détails"
     },
     "ITEM": {
         "TypeRace": "Race",

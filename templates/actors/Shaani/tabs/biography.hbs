@@ -4,11 +4,12 @@
             <label class="decision-label" for="{{options.id}}-shaani-decision">{{localize "SRLabels.decisions"}}</label>
             <input class="decision-input" id="{{options.id}}-shaani-decision" name="system.decision" value="{{data.decision}}">
         </div>
+        <hr/>
         <div class="shaandars">
             <ol class="shaandar-list">
                 <li class="shaandar-label">
-                    <label>{{localize "SRLabels.ShaandarName"}}</label>
-                    <label>{{localize "SRLabels.ShaandarDomain"}}</label>
+                    <label class="shaandar-name-label">{{localize "SRLabels.ShaandarName"}}</label>
+                    <label class="shaandar-domain-label">{{localize "SRLabels.ShaandarDomain"}}</label>
                 </li> 
                 <li class="shaandar1">
                     <input class="shaandar-name-input" id="{{options.id}}-shaandar-name" name="system.shaandars.shaandar1.name" value="{{data.shaandars.shaandar1.name}}">
@@ -51,10 +52,8 @@
                     <input class="shaandar-domain-input" id="{{options.id}}-shaandar-domain" name="system.shaandars.shaandar10.domain" value="{{data.shaandars.shaandar10.domain}}">
                 </li>
             </ol>
-            <div class="shaandar-domain">
-
-            </div>
         </div>
+        <hr/>
         <div class="motivations">
             <label class="motivations-label" for="{{options.id}}-shaani-motivations">{{localize "SRLabels.Motivations"}}</label>
             <textarea class="motivations-input" id="{{options.id}}-shaani-motivations" name="system.motivation" value="{{data.motivation}}" placeholder="{{data.motivation}}">{{data.motivation}}</textarea>
