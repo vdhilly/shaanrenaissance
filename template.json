@@ -15,25 +15,13 @@
                             "value": 0,
                             "temp": 0
                         },
-                        "maxEsprit": {
-                            "value": 0,
-                            "temp": 0
-                        },
                         "hpAme": {
-                            "value": 0,
-                            "temp": 0
-                        },
-                        "maxAme": {
                             "value": 0,
                             "temp": 0
                         },
                         "hpCorps": {
                             "value": 0,
                             "temp": 0
-                        },
-                        "maxCorps": {
-                            "value": 0,
-                            "temp=": 0
                         },
                         "préstige": 0,
                         "credos": 0
@@ -549,7 +537,8 @@
             "templates": [
                 "common",
                 "spés",
-                "Ressources"
+                "Ressources",
+                "biography"
             ],
             "protections": {
                 "esprit": {
@@ -660,6 +649,13 @@
                     "value": 0
                 }
             }
+        },
+        "Shaani": {
+            "templates": [
+                "common",
+                "spés",
+                "biography"
+            ]
         }
     },
     "Item": {
