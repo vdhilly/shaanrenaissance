@@ -69,7 +69,8 @@ a:hover {
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
 }
 .window-app.sheet.character .window-content {
-    background: url(../assets/sheet/template_shaan_background1.png);
+    background: url(../assets/sheet/template_shaan_background1.jpg);
+    background-position: center;
     padding: 0 !important;
 }
 h2 {
@@ -194,7 +195,19 @@ h3 {
     align-self: center;
 }
 .actor.sheet aside .sidebar .HP .hp-big input {
+    font: 700 var(--font-size-14) var(--body-serif);
     text-align: center
+}
+.actor.sheet aside .sidebar .HP .hp-big .hpMax-corps, .actor.sheet aside .sidebar .HP .hp-big .hpMax-esprit, .actor.sheet aside .sidebar .HP .hp-big .hpMax-ame {
+    align-self: center;
+    justify-self: center;
+}
+.actor.sheet aside .sidebar .HP .hp-big .data-value h2 {
+    margin: 0;
+    color: var(--tertiary);
+    align-self: center;
+    justify-self: center;
+    border: 0;
 }
 
 
@@ -610,12 +623,14 @@ input[type="checkbox"] {
     text-align: center;
     flex: 100%
 }
-
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel input {
+    font: 800 var(--font-size-19) var(--body-serif);
+}
 /* General Tab domaines Esprit */
 
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit .domain-label{
     background: var(--color-esprit);
-    color: #e9d7a1;
+    color: #fffcdb;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
@@ -628,7 +643,7 @@ input[type="checkbox"] {
 
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame .domain-label{
     background: var(--color-ame);
-    color: var(--secondary);
+    color: #d5eefc;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
@@ -641,7 +656,7 @@ input[type="checkbox"] {
 
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps .domain-label{
     background: var(--color-corps);
-    color: var(--primary);
+    color: #fbdaca;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
