@@ -720,7 +720,7 @@ input[type="checkbox"] {
     background-color: var(--color-esprit);
     display: grid;
     grid: "spéInsideTitre spéInsideAcquis";
-    color: #e9d7a1;
+    color: #fffcdb;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;
@@ -735,7 +735,7 @@ input[type="checkbox"] {
     background-color: var(--color-ame);
     display: grid;
     grid: "spéInsideTitre spéInsideAcquis";
-    color: var(--secondary);
+    color: #d5eefc;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;
@@ -750,7 +750,7 @@ input[type="checkbox"] {
     background-color: var(--color-corps);
     display: grid;
     grid: "spéInsideTitre spéInsideAcquis";
-    color: var(--primary);
+    color: #fbdaca;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;

@@ -9,9 +9,8 @@
                         <input name="system.attributes.hpEsprit.temp" id="{{option.id}}-pc-hp-esprit-temp" type="number" value="{{data.attributes.hpEsprit.temp}}" placeholder="{{data.attributes.hpEsprit.temp}}" max="{{data.attributes.maxEsprit.temp}}">
                     </div>
                     <span class="esprit-max"><h3 class="details-label">{{localize "SRLabels.HPMax"}}</h3></span>
-                    <div class="data-value hpMax-esprit" title="Esprit Max">
-                        
-                        <input name="system.attributes.maxEsprit.temp" id="{{option.id}}-pc-hp-esprit-max" type="number" value="{{data.attributes.maxEsprit.temp}}" placeholder="{{data.attributes.maxEsprit.temp}}">
+                    <div class="data-value hpMax-esprit" title="Esprit Max">          
+                    <h2 class="hpMax-Esprit">{{data.attributes.hpEsprit.value}}</h2>                       
                     </div>
                 </div>
                 <div class="hp-ame">
@@ -22,7 +21,7 @@
                     </div>
                     <span class="ame-corps"><h3 class="details-label">{{localize "SRLabels.HPMax"}}</h3></span>
                     <div class="data-value hpMax-ame" title="Âme Max">
-                        <input name="system.attributes.maxAme.temp" id="{{option.id}}-pc-hp-ame-max" type="number" value="{{data.attributes.maxAme.temp}}" placeholder="{{data.attributes.maxAme.temp}}">
+                    <h2 class="hpMax-Ame">{{data.attributes.hpAme.value}}</h2>                        
                     </div>
                 </div>
                 <div class="hp-corps">
@@ -33,7 +32,7 @@
                     </div>
                     <span class="corps-max"><h3 class="details-label">{{localize "SRLabels.HPMax"}}</h3></span>
                     <div class="data-value hpMax-corps" title="Corps Max">
-                        <input name="system.attributes.maxCorps.temp" id="{{option.id}}-pc-hp-corps-max" type="number" value="{{data.attributes.maxCorps.temp}}" placeholder="{{data.attributes.maxCorps.temp}}">
+                        <h2 class="hpMax-Corps">{{data.attributes.hpCorps.value}}</h2> 
                     </div>
                 </div>
         </section>
