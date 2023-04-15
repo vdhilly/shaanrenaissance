@@ -2,6 +2,7 @@ import { shaanRenaissance } from "./module/config.js";
 import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
 import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
+import ShaanShaaniSheet from "./module/sheets/ShaanShaaniSheet.js";
 import SRItem from "./module/SRItem.js";
 
 async function preloadHandleBarTemplates() 
@@ -67,6 +68,10 @@ Hooks.once("init", function(){
     Actors.registerSheet("Shaan_Renaissance", ShaanNPCSheet, {
       types: ["PNJ"],
       label: "PNJ"
+    });
+    Actors.registerSheet("Shaan_Renaissance", ShaanShaaniSheet, {
+      types: ["Shaani"],
+      label: "Shaani"
     });
 
     preloadHandleBarTemplates();
