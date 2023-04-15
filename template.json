@@ -655,7 +655,12 @@
                 "common",
                 "spés",
                 "biography"
-            ]
+            ],
+            "soucheCorps":0,
+            "soucheAme":0,
+            "soucheEsprit":0,
+            "decision": 0,
+            "motivations": 0
         }
     },
     "Item": {
