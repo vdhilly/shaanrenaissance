@@ -16,7 +16,6 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/initiative.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/jets.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/icons/d20.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/reserve.hbs",
 
       // Content
@@ -45,7 +44,6 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/Shaani/partials/header.hbs",
       "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/initiative.hbs",
       "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/jets.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/icons/d20.hbs",
       "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/reserve.hbs",
 
       // Content
