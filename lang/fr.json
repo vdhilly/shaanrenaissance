@@ -55,7 +55,8 @@
         "notes": "Notes",
         "allies": "Alliés",
         "enemies": "Ennemis",
-        "pouvoirs": "Pouvoirs"
+        "pouvoirs": "Pouvoirs",
+        "decisions": "Mode de décisions"
     },
     "SRdomains": {
         "Technique": "Technique",

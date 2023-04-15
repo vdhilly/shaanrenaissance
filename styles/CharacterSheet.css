@@ -64,6 +64,9 @@
 a:hover {
     text-shadow: none !important;
 }
+label.checkbox {
+    height: 38px;
+}
 @font-face {
     font-family: GodOfWaraccent2;
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
@@ -292,7 +295,7 @@ h3 {
     font-size: .625rem;
     text-transform: uppercase; 
 }
-input[type="checkbox"] {
+.sidebar input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
     background-color: #d9d2b5;
@@ -302,8 +305,8 @@ input[type="checkbox"] {
   
     font: inherit;
     color: currentColor;
-    width: 2em;
-    height: 2em;
+    width: 20px;
+    height: 20px;
     border: 0.15em solid currentColor;
     border-radius: 0.15em;
     transform: translateY(-0.075em);
@@ -312,7 +315,7 @@ input[type="checkbox"] {
     place-content: center;
   }
   
-  input[type="checkbox"]::before {
+  .sidebar  input[type="checkbox"]::before {
     content: "";
     width: 1.2em;
     height: 1.2em;
@@ -323,7 +326,7 @@ input[type="checkbox"] {
     box-shadow: inset 1em 1em var(--primary);
     background-color: CanvasText;
   }
-  input[type="checkbox"]:checked::before {
+.sidebar input[type="checkbox"]:checked::before {
     transform: scale(1);
   }
 
