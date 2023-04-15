@@ -606,8 +606,17 @@ input[type="checkbox"] {
     grid-area: base;
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp {
+    width: 20px;
     grid-area: xp;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
     
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp input {
+    height: 20px;
+    background: none;
+    border-bottom: 1px solid black;
 }
 .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
     color: var(--primary);
@@ -623,7 +632,7 @@ input[type="checkbox"] {
     text-align: center;
     flex: 100%
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel input {
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-base input {
     font: 800 var(--font-size-19) var(--body-serif);
 }
 /* General Tab domaines Esprit */
@@ -859,7 +868,7 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 40px 369.812px 40px;
+    grid-template-columns: 10% 80% 10%;
 }
 .actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;
