@@ -121,6 +121,10 @@
     padding-bottom: 2px;
     border-bottom: 2px solid var(--primary);
 }
+.actor.sheet.npc .npc-HP .data-value h2 {
+    border:0;
+    margin: 0;
+}
 
 /* NPC Cercle  */
 .actor.sheet.npc .npc-cercle {
@@ -173,10 +177,16 @@
     flex-direction: column;
 }
 .actor.sheet.npc .npc-cercle .domain-exp {
+    width: 20px;
     grid-area: xp;
     display: flex;
     flex-direction: column;
-    
+    align-self: start;
+}
+.actor.sheet.npc .npc-cercle .domain-exp input {
+    height: 20px;
+    background: none;
+    border-bottom: 1px solid black;
 }
 
 .actor.sheet.npc .domain-base, .actor.sheet.npc .domain-actuel, .actor.sheet.npc .domain-exp{
@@ -193,6 +203,10 @@
     text-align: center;
     flex: 100%;
 }
+.actor.sheet.npc .domain-base input {
+    font: 800 var(--font-size-19) var(--body-serif);
+}
+
 /* NPC jets */
 .actor.sheet.npc .npc-dice {
     align-items: center;
@@ -216,7 +230,7 @@
 
 .actor.sheet.npc .domain-esprit .domain-label{
     background: var(--color-esprit);
-    color: #e9d7a1;
+    color: #fffcdb;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
@@ -229,7 +243,7 @@
 
 .actor.sheet.npc .domain-ame .domain-label{
     background: var(--color-ame);
-    color: var(--secondary);
+    color: #d5eefc;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
@@ -242,7 +256,7 @@
 
 .actor.sheet.npc .domain-corps .domain-label{
     background: var(--color-corps);
-    color: var(--primary);
+    color:#fbdaca;
     font-family: var(--sans-serif);
     font-size: .8rem;
     font-weight: 800;
@@ -307,7 +321,7 @@
     background-color: var(--color-esprit);
     display: grid;
     grid: "spéInsideTitre";
-    color: #e9d7a1;
+    color: #fffcdb;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;
@@ -320,7 +334,7 @@
 .actor.sheet.npc .npc-spés .specialisations-ame .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-ame);
-    color: var(--secondary);
+    color: #d5eefc;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;
@@ -346,7 +360,7 @@
 .actor.sheet.npc .npc-spés .specialisations-corps .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-corps);
-    color: var(--primary);
+    color: #fbdaca;
     font-family: var(--sans-serif);
     column-gap: 1%;
     font-size: .7rem;

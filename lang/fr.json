@@ -30,7 +30,7 @@
         "DomainsTitle": "Domaines",
         "SpecialisationsTitle": "Spécialisations",
         "DomainBase": "Base",
-        "DomainActuel": "Actuel",
+        "DomainBonus": "Bonus",
         "BonusLabel": "Bonus",
         "AcquisBonusLabel": "Acquis",
         "DomainExp": "xp",
@@ -46,7 +46,7 @@
         "CrédosTitle": "Les Crédos de ton personnage",
         "apparence": "Apparence",
         "histoire": "Vécu",
-        "personnalité": "Personnalité",
+        "personnalité": "Personnalite",
         "temper": "Tempêrament",
         "element1": "Élément Primaire",
         "element2": "Élément Secondaire",
@@ -55,7 +55,10 @@
         "notes": "Notes",
         "allies": "Alliés",
         "enemies": "Ennemis",
-        "pouvoirs": "Pouvoirs"
+        "pouvoirs": "Pouvoirs",
+        "decisions": "Mode de décisions",
+        "ShaandarName": "Nom du Shaandar",
+        "ShaandarDomain": "Domaine/Trihn"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -192,6 +195,7 @@
         "MagicLabel": "Magies",
         "AcquisLabel": "Acquis",
         "BiographyLabel": "Biographie",
+        "symbioses": "Symbioses",
         "ManageTabsLabel": "Gérer les Tabs"
     },
     "ITEM": {
@@ -294,8 +298,8 @@
         "spécialisations": "Spécialisations",
         "capacité": "Capacité",
         "valeur": "Valeur",
-        "préstige": "Préstige",
-        "préstigeTitle": "Le Préstige de ton personnage",
+        "préstige": "Prestige",
+        "préstigeTitle": "Le Prestige de ton personnage",
         "ressources": "Ressources",
         "fabrication": "Fabrication",
         "entretien": "Entretien",

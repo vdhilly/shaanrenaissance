@@ -1,92 +1,32 @@
-:root {
-    --font-size-5: 0.3125rem;
-    --font-size-8: 0.5rem;
-    --font-size-9: 0.5625rem;
-    --font-size-10: 0.625rem;
-    --font-size-15: 0.9375rem;
-    --font-size-17: 1.0625rem;
-    --font-size-19: 1.1875rem;
-    --font-size-21: 1.3125rem;
-    --font-size-22: 1.375rem;
-    --font-size-26: 1.625rem;
-    --font-size-30: 1.875rem;
-    --font-size-34: 2.125rem;
-    --font-size-36: 2.25rem;
-    --font-size-42: 2.625rem;
-    --body-serif: Gelasio, Georgia, serif;
-    --sans-serif: Roboto, sans-serif;
-    --sans-serif-condensed: "Roboto Condensed", var(--sans-serif);
-    --sans-serif-monospace: "Roboto Mono", monospace;
-    --serif: Eczar, Georgia, serif;
-    --serif-condensed: "Modesto Condensed", serif;
-    --journal-cursive: "La Belle Aurore", cursive;
-    --journal-serif: "Vollkorn", var(--serif);
-    --primary: #5e0000;
-    --secondary: #0d2408;
-    --tertiary: #d3c378;
-    --color-esprit: #b8985a;
-    --color-ame: #4263a3;
-    --color-corps: #c95b40;
-    --color-necrose: #707070;
-    --alt: #786452;
-    --alt-dark: #443730;
-    --bg: #f8f4f1;
-    --bg-dark: #e7d9cf;
-    --sub: #605856;
-    --color-disabled: #ababab;
-    --inline-link-bg: #ddd;
-    --inline-repost-bg: #eaeaea;
-    --visibility-gm-bg: #e8e8ef;
-    --visibility-owner-bg: #ddebe1;
-    --blind-roll: #f5eaf5;
-    --light: #910000;
-    --dark: #2b0000;
-    --tertiary-dark: #dfc578;
-    --tertiary-light: #f3e9ca;
-    --body: var(--text-dark);
-    --color-text-trait: #f5efe0;
-    --text-dark: #1c1c1c;
-    --text-light: #fff;
-    --color-border-trait: #d8c384;
-    --color-border-divider: #baa991;
-    --header-color: var(--text-light);
-    --header-bg: var(--secondary);
-    --sidebar-label: var(--tertiary-dark);
-    --sidebar-title: var(--tertiary);
-    --title: "GodOfWaraccent2";
-}
-::-webkit-scrollbar-thumb {
-    outline: none;
-    border-radius: 3px;
-    background: var(--primary);
-    border: 0;
-}
-a:hover {
-    text-shadow: none !important;
-}
-label.checkbox {
-    height: 38px;
-}
-@font-face {
-    font-family: GodOfWaraccent2;
-    src: url(../fonts/GodOfWaraccent-Regular.ttf);
-}
-.window-app.sheet.character .window-content {
+.window-app.sheet.Shaani .window-content {
     background: url(../assets/sheet/template_shaan_background1.jpg);
     background-position: center;
     padding: 0 !important;
 }
-h2 {
-    font-family: var(--title);
-    font-weight: 400;
+/* ACTOR SHEET */
+.actor.sheet.shaani {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    font-family: var(--body-serif);
+    grid: "sidebar header"75px "sidebar nav"minmax(min-content, max-content) "sidebar content"1fr/230px 1fr;
 }
-h3 {
-    font-family: var(--title);
-    font-weight: 400;
-    border: 0;
+.actor.sheet input {
+    border-radius: 0;
+    border: none;
+}
+.actor.sheet input:focus {
+    box-shadow: none;
+}
+.actor.sheet select {
+    border: none;
+    border-radius: 0;
+}
+.actor.sheet select:focus {
+    box-shadow: none;
 }
 /* ACTOR SHEET */
-.actor.sheet.character {
+.actor.sheet.shaani {
     width: 100%;
     height: 100%;
     display: grid;
@@ -108,7 +48,7 @@ h3 {
     box-shadow: none;
 }
 /* ACTOR SHEET SIDEBAR */
-.actor.sheet.character aside {
+.actor.sheet.shaani aside {
     background-image: url(../assets/sheet/shaan-navig-vert-top.jpg), url(../assets/sheet/shaan-navig-vert-bottom.jpg);
     background-position: center calc(100% - 172px), bottom;
     background-repeat: no-repeat;
@@ -120,22 +60,22 @@ h3 {
     grid-area: sidebar;
     /* margin-left: 8px */
 }
-.actor.sheet.character .sidebar {
+.actor.sheet.shaani .sidebar {
     margin-left: 25px;
     float: left;
     width: 180px;
     margin-top: 5px;
 }
-.actor.sheet.character .sidebar input {
+.actor.sheet.shaani .sidebar input {
     border: 2px solid #293011; 
     background: #d9d2b5;
     font: 400 var(--font-size-14) var(--body-serif);
 }
-.actor.sheet.character .sidebar select {
+.actor.sheet.shaani .sidebar select {
     border: 2px solid #293011; 
     background: #d9d2b5;
 }
-.actor.sheet.character .sidebar .sidebar_title h2 {
+.actor.sheet.shaani .sidebar .sidebar_title h2 {
     font-family: var(--title);
     border-color: var(--tertiary);
     color: var(--tertiary);
@@ -143,11 +83,11 @@ h3 {
     padding-left: 3px;
     /* text-transform: uppercase; */
 }
-.actor.sheet.character aside .logo {
+.actor.sheet.shaani aside .logo {
     display: flex;
     justify-content: center;
 }
-.actor.sheet.character aside .logo-img {
+.actor.sheet.shaani aside .logo-img {
     border: none;
     flex-shrink: 0;
     margin-top: 10px;
@@ -183,7 +123,7 @@ h3 {
 .actor.sheet aside .sidebar .HP .hp-big  .hpActuel-corps{ grid-area: 3 / 2 / 4 / 3; }
 .actor.sheet aside .sidebar .HP .hp-big .hpMax-corps { grid-area: 3 / 3 / 4 / 4; }
 
-.actor.sheet.character .sidebar .HP .hp-big .container span {
+.actor.sheet.shaani .sidebar .HP .hp-big .container span {
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -239,7 +179,7 @@ h3 {
 }
 
 /* SIDEBAR PROTECTIONS */
-.actor.sheet.character .sidebar .protection-title {
+.actor.sheet.shaani .sidebar .protection-title {
     margin-top: 10px;
 }
 .actor.sheet aside .sidebar .protections {
@@ -295,7 +235,7 @@ h3 {
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.sidebar input[type="checkbox"] {
+input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
     background-color: #d9d2b5;
@@ -305,8 +245,8 @@ h3 {
   
     font: inherit;
     color: currentColor;
-    width: 20px;
-    height: 20px;
+    width: 2em;
+    height: 2em;
     border: 0.15em solid currentColor;
     border-radius: 0.15em;
     transform: translateY(-0.075em);
@@ -315,7 +255,7 @@ h3 {
     place-content: center;
   }
   
-  .sidebar  input[type="checkbox"]::before {
+  input[type="checkbox"]::before {
     content: "";
     width: 1.2em;
     height: 1.2em;
@@ -326,12 +266,12 @@ h3 {
     box-shadow: inset 1em 1em var(--primary);
     background-color: CanvasText;
   }
-.sidebar input[type="checkbox"]:checked::before {
+  input[type="checkbox"]:checked::before {
     transform: scale(1);
   }
 
 /* CHARACTER CONTENT */
-.actor.sheet.character .content {
+.actor.sheet.shaani .content {
     float: right;
     width: calc(100% - 220px);
     padding-left: 5px;
@@ -339,7 +279,7 @@ h3 {
 
 
 /* CHARACTER CONTENT CHARACTER HEADER */
-.actor.sheet.character .char-header {
+.actor.sheet.shaani .char-header {
     background: url(../assets/sheet/shaan-navig-horiz.jpg);
     background-attachment: local;
     background-repeat: no-repeat;
@@ -354,11 +294,11 @@ h3 {
     color: var(--tertiary);
     font-family: var(--title);
 }
-.actor.sheet.character .char-header .char-details {
+.actor.sheet.shaani .char-header .char-details {
     align-self: center;
     width: 70%
 }
-.actor.sheet.character .char-header .char-details .char-name {
+.actor.sheet.shaani .char-header .char-details .char-name {
     border: none;
     align-self: center;
     text-align: left;
@@ -366,7 +306,7 @@ h3 {
     padding-left: 40px;
     width: 100%;
 }
-.actor.sheet.character .char-header .char-details .char-name input {
+.actor.sheet.shaani .char-header .char-details .char-name input {
     color: var(--tertiary);
     font-family: var(--title);
     font-size: var(--font-size-26);
@@ -374,22 +314,22 @@ h3 {
     height: 40px;
     width: 100%
 }
-.actor.sheet.character .char-header .char-exp {
+.actor.sheet.shaani .char-header .char-exp {
     display: flex;
     align-self: center;
     justify-self: center;
     width:30%;
 }
-.actor.sheet.character .char-header .char-exp span {
+.actor.sheet.shaani .char-header .char-exp span {
     align-self: center;
 }
-.actor.sheet.character .char-header .char-exp input {
+.actor.sheet.shaani .char-header .char-exp input {
     border: 2px solid #293011; 
     background: #d9d2b5;
     width: 50px;
 }
 /* ACTOR SHEET NAVIGATION */
-.actor.sheet.character .sheet-navigation {
+.actor.sheet.shaani .sheet-navigation {
     background-color: var(--secondary);
     grid-area: nav;
     margin-left: -2px
@@ -427,7 +367,7 @@ h3 {
     padding-bottom: 0;
     display: inline-block
 }
-.actor.sheet.character .sheet-body .sheet-content nav:after, .actor.sheet.character .sheet-body .sheet-content nav:before {
+.actor.sheet.shaani .sheet-body .sheet-content nav:after, .actor.sheet.shaani .sheet-body .sheet-content nav:before {
     background: url(../assets/sheet/sub-nav-decoration.png);
     content: "";
     height: 16px;
@@ -452,7 +392,7 @@ h3 {
     justify-content: center;
     margin: 0 6px;
 }
-.actor.sheet.character nav.sheet-navigation .manage-tabs {
+.actor.sheet.shaani nav.sheet-navigation .manage-tabs {
     color: #fff;
     margin: 0;
     padding: 0 6px
@@ -460,7 +400,7 @@ h3 {
 
 
 /* CHARACTER CONTENT */
-.actor.sheet.character .sheet-body {
+.actor.sheet.shaani .sheet-body {
     /* background-color: var(--color-ame); */
     grid-area: content;
     position: relative;
@@ -486,7 +426,7 @@ h3 {
     display: flex;
     flex-direction: column;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details {
     display: grid;
     grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
@@ -496,14 +436,14 @@ h3 {
 }
 
 /* General tab img */
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
     grid-area: img;
     margin-left: 5px
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active hr {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active hr {
     margin: 10px 6px 10px 0
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .frame .player-image {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .frame .player-image {
     border: none;
     border-radius: 0;
     box-shadow: 0 0 0 1px #918c88, 0 0 0 2px #e1d8cf, 0 0 0 3px #a98f39, inset 0 0 8px rgba(0, 0, 0, .5), 0 0 8px #000;
@@ -520,11 +460,11 @@ h3 {
 .actor.sheet .image-container:hover .hover-icon {
     display: block
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active.active .vide {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active.active .vide {
     grid-area: vide;
 }
 /* General Tab */
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .pc input {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .pc input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -538,10 +478,10 @@ h3 {
 }
 
 /* General Tab Details */
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active.active .character-details .pc.pc_shaani{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active.active .character-details .pc.pc_shaani{
     grid-area: shaani;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .detail-sheet {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .detail-sheet {
     grid-row-gap: 8px;
     display: grid;
     grid-area: details;
@@ -553,11 +493,11 @@ h3 {
 
 /* General Tab Bio */
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-background {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background {
     display: flex;
     flex-wrap: wrap
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-background .pc {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc {
     align-items: start;
     display: flex;
     flex: 20%;
@@ -565,17 +505,17 @@ h3 {
     justify-content: start;
     margin-bottom: 8px
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-background .pc span {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc span {
     width: 100%
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-background .pc_motivations {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc_motivations {
     flex: 100%;
     margin-bottom: 0
 }
 
 /* General Tab Domaines */
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .DomainsLabel {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .DomainsLabel {
     grid-area: titre;
     color: var(--primary);
     font-family: var(--title);
@@ -589,26 +529,26 @@ h3 {
     border-bottom: 2px solid var(--primary)
 }
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains {
     display: grid;
     grid: "titre titre titre" "technique arts rituels" "savoir shaan survie" "social magie combat" "vide2 necrose vide3";
     gap: 1%;
     margin-bottom: 10px;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose {
     display: grid;
     grid: "label label label" "base actuel xp";
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
     flex: 50%;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel {
     grid-area: actuel;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-base {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base {
     grid-area: base;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp {
     width: 20px;
     grid-area: xp;
     display: flex;
@@ -616,12 +556,12 @@ h3 {
     align-self: start;
     
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp input {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp input {
     height: 20px;
     background: none;
     border-bottom: 1px solid black;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-actuel, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-exp{
     color: var(--primary);
     font-family: var(--sans-serif);
     font-size: .625rem;
@@ -630,17 +570,17 @@ h3 {
     text-transform: uppercase;
     white-space: nowrap
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-label {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-label {
     grid-area: label;
     text-align: center;
     flex: 100%
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-base input {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-base input {
     font: 800 var(--font-size-19) var(--body-serif);
 }
 /* General Tab domaines Esprit */
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit .domain-label{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-esprit .domain-label{
     background: var(--color-esprit);
     color: #fffcdb;
     font-family: var(--sans-serif);
@@ -653,7 +593,7 @@ h3 {
 
 /* General Tab domaines Ame */
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame .domain-label{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-ame .domain-label{
     background: var(--color-ame);
     color: #d5eefc;
     font-family: var(--sans-serif);
@@ -666,7 +606,7 @@ h3 {
 
 /* General Tab domaines Corps */
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps .domain-label{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-corps .domain-label{
     background: var(--color-corps);
     color: #fbdaca;
     font-family: var(--sans-serif);
@@ -678,10 +618,10 @@ h3 {
 }
 
 /* General Tab domaine Necrose */
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose {
     grid-area: necrose;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose .domain-label {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains .domain-necrose .domain-label {
     background: var(--color-necrose);
     color: black;
     font-family: var(--sans-serif);
@@ -695,7 +635,7 @@ h3 {
 
 /* General Tab Specialisations */
 
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .SpecialisationsLabel {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .SpecialisationsLabel {
     grid-area: spésTitre;
     color: var(--primary);
     font-family: var(--title);
@@ -708,13 +648,13 @@ h3 {
     text-align: center;
     border-bottom: 2px solid var(--primary)
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations {
     display: grid;
     grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
     gap: 1%;
 }
 /* General Tab Specialisations Grid */
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-esprit, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-ame, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-corps, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-esprit, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-ame, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-corps, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose {
     display: grid;
     grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2" "spé3 spé3 spé3" "spé4 spé4 spé4" "spé5 spé5 spé5" "spé6 spé6 spé6" "spé7 spé7 spé7" "spé8 spé8 spé8" "spé9 spé9 spé9" "spé10 spé10 spé10";
     column-gap: 1%;
@@ -727,7 +667,7 @@ h3 {
     text-transform: uppercase;
     white-space: nowrap;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-esprit .specialisations-title {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-esprit .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-esprit);
     display: grid;
@@ -742,7 +682,7 @@ h3 {
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-ame .specialisations-title {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-ame .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-ame);
     display: grid;
@@ -757,7 +697,7 @@ h3 {
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-corps .specialisations-title {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-corps .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-corps);
     display: grid;
@@ -772,10 +712,10 @@ h3 {
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose {
     grid-area: spésnecrose;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose .specialisations-title {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .specialisations-nécrose .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-necrose);
     display: grid;
@@ -796,19 +736,19 @@ h3 {
 a.spéTest label, a.spéTestNécr label {
     cursor: pointer;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisations-bonus-label{
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .pc .specialisations-bonus-label{
     font-size: .6rem;
     align-self: center;
     text-align: right;
     padding-right: 1px;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations .pc a {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations .pc a {
     align-self: center;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-specialisations input, .actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-specialisations input, .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains {
     text-align: center;
 }
-.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-domains input {
+.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-domains input {
     width: 100%
 }
 
@@ -816,24 +756,24 @@ a.spéTest label, a.spéTestNécr label {
 /* ACTOR SHEET CHARACTER POWERS TAB*/
 
 /* POWER TAB TRIHN HEADER */
-.actor.sheet.character .tab.powers .trihn-header {
+.actor.sheet.shaani .tab.powers .trihn-header {
     display: grid; 
     grid: "powerTrihn power-add" "content content";
     border-top-right-radius: 5px;
 }
-.actor.sheet.character .tab.powers .Esprit .trihn-header {
+.actor.sheet.shaani .tab.powers .Esprit .trihn-header {
     background-color: var(--color-esprit);
 }
-.actor.sheet.character .tab.powers .Ame .trihn-header {
+.actor.sheet.shaani .tab.powers .Ame .trihn-header {
     background-color: var(--color-ame);
 }
-.actor.sheet.character .tab.powers .Corps .trihn-header {
+.actor.sheet.shaani .tab.powers .Corps .trihn-header {
     background-color: var(--color-corps);
 }
-.actor.sheet.character .tab.powers .Nécrose .trihn-header {
+.actor.sheet.shaani .tab.powers .Nécrose .trihn-header {
     background-color: var(--color-necrose);
 }
-.actor.sheet.character .tab.powers .trihn-header h3 {
+.actor.sheet.shaani .tab.powers .trihn-header h3 {
     border: none;
     margin:0;
     padding-left: 5px;
@@ -844,70 +784,70 @@ a.spéTest label, a.spéTestNécr label {
     font-weight: 700;
     text-transform: uppercase;
 }
-.actor.sheet.character .tab.powers .trihn-header .item-controls {
+.actor.sheet.shaani .tab.powers .trihn-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
 }
-.actor.sheet.character .tab.powers .item-control i.fas::before:hover {
+.actor.sheet.shaani .tab.powers .item-control i.fas::before:hover {
     box-shadow: none;
 }
 
 /* POWER TAB TRIHN CONTENT */
-.actor.sheet.character .tab.powers .liste-pouvoir img {
+.actor.sheet.shaani .tab.powers .liste-pouvoir img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.character .tab.powers ol {
+.actor.sheet.shaani .tab.powers ol {
     list-style-type: none;
     padding: 0;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir li {
+.actor.sheet.shaani .tab.powers .liste-pouvoir li {
     display: grid;
     grid: "power-item-header" "power-item-résumé";
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
+.actor.sheet.shaani .tab.powers .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
     grid-template-columns: 10% 80% 10%;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header img {
+.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header span {
+.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header span {
     font: 700 var(--font-size-16) var(--body-serif);
     align-self: center;
     padding-left: 5px;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
+.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
     grid-area: pouvoir-item-controls;
     float: right;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir {
+.actor.sheet.shaani .tab.powers .liste-pouvoir {
     display: grid;
     grid-gap: 2px;
 }
-.actor.sheet.character .tab.powers .Esprit .liste-pouvoir {
+.actor.sheet.shaani .tab.powers .Esprit .liste-pouvoir {
     border: 3px solid var(--color-esprit);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.powers .Ame .liste-pouvoir {
+.actor.sheet.shaani .tab.powers .Ame .liste-pouvoir {
     border: 3px solid var(--color-ame);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.powers .Corps .liste-pouvoir {
+.actor.sheet.shaani .tab.powers .Corps .liste-pouvoir {
     border: 3px solid var(--color-corps);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.powers .Nécrose .liste-pouvoir {
+.actor.sheet.shaani .tab.powers .Nécrose .liste-pouvoir {
     border: 3px solid var(--color-necrose);
     border-top: none;
     margin: 0;
@@ -918,19 +858,19 @@ a.spéTest label, a.spéTestNécr label {
 
 /* ACTOR TAB CHARACTER ACQUIS */
 
-.actor.sheet.character .tab.acquis .acquis-top {
+.actor.sheet.shaani .tab.acquis .acquis-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money label, .actor.sheet.character .tab.acquis .acquis-top .acquis-préstige label {
+.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money label, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-préstige label {
     color: var(--primary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money input, .actor.sheet.character .tab.acquis .acquis-top .acquis-préstige input {
+.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money input, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-préstige input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -941,7 +881,7 @@ a.spéTest label, a.spéTestNécr label {
     padding: 8px 4px 6px;
     width: calc(100% - 6px)
 }
-.actor.sheet.character .tab.acquis .acquis-ressources .ressources-content {
+.actor.sheet.shaani .tab.acquis .acquis-ressources .ressources-content {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -959,23 +899,23 @@ a.spéTest label, a.spéTestNécr label {
 .ressource.Métal { grid-area: 2 / 4 / 3 / 5; }
 .ressource.Hydrocarbures { grid-area: 2 / 5 / 3 / 6; }
 
-.actor.sheet.character .tab.acquis .acquis-ressources .ressource {
+.actor.sheet.shaani .tab.acquis .acquis-ressources .ressource {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     align-items: center;
 }
-.actor.sheet.character .tab.acquis .acquis-ressources .ressource img{
+.actor.sheet.shaani .tab.acquis .acquis-ressources .ressource img{
     max-width: 100%;
     border: none;
 }
 /* ACQUIS CATEGORY HEADER */
 
-.actor.sheet.character .tab.acquis .ressources-header {
+.actor.sheet.shaani .tab.acquis .ressources-header {
     border-top-right-radius: 5px;
     background-color: #755137;
 }
-.actor.sheet.character .tab.acquis .ressources-header h3 {
+.actor.sheet.shaani .tab.acquis .ressources-header h3 {
     border: none;
     margin:0;
     padding-left: 5px;
@@ -986,23 +926,23 @@ a.spéTest label, a.spéTestNécr label {
     font-weight: 700;
     text-transform: uppercase;
 }
-.actor.sheet.character .tab.acquis .ressources-content {
+.actor.sheet.shaani .tab.acquis .ressources-content {
     border: 3px solid #755137;
     border-top: none;
     padding: 0.5rem;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.acquis .category-header {
+.actor.sheet.shaani .tab.acquis .category-header {
     display: grid; 
     grid: "acquisCategory power-add" "acquisContent acquisContent";
     border-top-right-radius: 5px;
 }
-.actor.sheet.character .tab.acquis .itemCategory .category-header {
+.actor.sheet.shaani .tab.acquis .itemCategory .category-header {
     background-color: #755137;
 }
 
-.actor.sheet.character .tab.acquis .category-header h3 {
+.actor.sheet.shaani .tab.acquis .category-header h3 {
     border: none;
     margin:0;
     padding-left: 5px;
@@ -1013,54 +953,54 @@ a.spéTest label, a.spéTestNécr label {
     font-weight: 700;
     text-transform: uppercase;
 }
-.actor.sheet.character .tab.acquis .category-header .item-controls {
+.actor.sheet.shaani .tab.acquis .category-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
 }
-.actor.sheet.character .tab.acquis .item-control i.fas::before:hover {
+.actor.sheet.shaani .tab.acquis .item-control i.fas::before:hover {
     box-shadow: none;
 }
 
 
 /* ACQUIS TAB CATEGORY CONTENT */
 
-.actor.sheet.character .tab.acquis .liste-items img {
+.actor.sheet.shaani .tab.acquis .liste-items img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.character .tab.acquis ol {
+.actor.sheet.shaani .tab.acquis ol {
     list-style-type: none;
     padding: 0;
 }
-.actor.sheet.character .tab.acquis .liste-items li {
+.actor.sheet.shaani .tab.acquis .liste-items li {
     display: grid;
     grid: "acquis-item-header" "acquis-item-résumé";
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
 }
-.actor.sheet.character .tab.acquis .liste-items li .acquis-header {
+.actor.sheet.shaani .tab.acquis .liste-items li .acquis-header {
     display: grid;
     grid: "acquis-item-img acquis-item-name acquis-item-controls";
     grid-template-columns: 10% 80% 10%;
 }
-.actor.sheet.character .tab.acquis .liste-items .acquis-header img {
+.actor.sheet.shaani .tab.acquis .liste-items .acquis-header img {
     grid-area: acquis-item-img;
 }
-.actor.sheet.character .tab.acquis .liste-items .acquis-header span {
+.actor.sheet.shaani .tab.acquis .liste-items .acquis-header span {
     font: 700 var(--font-size-16) var(--body-serif);
     align-self: center;
     padding-left: 5px;
 }
-.actor.sheet.character .tab.acquis .liste-items .acquis-header .item-controls {
+.actor.sheet.shaani .tab.acquis .liste-items .acquis-header .item-controls {
     grid-area: acquis-item-controls;
     float: right;
 }
-.actor.sheet.character .tab.acquis .liste-items {
+.actor.sheet.shaani .tab.acquis .liste-items {
     display: grid;
     grid-gap: 2px;
 }
-.actor.sheet.character .tab.acquis .liste-items {
+.actor.sheet.shaani .tab.acquis .liste-items {
     border: 3px solid #755137;
     border-top: none;
     margin: 0;
@@ -1070,19 +1010,19 @@ a.spéTest label, a.spéTestNécr label {
 
 /* BIOGRAPHY TAB */
 
-.actor.sheet.character .tab.biography label {
+.actor.sheet.shaani .tab.biography label {
     color: var(--primary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet.character .tab.biography header h2 {
+.actor.sheet.shaani .tab.biography header h2 {
     color: var(--primary);
     font-weight: 600;
 }
 
-.actor.sheet.character .tab.biography input {
+.actor.sheet.shaani .tab.biography input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -1094,7 +1034,7 @@ a.spéTest label, a.spéTestNécr label {
     width: 100%
 }
 
-.actor.sheet.character .tab.biography textarea {
+.actor.sheet.shaani .tab.biography textarea {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -1107,11 +1047,11 @@ a.spéTest label, a.spéTestNécr label {
     width: 100% !important;
     border-radius: 0
 }
-.actor.sheet.character .tab.biography textarea:focus {
+.actor.sheet.shaani .tab.biography textarea:focus {
     box-shadow: none;
 }
 
-.actor.sheet.character .biographyCategory.personnalité {
+.actor.sheet.shaani .biographyCategory.personnalité {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.7fr repeat(2, 1fr);
@@ -1119,10 +1059,10 @@ a.spéTest label, a.spéTestNécr label {
     grid-row-gap: 3px;
 }
 
-.actor.sheet.character .biographyCategory.personnalité header { grid-area: 1 / 1 / 2 / 3; }
-.actor.sheet.character .biographyCategory.personnalité .biography-temper{ grid-area: 2 / 1 / 3 / 2; }
-.actor.sheet.character .biographyCategory.personnalité .biography-element1{ grid-area: 3 / 1 / 4 / 2; }
-.actor.sheet.character .biographyCategory.personnalité .biography-element2{ grid-area: 3 / 2 / 4 / 3; }
-.actor.sheet.character .biographyCategory.personnalité .biography-culte{ grid-area: 2 / 2 / 3 / 3; }
+.actor.sheet.shaani .biographyCategory.personnalité header { grid-area: 1 / 1 / 2 / 3; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-temper{ grid-area: 2 / 1 / 3 / 2; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-element1{ grid-area: 3 / 1 / 4 / 2; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-element2{ grid-area: 3 / 2 / 4 / 3; }
+.actor.sheet.shaani .biographyCategory.personnalité .biography-culte{ grid-area: 2 / 2 / 3 / 3; }
 
 

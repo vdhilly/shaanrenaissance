@@ -58,7 +58,8 @@ export async function domainTest ({
     
 
 
-    const domainLevel = actorData.skills[domain].temp
+    const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
+    console.log(domainLevel)
     let spéDomain
     let données
     for (const [category, details] of Object.entries(actorData.skills)) {
@@ -143,7 +144,7 @@ export async function SpéTest ({
 } = {}) {
   const messageTemplate = "systems/Shaan_Renaissance/templates/chat/domainTest.hbs";
   const actorData = actor ? actor.system : null;
-  const domainLevel = actorData.skills[domain].temp;
+  const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
 
@@ -266,7 +267,7 @@ export async function necroseTest ({
   }
 
 
-  const domainLevel = actorData.skills[domain].temp
+  const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
   let spéDomain
     let données
     for (const [category, details] of Object.entries(actorData.skills)) {
@@ -352,7 +353,7 @@ export async function SpéTestNécr ({
 } = {}) {
   const messageTemplate = "systems/Shaan_Renaissance/templates/chat/spéTestNécr.hbs";
   const actorData = actor ? actor.system : null;
-  const domainLevel = actorData.skills[domain].temp;
+  const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
 

@@ -8,7 +8,7 @@
       "flags": {}
     }
   ],
-  "version": "0.20",
+  "version": "0.25",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291",
@@ -21,7 +21,8 @@
     "styles/ui.css",
     "styles/CharacterSheet.css",
     "styles/ItemSheet.css",
-    "styles/NPCSheet.css"
+    "styles/NPCSheet.css",
+    "styles/ShaaniSheet.css"
   ],
   "packs": [
     {
