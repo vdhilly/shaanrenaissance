@@ -235,40 +235,6 @@
     font-size: .625rem;
     text-transform: uppercase; 
 }
-input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #d9d2b5;
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-top: 1px;
-  
-    font: inherit;
-    color: currentColor;
-    width: 2em;
-    height: 2em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
-  
-    display: grid;
-    place-content: center;
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    width: 1.2em;
-    height: 1.2em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--primary);
-    background-color: CanvasText;
-  }
-  input[type="checkbox"]:checked::before {
-    transform: scale(1);
-  }
 
 /* CHARACTER CONTENT */
 .actor.sheet.shaani .content {
@@ -1100,4 +1066,42 @@ a.spéTest label, a.spéTestNécr label {
 }
 
 
+/* Symbioses Tab */
+
+.actor.sheet.shaani .tab.symbioses.active ol{
+    padding-left: 0;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    justify-items: center;
+    align-items: center;
+    list-style-type: none;
+}
+.actor.sheet.shaani .tab.symbioses.active ol li.titre-symbioses {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase; 
+}
+.actor.sheet.shaani .tab.symbioses.active ol li {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 10% 10% 30% 20%;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background:rgba(28, 28, 28, .1)
+}
+
+.actor.sheet.shaani .tab.symbioses.active ol li .symbiose-titre{ grid-area: 1 / 1 / 2 / 2; }
+.actor.sheet.shaani .tab.symbioses.active ol li .symbiose-cout{ grid-area: 1 / 2 / 2 / 3; }
+.actor.sheet.shaani .tab.symbioses.active ol li .symbiose-acquis{ grid-area: 1 / 3 / 2 / 4; }
+.actor.sheet.shaani .tab.symbioses.active ol li .symbiose-frequence{ grid-area: 1 / 4 / 2 / 5; }
+.actor.sheet.shaani .tab.symbioses.active ol li .symbiose-description{ grid-area: 1 / 5 / 2 / 6; }
 

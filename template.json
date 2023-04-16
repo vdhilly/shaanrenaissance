@@ -45,7 +45,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "récuperation": {
+                                "recuperation": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -61,7 +61,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "sensdumétal": {
+                                "sensdumetal": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -100,19 +100,19 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "ésotérisme": {
+                                "esoterisme": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "géologie": {
+                                "geologie": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "histoired'héos": {
+                                "histoired'heos": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "médecine": {
+                                "medecine": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -131,7 +131,7 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "arpège": {
+                                "arpege": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -163,7 +163,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "séduction": {
+                                "seduction": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -178,7 +178,7 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "artsappliqués": {
+                                "artsappliques": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -190,11 +190,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "comédie": {
+                                "comedie": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "déguisement": {
+                                "deguisement": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -233,15 +233,15 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "empathieanthéenne": {
+                                "empathieantheenne": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "empathieminérale": {
+                                "empathieminerale": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "empathievégétale": {
+                                "empathievegetale": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -253,7 +253,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "soinsdel'âme": {
+                                "soinsdel'ame": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -280,7 +280,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "défensemagique": {
+                                "defensemagique": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -296,11 +296,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "maîtrisedesschèmes": {
+                                "maîtrisedesschemes": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "régénérationdetrihn": {
+                                "regenerationdetrihn": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -335,7 +335,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "ritedenécrose": {
+                                "ritedenecrose": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -374,11 +374,11 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "culturehéossienne": {
+                                "cultureheossienne": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "culturenécrosienne": {
+                                "culturenecrosienne": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -386,7 +386,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "éducationphysique": {
+                                "educationphysique": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -413,15 +413,15 @@
                             "temp": 0,
                             "exp": 0,
                             "specialisations":{
-                                "armeslancées": {
+                                "armeslancees": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "armesdemélée": {
+                                "armesdemelee": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "armesàprojectiles": {
+                                "armesaprojectiles": {
                                     "bonus": 0,
                                     "acquis": 0
                                 },
@@ -449,7 +449,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "stratégie": {
+                                "strategie": {
                                     "bonus": 0,
                                     "acquis": 0
                                 }
@@ -496,7 +496,7 @@
                                     "bonus": 0,
                                     "acquis": 0
                                 },
-                                "pactenécrotique": {
+                                "pactenecrotique": {
                                     "bonus": 0,
                                     "acquis": 0
                                 }
@@ -702,7 +702,93 @@
             "soucheAme":"",
             "soucheEsprit":"",
             "decision": "",
-            "motivations": ""
+            "motivations": "",
+            "symbioses": {
+                "langagesecret": {
+                    "label": "Langage secret",
+                    "cout": "2 PXs",
+                    "frequence": "Permanent",
+                    "durée": "",
+                    "description": "Les membres d'un Shaani développent naturellement une langue inventée qui rassemble les grammaires et les intonations des différentes cultures présentes. Cette langue ne peut être comprise que par eux et ne peut s'enseigner à une personne extérieur tant qu'elle n'a pas rejoint le groupe. Ce langage peut s'écrire de façon codée."
+                },
+                "chaînage": {
+                    "label": "Chaînage",
+                    "cout": "3 PXs",
+                    "frequence": "Permanent",
+                    "durée": "",
+                    "description": "Un Shaandar peut franchir une porte trihnique en sens inverse si un membre de son Shaani se trouve à moins d'un kilomètre de la porte d'entrée, sans qu'il ait besoin de passer le bras à travers. La Symbiose permet aux Shaandars de ne faire qu'un aux yeux de la Trihnite, et donc de faire revenir le Shaandar qui se trouvait de l'autre côté."
+                },
+                "localisation": {
+                    "label": "Localisation",
+                    "cout": "4 PXs",
+                    "frequence": "Permanent",
+                    "durée": "",
+                    "description": "Chacun sait à tout instant où se trouvent les autres membres du Shaani, quelle que soit la distance qui les sépare, avec une précision de l'ordre du kilomètre."
+                },
+                "cohésion": {
+                    "label": "Cohésion",
+                    "cout": "5 PXs",
+                    "frequence": "Permanent",
+                    "durée": "",
+                    "description": "Le niveau de chaque Domaine non-représenté du Shaani est égal au deuxième niveau le plus faible des Shaandars, plutôt qu'au niveau du Domaine le plus faible ."
+                },
+                "complicité": {
+                    "label": "Complicité",
+                    "cout": "5 PXs",
+                    "frequence": "Jour",
+                    "durée": "",
+                    "description": "Un Shaandar peut prêter son niveau de Domaine au Shaani pour une Action, même s'il est absent du groupe."
+                },
+                "perception": {
+                    "label": "Perception",
+                    "cout": "6 PXs",
+                    "frequence": "Jour",
+                    "durée": "/20 Min",
+                    "description": "Chaque Shaandar peut percevoir au travers des sens d'un autre membre du Shaani (vue, ouïe, odorat, toucher, goût) et ressentir les mêmes émotions au même instant. Ce Pouvoir n'est limité par aucun éloignement géographique."
+                },
+                "télépathie": {
+                    "label": "Télépathie",
+                    "cout": "8 PXs",
+                    "frequence": "Permanent",
+                    "durée": "",
+                    "description": "Les membres du Shaani peuvent établir entre eux une communication mentale (qui ne fait pas usage de la parole). La portée d'une telle communication est de 1000 km. Ainsi, ils peuvent être séparés les uns des autres par un milier de kilomètres et converser comme si de rien n'était. Branchés en permanence les uns aux autres, il peuvent, s'ils le désirent, s'isoler à tout moment pour préserver leur intimité. Lorsque l'un d'eux est en danger ou vient à mourir, les autres en sont immédiatement avertis par un signal mental."
+                },
+                "matérialisation": {
+                    "label": "Matérialisation",
+                    "cout": "10 PXs",
+                    "frequence": "Jour",
+                    "durée": "/1 Situation",
+                    "description": "Cette Symbiose permet de matérialiser sous forme translucide et légèrement bleutée, n'importe quel objet ou équipement appartenant à un membre du Shaani. Elle est en fait la résultante de l'énergie trihnique mise en œuvre par l'inconscient de chaque Shaandar. La forme ectoplasmique dispose de toutes les Capacités de l'objet et s'adapte à la taille de celui qui en bénéficie. C'est ainsi qu'un Kelwin peut disposer de la Protection qu'offre l'armure Darken de son Shaandar combattant préféré. La matérialisation peut aussi s'appliquer aux véhicules. Les légendes relatant la présence de navires fantomatiques bleutés et translucides ne font en fait état que d'une matérialisation d'un Shaandar navigateur ... Il est intéressant de remarquer que la matérialisation peut aussi fonctionner pour soi si tous les Shaandars ont bien connaissance de l'équipement de chacun. Grâce à cela, un guerrier Darken jeté en prison désarmé, peut en fait se révéler tout aussi redoutable que s'il était armé. "
+                },
+                "aura": {
+                    "label": "Aura",
+                    "cout": "12 PXs",
+                    "frequence": "Jour",
+                    "durée": "/1 Situation",
+                    "description": "Les membres d'un Shaani peuvent additionner leur niveau de SOCIAL. Pour une Action de groupe, jusqu'à un maximum de 15 en SOCIAL. "
+                },
+                "échange": {
+                    "label": "Échange",
+                    "cout": "14 PXs",
+                    "frequence": "Jour",
+                    "durée": "/1 Situation",
+                    "description": " Chaque membre peut échanger avec l'autre son apparence, un Trihn, un Domaine, une Spécialisation, un Pouvoir ou une aptitude particulière. Les Shaandars échangent une seule caractéristique et doivent se toucher pour que l'échange ait lieu. !.'.échange fonctionne toujours dans les deux sens : un Woon qui donne son apparence ou sa valeur en Corps à un Kelwin, recevra en même temps l'apparence ou la valeur en Corps du Kelwin en question."
+                },
+                "Transfert": {
+                    "label": "Transfert",
+                    "cout": "16 PXs",
+                    "frequence": "Jour",
+                    "durée": "/1 Situation",
+                    "description": "Deux membres d'un Shaani peuvent inverser simultanément le contrôle de leurs Corps respectifs en intervertissant leur Esprit et leur Âme. Ainsi, un Delhion prendra le contrôle du Corps d'un Feling et inversement, chacun déplaçant son Esprit et son Âme dans le Corps de l'autre. "
+                },
+                "téléportation": {
+                    "label": "Téléportation",
+                    "cout": "18 PXs",
+                    "frequence": "Jour",
+                    "durée": "",
+                    "description": "Deux membres du Shaani peuvent échanger leur place, quelque soit la distance qui les sépare. Un personnage peut également se téléporter au côté d'un membre de son Shaani, s'il le souhaite, sans limitation de distance non plus. "
+                }
+            }
         }
     },
     "Item": {
