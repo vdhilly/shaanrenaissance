@@ -295,7 +295,7 @@ h3 {
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.sidebar input[type="checkbox"] {
+.actor.sheet.character .sidebar input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
     background-color: #d9d2b5;
@@ -315,7 +315,7 @@ h3 {
     place-content: center;
   }
   
-  .sidebar  input[type="checkbox"]::before {
+.actor.sheet.character .sidebar  input[type="checkbox"]::before {
     content: "";
     width: 1.2em;
     height: 1.2em;
@@ -326,7 +326,7 @@ h3 {
     box-shadow: inset 1em 1em var(--secondary);
     background-color: CanvasText;
   }
-.sidebar input[type="checkbox"]:checked::before {
+.actor.sheet.character .sidebar input[type="checkbox"]:checked::before {
     transform: scale(1);
   }
 
@@ -413,7 +413,7 @@ h3 {
     white-space: nowrap;
     width: 7em
 }
-.actor.sheet nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
+.actor.sheet.character nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
     fill: var(--text-light);
     background-image: url(../assets/sheet/nav-item.webp);
     color: var(--text-light);
@@ -434,11 +434,11 @@ h3 {
     margin: 0 16px;
     width: 37px
 }
-.actor.sheet nav.sheet-navigation .item {
+.actor.sheet.character nav.sheet-navigation .item {
     fill: var(--tertiary);
     background-image: url(../assets/sheet/nav-item-inactive.webp);
     border-radius: 50%;
-    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #5b9f71, inset 0 0 4px rgba(0, 0, 0, .25);
     color: var(--tertiary);
     height: 24px;
     transition: all .1s ease-out;

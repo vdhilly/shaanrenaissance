@@ -49,7 +49,7 @@
 }
 /* ACTOR SHEET SIDEBAR */
 .actor.sheet.shaani aside {
-    background-image: url(../assets/sheet/shaan-navig-vert-top.jpg), url(../assets/sheet/shaan-navig-vert-bottom.jpg);
+    background-image: url(../assets/sheet/shaan-navig-bleu-top.webp), url(../assets/sheet/shaan-navig-bleu-bottom.webp);
     background-position: center calc(100% - 172px), bottom;
     background-repeat: no-repeat;
     background-size: 231px 100%, 231px 172px;
@@ -67,12 +67,12 @@
     margin-top: 5px;
 }
 .actor.sheet.shaani .sidebar input {
-    border: 2px solid #293011; 
+    border: 2px solid #080a35; 
     background: #d9d2b5;
     font: 400 var(--font-size-14) var(--body-serif);
 }
 .actor.sheet.shaani .sidebar select {
-    border: 2px solid #293011; 
+    border: 2px solid #080a35; 
     background: #d9d2b5;
 }
 .actor.sheet.shaani .sidebar .sidebar_title h2 {
@@ -235,6 +235,40 @@
     font-size: .625rem;
     text-transform: uppercase; 
 }
+.actor.sheet.shaani .sidebar input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #d9d2b5;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 1px;
+  
+    font: inherit;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+  }
+  
+.actor.sheet.shaani .sidebar  input[type="checkbox"]::before {
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: center;
+    transition: 30ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--secondary);
+    background-color: CanvasText;
+  }
+.actor.sheet.shaani .sidebar input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
 
 /* CHARACTER CONTENT */
 .actor.sheet.shaani .content {
@@ -246,7 +280,7 @@
 
 /* CHARACTER CONTENT CHARACTER HEADER */
 .actor.sheet.shaani .char-header {
-    background: url(../assets/sheet/shaan-navig-horiz.jpg);
+    background: url(../assets/sheet/shaan-navig-horiz_bleu.webp);
     background-attachment: local;
     background-repeat: no-repeat;
     background-size: auto 78px, cover;
@@ -262,7 +296,7 @@
 }
 .actor.sheet.shaani .char-header .char-details {
     align-self: center;
-    width: 70%
+    width: 90%
 }
 .actor.sheet.shaani .char-header .char-details .char-name {
     border: none;
@@ -280,23 +314,9 @@
     height: 40px;
     width: 100%
 }
-.actor.sheet.shaani .char-header .char-exp {
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    width:30%;
-}
-.actor.sheet.shaani .char-header .char-exp span {
-    align-self: center;
-}
-.actor.sheet.shaani .char-header .char-exp input {
-    border: 2px solid #293011; 
-    background: #d9d2b5;
-    width: 50px;
-}
 /* ACTOR SHEET NAVIGATION */
 .actor.sheet.shaani .sheet-navigation {
-    background-color: var(--secondary);
+    background-color: #0d1754;
     grid-area: nav;
     margin-left: -2px
 }
@@ -319,9 +339,9 @@
     white-space: nowrap;
     width: 7em
 }
-.actor.sheet nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
+.actor.sheet.shaani nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
     fill: var(--text-light);
-    background-image: url(../assets/sheet/nav-item.webp);
+    background-image: url(../assets/sheet/nav-item_bleu.webp);
     color: var(--text-light);
     transform: scale(1.2);
     z-index: 2;
@@ -340,11 +360,11 @@
     margin: 0 16px;
     width: 37px
 }
-.actor.sheet nav.sheet-navigation .item {
+.actor.sheet.shaani nav.sheet-navigation .item {
     fill: var(--tertiary);
     background-image: url(../assets/sheet/nav-item-inactive.webp);
     border-radius: 50%;
-    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #5b699f, inset 0 0 4px rgba(0, 0, 0, .25);
     color: var(--tertiary);
     height: 24px;
     transition: all .1s ease-out;
