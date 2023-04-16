@@ -33,6 +33,15 @@
       "type": "Item",
       "private": true,
       "flags": {}
+    },
+    {
+      "name": "acquis",
+      "label": "Acquis",
+      "system": "Shaan_Renaissance",
+      "path": "packs/acquis.db",
+      "type": "Item",
+      "private": true,
+      "flags": {}
     }
   ],
   "languages": [
