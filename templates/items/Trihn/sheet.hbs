@@ -6,7 +6,8 @@
     </header>
     <div class="trihn-details">
         <span class="trihn-type">
-            <select name="system.trihnType">
+            <label class="details-label" for="{{options.id}}-trihn-type">{{localize "SRLabels.TrihnType"}}</label>
+            <select id="{{options.id}}-trihn-type" name="system.trihnType">
                 {{#select data.trihnType}}
                 {{#each item.system.trihnTypes}}
                     <option value="{{@key}}">{{@key}}</option>
@@ -15,10 +16,12 @@
             </select>
         </span>
         <div class="puissance">
-            <input type="number" name="system.puissance" value="{{data.puissance}}"/>
+            <label class="details-label" for="{{options.id}}-trihn-puissance">{{localize "SRLabels.Puissance"}}</label>
+            <input id="{{options.id}}-trihn-puissance" type="number" name="system.puissance" value="{{data.puissance}}"/>
         </div>
         <div class="emplacement">
-            <input name="system.emplacement" value="{{data.emplacement}}"/>
+            <label class="details-label" for="{{options.id}}-trihn-emplacement">{{localize "SRLabels.Emplacement"}}</label>
+            <input id="{{options.id}}-trihn-emplacement" name="system.emplacement" value="{{data.emplacement}}"/>
         </div>
     </div>
 </form>

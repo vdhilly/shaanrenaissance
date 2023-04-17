@@ -812,8 +812,31 @@ grid-row-gap: 0px;
 .item.sheet.trihn .trihn-details {
     grid-area: trihnContent;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 0.5fr 1fr 0.5fr repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    padding-top: 10px;
+}
+.item.sheet.trihn .trihn-details .trihn-type {
+    padding-top: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.item.sheet.trihn .trihn-details .trihn-type select {
+    width: calc(100% - 2px);
+    min-width: 20px;
+    height: var(--form-field-height);
+    padding: 1px 3px;
+    margin: 0;
+    margin-top: 2px;
+}
+.item.sheet.trihn .trihn-details .emplacement input{
+    width: calc(100% - 2px);
+    min-width: 20px;
+    height: var(--form-field-height);
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1px 3px;
+    margin: 0;
+    color: var(--color-text-dark-primary);
 }

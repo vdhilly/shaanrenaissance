@@ -60,7 +60,11 @@
         "ShaandarName": "Nom du Shaandar",
         "ShaandarDomain": "Domaine/Trihn",
         "Souches": "Souches",
-        "SummonedTrihns": "Trihns invoques"
+        "SummonedTrihns": "TRIHNS INVOQUÉS",
+        "TrihnType": "Type du Trihn",
+        "Puissance": "Puissance",
+        "Emplacement": "Emplacement"
+
     },
     "SRdomains": {
         "Technique": "Technique",
