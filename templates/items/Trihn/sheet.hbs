@@ -1,0 +1,16 @@
+<span class="acquis-name">
+                        {{log trihn.system}}
+                        <select name="system.trihnType">
+                            {{#select system.trihnType}}
+                            {{#each system.trihnTypes}}
+                                <option value="{{@key}}">{{@key}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </span>
+                    <div class="puissance">
+                        <input name="system.puissance" value="{{system.puissance}}"/>
+                    </div>
+                    <div class="emplacement">
+                        <input name="system.emplacement" value="{{system.emplacement}}"/>
+                    </div>

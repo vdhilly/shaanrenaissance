@@ -13,15 +13,20 @@
                 <li class="item acquis" draggable="true" data-item-id="{{acquis._id}}">
                 <div class="acquis-header">
                     <span class="acquis-name">
-                        <select>
-
+                        {{log trihn.system}}
+                        <select name="system.trihnType">
+                            {{#select system.trihnType}}
+                            {{#each system.trihnTypes}}
+                                <option value="{{@key}}">{{@key}}</option>
+                            {{/each}}
+                            {{/select}}
                         </select>
                     </span>
                     <div class="puissance">
-                        <input name="system."/>
+                        <input name="system.puissance" value="{{system.puissance}}"/>
                     </div>
                     <div class="emplacement">
-                        <input name="system."/>
+                        <input name="system.emplacement" value="{{system.emplacement}}"/>
                     </div>
                     <div class="item-controls">
                         <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>

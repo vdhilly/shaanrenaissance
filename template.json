@@ -1446,6 +1446,12 @@
             ],
             "emplacement":null,
             "puissance":null,
+            "trihnTypes": {
+                "Esprit":null,
+                "Âme":null,
+                "Corps":null,
+                "Anti-Âme":null
+            },
             "trihnType":null
         }
     }}
