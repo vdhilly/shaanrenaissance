@@ -413,7 +413,7 @@ h3 {
     white-space: nowrap;
     width: 7em
 }
-.actor.sheet.character nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
+.actor.sheet.character nav.sheet-navigation .item.active, .actor.sheet.character nav.sheet-navigation .item:hover {
     fill: var(--text-light);
     background-image: url(../assets/sheet/nav-item.webp);
     color: var(--text-light);

@@ -59,7 +59,8 @@
         "decisions": "Mode de décisions",
         "ShaandarName": "Nom du Shaandar",
         "ShaandarDomain": "Domaine/Trihn",
-        "Souches": "Souches"
+        "Souches": "Souches",
+        "SummonedTrihns": "Trihns invoques"
     },
     "SRdomains": {
         "Technique": "Technique",

@@ -339,7 +339,7 @@
     white-space: nowrap;
     width: 7em
 }
-.actor.sheet.shaani nav.sheet-navigation .item.active, .actor.sheet nav.sheet-navigation .item:hover {
+.actor.sheet.shaani nav.sheet-navigation .item.active, .actor.sheet.shaani nav.sheet-navigation .item:hover {
     fill: var(--text-light);
     background-image: url(../assets/sheet/nav-item_bleu.webp);
     color: var(--text-light);

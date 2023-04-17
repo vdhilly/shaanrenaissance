@@ -833,7 +833,8 @@
             "Richesse",
             "Technologie",
             "Transport",
-            "Pouvoir"
+            "Pouvoir",
+            "Trihn"
         ],
         "templates": {
             "common": {
@@ -1438,5 +1439,13 @@
             "résumé": {
                 "value":""
             }     
+        },
+        "Trihn": {
+            "templates": [
+                "common"
+            ],
+            "emplacement":null,
+            "puissance":null,
+            "trihnType":null
         }
     }}

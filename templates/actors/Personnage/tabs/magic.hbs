@@ -1,3 +1,34 @@
 <div class="tab magic" data-group="primary" data-tab="magic">
-    <h1>Magic</h1>
+    <div class="trihns-list"></div>
+            <div class="category-header">
+                <h3 class="item-name">{{localize "SRLabels.SummonedTrihns"}}</h3>
+                {{#ifeq @root.editable true}}
+                    <div class="item-controls">
+                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="MagicTrihn-add"></i></a>
+                    </div>
+                {{/ifeq}}
+            </div>
+            <ol class="item-list liste-items liste-item">
+                {{#each SummonedTrihns as |acquis id|}}
+                <li class="item acquis" draggable="true" data-item-id="{{acquis._id}}">
+                <div class="acquis-header">
+                    <span class="acquis-name">
+                        <select>
+
+                        </select>
+                    </span>
+                    <div class="puissance">
+                        <input name="system."/>
+                    </div>
+                    <div class="emplacement">
+                        <input name="system."/>
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
+                    </div>
+                </div>
+                </li>
+                {{/each}}
+            </ol>
+    </div>
 </div>
