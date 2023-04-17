@@ -3,6 +3,7 @@ import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
 import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
 import ShaanShaaniSheet from "./module/sheets/ShaanShaaniSheet.js";
+import ShaanTrihnSheet from "./module/sheets/ShaanTrihnSheet.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -74,7 +75,14 @@ Hooks.once("init", function(){
     CONFIG.shaanRenaissance = shaanRenaissance;
 
     Items.unregisterSheet("core", ItemSheet);
-    Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {makeDefault: true});
+    Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {
+      types: ["Pouvoir", "Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation"],
+      label: "Acquis"
+    });
+    Items.registerSheet("Shaan_Renaissance", ShaanTrihnSheet, {
+      types: ["Trihn"],
+      label: "Trihn"
+    });
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("Shaan_Renaissance", ShaanRActorsSheet, {

@@ -415,7 +415,7 @@ h3 {
 }
 .actor.sheet.character nav.sheet-navigation .item.active, .actor.sheet.character nav.sheet-navigation .item:hover {
     fill: var(--text-light);
-    background-image: url(../assets/sheet/nav-item.webp);
+    /* background-image: url(../assets/sheet/nav-item.webp); */
     color: var(--text-light);
     transform: scale(1.2);
     z-index: 2;
@@ -435,14 +435,14 @@ h3 {
     width: 37px
 }
 .actor.sheet.character nav.sheet-navigation .item {
-    fill: var(--tertiary);
+    /* fill: var(--tertiary);
     background-image: url(../assets/sheet/nav-item-inactive.webp);
     border-radius: 50%;
     box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #5b9f71, inset 0 0 4px rgba(0, 0, 0, .25);
-    color: var(--tertiary);
-    height: 24px;
+    color: var(--tertiary); */
+    height: 35px;
     transition: all .1s ease-out;
-    width: 24px;
+    width: 35px;
     z-index: 1
 }
 .actor.sheet nav.sheet-navigation>a {
@@ -451,6 +451,9 @@ h3 {
     font-size: var(--font-size-12);
     justify-content: center;
     margin: 0 6px;
+}
+.actor.sheet nav.sheet-navigation img {
+    border: none;
 }
 .actor.sheet.character nav.sheet-navigation .manage-tabs {
     color: #fff;
@@ -914,6 +917,53 @@ a.spéTest label, a.spéTestNécr label {
     margin-bottom: 10px;
 }
 
+/* ACTOR TAB MAGIC SHEET */
+.actor.sheet.character .tab.magic .category-header {
+    border-top-right-radius: 5px;
+    background-color: #755137;
+    display: grid; 
+    grid: "trihnCategory trihn-add";
+    border-top-right-radius: 5px;
+}
+.actor.sheet.character .tab.magic .category-header .item-controls {
+    padding-right: 10px;
+    justify-self: right;
+    align-self: center;
+}
+.actor.sheet.character .tab.magic .category-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.character .tab.magic ol {
+    display: grid;
+    grid-row-gap: 1px;
+    list-style-type: none;
+    border: 3px solid #755137;
+    border-top: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.character .tab.magic ol li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.3fr;
+    grid-template-rows: 1fr;
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+    height: 25px;
+}
+.actor.sheet.character .tab.magic ol li .trihn-type, .actor.sheet.character .tab.magic ol li .trihn-puissance, .actor.sheet.character .tab.magic ol li .trihn-emplacement {
+    margin-right: 1px;
+    padding: 1px;
+    font: 700 var(--font-size-14) var(--body-serif);
+}
 
 
 /* ACTOR TAB CHARACTER ACQUIS */

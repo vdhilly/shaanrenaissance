@@ -1,11 +1,11 @@
-export default class ShaanRItemSheet extends ItemSheet {
+export default class ShaanTrihnSheet extends ItemSheet {
     get template(){
         return `systems/Shaan_Renaissance/templates/items/${this.item.type}/sheet.hbs`;
     }
     static get defaultOptions() {
         const options = super.defaultOptions;
         console.log(options)
-        return options.width = 691, options.height = 500, options
+        return options.width = 350, options.height = 220, options
     }
     async getData(options = this.options) {
         options.id || (options.id = this.id);

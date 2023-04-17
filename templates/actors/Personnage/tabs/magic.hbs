@@ -9,23 +9,26 @@
                 {{/ifeq}}
             </div>
             <ol class="item-list liste-items liste-item">
+                <li>
+                    <label class="details-label">{{localize "SRLabels.TrihnType"}}</label>
+                    <label class="details-label">{{localize "SRLabels.Puissance"}}</label>
+                    <label class="details-label">{{localize "SRLabels.Emplacement"}}</label>
+                </li>
                 {{#each SummonedTrihns as |trihn id|}}
                 <li class="item trihn" draggable="true" data-item-id="{{trihn._id}}">
-                <div class="trihn-header">
                     <span class="trihn-type">
                         {{system.trihnType}}
                     </span>
-                    <div class="trihn-puissance">
+                    <span class="trihn-puissance">
                         {{system.puissance}}
-                    </div>
-                    <div class="trihn-emplacement">
+                    </span>
+                    <span class="trihn-emplacement">
                         {{system.emplacement}}
-                    </div>
+                    </span>
                     <div class="item-controls">
                         <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
                         <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
-                    </div>
-                </div>
+                    </div>   
                 </li>
                 {{/each}}
             </ol>
