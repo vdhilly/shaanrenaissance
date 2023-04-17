@@ -912,6 +912,9 @@ a.spéTest label, a.spéTestNécr label {
 }
 
 /* ACTOR TAB MAGIC SHEET */
+.actor.sheet.character .tab.magic .trihns-list {
+    margin-top: 10px;
+}
 .actor.sheet.character .tab.magic .category-header {
     border-top-right-radius: 5px;
     background-color: #755137;
