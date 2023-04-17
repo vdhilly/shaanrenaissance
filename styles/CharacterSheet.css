@@ -415,7 +415,6 @@ h3 {
 }
 .actor.sheet.character nav.sheet-navigation .item.active, .actor.sheet.character nav.sheet-navigation .item:hover {
     fill: var(--text-light);
-    /* background-image: url(../assets/sheet/nav-item.webp); */
     color: var(--text-light);
     transform: scale(1.2);
     z-index: 2;
@@ -435,11 +434,6 @@ h3 {
     width: 37px
 }
 .actor.sheet.character nav.sheet-navigation .item {
-    /* fill: var(--tertiary);
-    background-image: url(../assets/sheet/nav-item-inactive.webp);
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #5b9f71, inset 0 0 4px rgba(0, 0, 0, .25);
-    color: var(--tertiary); */
     height: 35px;
     transition: all .1s ease-out;
     width: 35px;
