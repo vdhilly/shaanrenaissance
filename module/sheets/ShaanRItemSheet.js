@@ -4,6 +4,7 @@ export default class ShaanRItemSheet extends ItemSheet {
     }
     static get defaultOptions() {
         const options = super.defaultOptions;
+        console.log(options)
         return options.width = 691, options.height = 500, options
     }
     async getData(options = this.options) {

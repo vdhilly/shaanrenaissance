@@ -3,7 +3,6 @@ import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
 import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
 import ShaanShaaniSheet from "./module/sheets/ShaanShaaniSheet.js";
-import SRItem from "./module/SRItem.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -73,7 +72,6 @@ Hooks.once("init", function(){
     console.log ("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
     CONFIG.shaanRenaissance = shaanRenaissance;
-    CONFIG.Item.entityClass = SRItem;
 
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {makeDefault: true});
