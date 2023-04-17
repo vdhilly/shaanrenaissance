@@ -9,26 +9,20 @@
                 {{/ifeq}}
             </div>
             <ol class="item-list liste-items liste-item">
-                {{#each SummonedTrihns as |acquis id|}}
-                <li class="item acquis" draggable="true" data-item-id="{{acquis._id}}">
-                <div class="acquis-header">
-                    <span class="acquis-name">
-                        {{log trihn.system}}
-                        <select name="system.trihnType">
-                            {{#select system.trihnType}}
-                            {{#each system.trihnTypes}}
-                                <option value="{{@key}}">{{@key}}</option>
-                            {{/each}}
-                            {{/select}}
-                        </select>
+                {{#each SummonedTrihns as |trihn id|}}
+                <li class="item trihn" draggable="true" data-item-id="{{trihn._id}}">
+                <div class="trihn-header">
+                    <span class="trihn-type">
+                        {{system.trihnType}}
                     </span>
-                    <div class="puissance">
-                        <input name="system.puissance" value="{{system.puissance}}"/>
+                    <div class="trihn-puissance">
+                        {{system.puissance}}
                     </div>
-                    <div class="emplacement">
-                        <input name="system.emplacement" value="{{system.emplacement}}"/>
+                    <div class="trihn-emplacement">
+                        {{system.emplacement}}
                     </div>
                     <div class="item-controls">
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
                         <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                     </div>
                 </div>

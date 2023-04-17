@@ -1,21 +1,24 @@
 <form class="item sheet crb-style trihn" autocomplete="off">
-    {{!-- HEADER --}}
-    {{> "systems/Shaan_Renaissance/templates/items/partials/header.hbs"}}
+    <header class="sheet-header">
+        <h2 class="item-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du item" spellcheck="false" />
+        </h2>
+    </header>
     <div class="trihn-details">
         <span class="trihn-type">
             <select name="system.trihnType">
                 {{#select data.trihnType}}
-                {{#each system.trihnTypes}}
+                {{#each item.system.trihnTypes}}
                     <option value="{{@key}}">{{@key}}</option>
                 {{/each}}
                 {{/select}}
             </select>
         </span>
         <div class="puissance">
-            <input name="system.puissance" value="{{system.puissance}}"/>
+            <input type="number" name="system.puissance" value="{{data.puissance}}"/>
         </div>
         <div class="emplacement">
-            <input name="system.emplacement" value="{{system.emplacement}}"/>
+            <input name="system.emplacement" value="{{data.emplacement}}"/>
         </div>
     </div>
 </form>
