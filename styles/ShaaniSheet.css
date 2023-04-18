@@ -311,7 +311,8 @@
     font-size: var(--font-size-26);
     align-self: center;
     height: 40px;
-    width: 100%
+    width: 100%;
+    text-transform: uppercase;
 }
 /* ACTOR SHEET NAVIGATION */
 .actor.sheet.shaani .sheet-navigation {
@@ -910,6 +911,8 @@ a.spéTest label, a.spéTestNécr label {
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
     height: 25px;
+    align-content: center;
+    justify-items: center;
 }
 .actor.sheet.shaani .tab.magic ol li .trihn-type, .actor.sheet.shaani .tab.magic ol li .trihn-puissance, .actor.sheet.shaani .tab.magic ol li .trihn-emplacement {
     margin-right: 1px;
