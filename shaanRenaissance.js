@@ -4,6 +4,7 @@ import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
 import ShaanShaaniSheet from "./module/sheets/ShaanShaaniSheet.js";
 import ShaanTrihnSheet from "./module/sheets/ShaanTrihnSheet.js";
+import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -83,7 +84,10 @@ Hooks.once("init", function(){
       types: ["Trihn"],
       label: "Trihn"
     });
-
+    Items.registerSheet("Shaan_Renaissance", ShaanCreatorSet, {
+      types: ["Race", "People", "Caste", "Job"],
+      label: "Character Developpement"
+    });
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("Shaan_Renaissance", ShaanRActorsSheet, {
       types: ["Personnage"],
