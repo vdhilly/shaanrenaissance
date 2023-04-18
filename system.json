@@ -42,6 +42,15 @@
       "type": "Item",
       "private": true,
       "flags": {}
+    },
+    {
+      "name": "peuples",
+      "label": "Peuples",
+      "system": "Shaan_Renaissance",
+      "path": "packs/peuples.db",
+      "type": "Item",
+      "private": true,
+      "flags": {}
     }
   ],
   "languages": [
