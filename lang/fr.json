@@ -63,8 +63,10 @@
         "SummonedTrihns": "TRIHNS INVOQUÉS",
         "TrihnType": "Type du Trihn",
         "Puissance": "Puissance",
-        "Emplacement": "Emplacement"
-
+        "Emplacement": "Emplacement",
+        "Schemes": "Schèmes",
+        "Alchimie": "Alchimie",
+        "Enchantement": "Enchantement"
     },
     "SRdomains": {
         "Technique": "Technique",

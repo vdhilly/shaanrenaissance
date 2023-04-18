@@ -3,9 +3,7 @@
         "types": [
             "Personnage",
             "PNJ",
-            "Shaani",
-            "Renaissant"
-            
+            "Shaani"        
         ],
         "templates": {
                 "common": {
@@ -532,7 +530,7 @@
                         "gm":0
                     }
                 },
-            "reserve": {
+                "reserve": {
                 "reserve": {
                 "checkbox1": false,
                 "checkbox2": false,
@@ -546,7 +544,12 @@
                 "checkbox10": false,
                 "checkbox20": false
                 }
-            }
+                },
+                "Magic": {
+                    "schèmes":null,
+                    "alchimie":null,
+                    "enchantement":null
+                }
             },
         "character": {
             "templates": [
@@ -554,7 +557,8 @@
                 "spés",
                 "Ressources",
                 "biography",
-                "reserve"
+                "reserve",
+                "Magic"
             ],
             "protections": {
                 "esprit": {
@@ -612,7 +616,8 @@
             "templates": [
                 "common",
                 "spés",
-                "biography"
+                "biography",
+                "Magic"
             ],
             "protections": {
                 "esprit": {
@@ -671,7 +676,8 @@
                 "common",
                 "spés",
                 "biography",
-                "reserve"
+                "reserve",
+                "Magic"
             ],
             "shaandars": {
                 "shaandar1":{

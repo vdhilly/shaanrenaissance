@@ -156,7 +156,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
 
         if(magicTrihnBtn) {
-            console.log("oui")
             let itemData = {
                 name: "Trihn",
                 type: "Trihn",

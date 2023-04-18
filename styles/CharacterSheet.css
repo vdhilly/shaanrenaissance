@@ -962,6 +962,14 @@ a.spéTest label, a.spéTestNécr label {
     font: 700 var(--font-size-14) var(--body-serif);
 }
 
+.actor.sheet.character .tab.magic textarea {
+    width: 100% !important;
+    min-height: 100px;
+    border: none;
+}
+.actor.sheet.character .tab.magic textarea:focus {
+    box-shadow: none;
+}
 
 /* ACTOR TAB CHARACTER ACQUIS */
 
