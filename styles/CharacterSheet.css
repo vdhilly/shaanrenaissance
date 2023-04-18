@@ -372,7 +372,8 @@ h3 {
     font-size: var(--font-size-26);
     align-self: center;
     height: 40px;
-    width: 100%
+    width: 100%;
+    text-transform: uppercase;
 }
 .actor.sheet.character .char-header .char-exp {
     display: flex;
@@ -553,7 +554,7 @@ h3 {
     width: 100% !important;
     resize: none;
     height: 50px !important;
-    font-family: var(--body-serif);
+    font: 700 var(--font-size-14) var(--body-serif);
 }
 .actor.sheet.character .pc_motivations textarea:focus {
     box-shadow: none;
@@ -966,6 +967,8 @@ a.spéTest label, a.spéTestNécr label {
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
     height: 25px;
+    align-content: center;
+    justify-items: center;
 }
 .actor.sheet.character .tab.magic ol li .trihn-type, .actor.sheet.character .tab.magic ol li .trihn-puissance, .actor.sheet.character .tab.magic ol li .trihn-emplacement {
     margin-right: 1px;
