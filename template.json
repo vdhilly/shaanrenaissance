@@ -828,7 +828,6 @@
     },
     "Item": {
         "types": [
-            
             "Armement",
             "Armimale",
             "Artefact",
@@ -840,7 +839,11 @@
             "Technologie",
             "Transport",
             "Pouvoir",
-            "Trihn"
+            "Trihn",
+            "Race",
+            "Peuple",
+            "Caste", 
+            "Métier"
         ],
         "templates": {
             "common": {
@@ -1459,5 +1462,13 @@
                 "Anti-Âme":null
             },
             "trihnType":"Esprit"
+        },
+        "Peuple": {
+            "domain":"",
+            "spé1":"",
+            "spé2":"",
+            "résumé":"",
+            "moeurs":""
         }
+
     }}

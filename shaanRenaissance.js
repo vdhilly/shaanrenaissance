@@ -85,7 +85,7 @@ Hooks.once("init", function(){
       label: "Trihn"
     });
     Items.registerSheet("Shaan_Renaissance", ShaanCreatorSet, {
-      types: ["Race", "People", "Caste", "Job"],
+      types: ["Race", "Peuple", "Caste", "Métier"],
       label: "Character Developpement"
     });
     Actors.unregisterSheet("core", ActorSheet);
