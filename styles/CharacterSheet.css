@@ -550,6 +550,33 @@ h3 {
     margin-top: 8px;
     padding-left: 12px
 }
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .detail-sheet .input h3 {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    grid-area: mod;
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: calc(100% - 6px)
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 a {
+    margin-left: auto
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 a i {
+    float: right;
+    position: relative;
+    right: -2px;
+    top: -2px
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 span.value {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 87%;
+}
 .actor.sheet.character .pc_motivations textarea {
     border: none;
     border-radius: none;
