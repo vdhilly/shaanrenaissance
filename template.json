@@ -1492,6 +1492,13 @@
             "domain":"",
             "spé":"",
             "description":""
+        },
+        "Métier": {
+            "templates": [
+                "common"
+            ],
+            "spé":"",
+            "resume":""
         }
 
     }}
