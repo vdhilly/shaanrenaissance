@@ -14,7 +14,7 @@
     --font-size-36: 2.25rem;
     --font-size-42: 2.625rem;
     --body-serif: Gelasio, Georgia, serif;
-    --sans-serif: Roboto, sans-serif;
+    --sans-serif: "Roboto", sans-serif;
     --sans-serif-condensed: "Roboto Condensed", var(--sans-serif);
     --sans-serif-monospace: "Roboto Mono", monospace;
     --serif: Eczar, Georgia, serif;
@@ -68,6 +68,10 @@ label.checkbox {
     height: 38px;
 }
 @font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf)
+}
+@font-face {
     font-family: GodOfWaraccent2;
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
 }
@@ -118,7 +122,6 @@ h3 {
     font-size: var(--font-size-10);
     font-weight: 600;
     grid-area: sidebar;
-    /* margin-left: 8px */
 }
 .actor.sheet.character .sidebar {
     margin-left: 25px;
@@ -141,7 +144,6 @@ h3 {
     color: var(--tertiary);
     font-weight: 400;
     padding-left: 3px;
-    /* text-transform: uppercase; */
 }
 .actor.sheet.character aside .logo {
     display: flex;
