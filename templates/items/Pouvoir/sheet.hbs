@@ -77,7 +77,7 @@
             <div class="pouvoir-activation">
                 <h3>
                     <label for="{{options.id}}-pouvoir-activation-select">{{localize "SR.pouvoirActivation"}}</label><br>
-                    <select class="select" name="system.activation.value" id="{{options.id}}-pouvoir-activation-select">
+                    <select title="{{data.activation.value}}" class="select" name="system.activation.value" id="{{options.id}}-pouvoir-activation-select">
                         {{#select data.activation.value}}
                         {{#each config.pouvoirs.pouvoirActivation as |skill|}}
                         <option value="{{skill}}">{{localize skill}}</option>

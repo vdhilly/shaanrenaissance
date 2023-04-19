@@ -27,7 +27,7 @@ shaanRenaissance.pouvoirs = {
         CréationdArts: "Création d'Arts",
         SymbiosedeShaan: "Symbiose de Shaan",
         SortdeMagie: "Sort de Magie",
-        TransedeRituel: "Transe de Rituel",
+        TransedeRituel: "Transe de Rituels",
         ExploitdeSurvie: "Exploit de Survie",
         TactiquedeCombat: "Tactique de Combat",
         TourmentdeNécrose: "Tourment de Nécrose"
@@ -70,7 +70,9 @@ shaanRenaissance.pouvoirs = {
         transition: "1 Transition",
         testparaction: "1 Test par Action",
         testparheure: "1 Test par Heure",
-        testparjour: "1 Test par Jour"
+        testparjour: "1 Test par Jour",
+        deuxactoumoinscorps: "2 actions ou 1 actions et -1 de Corps",
+        untestdeuxactoumoinscorps: "1 test toutes les 2 actions ou 1 test et -1 points de corps par action"
     },
     pouvoirPortée: {
         none: "",
