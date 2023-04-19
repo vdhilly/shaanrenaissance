@@ -31,7 +31,7 @@
       "system": "Shaan_Renaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
-      "private": true,
+      "private": false,
       "flags": {}
     },
     {
@@ -49,7 +49,16 @@
       "system": "Shaan_Renaissance",
       "path": "packs/peuples.db",
       "type": "Item",
-      "private": true,
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "castes",
+      "label": "Castes",
+      "system": "Shaan_Renaissance",
+      "path": "packs/castes.db",
+      "type": "Item",
+      "private": false,
       "flags": {}
     }
   ],

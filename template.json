@@ -1469,6 +1469,11 @@
             "spé2":"",
             "résumé":"",
             "moeurs":""
+        },
+        "Caste": {
+            "domain":"",
+            "spé":"",
+            "description":""
         }
 
     }}

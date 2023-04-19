@@ -463,7 +463,8 @@
             "spé": "Spécialisations",
             "paysage": "Paysage",
             "resume": "Résumé",
-            "moeurs": "Moeurs"
+            "moeurs": "Moeurs",
+            "description": "Description"
     },
     "SRsymbioses": {
         "symbioseLabel":"Symbioses",
