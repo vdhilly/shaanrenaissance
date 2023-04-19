@@ -4,7 +4,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
         console.log(options)
-        return options.classes = [...options.classes, "Shaani"], options.width = 750, options.height = 800, options.scrollY.push(".tab.active .tab-content"), options.tabs = [{
+        return options.classes = [...options.classes, "Shaani"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
 
             navSelector: ".sheet-navigation",
             contentSelector: ".sheet-content",
