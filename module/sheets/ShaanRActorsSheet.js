@@ -33,7 +33,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             };
             // Filtres catégorie pouvoir
 
-            if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
+            if (actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
                 sheetData.items.Category = {},
                 sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" }),
                 sheetData.items.Category.Armimales = actorData.items.filter(function (item) { return item.type == "Armimale" }),
@@ -46,10 +46,10 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
                 sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
 
-                sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Esprit" }),
-                sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" }),
-                sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" }),
-                sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Nécrose"});
+                sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
+                sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
+                sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
+                sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
                 sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
             }
             if (typeof sheetData.data.attributes !== "undefined") {
