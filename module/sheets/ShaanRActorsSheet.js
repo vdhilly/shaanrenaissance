@@ -48,9 +48,54 @@ export default class ShaanRActorsSheet extends ActorSheet {
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
                 sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
-                sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituel" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
+                sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituels" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
                 sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
                 sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
+
+                // Filtre Race
+                let race = actorData.items.filter(function (item) { return item.type == "Race"});
+                let lastElement = race[race.length - 1]
+                
+                race.forEach(element => {
+                    if(element != lastElement) {
+                        let itemId = element._id
+                        return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+                    }
+                });
+                sheetData.Race = lastElement
+                // Filtre Peuple
+                let peuple = actorData.items.filter(function (item) { return item.type == "Peuple"});
+                lastElement = peuple[peuple.length - 1]
+                
+                peuple.forEach(element => {
+                    if(element != lastElement) {
+                        let itemId = element._id
+                        return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+                    }
+                });
+                sheetData.Peuple = lastElement
+                // Filtre Caste
+                let caste = actorData.items.filter(function (item) { return item.type == "Caste"});
+                lastElement = caste[caste.length - 1]
+                
+                caste.forEach(element => {
+                    if(element != lastElement) {
+                        let itemId = element._id
+                        return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+                    }
+                });
+                sheetData.Caste = lastElement
+                // Filtre Métier
+                let metier = actorData.items.filter(function (item) { return item.type == "Métier"});
+                lastElement = metier[metier.length - 1]
+                
+                metier.forEach(element => {
+                    if(element != lastElement) {
+                        let itemId = element._id
+                        return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+                    }
+                });
+                sheetData.Metier = lastElement
             }
             if (typeof sheetData.data.attributes !== "undefined") {
                 sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
@@ -74,7 +119,14 @@ export default class ShaanRActorsSheet extends ActorSheet {
                             const parent = $(event.target).parents(".sheet-navigation"),
                                 title = parent.find(".item.active").attr("title");
                             title && parent.find(".navigation-title").text(title)
-                        }));
+                        })); html.find(".open-compendium").on("click", (event => {
+                            if (event.currentTarget.dataset.compendium) {
+                                const compendium = game.packs.get(event.currentTarget.dataset.compendium);
+                                console.log(compendium)
+                                compendium && compendium.render(!0)
+                            }
+                        }))
+        
 
         super.activateListeners(html);
         }
@@ -83,7 +135,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".roll-icon").click(this._onTest.bind(this));
             html.find(".spéTest").click(this._onSpéTest.bind(this));
             html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
-
+            
         }
     }
     
