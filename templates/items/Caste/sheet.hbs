@@ -29,7 +29,7 @@
                 <textarea name="system.description" id="{{options.id}}-caste-description" type="text" value="{{data.description}}" placeholder="{{data.description}}" spellcheck="false">{{data.description}}</textarea>
             </h3>
         </div>
-        <div class="caste-image">
+        <div class="caste-image {{#ifeq item.name "Magicien"}}mage{{/ifeq}}{{#ifeq item.name "Voyageur"}}voyageur{{/ifeq}}{{#ifeq item.name "Ombre"}}ombre{{/ifeq}}">
             <img src="{{item.img}}" data-edit="img">
         </div>
     </div>

@@ -939,6 +939,10 @@ grid-row-gap: 0px;
     border: none;
     width: 100%
 }
+.item.sheet.caste .caste-image.mage img, .item.sheet.caste .caste-image.voyageur img, .item.sheet.caste .caste-image.ombre img {
+    border: none;
+    width: 50%
+}
 .item.sheet.caste .caste-details {
     grid-area: 2 / 1 / 3 / 2;
     display: grid;
