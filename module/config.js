@@ -71,8 +71,8 @@ shaanRenaissance.pouvoirs = {
         testparaction: "1 Test par Action",
         testparheure: "1 Test par Heure",
         testparjour: "1 Test par Jour",
-        deuxactoumoinscorps: "2 actions ou 1 actions et -1 de Corps",
-        untestdeuxactoumoinscorps: "1 test toutes les 2 actions ou 1 test et -1 points de corps par action"
+        deuxactoumoinscorps: "2 Actions ou 1 Actions et -1 de Corps",
+        untestdeuxactoumoinscorps: "1 Test toutes les 2 Actions ou 1 Test et -1 points de corps par Action"
     },
     pouvoirPortée: {
         none: "",
