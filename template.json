@@ -858,7 +858,7 @@
                 "class": "Classe 1",
                 "trihn": 0,
                 "pouvoir": {
-                    "value": null
+                    "value": " "
                 }
             },
             "spés":{
@@ -1464,6 +1464,9 @@
             "trihnType":"Esprit"
         },
         "Race": {
+            "templates": [
+                "common"
+            ],
             "domain":"",
             "spé1":"",
             "spé2":"",
@@ -1473,6 +1476,9 @@
             "pouvoirNom":""
         },
         "Peuple": {
+            "templates": [
+                "common"
+            ],
             "domain":"",
             "spé1":"",
             "spé2":"",
@@ -1480,6 +1486,9 @@
             "moeurs":""
         },
         "Caste": {
+            "templates": [
+                "common"
+            ],
             "domain":"",
             "spé":"",
             "description":""

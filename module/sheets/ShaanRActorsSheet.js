@@ -33,7 +33,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             };
             // Filtres catégorie pouvoir
 
-            if (actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
+            if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
                 sheetData.items.Category = {},
                 sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" }),
                 sheetData.items.Category.Armimales = actorData.items.filter(function (item) { return item.type == "Armimale" }),
