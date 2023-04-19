@@ -1,0 +1,47 @@
+<form class="item sheet crb-style race" autocomplete="off">
+    {{!-- HEADER --}}
+    <header class="sheet-header">
+        <h2 class="item-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du item" spellcheck="false" />
+        </h2>
+        <span class="item-source">
+            <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
+        </span>
+    </header>
+    <div class="race-image">
+        <img src="{{item.img}}" data-edit="img">
+    </div>
+    <div class="race-details">
+        <div class="race-domain">
+            <h3>
+                <label class="details-label" for="{{options.id}}-race-domain">{{localize "SRCreation.domain"}}</label>
+                <input name="system.domain" id="{{options.id}}-race-domain" type="text" value="{{data.domain}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="spés">
+            <h3>
+                <label class="details-label" for="{{options.id}}-race-spé1">{{localize "SRCreation.spé"}}</label>
+                <span><input name="system.spé1" id="{{options.id}}-race-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/> - <input name="system.spé2" id="{{options.id}}-race-spé2" type="text" value="{{data.spé2}}"spellcheck="false"/></span>
+            </h3>
+        </div>
+        <div class="race-pouvoir">
+        <h3>
+            <label class="details-label" for="{{options.id}}-race-pouvoir">{{localize "SRCreation.pouvoir"}}</label> 
+            <input name="system.pouvoirNom" id="{{options.id}}-race-pouvoirNom" type="text" value="{{data.pouvoirNom}}"spellcheck="false"/>
+            <textarea name="system.pouvoir" id="{{options.id}}-race-pouvoir" type="text" value="{{data.pouvoir}}" placeholder="{{data.pouvoir}}" spellcheck="false">{{data.pouvoir}}</textarea>
+        </h3>
+        </div>
+    </div>
+    <div class="race-resume">
+        <h3>
+            <label class="details-label" for="{{options.id}}-race-resume">{{localize "SRCreation.resume"}}</label>
+            <textarea name="system.resume" id="{{options.id}}-race-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
+        </h3>
+    </div>
+    <div class="race-doctrine">
+        <h3>
+            <label class="details-label" for="{{options.id}}-race-doctrine">{{localize "SRCreation.doctrine"}}</label>
+            <textarea name="system.doctrine" id="{{options.id}}-race-doctrine" type="text" value="{{data.doctrine}}" placeholder="{{data.doctrine}}" spellcheck="false">{{data.doctrine}}</textarea>
+        </h3>
+    </div>
+</form>

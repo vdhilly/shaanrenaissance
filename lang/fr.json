@@ -464,7 +464,9 @@
             "paysage": "Paysage",
             "resume": "Résumé",
             "moeurs": "Moeurs",
-            "description": "Description"
+            "description": "Description",
+            "pouvoir": "Pouvoir racial",
+            "doctrine": "Doctrine"
     },
     "SRsymbioses": {
         "symbioseLabel":"Symbioses",

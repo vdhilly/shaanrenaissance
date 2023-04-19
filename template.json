@@ -1463,6 +1463,15 @@
             },
             "trihnType":"Esprit"
         },
+        "Race": {
+            "domain":"",
+            "spé1":"",
+            "spé2":"",
+            "resume":"",
+            "citation":"",
+            "pouvoir":"",
+            "pouvoirNom":""
+        },
         "Peuple": {
             "domain":"",
             "spé1":"",
