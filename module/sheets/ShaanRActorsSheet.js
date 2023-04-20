@@ -102,6 +102,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
             }
+
+
         console.log(sheetData);
         return await sheetData;
     }
@@ -138,6 +140,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             
         }
     }
+    
     
 
 
