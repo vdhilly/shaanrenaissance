@@ -1,4 +1,4 @@
-<form class="item sheet crb-style batiment" autocomplete="off"></form>
+<form class="item sheet crb-style batiment" autocomplete="off">
 {{!-- HEADER --}}
     <header class="sheet-header">
         <h2 class="item-name">
@@ -12,25 +12,25 @@
         <div class="spés">
             <h3>
                 <label class="details-label" for="{{options.id}}-batiment-spé1">{{localize "SRCreation.spé"}}</label>
-                <span><input name="system.spé1" id="{{options.id}}-batiment-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/> - <input name="system.spé2" id="{{options.id}}-batiment-spé2" type="text" value="{{data.spé2}}"spellcheck="false"/></span>
+                <input name="system.spé1" id="{{options.id}}-batiment-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/>
             </h3>
         </div>
         <div class="batiment-resume">
-        <h3>
-            <label class="details-label" for="{{options.id}}-batiment-resume">{{localize "SRCreation.resume"}}</label>
-            <textarea name="system.resume" id="{{options.id}}-batiment-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
-        </h3>
-    </div>
-    <div class="batiment-ressource">
             <h3>
-                <label class="details-label" for="{{options.id}}-batiment-ressource">{{localize "SRCreation.ressource"}}</label>
-                <span><input name="system.ressource1" id="{{options.id}}-batiment-ressource" type="text" value="{{data.ressource1}}"spellcheck="false"/> - <input name="system.ressource2" id="{{options.id}}-batiment-ressource2" type="text" value="{{data.ressource2}}"spellcheck="false"/></span>
+                <label class="details-label" for="{{options.id}}-batiment-resume">{{localize "SRCreation.resume"}}</label>
+                <textarea name="system.resume" id="{{options.id}}-batiment-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
+            </h3>
+        </div>
+        <div class="batiment-ressources">
+            <h3>
+                <label class="details-label" for="{{options.id}}-batiment-ressources">{{localize "SR.ressources"}}</label>
+                <input name="system.ressources" id="{{options.id}}-batiment-ressources" type="text" value="{{data.ressources}}"spellcheck="false"/>
             </h3>
         </div>
         <div class="batiment-fabrication">
             <h3>
-                <label class="details-label" for="{{options.id}}-batiment-spé1">{{localize "SRCreation.spé"}}</label>
-                <span><input name="system.fabrication1" id="{{options.id}}-batiment-fabrication1" type="text" value="{{data.fabrication1}}"spellcheck="false"/> - <input name="system.fabrication2" id="{{options.id}}-batiment-fabrication2" type="text" value="{{data.fabrication2}}"spellcheck="false"/></span>
+                <label class="details-label" for="{{options.id}}-batiment-fabrication">{{localize "SR.fabrication"}}</label>
+                <input name="system.fabrication" id="{{options.id}}-batiment-fabrication" type="text" value="{{data.fabrication}}"spellcheck="false"/>
             </h3>
         </div>
     </div>
