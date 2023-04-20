@@ -75,10 +75,10 @@
             </div>
             <div class="roll-data necrose-test" data-item-id="necroseTest" style="display: flex; flex-direction: row;">
                 <a class="roll-icon">
-                {{#ifeq data.general.race.value "Humain"}}
+                {{#ifeq Race.name "Humain"}}
                 <img src="systems/Shaan_Renaissance/assets/sheet/dés_nécroseH.png">
                 {{/ifeq}}   
-                {{#ifnoteq data.general.race.value "Humain"}}
+                {{#ifnoteq Race.name "Humain"}}
                 <img src="systems/Shaan_Renaissance/assets/sheet/dés_nécrose.png">
                 {{/ifnoteq}}   
                 </a>

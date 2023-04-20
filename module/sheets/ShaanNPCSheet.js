@@ -36,6 +36,51 @@ export default class ShaanNPCSheet extends ActorSheet {
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
             }
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Race = lastElement
+        // Filtre Peuple
+        let peuple = actorData.items.filter(function (item) { return item.type == "Peuple"});
+        lastElement = peuple[peuple.length - 1]
+        
+        peuple.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Peuple = lastElement
+        // Filtre Caste
+        let caste = actorData.items.filter(function (item) { return item.type == "Caste"});
+        lastElement = caste[caste.length - 1]
+        
+        caste.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Caste = lastElement
+        // Filtre Métier
+        let metier = actorData.items.filter(function (item) { return item.type == "Métier"});
+        lastElement = metier[metier.length - 1]
+        
+        metier.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Metier = lastElement
+            
 
         console.log(sheetData);
         return await sheetData;
@@ -44,7 +89,14 @@ export default class ShaanNPCSheet extends ActorSheet {
         if (this.isEditable) {
             html.find(".item-createNPC").click(this._onItemCreateNPC.bind(this)); 
             html.find(".item-edit").click(this._onItemEdit.bind(this));
-            html.find(".item-delete").click(this._onItemDelete.bind(this));  
+            html.find(".item-delete").click(this._onItemDelete.bind(this)); 
+            html.find(".open-compendium").on("click", (event => {
+                if (event.currentTarget.dataset.compendium) {
+                    const compendium = game.packs.get(event.currentTarget.dataset.compendium);
+                    console.log(compendium)
+                    compendium && compendium.render(!0)
+                }
+            })) 
 
         super.activateListeners(html);
         }
