@@ -838,8 +838,9 @@
             "Richesse",
             "Technologie",
             "Transport",
-            "Pouvoir",
+            "Bâtiment",
             "Trihn",
+            "Pouvoir",
             "Race",
             "Peuple",
             "Caste", 
@@ -1499,6 +1500,15 @@
             ],
             "spé":"",
             "resume":""
+        },
+        "Bâtiment": {
+            "templates": [
+                "common"
+            ],
+            "spé":"",
+            "resume":"",
+            "ressources":"",
+            "fabrication":""
         }
 
     }}
