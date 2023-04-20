@@ -1,4 +1,4 @@
-import * as Dice from "../jets/dice.js";
+// import * as Dice from "../jets/dice.js";
 
 export default class ShaanRActorsSheet extends ActorSheet {
     static get defaultOptions() {
@@ -105,7 +105,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
 
 
         console.log(sheetData);
-        return await sheetData;
+        return sheetData;
     }
     activateListeners(html) {
         if (this.isEditable) {

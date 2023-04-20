@@ -546,9 +546,9 @@
                 }
                 },
                 "Magic": {
-                    "schèmes":null,
-                    "alchimie":null,
-                    "enchantement":null
+                    "schèmes":"",
+                    "alchimie":"",
+                    "enchantement":""
                 }
             },
         "character": {
@@ -608,7 +608,7 @@
                     "value": 0
                 },
                 "motivations": {
-                    "value": 0
+                    "value": ""
                 }
             }
         },

@@ -1009,6 +1009,7 @@ a.spéTest label, a.spéTestNécr label {
     width: 100% !important;
     min-height: 100px;
     border: none;
+    white-space: pre-line !important;
 }
 .actor.sheet.character .tab.magic textarea:focus {
     box-shadow: none;
