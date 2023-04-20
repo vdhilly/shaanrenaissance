@@ -91,12 +91,12 @@ export default class ShaanNPCSheet extends ActorSheet {
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this)); 
             html.find(".open-compendium").on("click", (event => {
-                if (event.currentTarget.dataset.compendium) {
-                    const compendium = game.packs.get(event.currentTarget.dataset.compendium);
-                    console.log(compendium)
-                    compendium && compendium.render(!0)
-                }
-            })) 
+                            if (event.currentTarget.dataset.compendium) {
+                                const compendium = game.packs.get(event.currentTarget.dataset.compendium);
+                                console.log(compendium)
+                                compendium && compendium.render(!0)
+                            }
+                        })) 
 
         super.activateListeners(html);
         }

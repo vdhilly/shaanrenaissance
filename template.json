@@ -25,7 +25,8 @@
                         "credos": 0
                     }},
                     "initiative": {
-                        "statistic": "Technique"
+                        "statistic": "Technique",
+                        "value":0
                     }
                 },
                 "spés":{
