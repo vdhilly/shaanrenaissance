@@ -1,4 +1,4 @@
-// import * as Dice from "../jets/dice.js";
+import * as Dice from "../jets/dice.js";
 
 export default class ShaanRActorsSheet extends ActorSheet {
     static get defaultOptions() {
