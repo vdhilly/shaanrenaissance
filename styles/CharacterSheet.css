@@ -14,7 +14,7 @@
     --font-size-36: 2.25rem;
     --font-size-42: 2.625rem;
     --body-serif: Gelasio, Georgia, serif;
-    --sans-serif: Roboto, sans-serif;
+    --sans-serif: "Roboto", sans-serif;
     --sans-serif-condensed: "Roboto Condensed", var(--sans-serif);
     --sans-serif-monospace: "Roboto Mono", monospace;
     --serif: Eczar, Georgia, serif;
@@ -68,6 +68,10 @@ label.checkbox {
     height: 38px;
 }
 @font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf)
+}
+@font-face {
     font-family: GodOfWaraccent2;
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
 }
@@ -118,7 +122,6 @@ h3 {
     font-size: var(--font-size-10);
     font-weight: 600;
     grid-area: sidebar;
-    /* margin-left: 8px */
 }
 .actor.sheet.character .sidebar {
     margin-left: 25px;
@@ -141,7 +144,6 @@ h3 {
     color: var(--tertiary);
     font-weight: 400;
     padding-left: 3px;
-    /* text-transform: uppercase; */
 }
 .actor.sheet.character aside .logo {
     display: flex;
@@ -372,7 +374,8 @@ h3 {
     font-size: var(--font-size-26);
     align-self: center;
     height: 40px;
-    width: 100%
+    width: 100%;
+    text-transform: uppercase;
 }
 .actor.sheet.character .char-header .char-exp {
     display: flex;
@@ -546,6 +549,44 @@ h3 {
     grid-template-rows: repeat(2, 42px);
     margin-top: 8px;
     padding-left: 12px
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character.active .character-details .detail-sheet .input h3 {
+    background-color: rgba(28, 28, 28, .1);
+    border: none;
+    color: var(--body);
+    display: flex;
+    font: 700 var(--font-size-14) var(--body-serif);
+    grid-area: mod;
+    line-height: 1;
+    margin: 0;
+    padding: 8px 4px 6px;
+    width: calc(100% - 6px)
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 a {
+    margin-left: auto
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 a i {
+    float: right;
+    position: relative;
+    right: -2px;
+    top: -2px
+}
+.actor.sheet.character .sheet-body .sheet-content .tab.character .pc h3 span.value {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 87%;
+}
+.actor.sheet.character .pc_motivations textarea {
+    border: none;
+    border-radius: none;
+    width: 100% !important;
+    resize: none;
+    height: 50px !important;
+    font: 700 var(--font-size-14) var(--body-serif);
+}
+.actor.sheet.character .pc_motivations textarea:focus {
+    box-shadow: none;
 }
 
 /* General Tab Bio */
@@ -955,6 +996,8 @@ a.spéTest label, a.spéTestNécr label {
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
     height: 25px;
+    align-content: center;
+    justify-items: center;
 }
 .actor.sheet.character .tab.magic ol li .trihn-type, .actor.sheet.character .tab.magic ol li .trihn-puissance, .actor.sheet.character .tab.magic ol li .trihn-emplacement {
     margin-right: 1px;
@@ -962,6 +1005,15 @@ a.spéTest label, a.spéTestNécr label {
     font: 700 var(--font-size-14) var(--body-serif);
 }
 
+.actor.sheet.character .tab.magic textarea {
+    width: 100% !important;
+    min-height: 100px;
+    border: none;
+    white-space: pre-line !important;
+}
+.actor.sheet.character .tab.magic textarea:focus {
+    box-shadow: none;
+}
 
 /* ACTOR TAB CHARACTER ACQUIS */
 

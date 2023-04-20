@@ -77,7 +77,7 @@ Hooks.once("init", function(){
 
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {
-      types: ["Pouvoir", "Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation"],
+      types: ["Pouvoir", "Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation", "Bâtiment"],
       label: "Acquis"
     });
     Items.registerSheet("Shaan_Renaissance", ShaanTrihnSheet, {
@@ -85,7 +85,7 @@ Hooks.once("init", function(){
       label: "Trihn"
     });
     Items.registerSheet("Shaan_Renaissance", ShaanCreatorSet, {
-      types: ["Race", "People", "Caste", "Job"],
+      types: ["Race", "Peuple", "Caste", "Métier"],
       label: "Character Developpement"
     });
     Actors.unregisterSheet("core", ActorSheet);
@@ -114,6 +114,8 @@ Handlebars.registerHelper('ifeq', function (a, b, options) {
 Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
+
+
 });
 
 

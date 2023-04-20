@@ -52,6 +52,20 @@
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/general.hbs"}}
         </div>
         <div class="npc-dice">
+            <div class="roll-data initiative" data-item-id="initiative" style="display: flex; flex-direction: row; color: var(--primary)">
+                <a class="roll-initiative">
+                <h2 style="border: none;">{{localize "SRLabels.Initiative"}}</h2>    
+                </a>
+                <h4 class="initiative-select" style="margin-left:5px;">
+                    <select name="system.attributes.initiative.statistic"> 
+                            {{#select data.attributes.initiative.statistic}}
+                            {{#each config.SRdomains as |skill|}}
+                                <option value="{{skill}}">{{skill}}</option>
+                            {{/each}}
+                            {{/select}}
+                    </select>
+                </h4>
+            </div>
             <div class="roll-data domain-test" data-item-id="domainTest" style="display: flex; flex-direction: row;">
                 <a class="roll-icon">
                     <img src="systems/Shaan_Renaissance/assets/sheet/dés_domaine.png">
@@ -71,7 +85,7 @@
             </div>
         </div>
         <div class="npc-bio">
-            {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs"}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs"}}
         </div>
         <div class="npc-powers">
             {{> "systems/Shaan_Renaissance/templates/actors/PNJ/partials/powers.hbs"}}

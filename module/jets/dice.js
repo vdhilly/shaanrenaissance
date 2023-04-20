@@ -6,8 +6,9 @@ export async function Initiative({
         const messageTemplate = "systems/Shaan_Renaissance/templates/chat/initiative.hbs";
         const actorData = actor ? actor.system : null;
         const domain = actorData.attributes.initiative.statistic;
-        const domainLevel = actorData.skills[domain].rank;
+        const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp;
 
+        
         let rollFormula = `1d10 + @domainLevel`;
 
         let rollData = {

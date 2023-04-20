@@ -9,24 +9,17 @@
         </span>
     </header>
     <div class="metier-details">
-        {{!-- pour liée à la caste , peut etre delete si bug--}}
-        <div class="caste-domain">
-            <h3>
-                <label class="details-label" for="{{options.id}}-caste-domain">{{localize "SRCreation.domain"}}</label>
-                <input name="system.domain" id="{{options.id}}-caste-domain" type="text" value="{{data.domain}}"spellcheck="false"/>
-            </h3>
-        </div>
         <div class="spés">
             <h3>
                 <label class="details-label" for="{{options.id}}-metier-spé1">{{localize "SRCreation.spé"}}</label>
-                <span><input name="system.spé1" id="{{options.id}}-metier-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/> - <input name="system.spé2" id="{{options.id}}-metier-spé2" type="text" value="{{data.spé2}}"spellcheck="false"/></span>
+                <span><input name="system.spé" id="{{options.id}}-metier-spé1" type="text" value="{{data.spé}}"spellcheck="false"/>
             </h3>
         </div>
-    </div>
-    <div class="metier-resume">
+        <div class="metier-resume">
         <h3>
             <label class="details-label" for="{{options.id}}-metier-resume">{{localize "SRCreation.resume"}}</label>
             <textarea name="system.resume" id="{{options.id}}-metier-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
         </h3>
+    </div>
     </div>
 </form>

@@ -14,24 +14,68 @@
         </div>
         <div class="detail-sheet">
             {{!-- race --}}
-            <div class="pc pc_race item">
-                <label class="details-label" for="{{options.id}}-pc-race">{{localize "ITEM.TypeRace"}}</label>
-                <input type="text" class="details-input" title="{{localize "SR.RaceTitle"}}" id="{{options.id}}-pc-race" name="system.general.race.value" value="{{data.general.race.value}}"/> 
+            <div class="pc pc_race item" data-item-id="{{Race._id}}">
+                <div class="input">
+                    <label class="details-label">{{localize "ITEM.TypeRace"}}</label>
+                    <h3>
+                        <span class="value">{{Race.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if Race}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.races"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}
+                    </h3>
+                </div>
             </div>
             {{!-- peuple --}}
-            <div class="pc pc_people item">
-                <label class="details-label" for="{{options.id}}-pc-people">{{localize "ITEM.TypePeople"}}</label>
-                <input type="text" class="details-input" title="{{localize "SR.PeopleTitle"}}" id="{{options.id}}-pc-people" name="system.general.people.value" value="{{data.general.people.value}}"/>
+            <div class="pc pc_people item" data-item-id="{{Peuple._id}}">
+                <div class="input">
+                    <label class="details-label">{{localize "ITEM.TypePeople"}}</label>
+                    <h3>
+                        <span class="value">{{Peuple.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if Peuple}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.peuples"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}                        
+                    </h3>
+                </div>            
             </div>
             {{!-- caste --}}
-            <div class="pc pc_caste item">
-                <label class="details-label" for="{{options.id}}-pc-caste">{{localize "ITEM.TypeCaste"}}</label>
-                <input type="text" class="details-input" title="{{localize "SR.CasteTitle"}}" id="{{options.id}}-pc-caste" name="system.general.caste.value" value="{{data.general.caste.value}}"/>
+            <div class="pc pc_caste item" data-item-id="{{Caste._id}}">
+                <div class="input">
+                    <label class="details-label">{{localize "ITEM.TypeCaste"}}</label>
+                    <h3>
+                        <span class="value">{{Caste.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if Caste}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.castes"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}
+                    </h3>
+                </div>             
             </div>
             {{!-- métier --}}
-            <div class="pc pc_job item">
-                <label class="details-label" for="{{options.id}}-pc-job">{{localize "ITEM.TypeJob"}}</label>
-                <input type="text" class="details-input" title="{{localize "SR.JobTitle"}}" id="{{options.id}}-pc-job" name="system.general.job.value" value="{{data.general.job.value}}"/>
+            <div class="pc pc_job item" data-item-id="{{Metier._id}}">
+                <div class="input">
+                    <label class="details-label">{{localize "ITEM.TypeJob"}}</label>
+                    <h3>
+                        <span class="value">{{Metier.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if Metier}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.metiers"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}
+                    </h3>
+                </div>             
             </div>
         </div>
     </section>

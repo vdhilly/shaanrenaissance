@@ -1,0 +1,36 @@
+<form class="item sheet crb-style caste" autocomplete="off">
+    {{!-- HEADER --}}
+    <header class="sheet-header">
+        <h2 class="item-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du item" spellcheck="false" />
+        </h2>
+        <span class="item-source">
+            <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
+        </span>
+    </header>
+    <div class="caste-details">
+        <div class="domain-spé">
+            <div class="caste-domain">
+            <h3>
+                <label class="details-label" for="{{options.id}}-caste-domain">{{localize "SRCreation.domain"}}</label>
+                <input name="system.domain" id="{{options.id}}-caste-domain" type="text" value="{{data.domain}}"spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="caste-spé">
+            <h3>
+                <label class="details-label" for="{{options.id}}-caste-spé">{{localize "SRCreation.spé"}}</label>
+                <input name="system.spé" id="{{options.id}}-caste-spé" type="text" value="{{data.spé}}"spellcheck="false"/>
+            </h3>
+        </div>
+        </div>
+        <div class="caste-description">
+            <h3>
+                <label class="details-label" for="{{options.id}}-caste-description">{{localize "SRCreation.description"}}</label>
+                <textarea name="system.description" id="{{options.id}}-caste-description" type="text" value="{{data.description}}" placeholder="{{data.description}}" spellcheck="false">{{data.description}}</textarea>
+            </h3>
+        </div>
+        <div class="caste-image {{#ifeq item.name "Magicien"}}mage{{/ifeq}}{{#ifeq item.name "Voyageur"}}voyageur{{/ifeq}}{{#ifeq item.name "Ombre"}}ombre{{/ifeq}}">
+            <img src="{{item.img}}" data-edit="img">
+        </div>
+    </div>
+</form>

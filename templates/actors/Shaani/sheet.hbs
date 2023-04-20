@@ -34,7 +34,9 @@
         <a class="item" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
             <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_pouvoir_bleu.webp" title="{{localize "SRTabs.PowersLabel"}}">
         </a>
-
+        <a class="item" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
+            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_magie_bleu.webp" title="{{localize "SRTabs.MagicLabel"}}">
+        </a>
         <a class="item" data-tab="symbioses" title="{{localize "SRTabs.symbioses"}}">
             <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_symbiose_bleu.webp" title="{{localize "SRTabs.symbioses"}}">
         </a>
@@ -55,15 +57,17 @@
     <section class="sheet-body">
         <section class="sheet-content">
             {{!-- Character --}}
-            {{> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/general.hbs"}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/general.hbs"}}
             {{!-- Powers --}}
-            {{> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/powers.hbs"}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/powers.hbs"}}
+            {{!-- Magic --}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs"}}
             {{!-- Symbioses --}}
-            {{> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/symbioses.hbs"}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/symbioses.hbs"}}
             {{!-- Acquis --}}
-            {{> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/acquis.hbs"}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/acquis.hbs"}}
             {{!-- Details --}}
-            {{> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/details.hbs"}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/details.hbs"}}
             
         </section>
     </section>

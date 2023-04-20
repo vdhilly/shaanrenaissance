@@ -3,9 +3,7 @@
         "types": [
             "Personnage",
             "PNJ",
-            "Shaani",
-            "Renaissant"
-            
+            "Shaani"        
         ],
         "templates": {
                 "common": {
@@ -532,7 +530,7 @@
                         "gm":0
                     }
                 },
-            "reserve": {
+                "reserve": {
                 "reserve": {
                 "checkbox1": false,
                 "checkbox2": false,
@@ -546,7 +544,12 @@
                 "checkbox10": false,
                 "checkbox20": false
                 }
-            }
+                },
+                "Magic": {
+                    "schemes":"",
+                    "alchimie":"",
+                    "enchantement":""
+                }
             },
         "character": {
             "templates": [
@@ -554,7 +557,8 @@
                 "spés",
                 "Ressources",
                 "biography",
-                "reserve"
+                "reserve",
+                "Magic"
             ],
             "protections": {
                 "esprit": {
@@ -604,7 +608,7 @@
                     "value": 0
                 },
                 "motivations": {
-                    "value": 0
+                    "value": ""
                 }
             }
         },
@@ -612,7 +616,8 @@
             "templates": [
                 "common",
                 "spés",
-                "biography"
+                "biography",
+                "Magic"
             ],
             "protections": {
                 "esprit": {
@@ -671,7 +676,8 @@
                 "common",
                 "spés",
                 "biography",
-                "reserve"
+                "reserve",
+                "Magic"
             ],
             "shaandars": {
                 "shaandar1":{
@@ -822,7 +828,6 @@
     },
     "Item": {
         "types": [
-            
             "Armement",
             "Armimale",
             "Artefact",
@@ -833,8 +838,13 @@
             "Richesse",
             "Technologie",
             "Transport",
+            "Bâtiment",
+            "Trihn",
             "Pouvoir",
-            "Trihn"
+            "Race",
+            "Peuple",
+            "Caste", 
+            "Métier"
         ],
         "templates": {
             "common": {
@@ -849,7 +859,7 @@
                 "class": "Classe 1",
                 "trihn": 0,
                 "pouvoir": {
-                    "value": null
+                    "value": " "
                 }
             },
             "spés":{
@@ -1453,5 +1463,52 @@
                 "Anti-Âme":null
             },
             "trihnType":"Esprit"
+        },
+        "Race": {
+            "templates": [
+                "common"
+            ],
+            "domain":"",
+            "spé1":"",
+            "spé2":"",
+            "resume":"",
+            "citation":"",
+            "pouvoir":"",
+            "pouvoirNom":""
+        },
+        "Peuple": {
+            "templates": [
+                "common"
+            ],
+            "domain":"",
+            "spé1":"",
+            "spé2":"",
+            "résumé":"",
+            "moeurs":""
+        },
+        "Caste": {
+            "templates": [
+                "common"
+            ],
+            "domain":"",
+            "spé":"",
+            "description":""
+        },
+        "Métier": {
+            "templates": [
+                "common"
+            ],
+            "spé":"",
+            "resume":""
+        },
+        "Bâtiment": {
+            "templates": [
+                "common"
+            ],
+            "spé":"",
+            "resume":"",
+            "ressources":"",
+            "fabrication":""
         }
+
     }}

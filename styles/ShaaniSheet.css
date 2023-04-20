@@ -297,7 +297,12 @@
     align-self: center;
     width: 90%
 }
+.actor.sheet.shaani .char-header .char-details .image-container {
+    width: 10%
+}
 .actor.sheet.shaani .char-header .char-details .char-name {
+    display: flex; 
+    flex-direction: row;
     border: none;
     align-self: center;
     text-align: left;
@@ -305,13 +310,25 @@
     padding-left: 40px;
     width: 100%;
 }
+.actor.sheet.shaani .char-header .char-details .char-name img {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px #918c88, 0 0 0 2px #e1d8cf, 0 0 0 3px #a98f39, inset 0 0 8px rgba(0, 0, 0, .5), 0 0 8px #000;
+    background: rgba(28, 28, 28, .5);
+    cursor: pointer;
+    object-fit: cover;
+    object-position: top;
+    width: 64px
+}
 .actor.sheet.shaani .char-header .char-details .char-name input {
     color: var(--tertiary);
     font-family: var(--title);
     font-size: var(--font-size-26);
     align-self: center;
     height: 40px;
-    width: 100%
+    width: 100%;
+    text-transform: uppercase;
+    margin-left: 10px;
 }
 /* ACTOR SHEET NAVIGATION */
 .actor.sheet.shaani .sheet-navigation {
@@ -866,7 +883,67 @@ a.spéTest label, a.spéTestNécr label {
     margin-bottom: 10px;
 }
 
+/* TAB MAGIC */
+.actor.sheet.shaani .tab.magic .trihns-list {
+    margin-top: 10px;
+}
+.actor.sheet.shaani .tab.magic .category-header {
+    border-top-right-radius: 5px;
+    background-color: #755137;
+    display: grid; 
+    grid: "trihnCategory trihn-add";
+    border-top-right-radius: 5px;
+}
+.actor.sheet.shaani .tab.magic .category-header .item-controls {
+    padding-right: 10px;
+    justify-self: right;
+    align-self: center;
+}
+.actor.sheet.shaani .tab.magic .category-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.actor.sheet.shaani .tab.magic ol {
+    display: grid;
+    grid-row-gap: 1px;
+    list-style-type: none;
+    border: 3px solid #755137;
+    border-top: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.actor.sheet.shaani .tab.magic ol li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 0.3fr;
+    grid-template-rows: 1fr;
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+    height: 25px;
+    align-content: center;
+    justify-items: center;
+}
+.actor.sheet.shaani .tab.magic ol li .trihn-type, .actor.sheet.shaani .tab.magic ol li .trihn-puissance, .actor.sheet.shaani .tab.magic ol li .trihn-emplacement {
+    margin-right: 1px;
+    padding: 1px;
+    font: 700 var(--font-size-14) var(--body-serif);
+}
 
+.actor.sheet.shaani .tab.magic textarea {
+    width: 100% !important;
+    min-height: 100px;
+    border: none;
+}
+.actor.sheet.shaani .tab.magic textarea:focus {
+    box-shadow: none;
+}
 
 /* ACTOR TAB CHARACTER ACQUIS */
 

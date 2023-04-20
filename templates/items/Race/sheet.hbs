@@ -24,23 +24,24 @@
                 <span><input name="system.spé1" id="{{options.id}}-race-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/> - <input name="system.spé2" id="{{options.id}}-race-spé2" type="text" value="{{data.spé2}}"spellcheck="false"/></span>
             </h3>
         </div>
-    </div>
-    <div class="race-pouvoir">
+        <div class="race-pouvoir">
         <h3>
-            <label class="details-label" for="{{options.id}}-race-pouvoir">{{localize "SRCreation.pouvoir"}}</label>
+            <label class="details-label" for="{{options.id}}-race-pouvoir">{{localize "SRCreation.pouvoir"}}</label> 
+            <input name="system.pouvoirNom" id="{{options.id}}-race-pouvoirNom" type="text" value="{{data.pouvoirNom}}"spellcheck="false"/>
             <textarea name="system.pouvoir" id="{{options.id}}-race-pouvoir" type="text" value="{{data.pouvoir}}" placeholder="{{data.pouvoir}}" spellcheck="false">{{data.pouvoir}}</textarea>
         </h3>
+        </div>
     </div>
     <div class="race-resume">
         <h3>
             <label class="details-label" for="{{options.id}}-race-resume">{{localize "SRCreation.resume"}}</label>
-            <textarea name="system.resume" id="{{options.id}}-race-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
+            <textarea name="system.resume" id="{{options.id}}-race-resume" type="text" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
         </h3>
     </div>
-    <div class="race-citation">
+    <div class="race-doctrine">
         <h3>
-            <label class="details-label" for="{{options.id}}-race-citation">{{localize "SRCreation.citation"}}</label>
-            <textarea name="system.citation" id="{{options.id}}-race-citation" type="text" value="{{data.citation}}" placeholder="{{data.citation}}" spellcheck="false">{{data.citation}}</textarea>
+            <label class="details-label" for="{{options.id}}-race-doctrine">{{localize "SRCreation.doctrine"}}</label>
+            <textarea name="system.doctrine" id="{{options.id}}-race-doctrine" type="text" placeholder="{{data.doctrine}}" spellcheck="false">{{data.doctrine}}</textarea>
         </h3>
     </div>
 </form>

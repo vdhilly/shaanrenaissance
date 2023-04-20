@@ -8,7 +8,7 @@
       "flags": {}
     }
   ],
-  "version": "0.31",
+  "version": "0.50",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291",
@@ -31,7 +31,7 @@
       "system": "Shaan_Renaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
-      "private": true,
+      "private": false,
       "flags": {}
     },
     {
@@ -41,6 +41,42 @@
       "path": "packs/acquis.db",
       "type": "Item",
       "private": true,
+      "flags": {}
+    },
+    {
+      "name": "races",
+      "label": "Races",
+      "system": "Shaan_Renaissance",
+      "path": "packs/races.db",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "peuples",
+      "label": "Peuples",
+      "system": "Shaan_Renaissance",
+      "path": "packs/peuples.db",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "castes",
+      "label": "Castes",
+      "system": "Shaan_Renaissance",
+      "path": "packs/castes.db",
+      "type": "Item",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "metiers",
+      "label": "Métiers",
+      "system": "Shaan_Renaissance",
+      "path": "packs/metiers.db",
+      "type": "Item",
+      "private": false,
       "flags": {}
     }
   ],
