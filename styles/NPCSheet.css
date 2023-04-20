@@ -126,6 +126,30 @@
     margin: 0;
 }
 
+/* NPC Armor */
+.actor.sheet.npc .protection-label{
+    color: var(--primary);
+    font-family: var(--title);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--primary);
+}
+.actor.sheet.npc .protections-big {
+    text-align: center;
+}
+.actor.sheet.npc .protections-big label {
+    font-family: var(--title);
+    font-weight: 400;
+    border: 0;
+    color: var(--primary)
+}
+
 /* NPC Cercle  */
 .actor.sheet.npc .npc-cercle {
     display: grid;

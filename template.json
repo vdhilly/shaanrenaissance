@@ -36,44 +36,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "engrenages": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "pilotage": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "recuperation": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "sensdelapierre": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "sensdubois": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "sensducuir": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "sensdumetal": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "sensdutissu": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "sensduverre": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "technologie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -83,44 +83,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "alchimie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "bibliothèque": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "botanique": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "culturehumaine": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "esoterisme": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "geologie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "histoired'heos": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "medecine": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "protocoles": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "zoologie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -130,44 +130,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "arpege": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "bluff": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "commerce": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "diplomatie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "enseignement": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "langageprimal": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "languesexotiques": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "psychologie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "seduction": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "vieurbaine": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -177,44 +177,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "artsappliques": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "artsdufeu": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "chant": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "comedie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "deguisement": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "gastronomie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "langageducorps": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "lettres": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "musique": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "trucages": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -224,44 +224,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "embiose": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "empathieanimale": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "empathieantheenne": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "empathieminerale": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "empathievegetale": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "intuition": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "reve": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "soinsdel'ame": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "soinsdel'esprit": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "soinsducorps": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -271,44 +271,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "arcanes": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "conjuration": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "defensemagique": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "enchantement": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "invocation": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "incandescence": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "maîtrisedesschemes": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "regenerationdetrihn": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "transfert": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "voile": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -318,44 +318,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "rited'arts": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedecombat": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedel'animal": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedemagie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedenecrose": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedesavoir": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedeshaan": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedesocial": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedesurvie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "ritedetechnique": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -365,44 +365,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "acrobatie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "caravane": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "cultureheossienne": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "culturenecrosienne": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "discretion": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "educationphysique": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "monture": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "navigation": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "viesauvage": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "vigilance": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -412,44 +412,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "armeslancees": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "armesdemelee": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "armesaprojectiles": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "armimales": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "enginsdeguerre": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "esquive": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "forcer": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "intimidation": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "pugilat": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "strategie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         },
@@ -459,44 +459,44 @@
                             "exp": 0,
                             "specialisations":{
                                 "armeshumaines": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "biomorphie": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "cauchemar": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "contrebande": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "corruption": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "explosifs": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "fraude": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "harcelèment": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "larcin": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 },
                                 "pactenecrotique": {
-                                    "bonus": 0,
-                                    "acquis": 0
+                                    "bonus": "",
+                                    "acquis": ""
                                 }
                             }
                         }
