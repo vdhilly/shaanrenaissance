@@ -37,6 +37,7 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs",
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/acquis.hbs",
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/specialisations.hbs",
+      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/armor.hbs",
 
       // Shaani
       // Sidebar
