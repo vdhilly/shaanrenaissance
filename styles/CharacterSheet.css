@@ -357,7 +357,6 @@ h3 {
     flex-direction: row;
     text-align: center;
     align-content: center;
-    /* margin-left: 10px; */
     justify-content: space-between;
     grid-area: header;
     color: var(--tertiary);

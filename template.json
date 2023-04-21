@@ -3,7 +3,9 @@
         "types": [
             "Personnage",
             "PNJ",
-            "Shaani"        
+            "Shaani",
+            "Réseau",
+            "Créature"  
         ],
         "templates": {
                 "common": {
@@ -825,7 +827,29 @@
                     "active": true
                 }
             }
+        },
+        "Réseau": {
+            "templates": [
+                "common",
+                "spés",
+                "biography",
+                "reserve",
+                "Magic"
+            ],
+            "motivations": "",
+            "typeReseau": "",
+            "nombreMembres":"",
+            "typesMembres":"",
+            "nomChef":"",
+            "QG":"",
+            "region":"",
+            "contacts":"",
+            "valeurs":"",
+            "influence":"",
+            "moyens":""
+            
         }
+
     },
     "Item": {
         "types": [

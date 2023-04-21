@@ -1,10 +1,10 @@
 import * as Dice from "../jets/dice.js";
 
-export default class ShaanShaaniSheet extends ActorSheet {
+export default class ShaanRéseauSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
         console.log(options)
-        return options.classes = [...options.classes, "Shaani"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
+        return options.classes = [...options.classes, "Réseau"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
 
             navSelector: ".sheet-navigation",
             contentSelector: ".sheet-content",
@@ -44,7 +44,6 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
                 sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
-                sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
                 sheetData.items.Category.Bâtiments = actorData.items.filter(function (item) { return item.type == "Bâtiment" });
                 sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
 
@@ -162,6 +161,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
             const richesseBtn = event.target.closest("#Richesses-add")
             const technologieBtn = event.target.closest("#Technologie-add")
             const transportBtn = event.target.closest("#Transports-add")
+            const batimentBtn = event.target.closest("#Bâtiments-add")
             const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
 
         if(magicTrihnBtn) {
@@ -182,7 +182,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
         this.actor.sheet.render();
-
+            
         if(batimentBtn) {
             let itemData = {
                 name: "Nouveau Bâtiment",
@@ -192,8 +192,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
               return this.actor.createEmbeddedDocuments("Item", [itemData]);
               }
               this.actor.sheet.render();
-            
-    
+
             if(armementBtn) {
                 let itemData = {
                     name: "Nouvel Armement",

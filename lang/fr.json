@@ -420,12 +420,13 @@
         "CharacterLabel": "Personnage",
         "ShaaniLabel": "Shaani",
         "PowersLabel": "Pouvoirs",
-        "MagicLabel": "Magies",
+        "MagicLabel": "Magie",
         "AcquisLabel": "Acquis",
         "BiographyLabel": "Biographie",
         "symbioses": "Symbioses",
         "ManageTabsLabel": "Gérer les Tabs",
-        "DetailsLabel": "Détails"
+        "DetailsLabel": "Détails",
+        "RéseauLabel": "Réseau"
     },
     "ITEM": {
         "TypeRace": "Race",
@@ -825,6 +826,19 @@
                 "frequence": "1/Jour",
                 "durée": "",
                 "description": "Deux membres du Shaani peuvent échanger leur place, quelque soit la distance qui les sépare. Un personnage peut également se téléporter au côté d'un membre de son Shaani, s'il le souhaite, sans limitation de distance non plus. "
-            }
+            },
+    "SRreseau": {
+        "type": "Type de réseau",
+        "NbMembre": "Nombre de membres",
+        "NomChef": "Nom du/des Chef(s)",
+        "valeurs": "Valeurs",
+        "moyens": "Moyens",
+        "contacts": "Contacts et Alliés",
+        "typeMembres": "Types de membres",
+        "region": "Région",
+        "influence": "Influence",
+        "typesMembres": "Types des Membres",
+        "QG": "Quartier Général"
+    }
         
 }

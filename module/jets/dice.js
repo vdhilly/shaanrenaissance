@@ -244,6 +244,8 @@ export async function necroseTest ({
 } = {}) {
   const messageTemplate = "systems/Shaan_Renaissance/templates/chat/nécroseTest.hbs";
   const actorData = actor ? actor.system : null;
+  const actorRace = actor ? actor.Race.name : null;
+  console.log(actorRace)
 
   let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
 
@@ -257,7 +259,7 @@ export async function necroseTest ({
 
   let rollFormula
 
-  if(actorData.general.race == "Humain" || "Humaine") {
+  if(actorRace == "Humain") {
     let nécrose = "1d10[black]";
     let esprit = "1d10[yellow]";
     rollFormula = `{${nécrose}, ${esprit}}`;

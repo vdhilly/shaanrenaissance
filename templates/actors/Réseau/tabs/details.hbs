@@ -1,0 +1,52 @@
+<div class="tab details" data-group="primary" data-tab="details">
+    <div class="details-top">
+        <span style="display: flex; flex-direction:row; ">
+            <div class="region" style="width: 49%">
+                <label class="region-label" for="{{options.id}}-reseau-region">{{localize "SRreseau.region"}}</label>
+                <input style="width: 99%" name="system.region" id="{{options.id}}-reseau-region" value="{{data.region}}">
+            </div>
+            <div class="influence" style="width: 50%">
+                <label class="influence-label" for="{{options.id}}-reseau-influence">{{localize "SRreseau.influence"}}</label>
+                <input name="system.influence" id="{{options.id}}-reseau-influence" value="{{data.influence}}">
+            </div>
+        </span>
+        <div class="QG">
+            <label class="QG-label" for="{{options.id}}-reseau-QG">{{localize "SRreseau.QG"}}</label>
+            <input name="system.QG" id="{{options.id}}-reseau-QG" value="{{data.QG}}">
+        </div>
+        <div class="valeurs">
+            <label class="valeurs-label" for="{{options.id}}-reseau-valeurs">{{localize "SRreseau.valeurs"}}</label>
+                <input name="system.valeurs" id="{{options.id}}-reseau-valeurs" value="{{data.valeurs}}">
+        </div>
+        <div class="typesMembres">
+            <label class="typesMembres-label" for="{{options.id}}-reseau-typesMembres">{{localize "SRreseau.typesMembres"}}</label>
+            <textarea class="typesMembres-input" id="{{options.id}}-reseau-typesMembres" name="system.typesMembres" placeholder="{{data.typesMembres}}">{{data.valeurs}}</textarea>
+        </div>
+        <div class="motivations">
+            <label class="motivations-label" for="{{options.id}}-reseau-motivations">{{localize "SRLabels.Motivations"}}</label>
+            <textarea class="motivations-input" id="{{options.id}}-reseau-motivations" name="system.motivation" placeholder="{{data.motivation}}">{{data.motivation}}</textarea>
+        </div>
+        <div class="moyens">
+            <label class="moyens-label" for="{{options.id}}-reseau-moyens">{{localize "SRreseau.moyens"}}</label>
+            <textarea class="moyens-input" id="{{options.id}}-reseau-moyens" name="system.moyens" placeholder="{{data.moyens}}">{{data.valeurs}}</textarea>
+        </div>
+    </div>
+    <hr />
+    <div class="biographyCategory campagne">
+        <header>
+           <h2>{{localize "SRLabels.campaign"}}</h2>
+        </header>
+        <div class="biography-notes">
+            <label class="notes-label" for="{{actor.id}}-pc-notes">{{localize "SRLabels.notes"}}</label>
+            <textarea class="notes-textarea" id="{{actor.id}}-pc-notes" name="system.biography.campagne.notes" value="{{data.biography.campagne.notes}}">{{data.biography.campagne.notes}}</textarea>
+        </div>
+        <div class="contacts">
+            <label class="contacts-label" for="{{options.id}}-reseau-contacts">{{localize "SRreseau.contacts"}}</label>
+            <textarea class="contacts-input" id="{{options.id}}-reseau-contacts" name="system.contacts" placeholder="{{data.contacts}}">{{data.valeurs}}</textarea>
+        </div>
+        <div class="biography-enemies">
+            <label class="enemies-label" for="{{actor.id}}-pc-enemies">{{localize "SRLabels.enemies"}}</label>
+            <textarea class="enemies-textarea" id="{{actor.id}}-pc-enemies" name="system.biography.campagne.enemies" value="{{data.biography.campagne.enemies}}">{{data.biography.campagne.enemies}}</textarea>
+        </div>
+    </div>
+</div>

@@ -209,7 +209,7 @@ export default class ShaanNPCSheet extends ActorSheet {
             template = "systems/Shaan_Renaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
                 const actorData = actor.toObject(!1);
                 actorData.itemTypes = {
-                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}
+                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}
                 }
                 const html = await renderTemplate(template, { actor, type });
 
