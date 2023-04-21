@@ -112,7 +112,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
         console.log(sheetData);
         return sheetData;
     }
-
     activateListeners(html) {
         if (this.isEditable) {
             html.find(".item-create").click(this._onItemCreate.bind(this));
@@ -146,9 +145,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
             
         }
     }
-    
-    
-
 
     _onSpéTest(event) {
         let actor = this.actor
@@ -166,9 +162,22 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        const actorData = this.actor.toObject(!1)
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         Dice.SpéTestNécr({
             actor,
+            race,
             domain: domain,
             spécialisation: spécialisation
         });
@@ -188,10 +197,23 @@ export default class ShaanRActorsSheet extends ActorSheet {
     _onTest(event) {
         const dataset = event.target.closest(".roll-data").dataset.itemId;
         let actor = this.actor
+        const actorData = this.actor.toObject(!1)
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({
                 actor,
+                race,
                 checkType: dataset
             })
         }

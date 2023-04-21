@@ -241,11 +241,11 @@ export async function necroseTest ({
   domain = null,
   difficulty = null,
   spécialisation = null,
+  race = null
 } = {}) {
   const messageTemplate = "systems/Shaan_Renaissance/templates/chat/nécroseTest.hbs";
   const actorData = actor ? actor.system : null;
-  const actorRace = actor ? actor.Race.name : null;
-  console.log(actorRace)
+  const raceName = race
 
   let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
 
@@ -259,11 +259,11 @@ export async function necroseTest ({
 
   let rollFormula
 
-  if(actorRace == "Humain") {
+  if(raceName == "Humain") {
     let nécrose = "1d10[black]";
     let esprit = "1d10[yellow]";
     rollFormula = `{${nécrose}, ${esprit}}`;
-  }
+  } 
   else{
     let nécrose = "1d10[black]";
     rollFormula = `${nécrose}`;
@@ -286,6 +286,7 @@ export async function necroseTest ({
   let rollData = {
     ...actorData,
     domain: domain,
+    race: raceName,
     domainLevel: domainLevel,
     spéBonus: spéBonus,
     spéAcquis: spéAcquis,
@@ -331,7 +332,6 @@ export async function necroseTest ({
             default: "normal",
             close: () => resolve({ cancelled: true }),
           };
-          console.log(data)
           new Dialog(data,null).render(true);
 
         });
@@ -343,11 +343,11 @@ export async function necroseTest ({
             spécialisation: form.spécialisation?.value
           }
         }
-        // console.log(domain)
   }
 
 export async function SpéTestNécr ({
   actor = null,
+  race,
   extraMessageData = {},
   sendMessage = true,
   domain = null,
@@ -359,6 +359,7 @@ export async function SpéTestNécr ({
   const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
+  const raceName = race
 
   let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty })
 
@@ -370,7 +371,7 @@ export async function SpéTestNécr ({
 
   let rollFormula
 
-  if(actorData.general.race == "Humain" || "Humaine") {
+  if(raceName == "Humain") {
     let nécrose = "1d10[black]";
     let esprit = "1d10[yellow]";
     rollFormula = `{${nécrose}, ${esprit}}`;
@@ -383,6 +384,7 @@ export async function SpéTestNécr ({
   let rollData = {
     ...actorData,
     domain: domain,
+    race: raceName,
     domainLevel: domainLevel,
     spécialisation: spécialisation,
     spéBonus: spéBonus,
@@ -450,7 +452,6 @@ export async function SpéTestNécr ({
             spécialisation: parseInt(form.spécialisation?.value)
           }
         }
-        // console.log(domain)
   }
 
 export async function RollToCustomMessage(actor = null, rollResult, template, extraData) {
@@ -463,7 +464,6 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
     let chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({actor}),
-        // roll: rollResult,
         content: await renderTemplate(template, templateContext),
         sound: CONFIG.sounds.dice,
         type: CONST.CHAT_MESSAGE_TYPES.ROLL

@@ -128,9 +128,22 @@ export default class ShaanNPCSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".npc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        // Filtre Race
+        const actorData = this.actor.toObject(!1)
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         Dice.SpéTestNécr({
             actor,
+            race,
             domain: domain,
             spécialisation: spécialisation
         });
@@ -150,10 +163,23 @@ export default class ShaanNPCSheet extends ActorSheet {
     _onTest(event) {
         const dataset = event.target.closest(".roll-data").dataset.itemId;
         let actor = this.actor
+        const actorData = this.actor.toObject(!1)
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({
                 actor,
+                race,
                 checkType: dataset
             })
         }
