@@ -44,7 +44,6 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
                 sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
-                sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
                 sheetData.items.Category.Bâtiments = actorData.items.filter(function (item) { return item.type == "Bâtiment" });
                 sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
 
@@ -162,6 +161,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
             const richesseBtn = event.target.closest("#Richesses-add")
             const technologieBtn = event.target.closest("#Technologie-add")
             const transportBtn = event.target.closest("#Transports-add")
+            const batimentBtn = event.target.closest("#Bâtiments-add")
             const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
 
         if(magicTrihnBtn) {

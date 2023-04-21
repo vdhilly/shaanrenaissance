@@ -27,7 +27,7 @@ export default class ShaanNPCSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
-            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" });
+            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" || item.type == "Bâtiment" });
         
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
@@ -199,7 +199,7 @@ export default class ShaanNPCSheet extends ActorSheet {
 
         // console.log(type)
         let itemData = {
-          name: "Nouvel Item",
+          name: "Nouvel Acquis",
           type: type
         };
         return actor.createEmbeddedDocuments("Item", [itemData]);
