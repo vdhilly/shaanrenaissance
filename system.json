@@ -23,7 +23,8 @@
     "styles/ItemSheet.css",
     "styles/NPCSheet.css",
     "styles/ShaaniSheet.css",
-    "styles/reseauSheet.css"
+    "styles/reseauSheet.css",
+    "styles/CréatureSheet.css"
   ],
   "packs": [
     {

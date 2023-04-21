@@ -519,7 +519,7 @@
                 },
                 "biography": {
                     "apparence":0,
-                    "histoire":0,
+                    "histoire":"",
                     "personnalité": {
                         "temper":0,
                         "element1":0,
@@ -848,8 +848,40 @@
             "influence":"",
             "moyens":""
             
+        },
+        "Créature":{
+            "templates": [
+                "common",
+                "spés",
+                "biography",
+                "Magic"
+            ],
+            "protections": {
+                "esprit": {
+                    "value": 0
+                },
+                "ame": {
+                    "value": 0
+                },
+                "corps": {
+                    "value": 0
+                }
+            },
+            "details": {
+                "xp": {
+                    "value": 0
+                },
+                "xpMax": {
+                    "value": 0
+                }
+            },
+            "general": {
+                "poids":"",
+                "classe":"",
+                "milieu":"",
+                "role":""
+            }
         }
-
     },
     "Item": {
         "types": [

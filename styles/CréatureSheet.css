@@ -1,9 +1,9 @@
 
-/* NPC WINDOW */
-.window-app.sheet.PNJ .window-content {
+/* creature WINDOW */
+.window-app.sheet.Créature .window-content {
     padding: 0 !important;
 }
-.actor.sheet.npc {
+.actor.sheet.creature {
     background: url(../assets/sheet/template_shaan_background1.jpg);
     background-size: auto 1750px;
     width: 100%;
@@ -14,20 +14,20 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.window-app.sheet.PNJ .window-content form {
+.window-app.sheet.Créature .window-content form {
     padding: 10px;
     height: auto;
 }
-.actor.sheet.npc hr {
+.actor.sheet.creature hr {
     margin: 10px 6px 10px 0
 }
 
-.actor.sheet.npc .npc-stats { grid-area: 1 / 4 / 5 / 7; margin-bottom: 80px; display: flex; flex-direction: column; margin-left: 10px;}
-.actor.sheet.npc .npc-infos {grid-area: 1 / 1 / 5 / 4; display: flex; flex-direction: column; }
+.actor.sheet.creature .creature-stats { grid-area: 1 / 4 / 5 / 7; margin-bottom: 80px; display: flex; flex-direction: column; margin-left: 10px;}
+.actor.sheet.creature .creature-infos {grid-area: 1 / 1 / 5 / 4; display: flex; flex-direction: column; }
 
-/* NPC HP */
+/* creature HP */
 
-.actor.sheet.npc .npc-HP {
+.actor.sheet.creature .creature-HP {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 17px repeat(1, 1fr);
@@ -36,28 +36,28 @@
     margin-bottom: 5px;
     color: var(--primary)
 }
-.actor.sheet.npc .npc-HP input, .actor.sheet.npc .npc-general input, .actor.sheet.npc .npc-bio input, .actor.sheet.npc .npc-stats input {
+.actor.sheet.creature .creature-HP input, .actor.sheet.creature .creature-general input, .actor.sheet.creature .creature-bio input, .actor.sheet.creature .creature-stats input {
     font: 700 var(--font-size-14) var(--body-serif);
     text-align: center;
 }
-.actor.sheet.npc .npc-general input {
+.actor.sheet.creature .creature-general input {
     text-align: start !important;
 }
-.actor.sheet.npc .npc-bio textarea {
+.actor.sheet.creature .creature-bio textarea {
     font: 700 var(--font-size-14) var(--body-serif);
 }
-.actor.sheet.npc .npc-stats .npc-cercle label {
+.actor.sheet.creature .creature-stats .creature-cercle label {
     text-align: center;
 }
-.actor.sheet.npc .char-name input {
+.actor.sheet.creature .char-name input {
     font-family: var(--title) !important;
     font-size: var(--font-size-20);
     text-transform: uppercase;
 }
-.actor.sheet.npc .npc-HP h3 {
+.actor.sheet.creature .creature-HP h3 {
     margin: 0;
 }
-.actor.sheet.npc .npc-HP .hp-esprit { 
+.actor.sheet.creature .creature-HP .hp-esprit { 
     margin-top: 2px;
     grid-area: 2 / 1 / 3 / 2;
     display: grid;
@@ -68,7 +68,7 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.actor.sheet.npc .npc-HP .hp-ame { 
+.actor.sheet.creature .creature-HP .hp-ame { 
     margin-top: 2px;
     grid-area: 2 / 2 / 3 / 3;
     display: grid;
@@ -79,7 +79,7 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
  }
-.actor.sheet.npc .npc-HP .hp-corps { 
+.actor.sheet.creature .creature-HP .hp-corps { 
     margin-top: 2px;
     grid-area: 2 / 3 / 3 / 4;
     display: grid;
@@ -108,7 +108,7 @@
 .hpMax-ame {grid-area: 3 / 2 / 4 / 3;}
 .hpMax-corps {grid-area: 3 / 2 / 4 / 3;}
 
-.actor.sheet.npc .npc-HP .TrihnsLabel {
+.actor.sheet.creature .creature-HP .TrihnsLabel {
     grid-area: 1 / 1 / 2 / 4;
     color: var(--primary);
     font-family: var(--title);
@@ -122,13 +122,13 @@
     padding-bottom: 2px;
     border-bottom: 2px solid var(--primary);
 }
-.actor.sheet.npc .npc-HP .data-value h2 {
+.actor.sheet.creature .creature-HP .data-value h2 {
     border:0;
     margin: 0;
 }
 
-/* NPC Armor */
-.actor.sheet.npc .protection-label{
+/* creature Armor */
+.actor.sheet.creature .protection-label{
     color: var(--primary);
     font-family: var(--title);
     font-size: 1rem;
@@ -141,25 +141,25 @@
     padding-bottom: 2px;
     border-bottom: 2px solid var(--primary);
 }
-.actor.sheet.npc .protections-big {
+.actor.sheet.creature .protections-big {
     text-align: center;
 }
-.actor.sheet.npc .protections-big label {
+.actor.sheet.creature .protections-big label {
     font-family: var(--title);
     font-weight: 400;
     border: 0;
     color: var(--primary)
 }
 
-/* NPC Cercle  */
-.actor.sheet.npc .npc-cercle {
+/* creature Cercle  */
+.actor.sheet.creature .creature-cercle {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 20px repeat(4, 0.1fr);
     gap: 1%;
     margin-bottom: 10px;
 }
-.actor.sheet.npc .npc-cercle .DomainsLabel { 
+.actor.sheet.creature .creature-cercle .DomainsLabel { 
     grid-area: 1 / 1 / 2 / 4;
     color: var(--primary);
     font-family: var(--title);
@@ -173,48 +173,48 @@
     padding-bottom: 2px;
     border-bottom: 2px solid var(--primary);
 }
-.actor.sheet.npc .npc-cercle .npc_domain-technique  { grid-area: 2 / 1 / 3 / 2; }
-.actor.sheet.npc .npc-cercle .npc_domain-arts  { grid-area: 2 / 2 / 3 / 3; }
-.actor.sheet.npc .npc-cercle .npc_domain-rituels  { grid-area: 2 / 3 / 3 / 4; }
-.actor.sheet.npc .npc-cercle .npc_domain-savoir { grid-area: 3 / 1 / 4 / 2; }
-.actor.sheet.npc .npc-cercle .npc_domain-shaan  { grid-area: 3 / 2 / 4 / 3; }
-.actor.sheet.npc .npc-cercle .npc_domain-survie  { grid-area: 3 / 3 / 4 / 4; }
-.actor.sheet.npc .npc-cercle .npc_domain-social  { grid-area: 4 / 1 / 5 / 2; }
-.actor.sheet.npc .npc-cercle .npc_domain-magie  { grid-area: 4 / 2 / 5 / 3; }
-.actor.sheet.npc .npc-cercle .npc_domain-combat  { grid-area: 4 / 3 / 5 / 4; }
-.actor.sheet.npc .npc-cercle .npc_domain-necrose  { grid-area: 5 / 2 / 6 / 3; }
+.actor.sheet.creature .creature-cercle .creature_domain-technique  { grid-area: 2 / 1 / 3 / 2; }
+.actor.sheet.creature .creature-cercle .creature_domain-arts  { grid-area: 2 / 2 / 3 / 3; }
+.actor.sheet.creature .creature-cercle .creature_domain-rituels  { grid-area: 2 / 3 / 3 / 4; }
+.actor.sheet.creature .creature-cercle .creature_domain-savoir { grid-area: 3 / 1 / 4 / 2; }
+.actor.sheet.creature .creature-cercle .creature_domain-shaan  { grid-area: 3 / 2 / 4 / 3; }
+.actor.sheet.creature .creature-cercle .creature_domain-survie  { grid-area: 3 / 3 / 4 / 4; }
+.actor.sheet.creature .creature-cercle .creature_domain-social  { grid-area: 4 / 1 / 5 / 2; }
+.actor.sheet.creature .creature-cercle .creature_domain-magie  { grid-area: 4 / 2 / 5 / 3; }
+.actor.sheet.creature .creature-cercle .creature_domain-combat  { grid-area: 4 / 3 / 5 / 4; }
+.actor.sheet.creature .creature-cercle .creature_domain-necrose  { grid-area: 5 / 2 / 6 / 3; }
 
-.actor.sheet.npc .npc-cercle .domain-esprit, .actor.sheet.npc .npc-cercle .domain-ame, .actor.sheet.npc .npc-cercle .domain-corps, .actor.sheet.npc .npc-cercle .domain-necrose {
+.actor.sheet.creature .creature-cercle .domain-esprit, .actor.sheet.creature .creature-cercle .domain-ame, .actor.sheet.creature .creature-cercle .domain-corps, .actor.sheet.creature .creature-cercle .domain-necrose {
     display: grid;
     grid: "label label label"15px "base actuel xp"
 }
-.actor.sheet.npc .npc-cercle .domain-actuel, .actor.sheet.npc .npc-cercle .domain-base, .actor.sheet.npc .npc-cercle .domain-exp{
+.actor.sheet.creature .creature-cercle .domain-actuel, .actor.sheet.creature .creature-cercle .domain-base, .actor.sheet.creature .creature-cercle .domain-exp{
     flex: 50%;
 }
-.actor.sheet.npc .npc-cercle .domain-actuel {
+.actor.sheet.creature .creature-cercle .domain-actuel {
     grid-area: actuel;
     display: flex;
     flex-direction: column;
 }
-.actor.sheet.npc .npc-cercle .domain-base {
+.actor.sheet.creature .creature-cercle .domain-base {
     grid-area: base;
     display: flex;
     flex-direction: column;
 }
-.actor.sheet.npc .npc-cercle .domain-exp {
+.actor.sheet.creature .creature-cercle .domain-exp {
     width: 20px;
     grid-area: xp;
     display: flex;
     flex-direction: column;
     align-self: start;
 }
-.actor.sheet.npc .npc-cercle .domain-exp input {
+.actor.sheet.creature .creature-cercle .domain-exp input {
     height: 20px;
     background: none;
     border-bottom: 1px solid black;
 }
 
-.actor.sheet.npc .domain-base, .actor.sheet.npc .domain-actuel, .actor.sheet.npc .domain-exp{
+.actor.sheet.creature .domain-base, .actor.sheet.creature .domain-actuel, .actor.sheet.creature .domain-exp{
     color: var(--primary);
     font-family: var(--sans-serif);
     font-size: .625rem;
@@ -223,37 +223,37 @@
     text-transform: uppercase;
     white-space: nowrap
 }
-.actor.sheet.npc .domain-label {
+.actor.sheet.creature .domain-label {
     grid-area: label;
     text-align: center;
     flex: 100%;
 }
-.actor.sheet.npc .domain-base input {
+.actor.sheet.creature .domain-base input {
     font: 800 var(--font-size-19) var(--body-serif);
 }
 
-/* NPC jets */
-.actor.sheet.npc .npc-dice {
+/* creature jets */
+.actor.sheet.creature .creature-dice {
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.actor.sheet.npc .npc-dice h3 {
+.actor.sheet.creature .creature-dice h3 {
     color: var(--primary);
     margin: 0;
     margin-left: 5px;
     align-self: center;
 }
-.actor.sheet.npc .npc-dice .roll-icon {
+.actor.sheet.creature .creature-dice .roll-icon {
     align-self: center;
     margin-left: 3px;
 }
-.actor.sheet.npc .npc-dice .roll-icon img {
+.actor.sheet.creature .creature-dice .roll-icon img {
     border: 0;
 }
 /*  domaines Esprit */
 
-.actor.sheet.npc .domain-esprit .domain-label{
+.actor.sheet.creature .domain-esprit .domain-label{
     background: var(--color-esprit);
     color: #fffcdb;
     font-family: var(--sans-serif);
@@ -266,7 +266,7 @@
 
 /*  domaines Ame */
 
-.actor.sheet.npc .domain-ame .domain-label{
+.actor.sheet.creature .domain-ame .domain-label{
     background: var(--color-ame);
     color: #d5eefc;
     font-family: var(--sans-serif);
@@ -279,7 +279,7 @@
 
 /*  domaines Corps */
 
-.actor.sheet.npc .domain-corps .domain-label{
+.actor.sheet.creature .domain-corps .domain-label{
     background: var(--color-corps);
     color:#fbdaca;
     font-family: var(--sans-serif);
@@ -291,10 +291,10 @@
 }
 
 /* domaine Necrose */
-.actor.sheet.npc .domain-necrose {
+.actor.sheet.creature .domain-necrose {
     grid-area: necrose;
 }
-.actor.sheet.npc .domain-necrose .domain-label {
+.actor.sheet.creature .domain-necrose .domain-label {
     background: var(--color-necrose);
     color: black;
     font-family: var(--sans-serif);
@@ -307,9 +307,9 @@
 
 
 
-/* NPC Spécialisations */
+/* creature Spécialisations */
 
-.actor.sheet.npc .npc-spés .SpecialisationsLabel {
+.actor.sheet.creature .creature-spés .SpecialisationsLabel {
     grid-area: spésTitre;
     color: var(--primary);
     font-family: var(--title);
@@ -322,13 +322,13 @@
     text-align: center;
     border-bottom: 2px solid var(--primary)
 }
-.actor.sheet.npc .npc-spés {
+.actor.sheet.creature .creature-spés {
     grid-template-columns: repeat(3, 140.141px);
     display: grid;
     grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
     gap: 1%;
 }
-.actor.sheet.npc .specialisations-esprit, .actor.sheet.npc .npc-spés .specialisations-ame, .actor.sheet.npc .npc-spés .specialisations-corps, .actor.sheet.npc .npc-spés .specialisations-nécrose {
+.actor.sheet.creature .specialisations-esprit, .actor.sheet.creature .creature-spés .specialisations-ame, .actor.sheet.creature .creature-spés .specialisations-corps, .actor.sheet.creature .creature-spés .specialisations-nécrose {
     display: grid;
     grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2" "spé3 spé3 spé3" "spé4 spé4 spé4" "spé5 spé5 spé5" "spé6 spé6 spé6" "spé7 spé7 spé7" "spé8 spé8 spé8" "spé9 spé9 spé9" "spé10 spé10 spé10";
     column-gap: 1%;
@@ -341,7 +341,7 @@
     text-transform: uppercase;
     white-space: nowrap;
 }
-.actor.sheet.npc .npc-spés .specialisations-esprit .specialisations-title {
+.actor.sheet.creature .creature-spés .specialisations-esprit .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-esprit);
     display: grid;
@@ -356,7 +356,7 @@
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.npc .npc-spés .specialisations-ame .specialisations-title {
+.actor.sheet.creature .creature-spés .specialisations-ame .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-ame);
     color: #d5eefc;
@@ -369,7 +369,7 @@
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.npc .npc-spés .specialisations-corps .specialisations-title {
+.actor.sheet.creature .creature-spés .specialisations-corps .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-corps);
     color: var(--primary);
@@ -382,7 +382,7 @@
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.npc .npc-spés .specialisations-corps .specialisations-title {
+.actor.sheet.creature .creature-spés .specialisations-corps .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-corps);
     color: #fbdaca;
@@ -395,10 +395,10 @@
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.npc .npc-spés .specialisations-nécrose {
+.actor.sheet.creature .creature-spés .specialisations-nécrose {
     grid-area: spésnecrose;
 }
-.actor.sheet.npc .npc-spés .specialisations-nécrose .specialisations-title {
+.actor.sheet.creature .creature-spés .specialisations-nécrose .specialisations-title {
     grid-area: spéInTitre;
     background-color: var(--color-necrose);
     display: grid;
@@ -413,28 +413,28 @@
     white-space: nowrap;
     text-align: center;
 }
-.actor.sheet.npc .npc-spés .npc a {
+.actor.sheet.creature .creature-spés .creature a {
     align-self: center;
 }
-.actor.sheet.npc .npc-spés .npc a label {
+.actor.sheet.creature .creature-spés .creature a label {
     font-size: 10px
 }
 
-/* NPC General */
-.actor.sheet.npc .npc-general { 
+/* creature General */
+.actor.sheet.creature .creature-general { 
     display: grid;
     grid-template-columns: 0.4fr 0.4fr repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 0.5fr repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;}
 
-.actor.sheet.npc .npc-general .npc_frame-container { 
+.actor.sheet.creature .creature-general .creature_frame-container { 
     grid-area: 1 / 1 / 4 / 3; 
     align-self: center;
     justify-self: center;
     margin-right: 10px;
 }
-.actor.sheet.npc .npc-general .npc_frame-container .frame .player-image {
+.actor.sheet.creature .creature-general .creature_frame-container .frame .player-image {
     border: none;
     border-radius: 0;
     box-shadow: 0 0 0 1px #918c88, 0 0 0 2px #e1d8cf, 0 0 0 3px #a98f39, inset 0 0 8px rgba(0, 0, 0, .5), 0 0 8px #000;
@@ -444,13 +444,13 @@
     object-position: top;
     width: 100%
 }
-.actor.sheet.npc .npc-general .npc_char-details { grid-area: 1 / 3 / 2 / 5; font-family: var(--title)}
-.actor.sheet.npc .npc-general .npc_race { grid-area: 2 / 3 / 3 / 4; }
-.actor.sheet.npc .npc-general .npc_people { grid-area: 2 / 4 / 3 / 5; }
-.actor.sheet.npc .npc-general .npc_caste { grid-area: 3 / 3 / 4 / 4; }
-.actor.sheet.npc .npc-general .npc_job { grid-area: 3 / 4 / 4 / 5; }
+.actor.sheet.creature .creature-general .creature_char-details { grid-area: 1 / 3 / 2 / 5; font-family: var(--title); height: 30px;}
+.actor.sheet.creature .creature-general .creature_classe { grid-area: 2 / 3 / 3 / 4; }
+.actor.sheet.creature .creature-general .creature_role { grid-area: 2 / 4 / 3 / 5; }
+.actor.sheet.creature .creature-general .creature_poids { grid-area: 3 / 3 / 4 / 4; }
+.actor.sheet.creature .creature-general .creature_milieu { grid-area: 3 / 4 / 4 / 5; }
 
-.actor.sheet.npc .npc-general .input h3 {
+.actor.sheet.creature .creature-general input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -461,45 +461,36 @@
     padding: 8px 4px 6px;
     width: calc(100% - 6px)
 }
-.actor.sheet.npc .npc-general .npc h3 a {
-    margin-left: auto
-}
-.actor.sheet.npc .npc-general .npc h3 a i {
-    float: right;
-    position: relative;
-    right: -2px;
-    top: -2px
-}
-.actor.sheet.npc .npc-general .npc h3 span.value {
+.actor.sheet.creature .creature-general .creature h3 span.value {
     display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 87%;
 }
-/* NPC Bio */
-.actor.sheet.npc .npc-bio textarea {
+/* creature Bio */
+.actor.sheet.creature .creature-bio textarea {
     min-height: 240px;
     min-width: 100%;
     resize: none;
     border: none;
     border-radius: 0;
 }
-.actor.sheet.npc .npc-bio textarea:focus {
+.actor.sheet.creature .creature-bio textarea:focus {
     box-shadow: none;
 }
 
-/* NPC Acquis */
+/* creature Acquis */
 
-.actor.sheet.npc .category-header {
+.actor.sheet.creature .category-header {
     display: grid; 
     grid: "acquisCategory power-add" "acquisContent acquisContent";
     border-top-right-radius: 5px;
 }
-.actor.sheet.npc .itemCategory .category-header {
+.actor.sheet.creature .itemCategory .category-header {
     background-color: #755137;
 }
 
-.actor.sheet.npc .category-header h3 {
+.actor.sheet.creature .category-header h3 {
     border: none;
     margin:0;
     padding-left: 5px;
@@ -510,54 +501,54 @@
     font-weight: 700;
     text-transform: uppercase;
 }
-.actor.sheet.npc .category-header .item-controls {
+.actor.sheet.creature .category-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
 }
-.actor.sheet.npc .item-control i.fas::before:hover {
+.actor.sheet.creature .item-control i.fas::before:hover {
     box-shadow: none;
 }
 
-.actor.sheet.npc .liste-items img {
+.actor.sheet.creature .liste-items img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.npc ol {
+.actor.sheet.creature ol {
     list-style-type: none;
     padding: 0;
     max-height: 522.588px;
     overflow-y: scroll;
 }
-.actor.sheet.npc .liste-items li {
+.actor.sheet.creature .liste-items li {
     display: grid;
     width: 100%;
     grid: "acquis-item-header" "acquis-item-résumé";
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
 }
-.actor.sheet.npc .liste-items li .acquis-header {
+.actor.sheet.creature .liste-items li .acquis-header {
     display: grid;
     grid: "acquis-item-img acquis-item-name acquis-item-controls";
     grid-template-columns: 10% 80% 10%;
 }
-.actor.sheet.npc .liste-items .acquis-header img {
+.actor.sheet.creature .liste-items .acquis-header img {
     grid-area: acquis-item-img;
 }
-.actor.sheet.npc .liste-items .acquis-header span {
+.actor.sheet.creature .liste-items .acquis-header span {
     font: 700 var(--font-size-16) var(--body-serif);
     align-self: center;
     padding-left: 5px;
 }
-.actor.sheet.npc .liste-items .acquis-header .item-controls {
+.actor.sheet.creature .liste-items .acquis-header .item-controls {
     grid-area: acquis-item-controls;
     float: right;
 }
-.actor.sheet.npc .liste-items {
+.actor.sheet.creature .liste-items {
     display: grid;
     grid-gap: 2px;
 }
-.actor.sheet.npc .liste-items {
+.actor.sheet.creature .liste-items {
     border: 3px solid #755137;
     border-top: none;
     margin: 0;
@@ -568,16 +559,16 @@
 
 
 /* POWER TAB TRIHN HEADER */
-.actor.sheet.npc .trihn-header {
+.actor.sheet.creature .trihn-header {
     display: grid; 
     grid: "powerTrihn power-add" "content content";
     border-top-right-radius: 5px;
 }
-.actor.sheet.npc .trihn-header {
+.actor.sheet.creature .trihn-header {
     background-color: #755137;
 }
 
-.actor.sheet.npc .trihn-header h3 {
+.actor.sheet.creature .trihn-header h3 {
     border: none;
     margin:0;
     padding-left: 5px;
@@ -588,54 +579,54 @@
     font-weight: 700;
     text-transform: uppercase;
 }
-.actor.sheet.npc .trihn-header .item-controls {
+.actor.sheet.creature .trihn-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
 }
-.actor.sheet.npc .item-control i.fas::before:hover {
+.actor.sheet.creature .item-control i.fas::before:hover {
     box-shadow: none;
 }
 
 /* POWER TAB TRIHN CONTENT */
-.actor.sheet.npc .liste-pouvoir img {
+.actor.sheet.creature .liste-pouvoir img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.npc ol {
+.actor.sheet.creature ol {
     list-style-type: none;
     padding: 0;
     max-height: 522.588px;
     overflow-y: scroll;
 }
-.actor.sheet.npc .liste-pouvoir li {
+.actor.sheet.creature .liste-pouvoir li {
     display: grid;
     grid: "power-item-header" "power-item-résumé";
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
 }
-.actor.sheet.npc .liste-pouvoir li .pouvoir-header {
+.actor.sheet.creature .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
     grid-template-columns: 10% 80% 10%;
 }
-.actor.sheet.npc .liste-pouvoir .pouvoir-header img {
+.actor.sheet.creature .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;
 }
-.actor.sheet.npc .liste-pouvoir .pouvoir-header span {
+.actor.sheet.creature .liste-pouvoir .pouvoir-header span {
     font: 700 var(--font-size-16) var(--body-serif);
     align-self: center;
     padding-left: 5px;
 }
-.actor.sheet.npc .liste-pouvoir .pouvoir-header .item-controls {
+.actor.sheet.creature .liste-pouvoir .pouvoir-header .item-controls {
     grid-area: pouvoir-item-controls;
     float: right;
 }
-.actor.sheet.npc .liste-pouvoir {
+.actor.sheet.creature .liste-pouvoir {
     display: grid;
     grid-gap: 2px;
 }
-.actor.sheet.npc .liste-pouvoir {
+.actor.sheet.creature .liste-pouvoir {
     border: 3px solid #755137;
     border-top: none;
     margin: 0;
