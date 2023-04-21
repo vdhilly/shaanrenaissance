@@ -235,9 +235,15 @@ h3 {
     border: 0;
     margin: 0;
     padding-left: 3px;
+    font-size: 14px;
 }
 .actor.sheet aside .sidebar .initiative-sidebar h4 {
     margin: 0;
+}
+.actor.sheet aside .sidebar .initiative-sidebar .initiative-score {
+    width: 20px;
+    padding: 0;
+    text-align: center;
 }
 
 /* SIDEBAR PROTECTIONS */
@@ -278,6 +284,7 @@ h3 {
     border: 0;
 }
 /* SIDEBAR RESERVE */
+
 .actor.sheet aside .sidebar .reserve-sidebar {
     text-align: center;
     display: flex;
