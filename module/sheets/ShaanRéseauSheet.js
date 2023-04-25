@@ -3,7 +3,6 @@ import * as Dice from "../jets/dice.js";
 export default class ShaanRéseauSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
-        console.log(options)
         return options.classes = [...options.classes, "Réseau"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
 
             navSelector: ".sheet-navigation",

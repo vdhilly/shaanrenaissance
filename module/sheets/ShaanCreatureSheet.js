@@ -3,7 +3,6 @@ import * as Dice from "../jets/dice.js";
 export default class ShaanCreatureSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
-        console.log(options)
         return options.classes = [...options.classes, "Créature"], options.width = 900, options.height = 700,options.scrollY.push(".window-content"), options
     }
     get template(){
@@ -27,7 +26,7 @@ export default class ShaanCreatureSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
-            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" || item.type == "Bâtiment" });
+            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" || item.type == "Bâtiment" || item.type == "Trihn" });
         
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
@@ -41,7 +40,7 @@ export default class ShaanCreatureSheet extends ActorSheet {
             }       
 
         console.log(sheetData);
-        return await sheetData;
+        return sheetData;
     }
     activateListeners(html) {
         if (this.isEditable) {
@@ -161,7 +160,7 @@ export default class ShaanCreatureSheet extends ActorSheet {
             template = "systems/Shaan_Renaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
                 const actorData = actor.toObject(!1);
                 actorData.itemTypes = {
-                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}
+                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}, Trihn: {}
                 }
                 const html = await renderTemplate(template, { actor, type });
 

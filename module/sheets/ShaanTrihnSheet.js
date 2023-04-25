@@ -4,7 +4,6 @@ export default class ShaanTrihnSheet extends ItemSheet {
     }
     static get defaultOptions() {
         const options = super.defaultOptions;
-        console.log(options)
         return options.width = 350, options.height = 220, options
     }
     async getData(options = this.options) {
