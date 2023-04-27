@@ -1,0 +1,48 @@
+
+<div class="creature_frame-container">
+    <div class="frame image-container">
+        <img class="player-image" alt="{{actor.name}}" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+    </div>
+</div>
+
+<section class="creature_char-details">
+    <h1 class="char-name">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Nom du Personnage" spellcheck="false" />
+    </h1>
+</section>
+
+<div class="creature creature_classe item">
+    <div class="input">
+        <label class="details-label">{{localize "SRLabels.Classe"}}</label>
+        <h3>
+            <input name="system.general.classe" value="{{data.general.classe}}"/>
+        </h3>
+    </div>
+</div>
+
+<div class="creature creature_role item">
+    <div class="input">
+        <label class="details-label">{{localize "SRLabels.Role"}}</label>
+        <h3>
+            <input name="system.general.role" value="{{data.general.role}}"/>
+        </h3>
+    </div> 
+</div>
+
+<div class="creature creature_poids item">
+    <div class="input">
+        <label class="details-label">{{localize "SRLabels.Poids"}}</label>
+        <h3>
+            <input name="system.general.poids" value="{{data.general.poids}}"/>           
+        </h3>
+    </div>   
+</div>
+
+<div class="creature creature_milieu item">
+    <div class="input">
+        <label class="details-label">{{localize "SRLabels.Milieu"}}</label>
+        <h3>
+            <input name="system.general.milieu" value="{{data.general.milieu}}"/>
+        </h3>
+    </div>             
+</div>

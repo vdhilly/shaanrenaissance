@@ -3,7 +3,6 @@ import * as Dice from "../jets/dice.js";
 export default class ShaanNPCSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
-        console.log(options)
         return options.classes = [...options.classes, "PNJ"], options.width = 900, options.height = 700,options.scrollY.push(".window-content"), options
     }
     get template(){
@@ -27,7 +26,7 @@ export default class ShaanNPCSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
-            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" });
+            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" || item.type == "Bâtiment" || item.type == "Trihn"});
         
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
@@ -35,16 +34,71 @@ export default class ShaanNPCSheet extends ActorSheet {
                 sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
+                let initiativeDomain = sheetData.data.attributes.initiative.statistic
+                let DomainScore = sheetData.data.skills[initiativeDomain].rank + sheetData.data.skills[initiativeDomain].temp
+                sheetData.data.attributes.initiative.value = DomainScore
             }
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Race = lastElement
+        // Filtre Peuple
+        let peuple = actorData.items.filter(function (item) { return item.type == "Peuple"});
+        lastElement = peuple[peuple.length - 1]
+        
+        peuple.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Peuple = lastElement
+        // Filtre Caste
+        let caste = actorData.items.filter(function (item) { return item.type == "Caste"});
+        lastElement = caste[caste.length - 1]
+        
+        caste.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Caste = lastElement
+        // Filtre Métier
+        let metier = actorData.items.filter(function (item) { return item.type == "Métier"});
+        lastElement = metier[metier.length - 1]
+        
+        metier.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        sheetData.Metier = lastElement
+            
 
         console.log(sheetData);
-        return await sheetData;
+        return sheetData;
     }
     activateListeners(html) {
         if (this.isEditable) {
             html.find(".item-createNPC").click(this._onItemCreateNPC.bind(this)); 
             html.find(".item-edit").click(this._onItemEdit.bind(this));
-            html.find(".item-delete").click(this._onItemDelete.bind(this));  
+            html.find(".item-delete").click(this._onItemDelete.bind(this)); 
+            html.find(".open-compendium").on("click", (event => {
+                            if (event.currentTarget.dataset.compendium) {
+                                const compendium = game.packs.get(event.currentTarget.dataset.compendium);
+                                console.log(compendium)
+                                compendium && compendium.render(!0)
+                            }
+                        })) 
 
         super.activateListeners(html);
         }
@@ -73,9 +127,22 @@ export default class ShaanNPCSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".npc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        // Filtre Race
+        const actorData = this.actor.toObject(!1)
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         Dice.SpéTestNécr({
             actor,
+            race,
             domain: domain,
             spécialisation: spécialisation
         });
@@ -95,10 +162,23 @@ export default class ShaanNPCSheet extends ActorSheet {
     _onTest(event) {
         const dataset = event.target.closest(".roll-data").dataset.itemId;
         let actor = this.actor
+        const actorData = this.actor.toObject(!1)
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({
                 actor,
+                race,
                 checkType: dataset
             })
         }
@@ -144,7 +224,7 @@ export default class ShaanNPCSheet extends ActorSheet {
 
         // console.log(type)
         let itemData = {
-          name: "Nouvel Item",
+          name: "Nouvel Acquis",
           type: type
         };
         return actor.createEmbeddedDocuments("Item", [itemData]);
@@ -154,7 +234,7 @@ export default class ShaanNPCSheet extends ActorSheet {
             template = "systems/Shaan_Renaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
                 const actorData = actor.toObject(!1);
                 actorData.itemTypes = {
-                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}
+                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}, Trihn: {}
                 }
                 const html = await renderTemplate(template, { actor, type });
 

@@ -45,12 +45,13 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
                 sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
+                sheetData.items.Category.Bâtiments = actorData.items.filter(function (item) { return item.type == "Bâtiment" });
+                sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
                 sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
                 sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituels" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
                 sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
-                sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
 
                 // Filtre Race
                 let race = actorData.items.filter(function (item) { return item.type == "Race"});
@@ -101,8 +102,12 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
+                let initiativeDomain = sheetData.data.attributes.initiative.statistic
+                let DomainScore = sheetData.data.skills[initiativeDomain].rank + sheetData.data.skills[initiativeDomain].temp
+                sheetData.data.attributes.initiative.value = DomainScore
             }
 
+            
 
         console.log(sheetData);
         return sheetData;
@@ -140,9 +145,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
             
         }
     }
-    
-    
-
 
     _onSpéTest(event) {
         let actor = this.actor
@@ -160,9 +162,22 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        const actorData = this.actor.toObject(!1)
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         Dice.SpéTestNécr({
             actor,
+            race,
             domain: domain,
             spécialisation: spécialisation
         });
@@ -182,10 +197,23 @@ export default class ShaanRActorsSheet extends ActorSheet {
     _onTest(event) {
         const dataset = event.target.closest(".roll-data").dataset.itemId;
         let actor = this.actor
+        const actorData = this.actor.toObject(!1)
+        // Filtre Race
+        let race = actorData.items.filter(function (item) { return item.type == "Race"});
+        let lastElement = race[race.length - 1]
+        
+        race.forEach(element => {
+            if(element != lastElement) {
+                let itemId = element._id
+                return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+            }
+        });
+        race = lastElement.name
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({
                 actor,
+                race,
                 checkType: dataset
             })
         }
@@ -207,7 +235,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const relationBtn = event.target.closest("#Relations-add")
         const richesseBtn = event.target.closest("#Richesses-add")
         const technologieBtn = event.target.closest("#Technologie-add")
-        const transportBtn = event.target.closest("#Transport-add")
+        const transportBtn = event.target.closest("#Transports-add")
+        const batimentBtn = event.target.closest("#Bâtiments-add")
         const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
 
         if(magicTrihnBtn) {
@@ -228,6 +257,16 @@ export default class ShaanRActorsSheet extends ActorSheet {
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
         this.actor.sheet.render();
+
+        if(batimentBtn) {
+            let itemData = {
+                name: "Nouveau Bâtiment",
+                type: "Bâtiment"
+              };
+      
+              return this.actor.createEmbeddedDocuments("Item", [itemData]);
+              }
+              this.actor.sheet.render();
         
 
         if(armementBtn) {
