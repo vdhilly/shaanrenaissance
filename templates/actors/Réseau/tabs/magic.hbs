@@ -1,0 +1,49 @@
+<div class="tab magic" data-group="primary" data-tab="magic">
+    <div class="trihns-list">
+            <div class="category-header">
+                <h3 class="item-name">{{localize "SRLabels.SummonedTrihns"}}</h3>
+                {{#ifeq @root.editable true}}
+                    <div class="item-controls">
+                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="MagicTrihn-add"></i></a>
+                    </div>
+                {{/ifeq}}
+            </div>
+            <ol class="item-list liste-items liste-item">
+                <li>
+                    <label class="details-label">{{localize "SRLabels.TrihnType"}}</label>
+                    <label class="details-label">{{localize "SRLabels.Puissance"}}</label>
+                    <label class="details-label">{{localize "SRLabels.Emplacement"}}</label>
+                </li>
+                {{#each SummonedTrihns as |trihn id|}}
+                <li class="item trihn" draggable="true" data-item-id="{{trihn._id}}">
+                    <span class="trihn-type">
+                        {{system.trihnType}}
+                    </span>
+                    <span class="trihn-puissance">
+                        {{system.puissance}}
+                    </span>
+                    <span class="trihn-emplacement">
+                        {{system.emplacement}}
+                    </span>
+                    <div class="item-controls">
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
+                    </div>   
+                </li>
+                {{/each}}
+            </ol>
+            <div class="schemes">
+                <label class="details-label" for="{{options.id}}-Magic-schemes">{{localize "SRLabels.Schemes"}}</label>
+                <textarea name="system.Magic.schèmes" id="{{options.id}}-Magic-schemes" value="{{data.Magic.schèmes}}" placeholder="{{data.Magic.schèmes}}">{{data.Magic.schèmes}}</textarea>
+            </div>
+            <div class="alchimie">
+                <label class="details-label" for="{{options.id}}-Magic-alchimie">{{localize "SRLabels.Alchimie"}}</label>
+                <textarea name="system.Magic.alchimie" id="{{options.id}}-Magic-alchimie" value="{{data.Magic.alchimie}}" placeholder="{{data.Magic.alchimie}}">{{data.Magic.alchimie}}</textarea>
+            </div>
+            <div class="enchantement">
+                <label class="details-label" for="{{options.id}}-Magic-enchantement">{{localize "SRLabels.Enchantement"}}</label>
+                <textarea name="system.Magic.enchantement" id="{{options.id}}-Magic-enchantement" value="{{data.Magic.enchantement}}" placeholder="{{data.Magic.enchantement}}">{{data.Magic.enchantement}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>

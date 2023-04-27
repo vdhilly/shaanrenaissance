@@ -8,7 +8,7 @@
       "flags": {}
     }
   ],
-  "version": "0.50",
+  "version": "0.60",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291",
@@ -22,7 +22,9 @@
     "styles/CharacterSheet.css",
     "styles/ItemSheet.css",
     "styles/NPCSheet.css",
-    "styles/ShaaniSheet.css"
+    "styles/ShaaniSheet.css",
+    "styles/reseauSheet.css",
+    "styles/CréatureSheet.css"
   ],
   "packs": [
     {
@@ -90,7 +92,7 @@
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "initiative": "1d10 + @Shaan",
+  "initiative": "1d10 + @attributes.initiative.value",
   "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
   "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"
 }

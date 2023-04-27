@@ -3,7 +3,6 @@ import * as Dice from "../jets/dice.js";
 export default class ShaanShaaniSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
-        console.log(options)
         return options.classes = [...options.classes, "Shaani"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
 
             navSelector: ".sheet-navigation",
@@ -44,6 +43,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
                 sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
                 sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
+                sheetData.items.Category.Bâtiments = actorData.items.filter(function (item) { return item.type == "Bâtiment" });
                 sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type = "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
@@ -56,6 +56,9 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
+                let initiativeDomain = sheetData.data.attributes.initiative.statistic
+                let DomainScore = sheetData.data.skills[initiativeDomain].rank + sheetData.data.skills[initiativeDomain].temp
+                sheetData.data.attributes.initiative.value = DomainScore
             }
 
 
@@ -156,7 +159,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             const relationBtn = event.target.closest("#Relations-add")
             const richesseBtn = event.target.closest("#Richesses-add")
             const technologieBtn = event.target.closest("#Technologie-add")
-            const transportBtn = event.target.closest("#Transport-add")
+            const transportBtn = event.target.closest("#Transports-add")
+            const batimentBtn = event.target.closest("#Bâtiments-add")
             const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
 
         if(magicTrihnBtn) {
@@ -177,6 +181,16 @@ export default class ShaanShaaniSheet extends ActorSheet {
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
         this.actor.sheet.render();
+
+        if(batimentBtn) {
+            let itemData = {
+                name: "Nouveau Bâtiment",
+                type: "Bâtiment"
+              };
+      
+              return this.actor.createEmbeddedDocuments("Item", [itemData]);
+              }
+              this.actor.sheet.render();
             
     
             if(armementBtn) {

@@ -1,0 +1,50 @@
+<div class="tab character" data-group="primary" data-tab="character">
+    <section class="character-details">
+        <div class="frame-container">
+            <div class="frame image-container">
+                <img class="player-image" alt="{{actor.name}}" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+                <a class="hover-icon" data-action="show-image"><i class="fas fa-image fa-fw"></i></a>
+            </div>
+        </div>
+        <div class="detail-sheet">
+            {{!-- type --}}
+            <div class="pc réseau_type item">
+                <div class="input">
+                    <label class="details-label">{{localize "SRreseau.type"}}</label>
+                    <h3>
+                        <input name="system.typeReseau" value="{{data.typeReseau}}"/> 
+                    </h3>
+                </div>
+            </div>
+            {{!-- nombre --}}
+            <div class="pc réseau_nombre item">
+                <div class="input">
+                    <label class="details-label">{{localize "SRreseau.NbMembre"}}</label>
+                    <h3>
+                        <input name="system.nombreMembres" value="{{data.nombreMembres}}"/>                                                
+                    </h3>
+                </div>            
+            </div>
+            {{!-- chefs --}}
+            <div class="pc réseau_chefs item">
+                <div class="input">
+                    <label class="details-label">{{localize "SRreseau.NomChef"}}</label>
+                    <h3>
+                        <input name="system.nomChef" value="{{data.nomChef}}"/>            
+                    </h3>
+                </div>             
+            </div>
+        </div>
+    </section>
+    <hr />
+    <section class="character-domains">
+        <span class="DomainsLabel">{{localize "SRLabels.DomainsTitle"}}</span>
+        {{> "systems/Shaan_Renaissance/templates/actors/Shaani/partials/domaincircle.hbs"}}
+    </section>
+    <hr />
+    <section class="character-specialisations">
+        <span class="SpecialisationsLabel">{{localize "SRLabels.SpecialisationsTitle"}}</span>
+        {{> "systems/Shaan_Renaissance/templates/actors/Shaani/partials/specialisations.hbs"}}
+    </section>
+</div>
+

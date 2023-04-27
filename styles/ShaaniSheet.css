@@ -472,42 +472,6 @@
     width: calc(100% - 6px)
 }
 
-/* General Tab Details */
-.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active.active .character-details .pc.pc_shaani{
-    grid-area: shaani;
-}
-.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .detail-sheet {
-    grid-row-gap: 8px;
-    display: grid;
-    grid-area: details;
-    grid-template-columns: 44% 55%;
-    grid-template-rows: repeat(2, 42px);
-    margin-top: 8px;
-    padding-left: 12px
-}
-
-/* General Tab Bio */
-
-.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background {
-    display: flex;
-    flex-wrap: wrap
-}
-.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc {
-    align-items: start;
-    display: flex;
-    flex: 20%;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 8px
-}
-.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc span {
-    width: 100%
-}
-.actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-background .pc_motivations {
-    flex: 100%;
-    margin-bottom: 0
-}
-
 /* General Tab Domaines */
 .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .shaani-souches {
     display: grid;

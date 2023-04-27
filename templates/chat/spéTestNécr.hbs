@@ -3,7 +3,7 @@
     <div class="check-type">{{localize "chat.necroseTest.title" type=type}}</div>
   </h2>
   <div class="domainDice">
-{{#ifeq @root.roll.data.general.race.value "Humain"}}
+{{#ifeq @root.roll.data.race "Humain"}}
   <div class="domainDiceH">
         {{#with roll.terms as |data|}}
     {{#each data as |dice|}}
@@ -25,7 +25,7 @@
       {{/with}}
     </div>
     {{/ifeq}}
-    {{#ifnoteq @root.roll.data.general.race.value "Humain"}}
+    {{#ifnoteq @root.roll.data.race "Humain"}}
     <div class="domainDice">
         {{#with roll.terms as |data|}}
     {{#each data as |dice|}}
