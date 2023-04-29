@@ -2,6 +2,8 @@
     <div class="specialisations-title">
         <span class="specialisations-label">{{localize "SRdomains.Technique"}}</span>
         <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}} {{localize "SRLabels.AcquisBonusLabel"}}</span>
+        <!--Span de max a test retire le com si OK test sur technique pour l'heure-->
+        <span class="specialisation-maxvalue-label" min="1" max="4">{{localize "SRdomains.Maxvalue"}}</span>
     </div>
     <a class="spéTest"><label class="specialisation-label" for="{{options.id}}-pc-technique-spé1-bonus {{options.id}}-pc-technique-spé1-acquisBonus">{{localize "SRspecialisations.engrenages"}}</label></a>
     <span><input type="number" class="details-input" title="{{localize "SR.EngrenagesTitle"}}" id="{{options.id}}-pc-technique-spé1-bonus" name="system.skills.Technique.specialisations.engrenages.bonus" value="{{data.skills.Technique.specialisations.engrenages.bonus}}"/></span>
