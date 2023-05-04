@@ -1573,7 +1573,8 @@
             "templates": [
                 "common"
             ],
-            "spé":"",
+            "price":"",
+            "spécialisations":"",
             "resume":"",
             "ressources":"",
             "fabrication":""

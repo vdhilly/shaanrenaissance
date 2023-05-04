@@ -1169,6 +1169,9 @@ grid-row-gap: 0px;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
+.item.sheet.batiment .price {
+    width: 100px;
+}
 .item.sheet.batiment textarea {
     width: 100% !important;
     min-height: 150px;
