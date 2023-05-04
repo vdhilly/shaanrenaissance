@@ -81,7 +81,13 @@ export default class ShaanRéseauSheet extends ActorSheet {
                                 const parent = $(event.target).parents(".sheet-navigation"),
                                     title = parent.find(".item.active").attr("title");
                                 title && parent.find(".navigation-title").text(title)
-                            }));
+                            })); html.find(".open-compendium").on("click", (event => {
+                                if (event.currentTarget.dataset.compendium) {
+                                    const compendium = game.packs.get(event.currentTarget.dataset.compendium);
+                                    console.log(compendium)
+                                    compendium && compendium.render(!0)
+                                }
+                            }))
     
             super.activateListeners(html);
             }
