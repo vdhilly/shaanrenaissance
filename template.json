@@ -37,6 +37,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "engrenages": {
                                     "bonus": "",
@@ -84,6 +85,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "alchimie": {
                                     "bonus": "",
@@ -131,6 +133,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "arpege": {
                                     "bonus": "",
@@ -178,6 +181,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "artsappliques": {
                                     "bonus": "",
@@ -225,6 +229,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "embiose": {
                                     "bonus": "",
@@ -272,6 +277,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "arcanes": {
                                     "bonus": "",
@@ -319,6 +325,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "rited'arts": {
                                     "bonus": "",
@@ -366,6 +373,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "acrobatie": {
                                     "bonus": "",
@@ -413,6 +421,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "maxSpé":0,
                             "specialisations":{
                                 "armeslancees": {
                                     "bonus": "",
@@ -460,6 +469,7 @@
                             "rank": 0,
                             "temp": 0,
                             "exp": 0,
+                            "SpéMax":0,
                             "specialisations":{
                                 "armeshumaines": {
                                     "bonus": "",

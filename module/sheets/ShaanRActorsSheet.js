@@ -107,8 +107,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.data.attributes.initiative.value = DomainScore
             }
 
-            
-
         console.log(sheetData);
         return sheetData;
     }
