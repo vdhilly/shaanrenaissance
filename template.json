@@ -879,7 +879,8 @@
                 "poids":"",
                 "classe":"",
                 "milieu":"",
-                "role":""
+                "role":"",
+                "taille":""
             }
         }
     },
