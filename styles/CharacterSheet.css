@@ -870,6 +870,7 @@ a.spéTest label, a.spéTestNécr label {
     width: 95px;
     padding: 5px;
     align-items: center;
+    text-align: center;
 }
 
 /* POWER TAB TRIHN HEADER */
