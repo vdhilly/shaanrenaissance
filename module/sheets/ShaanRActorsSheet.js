@@ -435,6 +435,31 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemId = element.closest(".item").dataset.itemId;
         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
     }
-    
+    // _checkDomainLimit(event){
+    //     event.preventDefault();
+    //     //cherche le domaine 
+    //     let actor = this.actor
+    //     let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
+    //     //valeur de renvois
+    //     let spécialisationmax =1
+    //     switch (domain){
+    //         case domain < 5:
+    //             spécialisationmax=1;
+    //             break;
+    //         case domain >=5 && domain <8: 
+    //             spécialisationmax=2;
+    //             break;
+    //         case domain >=8 && domain <11:
+    //             spécialisationmax=3;
+    //             break;
+    //         case domain >=11 && domain <14:
+    //             spécialisationmax=4;
+    //             break;
+    //         case domain >=11 && domain <14:
+    //             spécialisationmax=5;
+    //             break;
+    //     }
+    //     return spécialisationmax
+    // } 
     
 }
