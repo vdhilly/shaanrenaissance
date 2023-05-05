@@ -148,7 +148,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
 
         let itemData = {
           name: "Nouvel Acquis",
-          type: type
+          type: type,
+          img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
         };
         return actor.createEmbeddedDocuments("Item", [itemData]);
 

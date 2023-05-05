@@ -229,7 +229,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const artefactBtn = event.target.closest("#Artefacts-add")
         const manuscritBtn = event.target.closest("#Manuscrits-add")
         const outilBtn = event.target.closest("#Outils-add")
-        const protectionBtn = event.target.closest("#Protection-sadd")
+        const protectionBtn = event.target.closest("#Protections-add")
         const relationBtn = event.target.closest("#Relations-add")
         const richesseBtn = event.target.closest("#Richesses-add")
         const technologieBtn = event.target.closest("#Technologie-add")
@@ -259,7 +259,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(batimentBtn) {
             let itemData = {
                 name: "Nouveau Bâtiment",
-                type: "Bâtiment"
+                type: "Bâtiment",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
               };
       
               return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -270,7 +271,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(armementBtn) {
             let itemData = {
                 name: "Nouvel Armement",
-                type: "Armement"
+                type: "Armement",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
               };
       
               return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -280,7 +282,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(armimaleBtn) {
             let itemData = {
                 name: "Nouvelle Armimale",
-                type: "Armimale"
+                type: "Armimale",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
           
                 return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -290,7 +293,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(artefactBtn) {
             let itemData = {
                 name: "Nouvel Artefact",
-                type: "Artefact"
+                type: "Artefact",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
         
                 return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -300,7 +304,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(manuscritBtn) {
             let itemData = {
                 name: "Nouveau Manuscrit",
-                type: "Manuscrit"
+                type: "Manuscrit",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
             
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -310,7 +315,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(outilBtn) {
             let itemData = {
                 name: "Nouvel Outil",
-                type: "Outil"
+                type: "Outil",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
             
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -320,7 +326,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(protectionBtn) {
             let itemData = {
                 name: "Nouvelle Protection",
-                type: "Protection"
+                type: "Protection",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
             
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -330,7 +337,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(relationBtn) {
         let itemData = {
             name: "Nouvelle Relation",
-            type: "Relation"
+            type: "Relation",
+            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -340,7 +348,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(richesseBtn) {
         let itemData = {
             name: "Nouvelle Richesse",
-            type: "Richesse"
+            type: "Richesse",
+            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -350,7 +359,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(technologieBtn) {
         let itemData = {
             name: "Nouvelle Technologie",
-            type: "Technologie"
+            type: "Technologie",
+            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -360,7 +370,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         if(transportBtn) {
         let itemData = {
             name: "Nouveau Transport",
-            type: "Transport"
+            type: "Transport",
+            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -433,31 +444,5 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemId = element.closest(".item").dataset.itemId;
         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
     }
-    // _checkDomainLimit(event){
-    //     event.preventDefault();
-    //     //cherche le domaine 
-    //     let actor = this.actor
-    //     let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
-    //     //valeur de renvois
-    //     let spécialisationmax =1
-    //     switch (domain){
-    //         case domain < 5:
-    //             spécialisationmax=1;
-    //             break;
-    //         case domain >=5 && domain <8: 
-    //             spécialisationmax=2;
-    //             break;
-    //         case domain >=8 && domain <11:
-    //             spécialisationmax=3;
-    //             break;
-    //         case domain >=11 && domain <14:
-    //             spécialisationmax=4;
-    //             break;
-    //         case domain >=11 && domain <14:
-    //             spécialisationmax=5;
-    //             break;
-    //     }
-    //     return spécialisationmax
-    // } 
     
 }
