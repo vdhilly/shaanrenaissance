@@ -37,9 +37,23 @@
                         <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                     </div>
                 </div>
+                {{#ifeq acquis.type "Protection"}}
+                    <div class="spécialisations">
+                        <i>{{localize "SRLabels.protection"}}: {{acquis.system.protection}}</i>
+                    </div>
+                {{/ifeq}}
+                {{#ifeq acquis.type "Armimale"}}
+                    <div class="spécialisations">
+                        <i>{{localize "SR.capacité"}}: {{acquis.system.capacité}}</i>
+                    </div>
+                {{/ifeq}}
+                {{#ifnoteq acquis.type "Protection"}}
+                    {{#ifnoteq acquis.type "Armimale"}}
                 <div class="spécialisations">
                     <i>{{localize "SRLabels.BonusLabel"}}: {{acquis.system.acquis.spécialisations}}</i>
                 </div>
+                    {{/ifnoteq}}
+                {{/ifnoteq}}
                 </li>
                 {{/each}}
             </ol>
