@@ -469,7 +469,7 @@
             "resume": "Résumé",
             "moeurs": "Moeurs",
             "description": "Description",
-            "pouvoir": "Pouvoir racial",
+            "pouvoirRace": "Pouvoir racial",
             "doctrine": "Doctrine"
     },
     "SRsymbioses": {

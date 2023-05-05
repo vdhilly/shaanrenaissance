@@ -872,7 +872,39 @@ a.spéTest label, a.spéTestNécr label {
     align-items: center;
     text-align: center;
 }
+/* POWER TAB POUVOIR RACIAL */
 
+.actor.sheet.character .tab.powers .pouvoirRace-header {
+    border-top-right-radius: 5px;
+    background-color: #755137;
+}
+.actor.sheet.character .tab.powers .pouvoirRace-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.actor.sheet.character .tab.powers .pouvoirRace-content .pouvoir-name {
+        font: 700 var(--font-size-16) var(--body-serif);
+        padding-left: 5px;
+}
+.actor.sheet.character .tab.powers .pouvoirRace-content {
+    padding-left: 5px;
+}
+.actor.sheet.character .tab.powers .pouvoirRace-list {
+    border: 3px solid #755137;
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+}
 /* POWER TAB TRIHN HEADER */
 .actor.sheet.character .tab.powers .trihn-header {
     display: grid; 
