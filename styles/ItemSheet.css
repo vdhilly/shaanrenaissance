@@ -250,7 +250,7 @@
 .item.sheet.armimale .armimale-valeur {
     grid-area: 3 / 3 / 4 / 4;
 }
-.item.sheet.armimale .armimale-préstige {
+.item.sheet.armimale .armimale-prestige {
     grid-area: 3 / 4 / 4 / 5;
 }
 .item.sheet.armimale .armimale-peuple {
@@ -330,7 +330,7 @@
 .item.sheet.transport .transport-spécialisations {grid-area: 2 / 1 / 3 / 4;}
 .item.sheet.transport .transport-autonomie {grid-area: 2 / 4 / 3 / 6; }
 .item.sheet.transport .transport-valeur {grid-area: 3 / 1 / 4 / 2;}
-.item.sheet.transport .transport-préstige { grid-area: 3 / 2 / 4 / 3;}
+.item.sheet.transport .transport-prestige { grid-area: 3 / 2 / 4 / 3;}
 .item.sheet.transport .transport-déscription {grid-area: 4 / 1 / 5 / 6;}
 .item.sheet.transport .transport-ressources { grid-area: 5 / 1 / 6 / 3; }
 .item.sheet.transport .transport-entretien { grid-area: 6 / 1 / 7 / 2; }
@@ -393,7 +393,7 @@
 .item.sheet.artefact .artefact-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
 .item.sheet.artefact .artefact-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.artefact .artefact-valeur{ grid-area: 3 / 1 / 4 / 2; }
-.item.sheet.artefact .artefact-préstige{ grid-area: 3 / 2 / 4 / 3; }
+.item.sheet.artefact .artefact-prestige{ grid-area: 3 / 2 / 4 / 3; }
 .item.sheet.artefact .artefact-ressources{ grid-area: 3 / 3 / 4 / 5; }
 .item.sheet.artefact .artefact-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
 
@@ -454,7 +454,7 @@
 .item.sheet.manuscrit .manuscrit-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
 .item.sheet.manuscrit .manuscrit-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.manuscrit .manuscrit-valeur{ grid-area: 3 / 1 / 4 / 2; }
-.item.sheet.manuscrit .manuscrit-préstige{ grid-area: 3 / 2 / 4 / 3; }
+.item.sheet.manuscrit .manuscrit-prestige{ grid-area: 3 / 2 / 4 / 3; }
 .item.sheet.manuscrit .manuscrit-ressources{ grid-area: 3 / 3 / 4 / 5; }
 .item.sheet.manuscrit .manuscrit-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
 
@@ -513,7 +513,7 @@
 .item.sheet.outil .outil-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
 .item.sheet.outil .outil-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.outil .outil-valeur{ grid-area: 3 / 1 / 4 / 2; }
-.item.sheet.outil .outil-préstige{ grid-area: 3 / 2 / 4 / 3; }
+.item.sheet.outil .outil-prestige{ grid-area: 3 / 2 / 4 / 3; }
 .item.sheet.outil .outil-ressources{ grid-area: 3 / 3 / 4 / 5; }
 .item.sheet.outil .outil-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
 
@@ -570,11 +570,11 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.item.sheet.richesse .richesse-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
+.item.sheet.richesse .richesse-spécialisations{ grid-area: 1 / 1 / 2 / 5; }
 .item.sheet.richesse .richesse-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.richesse .richesse-valeur{ grid-area: 3 / 1 / 4 / 2; }
-.item.sheet.richesse .richesse-préstige{ grid-area: 3 / 2 / 4 / 3; }
-.item.sheet.richesse .richesse-ressources{ grid-area: 3 / 3 / 4 / 5; }
+.item.sheet.richesse .richesse-prestige{ grid-area: 3 / 2 / 4 / 3; }
+.item.sheet.richesse .richesse-ressources{ grid-area: 3 / 3 / 4 / 6; }
 .item.sheet.richesse .richesse-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
 
 .item.sheet.richesse .richesse-déscription textarea {
@@ -634,12 +634,12 @@
 .item.sheet.technologie .technologie-trihns { grid-area: 1 / 1 / 2 / 3; display: flex;flex-direction: row;align-items: end; }
 .item.sheet.technologie .technologie-capacité { grid-area: 1 / 3 / 2 / 5; }
 .item.sheet.technologie .technologie-portée { grid-area: 1 / 5 / 2 / 6; }
-.item.sheet.technologie .technologie-spécialisations { grid-area: 2 / 1 / 3 / 4; }
-.item.sheet.technologie .technologie-autonomie { grid-area: 2 / 4 / 3 / 5; }
-.item.sheet.technologie .technologie-places { grid-area: 2 / 5 / 3 / 6; }
+.item.sheet.technologie .technologie-spécialisations { grid-area: 2 / 1 / 3 / 6; }
+.item.sheet.technologie .technologie-autonomie { grid-area: 3 / 4 / 3 / 5; }
+.item.sheet.technologie .technologie-places { grid-area: 3 / 5 / 3 / 6; }
 .item.sheet.technologie .technologie-speed { grid-area: 3 / 1 / 4 / 2; }
 .item.sheet.technologie .technologie-valeur { grid-area: 3 / 2 / 4 / 3; }
-.item.sheet.technologie .technologie-préstige { grid-area: 3 / 3 / 4 / 4; }
+.item.sheet.technologie .technologie-prestige { grid-area: 3 / 3 / 4 / 4; }
 .item.sheet.technologie .technologie-déscription { grid-area: 4 / 1 / 5 / 6; }
 .item.sheet.technologie .technologie-ressources { grid-area: 5 / 1 / 6 / 4; }
 .item.sheet.technologie .technologie-entretien { grid-area: 5 / 4 / 6 / 6; }
@@ -704,7 +704,7 @@ grid-row-gap: 0px;
 .item.sheet.protection .protection-spécialisations { grid-area: 2 / 1 / 3 / 4; }
 .item.sheet.protection .protection-déscription { grid-area: 3 / 1 / 4 / 6; }
 .item.sheet.protection .protection-valeur { grid-area: 4 / 1 / 5 / 2; }
-.item.sheet.protection .protection-préstige { grid-area: 4 / 2 / 5 / 3; }
+.item.sheet.protection .protection-prestige { grid-area: 4 / 2 / 5 / 3; }
 .item.sheet.protection .protection-ressources { grid-area: 4 / 3 / 5 / 6; }
 .item.sheet.protection .protection-fabrication { grid-area: 5 / 1 / 6 / 5; }
 
