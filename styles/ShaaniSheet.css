@@ -283,7 +283,7 @@
     background: url(../assets/sheet/shaan-navig-horiz_bleu.webp);
     background-attachment: local;
     background-repeat: no-repeat;
-    background-size: auto 78px, cover;
+    background-size: 100% 78px, cover;
     display: flex;
     flex-direction: row;
     text-align: center;
