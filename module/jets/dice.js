@@ -294,7 +294,6 @@ export async function necroseTest ({
     difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
-
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
