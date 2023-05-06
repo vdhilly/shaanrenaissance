@@ -28,16 +28,12 @@
     {{#ifnoteq @root.roll.data.race "Humain"}}
     <div class="domainDice">
         {{#with roll.terms as |data|}}
-    {{#each data as |dice|}}
-        {{#with dice.rolls as |die|}}
-            {{#each die as |dieInfo|}}
-            {{#ifeq dieInfo.formula "1d10[black]"}}
-            <div class="die Nécrose">
-            <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dieInfo.total}}.png">
-            </div>
+        {{#each data as |dice|}}
+            {{#ifeq dice.formula "1d10[black]"}}
+              <div class="die Nécrose">
+                <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dice.total}}.png">
+              </div>
             {{/ifeq}}
-            {{/each}}
-          {{/with}}
         {{/each}}
       {{/with}}
     </div>
