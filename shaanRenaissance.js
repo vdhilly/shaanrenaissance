@@ -201,10 +201,3 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   const header = document.createElement("h2");
   header.innerText = "Shaan Renaissance", null === (_a = html.querySelector("#settings-documentation")) || void 0 === _a || _a.after(header,license)
 }));
-
-
-
-
-
-
-

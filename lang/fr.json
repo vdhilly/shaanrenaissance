@@ -435,7 +435,14 @@
         "TypeRace": "Race",
         "TypePeople": "Peuple",
         "TypeCaste": "Caste",
-        "TypeJob": "Métier"
+        "TypeJob": "Métier",
+        "CreationDialog": {
+            "Categories": {
+                "Acquis": "Acquis",
+                "Personnage": "Personnage",
+                "Autres": "Autres"
+            }
+        }
     },
     "chat": {
         "actions": {
