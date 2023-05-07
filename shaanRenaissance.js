@@ -144,6 +144,19 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 
+    class LicenseViewer extends Application {
+      static get defaultOptions() {
+        return mergeObject(super.defaultOptions, {
+          id:"license-viewer",
+          title: game.i18n.localize("SETTINGS.LicenseViewer.label"),
+          template: "systems/Shaan_Renaissance/templates/packs/license-viewer.hbs",
+          width: 500,
+          height: 600,
+          resizable: !0
+        })
+      }
+    }
+    game.licenseViewer = new LicenseViewer
   });
 
 Handlebars.registerHelper('ifeq', function (a, b, options) {
@@ -155,8 +168,41 @@ Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
 
-
 });
+
+Hooks.on("renderSettings", (async (__app, $html) => {
+  var _a;
+  const html = $html[0],
+  systemRow = html.querySelector(".settings-sidebar li.system"),
+  systemInfo = null == systemRow ? void 0 : systemRow.cloneNode(!1);
+  systemInfo.classList.remove("system"), systemInfo.classList.add("system-info");
+  const links = [{
+    url: "https://github.com/YoimPouet/Shaan_Renaissance/blob/main/CHANGELOG.md",
+    label: "SETTINGS.Sidebar.Changelog"
+  }, {
+    url: "https://www.shaan-rpg.com/",
+    label: "SETTINGS.Sidebar.Site"
+  }, {
+    url: "https://discord.gg/7fnZ9yCJZq",
+    label: "SETTINGS.Sidebar.Discord"
+  }].map((data => {
+    const anchor = document.createElement("a");
+    return anchor.href = data.url, anchor.innerText = game.i18n.localize(data.label), anchor.target = "_blank", anchor
+  }));
+  if(systemInfo.append(...links), null == systemRow || systemRow.after(systemInfo), !game.user.hasRole("GAMEMASTER")) return;
+  const license = document.createElement("div");
+  license.id = "shaan-license";
+  const licenseButton = document.createElement("button");
+  const licenseIcon = document.createElement("i");
+  licenseIcon.classList.add("fa-solid", "fa-scale-balanced")
+  licenseButton.type = "button", licenseButton.append(licenseIcon, game.i18n.localize("SETTINGS.LicenseViewer.label")), licenseButton.addEventListener("click", (() => {
+    game.licenseViewer.render(!0)
+  })), license.append(licenseButton);
+  const header = document.createElement("h2");
+  header.innerText = "Shaan Renaissance", null === (_a = html.querySelector("#settings-documentation")) || void 0 === _a || _a.after(header,license)
+}));
+
+
 
 
 

@@ -844,6 +844,16 @@
         "influence": "Influence",
         "typesMembres": "Types des Membres",
         "QG": "Quartier Général"
+    },
+    "SETTINGS": {
+        "Sidebar": {
+            "Changelog": "Changelog",
+            "Site": "Shaan",
+            "Discord": "Discord"
+        },
+        "LicenseViewer": {
+            "label": "Mentions Légales"
+        }
     }
         
 }
