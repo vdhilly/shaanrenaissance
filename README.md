@@ -5,7 +5,7 @@
 <strong>Graphisme </strong>: Julien « Pretre » Roulic, Julien Bès, Igor Polouchine<br>
 </p>
 
-# Shaan_Renaissance
+# Shaan Renaissance
 <h1>Crédits</h1>
 <p><strong>Création </strong>: Igor Polouchine<br>
 <strong>Développement </strong>: Julien Bès<br>
