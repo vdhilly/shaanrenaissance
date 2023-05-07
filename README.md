@@ -1,6 +1,6 @@
 # Système Foundry 
 
-<p><strong>Développement </strong>: Valentin "Pouet" Dhilly, Yannick Bertheau, Julien Bès <br>
+<p><strong>Développement </strong>: Valentin "Pouet" Dhilly, Colonelb, Julien Bès <br>
 <strong>Compendiums </strong>: Julien « Pretre » Roulic, Julien Bès <br>
 <strong>Graphisme </strong>: Julien « Pretre » Roulic, Julien Bès, Igor Polouchine<br>
 </p>
