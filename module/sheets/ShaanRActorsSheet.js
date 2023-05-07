@@ -13,7 +13,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     get template(){
         return `systems/Shaan_Renaissance/templates/actors/${this.actor.type}/sheet.hbs`;
     }
-    async getData(options = this.options) {
+    getData(options = this.options) {
         options.id || (options.id = this.id);
         const actorData = this.actor.toObject(!1),
             sheetData = {
@@ -102,11 +102,15 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
-                let initiativeDomain = sheetData.data.attributes.initiative.statistic
-                let DomainScore = sheetData.data.skills[initiativeDomain].rank + sheetData.data.skills[initiativeDomain].temp
-                sheetData.data.attributes.initiative.value = DomainScore
+
+                // Initiative
+                const domain = sheetData.data.attributes.initiative.statistic,
+                domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
+                sheetData.data.attributes.initiative.value = domainValue
+                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
             }
 
+            console.log(game.actors.get(actorData._id).getRollData());
         console.log(sheetData);
         return sheetData;
     }
@@ -142,6 +146,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
             
         }
+
     }
 
     _onSpéTest(event) {
