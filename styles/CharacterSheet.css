@@ -588,7 +588,7 @@ h3 {
     border-radius: none;
     width: 100% !important;
     resize: none;
-    height: 50px !important;
+    height: 55px !important;
     font: 700 var(--font-size-14) var(--body-serif);
 }
 .actor.sheet.character .pc_motivations textarea:focus {
