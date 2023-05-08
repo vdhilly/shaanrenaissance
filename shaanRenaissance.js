@@ -8,6 +8,7 @@ import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
 import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
 
+
 async function preloadHandleBarTemplates() 
 {
     // register templates parts
@@ -102,6 +103,7 @@ async function preloadHandleBarTemplates()
     return loadTemplates( templatePaths );
 };
 
+
 Hooks.once("init", function(){
     console.log ("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
@@ -144,6 +146,7 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 
+    // License
     class LicenseViewer extends Application {
       static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
@@ -159,15 +162,14 @@ Hooks.once("init", function(){
     game.licenseViewer = new LicenseViewer
   });
 
+    // Handlebars
 Handlebars.registerHelper('ifeq', function (a, b, options) {
   if (a == b) { return options.fn(this); }
   return options.inverse(this);
 });
-
 Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
-
 });
 
 Hooks.on("renderSettings", (async (__app, $html) => {
