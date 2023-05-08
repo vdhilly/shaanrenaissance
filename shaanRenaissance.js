@@ -146,22 +146,6 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 
-    // License
-    class LicenseViewer extends Application {
-      static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
-          id:"license-viewer",
-          title: game.i18n.localize("SETTINGS.LicenseViewer.label"),
-          template: "systems/Shaan_Renaissance/templates/packs/license-viewer.hbs",
-          width: 500,
-          height: 600,
-          resizable: !0
-        })
-      }
-    }
-    game.licenseViewer = new LicenseViewer
-  });
-
     // Handlebars
 Handlebars.registerHelper('ifeq', function (a, b, options) {
   if (a == b) { return options.fn(this); }
@@ -203,3 +187,21 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   const header = document.createElement("h2");
   header.innerText = "Shaan Renaissance", null === (_a = html.querySelector("#settings-documentation")) || void 0 === _a || _a.after(header,license)
 }));
+
+// License
+class LicenseViewer extends Application {
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      id:"license-viewer",
+      title: game.i18n.localize("SETTINGS.LicenseViewer.label"),
+      template: "systems/Shaan_Renaissance/templates/packs/license-viewer.hbs",
+      width: 500,
+      height: 600,
+      resizable: !0
+    })
+  }
+}
+game.licenseViewer = new LicenseViewer
+
+// Item Directory
+});
