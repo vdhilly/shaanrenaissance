@@ -338,7 +338,6 @@ h3 {
 .actor.sheet.character .sidebar input[type="checkbox"]:checked::before {
     transform: scale(1);
   }
-
 /* CHARACTER CONTENT */
 .actor.sheet.character .content {
     float: right;
@@ -499,6 +498,23 @@ h3 {
 }
 .actor.sheet .sheet-body .sheet-content>.tab {
     padding: .6rem .6rem 0
+}
+.actor.sheet.character .tab.character .vide {
+    margin-left: 5px;
+    align-items: center;
+}
+.actor.sheet.character .tab.character .vide label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    line-height: 1;
+    height: 100%;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    align-self: center;
 }
 
 /* General tab img */
