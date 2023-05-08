@@ -77,6 +77,45 @@
                     </h3>
                 </div>             
             </div>
+            {{!--Indar ou morph WIP--}}
+            {{!--Si Indar on ajoute une autre race --}}
+            <div class="pc pc_indar item" data-item-id="{{Indar._id}}">
+                <div class="checkbox" data-item-id="{{Indar.-id}}">
+                </div>
+                <div class="input">
+                    <label class="details-label">{{localize "ITEM.TypeRace"}}</label>
+                    <h3>
+                        <span class="value">{{Race.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if Race}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.races"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}
+                    </h3>
+                </div>
+
+            </div>
+            {{!--Si morph on ajoute donnée morph--}}
+            <div class="pc pc_Morph item" data-item-id="{{Morph._id}}">
+                <div class="checkbox" data-item-id="{{Morph.-id}}">
+                </div>
+                <div class="input">
+                    <label class="details-label">{{localize "ITEM.TypeRace"}}</label>
+                    <h3>
+                        <span class="value">{{Race.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if Race}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.races"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}
+                    </h3>
+                </div>
+
+            </div>
         </div>
     </section>
     <hr />
