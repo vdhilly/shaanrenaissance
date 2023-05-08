@@ -7,6 +7,11 @@
             </div>
         </div>
         <div class="vide">
+            <input type="checkbox" class="isIndar" id="isIndar" name="system.attributes.isIndar" {{checked data.attributes.isIndar}}>
+            <label for="isIndar">Indar</label>            
+            <br/>
+            <input type="checkbox" class="isMorph" id="isMorph" name="system.attributes.isMorph" {{checked data.attributes.isMorph}}>
+            <label for="isMorph">Morphe</label>
         </div>
         <div class="pc pc_shaani">
             <label class="details-input details-label" for="{{options.id}}-pc-shaani">{{localize "SR.Shaani"}}</label>
@@ -14,9 +19,9 @@
         </div>
         <div class="detail-sheet">
             {{!-- race --}}
-            <div class="pc pc_race item" data-item-id="{{Race._id}}">
-                <div class="input">
-                    <label class="details-label">{{localize "ITEM.TypeRace"}}</label>
+            <div class="pc pc_race item" data-item-id="{{RaceSecondaire._id}}" style="display: flex; flex-direction:row">
+                <div class="input {{#ifnoteq data.attributes.isIndar true}}notIndar{{/ifnoteq}}{{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}">
+                    <label class="details-label">{{localize "ITEM.TypeRace"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.primaire"}}{{/ifeq}}</label>
                     <h3>
                         <span class="value">{{Race.name}}</span>
                         {{#if @root.editable}}
@@ -28,6 +33,21 @@
                         {{/if}}
                     </h3>
                 </div>
+                {{#ifeq data.attributes.isIndar true}}
+                <div class="input {{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}">
+                    <label class="details-label">{{localize "ITEM.TypeRace"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.secondaire"}}{{/ifeq}}</label>
+                    <h3>
+                        <span class="value">{{RaceSecondaire.name}}</span>
+                        {{#if @root.editable}}
+                        {{#if RaceSecondaire}}
+                            <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        {{else}}
+                            <a class="open-compendium" data-compendium="Shaan_Renaissance.races"><i class="fas fa-fw fa-circle-plus"></i></a>
+                        {{/if}}
+                        {{/if}}
+                    </h3>
+                </div>
+                {{/ifeq}}
             </div>
             {{!-- peuple --}}
             <div class="pc pc_people item" data-item-id="{{Peuple._id}}">

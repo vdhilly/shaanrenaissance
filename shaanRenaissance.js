@@ -32,6 +32,7 @@ async function preloadHandleBarTemplates()
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs",
       "systems/Shaan_Renaissance/templates/actors/Personnage/partials/ressources.hbs",
+      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/morphe.hbs",
 
       // NPC
       "systems/Shaan_Renaissance/templates/actors/PNJ/partials/cercle.hbs",

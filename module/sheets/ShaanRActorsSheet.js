@@ -56,14 +56,29 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 // Filtre Race
                 let race = actorData.items.filter(function (item) { return item.type == "Race"});
                 let lastElement = race[race.length - 1]
+                let avantLastElement = race[race.length - 2]
                 
                 race.forEach(element => {
-                    if(element != lastElement) {
+                    if(sheetData.data.attributes.isIndar === false) {
+                        if(element != lastElement) {
                         let itemId = element._id
                         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+                        }
+                    }
+                    else if(sheetData.data.attributes.isIndar === true) {
+                        if(element != lastElement && element != avantLastElement) {
+                            let itemId = element._id
+                            return this.actor.deleteEmbeddedDocuments("Item", [itemId])
+                        }
                     }
                 });
+                if(sheetData.data.attributes.isIndar === true) {
                 sheetData.Race = lastElement
+                sheetData.RaceSecondaire = avantLastElement
+                }
+                else {
+                    sheetData.Race = lastElement
+                }
                 // Filtre Peuple
                 let peuple = actorData.items.filter(function (item) { return item.type == "Peuple"});
                 lastElement = peuple[peuple.length - 1]

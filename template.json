@@ -29,7 +29,9 @@
                     "initiative": {
                         "statistic": "Shaan",
                         "value":0
-                    }
+                    },
+                    "isIndar": false,
+                    "isMorph": false
                 },
                 "spés":{
                     "skills": {

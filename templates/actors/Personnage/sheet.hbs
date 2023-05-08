@@ -43,6 +43,12 @@
             <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis_vert.webp" title="{{localize "SRTabs.AcquisLabel"}}">
         </a>
 
+        {{#ifeq data.attributes.isMorph true}}
+        <a class="item" data-tab="morphe" title="{{localize "SRTabs.MorpheLabel"}}">
+            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp" title="{{localize "SRTabs.MorpheLabel"}}">
+        </a>
+        {{/ifeq}}
+
         <a class="item" data-tab="biography" title="{{localize "SRTabs.BiographyLabel"}}">
             <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_biographie_vert.webp" title="{{localize "SRTabs.BiographyLabel"}}">
         </a>
@@ -62,6 +68,8 @@
             {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs"}}
             {{!-- Acquis --}}
             {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/acquis.hbs"}}
+            {{!-- Morphe --}}
+            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/morphe.hbs"}}
             {{!-- Biography --}}
             {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/biography.hbs"}}
             
