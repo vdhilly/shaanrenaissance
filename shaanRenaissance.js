@@ -203,5 +203,5 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
-// Item Directory
+
 });
