@@ -15,7 +15,7 @@
         "pouvoirsNecrose": "Pouvoirs de Nécrose",
         "Trihns": "Trihns",
         "Protections": "Protections",
-        "protéction": "Protéction",
+        "protection": "Protection",
         "Initiative": "Initiative",
         "Tests": "Tests",
         "DomainTest": "Test de Domaine",
@@ -435,7 +435,14 @@
         "TypeRace": "Race",
         "TypePeople": "Peuple",
         "TypeCaste": "Caste",
-        "TypeJob": "Métier"
+        "TypeJob": "Métier",
+        "CreationDialog": {
+            "Categories": {
+                "Acquis": "Acquis",
+                "Personnage": "Personnage",
+                "Autres": "Autres"
+            }
+        }
     },
     "chat": {
         "actions": {
@@ -469,7 +476,7 @@
             "resume": "Résumé",
             "moeurs": "Moeurs",
             "description": "Description",
-            "pouvoir": "Pouvoir racial",
+            "pouvoirRace": "Pouvoir racial",
             "doctrine": "Doctrine"
     },
     "SRsymbioses": {
@@ -566,6 +573,8 @@
         }
     },
     "SR": {
+        "PouvoirCompendium": "Pouvoirs",
+        "AcquisCompendium": "Acquis",
         "Shaani": "Shaani",
         "ShaaniTitle": "Le Nom de ton phaani",
         "RaceTitle": "La Race de ton personnage",
@@ -634,8 +643,8 @@
         "spécialisations": "Spécialisations",
         "capacité": "Capacité",
         "valeur": "Valeur",
-        "préstige": "Prestige",
-        "préstigeTitle": "Le Prestige de ton personnage",
+        "prestige": "Prestige",
+        "prestigeTitle": "Le Prestige de ton personnage",
         "ressources": "Ressources",
         "fabrication": "Fabrication",
         "entretien": "Entretien",
@@ -842,6 +851,16 @@
         "influence": "Influence",
         "typesMembres": "Types des Membres",
         "QG": "Quartier Général"
+    },
+    "SETTINGS": {
+        "Sidebar": {
+            "Changelog": "Changelog",
+            "Site": "Shaan",
+            "Discord": "Discord"
+        },
+        "LicenseViewer": {
+            "label": "Mentions Légales"
+        }
     }
         
 }

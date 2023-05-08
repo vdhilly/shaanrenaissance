@@ -1,5 +1,25 @@
 <div class="tab powers" data-group="primary" data-tab="powers">
+    <div class="pouvoir-compendium">
+        <a class="open-compendium" data-compendium="Shaan_Renaissance.pouvoirs"><i class="fa-solid fa-list"></i> {{localize "SR.PouvoirCompendium"}}</a>
+    </div>
     <ol class="pouvoirTrihn-list directory-list">
+        <li class="item item-container pouvoirRace">
+            <div class="pouvoirRace-header">
+                <h3 class="item-name">
+                    {{localize "SRCreation.pouvoirRace"}}
+                </h3>
+            </div>
+            <div class="pouvoirRace-list">
+                <div class="pouvoirRace-content">
+                    <span class="pouvoir-name">
+                        {{Race.system.pouvoirNom}}
+                    </span>
+                    <div class="pouvoir-résumé">
+                        <i>{{localize "SRLabels.résumé"}} : {{Race.system.pouvoir}}</i>
+                    </div>
+                </div>
+            </div>
+        </li>
         <li class="item item-container pouvoirTrihn Esprit">
             <div class="trihn-header">
                 <h3 class="item-name">

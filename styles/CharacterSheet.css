@@ -352,7 +352,7 @@ h3 {
     background: url(../assets/sheet/shaan-navig-horiz.jpg);
     background-attachment: local;
     background-repeat: no-repeat;
-    background-size: auto 78px, cover;
+    background-size: 100% 78px, cover;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -588,7 +588,7 @@ h3 {
     border-radius: none;
     width: 100% !important;
     resize: none;
-    height: 50px !important;
+    height: 55px !important;
     font: 700 var(--font-size-14) var(--body-serif);
 }
 .actor.sheet.character .pc_motivations textarea:focus {
@@ -859,6 +859,53 @@ a.spéTest label, a.spéTestNécr label {
 
 /* ACTOR SHEET CHARACTER POWERS TAB*/
 
+.pouvoir-compendium {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .825rem;
+    text-transform: uppercase; 
+    border-radius: 15px;
+    width: 95px;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+/* POWER TAB POUVOIR RACIAL */
+
+.actor.sheet.character .tab.powers .pouvoirRace-header {
+    border-top-right-radius: 5px;
+    background-color: #755137;
+}
+.actor.sheet.character .tab.powers .pouvoirRace-header h3 {
+    border: none;
+    margin:0;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: var(--font-size-17);
+    font-family: var(--title);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.actor.sheet.character .tab.powers .pouvoirRace-content .pouvoir-name {
+        font: 700 var(--font-size-16) var(--body-serif);
+        padding-left: 5px;
+}
+.actor.sheet.character .tab.powers .pouvoirRace-content {
+    padding-left: 5px;
+}
+.actor.sheet.character .tab.powers .pouvoirRace-list {
+    border: 3px solid #755137;
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+}
 /* POWER TAB TRIHN HEADER */
 .actor.sheet.character .tab.powers .trihn-header {
     display: grid; 
@@ -1028,14 +1075,14 @@ a.spéTest label, a.spéTestNécr label {
     flex-direction: row;
     justify-content: space-between
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money label, .actor.sheet.character .tab.acquis .acquis-top .acquis-préstige label {
+.actor.sheet.character .tab.acquis .acquis-top .acquis-money label, .actor.sheet.character .tab.acquis .acquis-top .acquis-prestige label {
     color: var(--primary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money input, .actor.sheet.character .tab.acquis .acquis-top .acquis-préstige input {
+.actor.sheet.character .tab.acquis .acquis-top .acquis-money input, .actor.sheet.character .tab.acquis .acquis-top .acquis-prestige input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);

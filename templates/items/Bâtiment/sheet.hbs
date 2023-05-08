@@ -9,11 +9,19 @@
         </span>
     </header>
     <div class="batiment-details">
-        <div class="spés">
-            <h3>
-                <label class="details-label" for="{{options.id}}-batiment-spécialisations">{{localize "SRCreation.spé"}}</label>
-                <input name="system.spécialisations" id="{{options.id}}-batiment-spécialisations" type="text" value="{{data.spécialisations}}"spellcheck="false"/>
-            </h3>
+        <div style="display:flex; flex-direction: row;">
+            <div class="spés" style="width: 80%">
+                <h3>
+                    <label class="details-label" for="{{options.id}}-batiment-spécialisations">{{localize "SRCreation.spé"}}</label>
+                    <input name="system.spécialisations" id="{{options.id}}-batiment-spécialisations" type="text" value="{{data.spécialisations}}"spellcheck="false"/>
+                </h3>
+            </div>
+            <div class="price" style="width: 20%">
+                <h3>
+                    <label class="details-label" for="{{options.id}}-batiment-price">{{localize "SR.valeur"}}</label>
+                    <input name="system.price" id="{{options.id}}-batiment-price" type="text" value="{{data.price}}"spellcheck="false"/>
+                </h3>
+            </div>
         </div>
         <div class="batiment-resume">
             <h3>

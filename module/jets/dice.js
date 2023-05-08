@@ -56,8 +56,6 @@ export async function domainTest ({
     let ame = "1d10[blue]";
     let esprit = "1d10[yellow]";
     let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
-    
-
 
     const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
     console.log(domainLevel)
@@ -82,8 +80,8 @@ export async function domainTest ({
       spécialisation: spé,
       difficulty: difficulty
     };
-    let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
-
+    let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+    // rollResult.toMessage()
     if (sendMessage) {
       RollToCustomMessage(actor, rollResult, messageTemplate, {
         ...extraMessageData,
@@ -294,7 +292,6 @@ export async function necroseTest ({
     difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
-
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,

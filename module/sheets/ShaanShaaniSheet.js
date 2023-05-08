@@ -56,9 +56,11 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
                 sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
-                let initiativeDomain = sheetData.data.attributes.initiative.statistic
-                let DomainScore = sheetData.data.skills[initiativeDomain].rank + sheetData.data.skills[initiativeDomain].temp
-                sheetData.data.attributes.initiative.value = DomainScore
+                // Initiative
+                const domain = sheetData.data.attributes.initiative.statistic,
+                domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
+                sheetData.data.attributes.initiative.value = domainValue
+                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
             }
 
 
@@ -81,7 +83,13 @@ export default class ShaanShaaniSheet extends ActorSheet {
                                 const parent = $(event.target).parents(".sheet-navigation"),
                                     title = parent.find(".item.active").attr("title");
                                 title && parent.find(".navigation-title").text(title)
-                            }));
+                            })); html.find(".open-compendium").on("click", (event => {
+                                if (event.currentTarget.dataset.compendium) {
+                                    const compendium = game.packs.get(event.currentTarget.dataset.compendium);
+                                    console.log(compendium)
+                                    compendium && compendium.render(!0)
+                                }
+                            }))
     
             super.activateListeners(html);
             }
@@ -155,7 +163,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
             const artefactBtn = event.target.closest("#Artefacts-add")
             const manuscritBtn = event.target.closest("#Manuscrits-add")
             const outilBtn = event.target.closest("#Outils-add")
-            const protectionBtn = event.target.closest("#Protection-sadd")
+            const protectionBtn = event.target.closest("#Protections-add")
             const relationBtn = event.target.closest("#Relations-add")
             const richesseBtn = event.target.closest("#Richesses-add")
             const technologieBtn = event.target.closest("#Technologie-add")
@@ -185,7 +193,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
         if(batimentBtn) {
             let itemData = {
                 name: "Nouveau Bâtiment",
-                type: "Bâtiment"
+                type: "Bâtiment",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
               };
       
               return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -196,7 +205,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(armementBtn) {
                 let itemData = {
                     name: "Nouvel Armement",
-                    type: "Armement"
+                    type: "Armement",
+                    img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                   };
           
                   return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -206,7 +216,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(armimaleBtn) {
                 let itemData = {
                     name: "Nouvelle Armimale",
-                    type: "Armimale"
+                    type: "Armimale",
+                    img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                     };
               
                     return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -216,7 +227,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(artefactBtn) {
                 let itemData = {
                     name: "Nouvel Artefact",
-                    type: "Artefact"
+                    type: "Artefact",
+                    img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                     };
             
                     return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -226,7 +238,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(manuscritBtn) {
                 let itemData = {
                     name: "Nouveau Manuscrit",
-                    type: "Manuscrit"
+                    type: "Manuscrit",
+                    img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
                 
                 return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -236,7 +249,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(outilBtn) {
                 let itemData = {
                     name: "Nouvel Outil",
-                    type: "Outil"
+                    type: "Outil",
+                    img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
                 
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -246,7 +260,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(protectionBtn) {
                 let itemData = {
                     name: "Nouvelle Protection",
-                    type: "Protection"
+                    type: "Protection",
+                    img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
                 
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -256,7 +271,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(relationBtn) {
             let itemData = {
                 name: "Nouvelle Relation",
-                type: "Relation"
+                type: "Relation",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
         
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -266,7 +282,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(richesseBtn) {
             let itemData = {
                 name: "Nouvelle Richesse",
-                type: "Richesse"
+                type: "Richesse",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
         
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -276,7 +293,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(technologieBtn) {
             let itemData = {
                 name: "Nouvelle Technologie",
-                type: "Technologie"
+                type: "Technologie",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
         
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -286,7 +304,8 @@ export default class ShaanShaaniSheet extends ActorSheet {
             if(transportBtn) {
             let itemData = {
                 name: "Nouveau Transport",
-                type: "Transport"
+                type: "Transport",
+                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
                 };
         
             return this.actor.createEmbeddedDocuments("Item", [itemData]);

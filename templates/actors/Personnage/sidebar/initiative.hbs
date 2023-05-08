@@ -3,7 +3,7 @@
     <h2>{{localize "SRLabels.Initiative"}}</h2>    
     </a>
     <h4 class="initiative-select" style="margin-left:5px;">
-        <select name="system.attributes.initiative.statistic"> 
+        <select class="initiative-select" name="system.attributes.initiative.statistic"> 
                 {{#select data.attributes.initiative.statistic}}
                 {{#each config.SRdomains as |skill|}}
                     <option value="{{skill}}">{{skill}}</option>

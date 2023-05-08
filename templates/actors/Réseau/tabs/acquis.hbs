@@ -4,12 +4,15 @@
             <label class="money-input money-label" for="{{options.id}}-pc-money">{{localize "SRLabels.Crédos"}}</label>
             <input type="text" class="money-input" title="{{localize "SRLabels.CrédosTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.crédos" value="{{data.attributes.crédos}}"/>
         </div>
-        <div class="acquis-préstige">
-            <label class="préstige-input préstige-label" for="{{options.id}}-pc-préstige">{{localize "SR.préstige"}}</label>
-            <input type="text" class="préstige-input" title="{{localize "SR.préstigeTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.préstige" value="{{data.attributes.préstige}}"/>
+        <div class="acquis-prestige">
+            <label class="prestige-input prestige-label" for="{{options.id}}-pc-prestige">{{localize "SR.prestige"}}</label>
+            <input type="text" class="prestige-input" title="{{localize "SR.prestigeTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.prestige" value="{{data.attributes.prestige}}"/>
         </div>
     </div>
     <hr />
+    <div class="pouvoir-compendium">
+        <a class="open-compendium" data-compendium="Shaan_Renaissance.acquis"><i class="fa-solid fa-list"></i> {{localize "SR.AcquisCompendium"}}</a>
+    </div>
     <ol class="itemCategory-list directory-list">
         {{#each items.Category as |Category|}}
         <li class="item item-container itemCategory {{@key}}">

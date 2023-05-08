@@ -31,12 +31,11 @@ export default class ShaanCreatureSheet extends ActorSheet {
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
             if (typeof sheetData.data.attributes.hpEsprit !== "undefined") {
-                sheetData.data.attributes.hpEsprit.value = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
-                sheetData.data.attributes.hpAme.value = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
-                sheetData.data.attributes.hpCorps.value = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
-                let initiativeDomain = sheetData.data.attributes.initiative.statistic
-                let DomainScore = sheetData.data.skills[initiativeDomain].rank + sheetData.data.skills[initiativeDomain].temp
-                sheetData.data.attributes.initiative.value = DomainScore
+                // Initiative
+                const domain = sheetData.data.attributes.initiative.statistic,
+                domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
+                sheetData.data.attributes.initiative.value = domainValue
+                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
             }       
 
         console.log(sheetData);
@@ -151,7 +150,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
 
         let itemData = {
           name: "Nouvel Acquis",
-          type: type
+          type: type,
+          img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
         };
         return actor.createEmbeddedDocuments("Item", [itemData]);
 

@@ -283,7 +283,7 @@
     background: url(../assets/sheet/shaan-navig-horiz_bleu.webp);
     background-attachment: local;
     background-repeat: no-repeat;
-    background-size: auto 78px, cover;
+    background-size: 100% 78px, cover;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -916,14 +916,14 @@ a.spéTest label, a.spéTestNécr label {
     flex-direction: row;
     justify-content: space-between
 }
-.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money label, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-préstige label {
+.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money label, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-prestige label {
     color: var(--primary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money input, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-préstige input {
+.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money input, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-prestige input {
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);

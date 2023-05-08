@@ -424,7 +424,7 @@
 .actor.sheet.creature .creature-general { 
     display: grid;
     grid-template-columns: 0.4fr 0.4fr repeat(2, 1fr);
-    grid-template-rows: 0.5fr repeat(2, 1fr);
+    grid-template-rows: 0.5fr repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;}
 
@@ -447,8 +447,9 @@
 .actor.sheet.creature .creature-general .creature_char-details { grid-area: 1 / 3 / 2 / 5; font-family: var(--title); height: 30px;}
 .actor.sheet.creature .creature-general .creature_classe { grid-area: 2 / 3 / 3 / 4; }
 .actor.sheet.creature .creature-general .creature_role { grid-area: 2 / 4 / 3 / 5; }
-.actor.sheet.creature .creature-general .creature_poids { grid-area: 3 / 3 / 4 / 4; }
-.actor.sheet.creature .creature-general .creature_milieu { grid-area: 3 / 4 / 4 / 5; }
+.actor.sheet.creature .creature-general .creature_taille { grid-area: 3 / 3 / 4 / 4; }
+.actor.sheet.creature .creature-general .creature_poids { grid-area: 3 / 4 / 4 / 5; }
+.actor.sheet.creature .creature-general .creature_milieu { grid-area: 4 / 1 / 4 / 5; }
 
 .actor.sheet.creature .creature-general input {
     background-color: rgba(28, 28, 28, .1);

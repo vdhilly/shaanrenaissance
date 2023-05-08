@@ -1,14 +1,27 @@
 {
   "id": "Shaan_Renaissance",
   "title": "Shaan Renaissance",
-  "description": "Un système de jeu basé sur le jeu Shaan Renaissance d'Igor Polouchine édité par Origames",
+  "description": "Le système de jeu officiel basé sur le jeu Shaan Renaissance d'Igor Polouchine édité par Origames",
   "authors": [
     {
       "name": "Pouet",
       "flags": {}
+    },
+    {
+      "name": "Pretre",
+      "flags": {}
+    },
+    {
+      "name": "Colonelb",
+      "flags": {}
+    },
+    {
+      "name": "Shaan Renaissance",
+      "url": "https://www.shaan-rpg.com/",
+      "flags": {}
     }
   ],
-  "version": "0.60",
+  "version": "0.75",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291",
@@ -93,6 +106,7 @@
   "gridDistance": 5,
   "gridUnits": "m",
   "initiative": "1d10 + @attributes.initiative.value",
+  "url": "https://github.com/YoimPouet/Shaan_Renaissance",
   "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
   "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"
 }

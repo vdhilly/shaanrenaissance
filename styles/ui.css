@@ -33,6 +33,12 @@
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    position: center;
+}
+.chat-message .dice-roll.domainTest .domainDice .die img {
+    width: 80px;
+    display: flex;
+    margin: 0;
 }
 .chat-message .dice-roll.domainTest .domainDice .Esprit { grid-area: 1 / 1 / 2 / 2; justify-self: center;}
 .chat-message .dice-roll.domainTest .domainDice .Ame { grid-area: 1 / 2 / 2 / 3; justify-self: center;}
@@ -59,9 +65,15 @@
 .chat-message .dice-roll.necroseTest .domainDice .Nécrose { grid-area: 1 / 1 / 2 / 2; justify-self: center; }
 .chat-message .dice-roll.necroseTest .domainDice .Nécrose img, .chat-message .dice-roll.necroseTest .domainDiceH .Nécrose img {
     border: 0;
+    width: 80px;
+    display: flex;
+    margin: 0;
 }
 .chat-message .dice-roll.necroseTest .domainDice .Esprit img, .chat-message .dice-roll.necroseTest .domainDiceH .Esprit img {
     border: 0;
+    width: 80px;
+    display: flex;
+    margin: 0;
 }
 .chat-message .dice-roll.necroseTest .domainDiceH {
     display: grid;
@@ -78,4 +90,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 5px;
+}
+
+
+/* SETTINGS */
+
+.system-info a {
+    margin-left: 3px;
+    margin-right: 3px;
+    text-transform: uppercase;
 }
