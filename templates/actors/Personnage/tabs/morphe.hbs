@@ -1,3 +1,7 @@
 <div class="tab morphe" data-group="primary" data-tab="morphe">
-    test
+    <a class="item-create" id="graft-add"><i class="fa-solid fa-microchip"></i></a>
+
+    {{#each morpheModules as |module|}}
+        {{module.name}}
+    {{/each}}
 </div>

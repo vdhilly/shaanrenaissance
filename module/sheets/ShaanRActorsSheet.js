@@ -35,18 +35,19 @@ export default class ShaanRActorsSheet extends ActorSheet {
 
             if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
                 sheetData.items.Category = {},
-                sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" }),
+                sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" && item.system.morphe == false}),
                 sheetData.items.Category.Armimales = actorData.items.filter(function (item) { return item.type == "Armimale" }),
                 sheetData.items.Category.Artefacts = actorData.items.filter(function (item) { return item.type == "Artefact" }),
                 sheetData.items.Category.Manuscrits = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
-                sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" }),
-                sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" }),
+                sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" && item.system.morphe == false}),
+                sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" && item.system.morphe == false}),
                 sheetData.items.Category.Relations = actorData.items.filter(function (item) { return item.type == "Relation" }),
                 sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
-                sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" }),
+                sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" && item.system.morphe == false}),
                 sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
                 sheetData.items.Category.Bâtiments = actorData.items.filter(function (item) { return item.type == "Bâtiment" });
                 sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
+                sheetData.morpheModules = actorData.items.filter(function (item) { return item.system.morphe == true && item.type == "Protection" || item.system.morphe == true && item.type == "Outil" || item.system.morphe == true && item.type == "Armement" || item.system.morphe == true && item.type == "Technologie"})
 
                 sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
                 sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
@@ -125,7 +126,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
             }
 
-            console.log(game.actors.get(actorData._id).getRollData());
         console.log(sheetData);
         return sheetData;
     }
@@ -256,6 +256,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const transportBtn = event.target.closest("#Transports-add")
         const batimentBtn = event.target.closest("#Bâtiments-add")
         const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
+        const graftAddBtn = event.target.closest("#graft-add")
+        
 
         if(magicTrihnBtn) {
             let itemData = {
@@ -449,6 +451,77 @@ export default class ShaanRActorsSheet extends ActorSheet {
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
         this.actor.sheet.render();
+
+        if (graftAddBtn) {
+            let actor = this.actor
+            const actorData = this.actor.toObject(!1)
+            const itemsF = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+
+            graftCreate({
+                actor: actor,
+                items: itemsF
+            })
+            async function graftCreate ({
+                actor = null,
+                items = null
+            } = {}) { 
+                let item
+                let actorId = actor._id
+                let checkOptions = await GetGraftOptions ({item})
+    
+                if (checkOptions.cancelled) {
+                    return;
+                }
+                
+                item = checkOptions.item
+                const actorData = actor ? actor : null;
+                const itemF = game.actors.get(actorId).items.get(item)
+                itemF.system.morphe = true
+                console.log(actorData)
+                console.log(itemF)
+                actor.sheet.render()
+                return actor
+                
+                
+            
+            async function GetGraftOptions({
+                item = null,
+                template = "systems/Shaan_Renaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
+                    const actorData = actor
+                    actorData.itemsNotGraft = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+                    const html = await renderTemplate(template, { actor, item });
+    
+                    return new Promise(resolve => {
+                        const data = {
+                            title: game.i18n.format("Greffe de module"),
+                            content: html,
+                            actor: actorData,
+                            buttons: {
+                                normal: {
+                                  label: game.i18n.localize("chat.actions.graft"),
+                                  callback: html => resolve(_processGraftCreateOptions(html[0].querySelector("form")))
+                                },
+                                cancel: {
+                                  label: game.i18n.localize("chat.actions.cancel"),
+                                  callback: html => resolve({ cancelled: true })
+                                }
+                              },
+                              default: "normal",
+                              close: () => resolve({ cancelled: true }),
+                        };
+                        new Dialog(data, null).render(true);
+                    });
+            }
+            function _processGraftCreateOptions(form) {
+                return {
+                    item: form.item?.value
+                }
+            }
+            
+        }
+        
+        }
+
     }
     _onItemEdit(event) {
         event.preventDefault();

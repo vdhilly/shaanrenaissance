@@ -224,7 +224,6 @@ export default class ShaanNPCSheet extends ActorSheet {
 
         type = checkOptions.type
 
-        // console.log(type)
         let itemData = {
           name: "Nouvel Acquis",
           type: type,
@@ -259,9 +258,7 @@ export default class ShaanNPCSheet extends ActorSheet {
                           default: "normal",
                           close: () => resolve({ cancelled: true }),
                         };
-                        console.log(data)
                         new Dialog(data,null).render(true);
-            
                       });
             }
             function _processAcquisCreateOptions(form) {
@@ -270,7 +267,6 @@ export default class ShaanNPCSheet extends ActorSheet {
                 }
               }
         }
-        this.actor.sheet.render() 
     }
     }
     

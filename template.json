@@ -1425,12 +1425,16 @@
                 "voie":0,
                 "speed":0,
                 "protéction":0
+            },
+            "morphe": {
+                "morphe": false
             }
         },
         "Armement": {
             "templates": [
                 "common",
-                "acquis"
+                "acquis",
+                "morphe"
             ]
         },
         "Armimale": {
@@ -1456,13 +1460,15 @@
         "Outil": {
             "templates": [
                 "common",
-                "acquis"
+                "acquis",
+                "morphe"
             ]
         },
         "Protection": {
             "templates": [
                 "common",
-                "acquis"
+                "acquis",
+                "morphe"
             ]
         },
         "Relation": {
@@ -1480,7 +1486,8 @@
         "Technologie": {
             "templates": [
                 "common",
-                "acquis"
+                "acquis",
+                "morphe"
             ]
         },
         "Transport": {

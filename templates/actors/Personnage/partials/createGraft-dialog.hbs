@@ -1,0 +1,12 @@
+<form>
+  <div class="form-group">
+    <label>Acquis à greffer</label>
+    <select name="item" value="{{item}}">
+    {{#select item}}
+      {{#each actor.itemsNotGraft as |itemGraft|}}
+      <option value="{{itemGraft._id}}">{{itemGraft.name}}</option> 
+      {{/each}}
+    {{/select}}
+    </select>
+  </div>
+</form>
