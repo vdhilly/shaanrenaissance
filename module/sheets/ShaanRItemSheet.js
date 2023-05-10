@@ -6,7 +6,7 @@ export default class ShaanRItemSheet extends ItemSheet {
         const options = super.defaultOptions;
         return options.width = 691, options.height = 500, options
     }
-    async getData(options = this.options) {
+    getData(options = this.options) {
         options.id || (options.id = this.id);
         const itemData = this.item.toObject(!1),
             sheetData = {
