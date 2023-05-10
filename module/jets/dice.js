@@ -68,18 +68,41 @@ export async function domainTest ({
         break;
       }
     }
-    const  spéBonus = données.bonus
-    const spéAcquis = données.acquis
+    let spéBonusF
+    let spéAcquisF
 
-    let rollData = {
-      ...actorData,
-      domain: domain,
-      domainLevel: domainLevel,
-      spéBonus: spéBonus,
-      spéAcquis: spéAcquis,
-      spécialisation: spé,
-      difficulty: difficulty
-    };
+    if(spé == "pur") {
+      spéBonusF = 0
+      spéAcquisF = 0
+    }
+    else {
+      spéBonusF = données.bonus
+      spéAcquisF = données.acquis
+    }
+
+    let rollData 
+    if (spé == "pur") {
+      rollData = {
+        ...actorData,
+        domain: domain,
+        domainLevel: domainLevel,
+        spécialisation: spé,
+        difficulty: difficulty,
+        isPure: true
+      };
+    }
+    else {
+      rollData = {
+        ...actorData,
+        domain: domain,
+        domainLevel: domainLevel,
+        spéBonus: spéBonusF,
+        spéAcquis: spéAcquisF,
+        spécialisation: spé,
+        difficulty: difficulty,
+        isPure: false
+      };
+    }
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
     // rollResult.toMessage()
     if (sendMessage) {
@@ -278,19 +301,41 @@ export async function necroseTest ({
         break;
       }
     }
-    const  spéBonus = données.bonus
-    const spéAcquis = données.acquis
+    let spéBonusF
+    let spéAcquisF
 
-  let rollData = {
-    ...actorData,
-    domain: domain,
-    race: raceName,
-    domainLevel: domainLevel,
-    spéBonus: spéBonus,
-    spéAcquis: spéAcquis,
-    spécialisation: spé,
-    difficulty: difficulty
-  };
+    if(spé == "pur") {
+      spéBonusF = 0
+      spéAcquisF = 0
+    }
+    else {
+      spéBonusF = données.bonus
+      spéAcquisF = données.acquis
+    }
+
+    let rollData 
+    if (spé == "pur") {
+      rollData = {
+        ...actorData,
+        domain: domain,
+        domainLevel: domainLevel,
+        spécialisation: spé,
+        difficulty: difficulty,
+        isPure: true
+      };
+    }
+    else {
+      rollData = {
+        ...actorData,
+        domain: domain,
+        domainLevel: domainLevel,
+        spéBonus: spéBonusF,
+        spéAcquis: spéAcquisF,
+        spécialisation: spé,
+        difficulty: difficulty,
+        isPure: false
+      };
+    }
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {

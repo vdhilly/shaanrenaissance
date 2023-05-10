@@ -14,6 +14,7 @@
   <div class="form-group">
     <label>{{localize "chat.domainTest.options.spécialisation"}}</label>
     <select name="spécialisation" value="{{spécialisation}}">
+      <option value="pur">{{localize "SR.jetPur"}}</option>
       {{#each actor.system.skills as |domainItem|}}
       <optgroup label="{{@key}}">
           {{#each domainItem.specialisations as |spé|}}

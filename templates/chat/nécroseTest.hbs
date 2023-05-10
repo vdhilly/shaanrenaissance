@@ -40,9 +40,11 @@
     <hr/>
     <div class="domainInfos">
       <span>{{localize "chat.domainTest.options.domain"}} {{roll.data.domain}} - {{roll.data.domainLevel}}</span>
+      {{#ifeq roll.data.isPure false}}
       <span>{{localize "chat.domainTest.options.spécialisation"}} {{localize roll.data.spécialisation}}</span>
       <span>{{localize "chat.domainTest.options.bonus"}}: {{#ifeq roll.data.spéBonus null}}+ 0{{/ifeq}}{{#if roll.data.spéBonus }}+ {{roll.data.spéBonus}}{{/if}}</span>
       <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ {{roll.data.spéAcquis }}{{/if}}</span>
+      {{/ifeq}}
     </div>
 </div>
 
