@@ -132,6 +132,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     activateListeners(html) {
         if (this.isEditable) {
             html.find(".item-create").click(this._onItemCreate.bind(this));
+            html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));  
             const title = $(".sheet-navigation .active").attr("title");
