@@ -1,0 +1,20 @@
+<div class="SR pouvoir-chat chat-card" data-actor-id="{{actorID}}">
+    <header>
+        <img class="pouvoir-image" src="{{pouvoirData.img}}">
+        <h2 class="pouvoir-name">
+            {{pouvoirData.name}}
+        </h2>
+    </header>
+    <div class="pouvoir-infos">
+        <span class="label">{{localize "SR.pouvoirType"}}: </span><span class="detail">{{pouvoirData.system.PouvoirType.value}}</span><br/>
+        <span class="label">{{localize "SR.pouvoirFréquence"}}: </span><span class="detail">{{pouvoirData.system.fréquence.value}}</span><br/>
+        <span class="label">{{localize "SR.pouvoirActivation"}}: </span><span class="detail">{{pouvoirData.system.activation.value}}</span><br/>
+        <span class="label">{{localize "SR.pouvoirDurée"}}: </span><span class="detail">{{pouvoirData.system.durée.value}}</span><br/>
+        <span class="label">{{localize "SR.Portée"}}: </span><span class="detail">{{pouvoirData.system.portée}}</span><br/>
+        <span class="label">{{localize "SR.pouvoirNbcibles"}}: </span><span class="detail">{{pouvoirData.system.nbcibles.value}}</span><br/>
+        <span class="label">{{localize "SR.pouvoirScore"}}: </span><span class="detail">{{pouvoirData.system.score.value}}</span><br/>
+        <span class="label">{{localize "SR.Résumé"}}: </span><span class="detail">{{pouvoirData.system.résumé.value}}</span><br/>
+        <hr/>
+        <span class="label">{{localize "SR.Déscription"}}: </span><span class="detail">{{pouvoirData.system.description.value}}</span><br/>
+    </div>
+</div>

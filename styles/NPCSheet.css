@@ -539,7 +539,7 @@
 .actor.sheet.npc .liste-items li .acquis-header {
     display: grid;
     grid: "acquis-item-img acquis-item-name acquis-item-controls";
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 10% 75% 15%;
 }
 .actor.sheet.npc .liste-items .acquis-header img {
     grid-area: acquis-item-img;

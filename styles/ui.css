@@ -115,3 +115,40 @@
     margin-right: 3px;
     text-transform: uppercase;
 }
+
+
+/* POUVOIR CHAT */
+
+.chat-message .pouvoir-chat header{
+    display: grid;
+    grid-template-columns: 19% 81%;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 3px;
+}
+.chat-message .pouvoir-chat header img {
+    border: none;
+    margin-right: 10px;
+}
+.chat-message .pouvoir-chat header h2 {
+    border: none;
+    text-transform: uppercase;
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+}
+.chat-message .pouvoir-chat .pouvoir-infos {
+    margin-top: 5px;
+}
+.chat-message .pouvoir-chat .pouvoir-infos .label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+.chat-message .pouvoir-chat .pouvoir-infos .detail {
+    font: 600 var(--font-size-14) var(--body-serif)
+}
