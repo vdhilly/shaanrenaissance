@@ -576,6 +576,8 @@
         }
     },
     "SR": {
+        "SymbioseRéussite": "Symbiose",
+        "SymbioseEchec": "Symbiose des Limbes",
         "jetPur": "Jet Pur",
         "PouvoirCompendium": "Pouvoirs",
         "AcquisCompendium": "Acquis",

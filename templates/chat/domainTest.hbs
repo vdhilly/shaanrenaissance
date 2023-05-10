@@ -28,6 +28,16 @@
 {{/with}}
     </div>
     <hr/>
+    {{#ifnoteq roll.symbiose "Not"}}
+    <div class="symbiose {{#ifeq roll.symbiose "Réussite"}}Réussite{{/ifeq}} {{#ifeq roll.symbiose "Echec"}}Echec{{/ifeq}}">
+      {{#ifeq roll.symbiose "Réussite"}}
+        <span class="SymbioseRéussite">{{localize "SR.SymbioseRéussite"}}</span>
+      {{/ifeq}}
+      {{#ifeq roll.symbiose "Echec"}}
+        <span class="SymbioseEchec">{{localize "SR.SymbioseEchec"}}</span>
+      {{/ifeq}}
+    </div>
+    {{/ifnoteq}}
     <div class="domainInfos">
       <span>{{localize "chat.domainTest.options.domain"}} {{roll.data.domain}} - {{roll.data.domainLevel}}</span>
       {{#ifeq roll.data.isPure false}}

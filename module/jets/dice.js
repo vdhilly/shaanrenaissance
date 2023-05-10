@@ -58,7 +58,6 @@ export async function domainTest ({
     let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
     const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
-    console.log(domainLevel)
     let spéDomain
     let données
     for (const [category, details] of Object.entries(actorData.skills)) {
@@ -104,6 +103,21 @@ export async function domainTest ({
       };
     }
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+    
+    let dice = rollResult.dice
+    let déCorps = rollResult.dice[dice.length - 3]
+    let déAme = rollResult.dice[dice.length - 2 ]
+    let déEsprit = rollResult.dice[dice.length - 1 ]
+  
+    if(déCorps.total == déAme.total && déAme.total == déEsprit.total && déEsprit != 0) {
+      rollResult.symbiose = "Réussite"
+    }
+    else if (déCorps == déAme.total && déAme.total == déEsprit.total && déEsprit == 0) {
+      rollResult.symbiose = "Echec"
+    }
+    else {
+      rollResult.symbiose = "Not"
+    }
     // rollResult.toMessage()
     if (sendMessage) {
       RollToCustomMessage(actor, rollResult, messageTemplate, {
@@ -190,9 +204,25 @@ export async function SpéTest ({
     spécialisation: spécialisation,
     spéBonus: spéBonus,
     spéAcquis: spéAcquis,
-    difficulty: difficulty
+    difficulty: difficulty,
+    isPure: false
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
+
+  let dice = rollResult.dice
+  let déCorps = rollResult.dice[dice.length - 3]
+  let déAme = rollResult.dice[dice.length - 2 ]
+  let déEsprit = rollResult.dice[dice.length - 1 ]
+
+  if(déCorps.total == déAme.total && déAme.total == déEsprit.total && déEsprit != 0) {
+    rollResult.symbiose = "Réussite"
+  }
+  else if (déCorps == déAme.total && déAme.total == déEsprit.total && déEsprit == 0) {
+    rollResult.symbiose = "Echec"
+  }
+  else {
+    rollResult.symbiose = "Not"
+  }
 
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {

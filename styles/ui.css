@@ -92,6 +92,21 @@
     margin-top: 5px;
 }
 
+.chat-message .dice-roll .symbiose {
+    text-align: center;
+    height: 20px;
+    font: 700 var(--font-size-14) var(--sans-serif);
+    text-transform: uppercase
+}
+.chat-message .dice-roll .symbiose.Réussite {
+    background: #328021;
+    color: white;
+}
+.chat-message .dice-roll .symbiose.Echec {
+    background: rgb(40, 38, 38);
+    color: white;
+}
+
 
 /* SETTINGS */
 
