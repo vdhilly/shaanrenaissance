@@ -512,11 +512,54 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         };
                         new Dialog(data, null).render(true);
                     });
+    _onPouvoirChat(event) {
+        event.preventDefault();
+        let element = event.target
+        let itemId = element.closest(".item").dataset.itemId;
+        let actor = this.actor
+        let item = actor.items.get(itemId)
+
+        PouvoirChat({
+            actor: actor,
+            pouvoir: item
+        })
+
+        async function PouvoirChat({
+            actor = null,
+            pouvoir = null,
+            extraMessageData = {},
+            sendMessage = true
+        } = {}) {
+            const messageTemplate = "systems/Shaan_Renaissance/templates/chat/pouvoir-chat.hbs";
+
+            if(sendMessage) {
+                ToCustomMessage(actor, pouvoir, messageTemplate, {
+                    ...extraMessageData,
+                    actorID: actor.uuid
+                })
             }
             function _processGraftCreateOptions(form) {
                 return {
                     item: form.item?.value
+
+            async function ToCustomMessage(actor = null, pouvoir, template, extraData) {
+                let templateContext = {
+                    ...extraData,
+                    pouvoirData: pouvoir
+                };
+                console.log(templateContext)
+                console.log(pouvoir)
+
+                let chatData = {
+                    user: game.user.id,
+                    speaker: ChatMessage.getSpeaker({actor}),
+                    content: await renderTemplate(template, templateContext),
+                    sound: CONFIG.sounds.notification,
+                    type: CONST.CHAT_MESSAGE_TYPES.OTHER
                 }
+                console.log(chatData)
+
+                ChatMessage.create(chatData)
             }
             
         }
