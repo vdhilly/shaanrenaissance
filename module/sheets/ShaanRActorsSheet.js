@@ -258,7 +258,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
         const batimentBtn = event.target.closest("#Bâtiments-add")
         const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
         const graftAddBtn = event.target.closest("#graft-add")
-        
 
         if(magicTrihnBtn) {
             let itemData = {
@@ -453,65 +452,75 @@ export default class ShaanRActorsSheet extends ActorSheet {
         }
         this.actor.sheet.render();
 
-        if (graftAddBtn) {
-            let actor = this.actor
-            const actorData = this.actor.toObject(!1)
-            const itemsF = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+        // if (graftAddBtn) {
+        //     let actor = this.actor
+        //     const actorData = this.actor.toObject(!1)
+        //     const itemsF = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
 
-            graftCreate({
-                actor: actor,
-                items: itemsF
-            })
-            async function graftCreate ({
-                actor = null,
-                items = null
-            } = {}) { 
-                let item
-                let actorId = actor._id
-                let checkOptions = await GetGraftOptions ({item})
+        //     graftCreate({
+        //         actor: actor,
+        //         items: itemsF
+        //     })
+        //     async function graftCreate ({
+        //         actor = null,
+        //         items = null
+        //     } = {}) { 
+        //         let item
+        //         let actorId = actor._id
+        //         let checkOptions = await GetGraftOptions ({item})
     
-                if (checkOptions.cancelled) {
-                    return;
-                }
+        //         if (checkOptions.cancelled) {
+        //             return;
+        //         }
                 
-                item = checkOptions.item
-                const actorData = actor ? actor : null;
-                const itemF = game.actors.get(actorId).items.get(item)
-                itemF.system.morphe = true
-                console.log(actorData)
-                console.log(itemF)
-                actor.sheet.render()
-                return actor
-                
+        //         item = checkOptions.item
+        //         const actorData = actor ? actor : null;
+        //         const itemF = actor.items.get(item)
+        //         itemF.system.morphe = true
+        //         actor.sheet.render()
+        //         console.log(itemF)
+        //         return itemF
                 
             
-            async function GetGraftOptions({
-                item = null,
-                template = "systems/Shaan_Renaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
-                    const actorData = actor
-                    actorData.itemsNotGraft = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
-                    const html = await renderTemplate(template, { actor, item });
+        //     async function GetGraftOptions({
+        //         item = null,
+        //         template = "systems/Shaan_Renaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
+        //             const actorData = actor
+        //             actorData.itemsNotGraft = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+        //             const html = await renderTemplate(template, { actor, item });
     
-                    return new Promise(resolve => {
-                        const data = {
-                            title: game.i18n.format("Greffe de module"),
-                            content: html,
-                            actor: actorData,
-                            buttons: {
-                                normal: {
-                                  label: game.i18n.localize("chat.actions.graft"),
-                                  callback: html => resolve(_processGraftCreateOptions(html[0].querySelector("form")))
-                                },
-                                cancel: {
-                                  label: game.i18n.localize("chat.actions.cancel"),
-                                  callback: html => resolve({ cancelled: true })
-                                }
-                              },
-                              default: "normal",
-                              close: () => resolve({ cancelled: true }),
-                        };
-                        new Dialog(data, null).render(true);
-                    });
+        //             return new Promise(resolve => {
+        //                 const data = {
+        //                     title: game.i18n.format("Greffe de module"),
+        //                     content: html,
+        //                     actor: actorData,
+        //                     buttons: {
+        //                         normal: {
+        //                           label: game.i18n.localize("chat.actions.graft"),
+        //                           callback: html => resolve(_processGraftCreateOptions(html[0].querySelector("form")))
+        //                         },
+        //                         cancel: {
+        //                           label: game.i18n.localize("chat.actions.cancel"),
+        //                           callback: html => resolve({ cancelled: true })
+        //                         }
+        //                       },
+        //                       default: "normal",
+        //                       close: () => resolve({ cancelled: true }),
+        //                 };
+        //                 new Dialog(data, null).render(true);
+        //             });
+        //     }
+        //     function _processGraftCreateOptions(form) {
+        //         return {
+        //             item: form.item?.value
+        //         }
+        //     }
+            
+        // }
+        
+        // }
+
+    }
     _onPouvoirChat(event) {
         event.preventDefault();
         let element = event.target
@@ -538,9 +547,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     actorID: actor.uuid
                 })
             }
-            function _processGraftCreateOptions(form) {
-                return {
-                    item: form.item?.value
 
             async function ToCustomMessage(actor = null, pouvoir, template, extraData) {
                 let templateContext = {
@@ -561,11 +567,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
 
                 ChatMessage.create(chatData)
             }
-            
         }
-        
-        }
-
     }
     _onItemEdit(event) {
         event.preventDefault();
