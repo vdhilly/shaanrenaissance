@@ -204,6 +204,30 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
+Hooks.on("renderTokenHUD", (async (hud, $html, token) => {
+  const html = $html[0];
+  const actor = game.actors.get(token.actorId);
+  console.log(actor)
+  console.log(html)
+  console.log(hud)
+  console.log(token)
+  token.bar1.value = actor.system.attributes.hpEsprit.temp
+  token.bar2.value = actor.system.attributes.hpAme.temp
+  token.bar3 = {}
+  token.bar3.value = actor.system.attributes.hpCorps.temp
+
+  const hpBars = await renderTemplate('systems/Shaan_Renaissance/templates/Token/token-hpBars.hbs', {actor: actor, data: actor.system, attributes: actor.system.attributes})
+
+  const topDiv = document.createElement('div');
+  console.log(topDiv)
+  topDiv.classList.add('top');
+  topDiv.innerHTML = hpBars;
+  html.append(topDiv);
+
+  return token
+  console.log(html)
+}))
+
 // Hooks.on("renderItemDirectory", (async (__app, $html) => {
 //   const html = $html[0]
 //   const createButtonFind = $(html).find("button.create-document")

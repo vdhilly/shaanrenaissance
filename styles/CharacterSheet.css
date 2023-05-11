@@ -145,7 +145,7 @@ h3 {
     font-weight: 400;
     padding-left: 3px;
 }
-.actor.sheet.character .sidebar .sidebar_title h2 a {
+.actor.sheet .sidebar .sidebar_title h2 a {
     float: right;
 }
 .actor.sheet.character aside .logo {
