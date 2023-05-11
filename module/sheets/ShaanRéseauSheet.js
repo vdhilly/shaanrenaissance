@@ -72,6 +72,7 @@ export default class ShaanRéseauSheet extends ActorSheet {
         activateListeners(html) {
             if (this.isEditable) {
                 html.find(".item-create").click(this._onItemCreate.bind(this));
+                html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
                 html.find(".item-edit").click(this._onItemEdit.bind(this));
                 html.find(".item-delete").click(this._onItemDelete.bind(this));  
                 const title = $(".sheet-navigation .active").attr("title");
@@ -362,6 +363,54 @@ export default class ShaanRéseauSheet extends ActorSheet {
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
             }
             this.actor.sheet.render();
+        }
+        _onPouvoirChat(event) {
+            event.preventDefault();
+            let element = event.target
+            let itemId = element.closest(".item").dataset.itemId;
+            let actor = this.actor
+            let item = actor.items.get(itemId)
+    
+            PouvoirChat({
+                actor: actor,
+                pouvoir: item
+            })
+    
+            async function PouvoirChat({
+                actor = null,
+                pouvoir = null,
+                extraMessageData = {},
+                sendMessage = true
+            } = {}) {
+                const messageTemplate = "systems/Shaan_Renaissance/templates/chat/pouvoir-chat.hbs";
+    
+                if(sendMessage) {
+                    ToCustomMessage(actor, pouvoir, messageTemplate, {
+                        ...extraMessageData,
+                        actorID: actor.uuid
+                    })
+                }
+    
+                async function ToCustomMessage(actor = null, pouvoir, template, extraData) {
+                    let templateContext = {
+                        ...extraData,
+                        pouvoirData: pouvoir
+                    };
+                    console.log(templateContext)
+                    console.log(pouvoir)
+    
+                    let chatData = {
+                        user: game.user.id,
+                        speaker: ChatMessage.getSpeaker({actor}),
+                        content: await renderTemplate(template, templateContext),
+                        sound: CONFIG.sounds.notification,
+                        type: CONST.CHAT_MESSAGE_TYPES.OTHER
+                    }
+                    console.log(chatData)
+    
+                    ChatMessage.create(chatData)
+                }
+            }
         }
         _onItemEdit(event) {
             event.preventDefault();
