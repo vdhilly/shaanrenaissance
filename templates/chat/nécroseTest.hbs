@@ -46,6 +46,9 @@
       <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ {{roll.data.spéAcquis }}{{/if}}</span>
       {{/ifeq}}
     </div>
+      {{#if roll.data.difficulty}}
+        <span>{{localize "chat.domainTest.options.difficulty"}} {{roll.data.difficulty}}</span>
+      {{/if}}
 </div>
 
 </div>
