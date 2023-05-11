@@ -21,7 +21,7 @@
       "flags": {}
     }
   ],
-  "version": "0.80",
+  "version": "0.81",
   "compatibility": {
     "minimum": "10",
     "verified": "10.291",
