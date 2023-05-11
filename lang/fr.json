@@ -71,7 +71,8 @@
         "Role": "Rôle",
         "Milieu": "Milieu",
         "primaire": "Primaire",
-        "secondaire": "Secondaire"
+        "secondaire": "Secondaire",
+        "Modules": "Modules"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -451,7 +452,8 @@
         "actions": {
             "roll": "Lancer",
             "cancel": "Annuler",
-            "create": "Créer"
+            "create": "Créer",
+            "graft": "Greffer"
         },
         "initiative": {
             "title": "Jet d'Initiative",
