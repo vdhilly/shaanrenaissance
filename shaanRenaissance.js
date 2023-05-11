@@ -204,5 +204,32 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
+// Hooks.on("renderItemDirectory", (async (__app, $html) => {
+//   const html = $html[0]
+//   const createButtonFind = $(html).find("button.create-document")
+//   const createButton = createButtonFind[0]
+//   createButton.removeEventListener("click", (ev => this._onCreateDocument(ev)))
+//   createButton.addEventListener("click", (() => {
+//     game.itemCreateDialog.render(!0)
+//   }))
+//   console.log(createButton)
+// })) 
+// class ItemCreateDialog extends FormApplication {
+//   static get defaultOptions() {
+//     return mergeObject(super.defaultOptions, {
+//       id:"dialog-item-create",
+//       title: game.i18n.localize("SETTINGS.ItemCreateDialog.label"),
+//       template: "systems/Shaan_Renaissance/templates/items/partials/item-create.hbs",
+//       width: 320,
+//       height: 173,
+//       resizable: !0,
+//       closeOnSubmit: false,
+//       submitOnChange: true,
+//       submitOnClose: false,
+//       classes: [...options.classes, "SR", "create-item"]
+//     })
+//   }
+// }
+// game.itemCreateDialog = new ItemCreateDialog
 
 });

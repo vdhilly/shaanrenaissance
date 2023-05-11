@@ -28,5 +28,4 @@ export default class ShaanRItemSheet extends ItemSheet {
         console.log(sheetData);
         return sheetData;
     }
-    
 }
