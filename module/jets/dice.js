@@ -124,7 +124,7 @@ export async function domainTest ({
         ...extraMessageData,
         domain: domain,
         spécialisation: spécialisation,
-        actorID: actor.uuid,
+        actorID: actor.uuid
       });
     }
 
@@ -154,11 +154,10 @@ export async function domainTest ({
                 }
               },
               default: "normal",
-              close: () => resolve({ cancelled: true }),
+              close: () => resolve({ cancelled: true })
             };
             
             new Dialog(data,null).render(true);
-
           });
         }
         function _processdomainTestOptions(form) {
@@ -543,4 +542,168 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
     console.log(rollResult)
 
     ChatMessage.create(chatData);
+}
+
+export async function RegenHP({
+  actor = null,
+  extraMessageData,
+  hp = null,
+  malusEsprit = null, 
+  malusAme = null,
+  malusCorps = null,
+  sendMessage = true
+} = {}) {
+  const actorData = actor ? actor.system : null;
+  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/regenHP-chat.hbs";
+  
+  let checkOptions = await GetRegenOptions({ malusEsprit, malusAme, malusCorps })
+
+  malusEsprit = checkOptions.malusEsprit;
+  malusAme = checkOptions.malusAme;
+  malusCorps = checkOptions.malusCorps;
+
+  let corps = "1d10[red] - @malusCorps";
+  let ame = "1d10[blue] - @malusAme";
+  let esprit = "1d10[yellow] - @malusAme";
+  let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
+
+  let rollData = {
+    actor,
+    hp,
+    malusEsprit,
+    malusAme,
+    malusCorps
+  }
+  let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+
+  let regenEsprit
+  if(rollResult.terms[0].rolls[2].dice[0].total == 10 ){
+    regenEsprit = (-1)
+  }
+  else {
+    regenEsprit = rollResult.terms[0].rolls[2].dice[0].total
+  }
+  let hpEspritF = hp.hpEsprit.temp + regenEsprit
+  if(hpEspritF > hp.hpEsprit.value){
+    hpEspritF = hp.hpEsprit.value
+  }
+  let regenAme
+  if(rollResult.terms[0].rolls[1].dice[0].total == 10 ){
+    regenAme = (-1)
+  }
+  else {
+    regenAme = rollResult.terms[0].rolls[1].dice[0].total
+  }
+  let hpAmeF = hp.hpAme.temp + regenAme
+  console.log(hpAmeF)
+  if(hpAmeF > hp.hpAme.value){
+    hpAmeF = hp.hpAme.value
+  }
+  let regenCorps
+  if(rollResult.terms[0].rolls[0].dice[0].total == 10 ){
+    regenEsprit = (-1)
+  }
+  else {
+    regenCorps = rollResult.terms[0].rolls[0].dice[0].total
+  }
+  let hpCorpsF = hp.hpCorps.temp + regenCorps
+
+  if(hpCorpsF > hp.hpCorps.value){
+    hpCorpsF = hp.hpCorps.value
+  }
+  hp.hpEsprit.temp = hpEspritF
+  hp.hpAme.temp = hpAmeF
+  hp.hpCorps.temp = hpCorpsF
+  actor.update({
+    system: {
+      attributes: {
+        hpEsprit: {
+          temp: hpEspritF
+        },
+        hpAme: {
+          temp: hpAmeF
+        },
+        hpCorps: {
+          temp: hpCorpsF
+        }
+      }
+    }
+  })
+  if(sendMessage) {
+    RegenToCustomMessage(actor, rollResult, messageTemplate, {
+      ...extraMessageData, 
+      actor: actor,
+      hp: hp,
+      regenEsprit,
+      regenAme,
+      regenCorps,
+      actorID: actor.uuid
+    })
+  }
+
+  async function RegenToCustomMessage(actor = null, rollResult, template, extraData) {
+    let templateContext = {
+      ...extraData,
+      actor: actor,
+      hp: hp,
+      regenEsprit,
+      regenAme,
+      regenCorps,
+      roll: rollResult,
+      tooltip: await rollResult.getTooltip()
+    };
+    console.log(templateContext)
+
+    let chatData = {
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({actor}),
+      content: await renderTemplate(template, templateContext),
+      sound: CONFIG.sounds.dice,
+      type: CONST.CHAT_MESSAGE_TYPES.OTHER
+    }
+    console.log(chatData)
+
+    ChatMessage.create(chatData);
+  }
+
+  async function GetRegenOptions({
+    hp = null,
+    malusEsprit = null,
+    malusAme = null,
+    malusCorps = null,
+    template = "systems/Shaan_Renaissance/templates/chat/regen-dialog.hbs"} = {}) {
+      const html = await renderTemplate(template, { actor, hp, malusEsprit, malusAme, malusCorps});
+      const actorData = actor.toObject(!1)
+      const config = CONFIG.shaanRenaissance;
+
+      return new Promise(resolve => {
+        const data = {
+          title: game.i18n.format("chat.regenHP.title"),
+          content: html,
+          hp: hp,
+          actor: actorData,
+          buttons: {
+            normal: {
+              label: game.i18n.localize("chat.actions.roll"),
+              callback: html => resolve(_processHPRegenOptions(html[0].querySelector("form")))
+            },
+            cancel: {
+              label: game.i18n.localize("chat.actions.cancel"),
+              callback: html => resolve({ cancelled: true })
+            }
+          },
+          default: "normal",
+          close: () => resolve({ cancelled: true })
+        }
+
+        new Dialog(data,null).render(true)
+      })
+    }
+    function _processHPRegenOptions(form) {
+      return {
+        malusEsprit: form.malusEsprit?.value,
+        malusAme: form.malusAme?.value,
+        malusCorps: form.malusCorps?.value
+      }
+    }
 }

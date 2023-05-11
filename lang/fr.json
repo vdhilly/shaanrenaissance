@@ -472,6 +472,12 @@
         },
         "necroseTest": {
             "title": "Test de Necrose"
+        },
+        "regenHP": {
+            "title": "Régénération",
+            "malusEsprit": "Malus d'Esprit",
+            "malusAme": "Malus d'Âme",
+            "malusCorps": "Malus de Corps"
         }
     },
     "SRCreation": {
@@ -578,6 +584,11 @@
         }
     },
     "SR": {
+        "regenHP-rest": "c'est reposé.",
+        "TrihnEsprit": "Trihn d'Esprit",
+        "TrihnAme": "Trihn d'Âme",
+        "TrihnCorps": "Trihn de Corps",
+        "RegenTitle":"Régénération (10H de sommeil ou 20H de repos)",
         "SymbioseRéussite": "Symbiose",
         "SymbioseEchec": "Symbiose des Limbes",
         "jetPur": "Jet Pur",
