@@ -131,7 +131,8 @@
 }
 .chat-message .pouvoir-chat header h2 {
     border: none;
-    text-transform: uppercase;
+    font-family: var(--sans-serif);
+    font-weight: 700;
     margin: 0;
     margin-left: 5px;
     align-self: center;
