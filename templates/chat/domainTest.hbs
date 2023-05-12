@@ -7,17 +7,17 @@
     {{#each data as |dice|}}
         {{#with dice.rolls as |die|}}
             {{#each die as |dieInfo|}}
-            {{#ifeq dieInfo.formula "1d10[yellow]"}}
+            {{#ifeq dieInfo.formula "1d10[Esprit]"}}
             <div class="die Esprit">
             <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
             </div>
             {{/ifeq}}
-            {{#ifeq dieInfo.formula "1d10[blue]"}}
+            {{#ifeq dieInfo.formula "1d10[Ame]"}}
             <div class="die Ame">
             <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Ame/d10_bleu_{{dieInfo.total}}.png">
             </div>
             {{/ifeq}}
-            {{#ifeq dieInfo.formula "1d10[red]"}}
+            {{#ifeq dieInfo.formula "1d10[Corps]"}}
             <div class="die Corps">
             <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Corps/d10_rouge_{{dieInfo.total}}.png">
             </div>
