@@ -73,7 +73,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         }
                     }
                 });
-                if(sheetData.data.attributes.isIndar === true) {
+                if(sheetData.data. attributes && sheetData.data.attributes.isIndar == true) {
                 sheetData.Race = lastElement
                 sheetData.RaceSecondaire = avantLastElement
                 }
