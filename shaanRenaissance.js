@@ -109,6 +109,14 @@ Hooks.once("init", function(){
     console.log ("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
     CONFIG.shaanRenaissance = shaanRenaissance;
+    CONFIG.fontDefinitions.ITCOfficinaSans = {
+      editor: !0,
+      fonts: [{
+        urls: ["systems/Shaan_Renaissance/fonts/itc-officina-sans-lt-bold.ttf"],
+        style: "normal",
+        weight: "700"
+      }]
+    }
 
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {
@@ -204,96 +212,90 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
-// Hooks.once("diceSoNiceReady", (dice3d => {
-//   if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
-//     var obj;
-//     dice3d.addSystem({
-//       id: "basic",
-//       name: "Shaan Renaissance",
-//       colorset: "Esprit"
-//     });
-//     dice3d.addDicePreset({
-//       type: "d10", 
-//       labels: ["systems/Shaan_Renaissance/dice/black/d10-1.webp", "systems/Shaan_Renaissance/dice/black/d10-2.webp", "systems/Shaan_Renaissance/dice/black/d10-3.webp", "systems/Shaan_Renaissance/dice/black/d10-4.webp", "systems/Shaan_Renaissance/dice/black/d10-5.webp", "systems/Shaan_Renaissance/dice/black/d10-6.webp", "systems/Shaan_Renaissance/dice/black/d10-7.webp", "systems/Shaan_Renaissance/dice/black/d10-8.webp", "systems/Shaan_Renaissance/dice/black/d10-9.webp", "systems/Shaan_Renaissance/dice/black/d10-10.webp"],
-//       system: "basic",
-//       colorset: ["Necrose", "Esprit", "Ame", "Corps"]
-//     }), dice3d.addTexture("Necrose", {
-//       name: "Shaan Nécrose",
-//       composite: "source-over",
-//       source: "systems/Shaan_Renaissance/dice/black/d10Black-texture.webp"
-//     }).then((() =>  {
-//       dice3d.addColorset({
-//         name: "Necrose",
-//         description: "Shaan Renaissance Nécrose",
-//         category: "Shaan Renaissance",
-//         texture: "Necrose",
-//         material: "metal",
-//         foreground: "#3e3d40",
-//         outline: "none",
-//         edge: "#3e3d40",
-//         visibility: "visible"
-//       }),
-//        dice3d.addTexture("Esprit", {
-//       name: "Shaan Esprit",
-//       composite: "source-over",
-//       source: "systems/Shaan_Renaissance/dice/yellow/d10Yellow-texture.webp"
-//     }).then((() => {
-//       dice3d.addColorset({
-//         name: "Esprit",
-//         description: "Shaan Renaissance Esprit",
-//         category: "Shaan Renaissance",
-//         texture: "Esprit",
-//         material: "metal",
-//         foreground: "#ffd500",
-//         outline: "none",
-//         edge: "#ffd500",
-//         visibility: "visible"
-//       })
-//     })),
-//     dice3d.addTexture("Ame", {
-//       name: "Shaan Ame",
-//       composite: "source-over",
-//       source: "systems/Shaan_Renaissance/dice/blue/d10Blue-texture.webp"
-//     }),
-//     dice3d.addTexture("Corps", {
-//       name: "Shaan Corps",
-//       composite: "source-over",
-//       source: "systems/Shaan_Renaissance/dice/red/d10Red-texture.webp"
-//     }),
-//       dice3d.addColorset({
-//         name: "Esprit",
-//         description: "Shaan Renaissance Esprit",
-//         category: "Shaan Renaissance",
-//         texture: "Esprit",
-//         material: "metal",
-//         foreground: "#ffd500",
-//         outline: "none",
-//         edge: "#ffd500",
-//         visibility: "visible"
-//       }),
-//       dice3d.addColorset({
-//         name: "Ame",
-//         description: "Shaan Renaissance Ame",
-//         category: "Shaan Renaissance",
-//         texture: "Ame",
-//         material: "metal",
-//         foreground: "#3e3d40",
-//         outline: "none",
-//         edge: "#3e3d40",
-//         visibility: "visible"
-//       }),
-//       dice3d.addColorset({
-//         name: "Corps",
-//         description: "Shaan Renaissance Corps",
-//         category: "Shaan Renaissance",
-//         texture: "Corps",
-//         material: "metal",
-//         foreground: "#3e3d40",
-//         outline: "none",
-//         edge: "#3e3d40",
-//         visibility: "visible"
-//       })
-//     }))
-//   }
-// }))
+Hooks.once("diceSoNiceReady", (dice3d => {
+  if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
+    var obj;
+    dice3d.addSystem({
+      id: "basic",
+      name: "Shaan Renaissance",
+      font: "systems/Shaan_Renaissance/fonts/itc-officina-sans-lt-bold.ttf"
+    });
+    dice3d.addDicePreset({
+      type: "d10",
+      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "systems/Shaan_Renaissance/dice/crane-blanc.png"],
+      system: "basic"
+    }), dice3d.addTexture("Necrose", {
+      name: "Shaan Nécrose",
+      composite: "source-over",
+      source: "systems/Shaan_Renaissance/dice/black/d10Black-texture.webp"
+    }).then((() =>  {
+      dice3d.addColorset({
+        name: "Necrose",
+        description: "Shaan Renaissance Nécrose",
+        category: "Shaan Renaissance",
+        texture: "Necrose",
+        material: "none",
+        foreground: "#ffffff",
+        outline: "none",
+        font: "ITCOfficinaSans",
+        edge: "#3e3d40",
+        visibility: "visible"
+      })
+    })),
+       dice3d.addTexture("Esprit", {
+      name: "Shaan Esprit",
+      composite: "source-over",
+      source: "systems/Shaan_Renaissance/dice/yellow/d10Yellow-texture.webp"
+    }).then((() => {
+      dice3d.addColorset({
+        name: "Esprit",
+        description: "Shaan Renaissance Esprit",
+        category: "Shaan Renaissance",
+        texture: "Esprit",
+        material: "none",
+        foreground: "#ffffff",
+        outline: "none",
+        font: "ITCOfficinaSans",
+        edge: "#d7b400",
+        visibility: "visible"
+      })
+    })),
+    dice3d.addTexture("Ame", {
+      name: "Shaan Ame",
+      composite: "source-over",
+      source: "systems/Shaan_Renaissance/dice/blue/d10Blue-texture.webp"
+    }).then((() => {
+      dice3d.addColorset({
+        name: "Ame",
+        description: "Shaan Renaissance Ame",
+        category: "Shaan Renaissance",
+        texture: "Ame",
+        material: "none",
+        foreground: "#ffffff",
+        outline: "none",
+        font: "ITCOfficinaSans",
+        edge: "#0058a3",
+        visibility: "visible"
+      })
+    })),
+    dice3d.addTexture("Corps", {
+      name: "Shaan Corps",
+      composite: "source-over",
+      source: "systems/Shaan_Renaissance/dice/red/d10Red-texture.webp"
+    }).then((() => {
+      dice3d.addColorset({
+        name: "Corps",
+        description: "Shaan Renaissance Corps",
+        category: "Shaan Renaissance",
+        texture: "Corps",
+        material: "none",
+        foreground: "#ffffff",
+        outline: "none",
+        font: "ITCOfficinaSans",
+        edge: "#e43525",
+        visibility: "visible"
+      })
+    }))
+  }
+}))
 });

@@ -59,9 +59,9 @@ export async function domainTest ({
     difficulty = checkOptions.difficulty;
 
 
-    let corps = "1d10[red]";
-    let ame = "1d10[blue]";
-    let esprit = "1d10[yellow]";
+    let corps = "1d10[Corps]";
+    let ame = "1d10[Ame]";
+    let esprit = "1d10[Esprit]";
     let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
     const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
@@ -202,9 +202,9 @@ export async function SpéTest ({
 
   difficulty = checkOptions.difficulty;
 
-  let corps = "1d10[red]";
-  let ame = "1d10[blue]";
-  let esprit = "1d10[yellow]";
+  let corps = "1d10[Corps]";
+  let ame = "1d10[Ame]";
+  let esprit = "1d10[Esprit]";
   let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
   let rollData = {
@@ -326,12 +326,12 @@ export async function necroseTest ({
   let rollFormula
 
   if(raceName == "Humain") {
-    let nécrose = "1d10[black]";
-    let esprit = "1d10[yellow]";
+    let nécrose = "1d10[Necrose]";
+    let esprit = "1d10[Esprit]";
     rollFormula = `{${nécrose}, ${esprit}}`;
   } 
   else{
-    let nécrose = "1d10[black]";
+    let nécrose = "1d10[Necrose]";
     rollFormula = `${nécrose}`;
   }
 
@@ -465,12 +465,12 @@ export async function SpéTestNécr ({
   let rollFormula
 
   if(raceName == "Humain") {
-    let nécrose = "1d10[black]";
-    let esprit = "1d10[yellow]";
+    let nécrose = "1d10[Necrose]";
+    let esprit = "1d10[Esprit]";
     rollFormula = `{${nécrose}, ${esprit}}`;
   }
   else{
-    let nécrose = "1d10[black]";
+    let nécrose = "1d10[Necrose]";
     rollFormula = `${nécrose}`;
   }
 
@@ -600,9 +600,9 @@ export async function RegenHP({
   malusAme = checkOptions.malusAme;
   malusCorps = checkOptions.malusCorps;
 
-  let corps = "1d10[red] - @malusCorps";
-  let ame = "1d10[blue] - @malusAme";
-  let esprit = "1d10[yellow] - @malusAme";
+  let corps = "1d10[Corps] - @malusCorps";
+  let ame = "1d10[Ame] - @malusAme";
+  let esprit = "1d10[Esprit] - @malusAme";
   let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
   let rollData = {
