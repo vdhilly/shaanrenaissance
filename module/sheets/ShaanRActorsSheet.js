@@ -60,13 +60,13 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 let avantLastElement = race[race.length - 2]
                 
                 race.forEach(element => {
-                    if(sheetData.data.attributes.isIndar === false) {
+                    if(sheetData.data.attributes && sheetData.data.attributes.isIndar === false) {
                         if(element != lastElement) {
                         let itemId = element._id
                         return this.actor.deleteEmbeddedDocuments("Item", [itemId])
                         }
                     }
-                    else if(sheetData.data.attributes.isIndar === true) {
+                    else if(sheetData.data.attributes && sheetData.data.attributes.isIndar === true) {
                         if(element != lastElement && element != avantLastElement) {
                             let itemId = element._id
                             return this.actor.deleteEmbeddedDocuments("Item", [itemId])
