@@ -105,7 +105,7 @@
   ],
   "gridDistance": 5,
   "gridUnits": "m",
-  "initiative": "1d10 + @attributes.initiative.value",
+  "initiative": "1d10 - 1 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/Shaan_Renaissance",
   "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
   "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"

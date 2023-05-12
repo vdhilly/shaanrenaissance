@@ -204,56 +204,96 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
-Hooks.on("renderTokenHUD", (async (hud, $html, token) => {
-  const html = $html[0];
-  const actor = game.actors.get(token.actorId);
-  console.log(actor)
-  console.log(html)
-  console.log(hud)
-  console.log(token)
-  token.bar1.value = actor.system.attributes.hpEsprit.temp
-  token.bar2.value = actor.system.attributes.hpAme.temp
-  token.bar3 = {}
-  token.bar3.value = actor.system.attributes.hpCorps.temp
-
-  const hpBars = await renderTemplate('systems/Shaan_Renaissance/templates/Token/token-hpBars.hbs', {actor: actor, data: actor.system, attributes: actor.system.attributes})
-
-  const topDiv = document.createElement('div');
-  console.log(topDiv)
-  topDiv.classList.add('top');
-  topDiv.innerHTML = hpBars;
-  html.append(topDiv);
-
-  return token
-  console.log(html)
-}))
-
-// Hooks.on("renderItemDirectory", (async (__app, $html) => {
-//   const html = $html[0]
-//   const createButtonFind = $(html).find("button.create-document")
-//   const createButton = createButtonFind[0]
-//   createButton.removeEventListener("click", (ev => this._onCreateDocument(ev)))
-//   createButton.addEventListener("click", (() => {
-//     game.itemCreateDialog.render(!0)
-//   }))
-//   console.log(createButton)
-// })) 
-// class ItemCreateDialog extends FormApplication {
-//   static get defaultOptions() {
-//     return mergeObject(super.defaultOptions, {
-//       id:"dialog-item-create",
-//       title: game.i18n.localize("SETTINGS.ItemCreateDialog.label"),
-//       template: "systems/Shaan_Renaissance/templates/items/partials/item-create.hbs",
-//       width: 320,
-//       height: 173,
-//       resizable: !0,
-//       closeOnSubmit: false,
-//       submitOnChange: true,
-//       submitOnClose: false,
-//       classes: [...options.classes, "SR", "create-item"]
-//     })
+// Hooks.once("diceSoNiceReady", (dice3d => {
+//   if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
+//     var obj;
+//     dice3d.addSystem({
+//       id: "basic",
+//       name: "Shaan Renaissance",
+//       colorset: "Esprit"
+//     });
+//     dice3d.addDicePreset({
+//       type: "d10", 
+//       labels: ["systems/Shaan_Renaissance/dice/black/d10-1.webp", "systems/Shaan_Renaissance/dice/black/d10-2.webp", "systems/Shaan_Renaissance/dice/black/d10-3.webp", "systems/Shaan_Renaissance/dice/black/d10-4.webp", "systems/Shaan_Renaissance/dice/black/d10-5.webp", "systems/Shaan_Renaissance/dice/black/d10-6.webp", "systems/Shaan_Renaissance/dice/black/d10-7.webp", "systems/Shaan_Renaissance/dice/black/d10-8.webp", "systems/Shaan_Renaissance/dice/black/d10-9.webp", "systems/Shaan_Renaissance/dice/black/d10-10.webp"],
+//       system: "basic",
+//       colorset: ["Necrose", "Esprit", "Ame", "Corps"]
+//     }), dice3d.addTexture("Necrose", {
+//       name: "Shaan Nécrose",
+//       composite: "source-over",
+//       source: "systems/Shaan_Renaissance/dice/black/d10Black-texture.webp"
+//     }).then((() =>  {
+//       dice3d.addColorset({
+//         name: "Necrose",
+//         description: "Shaan Renaissance Nécrose",
+//         category: "Shaan Renaissance",
+//         texture: "Necrose",
+//         material: "metal",
+//         foreground: "#3e3d40",
+//         outline: "none",
+//         edge: "#3e3d40",
+//         visibility: "visible"
+//       }),
+//        dice3d.addTexture("Esprit", {
+//       name: "Shaan Esprit",
+//       composite: "source-over",
+//       source: "systems/Shaan_Renaissance/dice/yellow/d10Yellow-texture.webp"
+//     }).then((() => {
+//       dice3d.addColorset({
+//         name: "Esprit",
+//         description: "Shaan Renaissance Esprit",
+//         category: "Shaan Renaissance",
+//         texture: "Esprit",
+//         material: "metal",
+//         foreground: "#ffd500",
+//         outline: "none",
+//         edge: "#ffd500",
+//         visibility: "visible"
+//       })
+//     })),
+//     dice3d.addTexture("Ame", {
+//       name: "Shaan Ame",
+//       composite: "source-over",
+//       source: "systems/Shaan_Renaissance/dice/blue/d10Blue-texture.webp"
+//     }),
+//     dice3d.addTexture("Corps", {
+//       name: "Shaan Corps",
+//       composite: "source-over",
+//       source: "systems/Shaan_Renaissance/dice/red/d10Red-texture.webp"
+//     }),
+//       dice3d.addColorset({
+//         name: "Esprit",
+//         description: "Shaan Renaissance Esprit",
+//         category: "Shaan Renaissance",
+//         texture: "Esprit",
+//         material: "metal",
+//         foreground: "#ffd500",
+//         outline: "none",
+//         edge: "#ffd500",
+//         visibility: "visible"
+//       }),
+//       dice3d.addColorset({
+//         name: "Ame",
+//         description: "Shaan Renaissance Ame",
+//         category: "Shaan Renaissance",
+//         texture: "Ame",
+//         material: "metal",
+//         foreground: "#3e3d40",
+//         outline: "none",
+//         edge: "#3e3d40",
+//         visibility: "visible"
+//       }),
+//       dice3d.addColorset({
+//         name: "Corps",
+//         description: "Shaan Renaissance Corps",
+//         category: "Shaan Renaissance",
+//         texture: "Corps",
+//         material: "metal",
+//         foreground: "#3e3d40",
+//         outline: "none",
+//         edge: "#3e3d40",
+//         visibility: "visible"
+//       })
+//     }))
 //   }
-// }
-// game.itemCreateDialog = new ItemCreateDialog
-
+// }))
 });

@@ -18,17 +18,24 @@ export async function Initiative({
         };
 
 
-    let rollresult = await new Roll(rollFormula, rollData).roll({async: true});
-
+    let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+    if(rollResult.dice[0].total == 10) {
+      rollResult._total = rollResult._total -10
+    }
+    let dice3d
+    if(game.dice3d != undefined) {
+      dice3d = game.dice3d.showForRoll(rollResult);
+      dice3d;
+    }
     if (sendMessage) {
-        RollToCustomMessage(actor, rollresult, messageTemplate, {
+        RollToCustomMessage(actor, rollResult, messageTemplate, {
           ...extraMessageData,
           domain: domain,
           domainLevel: domainLevel,
           actorID: actor.uuid,
         });
       }
-      return rollresult;
+      return rollResult;
     }
 export async function domainTest ({
     actor = null,
@@ -103,6 +110,11 @@ export async function domainTest ({
       };
     }
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+    let dice3d
+    if(game.dice3d != undefined) {
+      dice3d = game.dice3d.showForRoll(rollResult);
+      dice3d;
+    }
     
     let dice = rollResult.dice
     let déCorps = rollResult.dice[dice.length - 3]
@@ -118,7 +130,6 @@ export async function domainTest ({
     else {
       rollResult.symbiose = "Not"
     }
-    // rollResult.toMessage()
     if (sendMessage) {
       RollToCustomMessage(actor, rollResult, messageTemplate, {
         ...extraMessageData,
@@ -207,6 +218,11 @@ export async function SpéTest ({
     isPure: false
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
+  let dice3d
+  if(game.dice3d != undefined) {
+    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d;
+  }
 
   let dice = rollResult.dice
   let déCorps = rollResult.dice[dice.length - 3]
@@ -366,6 +382,12 @@ export async function necroseTest ({
       };
     }
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
+  let dice3d
+  if(game.dice3d != undefined) {
+    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d;
+  }
+
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
@@ -463,6 +485,11 @@ export async function SpéTestNécr ({
     difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
+  let dice3d
+  if(game.dice3d != undefined) {
+    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d;
+  }
 
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
@@ -531,13 +558,24 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
         roll: rollResult,
         tooltip: await rollResult.getTooltip()
     };
-
-    let chatData = {
+    let chatData
+    if(game.dice3d != undefined) {
+      chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({actor}),
         content: await renderTemplate(template, templateContext),
         sound: CONFIG.sounds.dice,
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
+      }
+    }
+    else {
+      chatData = {
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({actor}),
+        content: await renderTemplate(template, templateContext),
+        sound: CONFIG.sounds.dice,
+        type: CONST.CHAT_MESSAGE_TYPES.ROLL
+      }
     }
     console.log(rollResult)
 
@@ -575,6 +613,11 @@ export async function RegenHP({
     malusCorps
   }
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+  let dice3d
+  if(game.dice3d != undefined) {
+    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d;
+  }
 
   let regenEsprit
   if(rollResult.terms[0].rolls[2].dice[0].total == 10 ){
