@@ -178,7 +178,6 @@ export async function domainTest ({
               spécialisation: form.spécialisation?.value
             }
           }
-          // console.log(domain)
     }
 export async function SpéTest ({
   actor = null,
@@ -596,6 +595,10 @@ export async function RegenHP({
   
   let checkOptions = await GetRegenOptions({ malusEsprit, malusAme, malusCorps })
 
+  if(checkOptions.cancelled){
+    return;
+  }
+
   malusEsprit = checkOptions.malusEsprit;
   malusAme = checkOptions.malusAme;
   malusCorps = checkOptions.malusCorps;
@@ -626,9 +629,9 @@ export async function RegenHP({
   else {
     regenEsprit = rollResult.terms[0].rolls[2].dice[0].total
   }
-  let hpEspritF = hp.hpEsprit.temp + regenEsprit
-  if(hpEspritF > hp.hpEsprit.value){
-    hpEspritF = hp.hpEsprit.value
+  let hpEspritF = hp.hpEsprit.value + regenEsprit
+  if(hpEspritF > hp.hpEsprit.max){
+    hpEspritF = hp.hpEsprit.max
   }
   let regenAme
   if(rollResult.terms[0].rolls[1].dice[0].total == 10 ){
@@ -637,37 +640,37 @@ export async function RegenHP({
   else {
     regenAme = rollResult.terms[0].rolls[1].dice[0].total
   }
-  let hpAmeF = hp.hpAme.temp + regenAme
-  console.log(hpAmeF)
-  if(hpAmeF > hp.hpAme.value){
-    hpAmeF = hp.hpAme.value
+  let hpAmeF = hp.hpAme.value + regenAme
+  if(hpAmeF > hp.hpAme.max){
+    hpAmeF = hp.hpAme.max
   }
   let regenCorps
   if(rollResult.terms[0].rolls[0].dice[0].total == 10 ){
-    regenEsprit = (-1)
+    regenCorps = (-1)
   }
   else {
     regenCorps = rollResult.terms[0].rolls[0].dice[0].total
   }
-  let hpCorpsF = hp.hpCorps.temp + regenCorps
+  let hpCorpsF = hp.hpCorps.value + regenCorps
 
-  if(hpCorpsF > hp.hpCorps.value){
-    hpCorpsF = hp.hpCorps.value
+  if(hpCorpsF > hp.hpCorps.max){
+    hpCorpsF = hp.hpCorps.max
   }
-  hp.hpEsprit.temp = hpEspritF
-  hp.hpAme.temp = hpAmeF
-  hp.hpCorps.temp = hpCorpsF
+  console.log(hpEspritF, hpAmeF, hpCorpsF)
+  hp.hpEsprit.value = hpEspritF
+  hp.hpAme.value = hpAmeF
+  hp.hpCorps.value = hpCorpsF
   actor.update({
     system: {
       attributes: {
         hpEsprit: {
-          temp: hpEspritF
+          value: hpEspritF
         },
         hpAme: {
-          temp: hpAmeF
+          value: hpAmeF
         },
         hpCorps: {
-          temp: hpCorpsF
+          value: hpCorpsF
         }
       }
     }
@@ -695,7 +698,6 @@ export async function RegenHP({
       roll: rollResult,
       tooltip: await rollResult.getTooltip()
     };
-    console.log(templateContext)
 
     let chatData = {
       user: game.user.id,
@@ -704,7 +706,6 @@ export async function RegenHP({
       sound: CONFIG.sounds.dice,
       type: CONST.CHAT_MESSAGE_TYPES.OTHER
     }
-    console.log(chatData)
 
     ChatMessage.create(chatData);
   }
@@ -717,7 +718,6 @@ export async function RegenHP({
     template = "systems/Shaan_Renaissance/templates/chat/regen-dialog.hbs"} = {}) {
       const html = await renderTemplate(template, { actor, hp, malusEsprit, malusAme, malusCorps});
       const actorData = actor.toObject(!1)
-      const config = CONFIG.shaanRenaissance;
 
       return new Promise(resolve => {
         const data = {

@@ -10,32 +10,30 @@
         "templates": {
                 "common": {
                 "attributes": {
-                    "hp": {
-                        "hpEsprit": {
-                            "value": 0,
-                            "temp": 0,
-                            "max":0
-                        },
-                        "hpAme": {
-                            "value": 0,
-                            "temp": 0,
-                            "max":0
-                        },
-                        "hpCorps": {
-                            "value": 0,
-                            "temp": 0,
-                            "max":0
-                        },
-                        "préstige": 0,
-                        "credos": 0
-                    }},
+                    "hpEsprit": {
+                        "value": 0,
+                        "temp": 0,
+                        "max":0
+                    },
+                    "hpAme": {
+                        "value": 0,
+                        "temp": 0,
+                        "max":0
+                    },
+                    "hpCorps": {
+                        "value": 0,
+                        "temp": 0,
+                        "max":0
+                    },
+                    "préstige": 0,
+                    "credos": 0,
                     "initiative": {
                         "statistic": "Shaan",
                         "value":0
                     },
                     "isIndar": false,
                     "isMorph": false
-                },
+                }},
                 "spés":{
                     "skills": {
                         "Technique": {

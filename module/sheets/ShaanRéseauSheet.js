@@ -106,9 +106,9 @@ export default class ShaanRéseauSheet extends ActorSheet {
         _onRegen(event) {
             let actor = this.actor 
             let hp = actor.system.attributes
-            hp.hpEsprit.value = (Math.max(actor.system.skills.Technique.rank, actor.system.skills.Savoir.rank, actor.system.skills.Social.rank)) + (Math.min(actor.system.skills.Technique.rank, actor.system.skills.Savoir.rank, actor.system.skills.Social.rank))
-            hp.hpAme.value = (Math.max(actor.system.skills.Arts.rank, actor.system.skills.Shaan.rank, actor.system.skills.Magie.rank)) + (Math.min(actor.system.skills.Arts.rank, actor.system.skills.Shaan.rank, actor.system.skills.Magie.rank))
-            hp.hpCorps.value = (Math.max(actor.system.skills.Rituels.rank, actor.system.skills.Survie.rank, actor.system.skills.Combat.rank)) + (Math.min(actor.system.skills.Rituels.rank, actor.system.skills.Survie.rank, actor.system.skills.Combat.rank))
+            hp.hpEsprit.max = (Math.max(actor.system.skills.Technique.rank, actor.system.skills.Savoir.rank, actor.system.skills.Social.rank)) + (Math.min(actor.system.skills.Technique.rank, actor.system.skills.Savoir.rank, actor.system.skills.Social.rank))
+            hp.hpAme.max = (Math.max(actor.system.skills.Arts.rank, actor.system.skills.Shaan.rank, actor.system.skills.Magie.rank)) + (Math.min(actor.system.skills.Arts.rank, actor.system.skills.Shaan.rank, actor.system.skills.Magie.rank))
+            hp.hpCorps.max = (Math.max(actor.system.skills.Rituels.rank, actor.system.skills.Survie.rank, actor.system.skills.Combat.rank)) + (Math.min(actor.system.skills.Rituels.rank, actor.system.skills.Survie.rank, actor.system.skills.Combat.rank))
     
             Dice.RegenHP({
                 actor,
