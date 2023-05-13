@@ -24,7 +24,7 @@ export async function Initiative({
     }
     let dice3d
     if(game.dice3d != undefined) {
-      dice3d = game.dice3d.showForRoll(rollResult);
+      dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
       dice3d;
     }
     if (sendMessage) {
@@ -112,7 +112,7 @@ export async function domainTest ({
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
     let dice3d
     if(game.dice3d != undefined) {
-      dice3d = game.dice3d.showForRoll(rollResult);
+      dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
       dice3d;
     }
     
@@ -220,7 +220,7 @@ export async function SpéTest ({
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
   let dice3d
   if(game.dice3d != undefined) {
-    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
     dice3d;
   }
 
@@ -384,7 +384,7 @@ export async function necroseTest ({
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
   let dice3d
   if(game.dice3d != undefined) {
-    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
     dice3d;
   }
 
@@ -487,7 +487,7 @@ export async function SpéTestNécr ({
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
   let dice3d
   if(game.dice3d != undefined) {
-    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
     dice3d;
   }
 
@@ -615,7 +615,7 @@ export async function RegenHP({
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
   let dice3d
   if(game.dice3d != undefined) {
-    dice3d = game.dice3d.showForRoll(rollResult);
+    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
     dice3d;
   }
 
