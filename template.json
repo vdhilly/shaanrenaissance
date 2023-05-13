@@ -13,15 +13,18 @@
                     "hp": {
                         "hpEsprit": {
                             "value": 0,
-                            "temp": 0
+                            "temp": 0,
+                            "max":0
                         },
                         "hpAme": {
                             "value": 0,
-                            "temp": 0
+                            "temp": 0,
+                            "max":0
                         },
                         "hpCorps": {
                             "value": 0,
-                            "temp": 0
+                            "temp": 0,
+                            "max":0
                         },
                         "préstige": 0,
                         "credos": 0
