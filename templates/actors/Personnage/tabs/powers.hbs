@@ -46,7 +46,16 @@
                     </div>
                 </div>
                 <div class="résumé">
-                    <i>{{localize "SRLabels.résumé"}} : {{pouvoir.system.résumé.value}}</i>
+                    <i>{{localize "SRLabels.résumé"}} : {{pouvoir.system.résumé.value}}
+                    {{#ifnoteq pouvoir.system.activation.value ""}}
+                    <br/>
+                    {{localize "SR.pouvoirActivation"}}: {{pouvoir.system.activation.value}}
+                    {{/ifnoteq}}
+                    {{#ifnoteq pouvoir.system.fréquence.value ""}} 
+                     | {{localize "SR.pouvoirFréquence"}}: {{pouvoir.system.fréquence.value}}
+                    {{/ifnoteq}}
+                    </i>
+                    
                 </div>
                 </li>
                 {{/each}}
