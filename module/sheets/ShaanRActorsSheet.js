@@ -136,7 +136,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.data.attributes.initiative.value = domainValue
                 game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
             }
-
+        console.log(actorData)
         console.log(sheetData);
         return sheetData;
     }

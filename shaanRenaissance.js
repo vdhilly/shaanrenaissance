@@ -7,100 +7,10 @@ import ShaanTrihnSheet from "./module/sheets/ShaanTrihnSheet.js";
 import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
 import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
-
+import { templatePaths } from "./module/preloadTemplates.js";
 
 async function preloadHandleBarTemplates() 
 {
-    // register templates parts
-    const templatePaths = [
-      // Character sheet
-      // Sidebar
-      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/health.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/initiative.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/jets.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/reserve.hbs",
-
-      // Content
-      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/biography.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/general.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/powers.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/background.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/domaincircle.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/specialisations.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/partials/ressources.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/morphe.hbs",
-
-      // NPC
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/cercle.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/general.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/powers.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/bio.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/specialisations.hbs",
-      "systems/Shaan_Renaissance/templates/actors/PNJ/partials/armor.hbs",
-
-      // Creature
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/cercle.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/general.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/powers.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/bio.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/specialisations.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Créature/partials/armor.hbs",
-
-      // Shaani
-      // Sidebar
-      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/health.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/armor.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/header.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/initiative.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/jets.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/sidebar/reserve.hbs",
-
-      // Content
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/details.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/general.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/magic.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/symbioses.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/tabs/powers.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/background.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/domaincircle.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/specialisations.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Shaani/partials/ressources.hbs",
-
-      // Réseau
-      // Sidebar
-      "systems/Shaan_Renaissance/templates/actors/Réseau/sidebar/health.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/sidebar/armor.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/partials/header.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/sidebar/initiative.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/sidebar/jets.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/sidebar/reserve.hbs",
-
-      // Content
-      "systems/Shaan_Renaissance/templates/actors/Réseau/tabs/acquis.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/tabs/details.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/tabs/general.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/tabs/magic.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/tabs/powers.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/partials/background.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/partials/domaincircle.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/partials/specialisations.hbs",
-      "systems/Shaan_Renaissance/templates/actors/Réseau/partials/ressources.hbs",
-
-      // Item sheets
-      "systems/Shaan_Renaissance/templates/items/partials/header.hbs",
-
-      // JETS
-      "systems/Shaan_Renaissance/templates/chat/initiative.hbs",
-      "systems/Shaan_Renaissance/templates/chat/domainTest-dialog.hbs"
-
-    ];
     return loadTemplates( templatePaths );
 };
 
@@ -212,6 +122,176 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
+// Token
+Token.prototype._drawAttributeBars = SRTokenDrawAttributeBars;
+Token.prototype._onUpdateBarAttributes = SROnUpdateBarAttributes;
+
+Token.prototype._onCreate =  (function () {
+  let superFunction = Token.prototype._onCreate;
+  return async function() {
+      await superFunction.apply(this, arguments);
+
+      this.document.bar1 = {attribute: "attributes.hpEsprit"};
+      this.document.bar2 = {attribute: "attributes.hpAme"};
+      this.document.bar3 = {attribute: "attributes.hpCorps"};
+  }
+})();
+
+Token.prototype._onUpdate = (function () {
+  const superFunction = Token.prototype._onUpdate;
+  return async function() {
+      superFunction.apply(this, arguments);
+
+      this.drawBars();
+  }
+})();
+Token.prototype.drawBars = (function() {
+  let superFunction = Token.prototype.drawBars;
+  return function() {
+    return SRTokenDrawBars.apply(this, arguments);
+  };
+
+})();
+
+// Override the actual draw call so we can apply our own positioning and styling to the bars
+Token.prototype._drawBar = (function() {
+  let superFunction = Token.prototype._drawBar;
+  return function() {
+    return drawSRBar.apply(this, arguments);
+  };
+
+})();
+Token.prototype.getBarAttribute = (function () {
+  let superFunction = Token.prototype.getBarAttribute;
+  return function (barName, { alternative } = {}) {
+    return getSRTokenBarAttribute.apply(this, arguments);
+  }
+})();
+let defaultTokenConfigOptions = TokenConfig.defaultOptions;
+Object.defineProperty(TokenConfig, "defaultOptions", {
+    get: function () {
+        return mergeObject(defaultTokenConfigOptions, {
+            template: "systems/Shaan_Renaissance/templates/scene/tokenConfig.hbs"
+        });
+    }
+});
+let defaultTokenHUDOptions = TokenHUD.defaultOptions;
+Object.defineProperty(TokenHUD, "defaultOptions", {
+    get: function () {
+        return mergeObject(defaultTokenHUDOptions, {
+            template: "systems/Shaan_Renaissance/templates/hud/tokenHUD.hbs"
+        });
+    }
+});
+TokenHUD.prototype.getData = (function () {
+  const superFunction = TokenHUD.prototype.getData;
+  return function (options) {
+      let result = superFunction.apply(this, arguments);
+
+      let bar1 = this.object.getBarAttribute("bar1");
+      let bar2 = this.object.getBarAttribute("bar2");
+      let bar3 = this.object.getBarAttribute("bar3");
+
+      // result.displayBar1 = bar1 && (bar1.type !== "none");
+      // result.bar1 = {attribute: bar1.attribute}
+      // result.bar1Data = bar1;
+      // result.displayBar2 = bar2 && (bar2.type !== "none");
+      // result.bar2 = {attribute: bar2.attribute}
+      // result.bar2Data = bar2;
+      result.displayBar3 = bar3 && (bar3.type !== "none");
+      result.bar3 = {attribute: bar3.attribute}
+      result.bar3Data = bar3;
+
+
+      return result;
+  };
+})();
+function SRTokenDrawAttributeBars() {
+  const bars = new PIXI.Container();
+  bars.bar1 = bars.addChild(new PIXI.Graphics());
+  bars.bar2 = bars.addChild(new PIXI.Graphics());
+  bars.bar3 = bars.addChild(new PIXI.Graphics());
+  return bars;
+}
+function SRTokenDrawBars() {
+  if (!this.actor || (this.document.displayBars === CONST.TOKEN_DISPLAY_MODES.NONE)) return;
+  ["bar1", "bar2", "bar3"].forEach((b, i) => {
+      if (!this.hasOwnProperty("bars"))
+      return;
+      console.log(this)
+      const bar = this.bars[b];
+      const attr = this.getBarAttribute(b);
+      if (!attr || (attr.type !== "bar")) return bar.visible = false;
+      this._drawBar(i, bar, attr);
+      bar.visible = false;
+  });
+}
+function SROnUpdateBarAttributes(updateData) {
+  const update = ["bar1", "bar2", "bar3"].some(b => {
+    let bar = this.data[b];
+    if (!bar)
+      return false;
+
+    return bar.attribute && hasProperty(updateData, "data."+bar.attribute);
+  });
+
+  if (update)
+      this.object.drawBars();
+}
+function drawSRBar(number, bar, data) {
+  const val = Number(data.value);
+  const pct = Math.clamped(val, 0, data.max) / data.max;
+  let h = Math.max((canvas.dimensions.size / 12), 8);
+  if (this.document.height >= 2) h *= 1.6;  // Enlarge the bar for large tokens
+
+  // Stacked bars, all atop one another
+  let yPositions = {
+      0: this.h - (3 * h),
+      1: this.h - (2 * h),
+      2: this.h - h
+  };
+
+  // Let's do at least one good thing by making these colors configurable
+  let colors = {
+      0: "#b8985a",
+      1: "#4263a3",
+      2: "#c95b40"
+  }
+
+  let color = colors[number];
+
+  if(bar) {  
+    bar.clear()
+    .beginFill(0x000000, 0.5)
+    .lineStyle(2, 0x000000, 0.9)
+    .drawRoundedRect(0, 0, this.w, h, 3)
+    .beginFill(color, 0.8)
+    .lineStyle(1, 0x000000, 0.8)
+    .drawRoundedRect(1, 1, pct * (this.w - 2), h - 2, 2);
+
+    // Set position
+    let posY = yPositions[number];
+    bar.position.set(0, posY);
+  }
+}
+function getSRTokenBarAttribute(barName, { alternative } = {}) {
+  let attribute;
+  if (barName === "bar1") {
+      attribute = "attributes.hpEsprit";
+  } else if (barName === "bar2") {
+      attribute = "attributes.hpAme";
+  } else if (barName === "bar3") {
+      attribute = "attributes.hpCorps";
+  }
+  let data = getProperty(this.actor.system, attribute);
+  data = duplicate(data);
+  return {
+      type: "bar",
+      attribute: attribute,
+      value: parseInt(data.value || 0),
+      max: parseInt(data.max || 0)
+  }
+}
 Hooks.once("diceSoNiceReady", (dice3d => {
   if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
     var obj;
