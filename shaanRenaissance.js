@@ -8,7 +8,6 @@ import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
 import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
 import { templatePaths } from "./module/preloadTemplates.js";
-import { SRToken } from "./module/token.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -123,8 +122,7 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
-// Token
-Hooks.once("init", SRToken());
+// DsN
 Hooks.once("diceSoNiceReady", (dice3d => {
   if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
     var obj;
