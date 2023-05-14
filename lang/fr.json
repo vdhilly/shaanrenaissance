@@ -448,6 +448,10 @@
             }
         }
     },
+    "TOKEN": {
+        "ResourceBar3A": "Bar 3 Attribute",
+        "ResourceBar3D": "Bar 3 Data"
+    },
     "chat": {
         "actions": {
             "roll": "Lancer",

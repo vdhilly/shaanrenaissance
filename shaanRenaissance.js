@@ -130,19 +130,28 @@ Token.prototype._onCreate =  (function () {
   let superFunction = Token.prototype._onCreate;
   return async function() {
       await superFunction.apply(this, arguments);
-
       this.document.bar1 = {attribute: "attributes.hpEsprit"};
       this.document.bar2 = {attribute: "attributes.hpAme"};
       this.document.bar3 = {attribute: "attributes.hpCorps"};
+
+  }
+})();
+TokenDocument.prototype._onCreate =  (function () {
+  let superFunction = TokenDocument.prototype._onCreate;
+  return async function() {
+      await superFunction.apply(this, arguments);
+      this.bar1 = {attribute: "attributes.hpEsprit"};
+      this.bar2 = {attribute: "attributes.hpAme"};
+      this.bar3 = {attribute: "attributes.hpCorps"};
   }
 })();
 
-Token.prototype._onUpdate = (function () {
-  const superFunction = Token.prototype._onUpdate;
+TokenDocument.prototype._onUpdate = (function () {
+  const superFunction = TokenDocument.prototype._onUpdate;
   return async function() {
       superFunction.apply(this, arguments);
 
-      this.drawBars();
+      this.object.drawBars();
   }
 })();
 Token.prototype.drawBars = (function() {
@@ -164,6 +173,9 @@ Token.prototype._drawBar = (function() {
 Token.prototype.getBarAttribute = (function () {
   let superFunction = Token.prototype.getBarAttribute;
   return function (barName, { alternative } = {}) {
+    if(!this.actor){
+      return;
+    }
     return getSRTokenBarAttribute.apply(this, arguments);
   }
 })();
@@ -175,6 +187,22 @@ Object.defineProperty(TokenConfig, "defaultOptions", {
         });
     }
 });
+TokenConfig.prototype.getData = (function () {
+  const superFunction = TokenConfig.prototype.getData;
+  console.log(superFunction)
+  return function (options) {
+    let result = superFunction.apply(this, arguments);
+    console.log(this.object)
+    let bar3 = this.object.getBarAttribute("bar3");
+    console.log(bar3)
+
+      result.displayBar3 = bar3 && (bar3.type !== "none");
+      result.bar3 = {attribute: ""}
+      result.bar3Data = bar3;
+    console.log(result)
+    return result
+  }
+})();
 let defaultTokenHUDOptions = TokenHUD.defaultOptions;
 Object.defineProperty(TokenHUD, "defaultOptions", {
     get: function () {
@@ -188,16 +216,8 @@ TokenHUD.prototype.getData = (function () {
   return function (options) {
       let result = superFunction.apply(this, arguments);
 
-      let bar1 = this.object.getBarAttribute("bar1");
-      let bar2 = this.object.getBarAttribute("bar2");
       let bar3 = this.object.getBarAttribute("bar3");
 
-      // result.displayBar1 = bar1 && (bar1.type !== "none");
-      // result.bar1 = {attribute: bar1.attribute}
-      // result.bar1Data = bar1;
-      // result.displayBar2 = bar2 && (bar2.type !== "none");
-      // result.bar2 = {attribute: bar2.attribute}
-      // result.bar2Data = bar2;
       result.displayBar3 = bar3 && (bar3.type !== "none");
       result.bar3 = {attribute: bar3.attribute}
       result.bar3Data = bar3;
@@ -206,6 +226,7 @@ TokenHUD.prototype.getData = (function () {
       return result;
   };
 })();
+
 function SRTokenDrawAttributeBars() {
   const bars = new PIXI.Container();
   bars.bar1 = bars.addChild(new PIXI.Graphics());
@@ -218,12 +239,11 @@ function SRTokenDrawBars() {
   ["bar1", "bar2", "bar3"].forEach((b, i) => {
       if (!this.hasOwnProperty("bars"))
       return;
-      console.log(this)
       const bar = this.bars[b];
       const attr = this.getBarAttribute(b);
       if (!attr || (attr.type !== "bar")) return bar.visible = false;
       this._drawBar(i, bar, attr);
-      bar.visible = false;
+      bar.visible = true;
   });
 }
 function SROnUpdateBarAttributes(updateData) {
@@ -239,6 +259,8 @@ function SROnUpdateBarAttributes(updateData) {
       this.object.drawBars();
 }
 function drawSRBar(number, bar, data) {
+  
+
   const val = Number(data.value);
   const pct = Math.clamped(val, 0, data.max) / data.max;
   let h = Math.max((canvas.dimensions.size / 12), 8);
@@ -260,7 +282,6 @@ function drawSRBar(number, bar, data) {
 
   let color = colors[number];
 
-  if(bar) {  
     bar.clear()
     .beginFill(0x000000, 0.5)
     .lineStyle(2, 0x000000, 0.9)
@@ -272,7 +293,6 @@ function drawSRBar(number, bar, data) {
     // Set position
     let posY = yPositions[number];
     bar.position.set(0, posY);
-  }
 }
 function getSRTokenBarAttribute(barName, { alternative } = {}) {
   let attribute;
