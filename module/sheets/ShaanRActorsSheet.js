@@ -26,6 +26,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 actor: actorData,
                 data: actorData.system,
                 items: actorData.items,
+                prototypeToken: actorData.prototypeToken,
                 config: CONFIG.shaanRenaissance,
                 user: {
                     isGM: game.user.isGM
