@@ -3,23 +3,15 @@ export function SRToken() {
 Token.prototype._drawAttributeBars = SRTokenDrawAttributeBars;
 Token.prototype._onUpdateBarAttributes = SROnUpdateBarAttributes;
 
-Token.prototype._onCreate =  (function () {
-  let superFunction = Token.prototype._onCreate;
-  return async function() {
-      await superFunction.apply(this, arguments);
-      this.document.bar1 = {attribute: "attributes.hpEsprit"};
-      this.document.bar2 = {attribute: "attributes.hpAme"};
-      this.document.bar3 = {attribute: "attributes.hpCorps"};
-
-  }
-})();
 TokenDocument.prototype._onCreate =  (function () {
   let superFunction = TokenDocument.prototype._onCreate;
   return async function() {
       await superFunction.apply(this, arguments);
-      this.bar1 = {attribute: "attributes.hpEsprit"};
-      this.bar2 = {attribute: "attributes.hpAme"};
-      this.bar3 = {attribute: "attributes.hpCorps"};
+      this.update({
+        bar1: {attribute: "attributes.hpEsprit"},
+        bar2: {attribute: "attributes.hpAme"},
+        bar3: {attribute: "attributes.hpCorps"}
+      })
   }
 })();
 
@@ -65,20 +57,10 @@ Object.defineProperty(TokenConfig, "defaultOptions", {
     }
 });
 TokenConfig.prototype.getData = (function () {
-  const superFunction = TokenConfig.prototype.getData;
-  console.log(superFunction)
-  return function (options) {
-    let result = superFunction.apply(this, arguments);
-    console.log(this.object)
-    let bar3 = this.object.getBarAttribute("bar3");
-    console.log(bar3)
-
-      result.displayBar3 = bar3 && (bar3.type !== "none");
-      result.bar3 = {attribute: ""}
-      result.bar3Data = bar3;
-    console.log(result)
-    return result
-  }
+    let superFunction = TokenConfig.prototype.getData;
+    return function (options) {
+        return SRTokenConfigGetData.apply(this,arguments);
+    }
 })();
 let defaultTokenHUDOptions = TokenHUD.defaultOptions;
 Object.defineProperty(TokenHUD, "defaultOptions", {
