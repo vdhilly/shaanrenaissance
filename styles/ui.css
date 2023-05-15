@@ -27,7 +27,7 @@
 }
 #token-hud .col.middle .attribute.bar1 input {
     position: absolute;
-    left: -50%;
+    left: -25%;
     top: 97%;
     color: black;
 }
@@ -40,7 +40,7 @@
 }
 #token-hud .col.middle .attribute.bar2 input {
     position: absolute;
-    left: -1%;
+    left: 24%;
     top: 95%;
     color: black;
 }
@@ -53,7 +53,7 @@
 }
 #token-hud .col.middle .attribute.bar3 input {
     position: absolute;
-    left: 52%;
+    left: 77%;
     top: 95%;
     color: black;
 }
@@ -61,6 +61,21 @@
     border: none;
     background: none;
     box-shadow: none;
+    width:50px;
+}
+.placeable-hud input[type="number"] {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px var(--color-shadow-dark);
+    border: 1px solid var(--color-border-dark-3);
+    color: var(--color-text-light-2);
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    border-radius: 8px;
+    font-size: var(--font-size-28);
+    font-weight: bold;
+    pointer-events: all;
 }
 
 /* INITIATIVE */

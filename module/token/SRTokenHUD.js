@@ -9,7 +9,6 @@ export class SRTokenHUD extends TokenHUD {
     
     getData(options={}) {
         let data = super.getData(options);
-        console.log(this.object)  
         this.object.document.bar1 = {attribute: "attributes.hpEsprit"}
         this.object.document.bar2 = {attribute: "attributes.hpAme"}
         this.object.document.bar3 = {attribute: "attributes.hpCorps"}      
@@ -17,6 +16,12 @@ export class SRTokenHUD extends TokenHUD {
         const bar2 = this.object.document.getBarAttribute("bar2");
         const bar3 = this.object.document.getBarAttribute("bar3");
         console.log(bar1,bar2,bar3)
+        let bars = [bar1, bar2, bar3];
+        bars.forEach((b) => {
+            if(b.value > b.max) {
+                b.value = b.max
+            }
+        })
         data = foundry.utils.mergeObject(data, {
             canConfigure: game.user.can("TOKEN_CONFIGURE"),
             canToggleCombat: ui.combat !== null,
