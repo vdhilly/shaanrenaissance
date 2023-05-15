@@ -61,7 +61,7 @@
     border: none;
     background: none;
     box-shadow: none;
-    width:50px;
+    width:50%;
 }
 .placeable-hud input[type="number"] {
     width: 100%;
@@ -69,7 +69,7 @@
     box-shadow: 0 0 15px var(--color-shadow-dark);
     border: 1px solid var(--color-border-dark-3);
     color: var(--color-text-light-2);
-    height: 40px;
+    height: 20%;
     line-height: 40px;
     margin: 0;
     border-radius: 8px;

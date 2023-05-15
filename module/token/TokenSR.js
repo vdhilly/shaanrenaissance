@@ -28,9 +28,9 @@ export class TokenSR extends Token {
       
         // TO DO - 
         let colors = {
-            0: "0xb8985a",
-            1: "0x4263a3",
-            2: "0xc95b40"
+            0: "0xf8ed00",
+            1: "0x5cc8fc",
+            2: "0xdd5616"
         }
       
         let color = colors[number];
