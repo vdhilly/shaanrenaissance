@@ -8,15 +8,17 @@ export class ActorSR extends Actor {
   }
   async modifyTokenAttribute(attribute, value, isDelta=false, isBar=true) {
     const current = foundry.utils.getProperty(this.system, attribute);
-    console.log(current)
     // Determine the updates to make to the actor data
     let updates;
     if ( isBar ) {
-      if (isDelta) value = Math.clamped(0, Number(current.value) + value, current.max);
+      value = Math.clamped(-30, Number(current.value) + value, current.max);
       updates = {[`system.${attribute}.value`]: value};
     } else {
-      if ( isDelta ) value = Number(current) + value;
+      value = Number(current) + value;
       updates = {[`system.${attribute}`]: value};
     }
+
+    const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates);
+    return allowed !== false ? this.update(updates) : this;
   }
 }
