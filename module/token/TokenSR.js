@@ -1,18 +1,18 @@
 export class TokenSR extends Token {
     drawBars() {
         if (!this.actor || (this.document.displayBars === CONST.TOKEN_DISPLAY_MODES.NONE)) return;
-        console.log(this)
         // TO DO - Ajouter bar3
-        ["bar1", "bar2", "bar3"].forEach((b, i) => {
-            if (!this.hasOwnProperty("bars"))
+        const bars = ["bar1", "bar2", "bar3"]
+        bars.forEach((b, i) => {
+            if(!this.hasOwnProperty("bars"))
             return;
-            console.log("oui")
+
             const bar = this.bars[b];
             const attr = this.getBarAttribute(b);
             if (!attr || (attr.type !== "bar")) return bar.visible = false;
             this._drawBar(i, bar, attr);
             bar.visible = true;
-        });
+        })
     }
     _drawBar(number, bar, data) {
         const val = Number(data.value);
@@ -28,9 +28,9 @@ export class TokenSR extends Token {
       
         // TO DO - 
         let colors = {
-            0: "#b8985a",
-            1: "#4263a3",
-            2: "#c95b40"
+            0: "0xb8985a",
+            1: "0x4263a3",
+            2: "0xc95b40"
         }
       
         let color = colors[number];
@@ -53,5 +53,25 @@ export class TokenSR extends Token {
         bars.bar2 = bars.addChild(new PIXI.Graphics());
         bars.bar3 = bars.addChild(new PIXI.Graphics());
         return bars;
+    }
+    getBarAttribute(barName, { alternative } = {}) {
+        let stat;
+        if (barName === "bar1") {
+            stat = "attributes.hpEsprit";
+        } else if (barName === "bar2") {
+            stat = "attributes.hpAme";
+        } else if (barName === "bar3") {
+            stat = "attributes.hpCorps";
+        }
+        
+        let data = getProperty(this.actor.system, stat);
+        data = duplicate(data);
+    
+        return {
+            type: "bar",
+            attribute: stat,
+            value: parseInt(data.value || 0),
+            max: parseInt(data.max || 0)
+        }
     }
 }       

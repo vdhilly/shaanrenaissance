@@ -5,7 +5,6 @@ export class TokenDocumentSR extends TokenDocument {
         this.bar1 = {attribute: "attributes.hpEsprit"}
         this.bar2 = {attribute: "attributes.hpAme"}
         this.bar3 = {attribute: "attributes.hpCorps"}
-        console.log(this, data)
     }
     _onUpdate(data, options, userId) {
         // Update references to original state so that resetting the preview does not clobber these updates in-memory.
@@ -23,7 +22,6 @@ export class TokenDocumentSR extends TokenDocument {
         }
     
         // Post-update the Token itself
-        console.log(this)
         return super._onUpdate(data, options, userId);
       }
 }

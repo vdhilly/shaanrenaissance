@@ -130,6 +130,8 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
+// Token
+
 // DsN
 Hooks.once("diceSoNiceReady", (dice3d => {
   if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
