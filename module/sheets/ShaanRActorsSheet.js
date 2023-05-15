@@ -187,6 +187,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".spéTest").click(this._onSpéTest.bind(this));
             html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
             html.find(".regen-hp").click(this._onRegen.bind(this)); 
+            html.find(".select-input").focus(this._onInputSelect);
             const title = $(".sheet-navigation .active").attr("title");
                 title && html.find(".navigation-title").text(title)                  
                         html.find(".sheet-navigation").on("mouseover", ".item,.manage-tabs", (event => {
@@ -205,6 +206,9 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         }))
         super.activateListeners(html);
         }
+    }
+    _onInputSelect(event){
+        event.currentTarget.select();
     }
     _onRegen(event) {
         let actor = this.actor 
