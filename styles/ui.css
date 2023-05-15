@@ -9,7 +9,59 @@
 }
 
 
-/* JETS */
+/* TOKEN HUD */
+#token-hud {
+    display: flex;
+}
+
+#token-hud .SRTokenStats {
+    display: flex;
+    flex-direction: row;
+}
+#token-hud .attribute.bar1 img{
+    border: none;
+    width: 60%;
+    position: absolute;
+    left: -30%;
+    top: 90%
+}
+#token-hud .col.middle .attribute.bar1 input {
+    position: absolute;
+    left: -50%;
+    top: 97%;
+    color: black;
+}
+#token-hud .attribute.bar2 img{
+    border: none;
+    width: 60%;
+    position: absolute;
+    left: 19%;
+    top: 90%
+}
+#token-hud .col.middle .attribute.bar2 input {
+    position: absolute;
+    left: -1%;
+    top: 95%;
+    color: black;
+}
+#token-hud .attribute.bar3 img{
+    border: none;
+    width: 60%;
+    position: absolute;
+    left: 72%;
+    top: 90%
+}
+#token-hud .col.middle .attribute.bar3 input {
+    position: absolute;
+    left: 52%;
+    top: 95%;
+    color: black;
+}
+#token-hud .col.middle .attribute input {
+    border: none;
+    background: none;
+    box-shadow: none;
+}
 
 /* INITIATIVE */
 .chat-message .dice-roll {

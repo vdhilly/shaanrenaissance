@@ -87,6 +87,8 @@
         "systems/Shaan_Renaissance/templates/chat/initiative.hbs",
         "systems/Shaan_Renaissance/templates/chat/domainTest-dialog.hbs",
 
-
+        // TOKEN
+        "systems/Shaan_Renaissance/templates/scene/tokenConfig.hbs",
+        "systems/Shaan_Renaissance/templates/scene/parts/token-resources.hbs"
   
       ];

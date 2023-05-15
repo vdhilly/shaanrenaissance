@@ -8,6 +8,11 @@ import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
 import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
 import { templatePaths } from "./module/preloadTemplates.js";
+import { TokenSR } from "./module/token/TokenSR.js";
+import { TokenDocumentSR } from "./module/token/TokenDocumentSR.js";
+import { ActorSR } from "./module/ActorSR.js";
+import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
+import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -19,6 +24,10 @@ Hooks.once("init", function(){
     console.log ("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
     CONFIG.shaanRenaissance = shaanRenaissance;
+    CONFIG.Actor.documentClass = ActorSR;
+    CONFIG.Token.objectClass = TokenSR;
+    CONFIG.Token.documentClass = TokenDocumentSR;
+    CONFIG.Token.prototypeSheetClass = TokenConfigSR;
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [{
@@ -28,6 +37,7 @@ Hooks.once("init", function(){
       }]
     }
 
+    DocumentSheetConfig.registerSheet(TokenDocument, "Shaan_Renaissance", TokenConfigSR, { makeDefault: true });
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {
       types: ["Pouvoir", "Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation", "Bâtiment"],
@@ -121,6 +131,11 @@ class LicenseViewer extends Application {
   }
 }
 game.licenseViewer = new LicenseViewer
+
+// Token HUD
+Hooks.once("ready", function () {
+  canvas.hud.token = new SRTokenHUD();
+})
 
 // DsN
 Hooks.once("diceSoNiceReady", (dice3d => {
