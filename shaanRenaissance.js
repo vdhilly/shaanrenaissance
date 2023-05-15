@@ -182,7 +182,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
         foreground: "#ffffff",
         outline: "none",
         font: "ITCOfficinaSans",
-        edge: "#d7b400",
+        edge: "#ebac00",
         visibility: "visible"
       })
     })),
@@ -200,7 +200,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
         foreground: "#ffffff",
         outline: "none",
         font: "ITCOfficinaSans",
-        edge: "#0058a3",
+        edge: "#002078",
         visibility: "visible"
       })
     })),
@@ -218,7 +218,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
         foreground: "#ffffff",
         outline: "none",
         font: "ITCOfficinaSans",
-        edge: "#e43525",
+        edge: "#af0e00",
         visibility: "visible"
       })
     }))
