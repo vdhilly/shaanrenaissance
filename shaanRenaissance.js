@@ -8,13 +8,9 @@ import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
 import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
 import { templatePaths } from "./module/preloadTemplates.js";
-<<<<<<< Updated upstream
-import { SRToken } from "./module/token.js";
-=======
 import { TokenSR } from "./module/token/TokenSR.js";
 import { TokenDocumentSR } from "./module/token/TokenDocumentSR.js";
 import { ActorSR } from "./module/ActorSR.js";
->>>>>>> Stashed changes
 
 async function preloadHandleBarTemplates() 
 {

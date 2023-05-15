@@ -1,5 +1,4 @@
 export class TokenSR extends Token {
-    
     drawBars() {
         if (!this.actor || (this.document.displayBars === CONST.TOKEN_DISPLAY_MODES.NONE)) return;
         console.log(this)
