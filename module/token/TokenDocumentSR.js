@@ -22,6 +22,7 @@ export class TokenDocumentSR extends TokenDocument {
         }
     
         // Post-update the Token itself
+        console.log(data)
         return super._onUpdate(data, options, userId);
       }
 }

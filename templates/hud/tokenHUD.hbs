@@ -1,26 +1,4 @@
-<!-- TODO remove classes with 0.7 support, check out resources/app/templates/hud/token-hud.html -->
 <form id="{{id}}" class="{{classes}}" data-appid="{{appId}}" autocomplete="off" onsubmit="event.preventDefault();">
-    <div id="cypherTokenStats">
-        <div class="attribute bar1">
-            {{#if displayBar1}}
-            <input type="text" name="bar1.value" data-bar="bar1" value="{{bar1Data.value}}" {{#unless bar1Data.editable}}disabled{{/unless}}>
-            {{/if}}
-        </div>
-
-        <div class="attribute bar2">
-            {{#if displayBar2}}
-            <input type="text" name="bar2.value" data-bar="bar2" value="{{bar2Data.value}}" {{#unless bar2Data.editable}}disabled{{/unless}}>
-            {{/if}}
-        </div>
-
-        <div class="attribute bar3">
-            {{#if displayBar3}}
-            <input type="text" name="bar3.value" data-bar="bar3" value="{{bar3Data.value}}" {{#unless bar3Data.editable}}disabled{{/unless}}>
-            {{/if}}
-        </div>
-    </div>
-
-
     <div id="innerTokenHUD">
         <div class="col left">
             <div class="attribute elevation">
@@ -40,7 +18,26 @@
         </div>
     
         <div class="col middle">
+        <div class="attribute bar1 esprit">
+            {{#if displayBar1}}
+            <img src="systems/Shaan_Renaissance/assets/token/trihn_esprit.webp"> 
+            <input type="text" name="bar1.value" data-bar="bar1" value="{{bar1Data.value}}" {{#unless bar1Data.editable}}disabled{{/unless}}>
+            {{/if}}
+        </div>
 
+        <div class="attribute bar2">
+            {{#if displayBar2}}
+            <img src="systems/Shaan_Renaissance/assets/token/trihn_ame.webp"> 
+            <input type="text" name="bar2.value" data-bar="bar2" value="{{bar2Data.value}}" {{#unless bar2Data.editable}}disabled{{/unless}}>
+            {{/if}}
+        </div>
+
+        <div class="attribute bar3">
+            {{#if displayBar3}}
+            <img src="systems/Shaan_Renaissance/assets/token/trihn_corps.webp"> 
+            <input type="text" name="bar3.value" data-bar="bar3" value="{{bar3Data.value}}" {{#unless bar3Data.editable}}disabled{{/unless}}>
+            {{/if}}
+        </div>
         </div>
     
         <div class="col right">
