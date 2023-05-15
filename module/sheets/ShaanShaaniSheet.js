@@ -56,6 +56,40 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 sheetData.data.attributes.hpEsprit.max = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
                 sheetData.data.attributes.hpAme.max = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
                 sheetData.data.attributes.hpCorps.max = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
+                let attributes = sheetData.data.attributes
+                if(attributes.hpEsprit.value > attributes.hpEsprit.max) {
+                    this.actor.update({
+                        data: {
+                            attributes:{
+                                hpEsprit: {
+                                    value: attributes.hpEsprit.max
+                                }
+                            }
+                        }
+                    })
+                }
+                if(attributes.hpAme.value > attributes.hpAme.max) {
+                    this.actor.update({
+                        data: {
+                            attributes:{
+                                hpAme: {
+                                    value: attributes.hpAme.max
+                                }
+                            }
+                        }
+                    })
+                }
+                if(attributes.hpCorps.value > attributes.hpCorps.max) {
+                    this.actor.update({
+                        data: {
+                            attributes:{
+                                hpCorps: {
+                                    value: attributes.hpCorps.max
+                                }
+                            }
+                        }
+                    })
+                }
                 // Initiative
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
