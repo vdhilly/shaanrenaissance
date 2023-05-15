@@ -8,7 +8,13 @@ import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
 import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
 import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
 import { templatePaths } from "./module/preloadTemplates.js";
+<<<<<<< Updated upstream
 import { SRToken } from "./module/token.js";
+=======
+import { TokenSR } from "./module/token/TokenSR.js";
+import { TokenDocumentSR } from "./module/token/TokenDocumentSR.js";
+import { ActorSR } from "./module/ActorSR.js";
+>>>>>>> Stashed changes
 
 async function preloadHandleBarTemplates() 
 {
@@ -20,6 +26,9 @@ Hooks.once("init", function(){
     console.log ("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
     CONFIG.shaanRenaissance = shaanRenaissance;
+    CONFIG.Actor.documentClass = ActorSR
+    CONFIG.Token.objectClass = TokenSR
+    CONFIG.Token.documentClass = TokenDocumentSR
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [{
@@ -123,8 +132,13 @@ class LicenseViewer extends Application {
 }
 game.licenseViewer = new LicenseViewer
 
+<<<<<<< Updated upstream
 // Token
 Hooks.once("init", SRToken());
+=======
+
+// DsN
+>>>>>>> Stashed changes
 Hooks.once("diceSoNiceReady", (dice3d => {
   if ((obj = dice3d) instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m => m in obj))) {
     var obj;
