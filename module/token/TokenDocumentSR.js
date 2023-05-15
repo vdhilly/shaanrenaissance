@@ -2,10 +2,9 @@ export class TokenDocumentSR extends TokenDocument {
     _onCreate(data, options, userId) {
         super._onCreate(data, options, userId);
         if ( this.parent.isView ) this.object?._onCreate(data, options, userId);
-        this.bar1 = {attribute: "attributes.hpEsprit"};
-        this.bar2 = {attribute: "attributes.hpAme"};
-        this.bar3 = {attribute: "attributes.hpCorps"};
-
+        this.bar1 = {attribute: "attributes.hpEsprit"}
+        this.bar2 = {attribute: "attributes.hpAme"}
+        this.bar3 = {attribute: "attributes.hpCorps"}
         console.log(this, data)
     }
     _onUpdate(data, options, userId) {
@@ -24,35 +23,7 @@ export class TokenDocumentSR extends TokenDocument {
         }
     
         // Post-update the Token itself
-        this.object.drawBars()
+        console.log(this)
         return super._onUpdate(data, options, userId);
       }
-    getBarAttribute(barName, {alternative}={}) {
-        const attr = alternative || this[barName]?.attribute;
-        console.log(this)
-        if ( !attr || !this.actor ) return null;
-        let data = foundry.utils.getProperty(this.actor.system, attr);
-        if ( (data === null) || (data === undefined) ) return null;
-        const model = game.model.Actor[this.actor.type];
-    
-        // Single values
-        if ( Number.isNumeric(data) ) {
-          return {
-            type: "value",
-            attribute: attr,
-            value: Number(data),
-            editable: foundry.utils.hasProperty(model, attr)
-          };
-        }
-    else if ( ("value" in data) && ("max" in data) ) {
-        return {
-          type: "bar",
-          attribute: attr,
-          value: parseInt(data.value || 0),
-          max: parseInt(data.max || 0),
-          editable: foundry.utils.hasProperty(model, `${attr}.value`)
-        };
-      }
-      return null;
-    }
 }
