@@ -15,7 +15,6 @@ export class SRTokenHUD extends TokenHUD {
         const bar1 = this.object.document.getBarAttribute("bar1");
         const bar2 = this.object.document.getBarAttribute("bar2");
         const bar3 = this.object.document.getBarAttribute("bar3");
-        console.log(bar1,bar2,bar3)
         let bars = [bar1, bar2, bar3];
         bars.forEach((b) => {
             if(b.value > b.max) {
@@ -38,7 +37,6 @@ export class SRTokenHUD extends TokenHUD {
             targetClass: this.object.targeted.has(game.user) ? "active" : "",
         });
         data.statusEffects =this._getStatusEffectChoices(data);
-        console.log(data)
         return data;
         }
 }
