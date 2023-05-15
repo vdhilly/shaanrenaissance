@@ -47,4 +47,11 @@ export class TokenSR extends Token {
           let posY = yPositions[number];
           bar.position.set(0, posY);
     }
-}
+    _drawAttributeBars() {
+        const bars = new PIXI.Container();
+        bars.bar1 = bars.addChild(new PIXI.Graphics());
+        bars.bar2 = bars.addChild(new PIXI.Graphics());
+        bars.bar3 = bars.addChild(new PIXI.Graphics());
+        return bars;
+    }
+}       
