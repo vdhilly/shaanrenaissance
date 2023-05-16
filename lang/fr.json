@@ -879,7 +879,8 @@
         "Sidebar": {
             "Changelog": "Changelog",
             "Site": "Shaan",
-            "Discord": "Discord"
+            "Discord": "Discord",
+            "SignalBug": "Bugs"
         },
         "LicenseViewer": {
             "label": "Mentions Légales"
