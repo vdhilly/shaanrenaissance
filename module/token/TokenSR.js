@@ -12,7 +12,8 @@ export class TokenSR extends Token {
             if (!attr || (attr.type !== "bar")) return bar.visible = false;
             this._drawBar(i, bar, attr);
             bar.visible = true;
-        })
+        });
+        this.bars.visible = this._canViewMode(this.document.displayBars);
     }
     _drawBar(number, bar, data) {
         const val = Number(data.value);
