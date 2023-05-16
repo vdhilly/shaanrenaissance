@@ -20,5 +20,5 @@ Le système de base inclue une fiche de Personnage joueur, de Personnage non jou
 
 Si vous souhaitez discuter de Shaan Renaissance sur Foundry ou avez besoin d'aide, vous pouvez aussi rejoindre le serveur discord ou le forum de la communauté: 
 
-[Forum Shaan Renaissance](https://www.shaan-rpg.com/)
-[Discord Shaan Renaissance](https://discord.gg/7fnZ9yCJZq)
+[Forum](https://www.shaan-rpg.com/)\
+[Discord](https://discord.gg/7fnZ9yCJZq)
