@@ -11,13 +11,16 @@ export class ActorSR extends Actor {
     // Determine the updates to make to the actor data
     let updates;
     if ( isBar ) {
-      value = Math.clamped(-30, Number(current.value) + value, current.max);
+      if( isDelta ) {
+        value = Math.clamped(-30, Number(current.value) + value, current.max);
+      }
       updates = {[`system.${attribute}.value`]: value};
     } else {
       value = Number(current) + value;
       updates = {[`system.${attribute}`]: value};
     }
 
+    console.log(attribute, value, current.value, updates)
     const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates);
     return allowed !== false ? this.update(updates) : this;
   }

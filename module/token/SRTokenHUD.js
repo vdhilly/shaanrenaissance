@@ -41,5 +41,5 @@ export class SRTokenHUD extends TokenHUD {
         });
         data.statusEffects =this._getStatusEffectChoices(data);
         return data;
-        }
+    }
 }
