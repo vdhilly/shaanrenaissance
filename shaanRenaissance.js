@@ -167,7 +167,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
         foreground: "#ffffff",
         outline: "none",
         font: "ITCOfficinaSans",
-        edge: "#3e3d40",
+        edge: "#141414",
         visibility: "visible"
       })
     })),
