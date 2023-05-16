@@ -16,4 +16,9 @@ Le Système pour Shaan Renaissance est maintenant entièrement integré à Found
 
 Le système de base inclue une fiche de Personnage joueur, de Personnage non joueur, de Shaani, de Réseau, de Créature et vous permet de créer vos propres Acquis et Pouvoirs ainsi que des Races, des Peuples, des Castes et des Métiers. Sont aussi fournis tous les Acquis, Pouvoirs, Races, Peuples, Castes et Métiers de base sous forme de Compendiums. 
 
+## Discussion et Support
 
+Si vous souhaitez discuter de Shaan Renaissance sur Foundry ou avez besoin d'aide, vous pouvez aussi rejoindre le serveur discord ou le forum de la communauté: 
+
+[Forum Shaan Renaissance](https://www.shaan-rpg.com/)
+[Discord Shaan Renaissance](https://discord.gg/7fnZ9yCJZq)
