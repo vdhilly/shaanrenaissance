@@ -103,6 +103,7 @@
       "flags": {}
     }
   ],
+  "background": "systems/Shaan_Renaissance/assets/banniere_foundry.png",
   "gridDistance": 5,
   "gridUnits": "m",
   "initiative": "1d10 - 1 + @attributes.initiative.value",
