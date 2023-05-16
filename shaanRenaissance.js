@@ -36,7 +36,7 @@ Hooks.once("init", function(){
         weight: "700"
       }]
     }
-
+    
     DocumentSheetConfig.registerSheet(TokenDocument, "Shaan_Renaissance", TokenConfigSR, { makeDefault: true });
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {
@@ -100,6 +100,9 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   }, {
     url: "https://discord.gg/7fnZ9yCJZq",
     label: "SETTINGS.Sidebar.Discord"
+  }, {
+        url: "https://github.com/YoimPouet/Shaan_Renaissance/issues/new",
+    label: "SETTINGS.Sidebar.SignalBug"
   }].map((data => {
     const anchor = document.createElement("a");
     return anchor.href = data.url, anchor.innerText = game.i18n.localize(data.label), anchor.target = "_blank", anchor
