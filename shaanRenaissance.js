@@ -106,7 +106,7 @@ Hooks.on("renderSettings", (async (__app, $html) => {
     const anchor = document.createElement("a");
     return anchor.href = data.url, anchor.innerText = game.i18n.localize(data.label), anchor.target = "_blank", anchor
   }));
-  if(systemInfo.append(...links), null == systemRow || systemRow.after(systemInfo), !game.user.hasRole("GAMEMASTER")) return;
+  if(systemInfo.append(...links), null == systemRow || systemRow.after(systemInfo)) return;
   const license = document.createElement("div");
   license.id = "shaan-license";
   const licenseButton = document.createElement("button");
