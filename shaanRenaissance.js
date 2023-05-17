@@ -13,6 +13,7 @@ import { TokenDocumentSR } from "./module/token/TokenDocumentSR.js";
 import { ActorSR } from "./module/ActorSR.js";
 import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
 import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
+import { ItemSR } from "./module/ItemSR.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -28,6 +29,7 @@ Hooks.once("init", function(){
     CONFIG.Token.objectClass = TokenSR;
     CONFIG.Token.documentClass = TokenDocumentSR;
     CONFIG.Token.prototypeSheetClass = TokenConfigSR;
+    CONFIG.Item.documentClass = ItemSR;
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [{
@@ -119,6 +121,25 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   const header = document.createElement("h2");
   header.innerText = "Shaan Renaissance", null === (_a = html.querySelector("#settings-documentation")) || void 0 === _a || _a.after(header,license)
 }));
+
+// OptGroup Dialog Item
+function extractOptGroup(select, label, types) {
+  const filtered = [...select.querySelectorAll(":scope > option").values()].filter((option => !types || types.includes(option.value))),
+  optgroup = document.createElement("optgroup");
+  optgroup.label = label;
+  console.log(filtered)
+  for(const physicalElement of filtered) optgroup.appendChild(physicalElement);
+  return optgroup
+}
+Hooks.on("renderDialog", ((_dialog, $html) => {
+  const element = $html[0];
+  console.log(element)
+  if(element.classList.contains("dialog-item-create")) {
+    const select = element.querySelector("select[name=type]"),
+    categories = game.i18n.translations.ITEM.CreationDialog.Categories;
+    select && (select.append(extractOptGroup(select, categories.Acquis, ["Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation", "Bâtiment"])), select.append(extractOptGroup(select, categories.Personnage, ["Race", "Peuple", "Caste", "Métier"])), select.append(extractOptGroup(select, categories.Autres)), select.querySelector("option").selected = !0)
+  }
+}))
 
 // License
 class LicenseViewer extends Application {
