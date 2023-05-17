@@ -211,7 +211,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
       type: "d10",
       labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "systems/shaanrenaissance/dice/crane-blanc.png"],
       system: "basic"
-    }), dice3d.addTexture("Necrose", {
+    }), dice3d.addTexture("necrose", {
       name: "Shaan Nécrose",
       composite: "source-over",
       source: "systems/shaanrenaissance/dice/black/d10Black-texture.webp"
@@ -220,7 +220,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
         name: "Necrose",
         description: "Shaan Renaissance Nécrose",
         category: "Shaan Renaissance",
-        texture: "Necrose",
+        texture: "necrose",
         material: "pristine",
         foreground: "#ffffff",
         outline: "none",
