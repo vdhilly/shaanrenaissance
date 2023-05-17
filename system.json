@@ -43,7 +43,7 @@
     {
       "name": "pouvoirs",
       "label": "Pouvoirs",
-      "system": "Shaan_Renaissance",
+      "system": "shaanrenaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
       "private": false,
@@ -52,7 +52,7 @@
     {
       "name": "acquis",
       "label": "Acquis",
-      "system": "Shaan_Renaissance",
+      "system": "shaanrenaissance",
       "path": "packs/acquis.db",
       "type": "Item",
       "private": true,
@@ -61,7 +61,7 @@
     {
       "name": "races",
       "label": "Races",
-      "system": "Shaan_Renaissance",
+      "system": "shaanrenaissance",
       "path": "packs/races.db",
       "type": "Item",
       "private": false,
@@ -70,7 +70,7 @@
     {
       "name": "peuples",
       "label": "Peuples",
-      "system": "Shaan_Renaissance",
+      "system": "shaanrenaissance",
       "path": "packs/peuples.db",
       "type": "Item",
       "private": false,
@@ -79,7 +79,7 @@
     {
       "name": "castes",
       "label": "Castes",
-      "system": "Shaan_Renaissance",
+      "system": "shaanrenaissance",
       "path": "packs/castes.db",
       "type": "Item",
       "private": false,
@@ -88,7 +88,7 @@
     {
       "name": "metiers",
       "label": "Métiers",
-      "system": "Shaan_Renaissance",
+      "system": "shaanrenaissance",
       "path": "packs/metiers.db",
       "type": "Item",
       "private": false,
@@ -110,11 +110,11 @@
     }
   ],
   
-  "background": "systems/Shaan_Renaissance/assets/banniere_foundry.png",
+  "background": "systems/shaanrenaissance/assets/banniere_foundry.png",
   "gridDistance": 5,
   "gridUnits": "m",
   "initiative": "1d10 - 1 + @attributes.initiative.value",
-  "url": "https://github.com/YoimPouet/Shaan_Renaissance",
-  "manifest": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json",
-  "download": "https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/Shaan_Renaissance.zip"
+  "url": "https://github.com/YoimPouet/shaanrenaissance",
+  "manifest": "https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/system.json",
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/shaanrenaissance.zip"
 }

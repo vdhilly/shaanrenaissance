@@ -3,7 +3,7 @@ export async function Initiative({
     extraMessageData = {},
     sendMessage = true,
 } = {}) {
-        const messageTemplate = "systems/Shaan_Renaissance/templates/chat/initiative.hbs";
+        const messageTemplate = "systems/shaanrenaissance/templates/chat/initiative.hbs";
         const actorData = actor ? actor.system : null;
         const domain = actorData.attributes.initiative.statistic;
         const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp;
@@ -45,7 +45,7 @@ export async function domainTest ({
     difficulty = null,
     spécialisation = null,
 } = {}) {
-    const messageTemplate = "systems/Shaan_Renaissance/templates/chat/domainTest.hbs";
+    const messageTemplate = "systems/shaanrenaissance/templates/chat/domainTest.hbs";
     const actorData = actor ? actor.system : null;
 
     let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
@@ -143,7 +143,7 @@ export async function domainTest ({
         domain = null,
         spécialisation = null,
         difficulty = 0,
-        template = "systems/Shaan_Renaissance/templates/chat/domainTest-dialog.hbs" } = {}) {
+        template = "systems/shaanrenaissance/templates/chat/domainTest-dialog.hbs" } = {}) {
         const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
         const actorData = actor.toObject(!1);
           const config = CONFIG.shaanRenaissance;
@@ -187,7 +187,7 @@ export async function SpéTest ({
   difficulty = null,
   spécialisation = null,
 } = {}) {
-  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/domainTest.hbs";
+  const messageTemplate = "systems/shaanrenaissance/templates/chat/domainTest.hbs";
   const actorData = actor ? actor.system : null;
   const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
@@ -254,7 +254,7 @@ export async function SpéTest ({
       domain = null,
       spécialisation = null,
       difficulty = 0,
-      template = "systems/Shaan_Renaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
+      template = "systems/shaanrenaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
       const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
       const actorData = actor.toObject(!1);
       const TestData = {
@@ -308,7 +308,7 @@ export async function necroseTest ({
   spécialisation = null,
   race = null
 } = {}) {
-  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/nécroseTest.hbs";
+  const messageTemplate = "systems/shaanrenaissance/templates/chat/nécroseTest.hbs";
   const actorData = actor ? actor.system : null;
   const raceName = race
 
@@ -400,7 +400,7 @@ export async function necroseTest ({
       domain = null,
       spécialisation = null,
       difficulty = 0,
-      template = "systems/Shaan_Renaissance/templates/chat/nécroseTest-dialog.hbs" } = {}) {
+      template = "systems/shaanrenaissance/templates/chat/nécroseTest-dialog.hbs" } = {}) {
       const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
       const actorData = actor.toObject(!1);
         const config = CONFIG.shaanRenaissance;
@@ -446,7 +446,7 @@ export async function SpéTestNécr ({
   difficulty = null,
   spécialisation = null,
 } = {}) {
-  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/spéTestNécr.hbs";
+  const messageTemplate = "systems/shaanrenaissance/templates/chat/spéTestNécr.hbs";
   const actorData = actor ? actor.system : null;
   const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
@@ -506,7 +506,7 @@ export async function SpéTestNécr ({
       domain = null,
       spécialisation = null,
       difficulty = 0,
-      template = "systems/Shaan_Renaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
+      template = "systems/shaanrenaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
       const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
       const actorData = actor.toObject(!1);
       const TestData = {
@@ -591,7 +591,7 @@ export async function RegenHP({
   sendMessage = true
 } = {}) {
   const actorData = actor ? actor.system : null;
-  const messageTemplate = "systems/Shaan_Renaissance/templates/chat/regenHP-chat.hbs";
+  const messageTemplate = "systems/shaanrenaissance/templates/chat/regenHP-chat.hbs";
   
   let checkOptions = await GetRegenOptions({ malusEsprit, malusAme, malusCorps })
 
@@ -715,7 +715,7 @@ export async function RegenHP({
     malusEsprit = null,
     malusAme = null,
     malusCorps = null,
-    template = "systems/Shaan_Renaissance/templates/chat/regen-dialog.hbs"} = {}) {
+    template = "systems/shaanrenaissance/templates/chat/regen-dialog.hbs"} = {}) {
       const html = await renderTemplate(template, { actor, hp, malusEsprit, malusAme, malusCorps});
       const actorData = actor.toObject(!1)
 

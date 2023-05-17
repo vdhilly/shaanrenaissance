@@ -33,44 +33,44 @@ Hooks.once("init", function(){
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [{
-        urls: ["systems/Shaan_Renaissance/fonts/itc-officina-sans-lt-bold.ttf"],
+        urls: ["systems/shaanrenaissance/fonts/itc-officina-sans-lt-bold.ttf"],
         style: "normal",
         weight: "700"
       }]
     }
     
-    DocumentSheetConfig.registerSheet(TokenDocument, "Shaan_Renaissance", TokenConfigSR, { makeDefault: true });
+    DocumentSheetConfig.registerSheet(TokenDocument, "shaanrenaissance", TokenConfigSR, { makeDefault: true });
     Items.unregisterSheet("core", ItemSheet);
-    Items.registerSheet("Shaan_Renaissance", ShaanRItemSheet, {
+    Items.registerSheet("shaanrenaissance", ShaanRItemSheet, {
       types: ["Pouvoir", "Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation", "Bâtiment"],
       label: "Acquis"
     });
-    Items.registerSheet("Shaan_Renaissance", ShaanTrihnSheet, {
+    Items.registerSheet("shaanrenaissance", ShaanTrihnSheet, {
       types: ["Trihn"],
       label: "Trihn"
     });
-    Items.registerSheet("Shaan_Renaissance", ShaanCreatorSet, {
+    Items.registerSheet("shaanrenaissance", ShaanCreatorSet, {
       types: ["Race", "Peuple", "Caste", "Métier"],
       label: "Character Developpement"
     });
     Actors.unregisterSheet("core", ActorSheet);
-    Actors.registerSheet("Shaan_Renaissance", ShaanRActorsSheet, {
+    Actors.registerSheet("shaanrenaissance", ShaanRActorsSheet, {
       types: ["Personnage"],
       label: "Personnage"
     });
-    Actors.registerSheet("Shaan_Renaissance", ShaanNPCSheet, {
+    Actors.registerSheet("shaanrenaissance", ShaanNPCSheet, {
       types: ["PNJ"],
       label: "PNJ"
     });
-    Actors.registerSheet("Shaan_Renaissance", ShaanCreatureSheet, {
+    Actors.registerSheet("shaanrenaissance", ShaanCreatureSheet, {
       types: ["Créature"],
       label: "Créature"
     });
-    Actors.registerSheet("Shaan_Renaissance", ShaanShaaniSheet, {
+    Actors.registerSheet("shaanrenaissance", ShaanShaaniSheet, {
       types: ["Shaani"],
       label: "Shaani"
     });
-    Actors.registerSheet("Shaan_Renaissance", ShaanRéseauSheet, {
+    Actors.registerSheet("shaanrenaissance", ShaanRéseauSheet, {
       types: ["Réseau"],
       label: "Réseau"
     });
@@ -94,7 +94,7 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   systemInfo = null == systemRow ? void 0 : systemRow.cloneNode(!1);
   systemInfo.classList.remove("system"), systemInfo.classList.add("system-info");
   const links = [{
-    url: "https://github.com/YoimPouet/Shaan_Renaissance/blob/main/CHANGELOG.md",
+    url: "https://github.com/YoimPouet/shaanrenaissance/blob/main/CHANGELOG.md",
     label: "SETTINGS.Sidebar.Changelog"
   }, {
     url: "https://www.shaan-rpg.com/",
@@ -118,7 +118,7 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   const signalBug = document.createElement("div");
   signalBug.id = "shaan-bugs";
   const signalBugButtonA = document.createElement("a")
-  signalBugButtonA.href = "https://github.com/YoimPouet/Shaan_Renaissance/issues/new";
+  signalBugButtonA.href = "https://github.com/YoimPouet/shaanrenaissance/issues/new";
   const signalBugButton = document.createElement("button"),
   signalBugIcon = document.createElement("i");
   signalBugIcon.classList.add("fa-solid", "fa-bug");
@@ -155,7 +155,7 @@ class LicenseViewer extends Application {
     return mergeObject(super.defaultOptions, {
       id:"license-viewer",
       title: game.i18n.localize("SETTINGS.LicenseViewer.label"),
-      template: "systems/Shaan_Renaissance/templates/packs/license-viewer.hbs",
+      template: "systems/shaanrenaissance/templates/packs/license-viewer.hbs",
       width: 500,
       height: 600,
       resizable: !0
@@ -176,16 +176,16 @@ Hooks.once("diceSoNiceReady", (dice3d => {
     dice3d.addSystem({
       id: "basic",
       name: "Shaan Renaissance",
-      font: "systems/Shaan_Renaissance/fonts/itc-officina-sans-lt-bold.ttf"
+      font: "systems/shaanrenaissance/fonts/itc-officina-sans-lt-bold.ttf"
     });
     dice3d.addDicePreset({
       type: "d10",
-      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "systems/Shaan_Renaissance/dice/crane-blanc.png"],
+      labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "systems/shaanrenaissance/dice/crane-blanc.png"],
       system: "basic"
     }), dice3d.addTexture("Necrose", {
       name: "Shaan Nécrose",
       composite: "source-over",
-      source: "systems/Shaan_Renaissance/dice/black/d10Black-texture.webp"
+      source: "systems/shaanrenaissance/dice/black/d10Black-texture.webp"
     }).then((() =>  {
       dice3d.addColorset({
         name: "Necrose",
@@ -203,7 +203,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
        dice3d.addTexture("Esprit", {
       name: "Shaan Esprit",
       composite: "source-over",
-      source: "systems/Shaan_Renaissance/dice/yellow/d10Yellow-texture.webp"
+      source: "systems/shaanrenaissance/dice/yellow/d10Yellow-texture.webp"
     }).then((() => {
       dice3d.addColorset({
         name: "Esprit",
@@ -221,7 +221,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
     dice3d.addTexture("Ame", {
       name: "Shaan Ame",
       composite: "source-over",
-      source: "systems/Shaan_Renaissance/dice/blue/d10Blue-texture.webp"
+      source: "systems/shaanrenaissance/dice/blue/d10Blue-texture.webp"
     }).then((() => {
       dice3d.addColorset({
         name: "Ame",
@@ -239,7 +239,7 @@ Hooks.once("diceSoNiceReady", (dice3d => {
     dice3d.addTexture("Corps", {
       name: "Shaan Corps",
       composite: "source-over",
-      source: "systems/Shaan_Renaissance/dice/red/d10Red-texture.webp"
+      source: "systems/shaanrenaissance/dice/red/d10Red-texture.webp"
     }).then((() => {
       dice3d.addColorset({
         name: "Corps",

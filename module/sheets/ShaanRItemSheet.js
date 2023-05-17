@@ -1,6 +1,6 @@
 export default class ShaanRItemSheet extends ItemSheet {
     get template(){
-        return `systems/Shaan_Renaissance/templates/items/${this.item.type}/sheet.hbs`;
+        return `systems/shaanrenaissance/templates/items/${this.item.type}/sheet.hbs`;
     }
     static get defaultOptions() {
         const options = super.defaultOptions;

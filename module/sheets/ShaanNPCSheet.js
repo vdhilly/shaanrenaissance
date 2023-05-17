@@ -6,7 +6,7 @@ export default class ShaanNPCSheet extends ActorSheet {
         return options.classes = [...options.classes, "PNJ"], options.width = 900, options.height = 700,options.scrollY.push(".window-content"), options
     }
     get template(){
-        return `systems/Shaan_Renaissance/templates/actors/${this.actor.type}/sheet.hbs`;
+        return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
     }
     async getData(options = this.options) {
         options.id || (options.id = this.id);
@@ -277,13 +277,13 @@ export default class ShaanNPCSheet extends ActorSheet {
         let itemData = {
           name: "Nouvel Acquis",
           type: type,
-          img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+          img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
         };
         return actor.createEmbeddedDocuments("Item", [itemData]);
 
         async function GetAcquisOptions({
             type = null,
-            template = "systems/Shaan_Renaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
+            template = "systems/shaanrenaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
                 const actorData = actor.toObject(!1);
                 actorData.itemTypes = {
                     Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}, Trihn: {}
@@ -337,7 +337,7 @@ export default class ShaanNPCSheet extends ActorSheet {
             extraMessageData = {},
             sendMessage = true
         } = {}) {
-            const messageTemplate = "systems/Shaan_Renaissance/templates/chat/pouvoir-chat.hbs";
+            const messageTemplate = "systems/shaanrenaissance/templates/chat/pouvoir-chat.hbs";
 
             if(sendMessage) {
                 ToCustomMessage(actor, pouvoir, messageTemplate, {

@@ -1,6 +1,6 @@
 export class TokenConfigSR extends TokenConfig {
     get template() {
-        return "systems/Shaan_Renaissance/templates/scene/tokenConfig.hbs";
+        return "systems/shaanrenaissance/templates/scene/tokenConfig.hbs";
     }
     async getData(options={}) {
         const alternateImages = await this._getAlternateTokenImages();

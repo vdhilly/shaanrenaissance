@@ -3,7 +3,7 @@ export class SRTokenHUD extends TokenHUD {
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
             id: "token-hud",
-            template: "systems/Shaan_Renaissance/templates/hud/tokenHUD.hbs"
+            template: "systems/shaanrenaissance/templates/hud/tokenHUD.hbs"
         });
         }
     

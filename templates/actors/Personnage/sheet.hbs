@@ -1,56 +1,56 @@
 <form class="actor sheet crb-style character" autocomplete="off">
     <aside>
         <div class="logo">
-        <img class="logo-img" src="systems/Shaan_Renaissance/assets/shaan-foundry-logo.png" height="100px" alt="Shaan Renaissance" srcset=""/>
+        <img class="logo-img" src="systems/shaanrenaissance/assets/shaan-foundry-logo.png" height="100px" alt="Shaan Renaissance" srcset=""/>
         </div>
         <div class="sidebar" data-group="dashboard" data-tab="sidebar">
             {{!-- Trihns --}}
-            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/health.hbs"}}
+            {{> "systems/shaanrenaissance/templates/actors/Personnage/sidebar/health.hbs"}}
 
             <!-- Armure  -->
-            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/armor.hbs"}}
+            {{> "systems/shaanrenaissance/templates/actors/Personnage/sidebar/armor.hbs"}}
 
             <!-- Initiative -->
-            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/initiative.hbs"}}
+            {{> "systems/shaanrenaissance/templates/actors/Personnage/sidebar/initiative.hbs"}}
 
             <!-- Jets -->
-            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/jets.hbs"}}
+            {{> "systems/shaanrenaissance/templates/actors/Personnage/sidebar/jets.hbs"}}
             
             <!-- Reserve -->
-            {{> "systems/Shaan_Renaissance/templates/actors/Personnage/sidebar/reserve.hbs"}}
+            {{> "systems/shaanrenaissance/templates/actors/Personnage/sidebar/reserve.hbs"}}
         </div>
     </aside>
 
     <!-- HEADER -->
-    {{> "systems/Shaan_Renaissance/templates/actors/Personnage/partials/header.hbs"}}
+    {{> "systems/shaanrenaissance/templates/actors/Personnage/partials/header.hbs"}}
 
     {{!-- SHEET NAVIGATION --}}
  <nav class="sheet-navigation" data-group="primary">
         <span class="navigation-title">{{localize "SRTabs.CharacterLabel"}}</span>
         <a class="item" data-tab="character" title="{{localize "SRTabs.CharacterLabel"}}">
-            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_general_vert.webp" title="{{localize "SRTabs.CharacterLabel"}}">
+            <img src="systems/shaanrenaissance/assets/icons/navbar/icon_general_vert.webp" title="{{localize "SRTabs.CharacterLabel"}}">
         </a>
 
         <a class="item" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
-            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_pouvoir_vert.webp" title="{{localize "SRTabs.PowersLabel"}}">        
+            <img src="systems/shaanrenaissance/assets/icons/navbar/icon_pouvoir_vert.webp" title="{{localize "SRTabs.PowersLabel"}}">        
         </a>
 
         <a class="item" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
-            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_magie_vert.webp" title="{{localize "SRTabs.MagicLabel"}}">
+            <img src="systems/shaanrenaissance/assets/icons/navbar/icon_magie_vert.webp" title="{{localize "SRTabs.MagicLabel"}}">
         </a>
 
         <a class="item" data-tab="acquis" title="{{localize "SRTabs.AcquisLabel"}}">
-            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis_vert.webp" title="{{localize "SRTabs.AcquisLabel"}}">
+            <img src="systems/shaanrenaissance/assets/icons/navbar/icon_acquis_vert.webp" title="{{localize "SRTabs.AcquisLabel"}}">
         </a>
 
         {{#ifeq data.attributes.isMorph true}}
         <a class="item" data-tab="morphe" title="{{localize "SRTabs.MorpheLabel"}}">
-            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_morphe.webp" title="{{localize "SRTabs.MorpheLabel"}}">
+            <img src="systems/shaanrenaissance/assets/icons/navbar/icon_morphe.webp" title="{{localize "SRTabs.MorpheLabel"}}">
         </a>
         {{/ifeq}}
 
         <a class="item" data-tab="biography" title="{{localize "SRTabs.BiographyLabel"}}">
-            <img src="systems/Shaan_Renaissance/assets/icons/navbar/icon_biographie_vert.webp" title="{{localize "SRTabs.BiographyLabel"}}">
+            <img src="systems/shaanrenaissance/assets/icons/navbar/icon_biographie_vert.webp" title="{{localize "SRTabs.BiographyLabel"}}">
         </a>
 
         <a class="manage-tabs" data-action="manage-tabs" title="{{localize "SRTabs.ManageTabsLabel"}}">
@@ -61,17 +61,17 @@
     <section class="sheet-body">
         <section class="sheet-content">
             {{!-- Character --}}
-            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/general.hbs"}}
+            {{~> "systems/shaanrenaissance/templates/actors/Personnage/tabs/general.hbs"}}
             {{!-- Powers --}}
-            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/powers.hbs"}}
+            {{~> "systems/shaanrenaissance/templates/actors/Personnage/tabs/powers.hbs"}}
             {{!-- Magic --}}
-            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/magic.hbs"}}
+            {{~> "systems/shaanrenaissance/templates/actors/Personnage/tabs/magic.hbs"}}
             {{!-- Acquis --}}
-            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/acquis.hbs"}}
+            {{~> "systems/shaanrenaissance/templates/actors/Personnage/tabs/acquis.hbs"}}
             {{!-- Morphe --}}
-            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/morphe.hbs"}}
+            {{~> "systems/shaanrenaissance/templates/actors/Personnage/tabs/morphe.hbs"}}
             {{!-- Biography --}}
-            {{~> "systems/Shaan_Renaissance/templates/actors/Personnage/tabs/biography.hbs"}}
+            {{~> "systems/shaanrenaissance/templates/actors/Personnage/tabs/biography.hbs"}}
             
         </section>
     </section>

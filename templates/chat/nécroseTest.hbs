@@ -10,12 +10,12 @@
             {{#each die as |dieInfo|}}
             {{#ifeq dieInfo.formula "1d10[Esprit]"}}
             <div class="die Esprit">
-            <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
+            <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
             </div>
             {{/ifeq}}
             {{#ifeq dieInfo.formula "1d10[Necrose]"}}
             <div class="die Nécrose">
-            <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dieInfo.total}}.png">
+            <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dieInfo.total}}.png">
             </div>
             {{/ifeq}}
             {{/each}}
@@ -30,7 +30,7 @@
         {{#each data as |dice|}}
             {{#ifeq dice.formula "1d10[Necrose]"}}
               <div class="die Nécrose">
-                <img src="systems/Shaan_Renaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dice.total}}.png">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dice.total}}.png">
               </div>
             {{/ifeq}}
         {{/each}}

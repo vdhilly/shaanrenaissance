@@ -11,7 +11,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         }], options
     }
     get template(){
-        return `systems/Shaan_Renaissance/templates/actors/${this.actor.type}/sheet.hbs`;
+        return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
     }
     getData(options = this.options) {
         options.id || (options.id = this.id);
@@ -339,7 +339,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouveau Bâtiment",
                 type: "Bâtiment",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
               };
       
               return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -351,7 +351,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouvel Armement",
                 type: "Armement",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
               };
       
               return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -362,7 +362,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouvelle Armimale",
                 type: "Armimale",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
                 };
           
                 return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -373,7 +373,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouvel Artefact",
                 type: "Artefact",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
                 };
         
                 return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -384,7 +384,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouveau Manuscrit",
                 type: "Manuscrit",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
             
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -395,7 +395,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouvel Outil",
                 type: "Outil",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
             
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -406,7 +406,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
                 name: "Nouvelle Protection",
                 type: "Protection",
-                img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
             
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -417,7 +417,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemData = {
             name: "Nouvelle Relation",
             type: "Relation",
-            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -428,7 +428,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemData = {
             name: "Nouvelle Richesse",
             type: "Richesse",
-            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -439,7 +439,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemData = {
             name: "Nouvelle Technologie",
             type: "Technologie",
-            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -450,7 +450,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let itemData = {
             name: "Nouveau Transport",
             type: "Transport",
-            img:"systems/Shaan_Renaissance/assets/icons/navbar/icon_acquis.webp"
+            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
             };
     
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
@@ -545,7 +545,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             
             async function GetGraftOptions({
                 item = null,
-                template = "systems/Shaan_Renaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
+                template = "systems/shaanrenaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
                     const actorData = actor
                     actorData.itemsNotGraft = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
                     const html = await renderTemplate(template, { actor, item });
@@ -600,7 +600,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             extraMessageData = {},
             sendMessage = true
         } = {}) {
-            const messageTemplate = "systems/Shaan_Renaissance/templates/chat/pouvoir-chat.hbs";
+            const messageTemplate = "systems/shaanrenaissance/templates/chat/pouvoir-chat.hbs";
 
             if(sendMessage) {
                 ToCustomMessage(actor, pouvoir, messageTemplate, {
