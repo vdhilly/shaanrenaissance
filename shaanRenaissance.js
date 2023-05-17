@@ -102,9 +102,6 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   }, {
     url: "https://discord.gg/7fnZ9yCJZq",
     label: "SETTINGS.Sidebar.Discord"
-  }, {
-        url: "https://github.com/YoimPouet/Shaan_Renaissance/issues/new",
-    label: "SETTINGS.Sidebar.SignalBug"
   }].map((data => {
     const anchor = document.createElement("a");
     return anchor.href = data.url, anchor.innerText = game.i18n.localize(data.label), anchor.target = "_blank", anchor
@@ -118,8 +115,19 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   licenseButton.type = "button", licenseButton.append(licenseIcon, game.i18n.localize("SETTINGS.LicenseViewer.label")), licenseButton.addEventListener("click", (() => {
     game.licenseViewer.render(!0)
   })), license.append(licenseButton);
+  const signalBug = document.createElement("div");
+  signalBug.id = "shaan-bugs";
+  const signalBugButtonA = document.createElement("a")
+  signalBugButtonA.href = "https://github.com/YoimPouet/Shaan_Renaissance/issues/new";
+  const signalBugButton = document.createElement("button"),
+  signalBugIcon = document.createElement("i");
+  signalBugIcon.classList.add("fa-solid", "fa-bug");
+  signalBugButton.type = "button", signalBugButton.append(signalBugIcon, game.i18n.localize("SETTINGS.signalBug.label")), 
+  signalBugButtonA.append(signalBugButton)
+  signalBug.append(signalBugButtonA)
+
   const header = document.createElement("h2");
-  header.innerText = "Shaan Renaissance", null === (_a = html.querySelector("#settings-documentation")) || void 0 === _a || _a.after(header,license)
+  header.innerText = "Shaan Renaissance", null === (_a = html.querySelector("#settings-documentation")) || void 0 === _a || _a.after(header,license,signalBug)
 }));
 
 // OptGroup Dialog Item

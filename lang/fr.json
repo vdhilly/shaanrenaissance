@@ -884,6 +884,9 @@
         },
         "LicenseViewer": {
             "label": "Mentions Légales"
+        },
+        "signalBug": {
+            "label": "Signaler un bug"
         }
     }
         
