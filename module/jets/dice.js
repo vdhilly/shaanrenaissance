@@ -186,6 +186,7 @@ export async function SpéTest ({
   domain = null,
   difficulty = null,
   spécialisation = null,
+  description = null
 } = {}) {
   const messageTemplate = "systems/shaanrenaissance/templates/chat/domainTest.hbs";
   const actorData = actor ? actor.system : null;
@@ -193,7 +194,7 @@ export async function SpéTest ({
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
 
-  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty })
+  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
 
   if(checkOptions.cancelled){
       return;
@@ -253,18 +254,18 @@ export async function SpéTest ({
   async function GetRollOptions({
       domain = null,
       spécialisation = null,
+      description = null,
       difficulty = 0,
       template = "systems/shaanrenaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
-      const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
+      const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty, description });
       const actorData = actor.toObject(!1);
       const TestData = {
         domain: domain,
         domainLevel: domainLevel,
         spécialisation: spécialisation,
         spéBonus: spéBonus,
-        spéAcquis: spéAcquis
+        spéAcquis: spéAcquis,
       }
-        const config = CONFIG.shaanRenaissance;
 
       return new Promise(resolve => {
           const data = {
@@ -285,7 +286,7 @@ export async function SpéTest ({
             default: "normal",
             close: () => resolve({ cancelled: true }),
           };
-          console.log(data)
+          // console.log(data)
           new Dialog(data,null).render(true);
 
         });
@@ -445,6 +446,7 @@ export async function SpéTestNécr ({
   domain = null,
   difficulty = null,
   spécialisation = null,
+  description = null
 } = {}) {
   const messageTemplate = "systems/shaanrenaissance/templates/chat/spéTestNécr.hbs";
   const actorData = actor ? actor.system : null;
@@ -453,7 +455,7 @@ export async function SpéTestNécr ({
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
   const raceName = race
 
-  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty })
+  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
 
   if(checkOptions.cancelled){
       return;
@@ -505,9 +507,10 @@ export async function SpéTestNécr ({
   async function GetRollOptions({
       domain = null,
       spécialisation = null,
+      description = null,
       difficulty = 0,
       template = "systems/shaanrenaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
-      const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
+      const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty, description });
       const actorData = actor.toObject(!1);
       const TestData = {
         domain: domain,

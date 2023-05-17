@@ -105,25 +105,29 @@ export default class ShaanCreatureSheet extends ActorSheet {
     }
     _onSpéTest(event) {
         let actor = this.actor
-        let domain = $(event.target.closest(".npc")).children(".specialisations-title").find(".specialisations-label").text()
+        let domain = $(event.target.closest(".creature")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        let description = game.i18n.translations.SRspéDesc[spécialisation]
 
         Dice.SpéTest({
             actor,
             domain: domain,
-            spécialisation: spécialisation
+            spécialisation: spécialisation,
+            description: description
         });
     }
 
     _onSpéTestNécr(event) {
         let actor = this.actor
-        let domain = $(event.target.closest(".npc")).children(".specialisations-title").find(".specialisations-label").text()
+        let domain = $(event.target.closest(".creature")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        let description = game.i18n.translations.SRspéDesc[spécialisation]
 
         Dice.SpéTestNécr({
             actor,
             domain: domain,
-            spécialisation: spécialisation
+            spécialisation: spécialisation,
+            description: description
         });
 
     }

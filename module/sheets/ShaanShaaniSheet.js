@@ -157,11 +157,14 @@ export default class ShaanShaaniSheet extends ActorSheet {
             let actor = this.actor
             let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
             let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+            let description = game.i18n.translations.SRspéDesc[spécialisation]
+
     
             Dice.SpéTest({
                 actor,
                 domain: domain,
-                spécialisation: spécialisation
+                spécialisation: spécialisation,
+                description: description
             });
         }
     
@@ -169,11 +172,14 @@ export default class ShaanShaaniSheet extends ActorSheet {
             let actor = this.actor
             let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
             let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+            let description = game.i18n.translations.SRspéDesc[spécialisation]
+
     
             Dice.SpéTestNécr({
                 actor,
                 domain: domain,
-                spécialisation: spécialisation
+                spécialisation: spécialisation,
+                description: description
             });
     
         }

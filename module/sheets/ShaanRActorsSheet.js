@@ -226,11 +226,14 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        let description = game.i18n.translations.SRspéDesc[spécialisation]
+        console.log(description)
 
         Dice.SpéTest({
             actor,
             domain: domain,
-            spécialisation: spécialisation
+            spécialisation: spécialisation,
+            description: description
         });
     }
 
@@ -238,6 +241,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        let description = game.i18n.translations.SRspéDesc[spécialisation]
         const actorData = this.actor.toObject(!1)
         // Filtre Race
         let race = actorData.items.filter(function (item) { return item.type == "Race"});
@@ -255,7 +259,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             actor,
             race,
             domain: domain,
-            spécialisation: spécialisation
+            spécialisation: spécialisation, 
+            description: description
         });
 
     }

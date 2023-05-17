@@ -167,11 +167,13 @@ export default class ShaanNPCSheet extends ActorSheet {
         let actor = this.actor
         let domain = $(event.target.closest(".npc")).children(".specialisations-title").find(".specialisations-label").text()
         let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
+        let description = game.i18n.translations.SRspéDesc[spécialisation]
 
         Dice.SpéTest({
             actor,
             domain: domain,
-            spécialisation: spécialisation
+            spécialisation: spécialisation,
+            description: description
         });
     }
 
@@ -183,6 +185,7 @@ export default class ShaanNPCSheet extends ActorSheet {
         const actorData = this.actor.toObject(!1)
         let race = actorData.items.filter(function (item) { return item.type == "Race"});
         let lastElement = race[race.length - 1]
+        let description = game.i18n.translations.SRspéDesc[spécialisation]
         
         race.forEach(element => {
             if(element != lastElement) {
@@ -196,7 +199,8 @@ export default class ShaanNPCSheet extends ActorSheet {
             actor,
             race,
             domain: domain,
-            spécialisation: spécialisation
+            spécialisation: spécialisation,
+            description: description
         });
 
     }
