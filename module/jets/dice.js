@@ -394,6 +394,7 @@ export async function necroseTest ({
       domain: domain,
       spécialisation: spécialisation,
       actorID: actor.uuid,
+      race: race
     });
   }
 

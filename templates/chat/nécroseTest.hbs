@@ -2,29 +2,25 @@
   <h2 class="title">
     <div class="check-type">{{localize "chat.necroseTest.title" type=type}}</div>
   </h2>
-  {{#ifeq @root.roll.data.race "Humain"}}
+  {{log @root}}
+  {{#ifeq @root.race "Humain"}}
   <div class="domainDiceH">
-        {{#with roll.terms as |data|}}
-    {{#each data as |dice|}}
-        {{#with dice.rolls as |die|}}
-            {{#each die as |dieInfo|}}
-            {{#ifeq dieInfo.formula "1d10[Esprit]"}}
+    {{log "humain"}}
+    {{#each roll.dice as |die|}}
+            {{#ifeq die.flavor "Esprit"}}
             <div class="die Esprit">
-            <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
+            <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{die.total}}.png">
             </div>
             {{/ifeq}}
-            {{#ifeq dieInfo.formula "1d10[Necrose]"}}
+            {{#ifeq die.flavor "Necrose"}}
             <div class="die Nécrose">
-            <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dieInfo.total}}.png">
+            <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{die.total}}.png">
             </div>
             {{/ifeq}}
-            {{/each}}
-          {{/with}}
-        {{/each}}
-      {{/with}}
-    </div>
+    {{/each}}
+  </div>
     {{/ifeq}}
-    {{#ifnoteq @root.roll.data.race "Humain"}}
+    {{#ifnoteq @root.race "Humain"}}
     <div class="domainDice">
         {{#with roll.terms as |data|}}
         {{#each data as |dice|}}
