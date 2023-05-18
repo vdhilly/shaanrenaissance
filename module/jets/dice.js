@@ -46,6 +46,7 @@ export async function domainTest ({
     spécialisation = null,
 } = {}) {
     const messageTemplate = "systems/shaanrenaissance/templates/chat/domainTest.hbs";
+    let spéDomain
     const actorData = actor ? actor.system : null;
 
     let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
@@ -65,7 +66,6 @@ export async function domainTest ({
     let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
     const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
-    let spéDomain
     let données
     for (const [category, details] of Object.entries(actorData.skills)) {
       if (details.specialisations && details.specialisations[spé]) {
@@ -130,6 +130,51 @@ export async function domainTest ({
     else {
       rollResult.symbiose = "Not"
     }
+
+    let domainDice 
+    if(domain == "Technique" || domain == "Savoir" || domain == "Social"){
+      domainDice = déEsprit
+    }
+    else if(domain == "Arts" || domain == "Shaan" || domain == "Magie"){
+      domainDice = déAme
+    }
+    else if(domain == "Rituels" || domain == "Survie" || domain == "Combat"){
+      domainDice = déCorps
+    }
+    if(!difficulty){
+      difficulty = 0
+    }
+    let score
+    if(domainDice.total == "10"){
+      score = 0
+    } else {
+      score = domainDice.total
+    }
+    // Check
+    let isSuccess
+    if(score >= domainLevel){
+      isSuccess = false
+      if(rollResult.symbiose == "Réussite"){
+        isSuccess = true
+        score = spéAcquisF + spéBonusF + 10
+      }
+    } else {
+      score = score + spéAcquisF + spéBonusF
+      if(score == "0") {
+        isSuccess = false 
+      } else {
+        if(score > difficulty){
+          isSuccess = true
+        } else {
+          isSuccess = false
+          if(rollResult.symbiose == "Réussite"){
+            isSuccess = true
+            score = score + 10
+          }
+        }
+      }
+    }
+    console.log(isSuccess, score)
     if (sendMessage) {
       RollToCustomMessage(actor, rollResult, messageTemplate, {
         ...extraMessageData,
@@ -228,6 +273,7 @@ export async function SpéTest ({
   let déCorps = rollResult.dice[dice.length - 3]
   let déAme = rollResult.dice[dice.length - 2 ]
   let déEsprit = rollResult.dice[dice.length - 1 ]
+  
 
   if(déCorps.total == déAme.total && déAme.total == déEsprit.total && déEsprit != 0) {
     rollResult.symbiose = "Réussite"
@@ -239,6 +285,49 @@ export async function SpéTest ({
     rollResult.symbiose = "Not"
   }
 
+  let domainDice 
+  if(domain == "Technique" || domain == "Savoir" || domain == "Social"){
+    domainDice = déEsprit
+  }
+  else if(domain == "Arts" || domain == "Shaan" || domain == "Magie"){
+    domainDice = déAme
+  }
+  else if(domain == "Rituels" || domain == "Survie" || domain == "Combat"){
+    domainDice = déCorps
+  }
+  if(!difficulty){
+    difficulty = 0
+  }
+  let score
+  if(domainDice.total == "10"){
+    score = 0
+  } else {
+    score = domainDice.total
+  }
+  // Check
+  let isSuccess
+  if(score >= domainLevel){
+    isSuccess = false
+    if(rollResult.symbiose == "Réussite"){
+      isSuccess = true
+      score = spéAcquis + spéBonus + 10
+    }
+  } else {
+    score = score + spéAcquis + spéBonus
+    if(score == "0") {
+      isSuccess = false 
+    } else {
+      if(score > difficulty){
+        isSuccess = true
+      } else {
+        isSuccess = false
+        if(rollResult.symbiose == "Réussite"){
+          isSuccess = true
+          score = score + 10
+        }
+      }
+    }
+  }
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
@@ -298,7 +387,6 @@ export async function SpéTest ({
             spécialisation: parseInt(form.spécialisation?.value)
           }
         }
-        // console.log(domain)
   }
 export async function necroseTest ({
   actor = null,
