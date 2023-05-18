@@ -152,7 +152,7 @@ export async function domainTest ({
     }
     // Check
     let isSuccess
-    if(score >= domainLevel){
+    if(score > domainLevel){
       isSuccess = false
       if(rollResult.symbiose == "Réussite"){
         isSuccess = true
@@ -306,7 +306,7 @@ export async function SpéTest ({
   }
   // Check
   let isSuccess
-  if(score >= domainLevel){
+  if(score > domainLevel){
     isSuccess = false
     if(rollResult.symbiose == "Réussite"){
       isSuccess = true
@@ -475,6 +475,37 @@ export async function necroseTest ({
     dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
     dice3d;
   }
+  let dice = rollResult.dice
+  let domainDice 
+  if(race == "Humain"){
+    domainDice = rollResult.dice[dice.length - 2]
+  } else {
+    domainDice = rollResult.dice[dice.length - 1]
+  }
+  if(!difficulty){
+    difficulty = 0
+  }
+  let score
+  if(domainDice.total == "10"){
+    score = domainLevel
+  } else {
+    score = domainDice.total
+  }
+
+  // Check
+  let isSuccess
+  if(score > domainLevel){
+    isSuccess = false
+  } else {
+    isSuccess = true 
+    if(domainDice.total == "10") {
+      score = domainLevel
+    }
+    score = score + spéAcquisF + spéBonusF
+    if(score <= difficulty){
+      isSuccess = false
+    }
+  }
 
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
@@ -581,6 +612,37 @@ export async function SpéTestNécr ({
     dice3d;
   }
 
+  let dice = rollResult.dice
+  let domainDice 
+  if(race == "Humain"){
+    domainDice = rollResult.dice[dice.length - 2]
+  } else {
+    domainDice = rollResult.dice[dice.length - 1]
+  }
+  if(!difficulty){
+    difficulty = 0
+  }
+  let score
+  if(domainDice.total == "10"){
+    score = domainLevel
+  } else {
+    score = domainDice.total
+  }
+
+  // Check
+  let isSuccess
+  if(score > domainLevel){
+    isSuccess = false
+  } else {
+    isSuccess = true 
+    if(domainDice.total == "10") {
+      score = domainLevel
+    }
+    score = score + spéAcquis + spéBonus
+    if(score <= difficulty){
+      isSuccess = false
+    }
+  }
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
