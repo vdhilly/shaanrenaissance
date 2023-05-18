@@ -170,7 +170,6 @@ function extractOptGroup(select, label, types) {
 }
 Hooks.on("renderDialog", ((_dialog, $html) => {
   const element = $html[0];
-  console.log(element)
   if(element.classList.contains("dialog-item-create")) {
     const select = element.querySelector("select[name=type]"),
     categories = game.i18n.translations.ITEM.CreationDialog.Categories;
@@ -278,7 +277,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
     await dice3d.addSystem({id:"shaan",name:"Shaan Renaissance",font:"systems/shaanrenaissance/fonts/itc-officina-sans-lt-bold.ttf"}, "preferred");
     await dice3d.addDicePreset({
       type:"d10",
-      labels:["1", "2", "3", "4", "5", "6", "7", "8", "9", "systems/shaanrenaissance/dice/d10-crane.webp"],
+      labels:["systems/shaanrenaissance/dice/d10-crane.webp","1", "2", "3", "4", "5", "6", "7", "8", "9"],
       system:"shaan"
     }, "d10")
   }
