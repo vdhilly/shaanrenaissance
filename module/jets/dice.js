@@ -180,6 +180,8 @@ export async function domainTest ({
         ...extraMessageData,
         domain: domain,
         spécialisation: spécialisation,
+        score: score,
+        isSuccess,
         actorID: actor.uuid
       });
     }
@@ -336,6 +338,8 @@ export async function SpéTest ({
       spécialisation: spécialisation,
       spéBonus: spéBonus,
       spéAcquis: spéAcquis,
+      score: score,
+      isSuccess,
       actorID: actor.uuid,
     });
   }
@@ -512,6 +516,8 @@ export async function necroseTest ({
       ...extraMessageData,
       domain: domain,
       spécialisation: spécialisation,
+      score: score,
+      isSuccess,
       actorID: actor.uuid,
       race: race
     });
@@ -651,6 +657,8 @@ export async function SpéTestNécr ({
       spécialisation: spécialisation,
       spéBonus: spéBonus,
       spéAcquis: spéAcquis,
+      isSuccess,
+      score: score,
       actorID: actor.uuid,
     });
   }
@@ -730,7 +738,6 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
       }
     }
-    console.log(rollResult)
 
     ChatMessage.create(chatData);
 }

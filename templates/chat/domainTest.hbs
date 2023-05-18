@@ -2,6 +2,7 @@
   <h2 class="title">
     <div class="check-type">{{localize "chat.domainTest.title" type=type}}</div>
   </h2>
+  {{log @root}}
   <div class="domainDice">
   {{#with roll.terms as |data|}}
     {{#each data as |dice|}}
@@ -49,6 +50,7 @@
         <span>{{localize "chat.domainTest.options.difficulty"}} {{roll.data.difficulty}}</span>
       {{/if}}
     </div>
-</div>
-
+    <div class="result-container">
+      <span class="check-result">{{#ifeq isSuccess true}}{{localize "succes"}}: {{/ifeq}}{{#ifnoteq isSuccess true}}{{localize "fail"}}{{/ifnoteq}}</span>{{#ifeq isSuccess true}}<span class="check-score">{{score}}</span>{{/ifeq}}
+    </div>
 </div>
