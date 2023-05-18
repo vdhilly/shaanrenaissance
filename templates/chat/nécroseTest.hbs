@@ -45,7 +45,7 @@
         <span>{{localize "chat.domainTest.options.difficulty"}} {{roll.data.difficulty}}</span>
       {{/if}}
     </div>
-          <div class="result-container">
-      <span class="check-result">{{#ifeq isSuccess true}}{{localize "succes"}}: {{/ifeq}}{{#ifnoteq isSuccess true}}{{localize "fail"}}{{/ifnoteq}}</span>{{#ifeq isSuccess true}}<span class="check-score">{{score}}</span>{{/ifeq}}
+    <div class="result-container {{#ifeq isSuccess true}}success{{/ifeq}}{{#ifeq isSuccess false}}fail{{/ifeq}}">
+      <span class="check-result">{{#ifeq isSuccess true}}{{localize "SR.Réussite"}}: {{/ifeq}}{{#ifnoteq isSuccess true}}{{localize "SR.Echec"}}{{/ifnoteq}}</span>{{#ifeq isSuccess true}}<span class="check-score">{{score}}</span>{{/ifeq}}
     </div>
 </div>

@@ -165,8 +165,24 @@
     background: rgb(40, 38, 38);
     color: white;
 }
-
-
+.chat-message .result-container {
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid rgba(77, 77, 77, 0.9);
+    border-radius:2px;
+    padding: 3px;
+    text-align: center;
+    font: 700 var(--font-size-16) var(--sans-serif);
+}
+.chat-message .result-container.success {
+    background:#328021;
+}
+.chat-message .result-container.fail {
+    background:#802121
+}
+.chat-message .result-container span {
+    height: 50px;
+}
 /* SETTINGS */
 
 .system-info a {
