@@ -1,4 +1,5 @@
 import { shaanRenaissance } from "./module/config.js";
+import * as Chat from "./module/chat/chat.js";
 import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
 import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
@@ -90,17 +91,6 @@ Handlebars.registerHelper('ifnoteq', function (a, b, options) {
 Hooks.on("renderSettings", (async (__app, $html) => {
   var _a;
   const html = $html[0]
-  // systemRow = html.querySelector(".settings-sidebar li.system"),
-  // systemInfo = null == systemRow ? void 0 : systemRow.cloneNode(!1);
-  // systemInfo.classList.remove("system"), systemInfo.classList.add("system-info");
-  // const links = [{
-  //   url: "https://github.com/YoimPouet/shaanrenaissance/blob/main/CHANGELOG.md",
-  //   label: "SETTINGS.Sidebar.Changelog"
-  // }].map((data => {
-  //   const anchor = document.createElement("a");
-  //   return anchor.href = data.url, anchor.innerText = game.i18n.localize(data.label), anchor.target = "_blank", anchor
-  // }));
-  // if(systemInfo.append(...links), null == systemRow || systemRow.after(systemInfo)) return;
   // License btn
   const license = document.createElement("div");
   license.id = "shaan-license";
@@ -283,4 +273,5 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
   }
 })
 
+Hooks.on("renderChatMessage", (app, html, data) => Chat.addChatListeners(app, html, data));
 });
