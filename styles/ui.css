@@ -180,9 +180,6 @@
 .chat-message .result-container.fail {
     background:#802121
 }
-.chat-message .result-container span {
-    height: 50px;
-}
 /* SETTINGS */
 
 .system-info a {
