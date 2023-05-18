@@ -158,11 +158,15 @@ export async function domainTest ({
         isSuccess = true
         score = spéAcquisF + spéBonusF + 10
       }
+      if((spéAcquisF + spéBonusF) > difficulty && score != 0){
+        isSuccess = true
+        score = spéAcquisF + spéBonusF
+      }
     } else {
-      score = score + spéAcquisF + spéBonusF
       if(score == "0") {
         isSuccess = false 
       } else {
+        score = score + spéAcquisF + spéBonusF
         if(score > difficulty){
           isSuccess = true
         } else {
@@ -314,11 +318,15 @@ export async function SpéTest ({
       isSuccess = true
       score = spéAcquis + spéBonus + 10
     }
+    if((spéAcquis + spéBonus) > difficulty){
+      isSuccess = true
+      score = spéAcquis + spéBonus
+    }
   } else {
-    score = score + spéAcquis + spéBonus
-    if(score == "0") {
+    if(score == 0) {
       isSuccess = false 
     } else {
+      score = score + spéAcquis + spéBonus
       if(score > difficulty){
         isSuccess = true
       } else {
@@ -500,6 +508,10 @@ export async function necroseTest ({
   let isSuccess
   if(score > domainLevel){
     isSuccess = false
+    if((spéAcquisF + spéBonusF) > difficulty){
+      isSuccess = true
+      score = spéAcquisF + spéBonusF
+    }
   } else {
     isSuccess = true 
     if(domainDice.total == "10") {
@@ -639,6 +651,10 @@ export async function SpéTestNécr ({
   let isSuccess
   if(score > domainLevel){
     isSuccess = false
+    if((spéAcquis + spéBonus) > difficulty){
+      isSuccess = true
+      score = spéAcquis + spéBonus
+    }
   } else {
     isSuccess = true 
     if(domainDice.total == "10") {
