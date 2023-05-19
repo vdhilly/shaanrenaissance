@@ -165,6 +165,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         }
                     })
                 }
+                
                 // Initiative
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
