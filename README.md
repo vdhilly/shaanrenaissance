@@ -8,7 +8,7 @@
 ## Installation - Auto Installer 
 
 Dans le menu Game systems de FVTT, cliquez sur Install System et entrez cet URL: 
-`https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json`
+`[https://github.com/YoimPouet/Shaan_Renaissance/releases/latest/download/system.json](https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/system.json)`
 
 ## État actuel
 
