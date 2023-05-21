@@ -1,5 +1,4 @@
 import { shaanRenaissance } from "./module/config.js";
-import * as Chat from "./module/chat/chat.js";
 import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
 import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
 import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
