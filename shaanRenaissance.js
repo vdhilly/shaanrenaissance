@@ -272,6 +272,4 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
     }, "d10")
   }
 })
-
-Hooks.on("renderChatMessage", (app, html, data) => Chat.addChatListeners(app, html, data));
 });

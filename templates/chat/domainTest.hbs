@@ -2,7 +2,6 @@
   <h2 class="title">
     <div class="check-type">{{localize "chat.domainTest.title" type=type}}</div>
   </h2>
-  {{log @root}}
   <div class="domainDice">
   {{#with roll.terms as |data|}}
     {{#each data as |dice|}}
@@ -28,7 +27,6 @@
     {{/each}}
 {{/with}}
     </div>
-    <button class="puiser">Puiser</button>
     <hr/>
     {{#ifnoteq roll.symbiose "Not"}}
     <div class="symbiose {{#ifeq roll.symbiose "Réussite"}}Réussite{{/ifeq}} {{#ifeq roll.symbiose "Echec"}}Echec{{/ifeq}}">
