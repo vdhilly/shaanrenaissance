@@ -278,6 +278,9 @@ h3 {
     margin-left: 5px;
     align-self: center;
 }
+.actor.sheet aside .sidebar .tests-sidebar .domain-test h3 {
+    color: white;
+}
 .actor.sheet aside .sidebar .tests-sidebar .roll-icon {
     align-self: center;
     margin-left: 3px;
@@ -986,7 +989,7 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 10% 75% 15%;
+    grid-template-columns: 10% 73% 17%;
 }
 .actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;
@@ -1003,6 +1006,9 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.character .tab.powers .liste-pouvoir {
     display: grid;
     grid-gap: 2px;
+}
+.actor.sheet .item.pouvoir.used {
+    background:rgba(28, 28, 28, 0.3) !important
 }
 .actor.sheet.character .tab.powers .Esprit .liste-pouvoir {
     border: 3px solid var(--color-esprit);

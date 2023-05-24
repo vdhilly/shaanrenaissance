@@ -108,6 +108,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 html.find(".item-create").click(this._onItemCreate.bind(this));
                 html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
                 html.find(".item-edit").click(this._onItemEdit.bind(this));
+                html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
                 html.find(".item-delete").click(this._onItemDelete.bind(this));  
                 html.find(".regen-hp").click(this._onRegen.bind(this));
                 html.find(".select-input").focus(this._onInputSelect);
@@ -465,6 +466,25 @@ export default class ShaanShaaniSheet extends ActorSheet {
     
                     ChatMessage.create(chatData)
                 }
+            }
+        }
+        _onPouvoirUse(event) {
+            let itemId = event.target.closest(".item").dataset.itemId
+            let item = this.actor.items.get(itemId)
+    
+            if(item.system.isUsed == false){
+                item.update({
+                    system: {
+                        isUsed: true
+                    }
+                })
+            }
+            else if(item.system.isUsed == true) {
+                item.update({
+                    system: {
+                        isUsed: false
+                    }
+                })
             }
         }
         _onItemEdit(event) {

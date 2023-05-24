@@ -1526,7 +1526,8 @@
             },
             "résumé": {
                 "value":""
-            }     
+            },
+            "isUsed": false     
         },
         "Trihn": {
             "templates": [
