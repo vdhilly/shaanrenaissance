@@ -617,7 +617,7 @@
 .actor.sheet.npc .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 10% 73% 17%;
+    grid-template-columns: 10% 72% 18%;
 }
 .actor.sheet.npc .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;
