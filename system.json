@@ -23,8 +23,8 @@
   ],
   "version": "v1.0.0-beta",
   "compatibility": {
-    "minimum": "10",
-    "verified": "10.291",
+    "minimum": "11.269",
+    "verified": "11",
     "maximum": "11"
   },
   "esmodules": [
@@ -46,7 +46,6 @@
       "system": "shaanrenaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -55,7 +54,6 @@
       "system": "shaanrenaissance",
       "path": "packs/acquis.db",
       "type": "Item",
-      "private": true,
       "flags": {}
     },
     {
@@ -64,7 +62,6 @@
       "system": "shaanrenaissance",
       "path": "packs/races.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -73,7 +70,6 @@
       "system": "shaanrenaissance",
       "path": "packs/peuples.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -82,7 +78,6 @@
       "system": "shaanrenaissance",
       "path": "packs/castes.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -91,7 +86,6 @@
       "system": "shaanrenaissance",
       "path": "packs/metiers.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     }
   ],
