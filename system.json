@@ -25,7 +25,7 @@
   "compatibility": {
     "minimum": "11",
     "verified": "11.299",
-    "maximum": "12"
+    "maximum": "11.299"
   },
   "esmodules": [
     "shaanRenaissance.js"
@@ -46,11 +46,7 @@
       "system": "shaanrenaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
-      "flags": {},
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
+      "flags": {}
     },
     {
       "name": "acquis",
@@ -58,11 +54,7 @@
       "system": "shaanrenaissance",
       "path": "packs/acquis.db",
       "type": "Item",
-      "flags": {},
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
+      "flags": {}
     },
     {
       "name": "races",
@@ -70,11 +62,7 @@
       "system": "shaanrenaissance",
       "path": "packs/races.db",
       "type": "Item",
-      "flags": {},
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
+      "flags": {}
     },
     {
       "name": "peuples",
@@ -82,11 +70,7 @@
       "system": "shaanrenaissance",
       "path": "packs/peuples.db",
       "type": "Item",
-      "flags": {},
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
+      "flags": {}
     },
     {
       "name": "castes",
@@ -94,11 +78,7 @@
       "system": "shaanrenaissance",
       "path": "packs/castes.db",
       "type": "Item",
-      "flags": {},
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
+      "flags": {}
     },
     {
       "name": "metiers",
@@ -106,11 +86,7 @@
       "system": "shaanrenaissance",
       "path": "packs/metiers.db",
       "type": "Item",
-      "flags": {},
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
+      "flags": {}
     }
   ],
   "languages": [
@@ -132,6 +108,6 @@
   "gridUnits": "m",
   "initiative": "1d10 - 1 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
-  "manifest": "https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/shaanrenaissance.zip"
+  "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.0.0-beta.1/shaanrenaissance.zip"
 }
