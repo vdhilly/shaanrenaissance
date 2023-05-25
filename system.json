@@ -21,7 +21,7 @@
       "flags": {}
     }
   ],
-  "version": "v1.0.0-beta",
+  "version": "v1.0.0-beta.1",
   "compatibility": {
     "minimum": "11",
     "verified": "11.299",
