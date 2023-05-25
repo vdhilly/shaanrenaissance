@@ -23,9 +23,9 @@
   ],
   "version": "v1.0.0-beta",
   "compatibility": {
-    "minimum": "11.269",
-    "verified": "11",
-    "maximum": "11"
+    "minimum": "11",
+    "verified": "11.299",
+    "maximum": "12"
   },
   "esmodules": [
     "shaanRenaissance.js"
@@ -46,7 +46,11 @@
       "system": "shaanrenaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "acquis",
@@ -54,7 +58,11 @@
       "system": "shaanrenaissance",
       "path": "packs/acquis.db",
       "type": "Item",
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "races",
@@ -62,7 +70,11 @@
       "system": "shaanrenaissance",
       "path": "packs/races.db",
       "type": "Item",
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "peuples",
@@ -70,7 +82,11 @@
       "system": "shaanrenaissance",
       "path": "packs/peuples.db",
       "type": "Item",
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "castes",
@@ -78,7 +94,11 @@
       "system": "shaanrenaissance",
       "path": "packs/castes.db",
       "type": "Item",
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "metiers",
@@ -86,7 +106,11 @@
       "system": "shaanrenaissance",
       "path": "packs/metiers.db",
       "type": "Item",
-      "flags": {}
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "languages": [
@@ -103,7 +127,6 @@
       "flags": {}
     }
   ],
-  
   "background": "systems/shaanrenaissance/assets/banniere_foundry.png",
   "gridDistance": 5,
   "gridUnits": "m",
