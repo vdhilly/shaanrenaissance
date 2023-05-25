@@ -87,7 +87,7 @@
     },
     {
       "name": "metiers",
-      "label": "Métiers",
+      "label": "Metiers",
       "system": "shaanrenaissance",
       "path": "packs/metiers.db",
       "type": "Item",
