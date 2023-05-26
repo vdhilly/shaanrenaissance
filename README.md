@@ -3,12 +3,12 @@
 
 ### Version actuelle et compatibilité: 
 
-1.0.x - FoundryVTT 10.+ Ce système est destiné à être utilisé avec Foundry Virtual Tabletop pour jouer à Shaan Renaissance. 
+1.0.x-Beta - FoundryVTT 10.+ Ce système est destiné à être utilisé avec Foundry Virtual Tabletop pour jouer à Shaan Renaissance. 
 
 ## Installation - Auto Installer 
 
 Dans le menu Game systems de FVTT, cliquez sur Install System et entrez cet URL: 
-`https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/system.json`
+`https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv10/system.json`
 
 ## État actuel
 
