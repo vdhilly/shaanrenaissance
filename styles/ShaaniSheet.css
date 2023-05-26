@@ -804,7 +804,7 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.shaani .tab.powers .liste-pouvoir li .pouvoir-header {
     display: grid;
     grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 10% 70% 20%;
+    grid-template-columns: 10% 73% 17%;
 }
 .actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;

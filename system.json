@@ -21,11 +21,11 @@
       "flags": {}
     }
   ],
-  "version": "0.90",
+  "version": "v1.0.0-beta.1",
   "compatibility": {
-    "minimum": "10",
-    "verified": "10.291",
-    "maximum": "11"
+    "minimum": "11",
+    "verified": "11.299",
+    "maximum": "11.299"
   },
   "esmodules": [
     "shaanRenaissance.js"
@@ -46,7 +46,6 @@
       "system": "shaanrenaissance",
       "path": "packs/pouvoirs.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -55,7 +54,6 @@
       "system": "shaanrenaissance",
       "path": "packs/acquis.db",
       "type": "Item",
-      "private": true,
       "flags": {}
     },
     {
@@ -64,7 +62,6 @@
       "system": "shaanrenaissance",
       "path": "packs/races.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -73,7 +70,6 @@
       "system": "shaanrenaissance",
       "path": "packs/peuples.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
@@ -82,16 +78,14 @@
       "system": "shaanrenaissance",
       "path": "packs/castes.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     },
     {
       "name": "metiers",
-      "label": "Métiers",
+      "label": "Metiers",
       "system": "shaanrenaissance",
       "path": "packs/metiers.db",
       "type": "Item",
-      "private": false,
       "flags": {}
     }
   ],
@@ -109,12 +103,11 @@
       "flags": {}
     }
   ],
-  
   "background": "systems/shaanrenaissance/assets/banniere_foundry.png",
   "gridDistance": 5,
   "gridUnits": "m",
   "initiative": "1d10 - 1 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
-  "manifest": "https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/shaanrenaissance.zip"
+  "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.0.0-beta.1/shaanrenaissance.zip"
 }
