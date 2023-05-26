@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-2023/05/26-02:26:05.325 10f0 Recovering log #93
-2023/05/26-02:26:05.335 10f0 Delete type=0 #93
-2023/05/26-02:26:05.335 10f0 Delete type=3 #91
-=======
-2023/05/25-17:20:10.233 5784 Recovering log #87
-2023/05/25-17:20:10.242 5784 Delete type=0 #87
-2023/05/25-17:20:10.242 5784 Delete type=3 #85
->>>>>>> main
+2023/05/26-10:10:09.819 51c8 Recovering log #96
+2023/05/26-10:10:09.827 51c8 Delete type=0 #96
+2023/05/26-10:10:09.829 51c8 Delete type=3 #95
+2023/05/26-10:43:41.901 60a4 Level-0 table #100: started
+2023/05/26-10:43:41.902 60a4 Level-0 table #100: 0 bytes OK
+2023/05/26-10:43:41.905 60a4 Delete type=0 #98
+2023/05/26-10:43:41.917 60a4 Manual compaction at level-0 from '!items!0fhqxJvVhSeesPDU' @ 72057594037927935 : 1 .. '!items!sZlLXsVLRu8xl6FA' @ 0 : 0; will stop at (end)
+2023/05/26-10:43:41.918 60a4 Manual compaction at level-1 from '!items!0fhqxJvVhSeesPDU' @ 72057594037927935 : 1 .. '!items!sZlLXsVLRu8xl6FA' @ 0 : 0; will stop at (end)

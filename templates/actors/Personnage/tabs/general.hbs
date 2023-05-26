@@ -23,7 +23,7 @@
             {{!-- race --}}
             <div class="pc pc_race item" data-item-id="{{RaceSecondaire._id}}" style="display: flex; flex-direction:row">
                 <div class="input {{#ifnoteq data.attributes.isIndar true}}notIndar{{/ifnoteq}}{{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}">
-                    <label class="details-label">{{localize "ITEM.TypeRace"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.primaire"}}{{/ifeq}}</label>
+                    <label class="details-label">{{localize "Item.Race"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.primaire"}}{{/ifeq}}</label>
                     <h3>
                         <span class="value">{{Race.name}}</span>
                         {{#if @root.editable}}
@@ -37,7 +37,7 @@
                 </div>
                 {{#ifeq data.attributes.isIndar true}}
                 <div class="input {{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}">
-                    <label class="details-label">{{localize "ITEM.TypeRace"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.secondaire"}}{{/ifeq}}</label>
+                    <label class="details-label">{{localize "Item.Race"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.secondaire"}}{{/ifeq}}</label>
                     <h3>
                         <span class="value">{{RaceSecondaire.name}}</span>
                         {{#if @root.editable}}
@@ -54,7 +54,7 @@
             {{!-- peuple --}}
             <div class="pc pc_people item" data-item-id="{{Peuple._id}}">
                 <div class="input">
-                    <label class="details-label">{{localize "ITEM.TypePeople"}}</label>
+                    <label class="details-label">{{localize "Item.People"}}</label>
                     <h3>
                         <span class="value">{{Peuple.name}}</span>
                         {{#if @root.editable}}
@@ -70,7 +70,7 @@
             {{!-- caste --}}
             <div class="pc pc_caste item" data-item-id="{{Caste._id}}">
                 <div class="input">
-                    <label class="details-label">{{localize "ITEM.TypeCaste"}}</label>
+                    <label class="details-label">{{localize "Item.Caste"}}</label>
                     <h3>
                         <span class="value">{{Caste.name}}</span>
                         {{#if @root.editable}}
@@ -86,7 +86,7 @@
             {{!-- métier --}}
             <div class="pc pc_job item" data-item-id="{{Metier._id}}">
                 <div class="input">
-                    <label class="details-label">{{localize "ITEM.TypeJob"}}</label>
+                    <label class="details-label">{{localize "Item.Job"}}</label>
                     <h3>
                         <span class="value">{{Metier.name}}</span>
                         {{#if @root.editable}}

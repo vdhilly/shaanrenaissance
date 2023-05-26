@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-2023/05/26-02:26:05.303 10f0 Recovering log #26
-2023/05/26-02:26:05.313 10f0 Delete type=0 #26
-2023/05/26-02:26:05.313 10f0 Delete type=3 #24
-=======
-2023/05/25-17:20:10.208 2170 Recovering log #20
-2023/05/25-17:20:10.219 2170 Delete type=0 #20
-2023/05/25-17:20:10.220 2170 Delete type=3 #18
->>>>>>> main
-=======
->>>>>>> Stashed changes
+2023/05/26-10:10:09.787 1780 Recovering log #29
+2023/05/26-10:10:09.800 1780 Delete type=0 #29
+2023/05/26-10:10:09.800 1780 Delete type=3 #28
+2023/05/26-10:43:41.895 60a4 Level-0 table #33: started
+2023/05/26-10:43:41.895 60a4 Level-0 table #33: 0 bytes OK
+2023/05/26-10:43:41.898 60a4 Delete type=0 #31
+2023/05/26-10:43:41.899 60a4 Manual compaction at level-0 from '!folders!36iDmyVL1V3fqiUw' @ 72057594037927935 : 1 .. '!items!zqcaSD6gVS3dycYJ' @ 0 : 0; will stop at (end)

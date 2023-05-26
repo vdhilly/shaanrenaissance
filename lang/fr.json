@@ -1,7 +1,7 @@
 {
     "ACTOR": {
-        "TypePersonnage": "Personnage",
-        "TypePnj": "PNJ"
+        "Personnage": "Personnage",
+        "Pnj": "PNJ"
     },
     "SRLabels":{
         "HPMax": "Base",
@@ -435,11 +435,11 @@
         "RéseauLabel": "Réseau",
         "MorpheLabel": "Morphe"
     },
-    "ITEM": {
-        "TypeRace": "Race",
-        "TypePeople": "Peuple",
-        "TypeCaste": "Caste",
-        "TypeJob": "Métier",
+    "Item": {
+        "Race": "Race",
+        "People": "Peuple",
+        "Caste": "Caste",
+        "Job": "Métier",
         "CreationDialog": {
             "Categories": {
                 "Acquis": "Acquis",
