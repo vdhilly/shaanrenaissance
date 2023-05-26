@@ -8,7 +8,7 @@
 ## Installation - Auto Installer 
 
 Dans le menu Game systems de FVTT, cliquez sur Install System et entrez cet URL: 
-`https://github.com/YoimPouet/shaanrenaissance/releases/latest/download/system.json`
+`https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv10/system.json`
 
 ## État actuel
 
