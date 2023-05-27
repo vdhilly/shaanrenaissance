@@ -1,0 +1,59 @@
+<form class="puiser-dialog">
+    <fieldset style="margin-bottom: 5px;">
+        <legend>{{localize "chat.puiser.choices"}}</legend>
+        {{#if choix.choix1}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix1" name="result" value="{{choix.choix1.value}}">
+            <label for="choix1">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix1.flavor}}/d10_{{choix.choix1.color}}_{{#ifeq choix.choix1.value 0}}1{{/ifeq}}{{choix.choix1.value}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor="{{choix.choix1.flavor}}">{{choix.choix1.value}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix1.flavor}})</span>
+            </label>
+        </div>
+        {{/if}}
+        {{#if choix.choix2}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix2" name="result" value="{{choix.choix2.value}}">
+            <label for="choix2">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix2.flavor}}/d10_{{choix.choix2.color}}_{{#ifeq choix.choix2.value 0}}1{{/ifeq}}{{choix.choix2.value}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor="{{choix.choix2.flavor}}">{{choix.choix2.value}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix2.flavor}})</span>
+            </label>
+        </div>
+        {{/if}}
+        {{#if choix.choix3}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix3" name="result" value="{{choix.choix3.value}}">
+            <label for="choix3">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix3.flavor.baseDice}}/d10_{{choix.choix3.color.baseDice}}_{{#ifeq choix.choix3.diceValues.baseDice 0}}1{{/ifeq}}{{choix.choix3.diceValues.baseDice}}.png">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix3.flavor.puiser1}}/d10_{{choix.choix3.color.puiser1}}_{{#ifeq choix.choix3.diceValues.puiser1 0}}1{{/ifeq}}{{choix.choix3.diceValues.puiser1}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor="{{choix.choix3.flavor.baseDice}}">{{choix.choix3.value}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix3.flavor.puiser1}})</span>
+            </label>
+        </div>
+        {{/if}}
+        {{#if choix.choix4}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix4" name="result" value="{{choix.choix4.value}}">
+            <label for="choix4">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix4.flavor.baseDice}}/d10_{{choix.choix4.color.baseDice}}_{{#ifeq choix.choix4.diceValues.baseDice 0}}1{{/ifeq}}{{choix.choix4.diceValues.baseDice}}.png">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix4.flavor.puiser2}}/d10_{{choix.choix4.color.puiser2}}_{{#ifeq choix.choix4.diceValues.puiser2 0}}1{{/ifeq}}{{choix.choix4.diceValues.puiser2}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor="{{choix.choix4.flavor.baseDice}}">{{choix.choix4.value}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix4.flavor.puiser2}})</span>
+            </label>
+        </div>
+        {{/if}}
+        {{#if choix.choix5}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix5" name="result" value="{{choix.choix5.value}}">
+            <label for="choix5">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix5.flavor.puiser1}}/d10_{{choix.choix5.color.puiser1}}_{{#ifeq choix.choix5.diceValues.puiser1 0}}1{{/ifeq}}{{choix.choix5.diceValues.puiser1}}.png">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix5.flavor.puiser2}}/d10_{{choix.choix5.color.puiser2}}_{{#ifeq choix.choix5.diceValues.puiser2 0}}1{{/ifeq}}{{choix.choix5.diceValues.puiser2}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor1="{{choix.choix5.flavor.puiser1}}" data-flavor2="{{choix.choix5.flavor.puiser2}}">{{choix.choix5.value}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix5.flavor.puiser1}} & -1 {{localize choix.choix5.flavor.puiser2}})</span>
+            </label>
+        </div>
+        {{/if}}
+    </fieldset>
+    <input id="domain" type="hidden" name="domain" value="{{domain}}">
+</form>

@@ -457,7 +457,8 @@
             "roll": "Lancer",
             "cancel": "Annuler",
             "create": "Créer",
-            "graft": "Greffer"
+            "graft": "Greffer",
+            "puiser": "Puiser"
         },
         "initiative": {
             "title": "Jet d'Initiative",
@@ -473,6 +474,13 @@
                 "difficulty": "Difficulté: ",
                 "closedRoll": "Test caché ?"
             }
+        },
+        "puiser": {
+            "title": "Puiser",
+            "choices": "Choix possibles",
+            "et": "et en",
+            "score": "Son nouveau score est de",
+            "aPuisé": "a puisé en"
         },
         "necroseTest": {
             "title": "Test de Necrose"

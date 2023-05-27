@@ -8,7 +8,6 @@
     object-fit: contain;
 }
 
-
 /* TOKEN HUD */
 #token-hud {
     display: flex;
@@ -224,4 +223,18 @@
 }
 .chat-message .pouvoir-chat .pouvoir-infos .detail {
     font: 600 var(--font-size-14) var(--body-serif)
+}
+
+
+/* Dialog Puiser */
+
+.puiser-dialog img {
+    width: 20%;
+    border: none;
+}
+.puiser-dialog fieldset div, .puiser-dialog fieldset div label {
+    display: flex;
+}
+.puiser-dialog input[type="radio"], .puiser-dialog span {
+    align-self: center;
 }

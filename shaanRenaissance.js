@@ -14,6 +14,7 @@ import { ActorSR } from "./module/ActorSR.js";
 import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
 import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
 import { ItemSR } from "./module/ItemSR.js";
+import * as Puiser from "./module/jets/puiser.js"
 
 async function preloadHandleBarTemplates() 
 {
@@ -86,6 +87,10 @@ Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
 });
+Handlebars.registerHelper('gt', function(a ,b, options) {
+  if (a > b) { return options.fn(this); }
+  return options.inverse(this);
+})
 
 Hooks.on("renderSettings", (async (__app, $html) => {
   var _a;
@@ -272,3 +277,6 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
   }
 })
 });
+
+// Puiser
+Hooks.on('renderChatLog', (app, html, data) => Puiser.addChatListeners(app, html, data));
