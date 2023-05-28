@@ -20,33 +20,20 @@
         </div>
         <div class="typesMembres">
             <label class="typesMembres-label" for="{{options.id}}-reseau-typesMembres">{{localize "SRreseau.typesMembres"}}</label>
-            <textarea class="typesMembres-input" id="{{options.id}}-reseau-typesMembres" name="system.typesMembres" placeholder="{{data.typesMembres}}">{{data.typesMembres}}</textarea>
+            {{editor enrichedTypeMembres target="system.typesMembres" button=true owner=owner editable=editable
+            engine="prosemirror"}}        
         </div>
         <div class="motivations">
             <label class="motivations-label" for="{{options.id}}-reseau-motivations">{{localize "SRLabels.Motivations"}}</label>
-            <textarea class="motivations-input" id="{{options.id}}-reseau-motivations" name="system.motivation" placeholder="{{data.motivation}}">{{data.motivation}}</textarea>
+            {{editor enrichedMotivations target="system.motivation" button=true owner=owner editable=editable
+            engine="prosemirror"}}        
         </div>
         <div class="moyens">
             <label class="moyens-label" for="{{options.id}}-reseau-moyens">{{localize "SRreseau.moyens"}}</label>
-            <textarea class="moyens-input" id="{{options.id}}-reseau-moyens" name="system.moyens" placeholder="{{data.moyens}}">{{data.moyens}}</textarea>
+            {{editor enrichedMoyens target="system.moyens" button=true owner=owner editable=editable
+            engine="prosemirror"}}
         </div>
     </div>
     <hr />
-    <div class="biographyCategory campagne">
-        <header>
-           <h2>{{localize "SRLabels.campaign"}}</h2>
-        </header>
-        <div class="biography-notes">
-            <label class="notes-label" for="{{actor.id}}-pc-notes">{{localize "SRLabels.notes"}}</label>
-            <textarea class="notes-textarea" id="{{actor.id}}-pc-notes" name="system.biography.campagne.notes" value="{{data.biography.campagne.notes}}">{{data.biography.campagne.notes}}</textarea>
-        </div>
-        <div class="contacts">
-            <label class="contacts-label" for="{{options.id}}-reseau-contacts">{{localize "SRreseau.contacts"}}</label>
-            <textarea class="contacts-input" id="{{options.id}}-reseau-contacts" name="system.contacts" placeholder="{{data.contacts}}">{{data.contacts}}</textarea>
-        </div>
-        <div class="biography-enemies">
-            <label class="enemies-label" for="{{actor.id}}-pc-enemies">{{localize "SRLabels.enemies"}}</label>
-            <textarea class="enemies-textarea" id="{{actor.id}}-pc-enemies" name="system.biography.campagne.enemies" value="{{data.biography.campagne.enemies}}">{{data.biography.campagne.enemies}}</textarea>
-        </div>
-    </div>
+    {{~> "systems/shaanrenaissance/templates/actors/partials/campagne.hbs"}}
 </div>

@@ -1,0 +1,20 @@
+<div class="biographyCategory campagne">
+        <header>
+           <h2>{{localize "SRLabels.campaign"}}</h2>
+        </header>
+        <div class="biography-notes">
+            <label class="notes-label" for="{{actor._id}}-pc-notes">{{localize "SRLabels.notes"}}</label>
+            {{editor enrichedNotes target="system.biography.campagne.notes" button=true owner=owner editable=editable
+            engine="prosemirror"}}
+        </div>
+        <div class="biography-allies">
+            <label class="allies-label" for="{{actor._id}}-pc-allies">{{localize "SRLabels.allies"}}</label>
+            {{editor enrichedAllies target="system.biography.campagne.allies" button=true owner=owner editable=editable
+            engine="prosemirror"}}
+        </div>
+        <div class="biography-enemies">
+            <label class="enemies-label" for="{{actor._id}}-pc-enemies">{{localize "SRLabels.enemies"}}</label>
+            {{editor enrichedEnemies target="system.biography.campagne.enemies" button=true owner=owner editable=editable
+            engine="prosemirror"}}
+        </div>
+</div>

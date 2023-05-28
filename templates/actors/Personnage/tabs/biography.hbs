@@ -2,11 +2,13 @@
     <div class="biography-top">
         <div class="biographyCategory apparence">
             <label class="apparence-label" for="{{actor._id}}-pc-apparence">{{localize "SRLabels.apparence"}}</label>
-            <textarea class="apparence-textarea" id="{{actor._id}}-pc-apparence" name="system.biography.apparence" spellcheck="false">{{data.biography.apparence}}</textarea>
+            {{editor enrichedApparence target="system.biography.apparence" button=true owner=owner editable=editable
+            engine="prosemirror"}}
         </div>
         <div class="biography-histoire">
             <label class="histoire-label" for="{{actor._id}}-pc-histoire">{{localize "SRLabels.histoire"}}</label>
-            <textarea class="histoire-textarea" id="{{actor._id}}-pc-histoire" name="system.biography.histoire" spellcheck="false">{{data.biography.histoire}}</textarea>
+            {{editor enrichedBiography target="system.biography.histoire" button=true owner=owner editable=editable
+            engine="prosemirror"}}
         </div>
     </div>
     <hr />
@@ -32,21 +34,5 @@
         </div>
     </div>
     <hr />
-    <div class="biographyCategory campagne">
-        <header>
-           <h2>{{localize "SRLabels.campaign"}}</h2>
-        </header>
-        <div class="biography-notes">
-            <label class="notes-label" for="{{actor._id}}-pc-notes">{{localize "SRLabels.notes"}}</label>
-            <textarea class="notes-textarea" id="{{actor._id}}-pc-notes" name="system.biography.campagne.notes" spellcheck="false">{{data.biography.campagne.notes}}</textarea>
-        </div>
-        <div class="biography-allies">
-            <label class="allies-label" for="{{actor._id}}-pc-allies">{{localize "SRLabels.allies"}}</label>
-            <textarea class="allies-textarea" id="{{actor._id}}-pc-allies" name="system.biography.campagne.allies" spellcheck="false">{{data.biography.campagne.allies}}</textarea>
-        </div>
-        <div class="biography-enemies">
-            <label class="enemies-label" for="{{actor._id}}-pc-enemies">{{localize "SRLabels.enemies"}}</label>
-            <textarea class="enemies-textarea" id="{{actor._id}}-pc-enemies" name="system.biography.campagne.enemies" spellcheck="false">{{data.biography.campagne.enemies}}</textarea>
-        </div>
-    </div>
+    {{~> "systems/shaanrenaissance/templates/actors/partials/campagne.hbs"}}
 </div>

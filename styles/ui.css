@@ -241,3 +241,15 @@
 .puiser-dialog input[type="radio"], .puiser-dialog span {
     align-self: center;
 }
+
+.editor {
+    background-color: rgba(28, 28, 28, .1);
+    padding: 8px 4px 6px;
+    min-height: 200px;
+    height: max-content;
+}
+.sheet .editor-content {
+    height: 100%;
+    overflow-y: auto;
+    word-break: break-word;
+}

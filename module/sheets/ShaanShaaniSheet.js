@@ -98,7 +98,15 @@ export default class ShaanShaaniSheet extends ActorSheet {
                     game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
                 }
             }
+            sheetData.enrichedMotivations = await TextEditor.enrichHTML(getProperty(this.actor.system, "motivation"), {async: true})
+            sheetData.enrichedNotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.notes"), {async: true})
+            sheetData.enrichedAllies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.allies"), {async: true})
+            sheetData.enrichedEnemies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.enemies"), {async: true})
+            sheetData.enrichedSchemes = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.schèmes"), {async: true})
+            sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
+            sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
 
+    
 
         console.log(sheetData);
         return sheetData;
