@@ -4,9 +4,9 @@ export function addChatListeners(app, html, data) {
 }
 
 async function onPuiser(event) {
-    const selectedTokens = canvas.tokens.controlled;
-    if(!selectedTokens.length) return ui.notifications.info("Aucun token sélectionné");
-    if(selectedTokens.length > 1) return ui.notifications.info("Vous ne devez sélectionner qu'un seul token")
+    const selectedToken = canvas.tokens.controlled;
+    if(!selectedToken.length) return ui.notifications.info("Aucun token sélectionné");
+    if(selectedToken.length > 1) return ui.notifications.info("Vous ne devez sélectionner qu'un seul token")
     const chatCard = $(this.parentElement)
     const dice = chatCard.find("input.dice-value");
     const domain = Number(chatCard.find('b.domain').text());
@@ -52,6 +52,7 @@ async function onPuiser(event) {
       }
     //   Définition des choix
       let choix = {}
+      choix.bonus = spéBonus+acquisBonus 
       if(puiser1.value >= puiser1.value+baseDice.value && puiser1.value > baseDice.value && puiser1.value != 0 && puiser1.value <= domain) {
         choix.choix1 = puiser1
       }
@@ -78,11 +79,29 @@ async function onPuiser(event) {
         if(puiserOptions.cancelled){
             return;
         }
-        result = puiserOptions.result
+        const actor = selectedToken[0].actor;
+        const attributes = actor.system.attributes;
+        result = puiserOptions.result + spéBonus + acquisBonus
         let flavor = puiserOptions.flavor
+        var hp = "hp"
+        let flavor1 = hp.concat('', flavor.flavor1)
+        let flavor1Base = attributes[flavor1].value
+        let flavor1End = flavor1Base - 1 
+        let flavor2
+        if(flavor.flavor2) {
+          flavor2 = hp.concat('', flavor.flavor2)
+          let flavor2Base = attributes[flavor2].value
+          let flavor2End = flavor2Base - 1 
+          attributes[flavor2].value = flavor2End
+        }
+        console.log(attributes[flavor1]); // Verify the value of attributes[flavor1]
+
+        attributes[flavor1].value = flavor1End
+        console.log(flavor1, flavor2)
+        
 
         if(sendMessage) {
-            ToCustomMessage(selectedTokens, result, messageTemplate)
+            ToCustomMessage(selectedToken, result, messageTemplate)
         }
 
         async function ToCustomMessage(Token, result, messageTemplate) {
@@ -152,7 +171,7 @@ async function onPuiser(event) {
             flavor.flavor2 = div.querySelector('b').dataset.flavor2
         }
         return {
-            result: Number(form.result?.value),
+            result: Number(form.result?.value) ,
             flavor: flavor
         }
     }   
