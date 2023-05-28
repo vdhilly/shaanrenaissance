@@ -84,7 +84,9 @@ export default class ShaanNPCSheet extends ActorSheet {
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
                 sheetData.data.attributes.initiative.value = domainValue
-                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                if(game.actors.get(actorData._id)) {
+                    game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                }
             }
         // Filtre Race
         let race = actorData.items.filter(function (item) { return item.type == "Race"});
