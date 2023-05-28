@@ -3,6 +3,8 @@
         // Actor Partials
         "systems/shaanrenaissance/templates/actors/partials/campagne.hbs",
         "systems/shaanrenaissance/templates/actors/partials/magic.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/acquis.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/ressources.hbs",
 
         // Character sheet
         // Sidebar
