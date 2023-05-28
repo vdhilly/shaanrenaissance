@@ -144,6 +144,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
         });
     }
     _onTest(event) {
+        const dataset = event.target.closest(".roll-data").dataset.itemId;
+        let actor = this.actor
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({

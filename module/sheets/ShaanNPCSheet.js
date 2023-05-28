@@ -230,7 +230,12 @@ export default class ShaanNPCSheet extends ActorSheet {
                 return this.actor.deleteEmbeddedDocuments("Item", [itemId])
             }
         });
-        race = lastElement.name
+        if(lastElement){
+            race = lastElement.name
+        }
+        else {
+            race = "race"
+        }
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({
