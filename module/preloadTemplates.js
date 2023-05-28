@@ -16,14 +16,12 @@
         "systems/shaanrenaissance/templates/actors/Personnage/sidebar/reserve.hbs",
   
         // Content
-        "systems/shaanrenaissance/templates/actors/Personnage/tabs/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/biography.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/general.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/partials/background.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/partials/domaincircle.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/partials/specialisations.hbs",
-        "systems/shaanrenaissance/templates/actors/Personnage/partials/ressources.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/morphe.hbs",
   
         // NPC
@@ -54,7 +52,6 @@
         "systems/shaanrenaissance/templates/actors/Shaani/sidebar/reserve.hbs",
   
         // Content
-        "systems/shaanrenaissance/templates/actors/Shaani/tabs/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/tabs/details.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/tabs/general.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/tabs/symbioses.hbs",
@@ -62,7 +59,6 @@
         "systems/shaanrenaissance/templates/actors/Shaani/partials/background.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/partials/domaincircle.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/partials/specialisations.hbs",
-        "systems/shaanrenaissance/templates/actors/Shaani/partials/ressources.hbs",
   
         // Réseau
         // Sidebar
@@ -74,14 +70,12 @@
         "systems/shaanrenaissance/templates/actors/Réseau/sidebar/reserve.hbs",
   
         // Content
-        "systems/shaanrenaissance/templates/actors/Réseau/tabs/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/tabs/details.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/tabs/general.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/tabs/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/background.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/domaincircle.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/specialisations.hbs",
-        "systems/shaanrenaissance/templates/actors/Réseau/partials/ressources.hbs",
   
         // Item sheets
         "systems/shaanrenaissance/templates/items/partials/header.hbs",
