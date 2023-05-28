@@ -87,6 +87,7 @@ async function onPuiser(event) {
         let flavor1 = hp.concat('', flavor.flavor1)
         let flavor1Base = attributes[flavor1].value
         let flavor1End = flavor1Base - 1 
+        attributes[flavor1].value = flavor1End
         let flavor2
         if(flavor.flavor2) {
           flavor2 = hp.concat('', flavor.flavor2)
@@ -94,11 +95,6 @@ async function onPuiser(event) {
           let flavor2End = flavor2Base - 1 
           attributes[flavor2].value = flavor2End
         }
-        console.log(attributes[flavor1]); // Verify the value of attributes[flavor1]
-
-        attributes[flavor1].value = flavor1End
-        console.log(flavor1, flavor2)
-        
 
         if(sendMessage) {
             ToCustomMessage(selectedToken, result, messageTemplate)
@@ -152,7 +148,6 @@ async function onPuiser(event) {
                 default: "normal",
                 close: () => resolve({ cancelled: true })
             };
-            console.log(data)
             new Dialog(data, null).render(true);
         })
     }
