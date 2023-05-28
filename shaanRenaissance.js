@@ -279,4 +279,8 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 });
 
 // Puiser
-Hooks.on('renderChatLog', (app, html, data) => Puiser.addChatListeners(app, html, data));
+// Hooks.on('renderChatLog', (app, html, data) => Puiser.addChatListeners(app, html, data));
+Hooks.on('renderChatMessage', (app, html, data) => {
+  Puiser.hideChatPuiserButtons(app, html, data);
+  Puiser.addChatListeners(app, html, data)
+});

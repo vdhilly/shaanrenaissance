@@ -179,6 +179,9 @@
 .chat-message .result-container.fail {
     background:#802121
 }
+.chat-message button {
+    margin-top: 3px;
+}
 /* SETTINGS */
 
 .system-info a {
@@ -229,7 +232,7 @@
 /* Dialog Puiser */
 
 .puiser-dialog img {
-    width: 20%;
+    width: 15%;
     border: none;
 }
 .puiser-dialog fieldset div, .puiser-dialog fieldset div label {

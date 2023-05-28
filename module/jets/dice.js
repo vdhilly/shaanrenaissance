@@ -178,7 +178,6 @@ export async function domainTest ({
         }
       }
     }
-    console.log(isSuccess, score)
     if (sendMessage) {
       RollToCustomMessage(actor, rollResult, messageTemplate, {
         ...extraMessageData,
@@ -387,7 +386,6 @@ export async function SpéTest ({
             default: "normal",
             close: () => resolve({ cancelled: true }),
           };
-          // console.log(data)
           new Dialog(data,null).render(true);
 
         });
@@ -715,7 +713,6 @@ export async function SpéTestNécr ({
             default: "normal",
             close: () => resolve({ cancelled: true }),
           };
-          console.log(data)
           new Dialog(data,null).render(true);
 
         });
@@ -754,7 +751,6 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
       }
     }
-
     ChatMessage.create(chatData);
 }
 
@@ -833,7 +829,6 @@ export async function RegenHP({
   if(hpCorpsF > hp.hpCorps.max){
     hpCorpsF = hp.hpCorps.max
   }
-  console.log(hpEspritF, hpAmeF, hpCorpsF)
   hp.hpEsprit.value = hpEspritF
   hp.hpAme.value = hpAmeF
   hp.hpCorps.value = hpCorpsF
@@ -883,7 +878,6 @@ export async function RegenHP({
       sound: CONFIG.sounds.dice,
       type: CONST.CHAT_MESSAGE_TYPES.OTHER
     }
-
     ChatMessage.create(chatData);
   }
 

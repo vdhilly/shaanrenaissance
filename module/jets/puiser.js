@@ -7,6 +7,8 @@ async function onPuiser(event) {
     const selectedToken = canvas.tokens.controlled;
     if(!selectedToken.length) return ui.notifications.info("Aucun token sélectionné");
     if(selectedToken.length > 1) return ui.notifications.info("Vous ne devez sélectionner qu'un seul token")
+    console.log(selectedToken)
+    if(selectedToken[0].isOwner != true) return ui.notifications.info("Vous devez sélectionner un token qui vous appartient")
     const chatCard = $(this.parentElement)
     const dice = chatCard.find("input.dice-value");
     const domain = Number(chatCard.find('b.domain').text());
@@ -156,8 +158,6 @@ async function onPuiser(event) {
         let div = checked.closest('div')
         let checkedId = $(checked)[0].id
         let flavor = {}
-        let test
-        let test1
         if(checkedId == "choix1" || checkedId == "choix2" || checkedId == "choix3" || checkedId == "choix4") {
             flavor.flavor1 = div.querySelector('b').dataset.flavor
         }
@@ -170,4 +170,21 @@ async function onPuiser(event) {
             flavor: flavor
         }
     }   
+}
+
+export const hideChatPuiserButtons = function (message, html, data) {
+  const chatCard = html.find('.chat-card');
+  if(chatCard.length > 0) {
+    let actor = game.actors.get(chatCard.attr("data-actor-id").replace('Actor.', ''));
+    if(actor && actor.isOwner) {
+      return;
+    }
+    if(game.user.isGM) {
+      return;
+    }
+    const buttons = chatCard.find('button.puiser');
+    buttons.each((i, btn) => {
+      btn.style.display = "none"
+    });
+  }
 }

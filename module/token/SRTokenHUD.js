@@ -16,7 +16,6 @@ export class SRTokenHUD extends TokenHUD {
         const bar2 = this.object.document.getBarAttribute("bar2");
         const bar3 = this.object.document.getBarAttribute("bar3");
         let bars = [bar1, bar2, bar3];
-        console.log(bars)
         bars.forEach((b) => {
             if(b & b.value) {
                 if(b.value > b.max) {
