@@ -15,6 +15,7 @@ import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
 import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
 import { ItemSR } from "./module/ItemSR.js";
 import * as Puiser from "./module/jets/puiser.js"
+import { SRActiveEffectConfig } from "./module/ActiveEffects/SRActiveEffectConfig.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -31,6 +32,7 @@ Hooks.once("init", function(){
     CONFIG.Token.documentClass = TokenDocumentSR;
     CONFIG.Token.prototypeSheetClass = TokenConfigSR;
     CONFIG.Item.documentClass = ItemSR;
+    CONFIG.ActiveEffect.sheetClass = SRActiveEffectConfig;
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [{

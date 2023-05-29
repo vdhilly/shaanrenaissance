@@ -499,7 +499,7 @@
             "resume": "Résumé",
             "moeurs": "Moeurs",
             "description": "Description",
-            "pouvoirRace": "Pouvoir racial",
+            "pouvoir": "Pouvoir racial",
             "doctrine": "Doctrine"
     },
     "SRsymbioses": {
@@ -596,6 +596,8 @@
         }
     },
     "SR": {
+        "Effects": "Effets",
+        "General": "General",
         "regenHP-rest": "s'est reposé.",
         "TrihnEsprit": "Trihn d'Esprit",
         "TrihnAme": "Trihn d'Âme",

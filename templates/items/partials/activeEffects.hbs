@@ -1,0 +1,26 @@
+<div class="tab effects" data-group="primary" data-tab="effects">
+    <table class="item-list effect-list">
+        <tr>
+            <th for="{{options._id}}-spécialisations">{{localize "SR.Effects"}}</th>
+            <th>
+                <a class="effect-control" data-action="create">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </th>
+        </tr>
+        {{#each effects as |effect|}}
+        <tr class="item effect" data-effect-id="{{effect._id}}">
+            <td class="item-name effect-name">
+                <h4>{{effect.name}}</h4>
+            </td>
+            <td class="effect-controls">
+                <a class="effect-control" data-action="edit">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a class="effect-control" data-action="delete">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>

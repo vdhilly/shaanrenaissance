@@ -1,123 +1,135 @@
 <form class="item sheet crb-style transport" autocomplete="off">
     {{!-- HEADER --}}
     {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
-
-    <div class="transport-rank">
-        <p>
-            <i>
-                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
-                {{#if editable}}
-                <select name="system.acquis.caste">
-                        {{#select data.acquis.caste}}
-                        {{#each config.acquis.caste as |caste|}}
-                        <option value="{{caste}}">{{localize caste}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{localize "SR.de"}}
-                {{else}}
-                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
-                {{/if}}
-                <b>{{#if editable}}
-                <select name="system.class">
-                        {{#select data.class}}
-                        {{#each config.acquis.class as |class|}}
-                        <option value="{{class}}">{{localize class}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{else}}
-                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
-                {{/if}}</b>
-            </i>
-        </p>
-    </div>
-        <div class="transport-details">
-            <div class="transport-trihns">
-                <div class="trihn-Esprit">
-                    <label for="{{options.id}}-transport-trihn-Esprit">{{localize "SRLabels.Esprit"}}</label>
-                    <input name="system.acquis.trihn.Esprit" id="{{options.id}}-transport-trihn-Esprit" type="text" value="{{data.acquis.trihn.Esprit}}"spellcheck="false"/>
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+     <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">
+                <div class="transport-rank">
+                    <p>
+                        <i>
+                            {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                            {{#if editable}}
+                            <select name="system.acquis.caste">
+                                    {{#select data.acquis.caste}}
+                                    {{#each config.acquis.caste as |caste|}}
+                                    <option value="{{caste}}">{{localize caste}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{localize "SR.de"}}
+                            {{else}}
+                                <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                            {{/if}}
+                            <b>{{#if editable}}
+                            <select name="system.class">
+                                    {{#select data.class}}
+                                    {{#each config.acquis.class as |class|}}
+                                    <option value="{{class}}">{{localize class}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{else}}
+                                <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                            {{/if}}</b>
+                        </i>
+                    </p>
                 </div>
-                <div class="trihn-Ame">
-                    <label for="{{options.id}}-transport-trihn-Ame">{{localize "SRLabels.Ame"}}</label>
-                    <input name="system.acquis.trihn.Ame" id="{{options.id}}-transport-trihn-Ame" type="text" value="{{data.acquis.trihn.Ame}}"spellcheck="false"/>
+                <div class="transport-details">
+                    <div class="transport-trihns">
+                        <div class="trihn-Esprit">
+                            <label for="{{options.id}}-transport-trihn-Esprit">{{localize "SRLabels.Esprit"}}</label>
+                            <input name="system.acquis.trihn.Esprit" id="{{options.id}}-transport-trihn-Esprit" type="text" value="{{data.acquis.trihn.Esprit}}"spellcheck="false"/>
+                        </div>
+                        <div class="trihn-Ame">
+                            <label for="{{options.id}}-transport-trihn-Ame">{{localize "SRLabels.Ame"}}</label>
+                            <input name="system.acquis.trihn.Ame" id="{{options.id}}-transport-trihn-Ame" type="text" value="{{data.acquis.trihn.Ame}}"spellcheck="false"/>
+                        </div>
+                        <div class="trihn-Corps">
+                            <label for="{{options.id}}-transport-trihn-Corps">{{localize "SRLabels.Corps"}}</label>
+                            <input name="system.acquis.trihn.Corps" id="{{options.id}}-transport-trihn-Corps" type="text" value="{{data.acquis.trihn.Corps}}"spellcheck="false"/>
+                        </div>
+                    </div>
+                    <div class="transport-spécialisations">
+                        <h3>
+                            <label for="{{options.id}}-transport-spécialisations">{{localize "SR.spécialisations"}}</label>
+                            <input name="system.acquis.spécialisations" id="{{options.id}}-transport-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-voie">
+                        <h3>
+                            <label for="{{options.id}}-transport-voie-select">{{localize "SRLabels.voie"}}</label><br>
+                            <select class="select" name="system.acquis.voie" id="{{options.id}}-transport-voie-select">
+                            {{#select data.acquis.voie}}
+                                {{#each config.acquis.voie as |voie|}}
+                                <option value="{{voie}}">{{localize voie}}</option>
+                                {{/each}}
+                            {{/select}}
+                            </select>
+                        </h3>
+                    </div>
+                    <div class="transport-places">
+                        <h3>
+                            <label for="{{options.id}}-transport-places">{{localize "SRLabels.places"}}</label>
+                            <input name="system.acquis.places" id="{{options.id}}-transport-places" type="text" value="{{data.acquis.places}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-speed">
+                        <h3>
+                            <label for="{{options.id}}-transport-speed">{{localize "SRLabels.speed"}}</label>
+                            <input name="system.acquis.speed" id="{{options.id}}-transport-speed" type="text" value="{{data.acquis.speed}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-autonomie">
+                        <h3>
+                            <label for="{{options.id}}-transport-autonomie">{{localize "SRLabels.autonomie"}}</label>
+                            <input name="system.acquis.autonomie" id="{{options.id}}-transport-autonomie" type="text" value="{{data.acquis.autonomie}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-valeur">
+                        <h3>
+                            <label for="{{options.id}}-transport-valeur">{{localize "SR.valeur"}}</label>
+                            <input name="system.acquis.valeur" id="{{options.id}}-transport-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-prestige">
+                        <h3>
+                            <label for="{{options.id}}-transport-prestige">{{localize "SR.prestige"}}</label>
+                            <input name="system.acquis.prestige" id="{{options.id}}-transport-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-déscription">
+                        <label for="{{options.id}}-transport-Déscription">{{localize "SR.Déscription"}}</label>
+                        <textarea name="system.description.value" resize="none" id="{{options.id}}-transport-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                    </div>
+                    <div class="transport-ressources">
+                        <h3>
+                            <label for="{{options.id}}-transport-ressources">{{localize "SR.ressources"}}</label>
+                            <input name="system.acquis.ressources" id="{{options.id}}-transport-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-fabrication">
+                        <h3>
+                            <label for="{{options.id}}-transport-fabrication">{{localize "SR.fabrication"}}</label>
+                            <input name="system.acquis.fabrication" id="{{options.id}}-transport-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="transport-entretien">
+                        <h3>
+                            <label for="{{options.id}}-transport-entretien">{{localize "SR.entretien"}}</label>
+                            <input name="system.acquis.entretien" id="{{options.id}}-transport-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
+                        </h3>
+                    </div>
                 </div>
-                <div class="trihn-Corps">
-                    <label for="{{options.id}}-transport-trihn-Corps">{{localize "SRLabels.Corps"}}</label>
-                    <input name="system.acquis.trihn.Corps" id="{{options.id}}-transport-trihn-Corps" type="text" value="{{data.acquis.trihn.Corps}}"spellcheck="false"/>
-                </div>
             </div>
-            <div class="transport-spécialisations">
-                <h3>
-                    <label for="{{options.id}}-transport-spécialisations">{{localize "SR.spécialisations"}}</label>
-                    <input name="system.acquis.spécialisations" id="{{options.id}}-transport-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-voie">
-                <h3>
-                    <label for="{{options.id}}-transport-voie-select">{{localize "SRLabels.voie"}}</label><br>
-                    <select class="select" name="system.acquis.voie" id="{{options.id}}-transport-voie-select">
-                    {{#select data.acquis.voie}}
-                        {{#each config.acquis.voie as |voie|}}
-                        <option value="{{voie}}">{{localize voie}}</option>
-                        {{/each}}
-                    {{/select}}
-                    </select>
-                </h3>
-            </div>
-            <div class="transport-places">
-                <h3>
-                    <label for="{{options.id}}-transport-places">{{localize "SRLabels.places"}}</label>
-                    <input name="system.acquis.places" id="{{options.id}}-transport-places" type="text" value="{{data.acquis.places}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-speed">
-                <h3>
-                    <label for="{{options.id}}-transport-speed">{{localize "SRLabels.speed"}}</label>
-                    <input name="system.acquis.speed" id="{{options.id}}-transport-speed" type="text" value="{{data.acquis.speed}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-autonomie">
-                <h3>
-                    <label for="{{options.id}}-transport-autonomie">{{localize "SRLabels.autonomie"}}</label>
-                    <input name="system.acquis.autonomie" id="{{options.id}}-transport-autonomie" type="text" value="{{data.acquis.autonomie}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-valeur">
-                <h3>
-                    <label for="{{options.id}}-transport-valeur">{{localize "SR.valeur"}}</label>
-                    <input name="system.acquis.valeur" id="{{options.id}}-transport-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-prestige">
-                <h3>
-                    <label for="{{options.id}}-transport-prestige">{{localize "SR.prestige"}}</label>
-                    <input name="system.acquis.prestige" id="{{options.id}}-transport-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
-                </h3>
-             </div>
-            <div class="transport-déscription">
-                <label for="{{options.id}}-transport-Déscription">{{localize "SR.Déscription"}}</label>
-                <textarea name="system.description.value" resize="none" id="{{options.id}}-transport-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
-            </div>
-            <div class="transport-ressources">
-                <h3>
-                    <label for="{{options.id}}-transport-ressources">{{localize "SR.ressources"}}</label>
-                    <input name="system.acquis.ressources" id="{{options.id}}-transport-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-fabrication">
-                <h3>
-                    <label for="{{options.id}}-transport-fabrication">{{localize "SR.fabrication"}}</label>
-                    <input name="system.acquis.fabrication" id="{{options.id}}-transport-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="transport-entretien">
-                <h3>
-                    <label for="{{options.id}}-transport-entretien">{{localize "SR.entretien"}}</label>
-                    <input name="system.acquis.entretien" id="{{options.id}}-transport-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
-                </h3>
-            </div>
-            
-        </div>
-
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

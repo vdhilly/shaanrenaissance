@@ -77,6 +77,9 @@
   
         // Item sheets
         "systems/shaanrenaissance/templates/items/partials/header.hbs",
+
+        // Item partials
+        "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs",
   
         // JETS
         "systems/shaanrenaissance/templates/chat/initiative.hbs",

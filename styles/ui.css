@@ -247,9 +247,11 @@
     padding: 8px 4px 6px;
     min-height: 200px;
     height: max-content;
+    font: 700 var(--font-size-14) var(--body-serif);
 }
 .sheet .editor-content {
     height: 100%;
     overflow-y: auto;
     word-break: break-word;
+    
 }

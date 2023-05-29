@@ -1,3 +1,37 @@
+/* Base */
+.item.sheet nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    border-bottom: 2px solid var(--primary);
+    font: 700 var(--font-size-20) var(--body-serif);
+}
+.item.sheet nav a {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    width: 100%;
+    background: rgba(28, 28, 28, 0.2);
+    height: 30px;
+    flex-wrap:wrap
+}
+.item.sheet .sheet-header {
+    grid-area: 1 / 1 / 2 / 6;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary);
+    width: 100%;
+    align-items: center;
+}
+.item.sheet .sheet-navigation {
+    grid-area: 2 / 1 / 2 / 6;
+}
+.item.sheet .sheet-body {
+    margin-top: 3px;
+    grid-area: 3 / 1 / 3 / 6;
+}
+
 /* ITEM POUVOIR SHEET */
 .item.sheet.pouvoir {
     width: 100%;
@@ -126,10 +160,10 @@
     font-family: var(--body-serif);
     display: grid;
     flex-direction: column;
-    grid: "armementHeader"70px "armementRang"minmax(min-content, max-content) "armementContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.armement .sheet-header {
-    grid-area: armementHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -137,11 +171,9 @@
     align-items: center;
 }
 .item.sheet.armement .armement-rank {
-    grid-area: armementRang;
     display: grid;
 }
 .item.sheet.armement .armement-details {
-    grid-area: armementContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, minmax(min-content max-content)) minmax(min-content max-content) repeat(2, minmax(min-content max-content));
@@ -161,13 +193,13 @@
     grid-area: 3 / 1 / 4 / 6; 
 }
 .item.sheet.armement .armement-fabrication {
-    grid-area: 4 / 1 / 5 / 4; 
+    grid-area: 5 / 1 / 6 / 6;
 }
 .item.sheet.armement .armement-ressources {
-    grid-area: 4 / 4 / 5 / 6;
+    grid-area: 4 / 1 / 5 / 4; 
 }
 .item.sheet.armement .armement-entretien{
-    grid-area: 5 / 1 / 6 / 2;
+    grid-area: 4 / 4 / 5 / 6;
 }
 .item.sheet.armement .armement-déscription textarea {
     width: 100% !important;
@@ -199,11 +231,10 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "armimaleHeader"70px "armimaleRang"minmax(min-content, max-content) "armimaleContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.armimale .sheet-header {
-    grid-area: armimaleHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -211,11 +242,9 @@
     align-items: center;
 }
 .item.sheet.armimale .armimale-rank {
-    grid-area: armimaleRang;
     display: grid;
 }
 .item.sheet.armimale .armimale-details {
-    grid-area: armimaleContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, minmax(min-content max-content)) minmax(min-content max-content) minmax(min-content max-content);
@@ -299,11 +328,10 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "transportHeader"70px "transportRang"minmax(min-content, max-content) "transportContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.transport .sheet-header {
-    grid-area: transportHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -311,12 +339,9 @@
     align-items: center;
 }
 .item.sheet.transport .transport-rank {
-    grid-area: transportRang;
     display: grid;
 }
 .item.sheet.transport .transport-details {
-    grid-area: transportContent;
-    display: grid;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, minmax(min-content, max-content)) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
@@ -327,14 +352,14 @@
 .item.sheet.transport .transport-voie {grid-area: 1 / 3 / 2 / 4;align-content: end;}
 .item.sheet.transport .transport-places {grid-area: 1 / 4 / 2 / 5;}
 .item.sheet.transport .transport-speed {grid-area: 1 / 5 / 2 / 6;}
-.item.sheet.transport .transport-spécialisations {grid-area: 2 / 1 / 3 / 4;}
-.item.sheet.transport .transport-autonomie {grid-area: 2 / 4 / 3 / 6; }
+.item.sheet.transport .transport-spécialisations {grid-area: 2 / 1 / 3 / 6;}
+.item.sheet.transport .transport-autonomie {grid-area: 3 / 3 / 3 / 6; }
 .item.sheet.transport .transport-valeur {grid-area: 3 / 1 / 4 / 2;}
 .item.sheet.transport .transport-prestige { grid-area: 3 / 2 / 4 / 3;}
 .item.sheet.transport .transport-déscription {grid-area: 4 / 1 / 5 / 6;}
 .item.sheet.transport .transport-ressources { grid-area: 5 / 1 / 6 / 3; }
-.item.sheet.transport .transport-entretien { grid-area: 6 / 1 / 7 / 2; }
-.item.sheet.transport .transport-fabrication { grid-area: 5 / 3 / 6 / 6; }
+.item.sheet.transport .transport-entretien { grid-area: 5 / 3 / 6 / 6; }
+.item.sheet.transport .transport-fabrication { grid-area: 6 / 1 / 7 / 6; }
 
 .item.sheet.transport .transport-déscription textarea {
     width: 100% !important;
@@ -367,11 +392,10 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "artefactHeader"70px "artefactRang"minmax(min-content, max-content) "artefactContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.artefact .sheet-header {
-    grid-area: artefactHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -379,23 +403,21 @@
     align-items: center;
 }
 .item.sheet.artefact .artefact-rank {
-    grid-area: artefactRang;
     display: grid;
 }
 .item.sheet.artefact .artefact-details {
-    grid-area: artefactContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.item.sheet.artefact .artefact-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
+.item.sheet.artefact .artefact-spécialisations{ grid-area: 1 / 1 / 2 / 6; }
 .item.sheet.artefact .artefact-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.artefact .artefact-valeur{ grid-area: 3 / 1 / 4 / 2; }
 .item.sheet.artefact .artefact-prestige{ grid-area: 3 / 2 / 4 / 3; }
-.item.sheet.artefact .artefact-ressources{ grid-area: 3 / 3 / 4 / 5; }
-.item.sheet.artefact .artefact-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
+.item.sheet.artefact .artefact-ressources{ grid-area: 3 / 3 / 4 / 6; }
+.item.sheet.artefact .artefact-fabrication{ grid-area: 4 / 1 / 5 / 6;  }
 
 .item.sheet.artefact .artefact-déscription textarea {
     width: 100% !important;
@@ -428,35 +450,33 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "manuscritHeader"70px "manuscritRang"minmax(min-content, max-content) "manuscritContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.manuscrit .sheet-header {
-    grid-area: manuscritHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
     width: 100%;
     align-items: center;
+    
 }
 .item.sheet.manuscrit .manuscrit-rank {
-    grid-area: manuscritRang;
     display: grid;
 }
 .item.sheet.manuscrit .manuscrit-details {
-    grid-area: manuscritContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.item.sheet.manuscrit .manuscrit-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
+.item.sheet.manuscrit .manuscrit-spécialisations{ grid-area: 1 / 1 / 2 / 6; }
 .item.sheet.manuscrit .manuscrit-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.manuscrit .manuscrit-valeur{ grid-area: 3 / 1 / 4 / 2; }
 .item.sheet.manuscrit .manuscrit-prestige{ grid-area: 3 / 2 / 4 / 3; }
-.item.sheet.manuscrit .manuscrit-ressources{ grid-area: 3 / 3 / 4 / 5; }
-.item.sheet.manuscrit .manuscrit-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
+.item.sheet.manuscrit .manuscrit-ressources{ grid-area: 3 / 3 / 4 / 6; }
+.item.sheet.manuscrit .manuscrit-fabrication{ grid-area: 4 / 1 / 5 / 6;  }
 
 .item.sheet.manuscrit .manuscrit-déscription textarea {
     width: 100% !important;
@@ -487,35 +507,25 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "outilHeader"70px "outilRang"minmax(min-content, max-content) "outilContent";
-}
-.item.sheet.outil .sheet-header {
-    grid-area: outilHeader;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-    width: 100%;
-    align-items: center;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.outil .outil-rank {
-    grid-area: outilRang;
     display: grid;
 }
 .item.sheet.outil .outil-details {
-    grid-area: outilContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.item.sheet.outil .outil-spécialisations{ grid-area: 1 / 1 / 2 / 4; }
+.item.sheet.outil .outil-specialisations{ grid-area: 1 / 1 / 2 / 6; }
 .item.sheet.outil .outil-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.outil .outil-valeur{ grid-area: 3 / 1 / 4 / 2; }
 .item.sheet.outil .outil-prestige{ grid-area: 3 / 2 / 4 / 3; }
-.item.sheet.outil .outil-ressources{ grid-area: 3 / 3 / 4 / 5; }
-.item.sheet.outil .outil-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
+.item.sheet.outil .outil-ressources{ grid-area: 3 / 3 / 4 / 6; }
+.item.sheet.outil .outil-fabrication{ grid-area: 4 / 1 / 5 / 6;  }
 
 .item.sheet.outil .outil-déscription textarea {
     width: 100% !important;
@@ -547,11 +557,10 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "richesseHeader"70px "richesseRang"minmax(min-content, max-content) "richesseContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.richesse .sheet-header {
-    grid-area: richesseHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -559,23 +568,21 @@
     align-items: center;
 }
 .item.sheet.richesse .richesse-rank {
-    grid-area: richesseRang;
     display: grid;
 }
 .item.sheet.richesse .richesse-details {
-    grid-area: richesseContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
-.item.sheet.richesse .richesse-spécialisations{ grid-area: 1 / 1 / 2 / 5; }
+.item.sheet.richesse .richesse-spécialisations{ grid-area: 1 / 1 / 2 / 6; }
 .item.sheet.richesse .richesse-déscription{ grid-area: 2 / 1 / 3 / 6; }
 .item.sheet.richesse .richesse-valeur{ grid-area: 3 / 1 / 4 / 2; }
-.item.sheet.richesse .richesse-prestige{ grid-area: 3 / 2 / 4 / 3; }
+.item.sheet.richesse .richesse-préstige { grid-area: 3 / 2 / 4 / 3; }
 .item.sheet.richesse .richesse-ressources{ grid-area: 3 / 3 / 4 / 6; }
-.item.sheet.richesse .richesse-fabrication{ grid-area: 4 / 1 / 5 / 5;  }
+.item.sheet.richesse .richesse-fabrication{ grid-area: 4 / 1 / 5 / 6; }
 
 .item.sheet.richesse .richesse-déscription textarea {
     width: 100% !important;
@@ -607,11 +614,10 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "technologieHeader"70px "technologieRang"minmax(min-content, max-content) "technologieContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.technologie .sheet-header {
-    grid-area: technologieHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -619,11 +625,9 @@
     align-items: center;
 }
 .item.sheet.technologie .technologie-rank {
-    grid-area: technologieRang;
     display: grid;
 }
 .item.sheet.technologie .technologie-details {
-    grid-area: technologieContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, minmax(min-content, max-content)) minmax(min-content, max-content) repeat(2, minmax(min-content, max-content));
@@ -643,7 +647,7 @@
 .item.sheet.technologie .technologie-déscription { grid-area: 4 / 1 / 5 / 6; }
 .item.sheet.technologie .technologie-ressources { grid-area: 5 / 1 / 6 / 4; }
 .item.sheet.technologie .technologie-entretien { grid-area: 5 / 4 / 6 / 6; }
-.item.sheet.technologie .technologie-fabrication { grid-area: 6 / 1 / 7 / 5; }
+.item.sheet.technologie .technologie-fabrication { grid-area: 6 / 1 / 7 / 6; }
 
 .item.sheet.technologie .technologie-déscription textarea {
     width: 100% !important;
@@ -676,11 +680,10 @@
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "protectionHeader"70px "protectionRang"minmax(min-content, max-content) "protectionContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.protection .sheet-header {
-    grid-area: protectionHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -688,25 +691,23 @@
     align-items: center;
 }
 .item.sheet.protection .protection-rank {
-    grid-area: protectionRang;
     display: grid;
 }
 .item.sheet.protection .protection-details {
-    grid-area: protectionContent;
     display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(2, minmax(min-content max-content)) minmax(min-content max-content) repeat(3, minmax(min-content max-content));
-grid-column-gap: 0px;
-grid-row-gap: 0px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, minmax(min-content max-content)) minmax(min-content max-content) repeat(3, minmax(min-content max-content));
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
 .item.sheet.protection .protection-trihns { grid-area: 1 / 1 / 2 / 3; display: flex;flex-direction: row;align-items: end; }
-.item.sheet.protection .protection-spécialisations { grid-area: 2 / 1 / 3 / 4; }
+.item.sheet.protection .protection-spécialisations { grid-area: 2 / 1 / 3 / 5; }
 .item.sheet.protection .protection-déscription { grid-area: 3 / 1 / 4 / 6; }
 .item.sheet.protection .protection-valeur { grid-area: 4 / 1 / 5 / 2; }
 .item.sheet.protection .protection-prestige { grid-area: 4 / 2 / 5 / 3; }
 .item.sheet.protection .protection-ressources { grid-area: 4 / 3 / 5 / 6; }
-.item.sheet.protection .protection-fabrication { grid-area: 5 / 1 / 6 / 5; }
+.item.sheet.protection .protection-fabrication { grid-area: 5 / 1 / 6 / 6; }
 
 .item.sheet.protection .protection-déscription textarea {
     width: 100% !important;
@@ -739,11 +740,10 @@ grid-row-gap: 0px;
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid: "relationHeader"70px "relationRang"minmax(min-content, max-content) "relationContent";
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.relation .sheet-header {
-    grid-area: relationHeader;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
@@ -751,11 +751,9 @@ grid-row-gap: 0px;
     align-items: center;
 }
 .item.sheet.relation .relation-rank {
-    grid-area: relationRang;
     display: grid;
 }
 .item.sheet.relation .relation-details {
-    grid-area: relationContent;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 0.5fr 1fr 0.5fr repeat(2, 1fr);
@@ -763,7 +761,7 @@ grid-row-gap: 0px;
     grid-row-gap: 0px;
     }
 
-.item.sheet.relation .relation-spécialisations { grid-area:1 / 1 / 2 / 4;}
+.item.sheet.relation .relation-spécialisations { grid-area:1 / 1 / 2 / 6;}
 .item.sheet.relation .relation-déscription { grid-area: 2 / 1 / 3 / 6;  }
 .item.sheet.relation .relation-prestige { grid-area: 3 / 1 / 4 / 2;   }
 .item.sheet.relation .relation-fabrication { grid-area: 3 / 2 / 4 / 6; }
@@ -850,58 +848,62 @@ grid-row-gap: 0px;
     display: grid;
     flex-direction: column;
     grid-template-columns: 0.7fr 1fr;
-    grid-template-rows: 70px repeat(3, 1fr);
+    grid-template-rows: 70px 30px 1fr;
 }
-.item.sheet.race .sheet-header {
-    grid-area: 1 / 1 / 2 / 3;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-    width: 100%;
-    align-items: center;
+
+.item.sheet.race .tab.general .infos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 0.2fr) repeat(3, 0.5fr);
 }
-.item.sheet.race .race-image {
-    grid-area: 2 / 1 / 4 / 2; 
+
+.item.sheet.race .tab.general .race-image {
+    grid-area: 1 / 1 / 4 / 3;
     margin-top: 5px;
     margin-right: 5px;
     align-self: center;
     justify-self: center;
 }
-.item.sheet.race .race-image img {
+.item.sheet.race .tab.general .race-image img {
     border: none;
 }
-.item.sheet.race .race-doctrine {
-    grid-area: 4 / 1 / 5 / 3;
+.item.sheet.race .tab.general .race-domain {
+    grid-area: 1 / 3 / 2 / 6;
 }
-.item.sheet.race .race-details {
-    grid-area: 2 / 2 / 3 / 3;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 0.3fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.item.sheet.race .tab.general .spés {
+    grid-area: 2 / 3 / 3 / 6;
 }
-.item.sheet.race .race-pouvoir input{
+.item.sheet.race .tab.general .race-pouvoir {
+    grid-area: 3 / 3 / 4 / 6;
+}
+.item.sheet.race .tab.general .race-resume {
+    grid-area: 4 / 1 / 5 / 6;
+}
+.item.sheet.race .tab.general .race-doctrine {
+    grid-area: 5 / 1 / 6 / 6;
+}
+.item.sheet.race .tab.general .race-pouvoir input{
     margin-bottom: 2px;
-}
-.item.sheet.race .race-details span {
+} 
+.item.sheet.race .tab.general span {
     display: flex; 
     flex-direction: row;
     align-items: center;
 }
-.item.sheet.race .race-details span input {
+.item.sheet.race .tab.general span input {
     margin-left: 2px;
     margin-right: 2px;
 }
-.item.sheet.race textarea {
+.item.sheet.race .tab.general textarea {
     width: 100% !important;
     min-height: 150px;
     border: none;
     border-radius: 0;
 }
-.item.sheet.race textarea:focus {
+.item.sheet.race .tab.general textarea:focus {
     box-shadow: none;
 }
+
 
 /* PEUPLE SHEET*/
 
@@ -912,124 +914,54 @@ grid-row-gap: 0px;
     display: grid;
     flex-direction: column;
     grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 70px repeat(3, 1fr);
+    grid-template-rows: 70px 30px 1fr;
 }
-.item.sheet.peuple .sheet-header {
-    grid-area: 1 / 1 / 2 / 3;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-    width: 100%;
-    align-items: center;
-}
-.item.sheet.peuple .peuple-image {
-   grid-area: 2 / 1 / 3 / 2;
-   margin-top: 5px;
-   margin-right: 5px;
-}
-.item.sheet.peuple .peuple-image img {
-    border: none;
-}
-.item.sheet.peuple .peuple-resume {
-    grid-area: 3 / 1 / 4 / 3;
-}
-.item.sheet.peuple .peuple-moeurs {
-    grid-area: 4 / 1 / 5 / 3;
-}
-.item.sheet.peuple .peuple-details {
-    grid-area: 2 / 2 / 3 / 3;
+.item.sheet.peuple .tab.general .infos {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 0.3fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 0.1fr) 1fr 0.8fr 0.5fr
 }
-.item.sheet.peuple .peuple-details span {
-    display: flex; 
-    flex-direction: row;
-    align-items: center;
-}
-.item.sheet.peuple .peuple-details span input {
-    margin-left: 2px;
-    margin-right: 2px;
-}
-.item.sheet.peuple textarea {
-    width: 100% !important;
-    min-height: 150px;
-    border: none;
-    border-radius: 0;
-}
-.item.sheet.peuple textarea:focus {
-    box-shadow: none;
-}
-
-
-/* CASTE SHEET */
-
-.item.sheet.caste {
-    width: 100%;
-    height: 100%;
-    font-family: var(--body-serif);
-    display: grid;
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr 2fr;
-}
-.item.sheet.caste .sheet-header {
-    grid-area: 1 / 1 / 2 / 2;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-    width: 100%;
-    align-items: center;
-}
-.item.sheet.caste .domain-spé {
-    display: flex;
-    flex-direction: row;
-}
-.item.sheet.caste .caste-domain {
-    width: 200px;
-}
-.item.sheet.caste .caste-image {
-    grid-area: 3 / 1 / 4 / 2;
+.item.sheet.peuple .tab.general .peuple-image {
+    grid-area: 1 / 1 / 4 / 3;
     margin-top: 5px;
     margin-right: 5px;
 }
-.item.sheet.caste .caste-image img {
+.item.sheet.peuple .tab.general .peuple-image img {
     border: none;
-    width: 100%
 }
-.item.sheet.caste .caste-image.mage img, .item.sheet.caste .caste-image.voyageur img, .item.sheet.caste .caste-image.ombre img {
-    border: none;
-    width: 50%
+.item.sheet.peuple .tab.general .peuple-domain {
+    grid-area: 1 / 3 / 2 / 6;
 }
-.item.sheet.caste .caste-details {
-    grid-area: 2 / 1 / 3 / 2;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 0.3fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.item.sheet.peuple .tab.general .spés {
+    grid-area: 2 / 3 / 3 / 6; 
 }
-.item.sheet.caste .caste-details span {
+.item.sheet.peuple .tab.general .peuple-paysage {
+    grid-area: 3 / 3 / 4 / 6; 
+}
+.item.sheet.peuple .tab.general .peuple-resume {
+    grid-area: 4 / 1 / 5 / 6;
+}
+.item.sheet.peuple .tab.general .peuple-moeurs {
+    grid-area: 5 / 1 / 6 / 6;
+}
+.item.sheet.peuple .tab.general span {
     display: flex; 
     flex-direction: row;
     align-items: center;
 }
-.item.sheet.caste .caste-details span input {
+.item.sheet.peuple .tab.general span input {
     margin-left: 2px;
     margin-right: 2px;
-}
-.item.sheet.caste textarea {
+} 
+.item.sheet.peuple .tab.general textarea {
     width: 100% !important;
     min-height: 150px;
     border: none;
     border-radius: 0;
 }
-.item.sheet.caste textarea:focus {
+.item.sheet.peuple .tab.general textarea:focus {
     box-shadow: none;
-}
-
+} 
 
 
 /* CASTE SHEET */
@@ -1039,17 +971,8 @@ grid-row-gap: 0px;
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr 2fr;
-}
-.item.sheet.caste .sheet-header {
-    grid-area: 1 / 1 / 2 / 2;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-    width: 100%;
-    align-items: center;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr; 
 }
 .item.sheet.caste .domain-spé {
     display: flex;
@@ -1108,15 +1031,7 @@ grid-row-gap: 0px;
     display: grid;
     flex-direction: column;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr;
-}
-.item.sheet.metier .sheet-header {
-    grid-area: 1 / 1 / 2 / 2;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid var(--primary);
-    width: 100%;
-    align-items: center;
+    grid-template-rows: 70px 30px 1fr;
 }
 
 .item.sheet.metier .metier-details {
@@ -1149,12 +1064,11 @@ grid-row-gap: 0px;
     height: 100%;
     font-family: var(--body-serif);
     display: grid;
-    flex-direction: column;
-    grid-template-columns: 1fr;
-    grid-template-rows: 70px 1fr;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 70px 30px 1fr;
 }
 .item.sheet.batiment .sheet-header {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / 2 / 6;
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);

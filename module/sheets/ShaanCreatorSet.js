@@ -4,7 +4,12 @@ export default class ShaanCreatorSet extends ItemSheet {
     }
     static get defaultOptions() {
         const options = super.defaultOptions;
-        return options.width = 691, options.height = 500, options
+        return options.width = 691, options.height = 500, options.tabs = [{
+
+            navSelector: ".sheet-navigation",
+            contentSelector: ".sheet-content",
+            initial: "general"
+        }], options
     }
     async getData(options = this.options) {
         options.id || (options.id = this.id);
@@ -18,7 +23,7 @@ export default class ShaanCreatorSet extends ItemSheet {
                 title: this.title,
                 item: itemData, 
                 data: itemData.system,
-                items: itemData.items,
+                effects: itemData.effects,
                 config: CONFIG.shaanRenaissance,
                 user: {
                     isGM: game.user.isGM
@@ -27,6 +32,37 @@ export default class ShaanCreatorSet extends ItemSheet {
 
         console.log(sheetData);
         return sheetData;
+    }
+    activateListeners(html) {
+        if(this.isEditable) {
+            html.find(".effect-control").click(this._onEffectControl.bind(this));
+        }
+    }
+
+    _onEffectControl(event) {
+        event.preventDefault();
+        const owner = this.item;
+        const a = event.currentTarget;
+        const tr = a.closest("tr");
+        let effect
+        if(tr) {
+            effect = tr.dataset.effectId ? owner.effects.get(tr.dataset.effectId) : null;
+        }
+        console.log(effect)
+
+        switch (a.dataset.action) {
+            case "create":
+                return owner.createEmbeddedDocuments("ActiveEffect", [{
+                    label: "New Effect",
+                    icon: "icons/svg/aura.svg",
+                    origin: owner.uuid,
+                    disabled: false
+                }]);
+            case "edit":
+                return effect.sheet.render(true);
+            case "delete": 
+                return effect.delete();
+        }
     }
     
 }
