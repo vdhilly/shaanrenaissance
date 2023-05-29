@@ -41,7 +41,8 @@ Hooks.once("init", function(){
         weight: "700"
       }]
     }
-    
+
+    DocumentSheetConfig.registerSheet(ActiveEffect, 'shaanrenaissance', SRActiveEffectConfig, {makeDefault: true, label: "test"})
     DocumentSheetConfig.registerSheet(TokenDocument, "shaanrenaissance", TokenConfigSR, { makeDefault: true });
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("shaanrenaissance", ShaanRItemSheet, {

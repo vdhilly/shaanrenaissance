@@ -80,6 +80,7 @@
 
         // Item partials
         "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs",
+        "systems/shaanrenaissance/templates/items/partials/activeEffect-config.hbs",
   
         // JETS
         "systems/shaanrenaissance/templates/chat/initiative.hbs",
