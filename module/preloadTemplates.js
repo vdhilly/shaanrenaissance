@@ -5,6 +5,7 @@
         "systems/shaanrenaissance/templates/actors/partials/magic.hbs",
         "systems/shaanrenaissance/templates/actors/partials/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/partials/ressources.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/domaincircle.hbs",
 
         // Character sheet
         // Sidebar
@@ -20,7 +21,6 @@
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/general.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/partials/background.hbs",
-        "systems/shaanrenaissance/templates/actors/Personnage/partials/domaincircle.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/partials/specialisations.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/morphe.hbs",
   
@@ -57,7 +57,6 @@
         "systems/shaanrenaissance/templates/actors/Shaani/tabs/symbioses.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/tabs/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/partials/background.hbs",
-        "systems/shaanrenaissance/templates/actors/Shaani/partials/domaincircle.hbs",
         "systems/shaanrenaissance/templates/actors/Shaani/partials/specialisations.hbs",
   
         // Réseau
@@ -74,7 +73,6 @@
         "systems/shaanrenaissance/templates/actors/Réseau/tabs/general.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/tabs/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/background.hbs",
-        "systems/shaanrenaissance/templates/actors/Réseau/partials/domaincircle.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/specialisations.hbs",
   
         // Item sheets
