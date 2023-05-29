@@ -5,6 +5,7 @@ export class SRActiveEffectConfig extends ActiveEffectConfig {
     async getData(options={}) {
         const context = await super.getData(options);
         context.descriptionHTML = await TextEditor.enrichHTML(this.object.description,
+        context.config = CONFIG.shaanRenaissance,
           {async: true, secrets: this.object.isOwner});
         const legacyTransfer = CONFIG.ActiveEffect.legacyTransferral;
         const labels = {
@@ -15,7 +16,6 @@ export class SRActiveEffectConfig extends ActiveEffectConfig {
         };
         const data = {
           labels,
-          config: CONFIG.shaanRenaissance,
           effect: this.object, // Backwards compatibility
           data: this.object,
           isActorEffect: this.object.parent.documentName === "Actor",
@@ -26,6 +26,7 @@ export class SRActiveEffectConfig extends ActiveEffectConfig {
             return obj;
           }, {})
         };
+        console.log(context)
         console.log(data)
         return foundry.utils.mergeObject(context, data);
       }

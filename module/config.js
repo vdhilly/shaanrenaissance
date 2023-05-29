@@ -136,8 +136,8 @@ shaanRenaissance.acquis = {
     }
 }
 shaanRenaissance.activeEffectChanges = {
-    "data.prestige":"prestige",
-    "data.skills.Technique.specialisations.engrenages.value":"test.engrenages",
+    "data.prestige":"SR.prestige",
+    "data.skills.Technique.specialisations.engrenages.value":"engrenages",
     "data.skills.Technique.specialisations.pilotage":"pilotage",
     "data.skills.Technique.specialisations.recuperation":"recuperation",
     "data.skills.Technique.specialisations.sensdelapierre":"sensdelapierre",
