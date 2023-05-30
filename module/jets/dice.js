@@ -235,6 +235,7 @@ export async function SpéTest ({
   sendMessage = true,
   domain = null,
   difficulty = null,
+  askForOptions = true,
   spécialisation = null,
   description = null
 } = {}) {
@@ -244,13 +245,15 @@ export async function SpéTest ({
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
 
-  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
-
-  if(checkOptions.cancelled){
+  let optionsSettings = game.settings.get("shaanrenaissance", "showCheckOptions");
+  if(askForOptions != optionsSettings) {
+    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
+    if(checkOptions.cancelled){
       return;
   }
-
   difficulty = checkOptions.difficulty;
+  }
+
 
   let corps = "1d10[Corps]";
   let ame = "1d10[Ame]";
@@ -581,6 +584,7 @@ export async function SpéTestNécr ({
   sendMessage = true,
   domain = null,
   difficulty = null,
+  askForOptions = true,
   spécialisation = null,
   description = null
 } = {}) {
@@ -591,13 +595,14 @@ export async function SpéTestNécr ({
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
   const raceName = race
 
-  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
-
-  if(checkOptions.cancelled){
+  let optionsSettings = game.settings.get("shaanrenaissance", "showCheckOptions");
+  if(askForOptions != optionsSettings) {
+    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
+    if(checkOptions.cancelled){
       return;
   }
-
   difficulty = checkOptions.difficulty;
+  }
 
   let rollFormula
 

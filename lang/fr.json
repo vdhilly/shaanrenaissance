@@ -899,6 +899,10 @@
         },
         "signalBug": {
             "label": "Signaler un bug"
+        },
+        "showCheckOptions": {
+            "name": "Demander les options des jets par défaut.",
+            "label": "Maintenez la touche Maj enfoncée pour basculer."
         }
     },
     "SRActiveEffect": {

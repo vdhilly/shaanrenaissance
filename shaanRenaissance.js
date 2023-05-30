@@ -21,6 +21,16 @@ async function preloadHandleBarTemplates()
 {
     return loadTemplates( templatePaths );
 };
+function registerSystemSettings() {
+  game.settings.register("shaanrenaissance", "showCheckOptions", {
+    config: true,
+    scope: "client",
+    name: "SETTINGS.showCheckOptions.name",
+    hint: "SETTINGS.showCheckOptions.label",
+    type: Boolean,
+    default: true
+  });
+}
 
 
 Hooks.once("init", function(){
@@ -80,6 +90,8 @@ Hooks.once("init", function(){
     });
 
     preloadHandleBarTemplates();
+
+    registerSystemSettings();
 
     // Handlebars
 Handlebars.registerHelper('ifeq', function (a, b, options) {

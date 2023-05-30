@@ -246,7 +246,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             actor,
             domain: domain,
             spécialisation: spécialisation,
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
     }
 
@@ -273,7 +274,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             race,
             domain: domain,
             spécialisation: spécialisation, 
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
 
     }

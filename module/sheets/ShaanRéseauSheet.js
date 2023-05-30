@@ -174,7 +174,8 @@ export default class ShaanRéseauSheet extends ActorSheet {
                 actor,
                 domain: domain,
                 spécialisation: spécialisation,
-                description: description
+                description: description,
+                askForOptions: event.shiftKey
             });
         }
     
@@ -188,7 +189,8 @@ export default class ShaanRéseauSheet extends ActorSheet {
                 actor,
                 domain: domain,
                 spécialisation: spécialisation,
-                description: description
+                description: description,
+                askForOptions: event.shiftKey
             });
     
         }
