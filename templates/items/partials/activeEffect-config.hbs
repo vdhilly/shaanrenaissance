@@ -112,7 +112,11 @@
                 <div class="key">
                     <select name="changes.{{i}}.key">
                         <optgroup label="{{localize "SR.spécialisations"}}">
-                            {{selectOptions ../config.activeEffectChanges.spés selected=change.key localize=true}}
+                            {{#each ../config.activeEffectChanges.spés as |domain|}}
+                                <optgroup label="{{localize (concat 'SRdomains.' @key)}}">
+                                    {{selectOptions domain selected=change.key localize=true}}
+                                </optgroup>
+                            {{/each}}
                         </optgroup>
                         <optgroup label="{{localize "SRLabels.Protections"}}">
                             {{selectOptions ../config.activeEffectChanges.protections selected=change.key localize=true}}

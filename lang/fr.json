@@ -1006,7 +1006,7 @@
             "fraudeBonus": "Fraude Bonus",
             "harcelementBonus": "Harcèlement Bonus",
             "larcinBonus": "Larcin Bonus",
-            "pactenecrotiqueBonus": "Larcin Bonus",
+            "pactenecrotiqueBonus": "Pacte nécrotique Bonus",
             "engrenagesAcquis": "Engrenages Acquis",
             "pilotageAcquis": "Pilotage Acquis",
             "recuperationAcquis": "Récupération Acquis",
@@ -1106,7 +1106,7 @@
             "fraudeAcquis": "Fraude Acquis",
             "harcelementAcquis": "Harcèlement Acquis",
             "larcinAcquis": "Larcin Acquis",
-            "pactenecrotiqueAcquis": "Larcin Acquis"
+            "pactenecrotiqueAcquis": "Pacte nécrotique Acquis"
         }
     }
 }
