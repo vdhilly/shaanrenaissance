@@ -850,13 +850,11 @@
     grid-template-columns: 0.7fr 1fr;
     grid-template-rows: 70px 30px 1fr;
 }
-
-.item.sheet.race .tab.general .infos {
+.item.sheet.race .tab.general .race-details {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 0.2fr) repeat(3, 0.5fr);
+    grid-template-rows: repeat(2, 0.1fr) 1fr 0.5fr 0.5fr
 }
-
 .item.sheet.race .tab.general .race-image {
     grid-area: 1 / 1 / 4 / 3;
     margin-top: 5px;
@@ -919,7 +917,7 @@
 .item.sheet.peuple .tab.general .infos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 0.1fr) 1fr 0.8fr 0.5fr
+    grid-template-rows: repeat(2, 0.1fr) 1fr 0.5fr 0.5fr
 }
 .item.sheet.peuple .tab.general .peuple-image {
     grid-area: 1 / 1 / 4 / 3;
