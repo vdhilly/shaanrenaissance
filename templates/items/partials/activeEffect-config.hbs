@@ -111,7 +111,12 @@
             <li class="effect-change flexrow" data-index="{{i}}">
                 <div class="key">
                     <select name="changes.{{i}}.key">
-                        {{selectOptions ../config.activeEffectChanges selected=change.key localize=true}}
+                        <optgroup label="{{localize "SR.spécialisations"}}">
+                            {{selectOptions ../config.activeEffectChanges.spés selected=change.key localize=true}}
+                        </optgroup>
+                        <optgroup label="{{localize "SRLabels.Protections"}}">
+                            {{selectOptions ../config.activeEffectChanges.protections selected=change.key localize=true}}
+                        </optgroup>
                     </select>
                 </div>
                 <div class="mode">
