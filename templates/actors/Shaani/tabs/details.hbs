@@ -56,25 +56,10 @@
         <hr/>
         <div class="motivations">
             <label class="motivations-label" for="{{options.id}}-shaani-motivations">{{localize "SRLabels.Motivations"}}</label>
-            <textarea class="motivations-input" id="{{options.id}}-shaani-motivations" name="system.motivation" value="{{data.motivation}}" placeholder="{{data.motivation}}">{{data.motivation}}</textarea>
+            {{editor enrichedMotivations target="system.motivation" button=true owner=owner editable=editable
+            engine="prosemirror"}}        
         </div>
     </div>
     <hr />
-    <div class="biographyCategory campagne">
-        <header>
-           <h2>{{localize "SRLabels.campaign"}}</h2>
-        </header>
-        <div class="biography-notes">
-            <label class="notes-label" for="{{actor.id}}-pc-notes">{{localize "SRLabels.notes"}}</label>
-            <textarea class="notes-textarea" id="{{actor.id}}-pc-notes" name="system.biography.campagne.notes" value="{{data.biography.campagne.notes}}">{{data.biography.campagne.notes}}</textarea>
-        </div>
-        <div class="biography-allies">
-            <label class="allies-label" for="{{actor.id}}-pc-allies">{{localize "SRLabels.allies"}}</label>
-            <textarea class="allies-textarea" id="{{actor.id}}-pc-allies" name="system.biography.campagne.allies" value="{{data.biography.campagne.allies}}">{{data.biography.campagne.allies}}</textarea>
-        </div>
-        <div class="biography-enemies">
-            <label class="enemies-label" for="{{actor.id}}-pc-enemies">{{localize "SRLabels.enemies"}}</label>
-            <textarea class="enemies-textarea" id="{{actor.id}}-pc-enemies" name="system.biography.campagne.enemies" value="{{data.biography.campagne.enemies}}">{{data.biography.campagne.enemies}}</textarea>
-        </div>
-    </div>
+    {{~> "systems/shaanrenaissance/templates/actors/partials/campagne.hbs"}}
 </div>

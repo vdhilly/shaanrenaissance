@@ -10,16 +10,19 @@
             {{#ifeq dieInfo.formula "1d10[Esprit]"}}
             <div class="die Esprit">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
+            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
             </div>
             {{/ifeq}}
             {{#ifeq dieInfo.formula "1d10[Ame]"}}
             <div class="die Ame">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Ame/d10_bleu_{{dieInfo.total}}.png">
+            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
             </div>
             {{/ifeq}}
             {{#ifeq dieInfo.formula "1d10[Corps]"}}
             <div class="die Corps">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Corps/d10_rouge_{{dieInfo.total}}.png">
+            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
             </div>
             {{/ifeq}}
             {{/each}}
@@ -27,6 +30,7 @@
     {{/each}}
 {{/with}}
     </div>
+    <button class="puiser">Puiser</button>
     <hr/>
     {{#ifnoteq roll.symbiose "Not"}}
     <div class="symbiose {{#ifeq roll.symbiose "Réussite"}}Réussite{{/ifeq}} {{#ifeq roll.symbiose "Echec"}}Echec{{/ifeq}}">
@@ -39,11 +43,11 @@
     </div>
     {{/ifnoteq}}
     <div class="domainInfos">
-      <span>{{localize "chat.domainTest.options.domain"}} {{roll.data.domain}} - {{roll.data.domainLevel}}</span>
+      <span>{{localize "chat.domainTest.options.domain"}} <span class="domainName">{{roll.data.domain}}</span> - <b class="domain">{{roll.data.domainLevel}}</b></span>
       {{#ifeq roll.data.isPure false}}
       <span>{{localize "chat.domainTest.options.spécialisation"}} {{localize roll.data.spécialisation}}</span>
-      <span>{{localize "chat.domainTest.options.bonus"}}: {{#ifeq roll.data.spéBonus null}}+ 0{{/ifeq}}{{#if roll.data.spéBonus }}+ {{roll.data.spéBonus}}{{/if}}</span>
-      <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ {{roll.data.spéAcquis }}{{/if}}</span>
+      <span>{{localize "chat.domainTest.options.bonus"}}: {{#ifeq roll.data.spéBonus null}}+ 0{{/ifeq}}{{#if roll.data.spéBonus }}+ <b class="spéBonus">{{roll.data.spéBonus}}</b>{{/if}}</span>
+      <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ <b class="acquisBonus">{{roll.data.spéAcquis }}</b>{{/if}}</span>
       {{/ifeq}}
       {{#if roll.data.difficulty}}
         <span>{{localize "chat.domainTest.options.difficulty"}} {{roll.data.difficulty}}</span>

@@ -34,15 +34,18 @@
             </ol>
             <div class="schemes">
                 <label class="details-label" for="{{options.id}}-Magic-schemes">{{localize "SRLabels.Schemes"}}</label>
-                <textarea name="system.Magic.schèmes" id="{{options.id}}-Magic-schemes" value="{{data.Magic.schèmes}}" placeholder="{{data.Magic.schèmes}}">{{data.Magic.schèmes}}</textarea>
+                {{editor enrichedSchemes target="system.Magic.schèmes" button=true owner=owner editable=editable
+                engine="prosemirror"}}
             </div>
             <div class="alchimie">
                 <label class="details-label" for="{{options.id}}-Magic-alchimie">{{localize "SRLabels.Alchimie"}}</label>
-                <textarea name="system.Magic.alchimie" id="{{options.id}}-Magic-alchimie" value="{{data.Magic.alchimie}}" placeholder="{{data.Magic.alchimie}}">{{data.Magic.alchimie}}</textarea>
+                {{editor enrichedAlchemy target="system.Magic.alchimie" button=true owner=owner editable=editable
+                engine="prosemirror"}}
             </div>
             <div class="enchantement">
                 <label class="details-label" for="{{options.id}}-Magic-enchantement">{{localize "SRLabels.Enchantement"}}</label>
-                <textarea name="system.Magic.enchantement" id="{{options.id}}-Magic-enchantement" value="{{data.Magic.enchantement}}" placeholder="{{data.Magic.enchantement}}">{{data.Magic.enchantement}}</textarea>
+                {{editor enrichedEnchants target="system.Magic.enchantement" button=true owner=owner editable=editable
+                engine="prosemirror"}}
             </div>
         </div>
     </div>

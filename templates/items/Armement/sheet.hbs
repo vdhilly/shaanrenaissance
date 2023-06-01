@@ -1,94 +1,109 @@
 <form class="item sheet crb-style armement" autocomplete="off">
     {{!-- HEADER --}}
     {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
-    <div class="armement-rank">
-        <p>
-            <i>
-                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
-                {{#if editable}}
-                <select name="system.acquis.caste">
-                        {{#select data.acquis.caste}}
-                        {{#each config.acquis.caste as |caste|}}
-                        <option value="{{caste}}">{{localize caste}}</option>
-                        {{/each}}
-                    {{/select}}
-                </select>
-                {{localize "SR.de"}}
-                {{else}}
-                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
-                {{/if}}
-                <b>{{#if editable}}
-                <select name="system.class">
-                        {{#select data.class}}
-                        {{#each config.acquis.class as |class|}}
-                        <option value="{{class}}">{{localize class}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{else}}
-                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
-                {{/if}}</b>
-            </i>
-        </p>
-    </div>
-    <div class="armement-details">
-            <div class="armement-spécialisations">
-                <h3>
-                    <label for="{{options.id}}-armement-spécialisations">{{localize "SR.spécialisations"}}</label>
-                    <input name="system.acquis.spécialisations" id="{{options.id}}-armement-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
-                </h3>
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+    <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">
+                <div class="armement-rank">
+                    <p>
+                        <i>
+                            {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                            {{#if editable}}
+                            <select name="system.acquis.caste">
+                                    {{#select data.acquis.caste}}
+                                    {{#each config.acquis.caste as |caste|}}
+                                    <option value="{{caste}}">{{localize caste}}</option>
+                                    {{/each}}
+                                {{/select}}
+                            </select>
+                            {{localize "SR.de"}}
+                            {{else}}
+                                <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                            {{/if}}
+                            <b>{{#if editable}}
+                            <select name="system.class">
+                                    {{#select data.class}}
+                                    {{#each config.acquis.class as |class|}}
+                                    <option value="{{class}}">{{localize class}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{else}}
+                                <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                            {{/if}}</b>
+                        </i>
+                    </p>
+                </div>
+                <div class="armement-details">
+                        <div class="armement-spécialisations">
+                            <h3>
+                                <label for="{{options.id}}-armement-spécialisations">{{localize "SR.spécialisations"}}</label>
+                                <input name="system.acquis.spécialisations" id="{{options.id}}-armement-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="armement-portée">
+                            </h3>
+                            <label for="{{options.id}}-armement-portée-select">{{localize "SR.Portée"}}</label><br>
+                            <select class="select" name="system.acquis.portée" id="{{options.id}}-armement-portée-select">
+                                {{#select data.acquis.portée}}
+                                    {{#each config.pouvoirs.pouvoirPortée as |portée|}}
+                                    <option value="{{portée}}">{{localize portée}}</option>
+                                    {{/each}}
+                                {{/select}}
+                            </select>
+                            </h3>
+                        </div>
+                        <div class="armement-capacité">
+                            <h3>
+                                <label for="{{options.id}}-armement-capacité">{{localize "SR.capacité"}}</label>
+                                <input name="system.acquis.capacité" id="{{options.id}}-armement-capacité" type="text" value="{{data.acquis.capacité}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="armement-valeur">
+                            <h3>
+                                <label for="{{options.id}}-armement-valeur">{{localize "SR.valeur"}}</label>
+                                <input name="system.acquis.valeur" id="{{options.id}}-armement-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="armement-prestige">
+                            <h3>
+                                <label for="{{options.id}}-armement-prestige">{{localize "SR.prestige"}}</label>
+                                <input name="system.acquis.prestige" id="{{options.id}}-armement-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="armement-déscription">
+                            <h3>
+                                <label for="{{options.id}}-armement-Déscription">{{localize "SR.Déscription"}}</label>
+                                <textarea name="system.description.value" resize="none" id="{{options.id}}-armement-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                            </h3>
+                        </div>
+                        <div class="armement-fabrication">
+                            <h3>
+                            <label for="{{options.id}}-armement-fabrication">{{localize "SR.fabrication"}}</label>
+                            <input name="system.acquis.fabrication" id="{{options.id}}-armement-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="armement-ressources">
+                            <label for="{{options.id}}-armement-ressources">{{localize "SR.ressources"}}</label>
+                            <input name="system.acquis.ressources" id="{{options.id}}-armement-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
+                        </div>
+                        <div class="armement-entretien">
+                            <h3>
+                            <label for="{{options.id}}-armement-entretien">{{localize "SR.entretien"}}</label>
+                            <input name="system.acquis.entretien" id="{{options.id}}-armement-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                </div>
             </div>
-            <div class="armement-portée">
-                </h3>
-                <label for="{{options.id}}-armement-portée-select">{{localize "SR.Portée"}}</label><br>
-                <select class="select" name="system.acquis.portée" id="{{options.id}}-armement-portée-select">
-                    {{#select data.acquis.portée}}
-                        {{#each config.pouvoirs.pouvoirPortée as |portée|}}
-                        <option value="{{portée}}">{{localize portée}}</option>
-                        {{/each}}
-                    {{/select}}
-                </select>
-                </h3>
-            </div>
-            <div class="armement-capacité">
-                <h3>
-                    <label for="{{options.id}}-armement-capacité">{{localize "SR.capacité"}}</label>
-                    <input name="system.acquis.capacité" id="{{options.id}}-armement-capacité" type="text" value="{{data.acquis.capacité}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="armement-valeur">
-                <h3>
-                    <label for="{{options.id}}-armement-valeur">{{localize "SR.valeur"}}</label>
-                    <input name="system.acquis.valeur" id="{{options.id}}-armement-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="armement-prestige">
-                <h3>
-                    <label for="{{options.id}}-armement-prestige">{{localize "SR.prestige"}}</label>
-                    <input name="system.acquis.prestige" id="{{options.id}}-armement-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="armement-déscription">
-                <h3>
-                    <label for="{{options.id}}-armement-Déscription">{{localize "SR.Déscription"}}</label>
-                    <textarea name="system.description.value" resize="none" id="{{options.id}}-armement-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
-                </h3>
-            </div>
-            <div class="armement-fabrication">
-                <h3>
-                <label for="{{options.id}}-armement-fabrication">{{localize "SR.fabrication"}}</label>
-                <input name="system.acquis.fabrication" id="{{options.id}}-armement-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
-                </h3>
-            </div>
-            <div class="armement-ressources">
-                <label for="{{options.id}}-armement-ressources">{{localize "SR.ressources"}}</label>
-                <input name="system.acquis.ressources" id="{{options.id}}-armement-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
-            </div>
-            <div class="armement-entretien">
-                <h3>
-                <label for="{{options.id}}-armement-entretien">{{localize "SR.entretien"}}</label>
-                <input name="system.acquis.entretien" id="{{options.id}}-armement-entretien" type="text" value="{{data.acquis.entretien}}"spellcheck="false"/>
-                </h3>
-            </div>
-    </div>
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

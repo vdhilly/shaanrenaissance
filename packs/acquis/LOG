@@ -1,12 +1,9 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-2023/05/26-02:26:05.303 10f0 Recovering log #26
-2023/05/26-02:26:05.313 10f0 Delete type=0 #26
-2023/05/26-02:26:05.313 10f0 Delete type=3 #24
-=======
-2023/05/25-17:20:10.208 2170 Recovering log #20
-2023/05/25-17:20:10.219 2170 Delete type=0 #20
-2023/05/25-17:20:10.220 2170 Delete type=3 #18
->>>>>>> main
-=======
->>>>>>> Stashed changes
+2023/06/01-10:27:39.539 61c0 Recovering log #162
+2023/06/01-10:27:39.540 61c0 Level-0 table #166: started
+2023/06/01-10:27:39.558 61c0 Level-0 table #166: 221391 bytes OK
+2023/06/01-10:27:39.565 61c0 Delete type=0 #162
+2023/06/01-10:27:39.565 61c0 Delete type=3 #160
+2023/06/01-10:34:46.545 6ce4 Compacting 1@0 + 1@1 files
+2023/06/01-10:34:46.621 6ce4 Generated table #168@0: 829 keys, 1040330 bytes
+2023/06/01-10:34:46.621 6ce4 Compacted 1@0 + 1@1 files => 1040330 bytes
+2023/06/01-10:34:46.624 6ce4 compacted to: files[ 0 1 0 0 0 0 0 ]

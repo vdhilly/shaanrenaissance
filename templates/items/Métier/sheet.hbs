@@ -8,18 +8,34 @@
             <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
         </span>
     </header>
-    <div class="metier-details">
-        <div class="spés">
-            <h3>
-                <label class="details-label" for="{{options.id}}-metier-spé1">{{localize "SRCreation.spé"}}</label>
-                <span><input name="system.spé" id="{{options.id}}-metier-spé1" type="text" value="{{data.spé}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="metier-resume">
-        <h3>
-            <label class="details-label" for="{{options.id}}-metier-resume">{{localize "SRCreation.resume"}}</label>
-            <textarea name="system.resume" id="{{options.id}}-metier-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
-        </h3>
-    </div>
-    </div>
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+     <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">   
+                <div class="metier-details">
+                    <div class="spés">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-metier-spé1">{{localize "SRCreation.spé"}}</label>
+                            <span><input name="system.spé" id="{{options.id}}-metier-spé1" type="text" value="{{data.spé}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="metier-resume">
+                    <h3>
+                        <label class="details-label" for="{{options.id}}-metier-resume">{{localize "SRCreation.resume"}}</label>
+                        <textarea name="system.resume" id="{{options.id}}-metier-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
+                    </h3>
+                    </div>
+                </div>
+            </div>
+            <div>
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

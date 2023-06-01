@@ -14,11 +14,23 @@ import { ActorSR } from "./module/ActorSR.js";
 import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
 import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
 import { ItemSR } from "./module/ItemSR.js";
+import * as Puiser from "./module/jets/puiser.js"
+import { SRActiveEffectConfig } from "./module/ActiveEffects/SRActiveEffectConfig.js";
 
 async function preloadHandleBarTemplates() 
 {
     return loadTemplates( templatePaths );
 };
+function registerSystemSettings() {
+  game.settings.register("shaanrenaissance", "showCheckOptions", {
+    config: true,
+    scope: "client",
+    name: "SETTINGS.showCheckOptions.name",
+    hint: "SETTINGS.showCheckOptions.label",
+    type: Boolean,
+    default: true
+  });
+}
 
 
 Hooks.once("init", function(){
@@ -30,6 +42,7 @@ Hooks.once("init", function(){
     CONFIG.Token.documentClass = TokenDocumentSR;
     CONFIG.Token.prototypeSheetClass = TokenConfigSR;
     CONFIG.Item.documentClass = ItemSR;
+    CONFIG.ActiveEffect.sheetClass = SRActiveEffectConfig;
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [{
@@ -38,7 +51,8 @@ Hooks.once("init", function(){
         weight: "700"
       }]
     }
-    
+
+    DocumentSheetConfig.registerSheet(ActiveEffect, 'shaanrenaissance', SRActiveEffectConfig, {makeDefault: true, label: "test"})
     DocumentSheetConfig.registerSheet(TokenDocument, "shaanrenaissance", TokenConfigSR, { makeDefault: true });
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("shaanrenaissance", ShaanRItemSheet, {
@@ -77,6 +91,8 @@ Hooks.once("init", function(){
 
     preloadHandleBarTemplates();
 
+    registerSystemSettings();
+
     // Handlebars
 Handlebars.registerHelper('ifeq', function (a, b, options) {
   if (a == b) { return options.fn(this); }
@@ -86,6 +102,10 @@ Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
 });
+Handlebars.registerHelper('gt', function(a ,b, options) {
+  if (a > b) { return options.fn(this); }
+  return options.inverse(this);
+})
 
 Hooks.on("renderSettings", (async (__app, $html) => {
   var _a;
@@ -161,7 +181,7 @@ Hooks.on("renderDialog", ((_dialog, $html) => {
   const element = $html[0];
   if(element.classList.contains("dialog-item-create")) {
     const select = element.querySelector("select[name=type]"),
-    categories = game.i18n.translations.ITEM.CreationDialog.Categories;
+    categories = game.i18n.translations.Item.CreationDialog.Categories;
     select && (select.append(extractOptGroup(select, categories.Acquis, ["Armement", "Armimale", "Manuscrit", "Artefact", "Outil", "Transport", "Technologie", "Richesse", "Protection", "Relation", "Bâtiment"])), select.append(extractOptGroup(select, categories.Personnage, ["Race", "Peuple", "Caste", "Métier"])), select.append(extractOptGroup(select, categories.Autres)), select.querySelector("option").selected = !0)
   }
 }))
@@ -271,4 +291,10 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
     }, "d10")
   }
 })
+});
+
+// Puiser
+Hooks.on('renderChatMessage', (app, html, data) => {
+  Puiser.hideChatPuiserButtons(app, html, data);
+  Puiser.addChatListeners(app, html, data)
 });

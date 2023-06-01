@@ -84,7 +84,9 @@ export default class ShaanNPCSheet extends ActorSheet {
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
                 sheetData.data.attributes.initiative.value = domainValue
-                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                if(game.actors.get(actorData._id)) {
+                    game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                }
             }
         // Filtre Race
         let race = actorData.items.filter(function (item) { return item.type == "Race"});
@@ -174,7 +176,8 @@ export default class ShaanNPCSheet extends ActorSheet {
             actor,
             domain: domain,
             spécialisation: spécialisation,
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
     }
 
@@ -201,7 +204,8 @@ export default class ShaanNPCSheet extends ActorSheet {
             race,
             domain: domain,
             spécialisation: spécialisation,
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
 
     }
@@ -230,7 +234,12 @@ export default class ShaanNPCSheet extends ActorSheet {
                 return this.actor.deleteEmbeddedDocuments("Item", [itemId])
             }
         });
-        race = lastElement.name
+        if(lastElement){
+            race = lastElement.name
+        }
+        else {
+            race = "race"
+        }
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({

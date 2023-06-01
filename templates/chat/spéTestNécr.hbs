@@ -12,11 +12,13 @@
             {{#ifeq dieInfo.formula "1d10[Esprit]"}}
             <div class="die Esprit">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
+            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
             </div>
             {{/ifeq}}
             {{#ifeq dieInfo.formula "1d10[Necrose]"}}
             <div class="die Nécrose">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{dieInfo.total}}.png">
+            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
             </div>
             {{/ifeq}}
             {{/each}}

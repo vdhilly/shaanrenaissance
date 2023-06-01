@@ -13,7 +13,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     get template(){
         return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
     }
-    getData(options = this.options) {
+    async getData(options = this.options) {
         options.id || (options.id = this.id);
         const actorData = this.actor.toObject(!1),
             sheetData = {
@@ -170,8 +170,20 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
                 sheetData.data.attributes.initiative.value = domainValue
-                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                if(game.actors.get(actorData._id)) {
+                    game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                }
             }
+        // Editors
+        sheetData.enrichedBiography = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.histoire"), {async: true})
+        sheetData.enrichedApparence = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.apparence"), {async: true})
+        sheetData.enrichedNotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.notes"), {async: true})
+        sheetData.enrichedAllies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.allies"), {async: true})
+        sheetData.enrichedEnemies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.enemies"), {async: true})
+        sheetData.enrichedSchemes = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.schèmes"), {async: true})
+        sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
+        sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
+
         
         console.log(actorData)
         console.log(sheetData);
@@ -234,7 +246,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             actor,
             domain: domain,
             spécialisation: spécialisation,
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
     }
 
@@ -261,7 +274,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             race,
             domain: domain,
             spécialisation: spécialisation, 
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
 
     }
@@ -290,7 +304,12 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 return this.actor.deleteEmbeddedDocuments("Item", [itemId])
             }
         });
-        race = lastElement.name
+        if(lastElement){
+            race = lastElement.name
+        }
+        else {
+            race = "race"
+        }
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({

@@ -1,75 +1,83 @@
 <form class="item sheet crb-style outil" autocomplete="off">
     {{!-- HEADER --}}
     {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
-
-    <div class="outil-rank">
-        <p>
-            <i>
-                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
-                {{#if editable}}
-                <select name="system.acquis.caste">
-                        {{#select data.acquis.caste}}
-                        {{#each config.acquis.caste as |caste|}}
-                        <option value="{{caste}}">{{localize caste}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{localize "SR.de"}}
-                {{else}}
-                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
-                {{/if}}
-                <b>{{#if editable}}
-                <select name="system.class">
-                        {{#select data.class}}
-                        {{#each config.acquis.class as |class|}}
-                        <option value="{{class}}">{{localize class}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{else}}
-                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
-                {{/if}}</b>
-            </i>
-        </p>
-    </div>
-    <div class="outil-details">
-        <div class="outil-spécialisations">
-            <h3>
-                <label for="{{options.id}}-outil-spécialisations">{{localize "SR.spécialisations"}}</label>
-                <input name="system.acquis.spécialisations" id="{{options.id}}-outil-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="outil-déscription">
-            <label for="{{options.id}}-outil-Déscription">{{localize "SR.Déscription"}}</label>
-            <textarea name="system.description.value" resize="none" id="{{options.id}}-outil-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
-        </div>
-        <div class="outil-valeur">
-            <h3>
-                <label for="{{options.id}}-outil-valeur">{{localize "SR.valeur"}}</label>
-                <input name="system.acquis.valeur" id="{{options.id}}-outil-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="outil-prestige">
-            <h3>
-                <label for="{{options.id}}-outil-prestige">{{localize "SR.prestige"}}</label>
-                <input name="system.acquis.prestige" id="{{options.id}}-outil-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="outil-ressources">
-            <h3>
-                <label for="{{options.id}}-outil-ressources">{{localize "SR.ressources"}}</label>
-                <input name="system.acquis.ressources" id="{{options.id}}-outil-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="outil-fabrication">
-            <h3>
-                <label for="{{options.id}}-outil-fabrication">{{localize "SR.fabrication"}}</label>
-                <input name="system.acquis.fabrication" id="{{options.id}}-outil-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
-            </h3>
-        </div>
-
-
-        </div>
-
-
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+     <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">  
+                <div class="outil-rank">
+                    <p>
+                        <i>
+                            {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                            {{#if editable}}
+                            <select name="system.acquis.caste">
+                                    {{#select data.acquis.caste}}
+                                    {{#each config.acquis.caste as |caste|}}
+                                    <option value="{{caste}}">{{localize caste}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{localize "SR.de"}}
+                            {{else}}
+                                <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                            {{/if}}
+                            <b>{{#if editable}}
+                            <select name="system.class">
+                                    {{#select data.class}}
+                                    {{#each config.acquis.class as |class|}}
+                                    <option value="{{class}}">{{localize class}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{else}}
+                                <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                            {{/if}}</b>
+                        </i>
+                    </p>
+                </div>
+                <div class="outil-details">
+                    <div class="outil-specialisations">
+                        <label for="{{options.id}}-outil-spécialisations">{{localize "SR.spécialisations"}}</label>
+                        <input name="system.acquis.spécialisations" id="{{options.id}}-outil-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+                    </div>
+                    <div class="outil-déscription">
+                        <label for="{{options.id}}-outil-Déscription">{{localize "SR.Déscription"}}</label>
+                        <textarea name="system.description.value" resize="none" id="{{options.id}}-outil-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                    </div>
+                    <div class="outil-valeur">
+                        <h3>
+                            <label for="{{options.id}}-outil-valeur">{{localize "SR.valeur"}}</label>
+                            <input name="system.acquis.valeur" id="{{options.id}}-outil-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="outil-prestige">
+                        <h3>
+                            <label for="{{options.id}}-outil-prestige">{{localize "SR.prestige"}}</label>
+                            <input name="system.acquis.prestige" id="{{options.id}}-outil-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="outil-ressources">
+                        <h3>
+                            <label for="{{options.id}}-outil-ressources">{{localize "SR.ressources"}}</label>
+                            <input name="system.acquis.ressources" id="{{options.id}}-outil-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="outil-fabrication">
+                        <h3>
+                            <label for="{{options.id}}-outil-fabrication">{{localize "SR.fabrication"}}</label>
+                            <input name="system.acquis.fabrication" id="{{options.id}}-outil-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

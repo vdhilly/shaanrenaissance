@@ -8,7 +8,6 @@
     object-fit: contain;
 }
 
-
 /* TOKEN HUD */
 #token-hud {
     display: flex;
@@ -180,6 +179,9 @@
 .chat-message .result-container.fail {
     background:#802121
 }
+.chat-message button {
+    margin-top: 3px;
+}
 /* SETTINGS */
 
 .system-info a {
@@ -224,4 +226,32 @@
 }
 .chat-message .pouvoir-chat .pouvoir-infos .detail {
     font: 600 var(--font-size-14) var(--body-serif)
+}
+
+
+/* Dialog Puiser */
+
+.puiser-dialog img {
+    width: 15%;
+    border: none;
+}
+.puiser-dialog fieldset div, .puiser-dialog fieldset div label {
+    display: flex;
+}
+.puiser-dialog input[type="radio"], .puiser-dialog span {
+    align-self: center;
+}
+
+.editor {
+    background-color: rgba(28, 28, 28, .1);
+    padding: 8px 4px 6px;
+    min-height: 200px;
+    height: max-content;
+    font: 700 var(--font-size-14) var(--body-serif);
+}
+.sheet .editor-content {
+    height: 100%;
+    overflow-y: auto;
+    word-break: break-word;
+    
 }

@@ -8,39 +8,54 @@
             <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
         </span>
     </header>
-    <div class="peuple-image">
-        <img src="{{item.img}}" data-edit="img">
-    </div>
-    <div class="peuple-details">
-        <div class="peuple-domain">
-            <h3>
-                <label class="details-label" for="{{options.id}}-peuple-domain">{{localize "SRCreation.domain"}}</label>
-                <input name="system.domain" id="{{options.id}}-peuple-domain" type="text" value="{{data.domain}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="spés">
-            <h3>
-                <label class="details-label" for="{{options.id}}-peuple-spé1">{{localize "SRCreation.spé"}}</label>
-                <span><input name="system.spé1" id="{{options.id}}-peuple-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/> - <input name="system.spé2" id="{{options.id}}-peuple-spé2" type="text" value="{{data.spé2}}"spellcheck="false"/></span>
-            </h3>
-        </div>
-        <div class="peuple-paysage">
-            <h3>
-                <label class="details-label" for="{{options.id}}-peuple-paysage">{{localize "SRCreation.paysage"}}</label>
-                <textarea name="system.paysage" id="{{options.id}}-peuple-paysage" type="text" value="{{data.paysage}}" placeholder="{{data.paysage}}" spellcheck="false">{{data.paysage}}</textarea>
-            </h3>
-        </div>
-    </div>
-    <div class="peuple-resume">
-        <h3>
-            <label class="details-label" for="{{options.id}}-peuple-resume">{{localize "SRCreation.resume"}}</label>
-            <textarea name="system.resume" id="{{options.id}}-peuple-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
-        </h3>
-    </div>
-    <div class="peuple-moeurs">
-        <h3>
-            <label class="details-label" for="{{options.id}}-peuple-moeurs">{{localize "SRCreation.moeurs"}}</label>
-            <textarea name="system.moeurs" id="{{options.id}}-peuple-moeurs" type="text" value="{{data.moeurs}}" placeholder="{{data.moeurs}}" spellcheck="false">{{data.moeurs}}</textarea>
-        </h3>
-    </div>
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+    <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">
+                <div class="infos">
+                    <div class="peuple-image">
+                        <img src="{{item.img}}" data-edit="img">
+                    </div>
+                    <div class="peuple-domain">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-peuple-domain">{{localize "SRCreation.domain"}}</label>
+                            <input name="system.domain" id="{{options.id}}-peuple-domain" type="text" value="{{data.domain}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="spés">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-peuple-spé1">{{localize "SRCreation.spé"}}</label>
+                            <span><input name="system.spé1" id="{{options.id}}-peuple-spé1" type="text" value="{{data.spé1}}"spellcheck="false"/> - <input name="system.spé2" id="{{options.id}}-peuple-spé2" type="text" value="{{data.spé2}}"spellcheck="false"/></span>
+                        </h3>
+                    </div>
+                    <div class="peuple-paysage">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-peuple-paysage">{{localize "SRCreation.paysage"}}</label>
+                            <textarea name="system.paysage" id="{{options.id}}-peuple-paysage" type="text" value="{{data.paysage}}" placeholder="{{data.paysage}}" spellcheck="false">{{data.paysage}}</textarea>
+                        </h3>
+                    </div>
+                    <div class="peuple-resume">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-peuple-resume">{{localize "SRCreation.resume"}}</label>
+                            <textarea name="system.resume" id="{{options.id}}-peuple-resume" type="text" value="{{data.resume}}" placeholder="{{data.resume}}" spellcheck="false">{{data.resume}}</textarea>
+                        </h3>
+                    </div>
+                    <div class="peuple-moeurs">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-peuple-moeurs">{{localize "SRCreation.moeurs"}}</label>
+                            <textarea name="system.moeurs" id="{{options.id}}-peuple-moeurs" type="text" value="{{data.moeurs}}" placeholder="{{data.moeurs}}" spellcheck="false">{{data.moeurs}}</textarea>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

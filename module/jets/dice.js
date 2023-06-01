@@ -178,7 +178,6 @@ export async function domainTest ({
         }
       }
     }
-    console.log(isSuccess, score)
     if (sendMessage) {
       RollToCustomMessage(actor, rollResult, messageTemplate, {
         ...extraMessageData,
@@ -236,6 +235,7 @@ export async function SpéTest ({
   sendMessage = true,
   domain = null,
   difficulty = null,
+  askForOptions = true,
   spécialisation = null,
   description = null
 } = {}) {
@@ -245,13 +245,15 @@ export async function SpéTest ({
   const spéBonus = actorData.skills[domain].specialisations[spécialisation].bonus;
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
 
-  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
-
-  if(checkOptions.cancelled){
+  let optionsSettings = game.settings.get("shaanrenaissance", "showCheckOptions");
+  if(askForOptions != optionsSettings) {
+    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
+    if(checkOptions.cancelled){
       return;
   }
-
   difficulty = checkOptions.difficulty;
+  }
+
 
   let corps = "1d10[Corps]";
   let ame = "1d10[Ame]";
@@ -387,7 +389,6 @@ export async function SpéTest ({
             default: "normal",
             close: () => resolve({ cancelled: true }),
           };
-          // console.log(data)
           new Dialog(data,null).render(true);
 
         });
@@ -583,6 +584,7 @@ export async function SpéTestNécr ({
   sendMessage = true,
   domain = null,
   difficulty = null,
+  askForOptions = true,
   spécialisation = null,
   description = null
 } = {}) {
@@ -593,13 +595,14 @@ export async function SpéTestNécr ({
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
   const raceName = race
 
-  let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
-
-  if(checkOptions.cancelled){
+  let optionsSettings = game.settings.get("shaanrenaissance", "showCheckOptions");
+  if(askForOptions != optionsSettings) {
+    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
+    if(checkOptions.cancelled){
       return;
   }
-
   difficulty = checkOptions.difficulty;
+  }
 
   let rollFormula
 
@@ -715,7 +718,6 @@ export async function SpéTestNécr ({
             default: "normal",
             close: () => resolve({ cancelled: true }),
           };
-          console.log(data)
           new Dialog(data,null).render(true);
 
         });
@@ -754,7 +756,6 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
         type: CONST.CHAT_MESSAGE_TYPES.ROLL
       }
     }
-
     ChatMessage.create(chatData);
 }
 
@@ -833,7 +834,6 @@ export async function RegenHP({
   if(hpCorpsF > hp.hpCorps.max){
     hpCorpsF = hp.hpCorps.max
   }
-  console.log(hpEspritF, hpAmeF, hpCorpsF)
   hp.hpEsprit.value = hpEspritF
   hp.hpAme.value = hpAmeF
   hp.hpCorps.value = hpCorpsF
@@ -883,7 +883,6 @@ export async function RegenHP({
       sound: CONFIG.sounds.dice,
       type: CONST.CHAT_MESSAGE_TYPES.OTHER
     }
-
     ChatMessage.create(chatData);
   }
 

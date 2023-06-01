@@ -1,45 +1,53 @@
 <form class="item sheet crb-style batiment" autocomplete="off">
-{{!-- HEADER --}}
-    <header class="sheet-header">
-        <h2 class="item-name">
-            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du item" spellcheck="false" />
-        </h2>
-        <span class="item-source">
-            <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
-        </span>
-    </header>
-    <div class="batiment-details">
-        <div style="display:flex; flex-direction: row;">
-            <div class="spés" style="width: 80%">
-                <h3>
-                    <label class="details-label" for="{{options.id}}-batiment-spécialisations">{{localize "SRCreation.spé"}}</label>
-                    <input name="system.spécialisations" id="{{options.id}}-batiment-spécialisations" type="text" value="{{data.spécialisations}}"spellcheck="false"/>
-                </h3>
+    {{!-- HEADER --}}
+    {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+     <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">
+                <div class="batiment-details">
+                    <div style="display:flex; flex-direction: row;">
+                        <div class="spés" style="width: 80%">
+                            <h3>
+                                <label class="details-label" for="{{options.id}}-batiment-spécialisations">{{localize "SRCreation.spé"}}</label>
+                                <input name="system.spécialisations" id="{{options.id}}-batiment-spécialisations" type="text" value="{{data.spécialisations}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="price" style="width: 20%">
+                            <h3>
+                                <label class="details-label" for="{{options.id}}-batiment-price">{{localize "SR.valeur"}}</label>
+                                <input name="system.price" id="{{options.id}}-batiment-price" type="text" value="{{data.price}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="batiment-resume">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-batiment-resume">{{localize "SRCreation.resume"}}</label>
+                            <textarea name="system.description.value" id="{{options.id}}-batiment-resume" type="text" placeholder="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                        </h3>
+                    </div>
+                    <div class="batiment-ressources">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-batiment-ressources">{{localize "SR.ressources"}}</label>
+                            <input name="system.ressources" id="{{options.id}}-batiment-ressources" type="text" value="{{data.ressources}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="batiment-fabrication">
+                        <h3>
+                            <label class="details-label" for="{{options.id}}-batiment-fabrication">{{localize "SR.fabrication"}}</label>
+                            <input name="system.fabrication" id="{{options.id}}-batiment-fabrication" type="text" value="{{data.fabrication}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                </div>
             </div>
-            <div class="price" style="width: 20%">
-                <h3>
-                    <label class="details-label" for="{{options.id}}-batiment-price">{{localize "SR.valeur"}}</label>
-                    <input name="system.price" id="{{options.id}}-batiment-price" type="text" value="{{data.price}}"spellcheck="false"/>
-                </h3>
-            </div>
-        </div>
-        <div class="batiment-resume">
-            <h3>
-                <label class="details-label" for="{{options.id}}-batiment-resume">{{localize "SRCreation.resume"}}</label>
-                <textarea name="system.description.value" id="{{options.id}}-batiment-resume" type="text" placeholder="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
-            </h3>
-        </div>
-        <div class="batiment-ressources">
-            <h3>
-                <label class="details-label" for="{{options.id}}-batiment-ressources">{{localize "SR.ressources"}}</label>
-                <input name="system.ressources" id="{{options.id}}-batiment-ressources" type="text" value="{{data.ressources}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="batiment-fabrication">
-            <h3>
-                <label class="details-label" for="{{options.id}}-batiment-fabrication">{{localize "SR.fabrication"}}</label>
-                <input name="system.fabrication" id="{{options.id}}-batiment-fabrication" type="text" value="{{data.fabrication}}"spellcheck="false"/>
-            </h3>
-        </div>
-    </div>
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

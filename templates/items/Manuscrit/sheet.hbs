@@ -1,75 +1,85 @@
 <form class="item sheet crb-style manuscrit" autocomplete="off">
     {{!-- HEADER --}}
     {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
-
-    <div class="manuscrit-rank">
-        <p>
-            <i>
-                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
-                {{#if editable}}
-                <select name="system.acquis.caste">
-                        {{#select data.acquis.caste}}
-                        {{#each config.acquis.caste as |caste|}}
-                        <option value="{{caste}}">{{localize caste}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{localize "SR.de"}}
-                {{else}}
-                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
-                {{/if}}
-                <b>{{#if editable}}
-                <select name="system.class">
-                        {{#select data.class}}
-                        {{#each config.acquis.class as |class|}}
-                        <option value="{{class}}">{{localize class}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{else}}
-                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
-                {{/if}}</b>
-            </i>
-        </p>
-    </div>
-    <div class="manuscrit-details">
-        <div class="manuscrit-spécialisations">
-            <h3>
-                <label for="{{options.id}}-manuscrit-spécialisations">{{localize "SR.spécialisations"}}</label>
-                <input name="system.acquis.spécialisations" id="{{options.id}}-manuscrit-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="manuscrit-déscription">
-            <label for="{{options.id}}-manuscrit-Déscription">{{localize "SR.Déscription"}}</label>
-            <textarea name="system.description.value" resize="none" id="{{options.id}}-manuscrit-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
-        </div>
-        <div class="manuscrit-valeur">
-            <h3>
-                <label for="{{options.id}}-manuscrit-valeur">{{localize "SR.valeur"}}</label>
-                <input name="system.acquis.valeur" id="{{options.id}}-manuscrit-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="manuscrit-prestige">
-            <h3>
-                <label for="{{options.id}}-manuscrit-prestige">{{localize "SR.prestige"}}</label>
-                <input name="system.acquis.prestige" id="{{options.id}}-manuscrit-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="manuscrit-ressources">
-            <h3>
-                <label for="{{options.id}}-manuscrit-ressources">{{localize "SR.ressources"}}</label>
-                <input name="system.acquis.ressources" id="{{options.id}}-manuscrit-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="manuscrit-fabrication">
-            <h3>
-                <label for="{{options.id}}-manuscrit-fabrication">{{localize "SR.fabrication"}}</label>
-                <input name="system.acquis.fabrication" id="{{options.id}}-manuscrit-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
-            </h3>
-        </div>
-
-
-        </div>
-
-
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+     <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">
+                <div class="manuscrit-rank">
+                    <p>
+                        <i>
+                            {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                            {{#if editable}}
+                            <select name="system.acquis.caste">
+                                    {{#select data.acquis.caste}}
+                                    {{#each config.acquis.caste as |caste|}}
+                                    <option value="{{caste}}">{{localize caste}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{localize "SR.de"}}
+                            {{else}}
+                                <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                            {{/if}}
+                            <b>{{#if editable}}
+                            <select name="system.class">
+                                    {{#select data.class}}
+                                    {{#each config.acquis.class as |class|}}
+                                    <option value="{{class}}">{{localize class}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{else}}
+                                <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                            {{/if}}</b>
+                        </i>
+                    </p>
+                </div>
+                <div class="manuscrit-details">
+                    <div class="manuscrit-spécialisations">
+                        <h3>
+                            <label for="{{options.id}}-manuscrit-spécialisations">{{localize "SR.spécialisations"}}</label>
+                            <input name="system.acquis.spécialisations" id="{{options.id}}-manuscrit-spécialisations" type="text" value="{{data.acquis.spécialisations}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="manuscrit-déscription">
+                        <label for="{{options.id}}-manuscrit-Déscription">{{localize "SR.Déscription"}}</label>
+                        <textarea name="system.description.value" resize="none" id="{{options.id}}-manuscrit-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                    </div>
+                    <div class="manuscrit-valeur">
+                        <h3>
+                            <label for="{{options.id}}-manuscrit-valeur">{{localize "SR.valeur"}}</label>
+                            <input name="system.acquis.valeur" id="{{options.id}}-manuscrit-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="manuscrit-prestige">
+                        <h3>
+                            <label for="{{options.id}}-manuscrit-prestige">{{localize "SR.prestige"}}</label>
+                            <input name="system.acquis.prestige" id="{{options.id}}-manuscrit-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="manuscrit-ressources">
+                        <h3>
+                            <label for="{{options.id}}-manuscrit-ressources">{{localize "SR.ressources"}}</label>
+                            <input name="system.acquis.ressources" id="{{options.id}}-manuscrit-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="manuscrit-fabrication">
+                        <h3>
+                            <label for="{{options.id}}-manuscrit-fabrication">{{localize "SR.fabrication"}}</label>
+                            <input name="system.acquis.fabrication" id="{{options.id}}-manuscrit-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

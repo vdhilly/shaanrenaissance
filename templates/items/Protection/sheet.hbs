@@ -1,89 +1,99 @@
 <form class="item sheet crb-style protection" autocomplete="off">
     {{!-- HEADER --}}
     {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
-
-    <div class="protection-rank">
-        <p>
-            <i>
-                {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
-                {{#if editable}}
-                <select name="system.acquis.caste">
-                        {{#select data.acquis.caste}}
-                        {{#each config.acquis.caste as |caste|}}
-                        <option value="{{caste}}">{{localize caste}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{localize "SR.de"}}
-                {{else}}
-                    <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
-                {{/if}}
-                <b>{{#if editable}}
-                <select name="system.class">
-                        {{#select data.class}}
-                        {{#each config.acquis.class as |class|}}
-                        <option value="{{class}}">{{localize class}}</option>
-                    {{/each}}
-                    {{/select}}
-                </select>
-                {{else}}
-                    <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
-                {{/if}}</b>
-            </i>
-        </p>
-    </div>
-
-    <div class="protection-details">
-        <div class="protection-trihns">
-            <div class="trihn-Esprit">
-                <label for="{{options.id}}-protection-trihn-Esprit">{{localize "SRLabels.Esprit"}}</label>
-                <input name="system.acquis.trihn.Esprit" id="{{options.id}}-protection-trihn-Esprit" type="number" value="{{data.acquis.trihn.Esprit}}"spellcheck="false"/>
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+     <section class="sheet-body">
+        <section class="sheet-content">
+            <div class="tab general" data-group="primary" data-tab="general">
+                <div class="protection-rank">
+                    <p>
+                        <i>
+                            {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
+                            {{#if editable}}
+                            <select name="system.acquis.caste">
+                                    {{#select data.acquis.caste}}
+                                    {{#each config.acquis.caste as |caste|}}
+                                    <option value="{{caste}}">{{localize caste}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{localize "SR.de"}}
+                            {{else}}
+                                <input class="locked-input-rank" name="system.acquis.caste" type="text" value="{{data.acquis.caste}}"/>
+                            {{/if}}
+                            <b>{{#if editable}}
+                            <select name="system.class">
+                                    {{#select data.class}}
+                                    {{#each config.acquis.class as |class|}}
+                                    <option value="{{class}}">{{localize class}}</option>
+                                {{/each}}
+                                {{/select}}
+                            </select>
+                            {{else}}
+                                <input class="locked-input-rank" name="system.class" type="text" value="{{data.class}}"/>
+                            {{/if}}</b>
+                        </i>
+                    </p>
+                </div>
+                <div class="protection-details">
+                    <div class="protection-trihns">
+                        <div class="trihn-Esprit">
+                            <label for="{{options.id}}-protection-trihn-Esprit">{{localize "SRLabels.Esprit"}}</label>
+                            <input name="system.acquis.trihn.Esprit" id="{{options.id}}-protection-trihn-Esprit" type="number" value="{{data.acquis.trihn.Esprit}}"spellcheck="false"/>
+                        </div>
+                        <div class="trihn-Ame">
+                            <label for="{{options.id}}-protection-trihn-Ame">{{localize "SRLabels.Ame"}}</label>
+                            <input name="system.acquis.trihn.Ame" id="{{options.id}}-protection-trihn-Ame" type="number" value="{{data.acquis.trihn.Ame}}"spellcheck="false"/>
+                        </div>
+                        <div class="trihn-Corps">
+                            <label for="{{options.id}}-protection-trihn-Corps">{{localize "SRLabels.Corps"}}</label>
+                            <input name="system.acquis.trihn.Corps" id="{{options.id}}-protection-trihn-Corps" type="number" value="{{data.acquis.trihn.Corps}}"spellcheck="false"/>
+                        </div>
+                    </div>
+                    <div class="protection-spécialisations">
+                        <h3>
+                            <label for="{{options.id}}-protection-protection">{{localize "SRLabels.protection"}}</label>
+                            <input name="system.protection" id="{{options.id}}-protection-protection" type="text" value="{{data.protection}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="protection-déscription">
+                    <label for="{{options.id}}-protection-Déscription">{{localize "SR.Déscription"}}</label>
+                    <textarea name="system.description.value" resize="none" id="{{options.id}}-protection-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
+                </div>
+                <div class="protection-valeur">
+                        <h3>
+                            <label for="{{options.id}}-protection-valeur">{{localize "SR.valeur"}}</label>
+                            <input name="system.acquis.valeur" id="{{options.id}}-protection-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="protection-prestige">
+                        <h3>
+                            <label for="{{options.id}}-protection-prestige">{{localize "SR.prestige"}}</label>
+                            <input name="system.acquis.prestige" id="{{options.id}}-protection-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="protection-ressources">
+                        <h3>
+                            <label for="{{options.id}}-protection-ressources">{{localize "SR.ressources"}}</label>
+                            <input name="system.acquis.ressources" id="{{options.id}}-protection-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                    <div class="protection-fabrication">
+                        <h3>
+                            <label for="{{options.id}}-protection-fabrication">{{localize "SR.fabrication"}}</label>
+                            <input name="system.acquis.fabrication" id="{{options.id}}-protection-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
+                        </h3>
+                    </div>
+                </div>
             </div>
-            <div class="trihn-Ame">
-                <label for="{{options.id}}-protection-trihn-Ame">{{localize "SRLabels.Ame"}}</label>
-                <input name="system.acquis.trihn.Ame" id="{{options.id}}-protection-trihn-Ame" type="number" value="{{data.acquis.trihn.Ame}}"spellcheck="false"/>
-            </div>
-            <div class="trihn-Corps">
-                <label for="{{options.id}}-protection-trihn-Corps">{{localize "SRLabels.Corps"}}</label>
-                <input name="system.acquis.trihn.Corps" id="{{options.id}}-protection-trihn-Corps" type="number" value="{{data.acquis.trihn.Corps}}"spellcheck="false"/>
-            </div>
-        </div>
-        <div class="protection-spécialisations">
-            <h3>
-                <label for="{{options.id}}-protection-protection">{{localize "SRLabels.protection"}}</label>
-                <input name="system.protection" id="{{options.id}}-protection-protection" type="text" value="{{data.protection}}"spellcheck="false"/>
-            </h3>
-        </div>
-         <div class="protection-déscription">
-        <label for="{{options.id}}-protection-Déscription">{{localize "SR.Déscription"}}</label>
-        <textarea name="system.description.value" resize="none" id="{{options.id}}-protection-Déscription" type="text" value="{{data.description.value}}" spellcheck="false">{{data.description.value}}</textarea>
-    </div>
-    <div class="protection-valeur">
-            <h3>
-                <label for="{{options.id}}-protection-valeur">{{localize "SR.valeur"}}</label>
-                <input name="system.acquis.valeur" id="{{options.id}}-protection-valeur" type="text" value="{{data.acquis.valeur}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="protection-prestige">
-            <h3>
-                <label for="{{options.id}}-protection-prestige">{{localize "SR.prestige"}}</label>
-                <input name="system.acquis.prestige" id="{{options.id}}-protection-prestige" type="text" value="{{data.acquis.prestige}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="protection-ressources">
-            <h3>
-                <label for="{{options.id}}-protection-ressources">{{localize "SR.ressources"}}</label>
-                <input name="system.acquis.ressources" id="{{options.id}}-protection-ressources" type="text" value="{{data.acquis.ressources}}"spellcheck="false"/>
-            </h3>
-        </div>
-        <div class="protection-fabrication">
-            <h3>
-                <label for="{{options.id}}-protection-fabrication">{{localize "SR.fabrication"}}</label>
-                <input name="system.acquis.fabrication" id="{{options.id}}-protection-fabrication" type="text" value="{{data.acquis.fabrication}}"spellcheck="false"/>
-            </h3>
-        </div>
-    </div>
-   
-
-
+            {{~> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+        </section>
+    </section>
 </form>

@@ -69,7 +69,9 @@ export default class ShaanCreatureSheet extends ActorSheet {
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
                 sheetData.data.attributes.initiative.value = domainValue
-                game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                if(game.actors.get(actorData._id)) {
+                    game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
+                }
             }       
 
         console.log(sheetData);
@@ -114,7 +116,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
             actor,
             domain: domain,
             spécialisation: spécialisation,
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
     }
 
@@ -128,7 +131,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
             actor,
             domain: domain,
             spécialisation: spécialisation,
-            description: description
+            description: description,
+            askForOptions: event.shiftKey
         });
 
     }
@@ -144,6 +148,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
         });
     }
     _onTest(event) {
+        const dataset = event.target.closest(".roll-data").dataset.itemId;
+        let actor = this.actor
 
         if(dataset == "domainTest" || "necroseTest") {
             Dice[dataset]({

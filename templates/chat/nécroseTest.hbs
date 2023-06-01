@@ -10,11 +10,13 @@
             {{#ifeq die.flavor "Esprit"}}
             <div class="die Esprit">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{die.total}}.png">
+            <input type="hidden" class="dice-value" value="{{die.total}}">
             </div>
             {{/ifeq}}
             {{#ifeq die.flavor "Necrose"}}
             <div class="die Nécrose">
             <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{die.total}}.png">
+            <input type="hidden" class="dice-value" value="{{die.total}}">
             </div>
             {{/ifeq}}
     {{/each}}
