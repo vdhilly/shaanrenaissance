@@ -49,14 +49,6 @@
       "flags": {}
     },
     {
-      "name": "acquis",
-      "label": "Acquis",
-      "system": "shaanrenaissance",
-      "path": "packs/acquis.db",
-      "type": "Item",
-      "flags": {}
-    },
-    {
       "name": "races",
       "label": "Races",
       "system": "shaanrenaissance",
@@ -85,6 +77,14 @@
       "label": "Metiers",
       "system": "shaanrenaissance",
       "path": "packs/metiers.db",
+      "type": "Item",
+      "flags": {}
+    },
+    {
+      "name": "acquis",
+      "label": "Acquis",
+      "system": "shaanrenaissance",
+      "path": "packs/acquis.db",
       "type": "Item",
       "flags": {}
     }
