@@ -24,8 +24,8 @@
   "version": "v1.0.0-beta.1",
   "compatibility": {
     "minimum": "11",
-    "verified": "11.299",
-    "maximum": "11.299"
+    "verified": "11",
+    "maximum": "11"
   },
   "esmodules": [
     "shaanRenaissance.js"
@@ -45,14 +45,6 @@
       "label": "Pouvoirs",
       "system": "shaanrenaissance",
       "path": "packs/pouvoirs.db",
-      "type": "Item",
-      "flags": {}
-    },
-    {
-      "name": "acquis",
-      "label": "Acquis",
-      "system": "shaanrenaissance",
-      "path": "packs/acquis.db",
       "type": "Item",
       "flags": {}
     },
@@ -87,6 +79,14 @@
       "path": "packs/metiers.db",
       "type": "Item",
       "flags": {}
+    },
+    {
+      "name": "acquis",
+      "label": "Acquis",
+      "system": "shaanrenaissance",
+      "path": "packs/acquis.db",
+      "type": "Item",
+      "flags": {}
     }
   ],
   "languages": [
@@ -109,5 +109,5 @@
   "initiative": "1d10 - 1 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
   "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.0.0-beta.1/shaanrenaissance.zip"
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.0.1-beta/shaanrenaissance.zip"
 }

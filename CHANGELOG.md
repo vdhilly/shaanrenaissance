@@ -2,8 +2,7 @@
 
 -Ajout de la fonctionnalité Puiser lors des jets. \
 -Changement des zones de texte dans les fiches d'Acteur. \
--Ajout des Active Effects sur les Items. \
-    Les Active Effects vont permettre de mettre à jour automatiquement les spécialisations et Défenses qu'apportent les Acquis, Races et Peuples. Pour le moment, ce n'est pas le cas pour les castes qui demandent un cas spécifique (Spécialisation au choix). Il est nécessaire de remettre les acquis/races/etc. depuis les compendiums si ceux-ci avaient été ajouté avant la v1.0.1-beta pour que cela fonctionne.
+-Ajout des Active Effects sur les Items et mise à jour des Compendiums \
 -Ajout d'un paramètre permettant de ne pas demander la difficulté lors des jets de spécialisation (Shift + Click pour faire l'inverse sans modifier le paramètre).
 
 
