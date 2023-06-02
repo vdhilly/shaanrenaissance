@@ -2,7 +2,7 @@
 
 -Ajout de la fonctionnalité Puiser lors des jets. \
 -Changement des zones de texte dans les fiches d'Acteur. \
--Ajout des Active Effects sur les Items. \
+-Ajout des Active Effects sur les Items et mise à jour des Compendiums \
 -Ajout d'un paramètre permettant de ne pas demander la difficulté lors des jets de spécialisation (Shift + Click pour faire l'inverse sans modifier le paramètre).
 
 
