@@ -49,16 +49,17 @@ async function onPuiser(event) {
       if(puiser2.value == 10){
         baseDice.value = 0
       }
+      console.log(baseDice, puiser1, puiser2)
       if(baseDice.value > domain && puiser1.value > domain && puiser2.value > domain) {
         return ui.notifications.error("Vous ne pouvez puiser dans aucun Trihn.");
       }
     //   Définition des choix
       let choix = {}
       choix.bonus = spéBonus+acquisBonus 
-      if(puiser1.value >= puiser1.value+baseDice.value && puiser1.value > baseDice.value && puiser1.value != 0 && puiser1.value <= domain) {
+      if(puiser1.value != 0 && puiser1.value <= domain) {
         choix.choix1 = puiser1
       }
-      if(puiser2.value >= puiser2.value+baseDice.value && puiser2.value > baseDice.value && puiser2.value != 0 && puiser2.value <= domain) {
+      if(puiser2.value != 0 && puiser2.value <= domain) {
         choix.choix2 = puiser2
       }
       if(baseDice.value != 0 && puiser1.value != 0 && baseDice.value+puiser1.value <= domain ) {
@@ -70,6 +71,7 @@ async function onPuiser(event) {
       if(puiser1.value != 0 && puiser2.value != 0 && puiser1.value+puiser2.value <= domain ) {
         choix.choix5 = {value: puiser1.value+puiser2.value, diceValues: {puiser1: puiser1.value, puiser2: puiser2.value}, flavor:{puiser1: puiser1.flavor, puiser2: puiser2.flavor}, color:{puiser1: puiser1.color, puiser2: puiser2.color}}
       }
+      console.log(choix)
       if(!choix.choix1 && !choix.choix2 && !choix.choix3 && !choix.choix4 && !choix.choix5) {
         return ui.notifications.error("Vous ne pouvez puiser dans aucun Trihn.");
       }
@@ -155,19 +157,24 @@ async function onPuiser(event) {
     }
     function _processPuiserOptions(form) {
         let checked = form.querySelector('input:checked');
-        let div = checked.closest('div')
-        let checkedId = $(checked)[0].id
-        let flavor = {}
-        if(checkedId == "choix1" || checkedId == "choix2" || checkedId == "choix3" || checkedId == "choix4") {
-            flavor.flavor1 = div.querySelector('b').dataset.flavor
+        if(checked){
+          let div = checked.closest('div')
+          let checkedId = $(checked)[0].id
+          let flavor = {}
+          if(checkedId == "choix1" || checkedId == "choix2" || checkedId == "choix3" || checkedId == "choix4") {
+              flavor.flavor1 = div.querySelector('b').dataset.flavor
+          }
+          if(checkedId == "choix5") {
+              flavor.flavor1 = div.querySelector('b').dataset.flavor1
+              flavor.flavor2 = div.querySelector('b').dataset.flavor2
+          }
+          return {
+              result: Number(form.result?.value) ,
+              flavor: flavor
+          }
         }
-        if(checkedId == "choix5") {
-            flavor.flavor1 = div.querySelector('b').dataset.flavor1
-            flavor.flavor2 = div.querySelector('b').dataset.flavor2
-        }
-        return {
-            result: Number(form.result?.value) ,
-            flavor: flavor
+        else{
+          ui.notifications.warn("Vous devez faire un choix.")
         }
     }   
 }
