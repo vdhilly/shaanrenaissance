@@ -54,6 +54,8 @@
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary);
     --title: "GodOfWaraccent2";
+    --journal-title: "Komikazoom";
+    --journal-color-resume: #af2e32;
 }
 ::-webkit-scrollbar-thumb {
     outline: none;
@@ -74,6 +76,14 @@ label.checkbox {
 @font-face {
     font-family: GodOfWaraccent2;
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
+}
+@font-face {
+    font-family: Komikazoom;
+    src: url(../fonts/KAMIKZOM.ttf)
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf)
 }
 .window-app.sheet.character .window-content {
     background: url(../assets/sheet/template_shaan_background1.jpg);
