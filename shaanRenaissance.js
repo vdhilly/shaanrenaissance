@@ -61,7 +61,27 @@ Hooks.once("init", function(){
           style: "italic",
           weight: "700"
         }]
-    }
+    };
+    CONFIG.fontDefinitions.Tahoma = {
+      editor: !0,
+      fonts: [
+        {
+          urls: ["systems/shaanrenaissance/fonts/Tahoma.ttf"],
+          style: "normal",
+          weight: "400"
+        }
+      ]
+    };
+    CONFIG.fontDefinitions.Roboto = {
+      editor: !0,
+      fonts: [
+        {
+          urls: ["systems/shaanrenaissance/fonts/Roboto-Regular.ttf"],
+          style: "normal",
+          weight: "400"
+        }
+      ]
+    };
 
     DocumentSheetConfig.registerSheet(ActiveEffect, 'shaanrenaissance', SRActiveEffectConfig, {makeDefault: true, label: "test"})
     DocumentSheetConfig.registerSheet(TokenDocument, "shaanrenaissance", TokenConfigSR, { makeDefault: true });
