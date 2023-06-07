@@ -115,6 +115,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
 
         activateListeners(html) {
             if (this.isEditable) {
+                html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
                 html.find(".item-create").click(this._onItemCreate.bind(this));
                 html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
                 html.find(".item-edit").click(this._onItemEdit.bind(this));
@@ -219,6 +220,72 @@ export default class ShaanShaaniSheet extends ActorSheet {
             }
     
         }
+        _onAcquisCreate(event) {
+            let actor = this.actor
+            acquisCreate({
+                actor,
+            })
+            
+    
+            async function acquisCreate ({
+                actor = null,
+                type = null
+            } = {}) {
+                
+            const actorData = actor ? actor.system : null;
+            let checkOptions = await GetAcquisOptions ({type})
+    
+            if (checkOptions.cancelled) {
+                return;
+            }
+    
+            type = checkOptions.type
+    
+            let itemData = {
+              name: "Nouvel Acquis",
+              type: type,
+              img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
+            };
+            return actor.createEmbeddedDocuments("Item", [itemData]);
+    
+            async function GetAcquisOptions({
+                type = null,
+                template = "systems/shaanrenaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
+                    const actorData = actor.toObject(!1);
+                    actorData.itemTypes = {
+                        Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}
+                    }
+                    const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+    
+                    return new Promise(resolve => {
+                        const data = {
+                            title: game.i18n.format("Création d'Acquis"),
+                            content: html,
+                            actor: actorData,
+                            buttons: {
+                                normal: {
+                                  label: game.i18n.localize("chat.actions.create"),
+                                  callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                },
+                                cancel: {
+                                  label: game.i18n.localize("chat.actions.cancel"),
+                                  callback: html => resolve({ cancelled: true })
+                                }
+                              },
+                              default: "normal",
+                              close: () => resolve({ cancelled: true }),
+                            };
+                            console.log(data)
+                            new Dialog(data,null).render(true);
+                          });
+                }
+                function _processAcquisCreateOptions(form) {
+                    return {
+                     type: form.type?.value
+                    }
+                  }
+            }
+        }
     
         _onItemCreate(event) {
             event.preventDefault();
@@ -226,160 +293,28 @@ export default class ShaanShaaniSheet extends ActorSheet {
             const ameBtn = event.target.closest("#Ame-add")
             const corpsBtn = event.target.closest("#Corps-add")
             const necroseBtn = event.target.closest("#Nécrose-add")
-            const armementBtn = event.target.closest("#Armement-add")
-            const armimaleBtn = event.target.closest("#Armimales-add")
-            const artefactBtn = event.target.closest("#Artefacts-add")
-            const manuscritBtn = event.target.closest("#Manuscrits-add")
-            const outilBtn = event.target.closest("#Outils-add")
-            const protectionBtn = event.target.closest("#Protections-add")
-            const relationBtn = event.target.closest("#Relations-add")
-            const richesseBtn = event.target.closest("#Richesses-add")
-            const technologieBtn = event.target.closest("#Technologie-add")
-            const transportBtn = event.target.closest("#Transports-add")
-            const batimentBtn = event.target.closest("#Bâtiments-add")
             const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
-
-        if(magicTrihnBtn) {
-            let itemData = {
-                name: "Trihn",
-                type: "Trihn",
-                item: {
-                    system: {
-                        trihnType: null,
-                        puissance: null,
-                        emplacement: null,
-                        pouvoir: {
-                            value: null
+            const graftAddBtn = event.target.closest("#graft-add")
+    
+            if(magicTrihnBtn) {
+                let itemData = {
+                    name: "Trihn",
+                    type: "Trihn",
+                    item: {
+                        system: {
+                            trihnType: null,
+                            puissance: null,
+                            emplacement: null,
+                            pouvoir: {
+                                value: null
+                            }
                         }
                     }
                 }
-            }
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(batimentBtn) {
-            let itemData = {
-                name: "Nouveau Bâtiment",
-                type: "Bâtiment",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-              };
-      
-              return this.actor.createEmbeddedDocuments("Item", [itemData]);
-              }
-              this.actor.sheet.render();
-            
-    
-            if(armementBtn) {
-                let itemData = {
-                    name: "Nouvel Armement",
-                    type: "Armement",
-                    img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                  };
-          
-                  return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                  }
-                  this.actor.sheet.render();
-    
-            if(armimaleBtn) {
-                let itemData = {
-                    name: "Nouvelle Armimale",
-                    type: "Armimale",
-                    img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                    };
-              
-                    return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                    }
-                    this.actor.sheet.render();
-    
-            if(artefactBtn) {
-                let itemData = {
-                    name: "Nouvel Artefact",
-                    type: "Artefact",
-                    img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                    };
-            
-                    return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                    }
-                    this.actor.sheet.render();
-    
-            if(manuscritBtn) {
-                let itemData = {
-                    name: "Nouveau Manuscrit",
-                    type: "Manuscrit",
-                    img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-                
                 return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                }
-                this.actor.sheet.render();
-    
-            if(outilBtn) {
-                let itemData = {
-                    name: "Nouvel Outil",
-                    type: "Outil",
-                    img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
+            }
+            this.actor.sheet.render();
                 
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-    
-            if(protectionBtn) {
-                let itemData = {
-                    name: "Nouvelle Protection",
-                    type: "Protection",
-                    img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-                
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-    
-            if(relationBtn) {
-            let itemData = {
-                name: "Nouvelle Relation",
-                type: "Relation",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-        
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-    
-            if(richesseBtn) {
-            let itemData = {
-                name: "Nouvelle Richesse",
-                type: "Richesse",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-        
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-    
-            if(technologieBtn) {
-            let itemData = {
-                name: "Nouvelle Technologie",
-                type: "Technologie",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-        
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-    
-            if(transportBtn) {
-            let itemData = {
-                name: "Nouveau Transport",
-                type: "Transport",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-        
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-    
             if (espritBtn) {
                 let itemData = {
               name: "Nouveau pouvoir d'Esprit",
@@ -431,7 +366,81 @@ export default class ShaanShaaniSheet extends ActorSheet {
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
             }
             this.actor.sheet.render();
+    
+            if (graftAddBtn) {
+                let actor = this.actor
+                const actorData = actor.toObject(!1)
+                const itemsF = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+    
+                graftCreate({
+                    actor: actor,
+                    items: itemsF
+                })
+    
+                console.log(actorData)
+                
+                async function graftCreate ({
+                    actor = null,
+                    items = null
+                } = {}) { 
+                    let item
+                    let actorId = actor._id
+                    let checkOptions = await GetGraftOptions ({item})
+        
+                    if (checkOptions.cancelled) {
+                        return;
+                    }
+                    
+                    item = checkOptions.item
+                    const itemF = actor.items.get(item)
+                    itemF.update({
+                        system: {
+                            morphe: true
+                        }
+                    })
+                    actor.sheet.render()
+                    
+                
+                async function GetGraftOptions({
+                    item = null,
+                    template = "systems/shaanrenaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
+                        const actorData = actor
+                        actorData.itemsNotGraft = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+                        const html = await renderTemplate(template, { actor, item });
+        
+                        return new Promise(resolve => {
+                            const data = {
+                                title: game.i18n.format("Greffe de module"),
+                                content: html,
+                                actor: actorData,
+                                buttons: {
+                                    normal: {
+                                      label: game.i18n.localize("chat.actions.graft"),
+                                      callback: html => resolve(_processGraftCreateOptions(html[0].querySelector("form")))
+                                    },
+                                    cancel: {
+                                      label: game.i18n.localize("chat.actions.cancel"),
+                                      callback: html => resolve({ cancelled: true })
+                                    }
+                                  },
+                                  default: "normal",
+                                  close: () => resolve({ cancelled: true }),
+                            };
+                            new Dialog(data, null).render(true);
+                        });
+                }
+                function _processGraftCreateOptions(form) {
+                    return {
+                        item: form.item?.value
+                    }
+                }
+                
+            }
+            
+            }
+    
         }
+
         _onPouvoirChat(event) {
             event.preventDefault();
             let element = event.target

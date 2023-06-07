@@ -11,7 +11,20 @@ shaanRenaissance.SRdomains = {
     Survie: "Survie",
     Combat: "Combat",
     Nécrose: "Nécrose",
-    }
+    };
+shaanRenaissance.createAcquis = {
+    Armement: "Armement",
+    Armimale: "Armimale",
+    Artefact: "Artefact",
+    Manuscrit: "Manuscrit",
+    Outil: "Outil",
+    Protection: "Protection",
+    Relation: "Relation",
+    Richesse: "Richesse",
+    Technologie: "Technologie",
+    Transport: "Transport",
+    Bâtiment: "Bâtiment",
+}
 shaanRenaissance.pouvoirs = {
     trihns: {
         esprit: "Esprit",

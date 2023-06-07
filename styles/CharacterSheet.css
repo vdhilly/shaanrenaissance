@@ -907,9 +907,25 @@ a.spéTest label, a.spéTestNécr label {
     border-radius: 15px;
     width: 95px;
     padding: 5px;
-    align-items: center;
     text-align: center;
     cursor: pointer;
+}
+.creation-acquis {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .825rem;
+    text-transform: uppercase; 
+    border-radius: 15px;
+    width: 95px;
+    padding: 5px;
+    justify-self: right;
+    text-align: center;
+    cursor: pointer;
+}
+.creation-acquis i {
+    margin-right: 3px;
 }
 /* POWER TAB POUVOIR RACIAL */
 

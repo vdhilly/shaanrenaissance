@@ -211,7 +211,7 @@ export default class ShaanCreatureSheet extends ActorSheet {
                 actorData.itemTypes = {
                     Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}, Trihn: {}
                 }
-                const html = await renderTemplate(template, { actor, type });
+                const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
 
                 return new Promise(resolve => {
                     const data = {

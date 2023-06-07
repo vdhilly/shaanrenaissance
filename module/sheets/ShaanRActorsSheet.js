@@ -191,6 +191,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     }
     activateListeners(html) {
         if (this.isEditable) {
+            html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
             html.find(".item-create").click(this._onItemCreate.bind(this));
             html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this));
             html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
@@ -321,23 +322,79 @@ export default class ShaanRActorsSheet extends ActorSheet {
 
     }
 
+    _onAcquisCreate(event) {
+        let actor = this.actor
+        acquisCreate({
+            actor,
+        })
+        
+
+        async function acquisCreate ({
+            actor = null,
+            type = null
+        } = {}) {
+            
+        const actorData = actor ? actor.system : null;
+        let checkOptions = await GetAcquisOptions ({type})
+
+        if (checkOptions.cancelled) {
+            return;
+        }
+
+        type = checkOptions.type
+
+        let itemData = {
+          name: "Nouvel Acquis",
+          type: type,
+          img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
+        };
+        return actor.createEmbeddedDocuments("Item", [itemData]);
+
+        async function GetAcquisOptions({
+            type = null,
+            template = "systems/shaanrenaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
+                const actorData = actor.toObject(!1);
+                actorData.itemTypes = {
+                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}
+                }
+                const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+
+                return new Promise(resolve => {
+                    const data = {
+                        title: game.i18n.format("Création d'Acquis"),
+                        content: html,
+                        actor: actorData,
+                        buttons: {
+                            normal: {
+                              label: game.i18n.localize("chat.actions.create"),
+                              callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                            },
+                            cancel: {
+                              label: game.i18n.localize("chat.actions.cancel"),
+                              callback: html => resolve({ cancelled: true })
+                            }
+                          },
+                          default: "normal",
+                          close: () => resolve({ cancelled: true }),
+                        };
+                        console.log(data)
+                        new Dialog(data,null).render(true);
+                      });
+            }
+            function _processAcquisCreateOptions(form) {
+                return {
+                 type: form.type?.value
+                }
+              }
+        }
+    }
+
     _onItemCreate(event) {
         event.preventDefault();
         const espritBtn = event.target.closest("#Esprit-add")
         const ameBtn = event.target.closest("#Ame-add")
         const corpsBtn = event.target.closest("#Corps-add")
         const necroseBtn = event.target.closest("#Nécrose-add")
-        const armementBtn = event.target.closest("#Armement-add")
-        const armimaleBtn = event.target.closest("#Armimales-add")
-        const artefactBtn = event.target.closest("#Artefacts-add")
-        const manuscritBtn = event.target.closest("#Manuscrits-add")
-        const outilBtn = event.target.closest("#Outils-add")
-        const protectionBtn = event.target.closest("#Protections-add")
-        const relationBtn = event.target.closest("#Relations-add")
-        const richesseBtn = event.target.closest("#Richesses-add")
-        const technologieBtn = event.target.closest("#Technologie-add")
-        const transportBtn = event.target.closest("#Transports-add")
-        const batimentBtn = event.target.closest("#Bâtiments-add")
         const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
         const graftAddBtn = event.target.closest("#graft-add")
 
@@ -359,129 +416,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
         this.actor.sheet.render();
-
-        if(batimentBtn) {
-            let itemData = {
-                name: "Nouveau Bâtiment",
-                type: "Bâtiment",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-              };
-      
-              return this.actor.createEmbeddedDocuments("Item", [itemData]);
-              }
-              this.actor.sheet.render();
-        
-
-        if(armementBtn) {
-            let itemData = {
-                name: "Nouvel Armement",
-                type: "Armement",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-              };
-      
-              return this.actor.createEmbeddedDocuments("Item", [itemData]);
-              }
-              this.actor.sheet.render();
-
-        if(armimaleBtn) {
-            let itemData = {
-                name: "Nouvelle Armimale",
-                type: "Armimale",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-          
-                return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                }
-                this.actor.sheet.render();
-
-        if(artefactBtn) {
-            let itemData = {
-                name: "Nouvel Artefact",
-                type: "Artefact",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-                };
-        
-                return this.actor.createEmbeddedDocuments("Item", [itemData]);
-                }
-                this.actor.sheet.render();
-
-        if(manuscritBtn) {
-            let itemData = {
-                name: "Nouveau Manuscrit",
-                type: "Manuscrit",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
             
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
-            }
-            this.actor.sheet.render();
-
-        if(outilBtn) {
-            let itemData = {
-                name: "Nouvel Outil",
-                type: "Outil",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
-            
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(protectionBtn) {
-            let itemData = {
-                name: "Nouvelle Protection",
-                type: "Protection",
-                img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
-            
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(relationBtn) {
-        let itemData = {
-            name: "Nouvelle Relation",
-            type: "Relation",
-            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(richesseBtn) {
-        let itemData = {
-            name: "Nouvelle Richesse",
-            type: "Richesse",
-            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(technologieBtn) {
-        let itemData = {
-            name: "Nouvelle Technologie",
-            type: "Technologie",
-            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
-        if(transportBtn) {
-        let itemData = {
-            name: "Nouveau Transport",
-            type: "Transport",
-            img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
-            };
-    
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
-        }
-        this.actor.sheet.render();
-
         if (espritBtn) {
             let itemData = {
           name: "Nouveau pouvoir d'Esprit",
