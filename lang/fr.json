@@ -4,6 +4,7 @@
         "Pnj": "PNJ"
     },
     "SRLabels":{
+        "create": "Créer",
         "HPMax": "Base",
         "HPActuel": "Actuel",
         "Esprit":"Esprit",
