@@ -54,6 +54,9 @@
     --sidebar-label: var(--tertiary-dark);
     --sidebar-title: var(--tertiary);
     --title: "GodOfWaraccent2";
+    --journal-title: "Amazdoo";
+    --journal-subtitle: "Komikazoom";
+    --journal-red-resume: #af2e32;
 }
 ::-webkit-scrollbar-thumb {
     outline: none;
@@ -74,6 +77,14 @@ label.checkbox {
 @font-face {
     font-family: GodOfWaraccent2;
     src: url(../fonts/GodOfWaraccent-Regular.ttf);
+}
+@font-face {
+    font-family: Komikazoom;
+    src: url(../fonts/KAMIKZOM.ttf)
+}
+@font-face {
+    font-family: Amazdoo;
+    src: url(../fonts/AmazDooMLeft.ttf)
 }
 .window-app.sheet.character .window-content {
     background: url(../assets/sheet/template_shaan_background1.jpg);
@@ -615,7 +626,7 @@ h3 {
     border-radius: none;
     width: 100% !important;
     resize: none;
-    height: 55px !important;
+    height: 58px !important;
     font: 700 var(--font-size-14) var(--body-serif);
 }
 .actor.sheet.character .pc_motivations textarea:focus {
@@ -896,9 +907,25 @@ a.spéTest label, a.spéTestNécr label {
     border-radius: 15px;
     width: 95px;
     padding: 5px;
-    align-items: center;
     text-align: center;
     cursor: pointer;
+}
+.creation-acquis {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .825rem;
+    text-transform: uppercase; 
+    border-radius: 15px;
+    width: 95px;
+    padding: 5px;
+    justify-self: right;
+    text-align: center;
+    cursor: pointer;
+}
+.creation-acquis i {
+    margin-right: 3px;
 }
 /* POWER TAB POUVOIR RACIAL */
 

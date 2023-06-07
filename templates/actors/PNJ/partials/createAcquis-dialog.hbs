@@ -3,10 +3,8 @@
     <label>Type d'Acquis</label>
     <select name="type" value="{{type}}">
     {{#select type}}
-      {{#each actor.itemTypes as |itemType|}}
-      {{#ifnoteq @key "Pouvoir"}}
+      {{#each config.createAcquis as |itemType|}}
       <option value="{{@key}}">{{@key}}</option> 
-      {{/ifnoteq}}
       {{/each}}
     {{/select}}
     </select>

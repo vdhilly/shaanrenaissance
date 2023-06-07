@@ -26,8 +26,6 @@ export class SRActiveEffectConfig extends ActiveEffectConfig {
             return obj;
           }, {})
         };
-        console.log(context)
-        console.log(data)
         return foundry.utils.mergeObject(context, data);
       }
 }
