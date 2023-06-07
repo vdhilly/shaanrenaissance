@@ -44,10 +44,10 @@ async function onPuiser(event) {
         baseDice.value = 0
       }
       if(puiser1.value == 10){
-        baseDice.value = 0
+        puiser1.value = 0
       }
       if(puiser2.value == 10){
-        baseDice.value = 0
+        puiser2.value = 0
       }
       console.log(baseDice, puiser1, puiser2)
       if(baseDice.value > domain && puiser1.value > domain && puiser2.value > domain) {
@@ -57,10 +57,15 @@ async function onPuiser(event) {
       let choix = {}
       choix.bonus = spéBonus+acquisBonus 
       if(puiser1.value != 0 && puiser1.value <= domain) {
-        choix.choix1 = puiser1
+        console.log(puiser1.value, baseDice.value)
+        if(puiser1.value > baseDice.value) {
+          choix.choix1 = puiser1
+        }
       }
       if(puiser2.value != 0 && puiser2.value <= domain) {
-        choix.choix2 = puiser2
+        if(puiser2.value > baseDice.value) {
+          choix.choix2 = puiser2
+        }
       }
       if(baseDice.value != 0 && puiser1.value != 0 && baseDice.value+puiser1.value <= domain ) {
         choix.choix3 = {value: baseDice.value+puiser1.value, diceValues: {baseDice: baseDice.value, puiser1: puiser1.value}, flavor:{baseDice: baseDice.flavor, puiser1: puiser1.flavor}, color:{baseDice: baseDice.color, puiser1: puiser1.color}}
@@ -83,9 +88,10 @@ async function onPuiser(event) {
         if(puiserOptions.cancelled){
             return;
         }
+        result = puiserOptions.result + spéBonus + acquisBonus
+
         const actor = selectedToken[0].actor;
         const attributes = actor.system.attributes;
-        result = puiserOptions.result + spéBonus + acquisBonus
         let flavor = puiserOptions.flavor
         var hp = "hp"
         let flavor1 = hp.concat('', flavor.flavor1)
@@ -99,6 +105,8 @@ async function onPuiser(event) {
           let flavor2End = flavor2Base - 1 
           attributes[flavor2].value = flavor2End
         }
+        actor.update(attributes)
+        actor.sheet.render()
 
         if(sendMessage) {
             ToCustomMessage(selectedToken, result, messageTemplate)

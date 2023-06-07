@@ -60,25 +60,6 @@ Hooks.once("init", function(){
           urls: ["systems/shaanrenaissance/fonts/itc-officina-sans-std-bold-italic-1361504767.ttf"],
           style: "italic",
           weight: "700"
-        }]
-    };
-    CONFIG.fontDefinitions.Tahoma = {
-      editor: !0,
-      fonts: [
-        {
-          urls: ["systems/shaanrenaissance/fonts/Tahoma.ttf"],
-          style: "normal",
-          weight: "400"
-        }
-      ]
-    };
-    CONFIG.fontDefinitions.Roboto = {
-      editor: !0,
-      fonts: [
-        {
-          urls: ["systems/shaanrenaissance/fonts/Roboto-Regular.ttf"],
-          style: "normal",
-          weight: "400"
         }
       ]
     };
