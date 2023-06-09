@@ -3,7 +3,7 @@
 
 ### Version actuelle et compatibilité: 
 
-1.0.x-Beta - FoundryVTT 11.+ Ce système est destiné à être utilisé avec Foundry Virtual Tabletop pour jouer à Shaan Renaissance. 
+1.0.x - FoundryVTT 11.+ Ce système est destiné à être utilisé avec Foundry Virtual Tabletop pour jouer à Shaan Renaissance. 
 
 ## Installation - Auto Installer 
 
