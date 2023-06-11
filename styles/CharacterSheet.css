@@ -900,7 +900,7 @@ a.spéTest label, a.spéTestNécr label {
 .pouvoir-compendium {
     border: 2px solid var(--primary);
     color: var(--primary);
-    background:rgba(0, 0, 0, .2);
+    background:rgba(0, 0, 0, .1);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .825rem;
@@ -915,7 +915,7 @@ a.spéTest label, a.spéTestNécr label {
     border: 2px solid var(--primary);
     color: var(--primary);
     font-family: var(--sans-serif);
-    background:rgba(0, 0, 0, .2);
+    background:rgba(0, 0, 0, .1);
     font-weight: 800;
     font-size: .825rem;
     text-transform: uppercase; 
