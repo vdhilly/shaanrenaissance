@@ -5,7 +5,7 @@
 }
 .actor.sheet.creature {
     background: url(../assets/sheet/template_shaan_background1.jpg);
-    background-size: auto 1750px;
+    background-size: auto 2000px;
     width: 100%;
     height: 100% ;
     display: grid;
