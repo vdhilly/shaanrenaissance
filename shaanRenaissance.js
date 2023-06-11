@@ -114,10 +114,6 @@ Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
 });
-Handlebars.registerHelper('gt', function(a ,b, options) {
-  if (a > b) { return options.fn(this); }
-  return options.inverse(this);
-})
 
 Hooks.on("renderSettings", (async (__app, $html) => {
   var _a;
