@@ -82,8 +82,96 @@ export async function domainTest ({
       spéAcquisF = 0
     }
     else {
-      spéBonusF = données.bonus
-      spéAcquisF = données.acquis
+      let max
+      if(domainLevel < 5) {
+        max = "profane"
+      }
+      else {
+        if(domainLevel < 8) {
+          max = "apprenti"
+        }
+        else {
+          if(domainLevel < 11) {
+            max = "initié"
+          }
+          else {
+            if(domainLevel < 14) {
+              max = "maitre"
+            }
+            else {
+              max = "legende"
+            }
+          }
+        }
+      }
+      console.log(max)
+      switch (max) {
+        case "profane": 
+          console.log("test")
+          if(données.bonus >= 1) {
+            spéBonusF = 1
+          }
+          if(données.acquis >= 1) {
+            spéAcquisF = 1
+          }
+          break;
+        case "apprenti":
+          if(données.bonus >= 2) {
+            spéBonusF = 2
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 2) {
+            spéAcquisF = 2
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+        case "initié":
+          if(données.bonus >= 3) {
+            spéBonusF = 3
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 3) {
+            spéAcquisF = 3
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+        case "maitre":
+          if(données.bonus >= 4) {
+            spéBonusF = 4
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 4) {
+            spéAcquisF = 4
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+        case "legende":
+          if(données.bonus >= 5) {
+            spéBonusF = 5
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 5) {
+            spéAcquisF = 5
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+      }
     }
 
     let rollData 
@@ -260,13 +348,107 @@ export async function SpéTest ({
   let esprit = "1d10[Esprit]";
   let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
+  let spéBonusF
+  let spéAcquisF
+
+  let max
+  if(domainLevel < 5) {
+    max = "profane"
+  }
+  else {
+    if(domainLevel < 8) {
+      max = "apprenti"
+    }
+    else {
+      if(domainLevel < 11) {
+        max = "initié"
+      }
+      else {
+        if(domainLevel < 14) {
+          max = "maitre"
+        }
+        else {
+          max = "legende"
+        }
+      }
+    }
+  }
+  console.log(max)
+  switch (max) {
+    case "profane": 
+      console.log("test")
+      if(spéBonus >= 1) {
+        spéBonusF = 1
+      }
+      if(spéAcquis >= 1) {
+        spéAcquisF = 1
+      }
+      break;
+    case "apprenti":
+      if(spéBonus >= 2) {
+        spéBonusF = 2
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 2) {
+        spéAcquisF = 2
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+    case "initié":
+      if(spéBonus >= 3) {
+        spéBonusF = 3
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 3) {
+        spéAcquisF = 3
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+    case "maitre":
+      if(spéBonus >= 4) {
+        spéBonusF = 4
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 4) {
+        spéAcquisF = 4
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+    case "legende":
+      if(spéBonus >= 5) {
+        spéBonusF = 5
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 5) {
+        spéAcquisF = 5
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+  }
+
   let rollData = {
     ...actorData,
     domain: domain,
     domainLevel: domainLevel,
     spécialisation: spécialisation,
-    spéBonus: spéBonus,
-    spéAcquis: spéAcquis,
+    spéBonus: spéBonusF,
+    spéAcquis: spéAcquisF,
     difficulty: difficulty,
     isPure: false
   };
@@ -455,8 +637,96 @@ export async function necroseTest ({
       spéAcquisF = 0
     }
     else {
-      spéBonusF = données.bonus
-      spéAcquisF = données.acquis
+      let max
+      if(domainLevel < 5) {
+        max = "profane"
+      }
+      else {
+        if(domainLevel < 8) {
+          max = "apprenti"
+        }
+        else {
+          if(domainLevel < 11) {
+            max = "initié"
+          }
+          else {
+            if(domainLevel < 14) {
+              max = "maitre"
+            }
+            else {
+              max = "legende"
+            }
+          }
+        }
+      }
+      console.log(max)
+      switch (max) {
+        case "profane": 
+          console.log("test")
+          if(données.bonus >= 1) {
+            spéBonusF = 1
+          }
+          if(données.acquis >= 1) {
+            spéAcquisF = 1
+          }
+          break;
+        case "apprenti":
+          if(données.bonus >= 2) {
+            spéBonusF = 2
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 2) {
+            spéAcquisF = 2
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+        case "initié":
+          if(données.bonus >= 3) {
+            spéBonusF = 3
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 3) {
+            spéAcquisF = 3
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+        case "maitre":
+          if(données.bonus >= 4) {
+            spéBonusF = 4
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 4) {
+            spéAcquisF = 4
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+        case "legende":
+          if(données.bonus >= 5) {
+            spéBonusF = 5
+          }
+          else{
+            spéBonusF = données.bonus
+          }
+          if(données.acquis >= 5) {
+            spéAcquisF = 5
+          }
+          else{
+            spéAcquisF = données.acquis
+          }
+          break;
+      }
     }
 
     let rollData 
@@ -616,14 +886,108 @@ export async function SpéTestNécr ({
     rollFormula = `${nécrose}`;
   }
 
+  let spéBonusF
+  let spéAcquisF
+
+  let max
+  if(domainLevel < 5) {
+    max = "profane"
+  }
+  else {
+    if(domainLevel < 8) {
+      max = "apprenti"
+    }
+    else {
+      if(domainLevel < 11) {
+        max = "initié"
+      }
+      else {
+        if(domainLevel < 14) {
+          max = "maitre"
+        }
+        else {
+          max = "legende"
+        }
+      }
+    }
+  }
+  console.log(max)
+  switch (max) {
+    case "profane": 
+      console.log("test")
+      if(spéBonus >= 1) {
+        spéBonusF = 1
+      }
+      if(spéAcquis >= 1) {
+        spéAcquisF = 1
+      }
+      break;
+    case "apprenti":
+      if(spéBonus >= 2) {
+        spéBonusF = 2
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 2) {
+        spéAcquisF = 2
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+    case "initié":
+      if(spéBonus >= 3) {
+        spéBonusF = 3
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 3) {
+        spéAcquisF = 3
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+    case "maitre":
+      if(spéBonus >= 4) {
+        spéBonusF = 4
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 4) {
+        spéAcquisF = 4
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+    case "legende":
+      if(spéBonus >= 5) {
+        spéBonusF = 5
+      }
+      else{
+        spéBonusF = spéBonus
+      }
+      if(spéAcquis >= 5) {
+        spéAcquisF = 5
+      }
+      else{
+        spéAcquisF = spéAcquis
+      }
+      break;
+  }
+
   let rollData = {
     ...actorData,
     domain: domain,
     race: raceName,
     domainLevel: domainLevel,
     spécialisation: spécialisation,
-    spéBonus: spéBonus,
-    spéAcquis: spéAcquis,
+    spéBonus: spéBonusF,
+    spéAcquis: spéAcquisF,
     difficulty: difficulty
   };
   let rollResult = await new Roll(rollFormula, rollData).roll({async: true}); 
