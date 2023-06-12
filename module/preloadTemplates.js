@@ -32,6 +32,7 @@
         "systems/shaanrenaissance/templates/actors/PNJ/partials/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/specialisations.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/armor.hbs",
+        "systems/shaanrenaissance/templates/actors/PNJ/partials/NPC-reserve.hbs",
   
         // Creature
         "systems/shaanrenaissance/templates/actors/Créature/partials/cercle.hbs",

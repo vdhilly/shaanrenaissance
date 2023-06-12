@@ -641,3 +641,26 @@
     margin: 0;
     margin-bottom: 10px;
 }
+/* Reserve */
+.npc-reserve .reserve_title, .npc-reserve .reserve-sidebar {
+    color: var(--primary);
+}
+.npc-reserve .reserve-sidebar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.reserve-line-1 { grid-area: 1 / 1 / 2 / 6; display: flex; flex-direction: row; justify-content: center;}
+.reserve-line-2  { grid-area: 2 / 2 / 3 / 5; display: flex; flex-direction: row; justify-content: center;}
+.reserve-line-3  { grid-area: 3 / 3 / 4 / 4; display: flex; flex-direction: row; justify-content: center;}
+
+.npc-reserve .reserve-sidebar .reserve-1 {
+    width: 100%
+}
+.npc-reserve .reserve-sidebar label{
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-weight: 800;
+    font-size: .625rem;
+    text-transform: uppercase; 
+}
