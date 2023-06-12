@@ -1,7 +1,7 @@
 <form class="actor sheet crb-style creature" autocomplete="off">
     <div class="creature-stats">
         <section class="creature-HP">
-            <span class="TrihnsLabel">{{localize "SRLabels.Trihns"}}</span>
+            <span class="TrihnsLabel">{{localize "SRLabels.Trihns"}} <a class="regen-hp" title="{{localize "SR.RegenTitle"}}"><i class="fa-solid fa-bed"></i></a></span>
                 <div class="hp-esprit">
                     <span class="esprit-label"><h3 class="sidebar_label">{{localize "SRLabels.Esprit"}}</h3></span>
                     <span class="esprit-base"><h3 class="details-label">{{localize "SRLabels.HPActuel"}}</h3></span>
@@ -85,6 +85,9 @@
                 </a>
                 <h3>{{localize "SRLabels.NecroseTest"}}</h3>
             </div>
+        </div>
+        <div class="npc-reserve">
+            {{~> "systems/shaanrenaissance/templates/actors/PNJ/partials/NPC-reserve.hbs"}}
         </div>
         <div class="creature-bio">
             {{~> "systems/shaanrenaissance/templates/actors/Créature/partials/bio.hbs"}}

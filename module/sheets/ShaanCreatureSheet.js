@@ -84,6 +84,7 @@ export default class ShaanCreatureSheet extends ActorSheet {
             html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));
+            html.find(".regen-hp").click(this._onRegen.bind(this)); 
             html.find(".select-input").focus(this._onInputSelect);
             html.find(".open-compendium").on("click", (event => {
                             if (event.currentTarget.dataset.compendium) {
@@ -105,6 +106,18 @@ export default class ShaanCreatureSheet extends ActorSheet {
     }
     _onInputSelect(event){
         event.currentTarget.select();
+    }
+    _onRegen(event) {
+        let actor = this.actor 
+        let hp = actor.system.attributes
+        hp.hpEsprit.max = actor.system.attributes.hpEsprit.max
+        hp.hpAme.max = actor.system.attributes.hpAme.max
+        hp.hpCorps.max = actor.system.attributes.hpCorps.max
+        console.log(hp)
+        Dice.RegenHP({
+            actor,
+            hp
+        })
     }
     _onSpéTest(event) {
         let actor = this.actor
