@@ -145,6 +145,7 @@ export default class ShaanNPCSheet extends ActorSheet {
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));
             html.find(".select-input").focus(this._onInputSelect);
+            html.find(".regen-hp").click(this._onRegen.bind(this)); 
             html.find(".open-compendium").on("click", (event => {
                             if (event.currentTarget.dataset.compendium) {
                                 const compendium = game.packs.get(event.currentTarget.dataset.compendium);
@@ -165,6 +166,18 @@ export default class ShaanNPCSheet extends ActorSheet {
     }
     _onInputSelect(event){
         event.currentTarget.select();
+    }
+    _onRegen(event) {
+        let actor = this.actor 
+        let hp = actor.system.attributes
+        hp.hpEsprit.max = (Math.max(actor.system.skills.Technique.rank, actor.system.skills.Savoir.rank, actor.system.skills.Social.rank)) + (Math.min(actor.system.skills.Technique.rank, actor.system.skills.Savoir.rank, actor.system.skills.Social.rank))
+        hp.hpAme.max = (Math.max(actor.system.skills.Arts.rank, actor.system.skills.Shaan.rank, actor.system.skills.Magie.rank)) + (Math.min(actor.system.skills.Arts.rank, actor.system.skills.Shaan.rank, actor.system.skills.Magie.rank))
+        hp.hpCorps.max = (Math.max(actor.system.skills.Rituels.rank, actor.system.skills.Survie.rank, actor.system.skills.Combat.rank)) + (Math.min(actor.system.skills.Rituels.rank, actor.system.skills.Survie.rank, actor.system.skills.Combat.rank))
+
+        Dice.RegenHP({
+            actor,
+            hp
+        })
     }
     _onSpéTest(event) {
         let actor = this.actor
