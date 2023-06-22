@@ -58,12 +58,12 @@ async function onPuiser(event) {
       choix.bonus = spéBonus+acquisBonus 
       if(puiser1.value != 0 && puiser1.value <= domain) {
         console.log(puiser1.value, baseDice.value)
-        if(puiser1.value > baseDice.value) {
+        if(puiser1.value > baseDice.value || baseDice.value > domain) {
           choix.choix1 = puiser1
         }
       }
       if(puiser2.value != 0 && puiser2.value <= domain) {
-        if(puiser2.value > baseDice.value) {
+        if(puiser2.value > baseDice.value || baseDice.value > domain) {
           choix.choix2 = puiser2
         }
       }
