@@ -76,7 +76,6 @@ async function onPuiser(event) {
       if(puiser1.value != 0 && puiser2.value != 0 && puiser1.value+puiser2.value <= domain ) {
         choix.choix5 = {value: puiser1.value+puiser2.value, diceValues: {puiser1: puiser1.value, puiser2: puiser2.value}, flavor:{puiser1: puiser1.flavor, puiser2: puiser2.flavor}, color:{puiser1: puiser1.color, puiser2: puiser2.color}}
       }
-      console.log(choix)
       if(!choix.choix1 && !choix.choix2 && !choix.choix3 && !choix.choix4 && !choix.choix5) {
         return ui.notifications.error("Vous ne pouvez puiser dans aucun Trihn.");
       }
