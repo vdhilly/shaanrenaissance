@@ -1,3 +1,21 @@
-2023/06/22-20:32:25.924 14ac Recovering log #178
-2023/06/22-20:32:25.979 14ac Delete type=0 #178
-2023/06/22-20:32:25.980 14ac Delete type=3 #177
+2023/06/23-16:11:56.423 2354 Recovering log #197
+2023/06/23-16:11:56.434 2354 Delete type=0 #197
+2023/06/23-16:11:56.435 2354 Delete type=3 #195
+2023/06/23-16:12:43.136 7d78 Level-0 table #201: started
+2023/06/23-16:12:43.136 7d78 Level-0 table #201: 0 bytes OK
+2023/06/23-16:12:43.142 7d78 Delete type=0 #199
+2023/06/23-16:12:43.176 7d78 Manual compaction at level-0 from '!folders!36iDmyVL1V3fqiUw' @ 72057594037927935 : 1 .. '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 0 : 0; will stop at '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 1771 : 1
+2023/06/23-16:12:43.176 7d78 Compacting 1@0 + 0@1 files
+2023/06/23-16:12:43.340 7d78 Generated table #202@0: 908 keys, 1067414 bytes
+2023/06/23-16:12:43.340 7d78 Compacted 1@0 + 0@1 files => 1067414 bytes
+2023/06/23-16:12:43.343 7d78 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/06/23-16:12:43.344 7d78 Delete type=2 #196
+2023/06/23-16:12:43.353 7d78 Manual compaction at level-0 from '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 1771 : 1 .. '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 0 : 0; will stop at (end)
+2023/06/23-16:12:43.378 7d78 Manual compaction at level-1 from '!folders!36iDmyVL1V3fqiUw' @ 72057594037927935 : 1 .. '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 0 : 0; will stop at '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 1771 : 1
+2023/06/23-16:12:43.378 7d78 Compacting 1@1 + 1@2 files
+2023/06/23-16:12:43.520 7d78 Generated table #203@1: 908 keys, 1067414 bytes
+2023/06/23-16:12:43.520 7d78 Compacted 1@1 + 1@2 files => 1067414 bytes
+2023/06/23-16:12:43.523 7d78 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/06/23-16:12:43.523 7d78 Delete type=2 #5
+2023/06/23-16:12:43.524 7d78 Delete type=2 #202
+2023/06/23-16:12:43.526 7d78 Manual compaction at level-1 from '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 1771 : 1 .. '!items.effects!ztrzN2gfz2kBeLLR.CQiokREp5VEcfRuh' @ 0 : 0; will stop at (end)
