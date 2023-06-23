@@ -750,13 +750,15 @@ a.spéTest label, a.spéTestNécr label {
     padding-bottom: 5px;
     font-size: var(--font-size-17);
     font-family: var(--title);
-    font-weight: 700;
+    font-weight: 400;
+    color: white;
     text-transform: uppercase;
 }
 .actor.sheet.reseau .tab.powers .trihn-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
+    color: white;
 }
 .actor.sheet.reseau .tab.powers .item-control i.fas::before:hover {
     box-shadow: none;
@@ -838,6 +840,7 @@ a.spéTest label, a.spéTestNécr label {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
+    color: white;
 }
 .actor.sheet.reseau .tab.magic .category-header h3 {
     border: none;
@@ -847,7 +850,8 @@ a.spéTest label, a.spéTestNécr label {
     padding-bottom: 5px;
     font-size: var(--font-size-17);
     font-family: var(--title);
-    font-weight: 700;
+    color: white;
+    font-weight: 400;
     text-transform: uppercase;
 }
 .actor.sheet.reseau .tab.magic ol {
@@ -952,7 +956,8 @@ a.spéTest label, a.spéTestNécr label {
     padding-bottom: 5px;
     font-size: var(--font-size-17);
     font-family: var(--title);
-    font-weight: 700;
+    color: white;
+    font-weight: 400;
     text-transform: uppercase;
 }
 .actor.sheet.reseau .tab.acquis .ressources-content {
@@ -979,7 +984,8 @@ a.spéTest label, a.spéTestNécr label {
     padding-bottom: 5px;
     font-size: var(--font-size-17);
     font-family: var(--title);
-    font-weight: 700;
+    color: white;
+    font-weight: 400;
     text-transform: uppercase;
 }
 .actor.sheet.reseau .tab.acquis .category-header .item-controls {

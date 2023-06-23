@@ -46,7 +46,6 @@ export async function domainTest ({
     spécialisation = null,
 } = {}) {
     const messageTemplate = "systems/shaanrenaissance/templates/chat/domainTest.hbs";
-    let spéDomain
     const actorData = actor ? actor.system : null;
 
     let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty})
@@ -500,24 +499,24 @@ export async function SpéTest ({
     isSuccess = false
     if(rollResult.symbiose == "Réussite"){
       isSuccess = true
-      score = spéAcquis + spéBonus + 10
+      score = spéAcquisF + spéBonusF + 10
     }
-    if((spéAcquis + spéBonus) > difficulty){
+    if((spéAcquisF + spéBonusF) > difficulty){
       isSuccess = true
-      score = spéAcquis + spéBonus
+      score = spéAcquisF + spéBonusF
     }
   } else {
     if(score == 0) {
       isSuccess = false 
     } else {
-      score = score + spéAcquis + spéBonus
+      score = score + spéAcquisF + spéBonusF
       if(score > difficulty){
         isSuccess = true
       } else {
         isSuccess = false
         if(rollResult.symbiose == "Réussite"){
           isSuccess = true
-          score = score + 10
+          score = score + 10 
         }
       }
     }
@@ -528,8 +527,8 @@ export async function SpéTest ({
       domain: domain,
       domainLevel: domainLevel,
       spécialisation: spécialisation,
-      spéBonus: spéBonus,
-      spéAcquis: spéAcquis,
+      spéBonus: spéBonusF,
+      spéAcquis: spéAcquisF,
       score: score,
       isSuccess,
       actorID: actor.uuid,
@@ -548,8 +547,8 @@ export async function SpéTest ({
         domain: domain,
         domainLevel: domainLevel,
         spécialisation: spécialisation,
-        spéBonus: spéBonus,
-        spéAcquis: spéAcquis,
+        spéBonus: spéBonusF,
+        spéAcquis: spéAcquisF,
       }
 
       return new Promise(resolve => {
@@ -1018,16 +1017,16 @@ export async function SpéTestNécr ({
   let isSuccess
   if(score > domainLevel){
     isSuccess = false
-    if((spéAcquis + spéBonus) > difficulty){
+    if((spéAcquisF + spéBonusF) > difficulty){
       isSuccess = true
-      score = spéAcquis + spéBonus
+      score = spéAcquisF + spéBonusF
     }
   } else {
     isSuccess = true 
     if(domainDice.total == "10") {
       score = domainLevel
     }
-    score = score + spéAcquis + spéBonus
+    score = score + spéAcquisF + spéBonusF
     if(score <= difficulty){
       isSuccess = false
     }
@@ -1038,8 +1037,8 @@ export async function SpéTestNécr ({
       domain: domain,
       domainLevel: domainLevel,
       spécialisation: spécialisation,
-      spéBonus: spéBonus,
-      spéAcquis: spéAcquis,
+      spéBonus: spéBonusF,
+      spéAcquis: spéAcquisF,
       isSuccess,
       score: score,
       actorID: actor.uuid,
@@ -1058,8 +1057,8 @@ export async function SpéTestNécr ({
         domain: domain,
         domainLevel: domainLevel,
         spécialisation: spécialisation,
-        spéBonus: spéBonus,
-        spéAcquis: spéAcquis
+        spéBonus: spéBonusF,
+        spéAcquis: spéAcquisF
       }
         const config = CONFIG.shaanRenaissance;
 

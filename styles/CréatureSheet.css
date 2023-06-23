@@ -499,13 +499,15 @@
     padding-bottom: 5px;
     font-size: var(--font-size-17);
     font-family: var(--title);
-    font-weight: 700;
+    color: white;
+    font-weight: 400;
     text-transform: uppercase;
 }
 .actor.sheet.creature .category-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
+    color: white;
 }
 .actor.sheet.creature .item-control i.fas::before:hover {
     box-shadow: none;
@@ -584,6 +586,7 @@
     padding-right: 10px;
     justify-self: right;
     align-self: center;
+    color: white;
 }
 .actor.sheet.creature .item-control i.fas::before:hover {
     box-shadow: none;

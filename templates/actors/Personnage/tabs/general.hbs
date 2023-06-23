@@ -21,7 +21,7 @@
         </div>
         <div class="detail-sheet">
             {{!-- race --}}
-            <div class="pc pc_race item" data-item-id="{{RaceSecondaire._id}}" style="display: flex; flex-direction:row">
+            <div class="pc pc_race item" data-item-id="{{Race._id}}" style="display: flex; flex-direction:row">
                 <div class="input {{#ifnoteq data.attributes.isIndar true}}notIndar{{/ifnoteq}}{{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}">
                     <label class="details-label">{{localize "Item.Race"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.primaire"}}{{/ifeq}}</label>
                     <h3>
@@ -36,7 +36,7 @@
                     </h3>
                 </div>
                 {{#ifeq data.attributes.isIndar true}}
-                <div class="input {{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}">
+                <div class="input {{#ifeq data.attributes.isIndar true}} indar {{/ifeq}}" data-item-id="{{RaceSecondaire._id}}">
                     <label class="details-label">{{localize "Item.Race"}} {{#ifeq data.attributes.isIndar true}}{{localize "SRLabels.secondaire"}}{{/ifeq}}</label>
                     <h3>
                         <span class="value">{{RaceSecondaire.name}}</span>
