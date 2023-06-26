@@ -1140,14 +1140,24 @@ export async function RegenHP({
     return;
   }
 
-  malusEsprit = checkOptions.malusEsprit;
-  malusAme = checkOptions.malusAme;
-  malusCorps = checkOptions.malusCorps;
+  malusEsprit = Number(checkOptions.malusEsprit);
+  malusAme = Number(checkOptions.malusAme);
+  malusCorps = Number(checkOptions.malusCorps);
 
-  let corps = "1d10[Corps] - @malusCorps";
-  let ame = "1d10[Ame] - @malusAme";
-  let esprit = "1d10[Esprit] - @malusAme";
-  let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
+  if(actorData.attributes.hpEsprit.value < 0) {
+    malusEsprit = Number(malusEsprit) - Number(actorData.attributes.hpEsprit.value)
+  }
+  if(actorData.attributes.hpAme.value < 0) {
+    malusAme = Number(malusAme) - Number(actorData.attributes.hpAme.value)
+  }
+  if(actorData.attributes.hpCorps.value < 0) {
+    malusCorps = Number(malusCorps) - Number(actorData.attributes.hpCorps.value)
+  }
+
+  let corps = "1d10[Corps]";
+  let ame = "1d10[Ame]";
+  let esprit = "1d10[Esprit]";
+  let rollFormula = `{${corps} - ${malusCorps}, ${ame} - ${malusAme}, ${esprit} - ${malusEsprit}}`;
 
   let rollData = {
     actor,
@@ -1164,7 +1174,8 @@ export async function RegenHP({
   }
 
   let regenEsprit
-  if(rollResult.terms[0].rolls[2].dice[0].total == 10 ){
+  console.log(rollResult.terms[0].rolls[2].total)
+  if(rollResult.terms[0].rolls[2].dice[0].total == 10 || rollResult.terms[0].rolls[2].total < 0){
     regenEsprit = (-1)
   }
   else {
@@ -1175,7 +1186,7 @@ export async function RegenHP({
     hpEspritF = hp.hpEsprit.max
   }
   let regenAme
-  if(rollResult.terms[0].rolls[1].dice[0].total == 10 ){
+  if(rollResult.terms[0].rolls[1].dice[0].total == 10 || rollResult.terms[0].rolls[1].total < 0){
     regenAme = (-1)
   }
   else {
@@ -1186,7 +1197,7 @@ export async function RegenHP({
     hpAmeF = hp.hpAme.max
   }
   let regenCorps
-  if(rollResult.terms[0].rolls[0].dice[0].total == 10 ){
+  if(rollResult.terms[0].rolls[0].dice[0].total == 10 || rollResult.terms[0].rolls[0].total < 0){
     regenCorps = (-1)
   }
   else {
