@@ -65,6 +65,7 @@ export async function domainTest ({
     let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
     const domainLevel = actorData.skills[domain].rank + actorData.skills[domain].temp
+    let spéDomain
     let données
     for (const [category, details] of Object.entries(actorData.skills)) {
       if (details.specialisations && details.specialisations[spé]) {
@@ -543,6 +544,8 @@ export async function SpéTest ({
       template = "systems/shaanrenaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
       const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty, description });
       const actorData = actor.toObject(!1);
+      let spéBonusF
+      let spéAcquisF
       const TestData = {
         domain: domain,
         domainLevel: domainLevel,
