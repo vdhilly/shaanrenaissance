@@ -115,7 +115,10 @@ Handlebars.registerHelper('ifeq', function (a, b, options) {
 Handlebars.registerHelper('ifnoteq', function (a, b, options) {
   if (a != b) { return options.fn(this); }
   return options.inverse(this);
+
+  
 });
+
 
 Hooks.on("renderSettings", (async (__app, $html) => {
   var _a;
@@ -308,3 +311,5 @@ Hooks.on('renderChatMessage', (app, html, data) => {
   Puiser.hideChatPuiserButtons(app, html, data);
   Puiser.addChatListeners(app, html, data)
 });
+
+
