@@ -25,7 +25,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 title: this.title,
                 actor: actorData,
                 data: actorData.system,
-                items: actorData.items,
+                items: actorData.items, 
                 prototypeToken: actorData.prototypeToken,
                 config: CONFIG.shaanRenaissance,
                 user: {
@@ -33,7 +33,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 },
             };
             // Filtres catégorie pouvoir
-            
+            sheetData.items.sort((a, b) => (a.sort || 0) - (b.sort || 0));
             if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
                 sheetData.items.Category = {},
                 sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" && item.system.morphe == false}),
@@ -54,7 +54,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
                 sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituels" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
                 sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
-
+            
                 // Filtre Race
                 let race = actorData.items.filter(function (item) { return item.type == "Race"});
                 let lastElement = race[race.length - 1]
@@ -165,6 +165,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         }
                     })
                 }
+
                 
                 // Initiative
                 const domain = sheetData.data.attributes.initiative.statistic,
@@ -174,6 +175,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
                 }
             }
+            
         // Editors
         sheetData.enrichedBiography = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.histoire"), {async: true})
         sheetData.enrichedApparence = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.apparence"), {async: true})
@@ -185,7 +187,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
         sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
 
         
-        console.log(actorData)
         console.log(sheetData);
         return sheetData;
     }

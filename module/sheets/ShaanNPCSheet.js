@@ -26,6 +26,7 @@ export default class ShaanNPCSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
+            sheetData.items.sort((a, b) => (a.sort || 0) - (b.sort || 0));
             sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" || item.type == "Bâtiment" || item.type == "Trihn"});
         
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });

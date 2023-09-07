@@ -31,6 +31,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
                     isGM: game.user.isGM
                 },
             };
+            sheetData.items.sort((a, b) => (a.sort || 0) - (b.sort || 0));
             if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== 'undefined') {
                 sheetData.items.Category = {},
                 sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" }),

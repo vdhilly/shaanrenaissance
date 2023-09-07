@@ -29,6 +29,7 @@ export default class ShaanCreatorSet extends ItemSheet {
                     isGM: game.user.isGM
                 },
             };
+            
 
         console.log(sheetData);
         return sheetData;
