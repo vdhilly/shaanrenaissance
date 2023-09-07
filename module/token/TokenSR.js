@@ -1,4 +1,75 @@
 export class TokenSR extends Token {
+    #unlinkedVideo = false;
+    async _draw() {
+        this.#cleanData();
+    
+        // Load token texture
+        let texture;
+        if ( this._original ) texture = this._original.texture?.clone();
+        else texture = await loadTexture(this.document.texture.src, {fallback: CONST.DEFAULT_TOKEN});
+    
+        // Manage video playback
+        let video = game.video.getVideoSource(texture);
+        this.#unlinkedVideo = !!video && !this._original;
+        if ( this.#unlinkedVideo ) {
+          texture = await game.video.cloneTexture(video);
+          video = game.video.getVideoSource(texture);
+          const playOptions = {volume: 0};
+          if ( (this.document.getFlag("core", "randomizeVideo") !== false) && Number.isFinite(video.duration) ) {
+            playOptions.offset = Math.random() * video.duration;
+          }
+          game.video.play(video, playOptions);
+        }
+        this.texture = texture;
+    
+        // Draw the TokenMesh in the PrimaryCanvasGroup
+        this.mesh = canvas.primary.addToken(this);
+    
+        // Draw the border frame in the GridLayer
+        this.border ||= canvas.grid.borders.addChild(new PIXI.Graphics());
+    
+        // Draw Token interface components
+        this.bars ||= this.addChild(this.#drawAttributeBars());
+        this.tooltip ||= this.addChild(this.#drawTooltip());
+        this.effects ||= this.addChild(new PIXI.Container());
+    
+        this.target ||= this.addChild(new PIXI.Graphics());
+        this.nameplate ||= this.addChild(this.#drawNameplate());
+    
+        // Draw elements
+        await this.drawEffects();
+    
+        // Define initial interactivity and visibility state
+        this.hitArea = new PIXI.Rectangle(0, 0, this.w, this.h);
+      }
+    
+      /* -------------------------------------------- */
+    
+      /**
+       * Apply initial sanitizations to the provided input data to ensure that a Token has valid required attributes.
+       * Constrain the Token position to remain within the Canvas rectangle.
+       */
+      #cleanData() {
+        if ( !canvas || !this.scene?.active ) return;
+        const d = canvas.dimensions;
+        this.document.x = Math.clamped(this.document.x, 0, d.width - this.w);
+        this.document.y = Math.clamped(this.document.y, 0, d.height - this.h);
+      }
+      #drawTooltip() {
+        let text = this._getTooltipText();
+        const style = this._getTextStyle();
+        const tip = new PreciseText(text, style);
+        tip.anchor.set(0.5, 1);
+        tip.position.set(this.w / 2, -2);
+        return tip;
+      }
+      #drawNameplate() {
+    const style = this._getTextStyle();
+    const name = new PreciseText(this.document.name, style);
+    name.anchor.set(0.5, 0);
+    name.position.set(this.w / 2, this.h + 2);
+    return name;
+  }
     drawBars() {
         if (!this.actor || (this.document.displayBars === CONST.TOKEN_DISPLAY_MODES.NONE)) return;
         // TO DO - Ajouter bar3
@@ -35,7 +106,6 @@ export class TokenSR extends Token {
         }
       
         let color = colors[number];
-      
           bar.clear()
           .beginFill(0x000000, 0.5)
           .lineStyle(2, 0x000000, 0.9)
@@ -48,7 +118,7 @@ export class TokenSR extends Token {
           let posY = yPositions[number];
           bar.position.set(0, posY);
     }
-    _drawAttributeBars() {
+    #drawAttributeBars() {
         const bars = new PIXI.Container();
         bars.bar1 = bars.addChild(new PIXI.Graphics());
         bars.bar2 = bars.addChild(new PIXI.Graphics());
