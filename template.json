@@ -533,6 +533,7 @@
                 "biography": {
                     "apparence":0,
                     "histoire":"",
+                    "langues":"",
                     "personnalité": {
                         "temper":0,
                         "element1":0,

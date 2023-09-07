@@ -10,6 +10,10 @@
             {{editor enrichedBiography target="system.biography.histoire" button=true owner=owner editable=editable
             engine="prosemirror"}}
         </div>
+        <div class="biography-langues">
+            <label class="langues-label" for="{{actor._id}}-pc-langues">{{localize "SRLabels.langues"}}</label>
+            <input class="langues-input" id="{{actor._id}}-pc-langues" name="system.biography.langues" value="{{data.biography.langues}}"/>
+        </div>
     </div>
     <hr />
     <div class="biographyCategory personnalité">
