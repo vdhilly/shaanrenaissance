@@ -70,7 +70,8 @@ export class compendiumBrowser extends Application {
                 "shaanrenaissance.metiers": !0,
                 "shaanrenaissance.castes": !0,
                 "shaanrenaissance.peuples": !0,
-                "shaanrenaissance.races": !0
+                "shaanrenaissance.races": !0,
+                "shaanrenaissance.bestiary": !0
             };
             for (const pack of game.packs) {
                 const types = new Set(pack.index.map(entry => entry.type));
@@ -113,6 +114,14 @@ export class compendiumBrowser extends Application {
                     else if (types.has("Armement", "Armimale", "Artefact", "Manuscrit", "Outil", "Protection", "Relation", "Richesse", "Technologie", "Transport", "Bâtiment")) {
                         const load = null === (_f = null === (_e = null === (_d = this.settings.acquis) || void 0 === _d ? void 0 : _d[pack.collection]) || void 0 === _e ? void 0 : _e.load) || void 0 !== _f ? _f : !!loadDefault[pack.collection];
                         settings.acquis[pack.collection] = {
+                            load,
+                            name: pack.metadata.label
+                        };
+                    }
+                    if(types.has("Créature" || "PNJ")) {
+                        const load = null === (_w = null === (_v = null === (_u = this.settings.bestiary) || void 0 === _u ? void 0 : _u[pack.collection]) || void 0 === _v ? void 0 : _v.load) || void 0 === _w || _w;
+                        console.log(load)
+                        settings.bestiary[pack.collection] = {
                             load,
                             name: pack.metadata.label
                         };

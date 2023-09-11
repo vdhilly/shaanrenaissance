@@ -88,6 +88,14 @@
       "path": "packs/acquis.db",
       "type": "Item",
       "flags": {}
+    },
+    {
+      "name": "bestiaire",
+      "label": "Bestiaire",
+      "system": "shaanrenaissance",
+      "path": "packs/bestiaire.db",
+      "type": "Actor",
+      "flags": {}
     }
   ],
   "languages": [

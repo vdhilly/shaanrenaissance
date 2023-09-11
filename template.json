@@ -658,6 +658,9 @@
                 }
             },
             "general": {
+                "classe": "",
+                "milieu": "",
+                "role": "",
                 "shaani": {
                     "value": 0
                 },

@@ -171,6 +171,32 @@ shaanRenaissance.abilitiesDomains = {
     Combat: "SRdomains.Combat",
     Nécrose: "SRdomains.Nécrose"
 }
+shaanRenaissance.bestiaryBrowser = {
+    type: {
+        Créature: "SR.creature",
+        PNJ: "SR.PNJ"
+    },
+    class: {
+        Mammifère:"SR.mammifere",
+        Poisson:"SR.poisson",
+        Oiseau:"SR.oiseau",
+        Reptile:"SR.reptile",
+        Mollusquien:"SR.mollusquien",
+        Crustacé:"SR.crustace",
+        Amphibien:"SR.amphibien",
+        Insectoïde:"SR.insectoide",
+        Créature:"SR.creature",
+        Monstre:"SR.monstre"
+    },
+    role: {
+        "Prédateur alpha":"SR.alphapredateur",
+        Prédateur:"SR.predateur",
+        Omnivore:"SR.omnivore",
+        Herbivore:"SR.herbivore",
+        Recycleur:"SR.recycleur"
+    }
+
+}
 shaanRenaissance.activeEffectChanges = {
     spés: {
         Technique: {
