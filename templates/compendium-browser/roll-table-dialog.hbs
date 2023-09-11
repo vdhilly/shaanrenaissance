@@ -1,0 +1,30 @@
+<form>
+    {{#if rollTables}}
+        <div class="form-group">
+            <label>{{localize "SR.CompendiumBrowser.RollTable.AddLabel"}}</label>
+            <select name="roll-table">
+                {{#each rollTables as |table|}}
+                    <option value="{{table.id}}">{{table.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>{{localize "SR.CompendiumBrowser.RollTable.WeightLabel"}}</label>
+            <input type="text" name="weight" placeholder="1">
+        </div>
+        <hr>
+        <p>{{localize "SR.CompendiumBrowser.RollTable.AddDialogText" count=count}}</p>
+    {{else}}
+        <div class="form-group">
+            <label>{{localize "Name"}}</label>
+            <input type="text" name="name" placeholder="{{localize "SR.CompendiumBrowser.Title"}}">
+        </div>
+        <div class="form-group">
+            <label>{{localize "SR.CompendiumBrowser.RollTable.WeightLabel"}}</label>
+            <input type="text" name="weight" placeholder="1">
+        </div>
+        <hr>
+        <p>{{localize "SR.CompendiumBrowser.RollTable.CreateDialogText" count=count}}</p>
+    {{/if}}
+    <br>
+</form>

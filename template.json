@@ -26,6 +26,7 @@
                         "max":0
                     },
                     "préstige": 0,
+                    "préstigeMax": 0,
                     "credos": 0,
                     "initiative": {
                         "statistic": "Shaan",
@@ -1581,7 +1582,8 @@
                 "common"
             ],
             "spé":"",
-            "resume":""
+            "resume":"",
+            "domain":""
         },
         "Bâtiment": {
             "templates": [

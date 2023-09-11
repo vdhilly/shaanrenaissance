@@ -46,11 +46,10 @@ shaanRenaissance.pouvoirs = {
         TourmentdeNécrose: "Tourment de Nécrose"
     },
     pouvoirRank: {
-        none: "",
-        Rank1: "Rang 1",
-        Rank2: "Rang 2",
-        Rank3: "Rang 3",
-        Rank4: "Rang 4",
+        Rank1: "SR.Rank1",
+        Rank2: "SR.Rank2",
+        Rank3: "SR.Rank3",
+        Rank4: "SR.Rank4",
     },
     pouvoirType: {
         none: "",
@@ -99,15 +98,16 @@ shaanRenaissance.pouvoirs = {
 shaanRenaissance.acquis = {
     category:{
         Armement: "Armement",
-        Armimales: "Armimales",
-        Artefacts: "Artefacts",
-        Manuscrits: "Manuscrits",
-        Outils: "Outils",
-        Protections: "Protections",
-        Relations: "Relations",
-        Richesses: "Richesses",
+        Armimale: "Armimales",
+        Artefact: "Artefacts",
+        Manuscrit: "Manuscrits",
+        Outil: "Outils",
+        Protection: "Protections",
+        Relation: "Relations",
+        Richesse: "Richesses",
         Technologie: "Technologie",
-        Transport: "Transport"
+        Transport: "Transport",
+        Bâtiment: "Bâtiment"
     },
     class:{
         class1: "Classe 1",
@@ -147,6 +147,29 @@ shaanRenaissance.acquis = {
         Métal: "Métal",
         Hydrocarbure: "Hydrocarbure"
     }
+}
+shaanRenaissance.abilitiesTypes = {
+    Attaque: "SR.abilitiesTypes.Attaque",
+    Défense: "SR.abilitiesTypes.Défense",
+    Déplacement: "SR.abilitiesTypes.Déplacement",
+    Amelioration: "SR.abilitiesTypes.Amelioration",
+    Altération: "SR.abilitiesTypes.Altération",
+    Invocation: "SR.abilitiesTypes.Invocation",
+    Control: "SR.abilitiesTypes.Control",
+    Perception: "SR.abilitiesTypes.Perception",
+    Récuperation: "SR.abilitiesTypes.Récuperation"
+}
+shaanRenaissance.abilitiesDomains = {
+    Technique: "SRdomains.Technique",
+    Savoir: "SRdomains.Savoir",
+    Social: "SRdomains.Social",
+    Arts: "SRdomains.Arts",
+    Shaan: "SRdomains.Shaan",
+    Magie: "SRdomains.Magie",
+    Rituels: "SRdomains.Rituels",
+    Survie: "SRdomains.Survie",
+    Combat: "SRdomains.Combat",
+    Nécrose: "SRdomains.Nécrose"
 }
 shaanRenaissance.activeEffectChanges = {
     spés: {
@@ -375,5 +398,5 @@ shaanRenaissance.activeEffectChanges = {
         "data.protections.esprit.value":"SRLabels.Esprit",
         "data.protections.ame.value":"SRLabels.Ame",
         "data.protections.corps.value":"SRLabels.Corps"
-    }
+    },
 }

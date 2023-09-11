@@ -1,0 +1,363 @@
+.tab[data-tab].active {
+  display: initial;
+}
+#compendium-browser > section.window-content > .content-box {
+  flex: 1;
+  overflow: hidden;
+  height: inherit;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings {
+  height: 100%;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form {
+  display: flex;
+  height: 88%;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .setting-section {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 2px;
+  /* Checkbox */
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .setting-section h3 {
+  margin: 0;
+  cursor: pointer;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .setting-section dt {
+  width: 10%;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .setting-section dt > input[type=checkbox] {
+  transform: none;
+  flex: none;
+  height: auto;
+  margin: 3px 3px;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .setting-section dd {
+  width: 88%;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form dl {
+  margin: 5px 0;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form dt {
+  display: inline-block;
+  width: 40%;
+  padding-left: 5px;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form dd {
+  display: inline-block;
+  width: 58%;
+  margin-left: 0;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .settings-container {
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .settings-container .tab[data-tab].active {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .settings-container .single-column {
+  width: 100%;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .settings-container h2 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings form .settings-container div {
+    width: 365px;
+    margin-right: 1em;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings > nav {
+  border-style: solid;
+  border-image-outset: 0;
+  border-width: 9px;
+  border-image: url("../../assets/sheet/corner-box.webp") 9 repeat;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  flex: 0;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--secondary);
+  background: url("../../assets/sheet/border-pattern.webp") repeat-x top, url("../../assets/sheet/border-pattern.webp") repeat-x bottom, var(--secondary);
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings > nav > a {
+  color: #f0d1ac;
+  padding: 4px 0;
+  font-family: var(--sans-serif);
+  font-size: var(--font-size-12);
+  position: relative;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings > nav > a.active::after {
+  bottom: -2px;
+  right: 39%;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--sidebar-label);
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings nav {
+  border-width: unset;
+}
+#compendium-browser > section.window-content > .content-box .compendium-browser-settings button.save-settings {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px groove var(--color-border-light-highlight);
+}
+#compendium-browser > section.window-content > .content-box > nav {
+    border-style: solid;
+    border-image-outset: 0;
+    border-width: 9px;
+    border-image: url("../../assets/sheet/corner-box.webp") 9 repeat;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    flex: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--secondary);
+    background: url("../../assets/sheet/border-pattern.webp") repeat-x top, url("../../assets/sheet/border-pattern.webp") repeat-x bottom, var(--secondary);
+  
+}
+
+#compendium-browser > section.window-content > .content-box > nav > a {
+    color: #f0d1ac;
+    padding: 4px 0;
+    font-family: var(--sans-serif);
+    font-size: var(--font-size-12);
+    position: relative;
+}
+
+#compendium-browser > section.window-content > .content-box > nav > a.active::after {
+    bottom: -2px;
+    right: 39%;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #f0d1ac;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser {
+    display: flex;
+    min-height: 100px;
+    height: 100%;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser .control-area {
+    position: sticky;
+    display: block;
+    min-width: 320px;
+    width: 320px;
+    padding-right: 5px;
+    overflow: auto;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer,
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer {  
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer div.title,
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer div.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 22px;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer div.title h3,
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer div.title h3 {
+  margin: 0;
+  cursor: pointer;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer div.title button,
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer div.title button {
+  width: fit-content;
+  line-height: 22px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer button.clear-filters,
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer button.clear-filters {
+  margin-bottom: 5px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer > dl dt > input[type=checkbox],
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer > dl dt > input[type=checkbox] {
+  transform: none;
+  flex: none;
+  height: auto;
+  margin: 3px 3px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer > dl dd > a.direction,
+#compendium-browser > section.window-content > .content-box .tabContent-browser .sortcontainer > dl dd > a.direction {
+  padding: 2px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer dt {
+  width: 10%;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer dd {
+  width: 82%;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .filtercontainer .filter-conjunction input[type=radio] {
+  margin: 0 5px 0 3px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .rangecontainer div  {
+  text-align: center;
+  margin-top: 5px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .rangecontainer input {
+  width: 45%;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .slidercontainer-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .slidercontainer-flex label {
+  width: 10px;
+}
+
+#compendium-browser > section.window-content > .content-box .tabContent-browser dl {
+  margin: 5px 0;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser dt {
+  display: inline-block;
+  padding-left: 5px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser dd {
+  text-transform: capitalize;
+  display: inline-block;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser dd select {
+  width: 6em;
+  margin-left: 0.5em;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list {
+  width: 100%;
+  float: right;
+  display: block;
+  margin: 0;
+  height: 100%;
+  overflow: hidden scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+  overflow: visible scroll;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li {
+  line-height: var(--font-size-32);
+  margin: 2px 0;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > * {
+  align-self: center;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > .image {
+  height: 32px;
+  max-width: 32px;
+}
+#compendium-browser > section.window-content > .content-box .tab.races .tabContent-browser ul.result-list > li > .image {
+  height: 50px;
+  max-width: 32px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > .name {
+  line-height: 1em;
+  padding-left: 5px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > .tags {
+  justify-content: center;
+  margin-left: 0.5em;
+  max-width: 6em;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > .level {
+  flex-grow: 1;
+  font-weight: 900;
+  height: 32px;
+  max-width: 18px;
+  text-align: center;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > .price {
+  flex: none;
+  height: 32px;
+  margin-right: 10px;
+  min-width: 5em;
+  text-align: right;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li > .end {
+  font-weight: 900;
+  height: 32px;
+  margin-right: 3px;
+  max-width: 100px;
+  text-align: right;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser ul.result-list > li:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: grab;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser #tagfilter input {
+  width: 100%;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .hint {
+  font-size: var(--font-size-12);
+  border: 1px solid rgba(0, 255, 5, 0.2784313725);
+  border-radius: 5px;
+  padding: 3px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .spacer {
+  display: inline-block;
+  min-width: 5px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .spacer-large {
+  display: inline-block;
+  min-width: 15px;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .equipment-controls {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  max-width: 1em;
+  width: 1em;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .list-buttons {
+  position: absolute;
+  bottom: 3px;
+  right: 22px;
+  width: 54%;
+  display: flex;
+  justify-content: space-between;
+}
+#compendium-browser > section.window-content > .content-box .tabContent-browser .list-buttons button {
+  line-height: 19px;
+  background: rgb(255, 255, 240);
+}
+#compendium-browser > section.window-content > .content-box > section.content {
+  height: 92%;
+}
+#compendium-browser > section.window-content > .content-box > section.content > .tab.browser.active {
+  height: inherit;
+}
+#compendium-browser > section.window-content > .content-box > section.content > .tab.browser.active > div {
+  display: grid;
+  grid-template-columns: 320px auto;
+}
+#compendium-browser > section.window-content > .content-box > section.content > .tab.browser.active > div .control-area {
+  grid-column-start: 1;
+}
+#compendium-browser > section.window-content > .content-box > section.content > .tab.browser.active > div ul {
+  grid-column-start: 2;
+}

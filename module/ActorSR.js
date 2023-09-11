@@ -1,4 +1,8 @@
+import {tupleHasValue, CREATURE_ACTOR_TYPES} from "./utils/utils.js"
 export class ActorSR extends Actor {
+  isOfType(...types) {
+    return types.some((t => "creature" === t ? (0, tupleHasValue)(CREATURE_ACTOR_TYPES, this.type) : this.type === t))
+}
   static async createDocuments(data=[], context={}) {
     if ( context.parent?.pack ) context.pack = context.parent.pack;
     const {parent, pack, ...options} = context;  

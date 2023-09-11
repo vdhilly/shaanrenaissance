@@ -1,0 +1,18 @@
+<div class="compendium-browser-settings">
+    <nav data-group="settings">
+        <a data-tab="packs">{{localize "PacksLabel"}}</a>
+        <a data-tab="source">{{localize "SourcesLabel"}}</a>
+    </nav>
+    <form autocomplete="off">
+        <div class="settings-container">          
+            <div class="tab" data-group="settings" data-tab="packs">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/settings/pack-settings.hbs"}}
+            </div>
+
+            <div class="tab" data-group="settings" data-tab="source">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/settings/source-settings.hbs"}}
+            </div>
+        </div>
+    </form>
+    <button type="button" class="save-settings" data-action="save-settings">{{localize "SETTINGS.Save"}}</button>
+</div>

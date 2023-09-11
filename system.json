@@ -37,7 +37,8 @@
     "styles/NPCSheet.css",
     "styles/ShaaniSheet.css",
     "styles/reseauSheet.css",
-    "styles/CréatureSheet.css"
+    "styles/CréatureSheet.css",
+    "styles/compendium-browser/index.css"
   ],
   "packs": [
     {

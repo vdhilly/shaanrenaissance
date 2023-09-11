@@ -1,0 +1,19 @@
+<li class="item flexrow" data-entry-uuid="{{entry.uuid}}" data-type="Item">
+    <div class="image">
+        <img src="{{entry.img}}" title="{{entry.name}}" width="32" height="32" loading="lazy" />
+    </div>
+    <div class="name">
+        <a class="item-link">{{entry.name}}</a>
+    </div>
+    <div class="price" title="{{localize "SRLabels.price"}}">{{entry.price}} ¢</div>
+    <div class="type" title="{{localize "SRLabels.category"}}">{{entry.type}}</div>
+    <div class="class">
+        <span title="{{localize "SRLabels.Classe"}}">{{localize entry.class}}</span>
+    </div>
+    <a class="equipment-controls" data-action="take-item" title="{{localize "SR.CompendiumBrowser.TakeLabel"}}">
+        <i class="far fa-hand-rock"></i>
+    </a>
+        <a class="equipment-controls" data-action="buy-item" title="{{localize "SR.CompendiumBrowser.BuyLabel"}}">
+            <i class="fas fa-coins"></i>
+        </a>
+</li>

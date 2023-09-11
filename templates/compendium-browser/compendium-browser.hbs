@@ -1,0 +1,95 @@
+<div class="content-box">
+    <nav data-group="primary">
+        <a data-tab="landing-page" style="display:none"></a>
+        <a data-tab="abilities">{{localize "SRLabels.pouvoirs"}}</a>
+        {{#if user.isGM}}
+            <a data-tab="bestiary">{{localize "SRLabels.bestiary"}}</a>
+        {{/if}}
+        <a data-tab="acquis">{{localize "SRLabels.acquis"}}</a>
+        <a data-tab="races">{{localize "SRLabels.Races"}}</a>
+        <a data-tab="people">{{localize "SRLabels.People"}}</a>
+        <a data-tab="castes">{{localize "SRLabels.Castes"}}</a>
+        <a data-tab="jobs">{{localize "SRLabels.Jobs"}}</a>
+             {{#if released}}
+        {{#if user.isGM}}
+            <a data-tab="settings">{{localize "SRLabels.TabSettings"}}</a>
+        {{/if}}
+        {{/if}}
+
+    </nav>
+<section class="content">
+    <div class="tab" data-group="primary" data-tab="landing-page"><div style='text-align:center; padding: 2em;'>{{localize "SR.CompendiumBrowser.Hint"}}</div></div>
+    {{#with abilities}}
+        <div class="tab abilities browser" data-group="primary" data-tab="abilities">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+    {{/with}}
+
+    {{#with bestiary}}
+        <div class="tab bestiary browser" data-group="primary" data-tab="bestiary">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+    {{/with}}
+
+    {{#with acquis}}
+        <div class="tab acquis browser" data-group="primary" data-tab="acquis">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+    {{/with}}
+
+    {{#with races}}
+        <div class="tab races browser" data-group="primary" data-tab="races">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+        {{log this}}
+    {{/with}}
+
+    {{#with people}}
+        <div class="tab people browser" data-group="primary" data-tab="people">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+    {{/with}}    
+
+    {{#with castes}}
+        <div class="tab castes browser" data-group="primary" data-tab="castes">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+    {{/with}}
+
+    {{#with jobs}}
+        <div class="tab jobs browser" data-group="primary" data-tab="jobs">
+            <div class="tabContent-browser">
+                {{> "systems/shaanrenaissance/templates/compendium-browser/filters.hbs"}}
+                <ul class="item-list result-list"></ul>
+            </div>
+        </div>
+    {{/with}}
+
+     {{#if released}}
+     {{#if user.isGM}}
+            {{#with settings}}
+                <div class="tab settings" data-group="primary" data-tab="settings">
+                    {{> "systems/shaanrenaissance/templates/compendium-browser/settings/settings.hbs"}}
+                </div>
+            {{/with}}
+    {{/if}}{{/if}}
+</section>
+</div>

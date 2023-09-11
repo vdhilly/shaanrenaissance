@@ -89,6 +89,11 @@
 
         // TOKEN
         "systems/shaanrenaissance/templates/scene/tokenConfig.hbs",
-        "systems/shaanrenaissance/templates/scene/parts/token-resources.hbs"
+        "systems/shaanrenaissance/templates/scene/parts/token-resources.hbs",
   
+        // COMPENDIUM BROWSER
+        "systems/shaanrenaissance/templates/compendium-browser/filters.hbs",
+        "systems/shaanrenaissance/templates/compendium-browser/settings/settings.hbs",
+        "systems/shaanrenaissance/templates/compendium-browser/settings/source-settings.hbs",
+        "systems/shaanrenaissance/templates/compendium-browser/settings/pack-settings.hbs"
       ];

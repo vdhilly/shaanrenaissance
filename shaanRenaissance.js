@@ -18,6 +18,12 @@ import * as Puiser from "./module/jets/puiser.js"
 import { SRActiveEffectConfig } from "./module/ActiveEffects/SRActiveEffectConfig.js";
 import { SRActiveEffect } from "./module/ActiveEffects/SRActiveEffect.js";
 
+import { compendiumBrowser } from "./module/apps/compendium-browser/compendiumBrowser.js";
+import { ModuleArt } from "./module/system/module-art.js";
+import { ActorDirectorySR } from "./module/apps/sidebar/actorDirectory.js";
+import { ItemDirectorySR } from "./module/apps/sidebar/itemDirectory.js";
+import { CompendiumDirectorySR } from "./module/apps/sidebar/compendiumDirectory.js";
+
 async function preloadHandleBarTemplates() 
 {
     return loadTemplates( templatePaths );
@@ -30,7 +36,16 @@ function registerSystemSettings() {
     hint: "SETTINGS.showCheckOptions.label",
     type: Boolean,
     default: true
-  });
+  }); game.settings.register("shaanrenaissance", "compendiumBrowserPacks", {
+    name: "SETTINGS.CompendiumBrowserPacks.Name",
+    hint: "SETTINGS.CompendiumBrowserPacks.Hint",
+    default: {},
+    type: Object,
+    scope: "world",
+    onChange: () => {
+        game.shaanRenaissance.compendiumBrowser.initCompendiumList()
+    }
+})
 }
 
 
@@ -45,6 +60,9 @@ Hooks.once("init", function(){
     CONFIG.Item.documentClass = ItemSR;
     CONFIG.ActiveEffect.documentClass = SRActiveEffect;
     CONFIG.ActiveEffect.sheetClass = SRActiveEffectConfig;
+    CONFIG.ui.actors = ActorDirectorySR;
+    CONFIG.ui.items = ItemDirectorySR;
+    CONFIG.ui.compendium = CompendiumDirectorySR;
     CONFIG.fontDefinitions.ITCOfficinaSans = {
       editor: !0,
       fonts: [
@@ -64,6 +82,7 @@ Hooks.once("init", function(){
           weight: "700"
         }
       ]
+      
     };
 
     DocumentSheetConfig.registerSheet(ActiveEffect, 'shaanrenaissance', SRActiveEffectConfig, {makeDefault: true, label: "test"})
@@ -106,7 +125,6 @@ Hooks.once("init", function(){
     preloadHandleBarTemplates();
 
     registerSystemSettings();
-
     // Handlebars
 Handlebars.registerHelper('ifeq', function (a, b, options) {
   if (a == b) { return options.fn(this); }
@@ -130,7 +148,7 @@ Hooks.on("renderSettings", (async (__app, $html) => {
   const licenseIcon = document.createElement("i");
   licenseIcon.classList.add("fa-solid", "fa-scale-balanced")
   licenseButton.type = "button", licenseButton.append(licenseIcon, game.i18n.localize("SETTINGS.LicenseViewer.label")), licenseButton.addEventListener("click", (() => {
-    game.licenseViewer.render(!0)
+    game.shaanRenaissance.LicenseViewer.render(!0)
   })), license.append(licenseButton);
   // Bug btn
   const signalBug = document.createElement("div");
@@ -212,11 +230,17 @@ class LicenseViewer extends Application {
     })
   }
 }
-game.licenseViewer = new LicenseViewer
+game.shaanRenaissance = {}
+game.shaanRenaissance.LicenseViewer = new LicenseViewer
+
+
+game.shaanRenaissance.system = {moduleArt: new ModuleArt}
+
 
 // Token HUD
 Hooks.once("ready", function () {
   canvas.hud.token = new SRTokenHUD();
+  game.shaanRenaissance.compendiumBrowser = new compendiumBrowser
 })
 
 Hooks.on('diceSoNiceReady', (dice3d) => {
@@ -311,5 +335,3 @@ Hooks.on('renderChatMessage', (app, html, data) => {
   Puiser.hideChatPuiserButtons(app, html, data);
   Puiser.addChatListeners(app, html, data)
 });
-
-

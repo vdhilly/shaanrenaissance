@@ -1,0 +1,63 @@
+<h2>{{localize "PF2E.SETTINGS.CompendiumBrowserPacks.Name"}}</h2>
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabAction"}}</h3>
+    <dl>
+        {{#each settings.abilities as |conf pack|}}
+            <label><dt><input type="checkbox" name="action-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
+
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabBestiary"}}</h3>
+    <dl>
+        {{#each settings.bestiary as |conf pack|}}
+            <label><dt><input type="checkbox" name="bestiary-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
+
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabEquipment"}}</h3>
+    <dl>
+        {{#each settings.acquis as |conf pack|}}
+            <label><dt><input type="checkbox" name="equipment-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
+
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabFeat"}}</h3>
+    <dl>
+        {{#each settings.races as |conf pack|}}
+            <label><dt><input type="checkbox" name="feat-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
+
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabHazard"}}</h3>
+    <dl>
+        {{#each settings.people as |conf pack|}}
+            <label><dt><input type="checkbox" name="hazard-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
+
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabSpell"}}</h3>
+    <dl>
+        {{#each settings.castes as |conf pack|}}
+            <label><dt><input type="checkbox" name="spell-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
+
+<div class="setting-section">
+    <h3>{{localize "SR.CompendiumBrowser.TabJobs"}}</h3>
+    <dl>
+        {{#each settings.jobs as |conf pack|}}
+            <label><dt><input type="checkbox" name="spell-{{pack}}" {{checked conf.load}}></dt><dd>{{conf.name}} ({{conf.package}})</dd></label>
+        {{/each}}
+    </dl>
+</div>
