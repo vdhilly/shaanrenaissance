@@ -8,9 +8,17 @@
         <div class="exp">
             <label>{{localize "SRLabels.Experience"}}</label>
             <div class="exp-input" style="display:flex; flex-direction: row;">
-                <input name="system.details.xp.value" type="text" value="{{data.details.xp.value}}" data-dtype="Number" placeholder="{{data.details.xp.value}}" size="4" />
+                <input name="system.details.xp.value" type="number" value="{{data.details.xp.value}}" data-dtype="Number" placeholder="{{data.details.xp.value}}" size="4" />
                 <span class="max"> / </span>
-                <input name="system.details.xpMax.value" type="text" value="{{data.details.xpMax.value}}" data-dtype="Number" placeholder="{{data.details.xpMax.value}}" size="4" />
+                <input name="system.details.xpMax.value" type="number" value="{{data.details.xpMax.value}}" data-dtype="Number" placeholder="{{data.details.xpMax.value}}" size="4" />
+            </div>
+        </div>
+        <div class="prestige">
+            <label class="prestige-input prestige-label" for="{{options.id}}-pc-prestige">{{localize "SR.prestige"}}</label>
+            <div class="prestige-input">
+                <input type="number" class="prestige-input" title="{{localize "SR.prestigeTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.prestige" value="{{data.attributes.prestige}}"/>
+                <span class="max"> / </span>
+                <input name="system.attributes.préstigeMax" type="number" value="{{data.attributes.préstigeMax}}" data-dtype="Number"/>
             </div>
         </div>
     </section>
