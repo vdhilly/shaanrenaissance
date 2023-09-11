@@ -4,6 +4,7 @@
         "Pnj": "PNJ"
     },
     "SRLabels":{
+        "GMnotes":"Notes du MJ",
         "langues": "Langues parlées",
         "create": "Créer",
         "HPMax": "Base",

@@ -1,5 +1,12 @@
 <div class="tab biography" data-group="primary" data-tab="biography">
     <div class="biography-top">
+        {{#if user.isGM}}
+        <div class="biographyCategory gm">
+            <label class="gm-label" for="{{actor._id}}-pc-gm">{{localize "SRLabels.GMnotes"}}</label>
+            {{editor enrichedGMnotes target="system.biography.campagne.gm" button=true owner=owner editable=editable
+            engine="prosemirror"}}
+        </div>
+        {{/if}}
         <div class="biographyCategory apparence">
             <label class="apparence-label" for="{{actor._id}}-pc-apparence">{{localize "SRLabels.apparence"}}</label>
             {{editor enrichedApparence target="system.biography.apparence" button=true owner=owner editable=editable

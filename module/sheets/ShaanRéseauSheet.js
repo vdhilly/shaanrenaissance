@@ -99,6 +99,7 @@ export default class ShaanRéseauSheet extends ActorSheet {
                     game.actors.get(actorData._id).getRollData().attributes.initiative.value = domainValue
                 }
             }
+            sheetData.enrichedGMnotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.gm"), {async: true})
             sheetData.enrichedTypeMembres = await TextEditor.enrichHTML(getProperty(this.actor.system, "typesMembres"), {async: true})
             sheetData.enrichedMotivations = await TextEditor.enrichHTML(getProperty(this.actor.system, "motivation"), {async: true})
             sheetData.enrichedMoyens = await TextEditor.enrichHTML(getProperty(this.actor.system, "moyens"), {async: true})    

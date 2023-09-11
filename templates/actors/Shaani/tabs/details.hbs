@@ -1,5 +1,12 @@
 <div class="tab details" data-group="primary" data-tab="details">
     <div class="details-top">
+        {{#if user.isGM}}
+        <div class="biographyCategory gm">
+            <label class="gm-label" for="{{actor._id}}-pc-gm">{{localize "SRLabels.GMnotes"}}</label>
+            {{editor enrichedGMnotes target="system.biography.campagne.gm" button=true owner=owner editable=editable
+            engine="prosemirror"}}
+        </div>
+        {{/if}}
         <div class="decision">
             <label class="decision-label" for="{{options.id}}-shaani-decision">{{localize "SRLabels.decisions"}}</label>
             <input class="decision-input" id="{{options.id}}-shaani-decision" name="system.decision" value="{{data.decision}}">

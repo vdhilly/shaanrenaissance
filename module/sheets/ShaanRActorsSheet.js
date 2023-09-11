@@ -177,6 +177,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             }
             
         // Editors
+        sheetData.enrichedGMnotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.gm"), {async: true})
         sheetData.enrichedBiography = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.histoire"), {async: true})
         sheetData.enrichedApparence = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.apparence"), {async: true})
         sheetData.enrichedNotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.notes"), {async: true})
