@@ -4,6 +4,7 @@
         "Pnj": "PNJ"
     },
     "SRLabels":{
+        "GMnotes":"Notes du MJ",
         "langues": "Langues parlées",
         "create": "Créer",
         "HPMax": "Base",
@@ -58,6 +59,7 @@
         "allies": "Alliés",
         "enemies": "Ennemis",
         "pouvoirs": "Pouvoirs",
+        "bestiary": "Bestiaire",
         "decisions": "Mode de décisions",
         "ShaandarName": "Nom du Shaandar",
         "ShaandarDomain": "Domaine/Trihn",
@@ -74,7 +76,14 @@
         "Milieu": "Milieu",
         "primaire": "Primaire",
         "secondaire": "Secondaire",
-        "Modules": "Modules"
+        "Modules": "Modules",
+        "TabSettings": "Paramètres",
+        "Races":"Races",
+        "People":"Peuples",
+        "Castes":"Castes",
+        "Jobs":"Métiers",
+        "price": "Prix",
+        "category":"Catégorie"
     },
     "SRdomains": {
         "Technique": "Technique",
@@ -598,6 +607,48 @@
         }
     },
     "SR": {
+        "abilitiesTypes": {
+            "Attaque": "Attaque",
+            "Défense": "Défense",
+            "Déplacement": "Déplacement",
+            "Amelioration": "Amelioration",
+            "Altération": "Altération",
+            "Invocation": "Invocation",
+            "Control": "Control",
+            "Perception": "Perception",
+            "Récuperation": "Récuparation"
+        },
+        "BrowserFilterSource": "Source",
+        "BrowserSearchPlaceholder": "Effectuez une recherche",
+        "BrowserClearFilter": "Effacer le filtre",
+        "BrowserClearFilters": "Effacer les filtres",
+        "AbilitiesTypeLabel": "Types",
+        "AbilitiesRankLabel": "Rangs",
+        "BrowserFilterBestiaryType":"Types",
+        "BrowserFilterClass":"Classe",
+        "BrowserFilterBestiaryRole":"Role",
+        "AcquisCategoryLabel": "Categories",
+        "AcquisClassLabel": "Classe",
+        "BrowserSortByLabel": "Trier par",
+        "BrowserSortByNameLabel": "Nom",
+        "BrowserSortByPriceLabel": "Prix",
+        "creature": "Créature",
+        "PNJ": "PNJ",
+        "mammifere":"Mammifère",
+        "poisson":"Poisson",
+        "oiseau":"Oiseau",
+        "reptile":"Reptile",
+        "amphibien":"Amphibien",
+        "mollusquien":"Mollusquien",
+        "crustace":"Crustacé",
+        "Amphibien":"Amphibien",
+        "insectoide":"Insectoïde",
+        "monstre":"Monstre",
+        "alphapredateur":"Prédateur Alpha",
+        "predateur":"Predateur",
+        "omnivore":"Omnivore",
+        "herbivore":"Herbivore",
+        "recycleur":"Recycleur",
         "Effects": "Effets",
         "General": "General",
         "regenHP-rest": "s'est reposé.",
@@ -688,8 +739,33 @@
         "dressage": "Dressage",
         "peupleorigine": "Peuple d'origine",
         "instinct": "Instinct",
-        "miseRelation": "Mise en Relation"
-    },
+        "miseRelation": "Mise en Relation",
+        "CompendiumBrowser": {
+            "Title": "Navigateur de Compendium",
+            "ProgressBar": {
+                "LoadingComplete": "Loading complete",
+                "LoadingPack": "Loading {pack}"
+            },
+            "AddedItem": "{item} a été ajouté à l'acteur selectionné.",
+            "AddedItemToCharacter": "{item} ajouté à {character}.",
+            "Hint": "Utilisez les onglets ci-dessus pour choisir un Compendium",
+            "RollTable": {
+                "CreateLabel":"Créer une table aléatoire",
+                "AddLabel":"Ajouter à une table aléatoire",
+                "AddDialogText": "Ajouter {count} résultats à la table aléatoire ?",
+                "CreateDialogText": "Créer une table aléatoire avec {count} résultat(s) ?",
+                "SelectTableTitle": "Choisissez une table aléatoire",
+                "WeightLabel": "Poid"
+            }
+        },
+        "ErrorMessage": {
+            "NoTokenSelected": "Selectionnez au moins un token"
+        }
+    },  
+        "class1": "Classe 1",
+        "class2": "Classe 2",
+        "class3": "Classe 3",
+        "class4": "Classe 4",
         "engrenages": "Engrenages",
         "pilotage": "Pilotage",
         "recuperation": "Récupération",
@@ -905,6 +981,10 @@
         "showCheckOptions": {
             "name": "Demander les options des jets par défaut.",
             "label": "Maintenez la touche Maj enfoncée pour basculer."
+        },
+        "CompendiumBrowserPacks": {
+            "Hint": "Settings to exclude packs from loading",
+            "Name": "Compendium Browser Packs"
         }
     },
     "SRActiveEffect": {
