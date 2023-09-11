@@ -401,17 +401,32 @@ h3 {
 .actor.sheet.character .char-header .char-exp {
     display: flex;
     align-self: center;
-    justify-self: center;
+    flex-direction: column;
     width:30%;
+    margin-bottom: 5px
+}
+.actor.sheet.character .char-header .char-exp div {
+    display: flex;
+    flex-direction: column;
+    align-self:center;
 }
 .actor.sheet.character .char-header .char-exp span {
     align-self: center;
 }
 .actor.sheet.character .char-header .char-exp input {
-    border: 2px solid #293011; 
+    border: 2px solid #293011;
     background: #d9d2b5;
-    width: 50px;
+    width: 40px;
+    height: 18px;
+    padding-bottom: 0;
 }
+.actor.sheet.character .char-header .char-exp .prestige .prestige-input {
+    flex-direction: row;
+}
+.actor.sheet.character .char-header .char-exp label {
+    font-size: 11px
+}
+
 /* ACTOR SHEET NAVIGATION */
 .actor.sheet.character .sheet-navigation {
     background-color: var(--secondary);
@@ -1139,14 +1154,14 @@ a.spéTest label, a.spéTestNécr label {
     flex-direction: row;
     justify-content: space-between
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money label, .actor.sheet.character .tab.acquis .acquis-top .acquis-prestige label {
+.actor.sheet.character .tab.acquis .acquis-top .acquis-money label{
     color: var(--primary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money input, .actor.sheet.character .tab.acquis .acquis-top .acquis-prestige input {
+.actor.sheet.character .tab.acquis .acquis-top .acquis-money input{
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
