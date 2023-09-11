@@ -756,7 +756,9 @@
                 "CreateDialogText": "Créer une table aléatoire avec {count} résultat(s) ?",
                 "SelectTableTitle": "Choisissez une table aléatoire",
                 "WeightLabel": "Poid"
-            }
+            },
+            "BuyLabel":"Acheter l'objet (En développement)",
+            "TakeLabel":"Prendre l'objet"
         },
         "ErrorMessage": {
             "NoTokenSelected": "Selectionnez au moins un token"
