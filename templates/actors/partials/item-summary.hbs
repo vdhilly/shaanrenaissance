@@ -1,0 +1,12 @@
+<div class="item-details {{#if item.system.description.value}}border-bottom{{/if}}">
+    {{#if item.system.acquis.spécialisations}}
+        <span class="detail">{{item.system.acquis.spécialisations}}</span>
+    {{/if}}
+</div>
+
+{{#if item.system.description.value}}
+    <div class="item-description">
+        {{{item.system.description.value}}}
+    </div>
+{{/if}}
+

@@ -1,6 +1,11 @@
 import * as Dice from "../jets/dice.js";
+import { htmlQuery } from "../utils/utils.js";
+import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
 
 export default class ShaanNPCSheet extends ActorSheet {
+    constructor() {
+        super(...arguments), this.itemRenderer = new ItemSummaryRenderer(this)
+    }
     static get defaultOptions() {
         const options = super.defaultOptions;
         return options.classes = [...options.classes, "PNJ"], options.width = 900, options.height = 700,options.scrollY.push(".window-content"), options
@@ -27,8 +32,27 @@ export default class ShaanNPCSheet extends ActorSheet {
                 },
             };
             sheetData.items.sort((a, b) => (a.sort || 0) - (b.sort || 0));
-            sheetData.acquis = actorData.items.filter(function (item) { return item.type == "Armement" || item.type == "Armimale" || item.type == "Artefact" ||  item.type == "Manuscrit" || item.type == "Outil" || item.type == "Protection" || item.type == "Relation" || item.type == "Richesse" || item.type == "Technologie" || item.type == "Transport" || item.type == "Bâtiment" || item.type == "Trihn"});
-        
+            if (typeof actorData.items.filter(function (item) {return item.system.pouvoir}) !== undefined) {
+                sheetData.items.Category = {},
+                sheetData.items.Category.Armement = actorData.items.filter(function (item) { return item.type == "Armement" && item.system.morphe == false}),
+                sheetData.items.Category.Armimales = actorData.items.filter(function (item) { return item.type == "Armimale" }),
+                sheetData.items.Category.Artefacts = actorData.items.filter(function (item) { return item.type == "Artefact" }),
+                sheetData.items.Category.Manuscrits = actorData.items.filter(function (item) { return item.type == "Manuscrit" }),
+                sheetData.items.Category.Outils = actorData.items.filter(function (item) { return item.type == "Outil" && item.system.morphe == false}),
+                sheetData.items.Category.Protections = actorData.items.filter(function (item) { return item.type == "Protection" && item.system.morphe == false}),
+                sheetData.items.Category.Relations = actorData.items.filter(function (item) { return item.type == "Relation" }),
+                sheetData.items.Category.Richesses = actorData.items.filter(function (item) { return item.type == "Richesse" }),
+                sheetData.items.Category.Technologie = actorData.items.filter(function (item) { return item.type == "Technologie" && item.system.morphe == false}),
+                sheetData.items.Category.Transports = actorData.items.filter(function (item) { return item.type == "Transport" });
+                sheetData.items.Category.Bâtiments = actorData.items.filter(function (item) { return item.type == "Bâtiment" });
+                sheetData.SummonedTrihns = actorData.items.filter(function (item) { return item.type == "Trihn"});
+                sheetData.morpheModules = actorData.items.filter(function (item) { return item.system.morphe == true && item.type == "Protection" || item.system.morphe == true && item.type == "Outil" || item.system.morphe == true && item.type == "Armement" || item.system.morphe == true && item.type == "Technologie"})
+
+                sheetData.pouvoirEsprit = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Esprit" || item.system.pouvoir.value == "Astuce de Technique" || item.system.pouvoir.value == "Secret de Savoir" || item.system.pouvoir.value == "Privilège de Social"}),
+                sheetData.pouvoirAme = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Âme" || item.system.pouvoir.value == "Création d'Arts" || item.system.pouvoir.value == "Symbiose de Shaan" || item.system.pouvoir.value == "Sort de Magie"}),
+                sheetData.pouvoirCorps = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Corps" || item.system.pouvoir.value == "Transe de Rituels" || item.system.pouvoir.value == "Exploit de Survie" || item.system.pouvoir.value == "Tactique de Combat"}),
+                sheetData.pouvoirNecrose = actorData.items.filter(function (item) { return item.type == "Pouvoir" && item.system.trihn == "Nécrose" || item.system.pouvoir.value == "Tourment de Nécrose"});
+            }        
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
             if (typeof sheetData.data.attributes.hpEsprit !== "undefined") {
@@ -139,8 +163,21 @@ export default class ShaanNPCSheet extends ActorSheet {
         return sheetData;
     }
     activateListeners(html) {
+        var _a, _b, _c;
+        super.activateListeners(html);
+        const $html = html[0]
+        if (this.itemRenderer.activateListeners($html), null === (_a = (0, htmlQuery)($html, "a[data-action=show-image]")) || void 0 === _a || _a.addEventListener("click", (() => {
+            var _a, _b, _c, _d;
+            const actor = this.actor,
+                title = null !== (_d = null !== (_b = null === (_a = actor.token) || void 0 === _a ? void 0 : _a.name) && void 0 !== _b ? _b : null === (_c = actor.prototypeToken) || void 0 === _c ? void 0 : _c.name) && void 0 !== _d ? _d : actor.name;
+            new ImagePopout(actor.img, {
+                title,
+                uuid: actor.uuid
+            }).render(!0)
+        })), !this.options.editable) return;
         if (this.isEditable) {
-            html.find(".item-createNPC").click(this._onItemCreateNPC.bind(this));
+            html.find(".item-create").click(this._onItemCreate.bind(this));
+            html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
             html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
             html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
             html.find(".item-edit").click(this._onItemEdit.bind(this));
@@ -194,7 +231,225 @@ export default class ShaanNPCSheet extends ActorSheet {
             askForOptions: event.shiftKey
         });
     }
+    _onAcquisCreate(event) {
+        let actor = this.actor
+        acquisCreate({
+            actor,
+        })
+        
 
+        async function acquisCreate ({
+            actor = null,
+            type = null
+        } = {}) {
+            
+        const actorData = actor ? actor.system : null;
+        let checkOptions = await GetAcquisOptions ({type})
+
+        if (checkOptions.cancelled) {
+            return;
+        }
+
+        type = checkOptions.type
+
+        let itemData = {
+          name: "Nouvel Acquis",
+          type: type,
+          img:"systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp"
+        };
+        return actor.createEmbeddedDocuments("Item", [itemData]);
+
+        async function GetAcquisOptions({
+            type = null,
+            template = "systems/shaanrenaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs"} = {}) {
+                const actorData = actor.toObject(!1);
+                actorData.itemTypes = {
+                    Armement: {}, Armimale: {}, Artefact: {}, Manuscrit: {}, Outil: {}, Protection: {}, Relation: {}, Richesse: {}, Technologie: {}, Transport: {}, Bâtiment: {}
+                }
+                const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+
+                return new Promise(resolve => {
+                    const data = {
+                        title: game.i18n.format("Création d'Acquis"),
+                        content: html,
+                        actor: actorData,
+                        buttons: {
+                            normal: {
+                              label: game.i18n.localize("chat.actions.create"),
+                              callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                            },
+                            cancel: {
+                              label: game.i18n.localize("chat.actions.cancel"),
+                              callback: html => resolve({ cancelled: true })
+                            }
+                          },
+                          default: "normal",
+                          close: () => resolve({ cancelled: true }),
+                        };
+                        console.log(data)
+                        new Dialog(data,null).render(true);
+                      });
+            }
+            function _processAcquisCreateOptions(form) {
+                return {
+                 type: form.type?.value
+                }
+              }
+        }
+    }
+    _onItemCreate(event) {
+        event.preventDefault();
+        const espritBtn = event.target.closest("#Esprit-add")
+        const ameBtn = event.target.closest("#Ame-add")
+        const corpsBtn = event.target.closest("#Corps-add")
+        const necroseBtn = event.target.closest("#Nécrose-add")
+        const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
+        const graftAddBtn = event.target.closest("#graft-add")
+
+        if(magicTrihnBtn) {
+            let itemData = {
+                name: "Trihn",
+                type: "Trihn",
+                item: {
+                    system: {
+                        trihnType: null,
+                        puissance: null,
+                        emplacement: null,
+                        pouvoir: {
+                            value: null
+                        }
+                    }
+                }
+            }
+            return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+            
+        if (espritBtn) {
+            let itemData = {
+          name: "Nouveau pouvoir d'Esprit",
+          type: "Pouvoir",
+          system: {
+            trihn: "Esprit"
+          }
+        };
+
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if (ameBtn) {
+            let itemData = {
+          name: "Nouveau pouvoir d'Âme",
+          type: "Pouvoir",
+          system: {
+            trihn: "Âme"
+          }
+        };
+
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if (corpsBtn) {
+            let itemData = {
+          name: "Nouveau pouvoir de Corps",
+          type: "Pouvoir",
+          system: {
+            trihn: "Corps"
+          }
+        };
+
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if (necroseBtn) {
+            let itemData = {
+          name: "Nouveau pouvoir de Nécrose",
+          type: "Pouvoir",
+          system: {
+            trihn: "Nécrose"
+          }
+        };
+
+        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+        }
+        this.actor.sheet.render();
+
+        if (graftAddBtn) {
+            let actor = this.actor
+            const actorData = actor.toObject(!1)
+            const itemsF = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+
+            graftCreate({
+                actor: actor,
+                items: itemsF
+            })
+
+            console.log(actorData)
+            
+            async function graftCreate ({
+                actor = null,
+                items = null
+            } = {}) { 
+                let item
+                let actorId = actor._id
+                let checkOptions = await GetGraftOptions ({item})
+    
+                if (checkOptions.cancelled) {
+                    return;
+                }
+                
+                item = checkOptions.item
+                const itemF = actor.items.get(item)
+                itemF.update({
+                    system: {
+                        morphe: true
+                    }
+                })
+                actor.sheet.render()
+                
+            
+            async function GetGraftOptions({
+                item = null,
+                template = "systems/shaanrenaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs"} = {}) {
+                    const actorData = actor
+                    actorData.itemsNotGraft = actorData.items.filter(function (item) { return item.system.morphe == false && item.type == "Armement" || item.system.morphe == false && item.type == "Outil" || item.system.morphe == false && item.type == "Protection" || item.system.morphe == false && item.type == "Technologie"})
+                    const html = await renderTemplate(template, { actor, item });
+    
+                    return new Promise(resolve => {
+                        const data = {
+                            title: game.i18n.format("Greffe de module"),
+                            content: html,
+                            actor: actorData,
+                            buttons: {
+                                normal: {
+                                  label: game.i18n.localize("chat.actions.graft"),
+                                  callback: html => resolve(_processGraftCreateOptions(html[0].querySelector("form")))
+                                },
+                                cancel: {
+                                  label: game.i18n.localize("chat.actions.cancel"),
+                                  callback: html => resolve({ cancelled: true })
+                                }
+                              },
+                              default: "normal",
+                              close: () => resolve({ cancelled: true }),
+                        };
+                        new Dialog(data, null).render(true);
+                    });
+            }
+            function _processGraftCreateOptions(form) {
+                return {
+                    item: form.item?.value
+                }
+            }
+            
+        }
+        
+        }
+
+    }
     _onSpéTestNécr(event) {
         let actor = this.actor
         let domain = $(event.target.closest(".npc")).children(".specialisations-title").find(".specialisations-label").text()

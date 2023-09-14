@@ -35,6 +35,7 @@ export default class ShaanRItemSheet extends ItemSheet {
     }
 
     activateListeners(html) {
+        
         if(this.isEditable) {
             html.find(".effect-control").click(this._onEffectControl.bind(this));
         }

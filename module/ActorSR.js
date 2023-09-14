@@ -1,8 +1,8 @@
-import {tupleHasValue, CREATURE_ACTOR_TYPES} from "./utils/utils.js"
+import {tupleHasValue, CREATURE_ACTOR_TYPES, ErrorSR} from "./utils/utils.js"
 export class ActorSR extends Actor {
   isOfType(...types) {
     return types.some((t => "creature" === t ? (0, tupleHasValue)(CREATURE_ACTOR_TYPES, this.type) : this.type === t))
-}
+  }
   static async createDocuments(data=[], context={}) {
     if ( context.parent?.pack ) context.pack = context.parent.pack;
     const {parent, pack, ...options} = context;  
@@ -24,7 +24,6 @@ export class ActorSR extends Actor {
       updates = {[`system.${attribute}`]: value};
     }
 
-    console.log(attribute, value, current.value, updates)
     const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates);
     return allowed !== false ? this.update(updates) : this;
   }

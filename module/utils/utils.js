@@ -58,6 +58,9 @@ export function sluggify(text, { camel = null } = {}) {
 export function ErrorSR(message) {
     return Error(`SR System | ${message}`)
 }
+function isObject(value) {
+    return "object" == typeof value && null !== value
+}
 
 export function setHasElement(set, value) {
     return set.has(value)
@@ -69,7 +72,11 @@ export function htmlQuery(parent, selectors) {
     return parent instanceof Element || parent instanceof Document ? parent.querySelector(selectors) : null
 }
 export function htmlQueryAll(parent, selectors) {
+
     return parent instanceof Element || parent instanceof Document ? Array.from(parent.querySelectorAll(selectors)) : []
+}
+export function htmlClosest(child, selectors) {
+    return child instanceof Element ? child.closest(selectors) : null
 }
 export function fontAwesomeIcon(glyph, {
     style = "solid",
@@ -82,3 +89,7 @@ export function fontAwesomeIcon(glyph, {
 }
 export const PHYSICAL_ITEM_TYPES = new Set(["Armement", "Armimale", "Artefact", "Manuscrit", "Outil", "Protection", "Relation", "Richesse", "Technologie", "Transport", "Bâtiment"]);
 export const CREATURE_ACTOR_TYPES = ["Personnage","PNJ","Shaani","Créature","Réseau"];
+
+export function isItemSystemData(data) {
+    return (0, isObject)(data) && (0, isObject)(data.description) && "string" == typeof data.description.value && Array.isArray(data.rules) && (null === data.slug || "string" == typeof data.slug)
+}

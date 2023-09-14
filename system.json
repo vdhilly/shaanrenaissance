@@ -30,6 +30,9 @@
   "esmodules": [
     "shaanRenaissance.js"
   ],
+  "scripts": [
+    "greensock/dist/gsap.min.js"
+  ],
   "styles": [
     "styles/ui.css",
     "styles/CharacterSheet.css",

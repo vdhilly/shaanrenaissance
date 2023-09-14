@@ -938,7 +938,8 @@
                 "trihn": 0,
                 "pouvoir": {
                     "value": " "
-                }
+                },
+                "quantity":1
             },
             "spés":{
                 "skills": {

@@ -1,6 +1,11 @@
 import * as Dice from "../jets/dice.js";
+import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
+import { htmlQuery } from "../utils/utils.js";
 
 export default class ShaanRActorsSheet extends ActorSheet {
+    constructor() {
+        super(...arguments), this.itemRenderer = new ItemSummaryRenderer(this)
+    }
     static get defaultOptions() {
         const options = super.defaultOptions;
         return options.classes = [...options.classes, "character"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
@@ -192,6 +197,18 @@ export default class ShaanRActorsSheet extends ActorSheet {
         return sheetData;
     }
     activateListeners(html) {
+    var _a, _b, _c;
+    super.activateListeners(html);
+    const $html = html[0]
+        if (this.itemRenderer.activateListeners($html), null === (_a = (0, htmlQuery)($html, "a[data-action=show-image]")) || void 0 === _a || _a.addEventListener("click", (() => {
+            var _a, _b, _c, _d;
+            const actor = this.actor,
+                title = null !== (_d = null !== (_b = null === (_a = actor.token) || void 0 === _a ? void 0 : _a.name) && void 0 !== _b ? _b : null === (_c = actor.prototypeToken) || void 0 === _c ? void 0 : _c.name) && void 0 !== _d ? _d : actor.name;
+            new ImagePopout(actor.img, {
+                title,
+                uuid: actor.uuid
+            }).render(!0)
+        })), !this.options.editable) return;
         if (this.isEditable) {
             html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
             html.find(".item-create").click(this._onItemCreate.bind(this));

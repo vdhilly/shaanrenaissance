@@ -139,11 +139,15 @@
 }
 .actor.sheet aside .sidebar .HP .hp-big input {
     font: 700 var(--font-size-14) var(--body-serif);
-    text-align: center
+    text-align: center;
 }
 .actor.sheet aside .sidebar .HP .hp-big .hpMax-corps, .actor.sheet aside .sidebar .HP .hp-big .hpMax-esprit, .actor.sheet aside .sidebar .HP .hp-big .hpMax-ame {
     align-self: center;
     justify-self: center;
+    display: flex;
+}
+.actor.sheet aside .sidebar .HP .hp-big span {
+    color: var(--tertiary); 
 }
 .actor.sheet aside .sidebar .HP .hp-big .data-value h2 {
     margin: 0;
@@ -426,9 +430,7 @@
     grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
 }
-.actor.sheet .sheet-body .sheet-content>.tab {
-    padding: .6rem .6rem 0
-}
+
 
 /* General tab img */
 .actor.sheet.shaani .sheet-body .sheet-content .tab.character.active .character-details .frame-container {
@@ -746,109 +748,6 @@ a.spéTest label, a.spéTestNécr label {
 }
 
 
-/* ACTOR SHEET CHARACTER POWERS TAB*/
-
-/* POWER TAB TRIHN HEADER */
-.actor.sheet.shaani .tab.powers .trihn-header {
-    display: grid; 
-    grid: "powerTrihn power-add" "content content";
-    border-top-right-radius: 5px;
-}
-.actor.sheet.shaani .tab.powers .Esprit .trihn-header {
-    background-color: var(--color-esprit);
-}
-.actor.sheet.shaani .tab.powers .Ame .trihn-header {
-    background-color: var(--color-ame);
-}
-.actor.sheet.shaani .tab.powers .Corps .trihn-header {
-    background-color: var(--color-corps);
-}
-.actor.sheet.shaani .tab.powers .Nécrose .trihn-header {
-    background-color: var(--color-necrose);
-}
-.actor.sheet.shaani .tab.powers .trihn-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 400;
-    color: white;
-    text-transform: uppercase;
-}
-.actor.sheet.shaani .tab.powers .trihn-header .item-controls {
-    padding-right: 10px;
-    justify-self: right;
-    align-self: center;
-    color: white;
-}
-.actor.sheet.shaani .tab.powers .item-control i.fas::before:hover {
-    box-shadow: none;
-}
-
-/* POWER TAB TRIHN CONTENT */
-.actor.sheet.shaani .tab.powers .liste-pouvoir img {
-    max-width: 100%;
-    border: none;
-}
-.actor.sheet.shaani .tab.powers ol {
-    list-style-type: none;
-    padding: 0;
-}
-.actor.sheet.shaani .tab.powers .liste-pouvoir li {
-    display: grid;
-    grid: "power-item-header" "power-item-résumé";
-    background-color: rgba(28, 28, 28, .1);
-    padding: 0.5em;
-}
-.actor.sheet.shaani .tab.powers .liste-pouvoir li .pouvoir-header {
-    display: grid;
-    grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 10% 73% 17%;
-}
-.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header img {
-    grid-area: pouvoir-item-img;
-}
-.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header span {
-    font: 700 var(--font-size-16) var(--body-serif);
-    align-self: center;
-    padding-left: 5px;
-}
-.actor.sheet.shaani .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
-    grid-area: pouvoir-item-controls;
-    float: right;
-}
-.actor.sheet.shaani .tab.powers .liste-pouvoir {
-    display: grid;
-    grid-gap: 2px;
-}
-.actor.sheet.shaani .tab.powers .Esprit .liste-pouvoir {
-    border: 3px solid var(--color-esprit);
-    border-top: none;
-    margin: 0;
-    margin-bottom: 10px;
-}
-.actor.sheet.shaani .tab.powers .Ame .liste-pouvoir {
-    border: 3px solid var(--color-ame);
-    border-top: none;
-    margin: 0;
-    margin-bottom: 10px;
-}
-.actor.sheet.shaani .tab.powers .Corps .liste-pouvoir {
-    border: 3px solid var(--color-corps);
-    border-top: none;
-    margin: 0;
-    margin-bottom: 10px;
-}
-.actor.sheet.shaani .tab.powers .Nécrose .liste-pouvoir {
-    border: 3px solid var(--color-necrose);
-    border-top: none;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
 /* TAB MAGIC */
 .actor.sheet.shaani .tab.magic .trihns-list {
     margin-top: 10px;
@@ -912,161 +811,6 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.shaani .tab.magic textarea:focus {
     box-shadow: none;
 }
-
-/* ACTOR TAB CHARACTER ACQUIS */
-
-.actor.sheet.shaani .tab.acquis .acquis-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between
-}
-.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money label, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-prestige label {
-    color: var(--primary);
-    font-family: var(--sans-serif);
-    font-weight: 800;
-    font-size: .625rem;
-    text-transform: uppercase; 
-}
-.actor.sheet.shaani .tab.acquis .acquis-top .acquis-money input, .actor.sheet.shaani .tab.acquis .acquis-top .acquis-prestige input {
-    background-color: rgba(28, 28, 28, .1);
-    border: none;
-    color: var(--body);
-    display: flex;
-    font: 700 var(--font-size-14) var(--body-serif);
-    line-height: 1;
-    margin: 0;
-    padding: 8px 4px 6px;
-    width: calc(100% - 6px)
-}
-.actor.sheet.shaani .tab.acquis .acquis-ressources .ressources-content {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-}
-.ressource.Verre { grid-area: 1 / 1 / 2 / 2; }
-.ressource.Bois { grid-area: 1 / 2 / 2 / 3; }
-.ressource.Or { grid-area: 1 / 3 / 2 / 4; }
-.ressource.Population { grid-area: 1 / 4 / 2 / 5; }
-.ressource.Pierre { grid-area: 1 / 5 / 2 / 6; }
-.ressource.Trihnite { grid-area: 2 / 1 / 3 / 2; }
-.ressource.Animal { grid-area: 2 / 2 / 3 / 3; }
-.ressource.Cultures { grid-area: 2 / 3 / 3 / 4; }
-.ressource.Métal { grid-area: 2 / 4 / 3 / 5; }
-.ressource.Hydrocarbures { grid-area: 2 / 5 / 3 / 6; }
-
-.actor.sheet.shaani .tab.acquis .acquis-ressources .ressource {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    align-items: center;
-}
-.actor.sheet.shaani .tab.acquis .acquis-ressources .ressource img{
-    max-width: 100%;
-    border: none;
-}
-/* ACQUIS CATEGORY HEADER */
-
-.actor.sheet.shaani .tab.acquis .ressources-header {
-    border-top-right-radius: 5px;
-    background-color: #755137;
-}
-.actor.sheet.shaani .tab.acquis .ressources-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    color: white;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-.actor.sheet.shaani .tab.acquis .ressources-content {
-    border: 3px solid #755137;
-    border-top: none;
-    padding: 0.5rem;
-    margin: 0;
-    margin-bottom: 10px;
-}
-.actor.sheet.shaani .tab.acquis .category-header {
-    display: grid; 
-    grid: "acquisCategory power-add" "acquisContent acquisContent";
-    border-top-right-radius: 5px;
-}
-.actor.sheet.shaani .tab.acquis .itemCategory .category-header {
-    background-color: #755137;
-}
-
-.actor.sheet.shaani .tab.acquis .category-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    color: white;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-.actor.sheet.shaani .tab.acquis .category-header .item-controls {
-    padding-right: 10px;
-    justify-self: right;
-    align-self: center;
-    color: white;
-}
-.actor.sheet.shaani .tab.acquis .item-control i.fas::before:hover {
-    box-shadow: none;
-}
-
-
-/* ACQUIS TAB CATEGORY CONTENT */
-
-.actor.sheet.shaani .tab.acquis .liste-items img {
-    max-width: 100%;
-    border: none;
-}
-.actor.sheet.shaani .tab.acquis ol {
-    list-style-type: none;
-    padding: 0;
-}
-.actor.sheet.shaani .tab.acquis .liste-items li {
-    display: grid;
-    grid: "acquis-item-header" "acquis-item-résumé";
-    background-color: rgba(28, 28, 28, .1);
-    padding: 0.5em;
-}
-.actor.sheet.shaani .tab.acquis .liste-items li .acquis-header {
-    display: grid;
-    grid: "acquis-item-img acquis-item-name acquis-item-controls";
-    grid-template-columns: 10% 80% 10%;
-}
-.actor.sheet.shaani .tab.acquis .liste-items .acquis-header img {
-    grid-area: acquis-item-img;
-}
-.actor.sheet.shaani .tab.acquis .liste-items .acquis-header span {
-    font: 700 var(--font-size-16) var(--body-serif);
-    align-self: center;
-    padding-left: 5px;
-}
-.actor.sheet.shaani .tab.acquis .liste-items .acquis-header .item-controls {
-    grid-area: acquis-item-controls;
-    float: right;
-}
-.actor.sheet.shaani .tab.acquis .liste-items {
-    display: grid;
-    grid-gap: 2px;
-}
-.actor.sheet.shaani .tab.acquis .liste-items {
-    border: 3px solid #755137;
-    border-top: none;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
 
 /* DETAILS TAB */
 

@@ -100,6 +100,10 @@ h3 {
     font-weight: 400;
     border: 0;
 }
+.actor.sheet .sheet-content {
+    padding-right: 5px;
+    margin-top: 7px;
+}
 /* ACTOR SHEET */
 .actor.sheet.character {
     width: 100%;
@@ -506,7 +510,7 @@ h3 {
     height: calc(100% - 35px);
     overflow: hidden;
     margin-left: 10px;
-    overflow-y: scroll
+    overflow-y: scroll;
 }
 .crb-style .details-label {
     color: var(--primary);
@@ -526,9 +530,6 @@ h3 {
     display: grid;
     grid: "img vide shaani"46px "img details details"auto/120px 130px 1fr;
     margin-top: 4px
-}
-.actor.sheet .sheet-body .sheet-content>.tab {
-    padding: .6rem .6rem 0
 }
 .actor.sheet.character .tab.character .vide {
     margin-left: 5px;
@@ -912,65 +913,40 @@ a.spéTest label, a.spéTestNécr label {
 
 /* ACTOR SHEET CHARACTER POWERS TAB*/
 
-.pouvoir-compendium {
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    background:rgba(0, 0, 0, .1);
-    font-family: var(--sans-serif);
-    font-weight: 800;
-    font-size: .825rem;
-    text-transform: uppercase; 
-    border-radius: 15px;
-    width: 95px;
-    padding: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-.creation-acquis {
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    font-family: var(--sans-serif);
-    background:rgba(0, 0, 0, .1);
-    font-weight: 800;
-    font-size: .825rem;
-    text-transform: uppercase; 
-    border-radius: 15px;
-    width: 95px;
-    padding: 5px;
-    justify-self: right;
-    text-align: center;
-    cursor: pointer;
-}
 .creation-acquis i {
     margin-right: 3px;
 }
 /* POWER TAB POUVOIR RACIAL */
 
-.actor.sheet.character .tab.powers .pouvoirRace-header {
-    border-top-right-radius: 5px;
+.actor.sheet .pouvoirTrihn-list .pouvoirRace-header {
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%), inset 0 0 0 2px rgb(255 255 255 / 20%);
+    align-items: center;
     background-color: #755137;
-}
-.actor.sheet.character .tab.powers .pouvoirRace-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    color: white;
-    font-weight: 400;
+    color: var(--color-text-light-0);
+    display: flex;
+    font-size: var(--font-size-10);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 6px;
+    padding: 0.25rem;
+    text-rendering: optimizeLegibility;
     text-transform: uppercase;
+    width: 100%;
+}
+.actor.sheet .pouvoirTrihn-list .pouvoirRace-header h3 {
+    font-size: var(--font-size-14);
+    margin: 2px 0;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
 
-.actor.sheet.character .tab.powers .pouvoirRace-content .pouvoir-name {
+.actor.sheet .pouvoirTrihn-list .pouvoirRace-content .pouvoir-name {
         font: 700 var(--font-size-16) var(--body-serif);
         padding-left: 5px;
 }
-.actor.sheet.character .tab.powers .pouvoirRace-content {
+.actor.sheet .pouvoirTrihn-list .pouvoirRace-content {
     padding-left: 5px;
 }
-.actor.sheet.character .tab.powers .pouvoirRace-list {
+.actor.sheet .pouvoirTrihn-list .pouvoirRace-list {
     border: 3px solid #755137;
     border-top: none;
     margin: 0;
@@ -979,107 +955,158 @@ a.spéTest label, a.spéTestNécr label {
     padding: 0.5em;
 }
 /* POWER TAB TRIHN HEADER */
-.actor.sheet.character .tab.powers .trihn-header {
-    display: grid; 
-    grid: "powerTrihn power-add" "content content";
-    border-top-right-radius: 5px;
+.actor.sheet .pouvoirTrihn-list .trihn-header {
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%), inset 0 0 0 2px rgb(255 255 255 / 20%);
+    align-items: center;
+    color: var(--color-text-light-0);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-10);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 6px;
+    padding: 0.25rem;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    width: 100%;
 }
-.actor.sheet.character .tab.powers .Esprit .trihn-header {
+.actor.sheet .pouvoirTrihn-list .Esprit .trihn-header {
     background-color: var(--color-esprit);
 }
-.actor.sheet.character .tab.powers .Ame .trihn-header {
+.actor.sheet .pouvoirTrihn-list .Ame .trihn-header {
     background-color: var(--color-ame);
 }
-.actor.sheet.character .tab.powers .Corps .trihn-header {
+.actor.sheet .pouvoirTrihn-list .Corps .trihn-header {
     background-color: var(--color-corps);
 }
-.actor.sheet.character .tab.powers .Nécrose .trihn-header {
+.actor.sheet .pouvoirTrihn-list .Nécrose .trihn-header {
     background-color: var(--color-necrose);
 }
-.actor.sheet.character .tab.powers .trihn-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 400;
-    text-transform: uppercase;
-    color: white;
+.actor.sheet .pouvoirTrihn-list .trihn-header h3 {
+    font-size: var(--font-size-14);
+    margin: 2px 0;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
-.actor.sheet.character .tab.powers .trihn-header .item-controls {
+.actor.sheet .pouvoirTrihn-list .trihn-header h3:hover {
+    color: var(--color-text-light-0);
+}
+.actor.sheet .pouvoirTrihn-list .trihn-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
     color: white;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
-.actor.sheet.character .tab.powers .item-control i.fas::before:hover {
+.actor.sheet .pouvoirTrihn-list .item-control i.fas::before:hover {
     box-shadow: none;
 }
 
 /* POWER TAB TRIHN CONTENT */
-.actor.sheet.character .tab.powers .liste-pouvoir img {
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.character .tab.powers ol {
+.actor.sheet .pouvoirTrihn-list {
     list-style-type: none;
     padding: 0;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir li {
-    display: grid;
-    grid: "power-item-header" "power-item-résumé";
-    background-color: rgba(28, 28, 28, .1);
-    padding: 0.5em;
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir .item {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--font-size-12);
+    justify-content: flex-start;
+    width: 100%;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir li .pouvoir-header {
-    display: grid;
-    grid: "pouvoir-item-img pouvoir-item-name pouvoir-item-controls";
-    grid-template-columns: 10% 73% 17%;
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir li .pouvoir-header {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    flex: 2;
+    background-color: rgba(28, 28, 28, .1); 
+    padding: 0.5em;  
 }
-.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header img {
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir .pouvoir-header img {
     grid-area: pouvoir-item-img;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header span {
-    font: 700 var(--font-size-16) var(--body-serif);
-    align-self: center;
-    padding-left: 5px;
+.actor.sheet .pouvoir-image {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    font-size: var(--font-size-16);
+    height: 24px;
+    width: 24px;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir .pouvoir-header .item-controls {
-    grid-area: pouvoir-item-controls;
+.actor.sheet .pouvoir-image i {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: var(--text-dark);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.actor.sheet .pouvoir-image:hover i {
+    background: #f1eee9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir .pouvoir-header h4 {
+    cursor: pointer;
+    font-weight: 500;
+    line-height: var(--font-size-12);
+    margin: auto auto auto 0;
+    padding: 2px;
+    word-break: break-word;
+    font: var(--body-serif)
+}
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir .pouvoir-header h4:hover {
+    color: var(--primary);
+}
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir .item-controls {
     float: right;
+    align-items: center;
+    display: flex;
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+    border-left: 1px solid var(--alt);
+    gap: 2px;
 }
-.actor.sheet.character .tab.powers .liste-pouvoir {
+.actor.sheet .pouvoirTrihn-list .liste-pouvoir {
     display: grid;
-    grid-gap: 2px;
 }
 .actor.sheet .item.pouvoir.used {
     background:rgba(28, 28, 28, 0.3) !important
 }
-.actor.sheet.character .tab.powers .Esprit .liste-pouvoir {
+.actor.sheet .pouvoirTrihn-list .Esprit .liste-pouvoir {
     border: 3px solid var(--color-esprit);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.powers .Ame .liste-pouvoir {
+.actor.sheet .pouvoirTrihn-list .Ame .liste-pouvoir {
     border: 3px solid var(--color-ame);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.powers .Corps .liste-pouvoir {
+.actor.sheet .pouvoirTrihn-list .Corps .liste-pouvoir {
     border: 3px solid var(--color-corps);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.powers .Nécrose .liste-pouvoir {
+.actor.sheet .pouvoirTrihn-list .Nécrose .liste-pouvoir {
     border: 3px solid var(--color-necrose);
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
+}
+.actor.sheet .pouvoirTrihn-list .item-summary {
+    flex: 100%;
+    padding: 4px 8px 8px;
+    border-top: 1px solid var(--alt);
+    border-bottom: 1px solid var(--alt);
+    background: var(--bg);
 }
 
 /* ACTOR TAB MAGIC SHEET */
@@ -1149,19 +1176,19 @@ a.spéTest label, a.spéTestNécr label {
 
 /* ACTOR TAB CHARACTER ACQUIS */
 
-.actor.sheet.character .tab.acquis .acquis-top {
+.actor.sheet .tab.acquis .acquis-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money label{
+.actor.sheet .tab.acquis .acquis-top .acquis-money label{
     color: var(--primary);
     font-family: var(--sans-serif);
     font-weight: 800;
     font-size: .625rem;
     text-transform: uppercase; 
 }
-.actor.sheet.character .tab.acquis .acquis-top .acquis-money input{
+.actor.sheet .tab.acquis .acquis-top .acquis-money input{
     background-color: rgba(28, 28, 28, .1);
     border: none;
     color: var(--body);
@@ -1172,7 +1199,7 @@ a.spéTest label, a.spéTestNécr label {
     padding: 8px 4px 6px;
     width: calc(100% - 6px)
 }
-.actor.sheet.character .tab.acquis .acquis-ressources .ressources-content {
+.actor.sheet .tab.acquis .acquis-ressources .ressources-content {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -1190,114 +1217,216 @@ a.spéTest label, a.spéTestNécr label {
 .ressource.Métal { grid-area: 2 / 4 / 3 / 5; }
 .ressource.Hydrocarbures { grid-area: 2 / 5 / 3 / 6; }
 
-.actor.sheet.character .tab.acquis .acquis-ressources .ressource {
+.actor.sheet .tab.acquis .acquis-ressources .ressource {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     align-items: center;
 }
-.actor.sheet.character .tab.acquis .acquis-ressources .ressource img{
+.actor.sheet .tab.acquis .acquis-ressources .ressource img{
     max-width: 100%;
     border: none;
 }
 /* ACQUIS CATEGORY HEADER */
 
-.actor.sheet.character .tab.acquis .ressources-header {
-    border-top-right-radius: 5px;
+.actor.sheet .tab.acquis .ressources-header {
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%), inset 0 0 0 2px rgb(255 255 255 / 20%);
+    align-items: center;
     background-color: #755137;
-    color: white;
-}
-.actor.sheet.character .tab.acquis .ressources-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 500;
+    color: var(--color-text-light-0);
+    display: flex;
+    font-size: var(--font-size-10);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 6px;
+    padding: 0.25rem;
+    text-rendering: optimizeLegibility;
     text-transform: uppercase;
+    width: 100%;
 }
-.actor.sheet.character .tab.acquis .ressources-content {
+.actor.sheet .tab.acquis .ressources-header h3 {
+    font-size: var(--font-size-14);
+    margin: 2px 0;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+.actor.sheet .tab.acquis .ressources-header h3:hover {
+    color: var(--color-text-light-0);
+}
+.actor.sheet .tab.acquis .ressources-content {
     border: 3px solid #755137;
     border-top: none;
     padding: 0.5rem;
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.acquis .category-header {
+.actor.sheet .tab.acquis .category-header {
     display: grid; 
     grid: "acquisCategory power-add" "acquisContent acquisContent";
     border-top-right-radius: 5px;
 }
-.actor.sheet.character .tab.acquis .itemCategory .category-header {
+.actor.sheet .itemCategory .category-header {
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%), inset 0 0 0 2px rgb(255 255 255 / 20%);
+    align-items: center;
     background-color: #755137;
-    color: white;
+    color: var(--color-text-light-0);
+    display: flex;
+    font-size: var(--font-size-10);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 6px;
+    padding: 0.25rem;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    width: 100%;
 }
 
-.actor.sheet.character .tab.acquis .category-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 500;
-    text-transform: uppercase;
+.actor.sheet .itemCategory .category-header h3 {
+    font-size: var(--font-size-14);
+    margin: 2px 0;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
 }
-.actor.sheet.character .tab.acquis .category-header .item-controls {
+.actor.sheet .itemCategory .category-header h3:hover {
+    color: var(--color-text-light-0);
+}
+.actor.sheet .itemCategory .category-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
 }
-.actor.sheet.character .tab.acquis .item-control i.fas::before:hover {
+.actor.sheet .itemCategory .item-control i.fas::before:hover {
     box-shadow: none;
 }
 
 
 /* ACQUIS TAB CATEGORY CONTENT */
 
-.actor.sheet.character .tab.acquis .liste-items img {
+.actor.sheet .itemCategory .liste-items img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.character .tab.acquis ol {
+.actor.sheet .itemCategory-list, .actor.sheet .item-list {
     list-style-type: none;
     padding: 0;
 }
-.actor.sheet.character .tab.acquis .liste-items li {
-    display: grid;
-    grid: "acquis-item-header" "acquis-item-résumé";
-    background-color: rgba(28, 28, 28, .1);
-    padding: 0.5em;
+.actor.sheet .itemCategory .liste-items .item {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--font-size-12);
+    justify-content: flex-start;
+    width: 100%;
+  }
+.actor.sheet .itemCategory .liste-items li .acquis-header {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    flex: 2;
+    background-color: rgba(28, 28, 28, .1); 
+    padding: 0.5em;  
 }
-.actor.sheet.character .tab.acquis .liste-items li .acquis-header {
-    display: grid;
-    grid: "acquis-item-img acquis-item-name acquis-item-controls";
-    grid-template-columns: 10% 80% 10%;
-}
-.actor.sheet.character .tab.acquis .liste-items .acquis-header img {
+.actor.sheet .itemCategory .liste-items .acquis-header .acquis-image {
     grid-area: acquis-item-img;
 }
-.actor.sheet.character .tab.acquis .liste-items .acquis-header span {
-    font: 700 var(--font-size-16) var(--body-serif);
-    align-self: center;
-    padding-left: 5px;
+.actor.sheet .acquis-image {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    font-size: var(--font-size-16);
+    height: 24px;
+    width: 24px;
+  }
+  .actor.sheet .acquis-image i {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: var(--text-dark);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+  }
+  .actor.sheet .acquis-image:hover i {
+    background: #f1eee9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.actor.sheet .itemCategory .liste-items .acquis-header h4 {
+    cursor: pointer;
+    font-weight: 500;
+    line-height: var(--font-size-12);
+    margin: auto auto auto 0;
+    padding: 2px;
+    word-break: break-word;
+    font: var(--body-serif)
 }
-.actor.sheet.character .tab.acquis .liste-items .acquis-header .item-controls {
-    grid-area: acquis-item-controls;
+.actor.sheet .itemCategory .acquis-header h4:hover {
+    color: var(--primary);
+}
+.actor.sheet .itemCategory .quantity{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 68px;
+  background-color: rgba(28, 28, 28, .1);
+}
+.actor.sheet .itemCategory .sell-value {
+  justify-content: end;
+  padding-right: 3px;
+}
+.actor.sheet .itemCategory .quantity {
+  justify-content: space-around;
+}
+.actor.sheet .itemCategory .quantity .decrease,
+.actor.sheet .itemCategory .quantity .increase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--sans-serif-monospace);
+  height: 100%;
+  text-align: center;
+  width: 18px;
+}
+.actor.sheet .itemCategory .item .quantity {
+border-left: 1px solid var(--alt);
+}
+.actor.sheet .itemCategory .liste-items .item-controls {
     float: right;
+    align-items: center;
+    display: flex;
+    background-color: rgba(28, 28, 28, .1);
+    padding: 0.5em;
+    border-left: 1px solid var(--alt);
 }
-.actor.sheet.character .tab.acquis .liste-items {
+.actor.sheet .itemCategory .liste-items {
     display: grid;
-    grid-gap: 2px;
 }
-.actor.sheet.character .tab.acquis .liste-items {
+.actor.sheet .itemCategory .liste-items {
     border: 3px solid #755137;
     border-top: none;
     margin: 0;
     margin-bottom: 10px;
+}
+
+.actor.sheet .item-summary {
+    --space-s: 0.25em;
+    --space-m: 0.5em;
+    --space-l: 1em;
+    --space-xl: 1.5em;
+    --space-2xl: 2em;
+    --radius: 3px;
+    overflow: hidden;
+}
+.actor.sheet .itemCategory .item-summary {
+    flex: 100%;
+    padding: 4px 8px 8px;
+    border-top: 1px solid var(--alt);
+    border-bottom: 1px solid var(--alt);
+    background: var(--bg);
+}
+
+.actor.sheet .itemCategory .item-summary .item-details.border-bottom {
+    padding-bottom: 2px;
+}
+.actor.sheet .itemCategory .item-summary .item-description {
+    padding-top: 2px;
 }
 
 

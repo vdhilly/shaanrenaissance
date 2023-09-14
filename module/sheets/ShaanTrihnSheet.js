@@ -28,5 +28,5 @@ export default class ShaanTrihnSheet extends ItemSheet {
         console.log(sheetData);
         return sheetData;
     }
-    
+
 }

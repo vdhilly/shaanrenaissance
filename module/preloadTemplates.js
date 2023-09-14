@@ -23,6 +23,8 @@
         "systems/shaanrenaissance/templates/actors/Personnage/partials/background.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/partials/specialisations.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/morphe.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/acquis-categories.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/pouvoirs-categories.hbs",
   
         // NPC
         "systems/shaanrenaissance/templates/actors/PNJ/partials/cercle.hbs",
