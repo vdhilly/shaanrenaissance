@@ -1,0 +1,25 @@
+<div class="SR acquis-chat chat-card" data-actor-id="{{actorID}}">
+    <header>
+        <img class="acquis-image" src="{{acquisData.img}}">
+        <h2 class="acquis-name">
+            {{acquisData.name}}
+        </h2>
+    </header>
+    {{log this}}
+    <div class="acquis-infos">
+        <span class="label">{{localize "SRLabels.type"}}: </span><span class="detail">{{acquisData.type}}</span><br/>
+        {{#if acquisData.system.acquis.spécisalisations}}
+        <span class="label">{{localize "SR.spécialisations"}}: </span><span class="detail">{{acquisData.system.acquis.spécialisations}}</span><br/>
+        {{/if}}
+        {{#if acquisData.system.acquis.valeur}}
+        <span class="label">{{localize "SR.valeur"}}: </span><span class="detail">{{acquisData.system.acquis.valeur}}</span><br/>
+        {{/if}}
+        {{#if acquisData.system.acquis.prestige}}
+        <span class="label">{{localize "SR.prestige"}}: </span><span class="detail">{{acquisData.system.acquis.prestige}}</span><br/>
+        {{/if}}
+        {{#if acquisData.system.description.value}}
+        <hr/> 
+        <span class="label">{{localize "SR.Déscription"}}: </span><span class="detail">{{acquisData.system.description.value}}</span><br/>
+        {{/if}}
+    </div>
+</div>

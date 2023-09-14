@@ -213,6 +213,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
             html.find(".item-create").click(this._onItemCreate.bind(this));
             html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this));
+            html.find(".acquis-chat").click(this._onAcquisChat.bind(this));
             html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));
@@ -607,6 +608,54 @@ export default class ShaanRActorsSheet extends ActorSheet {
         
         }
 
+    }
+    _onAcquisChat(event) {
+        event.preventDefault();
+        let element = event.target
+        let itemId = element.closest(".item").dataset.itemId;
+        let actor = this.actor
+        let item = actor.items.get(itemId)
+
+        AcquisChat({
+            actor: actor,
+            acquis: item
+        })
+
+        async function AcquisChat({
+            actor = null,
+            acquis = null,
+            extraMessageData = {},
+            sendMessage = true
+        } = {}) {
+            const messageTemplate = "systems/shaanrenaissance/templates/chat/acquis-chat.hbs";
+
+            if(sendMessage) {
+                ToCustomMessage(actor, acquis, messageTemplate, {
+                    ...extraMessageData,
+                    actorID: actor.uuid
+                })
+            }
+
+            async function ToCustomMessage(actor = null, acquis, template, extraData) {
+                let templateContext = {
+                    ...extraData,
+                    acquisData: acquis
+                };
+                console.log(templateContext)
+                console.log(acquis)
+
+                let chatData = {
+                    user: game.user.id,
+                    speaker: ChatMessage.getSpeaker({actor}),
+                    content: await renderTemplate(template, templateContext),
+                    sound: CONFIG.sounds.notification,
+                    type: CONST.CHAT_MESSAGE_TYPES.OTHER
+                }
+                console.log(chatData)
+
+                ChatMessage.create(chatData)
+            }
+        }
     }
     _onPouvoirChat(event) {
         event.preventDefault();
