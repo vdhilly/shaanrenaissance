@@ -228,6 +228,42 @@
     font: 600 var(--font-size-14) var(--body-serif)
 }
 
+/* ACQUIS CHAT */
+
+.chat-message .acquis-chat header{
+    display: grid;
+    grid-template-columns: 19% 81%;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 3px;
+}
+.chat-message .acquis-chat header img {
+    border: none;
+    margin-right: 10px;
+}
+.chat-message .acquis-chat header h2 {
+    border: none;
+    font-family: var(--sans-serif);
+    font-weight: 700;
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+}
+.chat-message .acquis-chat .acquis-infos {
+    margin-top: 5px;
+}
+.chat-message .acquis-chat .acquis-infos .label {
+    color: var(--primary);
+    font-family: var(--sans-serif);
+    font-size: .8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+.chat-message .acquis-chat .acquis-infos .detail {
+    font: 600 var(--font-size-14) var(--body-serif)
+}
 
 /* Dialog Puiser */
 
