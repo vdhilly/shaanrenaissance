@@ -201,6 +201,53 @@ export default class ShaanNPCSheet extends ActorSheet {
             html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
 
         }
+        html.find(".item-increase-quantity").on("click", (event => {
+            var _a;
+            const itemId = null !== (_a = $(event.currentTarget).parents(".item").attr("data-item-id")) && void 0 !== _a ? _a : "",
+                item = this.actor.items.get(itemId);
+                console.log(event)
+            if(!event.shiftKey && !event.ctrlKey){
+                this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity + 1)
+                }])
+            }
+            if(event.shiftKey) { 
+                this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity + 5)
+                }])
+            }
+            if(event.ctrlKey) { 
+                this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity + 10)
+                }])
+            }
+        })), html.find(".item-decrease-quantity").on("click", (event => {
+            var _a;
+            const itemId = null !== (_a = $(event.currentTarget).parents(".item").attr("data-item-id")) && void 0 !== _a ? _a : "",
+                item = this.actor.items.get(itemId);
+                console.log(item.system.quantity)
+            if(!event.shiftKey && !event.ctrlKey){
+                item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity - 1)
+                }])
+            }
+            if(event.shiftKey) {
+                item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity - 5)
+                }])
+            }
+            if(event.ctrlKey) {
+                item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity - 10)
+                }])
+            }
+        }));
     }
     _onInputSelect(event){
         event.currentTarget.select();

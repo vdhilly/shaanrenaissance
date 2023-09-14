@@ -607,6 +607,18 @@
         }
     },
     "SR": {
+        "Inventory":{
+            "Increase": {
+                "Click": "[Click] Augmente de 1",
+                "ShiftClick": "[Shift-Click] Augmente de 5",
+                "ControlClick": "[Control-Click] Augmente de 10"
+            },
+            "Decrease": {
+                "Click": "[Click] Diminue de 1",
+                "ShiftClick": "[Shift-Click] Diminue de 5",
+                "ControlClick": "[Control-Click] Diminue de 10"
+            }
+        },
         "abilitiesTypes": {
             "Attaque": "Attaque",
             "Défense": "Défense",

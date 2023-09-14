@@ -26,9 +26,9 @@
                                     </h4>
                                 </div>
                                 <span class="quantity">
-                                    {{#if @root.editable}}<a class="decrease" data-action="decrease-quantity" title="{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.Click"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.ShiftClick"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.ControlClick"}}">&ndash;</a>{{/if}}
+                                    {{#if @root.editable}}<a class="item-decrease-quantity" data-action="decrease-quantity" title="{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.Click"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.ShiftClick"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Decrease.ControlClick"}}">&ndash;</a>{{/if}}
                                     <span>{{acquis.system.quantity}}</span>
-                                    {{#if @root.editable}}<a class="increase" data-action="increase-quantity" title="{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.Click"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.ShiftClick"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.ControlClick"}}">+</a>{{/if}}
+                                    {{#if @root.editable}}<a class="item-increase-quantity" data-action="increase-quantity" title="{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.Click"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.ShiftClick"}}&#013;{{localize "PF2E.Actor.Inventory.ItemQuantity.Increase.ControlClick"}}">+</a>{{/if}}
                                 </span>
                                 <div class="item-controls">
                                     <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>

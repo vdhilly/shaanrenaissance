@@ -1,6 +1,6 @@
 import * as Dice from "../jets/dice.js";
 import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
-import { htmlQuery } from "../utils/utils.js";
+import { ErrorSR, htmlQuery, htmlQueryAll, htmlClosest } from "../utils/utils.js";
 
 export default class ShaanRActorsSheet extends ActorSheet {
     constructor() {
@@ -240,6 +240,53 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         }))
         super.activateListeners(html);
         }
+        html.find(".item-increase-quantity").on("click", (event => {
+            var _a;
+            const itemId = null !== (_a = $(event.currentTarget).parents(".item").attr("data-item-id")) && void 0 !== _a ? _a : "",
+                item = this.actor.items.get(itemId);
+                console.log(event)
+            if(!event.shiftKey && !event.ctrlKey){
+                this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity + 1)
+                }])
+            }
+            if(event.shiftKey) { 
+                this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity + 5)
+                }])
+            }
+            if(event.ctrlKey) { 
+                this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity + 10)
+                }])
+            }
+        })), html.find(".item-decrease-quantity").on("click", (event => {
+            var _a;
+            const itemId = null !== (_a = $(event.currentTarget).parents(".item").attr("data-item-id")) && void 0 !== _a ? _a : "",
+                item = this.actor.items.get(itemId);
+                console.log(item.system.quantity)
+            if(!event.shiftKey && !event.ctrlKey){
+                item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity - 1)
+                }])
+            }
+            if(event.shiftKey) {
+                item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity - 5)
+                }])
+            }
+            if(event.ctrlKey) {
+                item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
+                    _id: itemId,
+                    "system.quantity": Number(item.system.quantity - 10)
+                }])
+            }
+        }));
     }
     _onInputSelect(event){
         event.currentTarget.select();
