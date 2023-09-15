@@ -385,6 +385,39 @@ export class compendiumBrowser extends Application {
             user: game.user
         }
     }
+    _canDragStart() {
+        return !0
+    }
+    _canDragDrop() {
+        return !0
+    }
+    _onDragStart(event) {
+        this.element.animate({
+            opacity: .125
+        }, 250);
+        const item = $(event.currentTarget)[0];
+        event.dataTransfer.setData("text/plain", JSON.stringify({
+            type: item.dataset.type,
+            uuid: item.dataset.entryUuid
+        })), item.addEventListener("dragend", (() => {
+            window.setTimeout((() => {
+                this.element.animate({
+                    opacity: 1
+                }, 250, (() => {
+                    this.element.css({
+                        pointerEvents: ""
+                    })
+                }))
+            }), 500)
+        }), {
+            once: !0
+        })
+    }
+    _onDragOver(event) {
+        super._onDragOver(event), this.element.css({
+            pointerEvents: "none"
+        })
+    }
     resetFilters() {
         const activeTab = this.activeTab;
         "settings" !== activeTab && this.tabs[activeTab].resetFilters()
