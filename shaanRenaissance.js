@@ -241,6 +241,20 @@ game.shaanRenaissance.system = {moduleArt: new ModuleArt}
 Hooks.once("ready", function () {
   canvas.hud.token = new SRTokenHUD();
   game.shaanRenaissance.compendiumBrowser = new compendiumBrowser
+  DiscordMessage()
+  function DiscordMessage() {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1152234515218059326/h8hJwkn_lyKpj1ziviRl094dqvtwjEAc6ksppOx9lJmXPNzaOKLca-EGnCB_ixxDjCgf");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "Shaan Foundry",
+      content: `${game.user.name} s'est connecté à Shaan Foundry`
+    }
+
+    request.send(JSON.stringify(params));
+  }
 })
 
 Hooks.on('diceSoNiceReady', (dice3d) => {
