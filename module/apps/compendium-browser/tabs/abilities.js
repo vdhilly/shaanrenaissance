@@ -12,7 +12,7 @@ export class CompendiumBrowserAbilitiesTab extends CompendiumBrowserTab {
         for await (const {
             pack, index
         } of this.browser.packLoader.loadPacks("Item", this.browser.loadedPacks("abilities"), indexFields)) {
-            console.log(`Shaan System | Compendium Browser | ${pack.metadata.label} - Loading`);
+            console.debug(`Shaan System | Compendium Browser | ${pack.metadata.label} - Loading`);
             for (const abilitiesData of index)
                 if("Pouvoir" === abilitiesData.type) {
                     if(!this.hasAllIndexFields(abilitiesData, indexFields)) {
@@ -32,7 +32,7 @@ export class CompendiumBrowserAbilitiesTab extends CompendiumBrowserTab {
                     })
                 }
         }
-        this.indexData = abilities, this.filterData.checkboxes.domains.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.SRdomains), this.filterData.checkboxes.types.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.abilitiesTypes), this.filterData.checkboxes.rangs.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.pouvoirs.pouvoirRank), this.filterData.checkboxes.source.options = this.generateSourceCheckboxOptions(sources), console.log("SHAAN RENAISSANCE | Compendium Browser | Finished loading abilities")
+        this.indexData = abilities, this.filterData.checkboxes.domains.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.SRdomains), this.filterData.checkboxes.types.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.abilitiesTypes), this.filterData.checkboxes.rangs.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.pouvoirs.pouvoirRank), this.filterData.checkboxes.source.options = this.generateSourceCheckboxOptions(sources), console.debug("SHAAN RENAISSANCE | Compendium Browser | Finished loading abilities")
     }
     // A changer
     filterIndexData(entry) {

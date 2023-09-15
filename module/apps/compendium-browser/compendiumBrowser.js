@@ -120,7 +120,6 @@ export class compendiumBrowser extends Application {
                     }
                     if(types.has("Créature" || "PNJ")) {
                         const load = null === (_w = null === (_v = null === (_u = this.settings.bestiary) || void 0 === _u ? void 0 : _u[pack.collection]) || void 0 === _v ? void 0 : _v.load) || void 0 === _w || _w;
-                        console.log(load)
                         settings.bestiary[pack.collection] = {
                             load,
                             name: pack.metadata.label
@@ -327,7 +326,7 @@ export class compendiumBrowser extends Application {
                     this.takeAcquisItem(entryUuid)
                 }))
                 , null === (_b = liElement.querySelector("a[data-action=buy-item]")) || void 0 === _b || _b.addEventListener("click", (() => {
-                    // this.buyAcquisItem(entryUuid)
+                    this.buyAcquisItem(entryUuid)
                 })))
             
             }
@@ -345,24 +344,24 @@ export class compendiumBrowser extends Application {
                 }))
             } else ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"))
         }
-        // async buyAcquisItem(uuid) {
-        //     const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]),
-        //         item = await this.getAcquisItem(uuid);
-        //     if (0 === actors.length) return void ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"));
-        //     let purchasesSucceeded = 0;
-        //     for (const actor of actors) await actor.inventory.removeCoins(item.price.value) && (purchasesSucceeded += 1, await actor.createEmbeddedDocuments("Item", [item.toObject()]));
-        //     1 === actors.length ? 1 === purchasesSucceeded ? ui.notifications.info(game.i18n.format("SR.CompendiumBrowser.BoughtItemWithCharacter", {
-        //         item: item.name,
-        //         character: actors[0].name
-        //     })) : ui.notifications.warn(game.i18n.format("SR.CompendiumBrowser.FailedToBuyItemWithCharacter", {
-        //         item: item.name,
-        //         character: actors[0].name
-        //     })) : purchasesSucceeded === actors.length ? ui.notifications.info(game.i18n.format("SR.CompendiumBrowser.BoughtItemWithAllCharacters", {
-        //         item: item.name
-        //     })) : ui.notifications.warn(game.i18n.format("SR.CompendiumBrowser.FailedToBuyItemWithSomeCharacters", {
-        //         item: item.name
-        //     }))
-        // }
+        async buyAcquisItem(uuid) {
+            const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]),
+                item = await this.getAcquisItem(uuid);
+            if (0 === actors.length) return void ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"));
+            let purchasesSucceeded = 0;
+            for (const actor of actors) await actor.inventory.removeCoins(Number(item.system.price.replace("crédos", ""))), purchasesSucceeded += 1, await actor.createEmbeddedDocuments("Item", [item.toObject()]);
+            1 === actors.length ? 1 === purchasesSucceeded ? ui.notifications.info(game.i18n.format("SR.CompendiumBrowser.BoughtItemWithCharacter", {
+                item: item.name,
+                character: actors[0].name
+            })) : ui.notifications.warn(game.i18n.format("SR.CompendiumBrowser.FailedToBuyItemWithCharacter", {
+                item: item.name,
+                character: actors[0].name
+            })) : purchasesSucceeded === actors.length ? ui.notifications.info(game.i18n.format("SR.CompendiumBrowser.BoughtItemWithAllCharacters", {
+                item: item.name
+            })) : ui.notifications.warn(game.i18n.format("SR.CompendiumBrowser.FailedToBuyItemWithSomeCharacters", {
+                item: item.name
+            }))
+        }
         async getAcquisItem(uuid) {
             const item = await fromUuid(uuid);
             if (!(item instanceof ItemSR)) return ui.notifications.warn("Unexpected failure retrieving compendium item");
@@ -370,7 +369,6 @@ export class compendiumBrowser extends Application {
         }    
     
     getData() {
-        console.log(this)
         const activeTab = this.activeTab;
         if ("settings" === activeTab) return {
             user: game.user,

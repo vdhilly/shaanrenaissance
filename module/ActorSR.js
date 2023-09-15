@@ -1,7 +1,14 @@
 import {tupleHasValue, CREATURE_ACTOR_TYPES, ErrorSR} from "./utils/utils.js"
+import { ActorInventory } from "./actor/Inventory/ActorInventory.js";
 export class ActorSR extends Actor {
   isOfType(...types) {
     return types.some((t => "creature" === t ? (0, tupleHasValue)(CREATURE_ACTOR_TYPES, this.type) : this.type === t))
+  }
+  prepareEmbeddedDocuments() {
+    super.prepareEmbeddedDocuments()
+    const Items = this.items.filter((i => i.isOfType("Armement", "Armimale", "Artefact", "Manuscrit", "Outil", "Protection", "Relation", "Richesse", "Technologie", "Transport", "Bâtiment")));
+    console.log(Items)
+    this.inventory = new ActorInventory(this, Items);
   }
   static async createDocuments(data=[], context={}) {
     if ( context.parent?.pack ) context.pack = context.parent.pack;

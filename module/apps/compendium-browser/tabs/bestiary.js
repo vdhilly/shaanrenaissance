@@ -13,7 +13,7 @@ export class CompendiumBrowserBestiaryTab extends CompendiumBrowserTab {
             pack,
             index
         } of this.browser.packLoader.loadPacks("Actor", this.browser.loadedPacks("bestiary"), indexFields)) {
-            console.log(`SR System | Compendium Browser | ${pack.metadata.label} - ${index.size} entries found`);
+            console.debug(`SR System | Compendium Browser | ${pack.metadata.label} - ${index.size} entries found`);
             for (const actorData of index)
                 if ("Personnage" === actorData.type || "PNJ" === actorData.type || "Créature" === actorData.type) {
                     if (!this.hasAllIndexFields(actorData, this.index)) {
@@ -33,7 +33,6 @@ export class CompendiumBrowserBestiaryTab extends CompendiumBrowserTab {
                     })
                 } console.debug(`SR System | Compendium Browser | ${pack.metadata.label} - Loaded`)
         }
-        console.log(bestiaryActors)
         this.indexData = bestiaryActors, this.filterData.checkboxes.type.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.bestiaryBrowser.type), this.filterData.checkboxes.class.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.bestiaryBrowser.class), this.filterData.checkboxes.role.options = this.generateCheckboxOptions(CONFIG.shaanRenaissance.bestiaryBrowser.role), this.filterData.checkboxes.source.options = this.generateSourceCheckboxOptions(sources), console.debug("SR System | Compendium Browser | Finished loading Bestiary actors")
     }
     filterIndexData(entry) {

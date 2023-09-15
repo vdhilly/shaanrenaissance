@@ -633,6 +633,8 @@
             "Perception": "Perception",
             "Récuperation": "Récuparation"
         },
+        "AddCoinsTitle":"Ajouter des crédos",
+        "RemoveCoinsTitle":"Retirer des crédos",
         "BrowserFilterSource": "Source",
         "BrowserSearchPlaceholder": "Effectuez une recherche",
         "BrowserClearFilter": "Effacer le filtre",

@@ -25,13 +25,12 @@
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/morphe.hbs",
         "systems/shaanrenaissance/templates/actors/partials/acquis-categories.hbs",
         "systems/shaanrenaissance/templates/actors/partials/pouvoirs-categories.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/coinage.hbs",
   
         // NPC
         "systems/shaanrenaissance/templates/actors/PNJ/partials/cercle.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/general.hbs",
-        "systems/shaanrenaissance/templates/actors/PNJ/partials/powers.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/bio.hbs",
-        "systems/shaanrenaissance/templates/actors/PNJ/partials/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/specialisations.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/armor.hbs",
         "systems/shaanrenaissance/templates/actors/PNJ/partials/NPC-reserve.hbs",
@@ -39,9 +38,7 @@
         // Creature
         "systems/shaanrenaissance/templates/actors/Créature/partials/cercle.hbs",
         "systems/shaanrenaissance/templates/actors/Créature/partials/general.hbs",
-        "systems/shaanrenaissance/templates/actors/Créature/partials/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Créature/partials/bio.hbs",
-        "systems/shaanrenaissance/templates/actors/Créature/partials/acquis.hbs",
         "systems/shaanrenaissance/templates/actors/Créature/partials/specialisations.hbs",
         "systems/shaanrenaissance/templates/actors/Créature/partials/armor.hbs",
   

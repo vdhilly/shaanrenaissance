@@ -118,7 +118,6 @@ export class CompendiumBrowserTab {
         if (!this.isInitialized) {
             throw new Error(`Compendium Browser Tab "${this.tabName}" is not initialized!`);
         }
-        console.log(this)
         const content = await renderTemplate("systems/shaanrenaissance/templates/compendium-browser/roll-table-dialog.hbs", {
             count: this.currentIndex.length,
             rollTables: game.tables.contents
@@ -138,7 +137,6 @@ export class CompendiumBrowserTab {
                     results,
                     formula: `1d${results.length}`,
                 });
-                console.log(table)
                 table?.sheet.render(true);
             },
         });

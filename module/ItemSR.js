@@ -38,4 +38,5 @@ export class ItemSR extends Item {
         newItem = super.createDialog(data, withClasses);
         return game.system.documentTypes.Item = original, newItem
     }
+    
 }

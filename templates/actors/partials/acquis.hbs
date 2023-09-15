@@ -2,9 +2,19 @@
     <div class="acquis-top">
         <div class="acquis-money">
             <label class="money-input money-label" for="{{options.id}}-pc-money">{{localize "SRLabels.Crédos"}}</label>
-            <input type="text" class="money-input" title="{{localize "SRLabels.CrédosTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.crédos" value="{{data.attributes.crédos}}"/>
+            <input type="text" class="money-input" title="{{localize "SRLabels.CrédosTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.crédos" value="{{data.attributes.crédos}}" readonly/>
         </div>
+        {{#ifeq actor.type "Personnage"}}
+        {{> "systems/shaanrenaissance/templates/actors/partials/coinage.hbs"}}
+        {{/ifeq}}
+        {{#ifeq actor.type "Shaani"}}
+        {{> "systems/shaanrenaissance/templates/actors/partials/coinage.hbs"}}
+        {{/ifeq}}
+        {{#ifeq actor.type "Réseau"}}
+        {{> "systems/shaanrenaissance/templates/actors/partials/coinage.hbs"}}
+        {{/ifeq}}
     </div>
+    
     <hr />
     {{> "systems/shaanrenaissance/templates/actors/partials/acquis-categories.hbs"}}
     <hr />

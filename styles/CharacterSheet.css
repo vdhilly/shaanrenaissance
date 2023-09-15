@@ -1179,7 +1179,13 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet .tab.acquis .acquis-top {
     display: flex;
     flex-direction: row;
-    justify-content: space-between
+    align-content: center;
+}
+.actor.sheet .tab.acquis .acquis-top .coinage {
+    display: flex;
+    flex-direction:row;
+    list-style-type: none;
+    align-items: end;
 }
 .actor.sheet .tab.acquis .acquis-top .acquis-money label{
     color: var(--primary);

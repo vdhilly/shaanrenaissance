@@ -1,6 +1,8 @@
 import * as Dice from "../jets/dice.js";
 import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
 import { ErrorSR, htmlQuery, htmlQueryAll, htmlClosest } from "../utils/utils.js";
+import { AddCoinsPopup } from "../actor/sheet/popups/add-coins-popup.js";
+import { RemoveCoinsPopup } from "../actor/sheet/popups/remove-coins-popup.js";
 
 export default class ShaanRActorsSheet extends ActorSheet {
     constructor() {
@@ -223,6 +225,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
             html.find(".regen-hp").click(this._onRegen.bind(this)); 
             html.find(".select-input").focus(this._onInputSelect);
+            html.find("button[data-action=add-coins]").click(this._onAddCoins.bind(this));
+            html.find("button[data-action=remove-coins]").click(this._onRemoveCoins.bind(this));
             const title = $(".sheet-navigation .active").attr("title");
                 title && html.find(".navigation-title").text(title)                  
                         html.find(".sheet-navigation").on("mouseover", ".item,.manage-tabs", (event => {
@@ -235,7 +239,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                         })); html.find(".open-compendium").on("click", (event => {
                             if (event.currentTarget.dataset.compendium) {
                                 const compendium = game.packs.get(event.currentTarget.dataset.compendium);
-                                console.log(compendium)
                                 compendium && compendium.render(!0)
                             }
                         }))
@@ -245,7 +248,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
             var _a;
             const itemId = null !== (_a = $(event.currentTarget).parents(".item").attr("data-item-id")) && void 0 !== _a ? _a : "",
                 item = this.actor.items.get(itemId);
-                console.log(event)
             if(!event.shiftKey && !event.ctrlKey){
                 this.actor.updateEmbeddedDocuments("Item", [{
                     _id: itemId,
@@ -268,7 +270,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
             var _a;
             const itemId = null !== (_a = $(event.currentTarget).parents(".item").attr("data-item-id")) && void 0 !== _a ? _a : "",
                 item = this.actor.items.get(itemId);
-                console.log(item.system.quantity)
             if(!event.shiftKey && !event.ctrlKey){
                 item.system.quantity > 0 && this.actor.updateEmbeddedDocuments("Item", [{
                     _id: itemId,
@@ -288,6 +289,15 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 }])
             }
         }));
+    }
+    _onAddCoins(event){
+        new AddCoinsPopup(this.actor).render(true);
+        return;
+
+    }
+    _onRemoveCoins(event){
+        new RemoveCoinsPopup(this.actor).render(true);
+        return;
     }
     _onInputSelect(event){
         event.currentTarget.select();
@@ -444,7 +454,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                           default: "normal",
                           close: () => resolve({ cancelled: true }),
                         };
-                        console.log(data)
                         new Dialog(data,null).render(true);
                       });
             }
@@ -545,8 +554,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 actor: actor,
                 items: itemsF
             })
-
-            console.log(actorData)
             
             async function graftCreate ({
                 actor = null,
@@ -641,8 +648,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     ...extraData,
                     acquisData: acquis
                 };
-                console.log(templateContext)
-                console.log(acquis)
+
 
                 let chatData = {
                     user: game.user.id,
@@ -651,7 +657,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     sound: CONFIG.sounds.notification,
                     type: CONST.CHAT_MESSAGE_TYPES.OTHER
                 }
-                console.log(chatData)
 
                 ChatMessage.create(chatData)
             }
@@ -689,8 +694,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     ...extraData,
                     pouvoirData: pouvoir
                 };
-                console.log(templateContext)
-                console.log(pouvoir)
 
                 let chatData = {
                     user: game.user.id,
@@ -699,7 +702,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     sound: CONFIG.sounds.notification,
                     type: CONST.CHAT_MESSAGE_TYPES.OTHER
                 }
-                console.log(chatData)
 
                 ChatMessage.create(chatData)
             }
