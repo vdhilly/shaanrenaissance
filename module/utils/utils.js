@@ -88,7 +88,8 @@ export function fontAwesomeIcon(glyph, {
     return icon.classList.add(styleClass, glyphClass), fixedWidth && icon.classList.add("fa-fw"), icon
 }
 export const PHYSICAL_ITEM_TYPES = new Set(["Armement", "Armimale", "Artefact", "Manuscrit", "Outil", "Protection", "Relation", "Richesse", "Technologie", "Transport", "Bâtiment"]);
-export const CREATURE_ACTOR_TYPES = ["Personnage","PNJ","Shaani","Créature","Réseau"];
+export const CHARACTER_ACTOR_TYPES = ["Personnage","PNJ","Shaani","Créature","Réseau"];
+export const CHARACTER_SHEET_TABS = ["character", "powers","symbioses", "magic", "acquis", "biography"]
 
 export function isItemSystemData(data) {
     return (0, isObject)(data) && (0, isObject)(data.description) && "string" == typeof data.description.value && Array.isArray(data.rules) && (null === data.slug || "string" == typeof data.slug)

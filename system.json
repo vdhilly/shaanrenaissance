@@ -31,7 +31,8 @@
     "shaanRenaissance.js"
   ],
   "scripts": [
-    "greensock/dist/gsap.min.js"
+    "greensock/dist/gsap.min.js",
+    "lib/tooltipster.bundle.min.js"
   ],
   "styles": [
     "styles/ui.css",

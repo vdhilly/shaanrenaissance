@@ -194,7 +194,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
         sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
         sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
 
-        
         console.log(sheetData);
         return sheetData;
     }
@@ -288,7 +287,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     "system.quantity": Number(item.system.quantity - 10)
                 }])
             }
-        }));
+        }))
     }
     _onAddCoins(event){
         new AddCoinsPopup(this.actor).render(true);
