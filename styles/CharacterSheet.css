@@ -159,6 +159,7 @@ h3 {
     color: var(--tertiary);
     font-weight: 400;
     padding-left: 3px;
+    text-shadow: 0 0 2px rgb(0 0 0 / 75%);
 }
 .actor.sheet .sidebar .sidebar_title h2 a {
     float: right;
@@ -179,6 +180,8 @@ h3 {
 .actor.sheet aside .sidebar .HP {
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 .actor.sheet aside .sidebar .HP .hp-big {
     width: 100%;
@@ -211,6 +214,7 @@ h3 {
     font-family: var(--title);
     font-weight: 400;
     margin: 0;
+    text-shadow: 0 0 2px rgb(0 0 0 / 75%);
 }
 .actor.sheet aside .sidebar .HP .hp-big span {
     justify-self: center;
@@ -253,6 +257,7 @@ h3 {
     margin: 0;
     padding-left: 3px;
     font-size: 14px;
+    text-shadow: 0 0 2px rgb(0 0 0 / 75%);
 }
 .actor.sheet aside .sidebar .initiative-sidebar h4 {
     margin: 0;
@@ -277,6 +282,7 @@ h3 {
     font-weight: 400;
     font-size: .625rem;
     text-transform: uppercase; 
+    text-shadow: 0 0 2px rgb(0 0 0 / 75%);
 }
 .actor.sheet aside .sidebar .protections input {
     font: 700 var(--font-size-14) var(--body-serif)
@@ -292,6 +298,7 @@ h3 {
     margin: 0;
     margin-left: 5px;
     align-self: center;
+    text-shadow: 0 0 2px rgb(0 0 0 / 75%);
 }
 .actor.sheet aside .sidebar .tests-sidebar .domain-test h3 {
     color: white;
