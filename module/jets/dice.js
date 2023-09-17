@@ -673,7 +673,6 @@ export async function necroseTest ({
           }
         }
       }
-      console.log(max)
       switch (max) {
         case "profane": 
           console.log("test")
@@ -879,27 +878,6 @@ export async function SpéTestNécr ({
   const spéAcquis = actorData.skills[domain].specialisations[spécialisation].acquis;
   const raceName = race
 
-  let optionsSettings = game.settings.get("shaanrenaissance", "showCheckOptions");
-  if(askForOptions != optionsSettings) {
-    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description })
-    if(checkOptions.cancelled){
-      return;
-  }
-  difficulty = checkOptions.difficulty;
-  }
-
-  let rollFormula
-
-  if(raceName == "Humain") {
-    let nécrose = "1d10[Necrose]";
-    let esprit = "1d10[Esprit]";
-    rollFormula = `{${nécrose}, ${esprit}}`;
-  }
-  else{
-    let nécrose = "1d10[Necrose]";
-    rollFormula = `${nécrose}`;
-  }
-
   let spéBonusF
   let spéAcquisF
 
@@ -993,6 +971,27 @@ export async function SpéTestNécr ({
       }
       break;
   }
+  let optionsSettings = game.settings.get("shaanrenaissance", "showCheckOptions");
+  if(askForOptions != optionsSettings) {
+    let checkOptions = await GetRollOptions({ domain, spécialisation, difficulty, description, spéBonusF, spéAcquisF })
+    if(checkOptions.cancelled){
+      return;
+  }
+  difficulty = checkOptions.difficulty;
+  }
+
+  let rollFormula
+
+  if(raceName == "Humain") {
+    let nécrose = "1d10[Necrose]";
+    let esprit = "1d10[Esprit]";
+    rollFormula = `{${nécrose}, ${esprit}}`;
+  }
+  else{
+    let nécrose = "1d10[Necrose]";
+    rollFormula = `${nécrose}`;
+  }
+
 
   let rollData = {
     ...actorData,
@@ -1027,7 +1026,12 @@ export async function SpéTestNécr ({
   } else {
     score = domainDice.total
   }
-
+  if(!spéAcquisF){
+    spéAcquisF = 0
+  }
+  if(!spéBonusF){
+    spéBonusF = 0
+  }
   // Check
   let isSuccess
   if(score > domainLevel){
@@ -1064,6 +1068,8 @@ export async function SpéTestNécr ({
       domain = null,
       spécialisation = null,
       description = null,
+      spéBonusF,
+      spéAcquisF,
       difficulty = 0,
       template = "systems/shaanrenaissance/templates/chat/spéTest-dialog.hbs" } = {}) {
       const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty, description });
