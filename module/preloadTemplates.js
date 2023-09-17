@@ -15,6 +15,7 @@
         "systems/shaanrenaissance/templates/actors/Personnage/sidebar/initiative.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/sidebar/jets.hbs",
         "systems/shaanrenaissance/templates/actors/Personnage/sidebar/reserve.hbs",
+        "systems/shaanrenaissance/templates/actors/icons/d10.hbs",
   
         // Content
         "systems/shaanrenaissance/templates/actors/Personnage/tabs/biography.hbs",
