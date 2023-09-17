@@ -14,7 +14,7 @@ async function onPuiser(event) {
     const domain = Number(chatCard.find('b.domain').text());
     const domainName = chatCard.find('span.domainName').text();
     const spéBonus = Number(chatCard.find('b.spéBonus').text());
-    const acquisBonus = Number(chatCard.find('b.acquisBonu').text());
+    const acquisBonus = Number(chatCard.find('b.acquisBonus').text());
     const messageTemplate = "systems/shaanrenaissance/templates/chat/puiser.hbs"
     let esprit =  Number(dice[2].value)
     let ame = Number(dice[1].value)
