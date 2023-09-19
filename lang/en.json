@@ -4,6 +4,8 @@
         "Pnj": "PNJ"
     },
     "SRLabels":{
+        "trihnTest": "Test de Trihn",
+        "type":"Type",
         "GMnotes":"Notes du MJ",
         "langues": "Langues parlées",
         "create": "Créer",
@@ -486,6 +488,11 @@
                 "closedRoll": "Test caché ?"
             }
         },
+        "trihnTest": {
+            "title": "Test de Trihn",
+            "trihnActuel": "Trihn Actuel: ",
+            "difficulty": "Difficulté: "
+        },
         "puiser": {
             "title": "Puiser",
             "choices": "Choix possibles",
@@ -607,6 +614,20 @@
         }
     },
     "SR": {
+        "Inventory":{
+            "ItemQuantity": {
+                "Increase": {
+                    "Click": "[Click] Augmente de 1",
+                    "ShiftClick": "[Shift-Click] Augmente de 5",
+                    "ControlClick": "[Control-Click] Augmente de 10"
+                },
+                "Decrease": {
+                    "Click": "[Click] Diminue de 1",
+                    "ShiftClick": "[Shift-Click] Diminue de 5",
+                    "ControlClick": "[Control-Click] Diminue de 10"
+                }
+            }
+        },
         "abilitiesTypes": {
             "Attaque": "Attaque",
             "Défense": "Défense",
@@ -618,6 +639,8 @@
             "Perception": "Perception",
             "Récuperation": "Récuparation"
         },
+        "AddCoinsTitle":"Ajouter des crédos",
+        "RemoveCoinsTitle":"Retirer des crédos",
         "BrowserFilterSource": "Source",
         "BrowserSearchPlaceholder": "Effectuez une recherche",
         "BrowserClearFilter": "Effacer le filtre",
@@ -756,7 +779,9 @@
                 "CreateDialogText": "Créer une table aléatoire avec {count} résultat(s) ?",
                 "SelectTableTitle": "Choisissez une table aléatoire",
                 "WeightLabel": "Poid"
-            }
+            },
+            "BuyLabel":"Acheter l'objet (En développement)",
+            "TakeLabel":"Prendre l'objet"
         },
         "ErrorMessage": {
             "NoTokenSelected": "Selectionnez au moins un token"
