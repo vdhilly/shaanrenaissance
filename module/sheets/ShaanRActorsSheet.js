@@ -215,7 +215,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".item-create").click(this._onItemCreate.bind(this));
             html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this));
             html.find(".acquis-chat").click(this._onAcquisChat.bind(this));
-            html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
+            html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this));
+            html.find(".item-wear").click(this._onAcquisUse.bind(this))
             html.find(".item-edit").click(this._onItemEdit.bind(this));
             html.find(".item-delete").click(this._onItemDelete.bind(this));
             html.find(".roll-initiative").click(this._onInitiative.bind(this));
@@ -226,6 +227,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             html.find(".select-input").focus(this._onInputSelect);
             html.find("button[data-action=add-coins]").click(this._onAddCoins.bind(this));
             html.find("button[data-action=remove-coins]").click(this._onRemoveCoins.bind(this));
+            html.find("a.trihnTest").click(this._onTrihnTest.bind(this));
             const title = $(".sheet-navigation .active").attr("title");
                 title && html.find(".navigation-title").text(title)                  
                         html.find(".sheet-navigation").on("mouseover", ".item,.manage-tabs", (event => {
@@ -312,6 +314,16 @@ export default class ShaanRActorsSheet extends ActorSheet {
             actor,
             hp
         })
+    }
+    _onTrihnTest(event) {
+        const trihn = event.currentTarget.dataset.trihn
+        let actor = this.actor
+        let hp = actor.system.attributes
+
+        Dice.trihnTest({
+            actor, hp, trihn
+        })
+        
     }
     _onSpéTest(event) {
         let actor = this.actor
@@ -723,6 +735,34 @@ export default class ShaanRActorsSheet extends ActorSheet {
                     isUsed: false
                 }
             })
+        }
+    }
+    _onAcquisUse(event) {
+
+        let itemId = event.target.closest(".item").dataset.itemId
+        let item = this.actor.items.get(itemId)
+        console.log(item)
+        if(item.system.isUsed == false){
+            item.update({
+                system: {
+                    isUsed: true
+                }
+            })
+            for (const effect of item.effects) {
+                item.updateEmbeddedDocuments("ActiveEffect", [{"_id": effect.id, "disabled": true}])
+                console.log(effect)
+            }
+        }
+        else if(item.system.isUsed == true) {
+            item.update({
+                system: {
+                    isUsed: false
+                }
+            })
+            for (const effect of item.effects) {
+                item.updateEmbeddedDocuments("ActiveEffect", [{"_id": effect.id, "disabled": false}])
+                console.log(effect)
+            }
         }
     }
     _onItemEdit(event) {

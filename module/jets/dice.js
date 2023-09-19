@@ -104,10 +104,8 @@ export async function domainTest ({
           }
         }
       }
-      console.log(max)
       switch (max) {
         case "profane": 
-          console.log("test")
           if(données.bonus >= 1) {
             spéBonusF = 1
           }
@@ -533,7 +531,6 @@ export async function SpéTest ({
       }
     }
   }
-  console.log(isSuccess, score)
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
@@ -675,7 +672,6 @@ export async function necroseTest ({
       }
       switch (max) {
         case "profane": 
-          console.log("test")
           if(données.bonus >= 1) {
             spéBonusF = 1
           }
@@ -903,10 +899,8 @@ export async function SpéTestNécr ({
       }
     }
   }
-  console.log(max)
   switch (max) {
     case "profane": 
-      console.log("test")
       if(spéBonus >= 1) {
         spéBonusF = 1
       }
@@ -1195,7 +1189,6 @@ export async function RegenHP({
   }
 
   let regenEsprit
-  console.log(rollResult.terms[0].rolls[2].total)
   if(rollResult.terms[0].rolls[2].dice[0].total == 10 || rollResult.terms[0].rolls[2].total < 0){
     regenEsprit = (-1)
   }
@@ -1320,4 +1313,80 @@ export async function RegenHP({
         malusCorps: form.malusCorps?.value
       }
     }
+}
+
+export async function trihnTest({
+  actor = null,
+  extraMessageData,
+  hp = null,
+  trihn = null,
+  sendMessage = true
+} = {}) {
+  const actorData = actor ? actor.system : null;
+  const messageTemplate = "systems/shaanrenaissance/templates/chat/trihnTest-chat.hbs";
+
+  let maxTest
+  let dice 
+  if(trihn && trihn === "Esprit"){
+    maxTest = hp.hpEsprit.value
+    dice = "1d10[Esprit]"
+  } else if(trihn && trihn === "Ame") {
+    maxTest = hp.hpAme.value
+    dice = "1d10[Ame]"
+  } else if(trihn && trihn === "Corps") {
+    maxTest = hp.hpCorps.value
+    dice = "1d10[Corps]"
+  }
+  let rollFormula = `${dice}`
+  let rollData = {
+    actor,
+    hp,
+    trihn,
+    maxTest
+  }
+  let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+  let dice3d
+  if(game.dice3d != undefined) {
+    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
+    dice3d;
+  }
+  let diceResult
+  if(rollResult._total == 10){
+    diceResult = 0
+  } else {
+    diceResult = rollResult._total
+  }
+  let isSuccess = true
+  if(diceResult == 0 || diceResult > maxTest) {
+    isSuccess = false
+  }
+
+  if(sendMessage) {
+    trihnTestToCustomMessage(actor, rollResult, messageTemplate, {
+      ...extraMessageData, 
+      actor: actor,
+      hp: hp,
+      actorID: actor.uuid
+    })
+  }
+  async function trihnTestToCustomMessage(actor = null, rollResult, template, extraData) {
+    let templateContext = {
+      ...extraData,
+      actor: actor,
+      hp: hp,
+      isSuccess,
+      score: diceResult,
+      roll: rollResult,
+      tooltip: await rollResult.getTooltip()
+    };
+
+    let chatData = {
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({actor}),
+      content: await renderTemplate(template, templateContext),
+      sound: CONFIG.sounds.dice,
+      type: CONST.CHAT_MESSAGE_TYPES.OTHER
+    }
+    ChatMessage.create(chatData);
+  }
 }

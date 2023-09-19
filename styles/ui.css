@@ -291,3 +291,20 @@
     word-break: break-word;
     
 }
+
+.chat-message .dice-roll.trihnTest .domainDice{
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.chat-message .dice-roll.trihnTest .domainDice img { 
+    grid-area: 1 / 1 / 2 / 2; 
+    justify-self: center;
+    border: 0;
+    width: 80px;
+    display: flex;
+    margin: 0;
+}

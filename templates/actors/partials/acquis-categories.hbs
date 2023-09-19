@@ -31,6 +31,7 @@
                                     {{#if @root.editable}}<a class="item-increase-quantity" data-action="increase-quantity" title="{{localize "SR.Inventory.ItemQuantity.Increase.Click"}}&#013;{{localize "SR.Inventory.ItemQuantity.Increase.ShiftClick"}}&#013;{{localize "SR.Inventory.ItemQuantity.Increase.ControlClick"}}">+</a>{{/if}}
                                 </span>
                                 <div class="item-controls">
+                                    <a class="item-control item-wear"><i class="{{#if acquis.system.isUsed}}fa-regular fa-circle-check{{/if}}{{#ifeq acquis.system.isUsed false}}fa-solid fa-circle-check{{/ifeq}}"></i></a>
                                     <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
                                     <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                                 </div>

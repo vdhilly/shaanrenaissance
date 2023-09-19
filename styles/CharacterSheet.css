@@ -186,10 +186,18 @@ h3 {
 .actor.sheet aside .sidebar .HP .hp-big {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 0.4fr 0.4fr;
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+}
+.actor.sheet.shaani aside .sidebar .HP .hp-big {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
 }
 .actor.sheet aside .sidebar .HP .hp-big .container {
     display:flex;
@@ -214,10 +222,28 @@ h3 {
     font-family: var(--title);
     font-weight: 400;
     margin: 0;
+    margin-left: 5px;
     text-shadow: 0 0 2px rgb(0 0 0 / 75%);
+    align-self: center;
+    justify-self: center;
 }
 .actor.sheet aside .sidebar .HP .hp-big span {
-    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+.actor.sheet.shaani aside .sidebar .HP .hp-big .data-value span {
+    color: var(--tertiary);
+    margin-left:0;
+    margin-right: 2px;
+}
+.actor.sheet aside .sidebar .HP .hp-big span a {
+    display: flex;
+}
+.actor.sheet aside .sidebar .HP .hp-big span a svg {
+    height: 20px;
+    display: flex;
     align-self: center;
 }
 .actor.sheet aside .sidebar .HP .hp-big input {
@@ -227,6 +253,7 @@ h3 {
 .actor.sheet aside .sidebar .HP .hp-big .hpMax-corps, .actor.sheet aside .sidebar .HP .hp-big .hpMax-esprit, .actor.sheet aside .sidebar .HP .hp-big .hpMax-ame {
     align-self: center;
     justify-self: center;
+    display: flex;
 }
 .actor.sheet aside .sidebar .HP .hp-big .data-value h2 {
     margin: 0;
@@ -1481,6 +1508,9 @@ border-left: 1px solid var(--alt);
     min-height: 100px;
     width: 100% !important;
     border-radius: 0
+}
+.editor.prosemirror {
+    min-height: 500px !important;
 }
 .actor.sheet.character .tab.biography textarea:focus {
     box-shadow: none;

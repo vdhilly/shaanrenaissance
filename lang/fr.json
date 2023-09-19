@@ -4,6 +4,7 @@
         "Pnj": "PNJ"
     },
     "SRLabels":{
+        "trihnTest": "Test de Trihn",
         "type":"Type",
         "GMnotes":"Notes du MJ",
         "langues": "Langues parlées",
@@ -486,6 +487,11 @@
                 "difficulty": "Difficulté: ",
                 "closedRoll": "Test caché ?"
             }
+        },
+        "trihnTest": {
+            "title": "Test de Trihn",
+            "trihnActuel": "Trihn Actuel: ",
+            "difficulty": "Difficulté: "
         },
         "puiser": {
             "title": "Puiser",

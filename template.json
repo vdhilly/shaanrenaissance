@@ -939,7 +939,8 @@
                 "pouvoir": {
                     "value": " "
                 },
-                "quantity":1
+                "quantity":1,
+                "isUsed": false
             },
             "spés":{
                 "skills": {
@@ -1534,8 +1535,7 @@
             },
             "résumé": {
                 "value":""
-            },
-            "isUsed": false     
+            }   
         },
         "Trihn": {
             "templates": [

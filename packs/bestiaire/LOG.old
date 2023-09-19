@@ -1,3 +1,7 @@
-2023/09/15-14:30:40.074 ac10 Recovering log #83
-2023/09/15-14:30:40.085 ac10 Delete type=0 #83
-2023/09/15-14:30:40.086 ac10 Delete type=3 #82
+2023/09/19-11:32:49.696 4cbc Recovering log #101
+2023/09/19-11:32:49.708 4cbc Delete type=0 #101
+2023/09/19-11:32:49.716 4cbc Delete type=3 #100
+2023/09/19-12:08:17.337 4c04 Level-0 table #105: started
+2023/09/19-12:08:17.338 4c04 Level-0 table #105: 0 bytes OK
+2023/09/19-12:08:17.343 4c04 Delete type=0 #103
+2023/09/19-12:08:17.350 4c04 Manual compaction at level-0 from '!actors!5KYLeVNzRliotIQz' @ 72057594037927935 : 1 .. '!folders!QcXya0kRpOmYon6o' @ 0 : 0; will stop at (end)

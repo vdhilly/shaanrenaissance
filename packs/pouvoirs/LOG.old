@@ -1,3 +1,8 @@
-2023/09/15-14:30:39.922 ac10 Recovering log #437
-2023/09/15-14:30:39.939 ac10 Delete type=0 #437
-2023/09/15-14:30:39.941 ac10 Delete type=3 #436
+2023/09/19-11:32:49.531 4cbc Recovering log #455
+2023/09/19-11:32:49.545 4cbc Delete type=0 #455
+2023/09/19-11:32:49.545 4cbc Delete type=3 #454
+2023/09/19-12:08:17.273 4c04 Level-0 table #459: started
+2023/09/19-12:08:17.274 4c04 Level-0 table #459: 0 bytes OK
+2023/09/19-12:08:17.276 4c04 Delete type=0 #457
+2023/09/19-12:08:17.282 4c04 Manual compaction at level-0 from '!folders!35rx0Hxrq0A6Vrjv' @ 72057594037927935 : 1 .. '!items!zs6J9lpOzwh5Rtxv' @ 0 : 0; will stop at (end)
+2023/09/19-12:08:17.306 4c04 Manual compaction at level-1 from '!folders!35rx0Hxrq0A6Vrjv' @ 72057594037927935 : 1 .. '!items!zs6J9lpOzwh5Rtxv' @ 0 : 0; will stop at (end)
