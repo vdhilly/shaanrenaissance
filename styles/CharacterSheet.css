@@ -246,6 +246,9 @@ h3 {
     display: flex;
     align-self: center;
 }
+.actor.sheet aside .sidebar .HP .hp-big span a svg:hover{
+    filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.3));
+}
 .actor.sheet aside .sidebar .HP .hp-big input {
     font: 700 var(--font-size-14) var(--body-serif);
     text-align: center
