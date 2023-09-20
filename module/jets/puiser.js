@@ -1,14 +1,12 @@
+import { getSelectedOrOwnActors } from "../utils/utils.js"
 export function addChatListeners(app, html, data) {
     const Button = html.find("button.puiser")
     Button.on("click", onPuiser)
 }
 
 async function onPuiser(event) {
-    const selectedToken = canvas.tokens.controlled;
-    if(!selectedToken.length) return ui.notifications.info("Aucun token sélectionné");
-    if(selectedToken.length > 1) return ui.notifications.info("Vous ne devez sélectionner qu'un seul token")
-    console.log(selectedToken)
-    if(selectedToken[0].isOwner != true) return ui.notifications.info("Vous devez sélectionner un token qui vous appartient")
+    const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"])
+    if(actors.length == 0) return ui.notifications.warn("Vous devez sélectionner au moins un token.")
     const chatCard = $(this.parentElement)
     const dice = chatCard.find("input.dice-value");
     const domain = Number(chatCard.find('b.domain').text());
@@ -90,7 +88,7 @@ async function onPuiser(event) {
         }
         result = puiserOptions.result + spéBonus + acquisBonus
 
-        const actor = selectedToken[0].actor;
+        for (const actor of actors) {
         const attributes = actor.system.attributes;
         let flavor = puiserOptions.flavor
         var hp = "hp"
@@ -107,28 +105,30 @@ async function onPuiser(event) {
         }
         actor.update(attributes)
         actor.sheet.render()
+        
 
         if(sendMessage) {
-            ToCustomMessage(selectedToken, result, messageTemplate)
+            ToCustomMessage(actor, result, messageTemplate)
         }
-
         async function ToCustomMessage(Token, result, messageTemplate) {
-            let actor = Token.actor
-            let templateContext = {
-                Token: Token[0],
-                score: result,
-                trihns: flavor
-            };
-            let chatData
-            chatData = {
-                user: game.user.id,
-                speaker: ChatMessage.getSpeaker({actor}),
-                content: await renderTemplate(messageTemplate, templateContext),
-                sound: CONFIG.sounds.notification,
-                type: CONST.CHAT_MESSAGE_TYPES.OTHER
-            }
-            ChatMessage.create(chatData);
-        }
+          let actor = Token.actor
+          let templateContext = {
+              Token: Token,
+              score: result,
+              trihns: flavor
+          };
+          let chatData
+          chatData = {
+              user: game.user.id,
+              speaker: ChatMessage.getSpeaker({actor}),
+              content: await renderTemplate(messageTemplate, templateContext),
+              sound: CONFIG.sounds.notification,
+              type: CONST.CHAT_MESSAGE_TYPES.OTHER
+          }
+          ChatMessage.create(chatData);
+      }
+      }
+
 
       async function GetPuiserOptions({
         domain = null,
