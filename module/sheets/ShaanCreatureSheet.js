@@ -56,40 +56,6 @@ export default class ShaanCreatureSheet extends ActorSheet {
             sheetData.pouvoirs = actorData.items.filter(function (item) { return item.type == "Pouvoir" });
 
             if (typeof sheetData.data.attributes.hpEsprit !== "undefined") {
-                let attributes = sheetData.data.attributes
-                if(attributes.hpEsprit.value > attributes.hpEsprit.max) {
-                    this.actor.update({
-                        data: {
-                            attributes:{
-                                hpEsprit: {
-                                    value: attributes.hpEsprit.max
-                                }
-                            }
-                        }
-                    })
-                }
-                if(attributes.hpAme.value > attributes.hpAme.max) {
-                    this.actor.update({
-                        data: {
-                            attributes:{
-                                hpAme: {
-                                    value: attributes.hpAme.max
-                                }
-                            }
-                        }
-                    })
-                }
-                if(attributes.hpCorps.value > attributes.hpCorps.max) {
-                    this.actor.update({
-                        data: {
-                            attributes:{
-                                hpCorps: {
-                                    value: attributes.hpCorps.max
-                                }
-                            }
-                        }
-                    })
-                }
                 // Initiative
                 const domain = sheetData.data.attributes.initiative.statistic,
                 domainValue = actorData.system.skills[domain].rank + actorData.system.skills[domain].temp;
