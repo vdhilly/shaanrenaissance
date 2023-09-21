@@ -27,6 +27,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 cssClass: this.actor.isOwner ? "editable" : "locked",
                 editable: this.isEditable,
                 document: this.actor,
+                effects: this.actor.getEmbeddedCollection("ActiveEffect"),
                 limited: this.actor.limited,
                 owner: this.actor.isOwner,
                 title: this.title,
@@ -737,33 +738,20 @@ export default class ShaanRActorsSheet extends ActorSheet {
             })
         }
     }
-    _onAcquisUse(event) {
-
-        let itemId = event.target.closest(".item").dataset.itemId
-        let item = this.actor.items.get(itemId)
+    async _onAcquisUse(event) {
+        const itemId = event.target.closest(".item").dataset.itemId;
+        const item = this.actor.items.get(itemId);
+        const isUsed = item.system.isUsed
         console.log(item)
-        if(item.system.isUsed == false){
-            item.update({
-                system: {
-                    isUsed: true
-                }
+        const effects = this.actor.effects.filter(effect => effect.origin.endsWith(itemId))
+        console.log(effects)
+        for (const effect of effects) {
+            const isDisabled = effect.disabled
+            await effect.update({
+                "disabled": !isDisabled
             })
-            for (const effect of item.effects) {
-                item.updateEmbeddedDocuments("ActiveEffect", [{"_id": effect.id, "disabled": true}])
-                console.log(effect)
-            }
         }
-        else if(item.system.isUsed == true) {
-            item.update({
-                system: {
-                    isUsed: false
-                }
-            })
-            for (const effect of item.effects) {
-                item.updateEmbeddedDocuments("ActiveEffect", [{"_id": effect.id, "disabled": false}])
-                console.log(effect)
-            }
-        }
+        return item.update({ "system.isUsed": !isUsed})
     }
     _onItemEdit(event) {
         event.preventDefault();

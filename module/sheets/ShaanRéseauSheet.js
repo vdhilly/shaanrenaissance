@@ -139,6 +139,7 @@ export default class ShaanRéseauSheet extends ActorSheet {
                 html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
                 html.find(".item-create").click(this._onItemCreate.bind(this));
                 html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
+                html.find(".item-wear").click(this._onAcquisUse.bind(this))
                 html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
                 html.find(".item-edit").click(this._onItemEdit.bind(this));
                 html.find(".item-delete").click(this._onItemDelete.bind(this));
@@ -583,6 +584,21 @@ export default class ShaanRéseauSheet extends ActorSheet {
                     }
                 })
             }
+        }
+        async _onAcquisUse(event) {
+            const itemId = event.target.closest(".item").dataset.itemId;
+            const item = this.actor.items.get(itemId);
+            const isUsed = item.system.isUsed
+            console.log(item)
+            const effects = this.actor.effects.filter(effect => effect.origin.endsWith(itemId))
+            console.log(effects)
+            for (const effect of effects) {
+                const isDisabled = effect.disabled
+                await effect.update({
+                    "disabled": !isDisabled
+                })
+            }
+            return item.update({ "system.isUsed": !isUsed})
         }
         _onItemEdit(event) {
             event.preventDefault();
