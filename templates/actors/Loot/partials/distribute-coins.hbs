@@ -1,0 +1,20 @@
+<form class="loot-actor-popup" autocomplete="off" onsubmit="event.preventDefault();">
+    <div class="checkboxes">
+        <h1>{{localize "SR.loot.SplitCoinsPopupHeader"}}</h1>
+        {{#each actorInfo as |info|}}
+            <p>
+                <label>
+                    <input type="checkbox" name="actorIds" value="{{info.id}}" {{checked info.checked}} />
+                    <span>{{info.name}}</span>
+                </label>
+            </p>
+        {{/each}}
+        <hr />
+    </div>
+    <p>
+        <button class="confirm-button" type="submit">
+            <i class="far fa-save"></i>
+            {{localize "SR.loot.SplitCoinsLabel"}}
+        </button>
+    </p>
+</form>

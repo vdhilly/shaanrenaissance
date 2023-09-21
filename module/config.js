@@ -46,10 +46,10 @@ shaanRenaissance.pouvoirs = {
         TourmentdeNécrose: "Tourment de Nécrose"
     },
     pouvoirRank: {
-        Rank1: "SR.Rank1",
-        Rank2: "SR.Rank2",
-        Rank3: "SR.Rank3",
-        Rank4: "SR.Rank4",
+        Rank1: "Rang 1",
+        Rank2: "Rang 2",
+        Rank3: "Rang 3",
+        Rank4: "Rang 4",
     },
     pouvoirType: {
         none: "",

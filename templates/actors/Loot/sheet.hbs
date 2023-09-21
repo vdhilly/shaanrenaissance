@@ -1,0 +1,55 @@
+<form class="actor sheet loot" autocomplete="off">
+    <section class="sheet-content">
+        <section class="loot-sidebar">
+            <div class="loot_frame-container">
+                <div class="frame image-container">
+                    <img class="player-image" alt="{{actor.name}}" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+                </div>
+            </div>
+            {{#if (and user.isGM isLoot)}}
+            <section class="gm-settings">
+                <section class="loot-distribution">
+                    <button class= "split-coins" type="button" name="split-coins" value="1"><i class="fa fa-coins"></i> {{localize "SR.loot.SplitCoinsLabel"}}</button>
+                    <button class= "loot-npcs" type="button" name="loot-npc" title="{{localize "SR.loot.LootNPCsHint"}}"><i class="fas fa-box-open"></i> {{localize "SR.loot.LootNPCsLabel"}}</button>
+                </section>
+                <label class="hidden-when-empty" title="{{localize "SR.loot.HiddenWhenEmpty.Hint"}}">
+                    <span>{{localize "SR.loot.HiddenWhenEmpty.Label"}}</span>
+                    <input type="checkbox" name="system.hiddenWhenEmpty" data-dtype="Boolean" {{checked actor.system.hiddenWhenEmpty}} />
+                </label>
+            </section>
+            {{/if}}
+            {{#if owner}}
+                {{editor enrichedGMnotes target="system.details.description" button=true user=user editable=editable}}
+            {{else}}
+                <div class="description">{{{enrichedContent.description}}}</div>
+            {{/if}}
+        </section>
+        <section class="content">
+                <header class="sheet-header">
+                    {{#if owner}}
+                        <h1 class="char-name">
+                            <input name="name" type="text" value="{{actor.name}}" placeholder="Nom du Personnage" spellcheck="false" />
+                        </h1>
+                    {{else}}
+                        <h1 class="charname">{{actor.name}}</h1>
+                    {{/if}}
+                    <section class="sheet-type traits-bar">
+                    {{#if user.isGM}}
+                        <i class="fas fa-info-circle help" title="<p><strong>{{localize "SR.loot.LootLabel"}}</strong>: {{localize "SR.loot.LootDescription"}}</p><p><strong>{{localize "SR.loot.MerchantLabel"}}</strong>: {{localize "SR.loot.MerchantDescription"}}</p>"></i>
+                        <select name="system.lootSheetType" class="trait">
+                            {{#select actor.system.lootSheetType}}
+                                <option value="Loot">{{localize "SR.loot.LootLabel"}}</option>
+                                <option value="Merchant">{{localize "SR.loot.MerchantLabel"}}</option>
+                            {{/select}}
+                        </select>
+                    {{else}}
+                        <span class="trait">{{data.lootSheetType}}</span>
+                    {{/if}}
+                </section>
+                </header>
+                <div class="inventory">
+                    {{> "systems/shaanrenaissance/templates/actors/Loot/partials/acquis-categories.hbs"}}
+                </div>
+        </section>
+    </section>
+</form>

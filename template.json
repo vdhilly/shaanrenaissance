@@ -5,7 +5,8 @@
             "PNJ",
             "Shaani",
             "Réseau",
-            "Créature"  
+            "Créature",
+            "Loot"
         ],
         "templates": {
                 "common": {
@@ -902,6 +903,16 @@
                 "role":"",
                 "taille":""
             }
+        },
+        "Loot":{
+            "lootSheetType":"",
+            "attributes":{
+                "crédos":0
+            },
+            "details":{
+                "description":""
+            },
+            "hiddenWhenEmpty":false
         }
     },
     "Item": {

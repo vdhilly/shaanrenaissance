@@ -785,6 +785,21 @@
         },
         "ErrorMessage": {
             "NoTokenSelected": "Selectionnez au moins un token"
+        },
+        "loot":{
+            "LootDescription": "Permet la distribution de crédos entre les joueurs",
+            "MerchantDescription": "Permet les joueurs d'acheter des items directement depuis la fiche",
+            "LootLabel": "Butin",
+            "MerchantLabel": "Marchand",
+            "SplitCoinsLabel": "Répartir les crédos",
+            "SplitCoinsPopupHeader": "Choisissez les acteurs qui recevront une part",
+            "LootNPCsLabel":"Récuperer sur les tokens",
+            "LootNPCsPopupHeader": "Choisissez le token sur qui récupérer les Acquis",
+            "LootNPCsHint":"Récupérer les Acquis sur les Tokens sélectionnés",
+            "HiddenWhenEmpty": {
+                "Label": "Cacher si vide",
+                "Hint": "Hint"
+            }
         }
     },  
         "class1": "Classe 1",

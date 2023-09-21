@@ -26,6 +26,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             sheetData = {
                 cssClass: this.actor.isOwner ? "editable" : "locked",
                 editable: this.isEditable,
+                inventory: this.actor.inventory,
                 document: this.actor,
                 effects: this.actor.getEmbeddedCollection("ActiveEffect"),
                 limited: this.actor.limited,

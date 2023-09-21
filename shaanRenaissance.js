@@ -23,6 +23,7 @@ import { ModuleArt } from "./module/system/module-art.js";
 import { ActorDirectorySR } from "./module/apps/sidebar/actorDirectory.js";
 import { ItemDirectorySR } from "./module/apps/sidebar/itemDirectory.js";
 import { CompendiumDirectorySR } from "./module/apps/sidebar/compendiumDirectory.js";
+import ShaanLootSheetSR from "./module/sheets/ShaanLootSheet.js";
 
 async function preloadHandleBarTemplates() 
 {
@@ -120,6 +121,10 @@ Hooks.once("init", function(){
     Actors.registerSheet("shaanrenaissance", ShaanRéseauSheet, {
       types: ["Réseau"],
       label: "Réseau"
+    });
+    Actors.registerSheet("shaanrenaissance", ShaanLootSheetSR, {
+      types: ["Loot"],
+      label: "Loot"
     });
 
     preloadHandleBarTemplates();

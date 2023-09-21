@@ -1,0 +1,54 @@
+<div class="currency">
+    <div class="acquis-money">
+        <label class="money-input money-label" for="{{options.id}}-loot-money">{{localize "SRLabels.Crédos"}}</label>
+        <input type="text" class="money-input" title="{{localize "SRLabels.CrédosTitle"}}" id="{{options.id}}-loot-money" name="system.attributes.crédos" value="{{actor.system.attributes.crédos}}" readonly/>
+    </div>
+    {{#if user.isGM}}
+        {{> "systems/shaanrenaissance/templates/actors/partials/coinage.hbs"}}
+        <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; justify-content:stretch; margin-right: 0.5em; align-items: end; margin-left: 40px; gap: 3px;">
+            <div class="pouvoir-compendium">
+                <button type="button" class="open-compendium" data-compendium="shaanrenaissance.acquis"><i class="fa-solid fa-list"></i> {{localize "SR.AcquisCompendium"}}</button>
+            </div>
+            <div class="creation-acquis">
+                <button type="button" class="add-acquis"><i class="fa-solid fa-plus"></i>{{localize "SRLabels.create"}}</button>       
+            </div>
+        </div>
+    {{/if}}
+</div>
+<ol class="itemCategory-list directory-list">
+    {{#each items.Category as |Category|}}
+        {{#ifnoteq Category.length 0}}
+            <li class="item item-container itemCategory {{@key}}">
+                <div class="category-header">
+                    <h3 class="item-name">{{@key}}</h3>
+                </div>
+                <ol class="item-list liste-items liste-item {{@key}}">
+                    {{#each Category as |acquis id|}}
+                        <li class="item acquis" draggable="true" data-item-id="{{acquis._id}}">
+                            <div class="acquis-header">
+                                <div class="acquis-image">
+                                    <img class="acquis-icon" src="{{acquis.img}}" alt="{{acquis.name}}"/>
+                                    <i class="acquis-chat fa-solid fa-message"></i>
+                                </div>
+                                <h4 class="acquis-name">
+                                    {{acquis.name}}
+                                </h4>
+                            </div>
+                            <span class="quantity">
+                                {{#if @root.editable}}<a class="item-decrease-quantity" data-action="decrease-quantity" title="{{localize "SR.Inventory.ItemQuantity.Decrease.Click"}}&#013;{{localize "SR.Inventory.ItemQuantity.Decrease.ShiftClick"}}&#013;{{localize "SR.Inventory.ItemQuantity.Decrease.ControlClick"}}">&ndash;</a>{{/if}}
+                                <span>{{acquis.system.quantity}}</span>
+                                {{#if @root.editable}}<a class="item-increase-quantity" data-action="increase-quantity" title="{{localize "SR.Inventory.ItemQuantity.Increase.Click"}}&#013;{{localize "SR.Inventory.ItemQuantity.Increase.ShiftClick"}}&#013;{{localize "SR.Inventory.ItemQuantity.Increase.ControlClick"}}">+</a>{{/if}}
+                            </span>
+                            <div class="item-controls">
+                                <a class="item-control item-take"><i class="far fa-hand-rock"></i></a>
+                                {{#ifeq @root.actor.system.lootSheetType "Merchant"}}<a class="item-control item-buy"><i class="fas fa-coins"></i></a>{{/ifeq}}
+                                <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ol>
+            </li>
+        {{/ifnoteq}}
+    {{/each}}
+</ol>

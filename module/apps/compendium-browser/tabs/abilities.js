@@ -20,7 +20,7 @@ export class CompendiumBrowserAbilitiesTab extends CompendiumBrowserTab {
                         continue
                     }
                     const source = abilitiesData.system.source.value
-                    
+                    console.log(abilitiesData.system.rang.value)
                     source && sources.add(source), abilities.push({
                         type: abilitiesData.system.PouvoirType.value,
                         name: abilitiesData.name,

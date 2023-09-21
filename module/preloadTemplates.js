@@ -77,6 +77,9 @@
         "systems/shaanrenaissance/templates/actors/Réseau/tabs/powers.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/background.hbs",
         "systems/shaanrenaissance/templates/actors/Réseau/partials/specialisations.hbs",
+
+        // Loot
+        "systems/shaanrenaissance/templates/actors/Loot/partials/acquis-categories.hbs",
   
         // Item sheets
         "systems/shaanrenaissance/templates/items/partials/header.hbs",

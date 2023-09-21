@@ -332,7 +332,7 @@ export class compendiumBrowser extends Application {
             }
         }
         async takeAcquisItem(uuid) {
-            const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]),
+            const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau", "Loot"]),
                 item = await this.getAcquisItem(uuid);
             if (0 !== actors.length) {
                 for (const actor of actors) await actor.createEmbeddedDocuments("Item", [item.toObject()]);
@@ -345,7 +345,7 @@ export class compendiumBrowser extends Application {
             } else ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"))
         }
         async buyAcquisItem(uuid) {
-            const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]),
+            const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau", "Loot"]),
                 item = await this.getAcquisItem(uuid);
             if (0 === actors.length) return void ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"));
             let purchasesSucceeded = 0;
