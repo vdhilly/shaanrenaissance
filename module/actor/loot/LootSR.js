@@ -10,7 +10,6 @@ export class LootSR extends ActorSR {
         return this.isLoot && this.system.hiddenWhenEmpty
     }
     async toggleTokenHiding() {
-        console.log(this.hiddenWhenEmpty)
         if (!this.hiddenWhenEmpty || !this.isOwner) return;
         const hiddenStatus = 0 === this.items.size;
         const scenesAndTokens = game.scenes.map((s) => [
@@ -36,7 +35,6 @@ export class LootSR extends ActorSR {
         this.toggleTokenHiding(), super._onCreateDescendantDocuments(embeddedName, documents, result, options, userId)
     }
     _onDeleteDescendantDocuments(embeddedName, documents, result, options, userId) {
-        console.log('oui')
         this.toggleTokenHiding(), super._onDeleteDescendantDocuments(embeddedName, documents, result, options, userId)
     }
 
