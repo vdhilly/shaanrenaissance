@@ -3,6 +3,7 @@ import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
 import { htmlQuery } from "../utils/utils.js";
 import { AddCoinsPopup } from "../actor/sheet/popups/add-coins-popup.js";
 import { RemoveCoinsPopup } from "../actor/sheet/popups/remove-coins-popup.js";
+import { PersonnageSheetTabManager } from "../actor/Personnage/tab-manager.js";
 
 export default class ShaanRéseauSheet extends ActorSheet {
     constructor() {
@@ -117,6 +118,8 @@ export default class ShaanRéseauSheet extends ActorSheet {
             sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
             sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
 
+            sheetData.tabVisibility = deepClone(this.actor.flags.shaanRenaissance.sheetTabs)
+
         console.log(sheetData);
         return sheetData;
 
@@ -220,6 +223,7 @@ export default class ShaanRéseauSheet extends ActorSheet {
                     }])
                 }
             }));
+            PersonnageSheetTabManager.initialize(this.actor, html.find("a[data-action=manage-tabs]")[0]);
         }
         _onInputSelect(event){
             event.currentTarget.select();

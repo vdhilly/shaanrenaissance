@@ -27,19 +27,19 @@
     {{!-- SHEET NAVIGATION --}}
  <nav class="sheet-navigation" data-group="primary">
         <span class="navigation-title">{{localize "SRTabs.CharacterLabel"}}</span>
-        <a class="item" data-tab="character" title="{{localize "SRTabs.CharacterLabel"}}">
+        <a class="item {{#unless tabVisibility.character}} hidden{{/unless}}" data-tab="character" title="{{localize "SRTabs.CharacterLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_general_vert.webp" title="{{localize "SRTabs.CharacterLabel"}}">
         </a>
 
-        <a class="item" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
+        <a class="item {{#unless tabVisibility.powers}} hidden{{/unless}}" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_pouvoir_vert.webp" title="{{localize "SRTabs.PowersLabel"}}">        
         </a>
 
-        <a class="item" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
+        <a class="item {{#unless tabVisibility.magic}} hidden{{/unless}}" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_magie_vert.webp" title="{{localize "SRTabs.MagicLabel"}}">
         </a>
 
-        <a class="item" data-tab="acquis" title="{{localize "SRTabs.AcquisLabel"}}">
+        <a class="item {{#unless tabVisibility.acquis}} hidden{{/unless}}" data-tab="acquis" title="{{localize "SRTabs.AcquisLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_acquis_vert.webp" title="{{localize "SRTabs.AcquisLabel"}}">
         </a>
 
@@ -49,7 +49,7 @@
         </a>
         {{/ifeq}}
 
-        <a class="item" data-tab="biography" title="{{localize "SRTabs.BiographyLabel"}}">
+        <a class="item {{#unless tabVisibility.biography}} hidden{{/unless}}" data-tab="biography" title="{{localize "SRTabs.BiographyLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_biographie_vert.webp" title="{{localize "SRTabs.BiographyLabel"}}">
         </a>
 

@@ -7,6 +7,18 @@ export class ActorSR extends Actor {
   isOfType(...types) {
     return types.some((t => "character" === t ? (0, tupleHasValue)(CHARACTER_ACTOR_TYPES, this.type) : this.type === t))
   }
+  prepareBaseData() {
+    var _a, _b, _c, _d, _e, _f, _g;
+    super.prepareBaseData();
+    const                             {
+      flags
+  } = this;
+  this.flags.shaanRenaissance = mergeObject(null !== (_a = this.flags.shaanRenaissance) && void 0 !== _a ? _a : {})
+    flags.shaanRenaissance.sheetTabs = mergeObject(CHARACTER_SHEET_TABS.reduce(((tabs, tab) => ({
+      ...tabs,
+      [tab]: !0
+  })), {}), null !== (_b = flags.shaanRenaissance.sheetTabs) && void 0 !== _b ? _b : {})
+  }
   async importFromJSON(json) {
 
     // Construct a document class to (strictly) clean and validate the source data

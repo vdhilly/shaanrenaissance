@@ -3,6 +3,7 @@ import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
 import { ErrorSR, htmlQuery, htmlQueryAll, htmlClosest } from "../utils/utils.js";
 import { AddCoinsPopup } from "../actor/sheet/popups/add-coins-popup.js";
 import { RemoveCoinsPopup } from "../actor/sheet/popups/remove-coins-popup.js";
+import { PersonnageSheetTabManager } from "../actor/Personnage/tab-manager.js";
 
 export default class ShaanRActorsSheet extends ActorSheet {
     constructor() {
@@ -35,6 +36,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 actor: actorData,
                 data: actorData.system,
                 items: actorData.items, 
+                flags: actorData.flags,
                 prototypeToken: actorData.prototypeToken,
                 config: CONFIG.shaanRenaissance,
                 user: {
@@ -196,6 +198,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
         sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
         sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
 
+        sheetData.tabVisibility = deepClone(this.actor.flags.shaanRenaissance.sheetTabs)
         console.log(sheetData);
         return sheetData;
     }
@@ -292,6 +295,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 }])
             }
         }))
+        PersonnageSheetTabManager.initialize(this.actor, html.find("a[data-action=manage-tabs]")[0]);
     }
     _onAddCoins(event){
         new AddCoinsPopup(this.actor).render(true);

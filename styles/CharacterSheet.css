@@ -1004,6 +1004,12 @@ h3 {
 }
 
 /* ACTOR SHEET NAVIGATION */
+.actor.sheet nav.sheet-navigation .item.to-hide {
+    opacity: 45%
+}
+.actor.sheet nav.sheet-navigation .item.hidden {
+    display: none
+}
 .actor.sheet.character .sheet-navigation {
     background-color: var(--secondary);
     grid-area: nav;

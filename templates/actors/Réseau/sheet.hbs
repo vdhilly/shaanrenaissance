@@ -27,21 +27,21 @@
     {{!-- SHEET NAVIGATION --}}
  <nav class="sheet-navigation" data-group="primary">
         <span class="navigation-title">{{localize "SRTabs.RéseauLabel"}}</span>
-        <a class="item" data-tab="character" title="{{localize "SRTabs.RéseauLabel"}}">
+        <a class="item {{#unless tabVisibility.character}} hidden{{/unless}}" data-tab="character" title="{{localize "SRTabs.RéseauLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_general.webp" title="{{localize "SRTabs.RéseauLabel"}}">
         </a>
 
-        <a class="item" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
+        <a class="item {{#unless tabVisibility.powers}} hidden{{/unless}}" data-tab="powers" title="{{localize "SRTabs.PowersLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_pouvoir.webp" title="{{localize "SRTabs.PowersLabel"}}">
         </a>
-        <a class="item" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
+        <a class="item {{#unless tabVisibility.magic}} hidden{{/unless}}" data-tab="magic" title="{{localize "SRTabs.MagicLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_magie.webp" title="{{localize "SRTabs.MagicLabel"}}">
         </a>
-        <a class="item" data-tab="acquis" title="{{localize "SRTabs.AcquisLabel"}}">
+        <a class="item {{#unless tabVisibility.acquis}} hidden{{/unless}}" data-tab="acquis" title="{{localize "SRTabs.AcquisLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp" title="{{localize "SRTabs.AcquisLabel"}}">
         </a>
 
-        <a class="item" data-tab="details" title="{{localize "SRTabs.DetailsLabel"}}">
+        <a class="item {{#unless tabVisibility.details}} hidden{{/unless}}" data-tab="details" title="{{localize "SRTabs.DetailsLabel"}}">
             <img src="systems/shaanrenaissance/assets/icons/navbar/icon_biographie.webp" title="{{localize "SRTabs.DetailsLabel"}}">
         </a>
 
