@@ -32,6 +32,7 @@ export class PersonnageSheetTabManager {
         for (const tab of Array.from(tabs)) {
             const tabName = null !== (_b = tab.dataset.tab) && void 0 !== _b ? _b : "",
                 selector = `input[data-tab-name="${tabName}"]`;
+            console.log(tabVisibility, tabName)
             tooltip.querySelector(selector).checked = tabVisibility[tabName], tab.classList.contains("hidden") && (tab.classList.remove("hidden"), tab.classList.add("to-hide"))
         }
         const checkboxes = Array.from(tooltip.querySelectorAll('input[type="checkbox"]'));
