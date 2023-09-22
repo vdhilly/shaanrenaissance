@@ -82,3 +82,6 @@ export class ActorSR extends Actor {
     return this;
   }
 }
+export const ActorProxySR = new Proxy(ActorSR, {
+  construct: (_target, args) => new CONFIG.shaanRenaissance.Actor.documentClasses[args[0].type](...args)
+});

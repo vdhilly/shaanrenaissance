@@ -10,14 +10,13 @@ import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
 import { templatePaths } from "./module/preloadTemplates.js";
 import { TokenSR } from "./module/token/TokenSR.js";
 import { TokenDocumentSR } from "./module/token/TokenDocumentSR.js";
-import { ActorSR } from "./module/ActorSR.js";
+import { ActorProxySR, ActorSR } from "./module/ActorSR.js";
 import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
 import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
 import { ItemSR } from "./module/ItemSR.js";
 import * as Puiser from "./module/jets/puiser.js"
 import { SRActiveEffectConfig } from "./module/ActiveEffects/SRActiveEffectConfig.js";
 import { SRActiveEffect } from "./module/ActiveEffects/SRActiveEffect.js";
-
 import { compendiumBrowser } from "./module/apps/compendium-browser/compendiumBrowser.js";
 import { ModuleArt } from "./module/system/module-art.js";
 import { ActorDirectorySR } from "./module/apps/sidebar/actorDirectory.js";
@@ -54,7 +53,7 @@ Hooks.once("init", function(){
     console.log ("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
     CONFIG.shaanRenaissance = shaanRenaissance;
-    CONFIG.Actor.documentClass = ActorSR;
+    CONFIG.Actor.documentClass = ActorProxySR;
     CONFIG.Token.objectClass = TokenSR;
     CONFIG.Token.documentClass = TokenDocumentSR;
     CONFIG.Token.prototypeSheetClass = TokenConfigSR;
@@ -246,20 +245,6 @@ game.shaanRenaissance.system = {moduleArt: new ModuleArt}
 Hooks.once("ready", function () {
   canvas.hud.token = new SRTokenHUD();
   game.shaanRenaissance.compendiumBrowser = new compendiumBrowser
-  DiscordMessage()
-  function DiscordMessage() {
-    const request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/1152234515218059326/h8hJwkn_lyKpj1ziviRl094dqvtwjEAc6ksppOx9lJmXPNzaOKLca-EGnCB_ixxDjCgf");
-
-    request.setRequestHeader('Content-type', 'application/json');
-
-    const params = {
-      username: "Shaan Foundry",
-      content: `${game.user.name} s'est connecté à Shaan Foundry`
-    }
-
-    request.send(JSON.stringify(params));
-  }
 })
 
 Hooks.on('diceSoNiceReady', (dice3d) => {

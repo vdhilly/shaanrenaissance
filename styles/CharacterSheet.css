@@ -472,9 +472,9 @@ label.checkbox {
     appearance: none;
     margin: 0
 }
-.crb-hover .tooltipster-box .tooltipster-content .hover-content ul input[type=number] {
+/* .crb-hover .tooltipster-box .tooltipster-content .hover-content ul input[type=number] {
     -moz-appearance: textfield
-}
+} */
 .crb-hover .tooltipster-box .tooltipster-content .hover-content ul select {
     background: transparent;
     border: 1px solid #fff;

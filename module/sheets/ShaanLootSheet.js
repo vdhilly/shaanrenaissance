@@ -18,7 +18,6 @@ export default class ShaanLootSheetSR extends ActorSheet {
         return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
     }
     async getData(options = this.options) {
-        console.log(this)
         options.id || (options.id = this.id);
         const actorData = this.actor.toObject(!1),
             sheetData = {
@@ -27,6 +26,7 @@ export default class ShaanLootSheetSR extends ActorSheet {
                 editable: this.isEditable,
                 actor: this.actor,
                 inventory: this.actor.inventory,
+                prototypeToken: actorData.prototypeToken,
                 items: actorData.items,
                 user: {
                     isGM: game.user.isGM

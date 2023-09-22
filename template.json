@@ -905,7 +905,7 @@
             }
         },
         "Loot":{
-            "lootSheetType":"",
+            "lootSheetType":"Loot",
             "attributes":{
                 "crédos":0
             },

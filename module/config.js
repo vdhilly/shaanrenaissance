@@ -1,4 +1,18 @@
+import { ActorSR } from "./ActorSR.js";
+import { LootSR } from "./actor/loot/LootSR.js";
+
 export const shaanRenaissance = {};
+
+shaanRenaissance.Actor = {
+    documentClasses: {
+        Personnage: ActorSR,
+        Loot: LootSR,
+        Shaani: ActorSR,
+        Réseau: ActorSR,
+        Créature: ActorSR,
+        PNJ: ActorSR
+    }
+},
 
 shaanRenaissance.SRdomains = {
     Shaan: "Shaan",
