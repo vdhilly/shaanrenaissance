@@ -42,6 +42,24 @@
             <input type="checkbox" name="actorLink" {{checked object.actorLink}}/>
         </div>
 
+        {{#if isPrototype}}
+        <hr>
+
+        <div class="form-group">
+            <label>{{localize "TOKEN.AppendNumber"}}</label>
+            <input type="checkbox" name="appendNumber" {{checked object.appendNumber}}/>
+            <p class="notes">{{localize "TOKEN.AppendNumberHint" name=object.name}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>{{localize "TOKEN.PrependAdjective"}}</label>
+            <input type="checkbox" name="prependAdjective" {{checked object.prependAdjective}}/>
+            <p class="notes">{{localize "TOKEN.PrependAdjectiveHint" name=object.name}}</p>
+        </div>
+
+        <hr>
+        {{/if}}
+
         {{#unless isPrototype}}
         <div class="form-group slim">
             <label>{{localize "TOKEN.Coordinates"}} <span class="units">({{localize "Pixels"}})</span></label>
@@ -56,7 +74,7 @@
         <div class="form-group slim">
             <label>{{localize "Elevation"}} <span class="units">({{gridUnits}})</span></label>
             <div class="form-fields">
-                {{numberInput object.elevation name="elevation" placeholder=(localize "units")}}
+                {{numberInput object.elevation name="elevation" placeholder=gridUnits}}
             </div>
         </div>
         {{/unless}}
@@ -67,7 +85,7 @@
                 <label>{{localize "TOKEN.Lock"}}</label>
                 <input type="checkbox" name="lockRotation" {{checked object.lockRotation}}/>
                 <label>{{localize "Rotation"}}</label>
-                {{numberInput object.rotation name="rotation"}}
+                {{numberInput object.rotation name="rotation" placeholder=(localize "Degrees")}}
             </div>
         </div>
 
@@ -109,9 +127,9 @@
             <label>{{localize "TOKEN.Dimensions"}} <span class="units">({{localize "GridSpaces"}})</span></label>
             <div class="form-fields">
                 <label>{{localize "Width"}}</label>
-                {{numberInput object.width name="width" placeholder=(localize "units")}}
+                {{numberInput object.width name="width" placeholder=(localize "spaces")}}
                 <label>{{localize "Height"}}</label>
-                {{numberInput object.height name="height" placeholder=(localize "units")}}
+                {{numberInput object.height name="height" placeholder=(localize "spaces")}}
             </div>
             <p class="hint">{{localize "TOKEN.DimensionsHint"}}</p>
         </div>
