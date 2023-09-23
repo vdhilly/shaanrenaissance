@@ -1691,32 +1691,39 @@ a.spéTest label, a.spéTestNécr label {
 .actor.sheet.character .tab.magic .trihns-list {
     margin-top: 10px;
 }
-.actor.sheet.character .tab.magic .category-header {
-    border-top-right-radius: 5px;
+.actor.sheet .tab.magic .category-header {
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%), inset 0 0 0 2px rgb(255 255 255 / 20%);
+    align-items: center;
     background-color: #755137;
-    display: grid; 
-    grid: "trihnCategory trihn-add";
-    border-top-right-radius: 5px;
+    color: var(--color-text-light-0);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-10);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 6px;
+    padding: 0.25rem;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    width: 100%;
 }
-.actor.sheet.character .tab.magic .category-header .item-controls {
+.actor.sheet .tab.magic .category-header h3 {
+    font-size: var(--font-size-14);
+    margin: 2px 0;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+.actor.sheet .tab.magic .category-header h3:hover {
+    color: var(--color-text-light-0);
+}
+.actor.sheet .tab.magic .category-header .item-controls {
     padding-right: 10px;
     justify-self: right;
     align-self: center;
-    color: white;
 }
-.actor.sheet.character .tab.magic .category-header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 400;
-    color: white;
-    text-transform: uppercase;
+.actor.sheet .tab.magic .item-control i.fas::before:hover {
+    box-shadow: none;
 }
-.actor.sheet.character .tab.magic ol {
+.actor.sheet .tab.magic ol {
     display: grid;
     grid-row-gap: 1px;
     list-style-type: none;
@@ -1726,7 +1733,7 @@ a.spéTest label, a.spéTestNécr label {
     margin: 0;
     margin-bottom: 10px;
 }
-.actor.sheet.character .tab.magic ol li {
+.actor.sheet .tab.magic ol li {
     display: grid;
     grid-template-columns: repeat(3, 1fr) 0.3fr;
     grid-template-rows: 1fr;
@@ -1736,19 +1743,19 @@ a.spéTest label, a.spéTestNécr label {
     align-content: center;
     justify-items: center;
 }
-.actor.sheet.character .tab.magic ol li .trihn-type, .actor.sheet.character .tab.magic ol li .trihn-puissance, .actor.sheet.character .tab.magic ol li .trihn-emplacement {
+.actor.sheet .tab.magic ol li .trihn-type, .actor.sheet .tab.magic ol li .trihn-puissance, .actor.sheet .tab.magic ol li .trihn-emplacement {
     margin-right: 1px;
     padding: 1px;
     font: 700 var(--font-size-14) var(--body-serif);
 }
 
-.actor.sheet.character .tab.magic textarea {
+.actor.sheet .tab.magic textarea {
     width: 100% !important;
     min-height: 100px;
     border: none;
     white-space: pre-line !important;
 }
-.actor.sheet.character .tab.magic textarea:focus {
+.actor.sheet .tab.magic textarea:focus {
     box-shadow: none;
 }
 
@@ -2081,65 +2088,52 @@ border-left: 1px solid var(--alt);
     margin-top: 10px;
 }
 .actor.sheet.character .tab.morphe .moduleList header {
-    display: grid;
-    grid-template-columns: 90% 10%;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%), inset 0 0 0 2px rgb(255 255 255 / 20%);
+    align-items: center;
     background-color: var(--color-necrose);
-    border-top-right-radius: 5px;
+    color: var(--color-text-light-0);
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-10);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin-top: 6px;
+    padding: 0.25rem;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    width: 100%;
 }
 .actor.sheet.character .tab.morphe .moduleList header h3 {
-    border: none;
-    margin:0;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: var(--font-size-17);
-    font-family: var(--title);
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: var(--font-size-14);
+    margin: 2px 0;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+.actor.sheet.character .tab.morphe .moduleList header h3 {
+    color: var(--color-text-light-0);
 }
 .actor.sheet.character .tab.morphe .moduleList header .item-controls {
-    padding-right: 10px;
-    justify-self: right;
+    padding-right: 5px;
     align-self: center;
+}
+.actor.sheet.character .tab.morphe .moduleList header .item-controls a {
+    justify-self:center;
+}
+.actor.sheet.character .tab.morphe .moduleList header .item-controls i.fas::before:hover {
+    box-shadow: none;
 }
 .actor.sheet.character .tab.morphe .moduleList ol.moduleList-list {
     border: 3px solid var(--color-necrose);
-    border-top: none;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 10px;
-    list-style-type: none;
-    display: grid;
-    grid-gap: 2px;
 }
 .actor.sheet.character .tab.morphe .moduleList ol.moduleList-list img {
     max-width: 100%;
     border: none;
 }
-.actor.sheet.character .tab.morphe .moduleList ol.moduleList-list li {
-    display: grid;
-    grid: "module-item-header" "module-item-résumé";
-    background-color: rgba(28, 28, 28, .1);
-    padding: 0.5em;
+.actor.sheet .tab.morphe .itemCategory .liste-items {
+    border: 3px solid var(--color-necrose);
+    border-top: none;
+    margin: 0;
+    margin-bottom: 10px;
 }
-.actor.sheet.character .tab.morphe .moduleList ol.moduleList-list li .module-header {
-    display: grid; 
-    grid: "module-item-img module-item-name module-item-controls";
-    grid-template-columns: 10% 80% 10%;
-}
-.actor.sheet.character .tab.morphe .moduleList ol.moduleList-list li .module-header span {
-    font: 700 var(--font-size-16) var(--body-serif);
-    align-self: center;
-    padding-left: 5px;
-}
-.actor.sheet.character .tab.morphe .moduleList ol.moduleList-list li .module-header img {
-    grid-area: module-item-img;
-}
-.actor.sheet.character .tab.morphe .moduleList ol.moduleList-list li .module-header .item-controls {
-    grid-area: module-item-controls;
-    float: right;
-}
-
 /* LOOT INVENTORY */
 form.sheet.actor.loot .sheet-content {
     display: flex;

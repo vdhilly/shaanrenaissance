@@ -1,5 +1,5 @@
 <div class="tab morphe" data-group="primary" data-tab="morphe">
-    <div class="moduleList">
+    <div class="moduleList itemCategory">
         <header class="moduleList-header">
             <h3>{{localize "SRLabels.Modules"}}</h3>
             {{#ifeq @root.editable true}}
@@ -8,30 +8,21 @@
                 </div>
             {{/ifeq}}
         </header>
-        <ol class="moduleList-list directory-list">
+        <ol class="liste-items item-list directory-list">
             {{#each morpheModules as |module|}}
-            <li class="item module" draggable="true" data-item-id="{{module._id}}">
-                <div class="module-header">
-                    <img src="{{module.img}}" data-edit="img">
-                    <span class="module-name">
+            <li class="item acquis" draggable="true" data-item-id="{{module._id}}">
+                <div class="acquis-header">
+                    <div class="acquis-image">
+                        <img class="acquis-icon" src="{{module.img}}" data-edit="img">
+                        <i class="acquis-chat fa-solid fa-message"></i>
+                    </div>
+                    <h4 class="acquis-name">
                         {{module.name}}
-                    </span>
-                    <div class="item-controls">
-                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
-                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
-                    </div>
+                    </h4>
                 </div>
-                <div class="spécialisations">
-                    {{#ifeq module.type "Protection"}}
-                    <div class="spécialisations">
-                        <i>{{localize "SRLabels.protection"}}: {{module.system.protection}}</i>
-                    </div>
-                    {{/ifeq}}
-                    {{#ifnoteq module.type "Protection"}}
-                    <div class="spécialisations">
-                        <i>{{localize "SRLabels.BonusLabel"}}: {{module.system.acquis.spécialisations}}</i>
-                    </div>                    
-                    {{/ifnoteq}}
+                <div class="item-controls">
+                    <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                    <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
                 </div>
             </li>
             {{/each}}
