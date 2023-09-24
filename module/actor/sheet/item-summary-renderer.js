@@ -1,5 +1,5 @@
 import { htmlQuery, htmlQueryAll, htmlClosest, isItemSystemData } from "../../utils/utils.js";
-import {ItemSR} from "../../ItemSR.js"
+import {ItemSR} from "../../item/ItemSR.js"
 export class ItemSummaryRenderer {
     constructor(sheet) {
         this.sheet = sheet

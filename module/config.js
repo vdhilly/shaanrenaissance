@@ -1,4 +1,4 @@
-import { ActorSR } from "./ActorSR.js";
+import { ActorSR } from "./actor/ActorSR.js";
 import { LootSR } from "./actor/loot/LootSR.js";
 
 export const shaanRenaissance = {};
@@ -38,6 +38,23 @@ shaanRenaissance.createAcquis = {
     Technologie: "Technologie",
     Transport: "Transport",
     Bâtiment: "Bâtiment",
+}
+shaanRenaissance.createPouvoir = {
+    esprit: {
+        "Astuce de Technique":"Astuce de Technique",
+        "Secret de Savoir":"Secret de Savoir",
+        "Privilège de Social":"Privilège de Social"
+    },
+    ame: {
+        "Création d'Arts":"Création d'Arts",
+        "Symbiose de Shaan":"Symbiose de Shaan",
+        "Sort de Magie":"Sort de Magie",
+    },
+    corps: {
+        "Transe de Rituels":"Transe de Rituels",
+        "Exploit de Survie":"Exploit de Survie",
+        "Tactique de Combat":"Tactique de Combat",
+    }
 }
 shaanRenaissance.pouvoirs = {
     trihns: {

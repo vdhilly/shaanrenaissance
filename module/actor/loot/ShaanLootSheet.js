@@ -1,10 +1,10 @@
-import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
-import { htmlQuery, getSelectedOrOwnActors } from "../utils/utils.js";
-import { AddCoinsPopup } from "../actor/sheet/popups/add-coins-popup.js";
-import { RemoveCoinsPopup } from "../actor/sheet/popups/remove-coins-popup.js";
-import { ItemSR } from "../ItemSR.js";
-import { DistributeCoinsPopup } from "../actor/sheet/popups/distribute-coins-popup.js";
-import { LootNPCsPopup } from "../actor/sheet/loot/loot-npcs-popup.js";
+import { ItemSummaryRenderer } from "../sheet/item-summary-renderer.js";
+import { htmlQuery, getSelectedOrOwnActors } from "../../utils/utils.js";
+import { AddCoinsPopup } from "../sheet/popups/add-coins-popup.js";
+import { RemoveCoinsPopup } from "../sheet/popups/remove-coins-popup.js";
+import { ItemSR } from "../../item/ItemSR.js";
+import { DistributeCoinsPopup } from "../sheet/popups/distribute-coins-popup.js";
+import { LootNPCsPopup } from "../sheet/loot/loot-npcs-popup.js";
 
 export default class ShaanLootSheetSR extends ActorSheet {
     constructor() {

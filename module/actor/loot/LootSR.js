@@ -1,4 +1,4 @@
-import { ActorSR } from "../../ActorSR.js"
+import { ActorSR } from "../ActorSR.js"
 export class LootSR extends ActorSR {
     get isLoot() {
         return "Loot" === this.system.lootSheetType

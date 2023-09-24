@@ -1,6 +1,6 @@
 
 
-import { ActorSR } from "../../../ActorSR.js"
+import { ActorSR } from "../../ActorSR.js"
 export class DistributeCoinsPopup extends FormApplication {
     static get defaultOptions() {
         const options = super.defaultOptions;

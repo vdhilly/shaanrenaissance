@@ -1,5 +1,5 @@
-import {tupleHasValue, CHARACTER_ACTOR_TYPES, CHARACTER_SHEET_TABS, ErrorSR} from "./utils/utils.js"
-import { ActorInventory } from "./actor/Inventory/ActorInventory.js";
+import {tupleHasValue, CHARACTER_ACTOR_TYPES, CHARACTER_SHEET_TABS, ErrorSR} from "../utils/utils.js"
+import { ActorInventory } from "./Inventory/ActorInventory.js";
 export class ActorSR extends Actor {
   get hasPlayerOwner() {
     return game.users.some(u => !u.isGM && this.testUserPermission(u, "OWNER"));

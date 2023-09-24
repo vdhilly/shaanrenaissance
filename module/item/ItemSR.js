@@ -1,4 +1,4 @@
-import { setHasElement, PHYSICAL_ITEM_TYPES, ErrorSR, isItemSystemData } from "./utils/utils.js";
+import { setHasElement, PHYSICAL_ITEM_TYPES, ErrorSR, isItemSystemData } from "../utils/utils.js";
 
 export class ItemSR extends Item {
     isOfType(...types) {

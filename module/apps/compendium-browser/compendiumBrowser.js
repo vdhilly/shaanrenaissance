@@ -1,7 +1,7 @@
 import { objectHasKey, getSelectedOrOwnActors } from "../../utils/utils.js";
 import { PackLoader } from "./PackLoader.js";
 import * as browserTabs from "./tabs/index.js";
-import {ItemSR} from "../../ItemSR.js"
+import {ItemSR} from "../../item/ItemSR.js"
 
 export class compendiumBrowser extends Application {
     constructor(options = {}) {

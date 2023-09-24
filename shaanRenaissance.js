@@ -1,19 +1,20 @@
 import { shaanRenaissance } from "./module/config.js";
-import ShaanRItemSheet from "./module/sheets/ShaanRItemSheet.js";
-import ShaanRActorsSheet from "./module/sheets/ShaanRActorsSheet.js"
-import ShaanNPCSheet from "./module/sheets/ShaanNPCSheet.js";
-import ShaanShaaniSheet from "./module/sheets/ShaanShaaniSheet.js";
-import ShaanTrihnSheet from "./module/sheets/ShaanTrihnSheet.js";
-import ShaanCreatorSet from "./module/sheets/ShaanCreatorSet.js";
-import ShaanRéseauSheet from "./module/sheets/ShaanRéseauSheet.js";
-import ShaanCreatureSheet from "./module/sheets/ShaanCreatureSheet.js";
+import ShaanRItemSheet from "./module/item/Acquis/ShaanRItemSheet.js";
+import ShaanRActorsSheet from "./module/actor/Personnage/ShaanRActorsSheet.js"
+import ShaanNPCSheet from "./module/actor/PNJ/ShaanNPCSheet.js";
+import ShaanShaaniSheet from "./module/actor/Shaani/ShaanShaaniSheet.js";
+import ShaanTrihnSheet from "./module/item/ShaanTrihnSheet.js";
+import ShaanCreatorSet from "./module/item/CreatorSet/ShaanCreatorSet.js";
+import ShaanRéseauSheet from "./module/actor/Réseau/ShaanRéseauSheet.js";
+import ShaanCreatureSheet from "./module/actor/Créature/ShaanCreatureSheet.js";
+import ShaanLootSheetSR from "./module/actor/loot/ShaanLootSheet.js";
 import { templatePaths } from "./module/preloadTemplates.js";
 import { TokenSR } from "./module/token/TokenSR.js";
 import { TokenDocumentSR } from "./module/token/TokenDocumentSR.js";
-import { ActorProxySR, ActorSR } from "./module/ActorSR.js";
+import { ActorProxySR, ActorSR } from "./module/actor/ActorSR.js";
 import { TokenConfigSR } from "./module/token/TokenConfigSR.js";
 import { SRTokenHUD } from "./module/token/SRTokenHUD.js";
-import { ItemSR } from "./module/ItemSR.js";
+import { ItemSR } from "./module/item/ItemSR.js";
 import * as Puiser from "./module/jets/puiser.js"
 import { SRActiveEffectConfig } from "./module/ActiveEffects/SRActiveEffectConfig.js";
 import { SRActiveEffect } from "./module/ActiveEffects/SRActiveEffect.js";
@@ -22,7 +23,6 @@ import { ModuleArt } from "./module/system/module-art.js";
 import { ActorDirectorySR } from "./module/apps/sidebar/actorDirectory.js";
 import { ItemDirectorySR } from "./module/apps/sidebar/itemDirectory.js";
 import { CompendiumDirectorySR } from "./module/apps/sidebar/compendiumDirectory.js";
-import ShaanLootSheetSR from "./module/sheets/ShaanLootSheet.js";
 
 async function preloadHandleBarTemplates() 
 {

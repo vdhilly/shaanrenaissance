@@ -1,17 +1,17 @@
-import * as Dice from "../jets/dice.js";
-import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
-import { htmlQuery } from "../utils/utils.js";
-import { AddCoinsPopup } from "../actor/sheet/popups/add-coins-popup.js";
-import { RemoveCoinsPopup } from "../actor/sheet/popups/remove-coins-popup.js";
-import { PersonnageSheetTabManager } from "../actor/Personnage/tab-manager.js";
+import * as Dice from "../../jets/dice.js";
+import { ItemSummaryRenderer } from "../sheet/item-summary-renderer.js";
+import { htmlQuery } from "../../utils/utils.js";
+import { AddCoinsPopup } from "../sheet/popups/add-coins-popup.js";
+import { RemoveCoinsPopup } from "../sheet/popups/remove-coins-popup.js";
+import { PersonnageSheetTabManager } from "../Personnage/tab-manager.js";
 
-export default class ShaanShaaniSheet extends ActorSheet {
+export default class ShaanRéseauSheet extends ActorSheet {
     constructor() {
         super(...arguments), this.itemRenderer = new ItemSummaryRenderer(this)
     }
     static get defaultOptions() {
         const options = super.defaultOptions;
-        return options.classes = [...options.classes, "Shaani"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
+        return options.classes = [...options.classes, "Réseau"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
 
             navSelector: ".sheet-navigation",
             contentSelector: ".sheet-content",
@@ -62,6 +62,9 @@ export default class ShaanShaaniSheet extends ActorSheet {
         
             }
             if (typeof sheetData.data.attributes.hpEsprit !== "undefined") {
+                sheetData.data.attributes.hpEsprit.max = (Math.max(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank)) + (Math.min(sheetData.data.skills.Technique.rank, sheetData.data.skills.Savoir.rank, sheetData.data.skills.Social.rank))
+                sheetData.data.attributes.hpAme.max = (Math.max(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank)) + (Math.min(sheetData.data.skills.Arts.rank, sheetData.data.skills.Shaan.rank, sheetData.data.skills.Magie.rank))
+                sheetData.data.attributes.hpCorps.max = (Math.max(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank)) + (Math.min(sheetData.data.skills.Rituels.rank, sheetData.data.skills.Survie.rank, sheetData.data.skills.Combat.rank))
                 let attributes = sheetData.data.attributes
                 if(attributes.hpEsprit.value > attributes.hpEsprit.max) {
                     this.actor.update({
@@ -105,10 +108,12 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 }
             }
             sheetData.enrichedGMnotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.gm"), {async: true})
+            sheetData.enrichedTypeMembres = await TextEditor.enrichHTML(getProperty(this.actor.system, "typesMembres"), {async: true})
             sheetData.enrichedMotivations = await TextEditor.enrichHTML(getProperty(this.actor.system, "motivation"), {async: true})
+            sheetData.enrichedMoyens = await TextEditor.enrichHTML(getProperty(this.actor.system, "moyens"), {async: true})    
             sheetData.enrichedNotes = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.notes"), {async: true})
             sheetData.enrichedAllies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.allies"), {async: true})
-            sheetData.enrichedEnemies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.enemies"), {async: true})
+            sheetData.enrichedEnemies = await TextEditor.enrichHTML(getProperty(this.actor.system, "biography.campagne.enemies"), {async: true})    
             sheetData.enrichedSchemes = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.schèmes"), {async: true})
             sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
             sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
@@ -137,11 +142,11 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 html.find(".add-acquis").click(this._onAcquisCreate.bind(this));            
                 html.find(".item-create").click(this._onItemCreate.bind(this));
                 html.find(".pouvoir-chat").click(this._onPouvoirChat.bind(this))
-                html.find(".item-edit").click(this._onItemEdit.bind(this));
-                html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this));
                 html.find(".item-wear").click(this._onAcquisUse.bind(this))
-                html.find(".item-delete").click(this._onItemDelete.bind(this));  
-                html.find(".regen-hp").click(this._onRegen.bind(this));
+                html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this))
+                html.find(".item-edit").click(this._onItemEdit.bind(this));
+                html.find(".item-delete").click(this._onItemDelete.bind(this));
+                html.find(".regen-hp").click(this._onRegen.bind(this));   
                 html.find(".select-input").focus(this._onInputSelect);
                 html.find("button[data-action=add-coins]").click(this._onAddCoins.bind(this));
                 html.find("button[data-action=remove-coins]").click(this._onRemoveCoins.bind(this));
@@ -219,7 +224,6 @@ export default class ShaanShaaniSheet extends ActorSheet {
                 }
             }));
             PersonnageSheetTabManager.initialize(this.actor, html.find("a[data-action=manage-tabs]")[0]);
-
         }
         _onInputSelect(event){
             event.currentTarget.select();
@@ -250,7 +254,6 @@ export default class ShaanShaaniSheet extends ActorSheet {
             let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
             let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
             let description = game.i18n.translations.SRspéDesc[spécialisation]
-
     
             Dice.SpéTest({
                 actor,
@@ -266,7 +269,6 @@ export default class ShaanShaaniSheet extends ActorSheet {
             let domain = $(event.target.closest(".pc")).children(".specialisations-title").find(".specialisations-label").text()
             let spécialisation = $(event.target).text().toLowerCase().replaceAll(' ', '').replace("'", '').replaceAll("é", "e").replace("è", "e").replace("ê", "e").replace("à", "a").replace("â", "a").replace("î", "i");
             let description = game.i18n.translations.SRspéDesc[spécialisation]
-
     
             Dice.SpéTestNécr({
                 actor,
@@ -369,6 +371,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
     
         _onItemCreate(event) {
             event.preventDefault();
+            let actor = this.actor
             const espritBtn = event.target.closest("#Esprit-add")
             const ameBtn = event.target.closest("#Ame-add")
             const corpsBtn = event.target.closest("#Corps-add")
@@ -396,52 +399,210 @@ export default class ShaanShaaniSheet extends ActorSheet {
             this.actor.sheet.render();
                 
             if (espritBtn) {
+                espritPouvoirCreate({
+                    actor,
+                })
+                
+        
+                async function espritPouvoirCreate ({
+                    actor = null,
+                    type = null
+                } = {}) {
+                    
+                const actorData = actor ? actor.system : null;
+                let checkOptions = await GetPouvoirOptions ({type})
+        
+                if (checkOptions.cancelled) {
+                    return;
+                }
+        
+                type = checkOptions.type
                 let itemData = {
-              name: "Nouveau pouvoir d'Esprit",
-              type: "Pouvoir",
-              system: {
-                trihn: "Esprit"
-              }
-            };
-    
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
+                  name: `${type}`,
+                  type: "Pouvoir",
+                  system: {pouvoir: {value: type}},
+                  img:`systems/shaanrenaissance/assets/icons/domaines/${type.replace("Astuce de ", "").replace("Secret de ", "").replace("Privilège de ", "")}.png`
+                };
+                return actor.createEmbeddedDocuments("Item", [itemData]);
+        
+                async function GetPouvoirOptions({
+                    type = null,
+                    template = "systems/shaanrenaissance/templates/dialogs/createPouvoirEsprit-dialog.hbs"} = {}) {
+                        const actorData = actor.toObject(!1);
+                        actorData.pouvoirTypes = {
+                            Technique: {}, Savoir: {}, Social: {}
+                        }
+                        const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+        
+                        return new Promise(resolve => {
+                            const data = {
+                                title: game.i18n.format("Création d'Acquis"),
+                                content: html,
+                                actor: actorData,
+                                buttons: {
+                                    normal: {
+                                      label: game.i18n.localize("chat.actions.create"),
+                                      callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                    },
+                                    cancel: {
+                                      label: game.i18n.localize("chat.actions.cancel"),
+                                      callback: html => resolve({ cancelled: true })
+                                    }
+                                  },
+                                  default: "normal",
+                                  close: () => resolve({ cancelled: true }),
+                                };
+                                new Dialog(data,null).render(true);
+                              });
+                    }
+                    function _processAcquisCreateOptions(form) {
+                        return {
+                         type: form.type?.value
+                        }
+                      }
+                }
             }
             this.actor.sheet.render();
     
             if (ameBtn) {
+                amePouvoirCreate({
+                    actor,
+                })
+                
+        
+                async function amePouvoirCreate ({
+                    actor = null,
+                    type = null
+                } = {}) {
+                    
+                const actorData = actor ? actor.system : null;
+                let checkOptions = await GetPouvoirOptions ({type})
+        
+                if (checkOptions.cancelled) {
+                    return;
+                }
+        
+                type = checkOptions.type
                 let itemData = {
-              name: "Nouveau pouvoir d'Âme",
-              type: "Pouvoir",
-              system: {
-                trihn: "Âme"
-              }
-            };
-    
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
+                  name: `${type}`,
+                  type: "Pouvoir",
+                  system: {pouvoir: {value: type}},
+                  img:`systems/shaanrenaissance/assets/icons/domaines/${type.replace("Création d'", "").replace("Symbiose de ", "").replace("Sort de ", "")}.png`
+                };
+                return actor.createEmbeddedDocuments("Item", [itemData]);
+        
+                async function GetPouvoirOptions({
+                    type = null,
+                    template = "systems/shaanrenaissance/templates/dialogs/createPouvoirAme-dialog.hbs"} = {}) {
+                        const actorData = actor.toObject(!1);
+                        actorData.pouvoirTypes = {
+                            Arts: {}, Shaan: {}, Magie: {}
+                        }
+                        const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+        
+                        return new Promise(resolve => {
+                            const data = {
+                                title: game.i18n.format("Création d'Acquis"),
+                                content: html,
+                                actor: actorData,
+                                buttons: {
+                                    normal: {
+                                      label: game.i18n.localize("chat.actions.create"),
+                                      callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                    },
+                                    cancel: {
+                                      label: game.i18n.localize("chat.actions.cancel"),
+                                      callback: html => resolve({ cancelled: true })
+                                    }
+                                  },
+                                  default: "normal",
+                                  close: () => resolve({ cancelled: true }),
+                                };
+                                new Dialog(data,null).render(true);
+                              });
+                    }
+                    function _processAcquisCreateOptions(form) {
+                        return {
+                         type: form.type?.value
+                        }
+                      }
+                }
             }
             this.actor.sheet.render();
     
             if (corpsBtn) {
+                corpsPouvoirCreate({
+                    actor,
+                })
+                
+        
+                async function corpsPouvoirCreate ({
+                    actor = null,
+                    type = null
+                } = {}) {
+                    
+                const actorData = actor ? actor.system : null;
+                let checkOptions = await GetPouvoirOptions ({type})
+        
+                if (checkOptions.cancelled) {
+                    return;
+                }
+        
+                type = checkOptions.type
                 let itemData = {
-              name: "Nouveau pouvoir de Corps",
-              type: "Pouvoir",
-              system: {
-                trihn: "Corps"
-              }
-            };
-    
-            return this.actor.createEmbeddedDocuments("Item", [itemData]);
+                  name: `${type}`,
+                  type: "Pouvoir",
+                  system: {pouvoir: {value: type}},
+                  img:`systems/shaanrenaissance/assets/icons/domaines/${type.replace("Transe de ", "").replace("Exploit de ", "").replace("Tactique de ", "")}.png`
+                };
+                return actor.createEmbeddedDocuments("Item", [itemData]);
+        
+                async function GetPouvoirOptions({
+                    type = null,
+                    template = "systems/shaanrenaissance/templates/dialogs/createPouvoirCorps-dialog.hbs"} = {}) {
+                        const actorData = actor.toObject(!1);
+                        actorData.pouvoirTypes = {
+                            Rituels: {}, Survie: {}, Combat:{}
+                        }
+                        const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+        
+                        return new Promise(resolve => {
+                            const data = {
+                                title: game.i18n.format("Création d'Acquis"),
+                                content: html,
+                                actor: actorData,
+                                buttons: {
+                                    normal: {
+                                      label: game.i18n.localize("chat.actions.create"),
+                                      callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                    },
+                                    cancel: {
+                                      label: game.i18n.localize("chat.actions.cancel"),
+                                      callback: html => resolve({ cancelled: true })
+                                    }
+                                  },
+                                  default: "normal",
+                                  close: () => resolve({ cancelled: true }),
+                                };
+                                new Dialog(data,null).render(true);
+                              });
+                    }
+                    function _processAcquisCreateOptions(form) {
+                        return {
+                         type: form.type?.value
+                        }
+                      }
+                }
             }
             this.actor.sheet.render();
     
             if (necroseBtn) {
                 let itemData = {
-              name: "Nouveau pouvoir de Nécrose",
-              type: "Pouvoir",
-              system: {
-                trihn: "Nécrose"
-              }
-            };
+                    name: `Tourment de Nécrose`,
+                    type: "Pouvoir",
+                    system: {pouvoir: {value: "Tourment de Nécrose"}},
+                    img:`systems/shaanrenaissance/assets/icons/domaines/Nécrose.png`
+                  };
     
             return this.actor.createEmbeddedDocuments("Item", [itemData]);
             }
@@ -520,8 +681,7 @@ export default class ShaanShaaniSheet extends ActorSheet {
             }
     
         }
-
-        _onPouvoirChat(event) {
+            _onPouvoirChat(event) {
             event.preventDefault();
             let element = event.target
             let itemId = element.closest(".item").dataset.itemId;

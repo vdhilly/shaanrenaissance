@@ -1,6 +1,6 @@
-import * as Dice from "../jets/dice.js";
-import { htmlQuery } from "../utils/utils.js";
-import { ItemSummaryRenderer } from "../actor/sheet/item-summary-renderer.js";
+import * as Dice from "../../jets/dice.js";
+import { htmlQuery } from "../../utils/utils.js";
+import { ItemSummaryRenderer } from "../sheet/item-summary-renderer.js";
 
 export default class ShaanNPCSheet extends ActorSheet {
     constructor() {
@@ -297,6 +297,7 @@ export default class ShaanNPCSheet extends ActorSheet {
         }
     }
     _onItemCreate(event) {
+        let actor = this.actor
         event.preventDefault();
         const espritBtn = event.target.closest("#Esprit-add")
         const ameBtn = event.target.closest("#Ame-add")
@@ -325,52 +326,210 @@ export default class ShaanNPCSheet extends ActorSheet {
         this.actor.sheet.render();
             
         if (espritBtn) {
+            espritPouvoirCreate({
+                actor,
+            })
+            
+    
+            async function espritPouvoirCreate ({
+                actor = null,
+                type = null
+            } = {}) {
+                
+            const actorData = actor ? actor.system : null;
+            let checkOptions = await GetPouvoirOptions ({type})
+    
+            if (checkOptions.cancelled) {
+                return;
+            }
+    
+            type = checkOptions.type
             let itemData = {
-          name: "Nouveau pouvoir d'Esprit",
-          type: "Pouvoir",
-          system: {
-            trihn: "Esprit"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+              name: `${type}`,
+              type: "Pouvoir",
+              system: {pouvoir: {value: type}},
+              img:`systems/shaanrenaissance/assets/icons/domaines/${type.replace("Astuce de ", "").replace("Secret de ", "").replace("Privilège de ", "")}.png`
+            };
+            return actor.createEmbeddedDocuments("Item", [itemData]);
+    
+            async function GetPouvoirOptions({
+                type = null,
+                template = "systems/shaanrenaissance/templates/dialogs/createPouvoirEsprit-dialog.hbs"} = {}) {
+                    const actorData = actor.toObject(!1);
+                    actorData.pouvoirTypes = {
+                        Technique: {}, Savoir: {}, Social: {}
+                    }
+                    const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+    
+                    return new Promise(resolve => {
+                        const data = {
+                            title: game.i18n.format("Création d'Acquis"),
+                            content: html,
+                            actor: actorData,
+                            buttons: {
+                                normal: {
+                                  label: game.i18n.localize("chat.actions.create"),
+                                  callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                },
+                                cancel: {
+                                  label: game.i18n.localize("chat.actions.cancel"),
+                                  callback: html => resolve({ cancelled: true })
+                                }
+                              },
+                              default: "normal",
+                              close: () => resolve({ cancelled: true }),
+                            };
+                            new Dialog(data,null).render(true);
+                          });
+                }
+                function _processAcquisCreateOptions(form) {
+                    return {
+                     type: form.type?.value
+                    }
+                  }
+            }
         }
         this.actor.sheet.render();
 
         if (ameBtn) {
+            amePouvoirCreate({
+                actor,
+            })
+            
+    
+            async function amePouvoirCreate ({
+                actor = null,
+                type = null
+            } = {}) {
+                
+            const actorData = actor ? actor.system : null;
+            let checkOptions = await GetPouvoirOptions ({type})
+    
+            if (checkOptions.cancelled) {
+                return;
+            }
+    
+            type = checkOptions.type
             let itemData = {
-          name: "Nouveau pouvoir d'Âme",
-          type: "Pouvoir",
-          system: {
-            trihn: "Âme"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+              name: `${type}`,
+              type: "Pouvoir",
+              system: {pouvoir: {value: type}},
+              img:`systems/shaanrenaissance/assets/icons/domaines/${type.replace("Création d'", "").replace("Symbiose de ", "").replace("Sort de ", "")}.png`
+            };
+            return actor.createEmbeddedDocuments("Item", [itemData]);
+    
+            async function GetPouvoirOptions({
+                type = null,
+                template = "systems/shaanrenaissance/templates/dialogs/createPouvoirAme-dialog.hbs"} = {}) {
+                    const actorData = actor.toObject(!1);
+                    actorData.pouvoirTypes = {
+                        Arts: {}, Shaan: {}, Magie: {}
+                    }
+                    const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+    
+                    return new Promise(resolve => {
+                        const data = {
+                            title: game.i18n.format("Création d'Acquis"),
+                            content: html,
+                            actor: actorData,
+                            buttons: {
+                                normal: {
+                                  label: game.i18n.localize("chat.actions.create"),
+                                  callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                },
+                                cancel: {
+                                  label: game.i18n.localize("chat.actions.cancel"),
+                                  callback: html => resolve({ cancelled: true })
+                                }
+                              },
+                              default: "normal",
+                              close: () => resolve({ cancelled: true }),
+                            };
+                            new Dialog(data,null).render(true);
+                          });
+                }
+                function _processAcquisCreateOptions(form) {
+                    return {
+                     type: form.type?.value
+                    }
+                  }
+            }
         }
         this.actor.sheet.render();
 
         if (corpsBtn) {
+            corpsPouvoirCreate({
+                actor,
+            })
+            
+    
+            async function corpsPouvoirCreate ({
+                actor = null,
+                type = null
+            } = {}) {
+                
+            const actorData = actor ? actor.system : null;
+            let checkOptions = await GetPouvoirOptions ({type})
+    
+            if (checkOptions.cancelled) {
+                return;
+            }
+    
+            type = checkOptions.type
             let itemData = {
-          name: "Nouveau pouvoir de Corps",
-          type: "Pouvoir",
-          system: {
-            trihn: "Corps"
-          }
-        };
-
-        return this.actor.createEmbeddedDocuments("Item", [itemData]);
+              name: `${type}`,
+              type: "Pouvoir",
+              system: {pouvoir: {value: type}},
+              img:`systems/shaanrenaissance/assets/icons/domaines/${type.replace("Transe de ", "").replace("Exploit de ", "").replace("Tactique de ", "")}.png`
+            };
+            return actor.createEmbeddedDocuments("Item", [itemData]);
+    
+            async function GetPouvoirOptions({
+                type = null,
+                template = "systems/shaanrenaissance/templates/dialogs/createPouvoirCorps-dialog.hbs"} = {}) {
+                    const actorData = actor.toObject(!1);
+                    actorData.pouvoirTypes = {
+                        Rituels: {}, Survie: {}, Combat:{}
+                    }
+                    const html = await renderTemplate(template, { actor, type, config: CONFIG.shaanRenaissance });
+    
+                    return new Promise(resolve => {
+                        const data = {
+                            title: game.i18n.format("Création d'Acquis"),
+                            content: html,
+                            actor: actorData,
+                            buttons: {
+                                normal: {
+                                  label: game.i18n.localize("chat.actions.create"),
+                                  callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                },
+                                cancel: {
+                                  label: game.i18n.localize("chat.actions.cancel"),
+                                  callback: html => resolve({ cancelled: true })
+                                }
+                              },
+                              default: "normal",
+                              close: () => resolve({ cancelled: true }),
+                            };
+                            new Dialog(data,null).render(true);
+                          });
+                }
+                function _processAcquisCreateOptions(form) {
+                    return {
+                     type: form.type?.value
+                    }
+                  }
+            }
         }
         this.actor.sheet.render();
 
         if (necroseBtn) {
             let itemData = {
-          name: "Nouveau pouvoir de Nécrose",
-          type: "Pouvoir",
-          system: {
-            trihn: "Nécrose"
-          }
-        };
+                name: `Tourment de Nécrose`,
+                type: "Pouvoir",
+                system: {pouvoir: {value: "Tourment de Nécrose"}},
+                img:`systems/shaanrenaissance/assets/icons/domaines/Nécrose.png`
+              };
 
         return this.actor.createEmbeddedDocuments("Item", [itemData]);
         }
