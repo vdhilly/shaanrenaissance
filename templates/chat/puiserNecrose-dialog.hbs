@@ -1,0 +1,26 @@
+<form class="puiser-dialog">
+    <fieldset style="margin-bottom: 5px;">
+        <legend>{{localize "chat.puiser.choices"}}</legend>
+        {{#if choix.choix1}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix1" name="result" value="{{choix.choix1.value}}"> 
+            <label for="choix1">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{#ifeq choix.choix1.value 0}}1{{/ifeq}}{{choix.choix1.value}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor="{{choix.choix1.flavor}}">{{choix.choix1.value}}</b> + <b>{{choix.bonus}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix1.flavor}})</span>
+            </label>
+        </div>
+        {{/if}}
+        {{#if choix.choix2}}
+        <div>
+            <input style="margin-right: 5px;" type="radio" id="choix2" name="result" value="{{choix.choix2.value}}">
+            <label for="choix2">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix2.flavor.necrose}}/d10_{{choix.choix2.color.necrose}}_{{#ifeq choix.choix2.diceValues.necrose 0}}1{{/ifeq}}{{choix.choix2.diceValues.necrose}}.png">
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/{{choix.choix2.flavor.esprit}}/d10_{{choix.choix2.color.esprit}}_{{#ifeq choix.choix2.diceValues.esprit 0}}1{{/ifeq}}{{choix.choix2.diceValues.esprit}}.png">
+                <span style="margin-left: 5px">{{localize "SR.Réussite"}}: <b data-flavor="{{choix.choix2.flavor.esprit}}">{{choix.choix2.value}}</b> + <b>{{choix.bonus}}</b></span>
+                <span style="margin-left: 5px">(-1 {{localize choix.choix2.flavor.esprit}})</span>
+            </label>
+        </div>
+        {{/if}}
+    </fieldset>
+</form>

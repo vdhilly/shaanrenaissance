@@ -1055,6 +1055,7 @@ export async function SpéTestNécr ({
       isSuccess,
       score: score,
       actorID: actor.uuid,
+      race: race
     });
   }
 

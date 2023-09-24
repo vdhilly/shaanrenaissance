@@ -2,6 +2,8 @@ import { getSelectedOrOwnActors } from "../utils/utils.js"
 export function addChatListeners(app, html, data) {
     const Button = html.find("button.puiser")
     Button.on("click", onPuiser)
+    const necroseButton = html.find("button.puiser-necrose")
+    necroseButton.on("click", onPuiserNecrose)
 }
 
 async function onPuiser(event) {
@@ -14,10 +16,10 @@ async function onPuiser(event) {
     const spéBonus = Number(chatCard.find('b.spéBonus').text());
     const acquisBonus = Number(chatCard.find('b.acquisBonus').text());
     const messageTemplate = "systems/shaanrenaissance/templates/chat/puiser.hbs"
+    let sendMessage = true
     let esprit =  Number(dice[2].value)
     let ame = Number(dice[1].value)
     let corps = Number(dice[0].value)
-    let sendMessage = true
 
     let baseDice
     let puiser1
@@ -186,7 +188,136 @@ async function onPuiser(event) {
         }
     }   
 }
+async function onPuiserNecrose(event) {
+  const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"])
+  if(actors.length == 0) return ui.notifications.warn("Vous devez sélectionner au moins un token.")
+  const chatCard = $(this.parentElement)
+  const dice = chatCard.find("input.dice-value");
+  const necroseTest = chatCard.find('.necroseTest')
+  const domain = Number(chatCard.find('b.domain').text());
+  const domainName = chatCard.find('span.domainName').text();
+  const spéBonus = Number(chatCard.find('b.spéBonus').text());
+  const acquisBonus = Number(chatCard.find('b.acquisBonus').text());
+  const messageTemplate = "systems/shaanrenaissance/templates/chat/puiser.hbs"
+  let sendMessage = true
+  let esprit =  Number(dice[1].value)
+  let necrose = Number(dice[0].value)
 
+  console.log(esprit, necrose)
+  if(esprit == 10){
+    esprit = 0
+  }
+  if(necrose == 10){
+    necrose = domain
+  }
+  let choix = {}
+  choix.bonus = spéBonus+acquisBonus 
+  console.log(esprit, domain)
+  if(esprit != 0 && esprit <= domain){
+    console.log("test1")
+    if (esprit > necrose || necrose > domain) {
+      console.log("test2")
+      choix.choix1 = {value: esprit, label: "esprit", flavor:"Esprit", color: "jaune", checked: false}
+    }
+  }
+  if(esprit !=0 && esprit+necrose <= domain ){
+    choix.choix2 = {value: esprit+necrose, diceValues:{esprit: esprit, necrose: necrose}, label: {esprit:"esprit", necrose: "necrose"}, flavor:{esprit:"Esprit", necrose:"Nécrose"}, color: {esprit:"jaune", necrose: "noir"}, checked: false}
+  }
+  console.log(choix)
+  if(!choix.choix1 && !choix.choix2) {
+    return ui.notifications.error("Vous ne pouvez puiser dans aucun Trihn.");
+  }
+
+  let result
+  let puiserOptions = await GetPuiserOptions({ domain: domain, choix, result })
+  if(puiserOptions.cancelled){
+    return;
+  }
+  result = puiserOptions.result + spéBonus + acquisBonus
+  let flavor = puiserOptions.flavor
+  
+  for (const actor of actors) {
+    const attributes = actor.system.attributes
+    attributes.hpEsprit.value = attributes.hpEsprit.value - 1 
+    actor.update(attributes)
+    actor.sheet.render()
+
+    if(sendMessage) {
+      ToCustomMessage(actor, result, messageTemplate)
+    }
+    async function ToCustomMessage(Token, result, messageTemplate) {
+      let actor = Token.actor
+      let templateContext = {
+          Token: Token,
+          score: result,
+          trihns: flavor
+      };
+      let chatData
+      chatData = {
+          user: game.user.id,
+          speaker: ChatMessage.getSpeaker({actor}),
+          content: await renderTemplate(messageTemplate, templateContext),
+          sound: CONFIG.sounds.notification,
+          type: CONST.CHAT_MESSAGE_TYPES.OTHER
+      }
+      ChatMessage.create(chatData);
+    }
+  }
+
+
+
+  async function GetPuiserOptions({
+    domain = null,
+    diceList = null, 
+    choix = {},
+    result = null,
+    template = "systems/shaanrenaissance/templates/chat/puiserNecrose-dialog.hbs" } = {}) {
+        const html = await renderTemplate(template, {domain, choix, result})
+        const puiserData = {
+            diceList: diceList,
+            choix: choix
+        }
+
+    return new Promise(resolve => {
+        const data = {
+            title: game.i18n.format("chat.puiser.title"),
+            content: html,
+            data: puiserData,
+            buttons: {
+                normal: {
+                    label: game.i18n.localize("chat.actions.puiser"),
+                    callback: html => resolve(_processPuiserOptions(html[0].querySelector("form")))
+                  },
+                  cancel: {
+                    label: game.i18n.localize("chat.actions.cancel"),
+                    callback: html => resolve({ cancelled: true })
+                  }                   
+            },
+            default: "normal",
+            close: () => resolve({ cancelled: true })
+        };
+        new Dialog(data, null).render(true);
+    })
+  }
+  function _processPuiserOptions(form) {
+    let checked = form.querySelector('input:checked');
+    if(checked){
+      let div = checked.closest('div')
+      let checkedId = $(checked)[0].id
+      let flavor = {}
+      if(checkedId == "choix1" || checkedId == "choix2") {
+          flavor.flavor1 = div.querySelector('b').dataset.flavor
+      }
+      return {
+          result: Number(form.result?.value) ,
+          flavor: flavor
+      }
+    }
+    else{
+      ui.notifications.warn("Vous devez faire un choix.")
+    }
+  }   
+}
 export const hideChatPuiserButtons = function (message, html, data) {
   const chatCard = html.find('.chat-card');
   if(chatCard.length > 0) {

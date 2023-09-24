@@ -41,12 +41,16 @@
     </div>
     {{/ifnoteq}}
     </div>
+    {{log @root}}
+    {{#ifeq @root.race "Humain"}}
+    <button class="puiser-necrose">Puiser</button>
+    {{/ifeq}}
     <hr/>
     <div class="domainInfos">
-      <span>{{localize "chat.domainTest.options.domain"}} {{roll.data.domain}} - <b>{{roll.data.domainLevel}}</b></span>
+      <span>{{localize "chat.domainTest.options.domain"}} {{roll.data.domain}} - <b class="domain">{{roll.data.domainLevel}}</b></span>
       <span>{{localize "chat.domainTest.options.spécialisation"}} {{localize roll.data.spécialisation}}</span>
-      <span>{{localize "chat.domainTest.options.bonus"}}: {{#ifeq roll.data.spéBonus null}}+ 0{{/ifeq}}{{#if roll.data.spéBonus }}+ <b>{{roll.data.spéBonus}}</b>{{/if}}</span>
-      <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ <b>{{roll.data.spéAcquis }}</b>{{/if}}</span>
+      <span>{{localize "chat.domainTest.options.bonus"}}: {{#ifeq roll.data.spéBonus null}}+ 0{{/ifeq}}{{#if roll.data.spéBonus }}+ <b class="spéBonus">{{roll.data.spéBonus}}</b>{{/if}}</span>
+      <span>{{localize "chat.domainTest.options.acquis"}}: {{#ifeq roll.data.spéAcquis null}}+ 0{{/ifeq}}{{#if roll.data.spéAcquis}}+ <b class="acquisBonus">{{roll.data.spéAcquis }}</b>{{/if}}</span>
       {{#if roll.data.difficulty}}
         <span>{{localize "chat.domainTest.options.difficulty"}} {{roll.data.difficulty}}</span>
       {{/if}}
