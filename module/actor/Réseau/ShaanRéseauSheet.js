@@ -379,22 +379,73 @@ export default class ShaanRéseauSheet extends ActorSheet {
             const magicTrihnBtn = event.target.closest("#MagicTrihn-add")
             const graftAddBtn = event.target.closest("#graft-add")
     
-            if(magicTrihnBtn) {
+                if(magicTrihnBtn) {
+                trihnCreate({
+                    actor,
+                })
+                
+        
+                async function trihnCreate ({
+                    actor = null,
+                    trihn = null, 
+                    puissance = null
+                } = {}) {
+                    
+                const actorData = actor ? actor.system : null;
+                let checkOptions = await GetPouvoirOptions ({trihn, puissance})
+        
+                if (checkOptions.cancelled) {
+                    return;
+                }
+        
+                trihn = checkOptions.trihn,
+                puissance = checkOptions.puissance
+                
                 let itemData = {
-                    name: "Trihn",
-                    type: "Trihn",
-                    item: {
-                        system: {
-                            trihnType: null,
-                            puissance: null,
-                            emplacement: null,
-                            pouvoir: {
-                                value: null
-                            }
+                name: `${trihn}`,
+                type: "Trihn",
+                system: {trihnType: trihn, puissance: puissance, emplacement: "Transit"}
+                };
+                return actor.createEmbeddedDocuments("Item", [itemData]);
+        
+                async function GetPouvoirOptions({
+                    type = null,
+                    puissance = null,
+                    template = "systems/shaanrenaissance/templates/dialogs/createTrihn-dialog.hbs"} = {}) {
+                        const actorData = actor.toObject(!1);
+                        actorData.pouvoirTypes = {
+                            Esprit: {}, Ame: {}, Corps: {}, "Anti-Âme": {} 
+                        }
+                        const html = await renderTemplate(template, { actor, trihn , puissance, config: CONFIG.shaanRenaissance });
+        
+                        return new Promise(resolve => {
+                            const data = {
+                                title: game.i18n.format("Création de Trihn"),
+                                content: html,
+                                actor: actorData,
+                                buttons: {
+                                    normal: {
+                                    label: game.i18n.localize("chat.actions.create"),
+                                    callback: html => resolve(_processAcquisCreateOptions(html[0].querySelector("form")))
+                                    },
+                                    cancel: {
+                                    label: game.i18n.localize("chat.actions.cancel"),
+                                    callback: html => resolve({ cancelled: true })
+                                    }
+                                },
+                                default: "normal",
+                                close: () => resolve({ cancelled: true }),
+                                };
+                                new Dialog(data,null).render(true);
+                            });
+                    }
+                    function _processAcquisCreateOptions(form) {
+                        return {
+                        trihn: form.trihn?.value,
+                        puissance: form.puissance?.value
                         }
                     }
                 }
-                return this.actor.createEmbeddedDocuments("Item", [itemData]);
             }
             this.actor.sheet.render();
                 

@@ -56,6 +56,14 @@ shaanRenaissance.createPouvoir = {
         "Tactique de Combat":"Tactique de Combat",
     }
 }
+shaanRenaissance.createTrihn = {
+    type: {
+        Esprit:"Esprit",
+        Ame:"Âme",
+        Corps:"Corps",
+        "Anti-Âme":"Anti-Âme"
+    }
+}
 shaanRenaissance.pouvoirs = {
     trihns: {
         esprit: "Esprit",
