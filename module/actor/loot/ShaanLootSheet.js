@@ -174,14 +174,19 @@ export default class ShaanLootSheetSR extends ActorSheet {
         } else ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"))
     }
     async _onBuyAcquis(event){
-        const LootActorID = this.actor._id
+        let LootActoruuID = this.actor.uuid
+        console.log(this.actor)
+        if(this.actor.isToken){
+            LootActoruuID = this.actor.token.uuid
+        }
         const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]);
         const itemID = event.currentTarget.closest(".item").dataset.itemId,
-        item = await this.getAcquisItem(itemID, LootActorID);
+        item = await this.getAcquisItem(itemID, LootActoruuID);
         console.log(item)
         if (0 === actors.length) return void ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"));
             let purchasesSucceeded = 0;
-            for (const actor of actors) await actor.inventory.removeCoins(Number(item.system.price.replace("crédos", ""))), purchasesSucceeded += 1, await this.actor.inventory.addCoins(Number(item.system.price.replace("crédos", ""))), await actor.createEmbeddedDocuments("Item", [item.toObject()]);
+            console.log(item)
+            for (const actor of actors) await actor.inventory.removeCoins(Number(item.system.price)), purchasesSucceeded += 1, await this.actor.inventory.addCoins(Number(item.system.price)), await actor.createEmbeddedDocuments("Item", [item.toObject()]);
             1 === actors.length ? 1 === purchasesSucceeded ? ui.notifications.info(game.i18n.format("SR.CompendiumBrowser.BoughtItemWithCharacter", {
                 item: item.name,
                 character: actors[0].name
@@ -196,12 +201,8 @@ export default class ShaanLootSheetSR extends ActorSheet {
             return this.actor.deleteEmbeddedDocuments("Item", [itemID])
     }
     async getAcquisItem(itemID, actor) {
-        let uuidActor = "Actor.",
-        uuidItem = ".Item.";
-        uuidActor = uuidActor.concat(actor)
-        uuidActor = uuidActor.concat(uuidItem)
-        uuidActor = uuidActor.concat(itemID)
-        const item = await fromUuid(uuidActor);
+        const item = await fromUuid(`${actor}.Item.${itemID}`);
+        console.log(item)
         if (!(item instanceof ItemSR)) return ui.notifications.warn("Unexpected failure retrieving compendium item");
         return item
     } 
