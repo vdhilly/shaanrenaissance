@@ -1739,14 +1739,20 @@ a.spéTest label, a.spéTestNécr label {
     grid-template-rows: 1fr;
     background-color: rgba(28, 28, 28, .1);
     padding: 0.5em;
-    height: 25px;
+    height: 32px;
     align-content: center;
     justify-items: center;
 }
-.actor.sheet .tab.magic ol li .trihn-type, .actor.sheet .tab.magic ol li .trihn-puissance, .actor.sheet .tab.magic ol li .trihn-emplacement {
+.actor.sheet .tab.magic ol li .trihn-type, .actor.sheet .tab.magic ol li .trihn-puissance, .actor.sheet .tab.magic ol li .trihn-emplacement, .actor.sheet .tab.magic ol li .item-controls {
     margin-right: 1px;
     padding: 1px;
     font: 700 var(--font-size-14) var(--body-serif);
+    display: flex;
+    align-items: center;
+}
+.actor.sheet .tab.magic ol li .trihn-type {
+    justify-self: start;
+    margin-left: 25px;
 }
 
 .actor.sheet .tab.magic textarea {

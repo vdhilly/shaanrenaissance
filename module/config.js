@@ -2,6 +2,8 @@ import { ActorSR } from "./actor/ActorSR.js";
 import { LootSR } from "./actor/loot/LootSR.js";
 import { ItemSR } from "./item/ItemSR.js";
 import { ConditionSR } from "./item/condition/document.js";
+import { domainTest, necroseTest } from "./jets/dice.js"
+import { getSelectedOrOwnActors } from "./utils/utils.js";
 
 export const shaanRenaissance = {};
 
@@ -14,6 +16,36 @@ shaanRenaissance.Actor = {
         Créature: ActorSR,
         PNJ: ActorSR
     }
+}
+shaanRenaissance.Item = {
+    documentClasses: {
+        Armement: ItemSR,
+        Artefact: ItemSR,
+        Armimale: ItemSR,
+        Manuscrit: ItemSR,
+        Outil: ItemSR,
+        Protection: ItemSR,
+        Relation: ItemSR,
+        Richesse: ItemSR,
+        Technologie: ItemSR,
+        Transport: ItemSR,
+        Bâtiment: ItemSR,
+        Trihn: ItemSR,
+        Pouvoir: ItemSR,
+        Race: ItemSR,
+        Peuple: ItemSR,
+        Caste: ItemSR,
+        Métier: ItemSR,
+        condition: ConditionSR
+    }
+}
+shaanRenaissance.macros = {
+    domainTest: domainTest,
+    necroseTest: necroseTest
+}
+shaanRenaissance.utils = {
+    getSelectedOrOwnActors: getSelectedOrOwnActors
+}
 shaanRenaissance.tokenHUDStatuses = {
     deafened: "SR.ConditionTypeDeafened",
     blinded: "SR.ConditionTypeBlinded",
