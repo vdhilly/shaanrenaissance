@@ -28,7 +28,7 @@
     "maximum": "11"
   },
   "esmodules": [
-    "shaanRenaissance.js"
+    "scripts/shaanRenaissance.js"
   ],
   "scripts": [
     "greensock/dist/gsap.min.js",
