@@ -517,7 +517,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
             let itemData = {
               name: `${trihn}`,
               type: "Trihn",
-              system: {trihnType: trihn, puissance: puissance, emplacement: "Transit"}
+              system: {trihnType: trihn, puissance: puissance, emplacement: "Transit"},
+              img: `systems/shaanrenaissance/assets/icons/trihns/${trihn}.webp`
             };
             return actor.createEmbeddedDocuments("Item", [itemData]);
     
