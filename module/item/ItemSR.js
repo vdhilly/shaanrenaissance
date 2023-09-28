@@ -1,6 +1,9 @@
 import { setHasElement, PHYSICAL_ITEM_TYPES, ErrorSR, isItemSystemData } from "../utils/utils.js";
 
 export class ItemSR extends Item {
+    get slug() {
+        return this.system.slug
+    }
     isOfType(...types) {
         return types.some((t => "physical" === t ? (0, setHasElement)(PHYSICAL_ITEM_TYPES, this.type) : this.type === t))
     }
@@ -39,3 +42,6 @@ export class ItemSR extends Item {
         return game.system.documentTypes.Item = original, newItem
     }
 }
+export const ItemProxySR = new Proxy(ItemSR, {
+    construct: (_target, args) => new CONFIG.shaanRenaissance.Item.documentClasses[args[0].type](...args)
+});

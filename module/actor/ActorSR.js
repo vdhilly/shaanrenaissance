@@ -1,11 +1,16 @@
 import {tupleHasValue, CHARACTER_ACTOR_TYPES, CHARACTER_SHEET_TABS, ErrorSR} from "../utils/utils.js"
 import { ActorInventory } from "./Inventory/ActorInventory.js";
+import { ActorConditions } from "./conditions.js";
 export class ActorSR extends Actor {
   get hasPlayerOwner() {
     return game.users.some(u => !u.isGM && this.testUserPermission(u, "OWNER"));
   }
   isOfType(...types) {
     return types.some((t => "character" === t ? (0, tupleHasValue)(CHARACTER_ACTOR_TYPES, this.type) : this.type === t))
+  }
+  _initialize() {
+    super._initialize();
+    this.conditions = new ActorConditions();
   }
   prepareBaseData() {
     var _a, _b, _c, _d, _e, _f, _g;
