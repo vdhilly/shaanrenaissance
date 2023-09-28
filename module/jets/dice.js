@@ -287,6 +287,7 @@ export async function domainTest ({
         difficulty = 0,
         template = "systems/shaanrenaissance/templates/chat/domainTest-dialog.hbs" } = {}) {
         const html = await renderTemplate(template, { actor, domain, spécialisation, difficulty });
+        console.log(actor)
         const actorData = actor.toObject(!1);
           const config = CONFIG.shaanRenaissance;
 
