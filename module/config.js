@@ -1,5 +1,7 @@
 import { ActorSR } from "./actor/ActorSR.js";
 import { LootSR } from "./actor/loot/LootSR.js";
+import { ItemSR } from "./item/ItemSR.js";
+import { ConditionSR } from "./item/condition/document.js";
 
 export const shaanRenaissance = {};
 
@@ -12,8 +14,29 @@ shaanRenaissance.Actor = {
         Créature: ActorSR,
         PNJ: ActorSR
     }
+shaanRenaissance.tokenHUDStatuses = {
+    deafened: "SR.ConditionTypeDeafened",
+    blinded: "SR.ConditionTypeBlinded",
+    stunned: "SR.ConditionTypeStunned",
+    obscurity: "SR.ConditionTypeObscurity",
+    weakened: "SR.ConditionTypeWeakened",
+    dazzled: "SR.ConditionTypeDazzled",
+    muted: "SR.ConditionTypeMuted",
+    dominated: "SR.ConditionTypeDominated",
+    slowed: "SR.ConditionTypeSlowed",
+    bewitched: "SR.ConditionTypeBewitched",
+    paralysed: "SR.ConditionTypeParalysed",
+    unconscious: "SR.ConditionTypeUnconscious",
+    advantaged: "SR.ConditionTypeAdvantaged",
+    protected: "SR.ConditionTypeProtected",
+    invisible: "SR.ConditionTypeInvisible",
+    prone: "SR.ConditionTypeProne"
+}
+shaanRenaissance.statusEffects = {
+    IconTheme: "default",
+    iconDir: "systems/shaan/icons/conditions/",
+    conditions: shaanRenaissance.tokenHUDStatuses
 },
-
 shaanRenaissance.SRdomains = {
     Shaan: "Shaan",
     Technique: "Technique",

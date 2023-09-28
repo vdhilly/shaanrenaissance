@@ -933,7 +933,8 @@
             "Race",
             "Peuple",
             "Caste", 
-            "Métier"
+            "Métier",
+            "condition"
         ],
         "templates": {
             "common": {
@@ -1609,6 +1610,19 @@
             "resume":"",
             "ressources":"",
             "fabrication":""
+        },
+        "condition": {
+            "templates": [
+                "common"
+            ],
+            "duration": {
+                "value":0
+            },
+            "references": {
+                "children":[],
+                "overrides":[],
+                "overriddenBy":[]
+            }
         }
 
     }}
