@@ -12,10 +12,13 @@ export default class ShaanRActorsSheet extends ActorSheet {
     static get defaultOptions() {
         const options = super.defaultOptions;
         return options.classes = [...options.classes, "character"], options.width = 750, options.height = 800, options.scrollY.push(".sheet-body"), options.tabs = [{
-
             navSelector: ".sheet-navigation",
             contentSelector: ".sheet-content",
             initial: "character"
+        }, {
+            navSelector: ".magic-navigation",
+            contentSelector: ".magic-content",
+            initial: "schemes"
         }], options
     }
     get template(){

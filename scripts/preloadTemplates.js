@@ -29,6 +29,7 @@
         "systems/shaanrenaissance/templates/actors/partials/acquis-categories.hbs",
         "systems/shaanrenaissance/templates/actors/partials/pouvoirs-categories.hbs",
         "systems/shaanrenaissance/templates/actors/partials/coinage.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/trihns-invoques.hbs",
   
         // NPC
         "systems/shaanrenaissance/templates/actors/PNJ/partials/cercle.hbs",

@@ -1,53 +1,29 @@
 <div class="tab magic" data-group="primary" data-tab="magic">
     <div class="trihns-list">
-            <div class="category-header">
-                <h3 class="item-name">{{localize "SRLabels.SummonedTrihns"}}</h3>
-                {{#ifeq @root.editable true}}
-                    <div class="item-controls">
-                        <a class="item-control item-create"><i class="fas fa-fw fa-plus" id="MagicTrihn-add"></i></a>
-                    </div>
-                {{/ifeq}}
-            </div>
-            <ol class="item-list liste-items liste-item">
-                <li>
-                    <label class="details-label">{{localize "SRLabels.TrihnType"}}</label>
-                    <label class="details-label">{{localize "SRLabels.Puissance"}}</label>
-                    <label class="details-label">{{localize "SRLabels.Emplacement"}}</label>
-                </li>
-                {{#each SummonedTrihns as |trihn id|}}
-                <li class="item trihn" draggable="true" data-item-id="{{trihn._id}}">
-                    <span class="trihn-type">
-                        <img src="{{trihn.img}}" style="margin-right: 5px; width:32px;border:none;">
-                        {{system.trihnType}}
-                    </span>
-                    <span class="trihn-puissance">
-                        {{system.puissance}}
-                    </span>
-                    <span class="trihn-emplacement">
-                        {{system.emplacement}}
-                    </span>
-                    <div class="item-controls">
-                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
-                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
-                    </div>   
-                </li>
-                {{/each}}
-            </ol>
-            <div class="schemes">
-                <label class="details-label" for="{{options.id}}-Magic-schemes">{{localize "SRLabels.Schemes"}}</label>
-                {{editor enrichedSchemes target="system.Magic.schèmes" button=true owner=owner editable=editable
-                engine="prosemirror"}}
-            </div>
-            <div class="alchimie">
-                <label class="details-label" for="{{options.id}}-Magic-alchimie">{{localize "SRLabels.Alchimie"}}</label>
-                {{editor enrichedAlchemy target="system.Magic.alchimie" button=true owner=owner editable=editable
-                engine="prosemirror"}}
-            </div>
-            <div class="enchantement">
-                <label class="details-label" for="{{options.id}}-Magic-enchantement">{{localize "SRLabels.Enchantement"}}</label>
-                {{editor enrichedEnchants target="system.Magic.enchantement" button=true owner=owner editable=editable
-                engine="prosemirror"}}
-            </div>
+            <nav class="magic-navigation" data-group="magic">
+                <a class="item" data-tab="schemes">{{localize "SRLabels.Schemes"}}</a>
+                <a class="item" data-tab="alchimie">{{localize "SRLabels.Alchimie"}}</a>
+                <a class="item" data-tab="enchantement">{{localize "SRLabels.Enchantement"}}</a>
+            </nav>
+            <section class="magic-content">
+                <div class="tab schemes" data-group="magic" data-tab="schemes">
+                    {{> "systems/shaanrenaissance/templates/actors/partials/trihns-invoques.hbs"}}
+                    <label class="details-label" for="{{options.id}}-Magic-schemes">{{localize "SRLabels.Schemes"}}</label>
+                    {{editor enrichedSchemes target="system.Magic.schèmes" button=true owner=owner editable=editable
+                    engine="prosemirror"}}
+                </div>
+                <div class="tab alchimie" data-group="magic" data-tab="alchimie">
+                    <label class="details-label" for="{{options.id}}-Magic-alchimie">{{localize "SRLabels.Alchimie"}}</label>
+                    {{editor enrichedAlchemy target="system.Magic.alchimie" button=true owner=owner editable=editable
+                    engine="prosemirror"}}
+                </div>
+                <div class="tab enchantement" data-group="magic" data-tab="enchantement">
+                    {{> "systems/shaanrenaissance/templates/actors/partials/trihns-invoques.hbs"}}
+                    <label class="details-label" for="{{options.id}}-Magic-enchantement">{{localize "SRLabels.Enchantement"}}</label>
+                    {{editor enrichedEnchants target="system.Magic.enchantement" button=true owner=owner editable=editable
+                    engine="prosemirror"}}
+                </div>
+            </section>
         </div>
     </div>
 </div>
