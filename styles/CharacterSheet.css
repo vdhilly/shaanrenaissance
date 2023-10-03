@@ -1048,7 +1048,6 @@ h3 {
     display: inline-block
 }
 .actor.sheet.character .sheet-body .sheet-content nav:after, .actor.sheet.character .sheet-body .sheet-content nav:before {
-    background: url(../assets/sheet/sub-nav-decoration.png);
     content: "";
     height: 16px;
     margin: 0 16px;
@@ -1785,6 +1784,28 @@ a.spéTest label, a.spéTestNécr label {
     font-family: var(--sans-serif);
     font-size: var(--font-size-12);
     position: relative;
+}
+.actor.sheet .tab.magic nav a.active::after {
+    bottom: -2px;
+    right: 39%;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid var(--sidebar-label);
+}
+.actor.sheet .tab.magic nav a[data-tab="enchantement"].active::after {
+    bottom: -2px;
+    right: 45%;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid var(--sidebar-label);
 }
 
 /* ACTOR TAB CHARACTER ACQUIS */

@@ -1,4 +1,5 @@
 import { ActorSR } from "./actor/ActorSR.js";
+import { PersonnageSR } from "./actor/Personnage/PersonnageSR.js";
 import { LootSR } from "./actor/loot/LootSR.js";
 import { ItemSR } from "./item/ItemSR.js";
 import { ConditionSR } from "./item/condition/document.js";
@@ -9,7 +10,7 @@ export const shaanRenaissance = {};
 
 shaanRenaissance.Actor = {
     documentClasses: {
-        Personnage: ActorSR,
+        Personnage: PersonnageSR,
         Loot: LootSR,
         Shaani: ActorSR,
         Réseau: ActorSR,

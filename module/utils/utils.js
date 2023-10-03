@@ -90,6 +90,7 @@ export function fontAwesomeIcon(glyph, {
 export const PHYSICAL_ITEM_TYPES = new Set(["Armement", "Armimale", "Artefact", "Manuscrit", "Outil", "Protection", "Relation", "Richesse", "Technologie", "Transport", "Bâtiment"]);
 export const CHARACTER_ACTOR_TYPES = ["Personnage","PNJ","Shaani","Créature","Réseau"];
 export const CHARACTER_SHEET_TABS = ["character", "powers", "symbioses", "details","morphe", "magic", "acquis", "biography"]
+export const CHARACTER_SCHEMES = {element: ["moi", "lui", "eau", "terre", "animal", "vegetal", "air", "feu", "objet", "limbes"], action: ["controle", "deplacement", "non-perception", "mutation", "perception"], cles: ["comme", "dans", "sur", "de", "en"], adjectifs: {frequence: ["1", "2", "3", "4"], portee: ["1", "2", "3", "4"], duree: ["1", "2", "3", "4"], cibles: ["1", "2", "3", "4"]} }
 
 export function isItemSystemData(data) {
     return (0, isObject)(data) && (0, isObject)(data.description) && "string" == typeof data.description.value && Array.isArray(data.rules) && (null === data.slug || "string" == typeof data.slug)
