@@ -186,7 +186,15 @@ export default class ShaanLootSheetSR extends ActorSheet {
         if (0 === actors.length) return void ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"));
             let purchasesSucceeded = 0;
             console.log(item)
-            for (const actor of actors) await actor.inventory.removeCoins(Number(item.system.price)), purchasesSucceeded += 1, await this.actor.inventory.addCoins(Number(item.system.price)), await actor.createEmbeddedDocuments("Item", [item.toObject()]);
+            for (const actor of actors) {
+                if(actor.system.attributes.crédos - item.system.acquis.valeur < 0) {
+                    return ui.notifications.warn("Vous ne pouvez pas vous permettre cet achat.")
+                }
+                else {
+                    await actor.inventory.removeCoins(Number(item.system.acquis.valeur)), purchasesSucceeded += 1; 
+                    await this.actor.inventory.addCoins(Number(item.system.acquis.valeur)), await actor.createEmbeddedDocuments("Item", [item.toObject()]);
+                }
+            }
             1 === actors.length ? 1 === purchasesSucceeded ? ui.notifications.info(game.i18n.format("SR.CompendiumBrowser.BoughtItemWithCharacter", {
                 item: item.name,
                 character: actors[0].name

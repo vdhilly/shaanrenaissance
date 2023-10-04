@@ -12,8 +12,9 @@ export class ActorInventory extends Collection {
     async removeCoins(coins){
         const actor = this.actor
         const credos = Number(actor.system.attributes.crédos)
-        this.actor.update({
-            "system.attributes.crédos": Number(credos - coins)
-        })
+        console.log(credos, coins,credos - coins)
+            this.actor.update({
+                "system.attributes.crédos": Number(credos - coins)
+            })
     }
 }
