@@ -929,7 +929,7 @@ h3 {
   }
 .actor.sheet.character .sidebar input[type="checkbox"]:checked::before {
     transform: scale(1);
-  }
+}
 /* CHARACTER CONTENT */
 .actor.sheet.character .content {
     float: right;
@@ -1806,6 +1806,33 @@ a.spéTest label, a.spéTestNécr label {
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
     border-top: 4px solid var(--sidebar-label);
+}
+
+/* SCHEMES */
+.actor.sheet .tab.magic .schemes-elementaires {
+    display: flex;
+    flex-direction: column;
+} 
+.actor.sheet .tab.magic .tab.schemes .schemes-container {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.actor.sheet .tab.magic .tab.schemes .schemes-container label {
+    display:flex;
+    width: 124px;
+    filter: grayscale(90%);
+    cursor:pointer;
+}
+.actor.sheet .tab.magic .tab.schemes .schemes-container label.checked {
+    filter: none;
+}
+.actor.sheet .tab.magic img {
+    border: none;
+}
+.actor.sheet .tab.magic input {
+    display: none;
 }
 
 /* ACTOR TAB CHARACTER ACQUIS */

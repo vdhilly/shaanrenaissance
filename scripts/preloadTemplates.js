@@ -30,6 +30,7 @@
         "systems/shaanrenaissance/templates/actors/partials/pouvoirs-categories.hbs",
         "systems/shaanrenaissance/templates/actors/partials/coinage.hbs",
         "systems/shaanrenaissance/templates/actors/partials/trihns-invoques.hbs",
+        "systems/shaanrenaissance/templates/actors/partials/schemes.hbs",
   
         // NPC
         "systems/shaanrenaissance/templates/actors/PNJ/partials/cercle.hbs",

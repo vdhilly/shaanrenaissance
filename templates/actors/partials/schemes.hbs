@@ -1,0 +1,72 @@
+<section class="schemes-elementaires">
+    <h3>SCHÈMES ÉLÉMENTAIRES</h3>
+    <div class="schemes-container">
+    {{#each flags.shaanRenaissance.schemes.element as |element|}}
+    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.element.{{@key}}.learned" {{checked element.learned}} {{#ifeq element.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+    <label id="scheme_label" for="{{@key}}" class="{{#if element.learned}}checked{{/if}}" title="{{localize @key}}" ><img src="systems/shaanrenaissance/icons/schemes/scheme-{{@key}}.png" /></label>
+    {{/each}}
+    </div>
+</section>
+<section class="schemes-actions">
+    <h3>SCHÈMES D'ACTIONS</h3>
+    <div class="schemes-container">
+    {{#each flags.shaanRenaissance.schemes.action as |action|}}
+    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.action.{{@key}}.learned" {{checked action.learned}}/>
+    <label id="scheme_label" for="{{@key}}" class="{{#if action.learned}}checked{{/if}}" title="{{localize @key}}"><img src="systems/shaanrenaissance/icons/schemes/scheme-{{@key}}.png" /></label>
+    {{/each}}
+    </div>
+</section>
+<section class="schemes-clés">
+    <h3>SCHÈMES CLÉS</h3>
+    <div class="schemes-container">
+    {{#each flags.shaanRenaissance.schemes.cles as |cles|}}
+    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.cles.{{@key}}.learned" {{checked cles.learned}} disabled/>
+    <label id="scheme_label" for="{{@key}}" class="{{#if cles.learned}}checked{{/if}}" title="{{localize @key}}"><img src="systems/shaanrenaissance/icons/schemes/scheme-{{@key}}.png" /></label>
+    {{/each}}
+    </div>
+</section>
+<section class="schemes-adjectifs">
+    <section class="schemes-frequence">
+        <h3>SCHÈMES DE FREQUENCES</h3>
+        <div class="schemes-container">
+        {{#each flags.shaanRenaissance.schemes.frequence as |frequence|}}
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.frequence.{{@key}}.learned" {{checked frequence.learned}} {{#ifeq @key "frequence1"}}disabled{{/ifeq}} {{#ifeq frequence.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+        <label id="scheme_label" for="{{@key}}" class="{{#if frequence.learned}}checked{{/if}}" title="{{localize @key}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
+        {{/each}}
+        </div>
+    </section>
+    <section class="schemes-portee">
+        <h3>SCHÈMES DE PORTÉES</h3>
+        <div class="schemes-container">
+        {{#each flags.shaanRenaissance.schemes.portee as |portee|}}
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.portee.{{@key}}.learned" {{checked portee.learned}} {{#ifeq @key "contact"}}disabled{{/ifeq}} {{#ifeq portee.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}} />
+        <label id="scheme_label" id="scheme_{{@key}}" for="{{@key}}" class="{{#if portee.learned}}checked{{/if}}" title="{{localize @key}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
+        {{/each}}
+        </div>
+    </section>
+    <section class="schemes-duree">
+        <h3>SCHÈMES DE DURÉES</h3>
+        <div class="schemes-container">
+        {{#each flags.shaanRenaissance.schemes.duree as |duree|}}
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.duree.{{@key}}.learned" {{checked duree.learned}} {{#ifeq @key "duree1"}}disabled{{/ifeq}} {{#ifeq duree.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+        <label id="scheme_label" for="{{@key}}" class="{{#if duree.learned}}checked{{/if}}" title="{{localize @key}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
+        {{/each}}
+        </div>
+    </section>
+    <section class="schemes-cibles">
+        <h3>SCHÈMES DE CIBLES</h3>
+        <div class="schemes-container">
+        {{#each flags.shaanRenaissance.schemes.cibles as |cibles|}}
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.cibles.{{@key}}.learned" {{checked cibles.learned}} {{#ifeq @key "cibles1"}}disabled{{/ifeq}} {{#ifeq cibles.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+        <label id="scheme_label" for="{{@key}}" class="{{#if cibles.learned}}checked{{/if}}" title="{{localize @key}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
+        {{/each}}
+        </div>
+    </section>
+</section>
+<input style="display: hidden" value="{{flags.shaanRenaissance.schemes.domaine}}">
+<input style="display: hidden" value="{{flags.shaanRenaissance.schemes.bonusSpe}}">
+<input style="display: hidden" value="{{flags.shaanRenaissance.schemes.maitrise}}">
+
+<label class="details-label" for="{{options.id}}-Magic-schemes">{{localize "SRLabels.Schemes"}}</label>
+{{editor enrichedSchemes target="system.Magic.schèmes" button=true owner=owner editable=editable
+engine="prosemirror"}}
