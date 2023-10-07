@@ -201,6 +201,9 @@ export default class ShaanRActorsSheet extends ActorSheet {
         sheetData.enrichedAlchemy = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.alchimie"), {async: true})
         sheetData.enrichedEnchants = await TextEditor.enrichHTML(getProperty(this.actor.system, "Magic.enchantement"), {async: true})
 
+        if(sheetData.actor.system.skills){
+        this.SchemesSystem(sheetData)
+        }
         sheetData.tabVisibility = deepClone(this.actor.flags.shaanRenaissance.sheetTabs)
         console.log(sheetData);
         return sheetData;
@@ -298,7 +301,62 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 }])
             }
         }))
+        const scheme = html.find(".scheme[type=checkbox]")
+        scheme.on("change")
         PersonnageSheetTabManager.initialize(this.actor, html.find("a[data-action=manage-tabs]")[0]);
+    }
+    SchemesSystem(sheetData){
+        let actor = sheetData.actor
+        const schemes =  actor.flags.shaanRenaissance.schemes
+
+        const schemes_action = schemes.action
+        const schemes_element = schemes.element
+        const schemes_cles = schemes.cles
+        const schemes_duree = schemes.duree
+        const schemes_portee = schemes.portee
+        const schemes_cibles = schemes.cibles
+        const schemes_frequence = schemes.frequence
+        schemes.bonusSpe = actor.system.skills.Magie.specialisations.maitrisedesschemes.bonus
+        schemes.domaine = actor.system.skills.Magie.rank
+        const domaine_schemes_count = {
+            ...schemes_duree,
+            ...schemes_portee,
+            ...schemes_cibles,
+            ...schemes_frequence,
+            ...schemes_element
+        }
+        if(actor.system.skills.Magie.rank >= 5 && actor.system.skills.Magie.specialisations.maitrisedesschemes.bonus >= 1 && schemes.maitrise) {
+            let learnedCountDomaine = 0 - 4;
+            for (const key in domaine_schemes_count) {
+                if (domaine_schemes_count.hasOwnProperty(key) && domaine_schemes_count[key].learned === true) {
+                    learnedCountDomaine++;
+                }
+            }
+            schemes.learnedCountDomaine = schemes.domaine - learnedCountDomaine - 4 
+            let learnedCountSpe = 0;
+            for (const key in schemes_action) {
+                if (schemes_action.hasOwnProperty(key) && schemes_action[key].learned === true) {
+                    learnedCountSpe++;
+                }
+            }
+            schemes.learnedCountSpe = schemes.bonusSpe - learnedCountSpe 
+        }
+        console.log(schemes.learnedCountDomaine, schemes.learnedCountSpe)
+        // Passage à Magie 5 et Maitrise des Schèmes +1
+        if((actor.system.skills.Magie.rank >= 5) && (actor.system.skills.Magie.specialisations.maitrisedesschemes.bonus) >= 1 && !schemes.maitrise) {
+            for (const key in schemes_cles) {
+                if (schemes_cles.hasOwnProperty(key)) {
+                    schemes_cles[key].learned = true;
+                }
+            }
+            schemes_duree.duree1.learned = true
+            schemes_frequence.frequence1.learned = true
+            schemes_cibles.cibles1.learned = true
+            schemes_portee.contact.learned = true
+            schemes.maitrise = true
+            console.log(schemes, "OUI")
+        }
+        this.actor.update({"flags.shaanRenaissance.schemes":schemes})
     }
     _onAddCoins(event){
         new AddCoinsPopup(this.actor).render(true);
