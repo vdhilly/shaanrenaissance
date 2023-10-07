@@ -502,13 +502,14 @@ export async function SpéTest ({
   let isSuccess
   if(score > domainLevel){
     isSuccess = false
-    if(rollResult.symbiose == "Réussite"){
-      isSuccess = true
-      score = spéAcquisF + spéBonusF + 10
-    }
     if((spéAcquisF + spéBonusF) > difficulty){
       isSuccess = true
       score = spéAcquisF + spéBonusF
+    }
+    if(rollResult.symbiose == "Réussite"){
+      isSuccess = true
+      score = spéAcquisF + spéBonusF + 10
+      console.log(score)
     }
   } else {
     if(score == 0) {
@@ -523,15 +524,17 @@ export async function SpéTest ({
       score = score + spéAcquisF + spéBonusF
       if(score > difficulty){
         isSuccess = true
-      } else {
-        isSuccess = false
         if(rollResult.symbiose == "Réussite"){
           isSuccess = true
           score = score + 10 
+          console.log(score)
         }
+      } else {
+        isSuccess = false
       }
     }
   }
+  console.log(score)
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
