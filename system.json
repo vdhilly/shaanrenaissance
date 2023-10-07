@@ -46,6 +46,14 @@
   ],
   "packs": [
     {
+      "name": "macros",
+      "label": "Macros",
+      "system": "shaanrenaissance",
+      "path": "packs/macros.db",
+      "type": "Macro",
+      "flags": {}
+    },
+    {
       "name": "pouvoirs",
       "label": "Pouvoirs",
       "system": "shaanrenaissance",
