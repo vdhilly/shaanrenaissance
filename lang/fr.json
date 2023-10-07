@@ -1064,6 +1064,43 @@
             }
         }
     },  
+        "moi": "Magicien qui lance le sort",
+        "lui": "espèces dites intelligentes, c'est à dire les anthéens",
+        "eau": "liquides, mercure, eau de mer, boissons, pluie, etc.",
+        "terre": "terre meuble, pierre, argile, métal brut, etc.",
+        "animal": "insectes, oiseaux, reptiles, poissons, mammifères, etc.",
+        "végétal": "plantes, graines, arbres, fleurs, fruits, légumes, etc.",
+        "air": "oxygène, gaz ou assimilés, etc.",
+        "feu": "brasiers, lave, flammes, éclairs, etc.",
+        "objet": "armes, meubles, outils, ordinateurs, véhicules, etc.",
+        "limbes": "Anti-Âmes et Nécrosiens",
+        "controle": "Contrôle De",
+        "deplacement": "Déplacement Comme ou Sur ou Dans",
+        "non-perception": "Non-Perception De",
+        "mutation": "Mutation En",
+        "perception": "Perception Comme ou De ou En",
+        "comme": "Déplacement et Perception",
+        "dans": "Déplacement",
+        "sur": "Déplacement",
+        "de": "Contrôle, Non-Perception et Perception",
+        "en": "Perception et Mutation",
+        "frequence1": "Schème adjectif Mineur: FRÉQUENCE Puissance 1",
+        "frequence2": "Schème adjectif Mineur: FRÉQUENCE Puissance 2",
+        "frequence3": "Schème adjectif Majeur: FRÉQUENCE Puissance 3",
+        "frequence4": "Schème adjectif Majeur: FRÉQUENCE Puissance 4",
+        "contact": "Schème adjectif Mineur: PORTÉE Puissance 1",
+        "interaction": "Schème adjectif Mineur: PORTÉE Puissance 2",
+        "distance": "Schème adjectif Majeur: PORTÉE Puissance 3",
+        "horizon": "Schème adjectif Majeur: PORTÉE Puissance 4",
+        "duree1": "Schème adjectif Mineur: DURÉE Puissance 1",
+        "duree2": "Schème adjectif Mineur: DURÉE Puissance 2",
+        "duree3": "Schème adjectif Majeur: DURÉE Puissance 3",
+        "duree4": "Schème adjectif Majeur: DURÉE Puissance 4",
+        "cibles1": "Schème adjectif Mineur: NOMBRE DE CIBLES Puissance 1",
+        "cibles2": "Schème adjectif Mineur: NOMBRE DE CIBLES Puissance 2",
+        "cibles3": "Schème adjectif Majeur: NOMBRE DE CIBLES Puissance 3",
+        "cibles4": "Schème adjectif Majeur: NOMBRE DE CIBLES Puissance 4",
+
         "class1": "Classe 1",
         "class2": "Classe 2",
         "class3": "Classe 3",
@@ -1170,90 +1207,6 @@
         "pactenecrotique": "Pacte Nécrotique",
         "GetAcquisOptions": "Création d'Acquis",
         "TypeAcquis": "Type d'Acquis",
-        "langagesecret": {
-                "label": "Langage secret",
-                "cout": "2 PXs",
-                "frequence": "Permanent",
-                "durée": "",
-                "description": "Les membres d'un Shaani développent naturellement une langue inventée qui rassemble les grammaires et les intonations des différentes cultures présentes. Cette langue ne peut être comprise que par eux et ne peut s'enseigner à une personne extérieur tant qu'elle n'a pas rejoint le groupe. Ce langage peut s'écrire de façon codée."
-            },
-            "chaînage": {
-                "label": "Chaînage",
-                "cout": "3 PXs",
-                "frequence": "Permanent",
-                "durée": "",
-                "description": "Un Shaandar peut franchir une porte trihnique en sens inverse si un membre de son Shaani se trouve à moins d'un kilomètre de la porte d'entrée, sans qu'il ait besoin de passer le bras à travers. La Symbiose permet aux Shaandars de ne faire qu'un aux yeux de la Trihnite, et donc de faire revenir le Shaandar qui se trouvait de l'autre côté."
-            },
-            "localisation": {
-                "label": "Localisation",
-                "cout": "4 PXs",
-                "frequence": "Permanent",
-                "durée": "",
-                "description": "Chacun sait à tout instant où se trouvent les autres membres du Shaani, quelle que soit la distance qui les sépare, avec une précision de l'ordre du kilomètre."
-            },
-            "cohésion": {
-                "label": "Cohésion",
-                "cout": "5 PXs",
-                "frequence": "Permanent",
-                "durée": "",
-                "description": "Le niveau de chaque Domaine non-représenté du Shaani est égal au deuxième niveau le plus faible des Shaandars, plutôt qu'au niveau du Domaine le plus faible ."
-            },
-            "complicité": {
-                "label": "Complicité",
-                "cout": "5 PXs",
-                "frequence": "1/Jour",
-                "durée": "",
-                "description": "Un Shaandar peut prêter son niveau de Domaine au Shaani pour une Action, même s'il est absent du groupe."
-            },
-            "perception": {
-                "label": "Perception",
-                "cout": "6 PXs",
-                "frequence": "1/Jour",
-                "durée": "/20 Min",
-                "description": "Chaque Shaandar peut percevoir au travers des sens d'un autre membre du Shaani (vue, ouïe, odorat, toucher, goût) et ressentir les mêmes émotions au même instant. Ce Pouvoir n'est limité par aucun éloignement géographique."
-            },
-            "télépathie": {
-                "label": "Télépathie",
-                "cout": "8 PXs",
-                "frequence": "Permanent",
-                "durée": "",
-                "description": "Les membres du Shaani peuvent établir entre eux une communication mentale (qui ne fait pas usage de la parole). La portée d'une telle communication est de 1000 km. Ainsi, ils peuvent être séparés les uns des autres par un milier de kilomètres et converser comme si de rien n'était. Branchés en permanence les uns aux autres, il peuvent, s'ils le désirent, s'isoler à tout moment pour préserver leur intimité. Lorsque l'un d'eux est en danger ou vient à mourir, les autres en sont immédiatement avertis par un signal mental."
-            },
-            "matérialisation": {
-                "label": "Matérialisation",
-                "cout": "10 PXs",
-                "frequence": "1/Jour",
-                "durée": "/1 Situation",
-                "description": "Cette Symbiose permet de matérialiser sous forme translucide et légèrement bleutée, n'importe quel objet ou équipement appartenant à un membre du Shaani. Elle est en fait la résultante de l'énergie trihnique mise en œuvre par l'inconscient de chaque Shaandar. La forme ectoplasmique dispose de toutes les Capacités de l'objet et s'adapte à la taille de celui qui en bénéficie. C'est ainsi qu'un Kelwin peut disposer de la Protection qu'offre l'armure Darken de son Shaandar combattant préféré. La matérialisation peut aussi s'appliquer aux véhicules. Les légendes relatant la présence de navires fantomatiques bleutés et translucides ne font en fait état que d'une matérialisation d'un Shaandar navigateur ... Il est intéressant de remarquer que la matérialisation peut aussi fonctionner pour soi si tous les Shaandars ont bien connaissance de l'équipement de chacun. Grâce à cela, un guerrier Darken jeté en prison désarmé, peut en fait se révéler tout aussi redoutable que s'il était armé."
-            },
-            "aura": {
-                "label": "Aura",
-                "cout": "12 PXs",
-                "frequence": "1/Jour",
-                "durée": "/1 Situation",
-                "description": "Les membres d'un Shaani peuvent additionner leur niveau de SOCIAL. Pour une Action de groupe, jusqu'à un maximum de 15 en SOCIAL."
-            },
-            "échange": {
-                "label": "Échange",
-                "cout": "14 PXs",
-                "frequence": "1/Jour",
-                "durée": "/1 Situation",
-                "description": " Chaque membre peut échanger avec l'autre son apparence, un Trihn, un Domaine, une Spécialisation, un Pouvoir ou une aptitude particulière. Les Shaandars échangent une seule caractéristique et doivent se toucher pour que l'échange ait lieu. !.'.échange fonctionne toujours dans les deux sens : un Woon qui donne son apparence ou sa valeur en Corps à un Kelwin, recevra en même temps l'apparence ou la valeur en Corps du Kelwin en question."
-            },
-            "Transfert": {
-                "label": "Transfert",
-                "cout": "16 PXs",
-                "frequence": "1/Jour",
-                "durée": "/1 Situation",
-                "description": "Deux membres d'un Shaani peuvent inverser simultanément le contrôle de leurs Corps respectifs en intervertissant leur Esprit et leur Âme. Ainsi, un Delhion prendra le contrôle du Corps d'un Feling et inversement, chacun déplaçant son Esprit et son Âme dans le Corps de l'autre."
-            },
-            "téléportation": {
-                "label": "Téléportation",
-                "cout": "18 PXs",
-                "frequence": "1/Jour",
-                "durée": "",
-                "description": "Deux membres du Shaani peuvent échanger leur place, quelque soit la distance qui les sépare. Un personnage peut également se téléporter au côté d'un membre de son Shaani, s'il le souhaite, sans limitation de distance non plus."
-            },
     "SRreseau": {
         "type": "Type de réseau",
         "NbMembre": "Nombre de membres",
