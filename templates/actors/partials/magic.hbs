@@ -10,9 +10,9 @@
                     {{> "systems/shaanrenaissance/templates/actors/partials/trihns-invoques.hbs"}}
                     {{#if (gte data.skills.Magie.rank 5)}}
                         {{#if (gte data.skills.Magie.specialisations.maitrisedesschemes.bonus 1)}}
-                            {{localize "SRSchemes.SpeLevelTooLow"}}                        
+                            {{> "systems/shaanrenaissance/templates/actors/partials/schemes.hbs"}}
                         {{else}}
-                            Votre bonus de spécialisation de Maîtrise des Schèmes doit être supérieur ou égal à 1
+                             {{localize "SRSchemes.SpeLevelTooLow"}}
                         {{/if}}
                     {{else}} 
                         {{localize "SRSchemes.DomaineLevelTooLow"}}

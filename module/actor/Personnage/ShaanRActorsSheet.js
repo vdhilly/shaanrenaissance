@@ -571,7 +571,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
             if (checkOptions.cancelled) {
                 return;
             }
-    
             trihn = checkOptions.trihn,
             puissance = checkOptions.puissance
             
@@ -595,7 +594,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
     
                     return new Promise(resolve => {
                         const data = {
-                            title: game.i18n.format("Création de Trihn"),
+                            title: game.i18n.format("Invocation de Trihn"),
                             content: html,
                             actor: actorData,
                             buttons: {
