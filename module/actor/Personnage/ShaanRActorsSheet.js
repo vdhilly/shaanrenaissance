@@ -325,6 +325,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
             ...schemes_frequence,
             ...schemes_element
         }
+        // Décompte des schèmes apprenables en fonction du Domaine et de la Spé
         if(actor.system.skills.Magie.rank >= 5 && actor.system.skills.Magie.specialisations.maitrisedesschemes.bonus >= 1 && schemes.maitrise) {
             let learnedCountDomaine = 0 - 4;
             for (const key in domaine_schemes_count) {
@@ -341,7 +342,6 @@ export default class ShaanRActorsSheet extends ActorSheet {
             }
             schemes.learnedCountSpe = schemes.bonusSpe - learnedCountSpe 
         }
-        console.log(schemes.learnedCountDomaine, schemes.learnedCountSpe)
         // Passage à Magie 5 et Maitrise des Schèmes +1
         if((actor.system.skills.Magie.rank >= 5) && (actor.system.skills.Magie.specialisations.maitrisedesschemes.bonus) >= 1 && !schemes.maitrise) {
             for (const key in schemes_cles) {
