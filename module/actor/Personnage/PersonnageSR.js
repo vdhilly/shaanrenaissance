@@ -2,9 +2,6 @@ import { CHARACTER_SCHEMES } from "../../utils/utils.js";
 import { ActorSR } from "../ActorSR.js";
 
 export class PersonnageSR extends ActorSR {
-    constructor() {
-      super(...arguments)
-    }
     prepareBaseData() {
       var _a, _b
       super.prepareBaseData();
