@@ -1102,7 +1102,20 @@
             "cibles2": "Schème adjectif Mineur: NOMBRE DE CIBLES Puissance 2",
             "cibles3": "Schème adjectif Majeur: NOMBRE DE CIBLES Puissance 3",
             "cibles4": "Schème adjectif Majeur: NOMBRE DE CIBLES Puissance 4"
-        }
+        },
+        "Labels":{
+            "element": "Schèmes Élémentaires",
+            "action": "Schèmes d'Actions",
+            "cles": "Schèmes Clés",
+            "frequence": "Schèmes de Frequences",
+            "portee": "Schèmes de Portées",
+            "duree": "Schèmes de Durées",
+            "cibles": "Schèmes de Cibles"
+        },
+        "SpeLevelTooLow":"Votre bonus de spécialisation de Maîtrise des Schèmes doit être supérieur ou égal à 1",
+        "DomaineLevelTooLow":"Votre niveau de domaine de Magie doit être supérieur ou égal à 5",
+        "canLearnDomaine": "Vous pouvez apprendre {learnedCountDomaine} schème(s) élémentaire ou adjectif",
+        "canLearnSpe": "Vous pouvez apprendre {learnedCountSpe} schème(s) d'action"
     },
         "class1": "Classe 1",
         "class2": "Classe 2",
