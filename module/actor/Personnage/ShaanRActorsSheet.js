@@ -571,8 +571,14 @@ export default class ShaanRActorsSheet extends ActorSheet {
             if (checkOptions.cancelled) {
                 return;
             }
+            let invocation = await Dice.SpéTest ({
+                actor,
+                domain: "Magie",
+                spécialisation: "invocation",
+                askForOptions: false
+            })
             trihn = checkOptions.trihn,
-            puissance = checkOptions.puissance
+            puissance = invocation
             
             let itemData = {
               name: `${trihn}`,

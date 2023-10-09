@@ -330,7 +330,8 @@ export async function SpéTest ({
   difficulty = null,
   askForOptions = true,
   spécialisation = null,
-  description = null
+  description = null,
+  invocation = false
 } = {}) {
   const messageTemplate = "systems/shaanrenaissance/templates/chat/domainTest.hbs";
   const actorData = actor ? actor.system : null;
@@ -509,7 +510,6 @@ export async function SpéTest ({
     if(rollResult.symbiose == "Réussite"){
       isSuccess = true
       score = spéAcquisF + spéBonusF + 10
-      console.log(score)
     }
   } else {
     if(score == 0) {
@@ -527,14 +527,12 @@ export async function SpéTest ({
         if(rollResult.symbiose == "Réussite"){
           isSuccess = true
           score = score + 10 
-          console.log(score)
         }
       } else {
         isSuccess = false
       }
     }
   }
-  console.log(score)
   if (sendMessage) {
     RollToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
@@ -547,6 +545,9 @@ export async function SpéTest ({
       isSuccess,
       actorID: actor.uuid,
     });
+  }
+  if(invocation) {
+    return score
   }
 
   async function GetRollOptions({
