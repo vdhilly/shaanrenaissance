@@ -80,7 +80,7 @@ export const DiceSoNiceReady = {
               await dice3d.addSystem({id:"shaan",name:"Shaan Renaissance",font:"systems/shaanrenaissance/fonts/itc-officina-sans-lt-bold.ttf"}, "preferred");
               await dice3d.addDicePreset({
                 type:"d10",
-                labels:["systems/shaanrenaissance/dice/d10-crane.webp","1", "2", "3", "4", "5", "6", "7", "8", "9"],
+                labels:["1", "2", "3", "4", "5", "6", "7", "8", "9", "systems/shaanrenaissance/dice/d10-crane.webp"],
                 system:"shaan"
               }, "d10")
             }

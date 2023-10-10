@@ -127,7 +127,7 @@
   "background": "systems/shaanrenaissance/assets/banniere_foundry.png",
   "gridDistance": 5,
   "gridUnits": "m",
-  "initiative": "1d10 - 1 + @attributes.initiative.value",
+  "initiative": "1d10 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
   "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
   "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.1.0/shaanrenaissance.zip"

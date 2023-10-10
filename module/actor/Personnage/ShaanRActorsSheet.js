@@ -578,7 +578,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
                 askForOptions: false
             })
             trihn = checkOptions.trihn,
-            puissance = invocation
+            puissance = checkOptions.puissance
             
             let itemData = {
               name: `${trihn}`,

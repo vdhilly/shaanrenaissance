@@ -19,9 +19,6 @@ export async function Initiative({
 
 
     let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
-    if(rollResult.dice[0].total == 10) {
-      rollResult._total = rollResult._total -10
-    }
     let dice3d
     if(game.dice3d != undefined) {
       dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
