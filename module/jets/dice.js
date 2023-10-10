@@ -24,6 +24,10 @@ export async function Initiative({
       dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
       dice3d;
     }
+    if(rollResult.dice[0].total == 10) {
+      rollResult._total = rollResult._total -10
+      rollResult.terms[0].results[0].result = 0
+    }
     if (sendMessage) {
         RollToCustomMessage(actor, rollResult, messageTemplate, {
           ...extraMessageData,

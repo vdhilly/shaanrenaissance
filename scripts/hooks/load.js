@@ -8,6 +8,7 @@ import { ItemProxySR, ItemSR } from "../../module/item/ItemSR.js";
 import { ActorDirectorySR } from "../../module/apps/sidebar/actorDirectory.js";
 import { ItemDirectorySR } from "../../module/apps/sidebar/itemDirectory.js";
 import { CompendiumDirectorySR } from "../../module/apps/sidebar/compendiumDirectory.js";
+import { CombatSR } from "../../module/encounter/combat.js";
 
 export const Load = {
     listen: () => {
@@ -21,5 +22,6 @@ export const Load = {
         CONFIG.ui.actors = ActorDirectorySR;
         CONFIG.ui.items = ItemDirectorySR;
         CONFIG.ui.compendium = CompendiumDirectorySR;
+        CONFIG.Combat.documentClass = CombatSR;
     }
 }
