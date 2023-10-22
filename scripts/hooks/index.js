@@ -8,22 +8,21 @@ import { RenderSettings } from "./render-settings.js";
 import { RenderTokenHUD } from "./render-token-hud.js";
 import { Setup } from "./setup.js";
 
-
 export const HooksSR = {
-    listen() {
-        const listeners = [
-            Load,
-            DiceSoNiceReady,
-            Init,
-            Ready,
-            RenderChatMessage,
-            RenderDialog,
-            RenderSettings,
-            RenderTokenHUD,
-            Setup
-        ];
-        for (const Listener of listeners) {
-            Listener.listen();
-        }
+  listen() {
+    const listeners = [
+      Load,
+      DiceSoNiceReady,
+      Init,
+      Ready,
+      RenderChatMessage,
+      RenderDialog,
+      RenderSettings,
+      RenderTokenHUD,
+      Setup,
+    ];
+    for (const Listener of listeners) {
+      Listener.listen();
     }
-}
+  },
+};

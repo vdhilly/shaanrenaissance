@@ -1,1628 +1,1551 @@
 {
-    "Actor": {
-        "types": [
-            "Personnage",
-            "PNJ",
-            "Shaani",
-            "Réseau",
-            "Créature",
-            "Loot"
-        ],
-        "templates": {
-                "common": {
-                "attributes": {
-                    "hpEsprit": {
-                        "value": 0,
-                        "temp": 0,
-                        "max":0
-                    },
-                    "hpAme": {
-                        "value": 0,
-                        "temp": 0,
-                        "max":0
-                    },
-                    "hpCorps": {
-                        "value": 0,
-                        "temp": 0,
-                        "max":0
-                    },
-                    "préstige": 0,
-                    "préstigeMax": 0,
-                    "credos": 0,
-                    "initiative": {
-                        "statistic": "Shaan",
-                        "value":0
-                    },
-                    "isIndar": false,
-                    "isMorph": false
-                }},
-                "spés":{
-                    "skills": {
-                        "Technique": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "engrenages": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "pilotage": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "recuperation": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "sensdelapierre": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "sensdubois": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "sensducuir": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "sensdumetal": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "sensdutissu": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "sensduverre": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "technologie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Savoir": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "alchimie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "bibliothèque": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "botanique": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "culturehumaine": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "esoterisme": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "geologie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "histoired'heos": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "medecine": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "protocoles": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "zoologie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Social": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "arpege": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "bluff": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "commerce": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "diplomatie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "enseignement": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "langageprimal": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "languesexotiques": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "psychologie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "seduction": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "vieurbaine": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Arts": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "artsappliques": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "artsdufeu": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "chant": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "comedie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "deguisement": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "gastronomie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "langageducorps": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "lettres": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "musique": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "trucages": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Shaan": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "embiose": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "empathieanimale": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "empathieantheenne": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "empathieminerale": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "empathievegetale": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "intuition": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "reve": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "soinsdel'ame": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "soinsdel'esprit": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "soinsducorps": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Magie": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "arcanes": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "conjuration": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "defensemagique": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "enchantement": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "invocation": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "incandescence": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "maîtrisedesschemes": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "regenerationdetrihn": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "transfert": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "voile": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Rituels": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "rited'arts": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedecombat": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedel'animal": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedemagie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedenecrose": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedesavoir": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedeshaan": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedesocial": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedesurvie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "ritedetechnique": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Survie": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "acrobatie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "caravane": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "cultureheossienne": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "culturenecrosienne": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "discretion": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "educationphysique": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "monture": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "navigation": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "viesauvage": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "vigilance": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Combat": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "maxSpé":0,
-                            "specialisations":{
-                                "armeslancees": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "armesdemelee": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "armesaprojectiles": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "armimales": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "enginsdeguerre": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "esquive": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "forcer": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "intimidation": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "pugilat": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "strategie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        },
-                        "Nécrose": {
-                            "rank": 0,
-                            "temp": 0,
-                            "exp": 0,
-                            "SpéMax":0,
-                            "specialisations":{
-                                "armeshumaines": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "biomorphie": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "cauchemar": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "contrebande": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "corruption": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "explosifs": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "fraude": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "harcelèment": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "larcin": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                },
-                                "pactenecrotique": {
-                                    "bonus": "",
-                                    "acquis": ""
-                                }
-                            }
-                        }
-                    }
-                },
-                "Ressources": {
-                    "Verre":0,
-                    "Bois":0,
-                    "Or":0,
-                    "Population":0,
-                    "Pierre":0,
-                    "Trihnite":0,
-                    "Animal":0,
-                    "Cultures":0,
-                    "Métal":0,
-                    "Hydrocarbures":0
-                },
-                "biography": {
-                    "apparence":0,
-                    "histoire":"",
-                    "langues":"",
-                    "personnalité": {
-                        "temper":0,
-                        "element1":0,
-                        "element2":0,
-                        "culte":0
-                    },
-                    "campagne": {
-                        "notes":0,
-                        "allies":0,
-                        "enemies":0,
-                        "gm":0
-                    }
-                },
-                "reserve": {
-                "reserve": {
-                "checkbox1": false,
-                "checkbox2": false,
-                "checkbox3": false,
-                "checkbox4": false,
-                "checkbox5": false,
-                "checkbox6": false,
-                "checkbox7": false,
-                "checkbox8": false,
-                "checkbox9": false,
-                "checkbox10": false,
-                "checkbox20": false
-                }
-                },
-                "Magic": {
-                    "schemes":"",
-                    "alchimie":"",
-                    "enchantement":""
-                }
-            },
-        "character": {
-            "templates": [
-                "common",
-                "spés",
-                "Ressources",
-                "biography",
-                "reserve",
-                "Magic"
-            ],
-            "protections": {
-                "esprit": {
-                    "value": 0
-                },
-                "ame": {
-                    "value": 0
-                },
-                "corps": {
-                    "value": 0
-                }
-            },
-            "details": {
-                "xp": {
-                    "value": 0
-                },
-                "xpMax": {
-                    "value": 0
-                }
-            },
-            "general": {
-                "shaani": {
-                    "value": 0
-                },
-                "race": {
-                    "value": 0
-                },
-                "people": {
-                    "value": 0
-                },
-                "caste": {
-                    "value": 0
-                },
-                "job": {
-                    "value": 0
-                },
-                "genre": {
-                    "value": 0
-                },
-                "age": {
-                    "value": 0
-                },
-                "taille": {
-                    "value": 0
-                },
-                "poids": {
-                    "value": 0
-                },
-                "motivations": {
-                    "value": ""
-                }
-            }
-        },
-        "PNJ":{
-            "templates": [
-                "common",
-                "spés",
-                "biography",
-                "reserve",
-                "Magic"
-            ],
-            "protections": {
-                "esprit": {
-                    "value": 0
-                },
-                "ame": {
-                    "value": 0
-                },
-                "corps": {
-                    "value": 0
-                }
-            },
-            "details": {
-                "xp": {
-                    "value": 0
-                },
-                "xpMax": {
-                    "value": 0
-                }
-            },
-            "general": {
-                "classe": "",
-                "milieu": "",
-                "role": "",
-                "shaani": {
-                    "value": 0
-                },
-                "race": {
-                    "value": 0
-                },
-                "people": {
-                    "value": 0
-                },
-                "caste": {
-                    "value": 0
-                },
-                "job": {
-                    "value": 0
-                },
-                "genre": {
-                    "value": 0
-                },
-                "age": {
-                    "value": 0
-                },
-                "taille": {
-                    "value": 0
-                },
-                "poids": {
-                    "value": 0
-                },
-                "motivations": {
-                    "value": 0
-                }
-            }
-        },
-        "Shaani": {
-            "templates": [
-                "common",
-                "spés",
-                "biography",
-                "reserve",
-                "Magic"
-            ],
-            "shaandars": {
-                "shaandar1":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar2":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar3":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar4":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar5":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar6":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar7":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar8":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar9":{
-                    "name":"",
-                    "domain":""
-                },
-                "shaandar10":{
-                    "name":"",
-                    "domain":""
-                }
-            },
-            "soucheCorps":"",
-            "soucheAme":"",
-            "soucheEsprit":"",
-            "decision": "",
-            "motivations": "",
-            "symbioses": {
-                "langagesecret": {
-                    "label": "Langage secret",
-                    "cout": "2 PXs",
-                    "frequence": "Permanent",
-                    "durée": "",
-                    "description": "Les membres d'un Shaani développent naturellement une langue inventée qui rassemble les grammaires et les intonations des différentes cultures présentes. Cette langue ne peut être comprise que par eux et ne peut s'enseigner à une personne extérieur tant qu'elle n'a pas rejoint le groupe. Ce langage peut s'écrire de façon codée.",
-                    "active": false
-                },
-                "chaînage": {
-                    "label": "Chaînage",
-                    "cout": "3 PXs",
-                    "frequence": "Permanent",
-                    "durée": "",
-                    "description": "Un Shaandar peut franchir une porte trihnique en sens inverse si un membre de son Shaani se trouve à moins d'un kilomètre de la porte d'entrée, sans qu'il ait besoin de passer le bras à travers. La Symbiose permet aux Shaandars de ne faire qu'un aux yeux de la Trihnite, et donc de faire revenir le Shaandar qui se trouvait de l'autre côté.",
-                    "active": true
-                },
-                "localisation": {
-                    "label": "Localisation",
-                    "cout": "4 PXs",
-                    "frequence": "Permanent",
-                    "durée": "",
-                    "description": "Chacun sait à tout instant où se trouvent les autres membres du Shaani, quelle que soit la distance qui les sépare, avec une précision de l'ordre du kilomètre.",
-                    "active": true
-                },
-                "cohésion": {
-                    "label": "Cohésion",
-                    "cout": "5 PXs",
-                    "frequence": "Permanent",
-                    "durée": "",
-                    "description": "Le niveau de chaque Domaine non-représenté du Shaani est égal au deuxième niveau le plus faible des Shaandars, plutôt qu'au niveau du Domaine le plus faible .",
-                    "active": true
-                },
-                "complicité": {
-                    "label": "Complicité",
-                    "cout": "5 PXs",
-                    "frequence": "Jour",
-                    "durée": "",
-                    "description": "Un Shaandar peut prêter son niveau de Domaine au Shaani pour une Action, même s'il est absent du groupe.",
-                    "active": true
-                },
-                "perception": {
-                    "label": "Perception",
-                    "cout": "6 PXs",
-                    "frequence": "Jour",
-                    "durée": "/20 Min",
-                    "description": "Chaque Shaandar peut percevoir au travers des sens d'un autre membre du Shaani (vue, ouïe, odorat, toucher, goût) et ressentir les mêmes émotions au même instant. Ce Pouvoir n'est limité par aucun éloignement géographique.",
-                    "active": true
-                },
-                "télépathie": {
-                    "label": "Télépathie",
-                    "cout": "8 PXs",
-                    "frequence": "Permanent",
-                    "durée": "",
-                    "description": "Les membres du Shaani peuvent établir entre eux une communication mentale (qui ne fait pas usage de la parole). La portée d'une telle communication est de 1000 km. Ainsi, ils peuvent être séparés les uns des autres par un milier de kilomètres et converser comme si de rien n'était. Branchés en permanence les uns aux autres, il peuvent, s'ils le désirent, s'isoler à tout moment pour préserver leur intimité. Lorsque l'un d'eux est en danger ou vient à mourir, les autres en sont immédiatement avertis par un signal mental.",
-                    "active": true
-                },
-                "matérialisation": {
-                    "label": "Matérialisation",
-                    "cout": "10 PXs",
-                    "frequence": "Jour",
-                    "durée": "/1 Situation",
-                    "description": "Cette Symbiose permet de matérialiser sous forme translucide et légèrement bleutée, n'importe quel objet ou équipement appartenant à un membre du Shaani. Elle est en fait la résultante de l'énergie trihnique mise en œuvre par l'inconscient de chaque Shaandar. La forme ectoplasmique dispose de toutes les Capacités de l'objet et s'adapte à la taille de celui qui en bénéficie. C'est ainsi qu'un Kelwin peut disposer de la Protection qu'offre l'armure Darken de son Shaandar combattant préféré. La matérialisation peut aussi s'appliquer aux véhicules. Les légendes relatant la présence de navires fantomatiques bleutés et translucides ne font en fait état que d'une matérialisation d'un Shaandar navigateur ... Il est intéressant de remarquer que la matérialisation peut aussi fonctionner pour soi si tous les Shaandars ont bien connaissance de l'équipement de chacun. Grâce à cela, un guerrier Darken jeté en prison désarmé, peut en fait se révéler tout aussi redoutable que s'il était armé. ",
-                    "active": true
-                },
-                "aura": {
-                    "label": "Aura",
-                    "cout": "12 PXs",
-                    "frequence": "Jour",
-                    "durée": "/1 Situation",
-                    "description": "Les membres d'un Shaani peuvent additionner leur niveau de SOCIAL. Pour une Action de groupe, jusqu'à un maximum de 15 en SOCIAL. ",
-                    "active": true
-                },
-                "échange": {
-                    "label": "Échange",
-                    "cout": "14 PXs",
-                    "frequence": "Jour",
-                    "durée": "/1 Situation",
-                    "description": " Chaque membre peut échanger avec l'autre son apparence, un Trihn, un Domaine, une Spécialisation, un Pouvoir ou une aptitude particulière. Les Shaandars échangent une seule caractéristique et doivent se toucher pour que l'échange ait lieu. !.'.échange fonctionne toujours dans les deux sens : un Woon qui donne son apparence ou sa valeur en Corps à un Kelwin, recevra en même temps l'apparence ou la valeur en Corps du Kelwin en question.",
-                    "active": true
-                },
-                "Transfert": {
-                    "label": "Transfert",
-                    "cout": "16 PXs",
-                    "frequence": "Jour",
-                    "durée": "/1 Situation",
-                    "description": "Deux membres d'un Shaani peuvent inverser simultanément le contrôle de leurs Corps respectifs en intervertissant leur Esprit et leur Âme. Ainsi, un Delhion prendra le contrôle du Corps d'un Feling et inversement, chacun déplaçant son Esprit et son Âme dans le Corps de l'autre. ",
-                    "active": true
-                },
-                "téléportation": {
-                    "label": "Téléportation",
-                    "cout": "18 PXs",
-                    "frequence": "Jour",
-                    "durée": "",
-                    "description": "Deux membres du Shaani peuvent échanger leur place, quelque soit la distance qui les sépare. Un personnage peut également se téléporter au côté d'un membre de son Shaani, s'il le souhaite, sans limitation de distance non plus. ",
-                    "active": true
-                }
-            }
-        },
-        "Réseau": {
-            "templates": [
-                "common",
-                "spés",
-                "biography",
-                "reserve",
-                "Magic"
-            ],
-            "motivations": "",
-            "typeReseau": "",
-            "nombreMembres":"",
-            "typesMembres":"",
-            "nomChef":"",
-            "QG":"",
-            "region":"",
-            "contacts":"",
-            "valeurs":"",
-            "influence":"",
-            "moyens":""
-            
-        },
-        "Créature":{
-            "templates": [
-                "common",
-                "spés",
-                "biography",
-                "reserve",
-                "Magic"
-            ],
-            "protections": {
-                "esprit": {
-                    "value": 0
-                },
-                "ame": {
-                    "value": 0
-                },
-                "corps": {
-                    "value": 0
-                }
-            },
-            "details": {
-                "xp": {
-                    "value": 0
-                },
-                "xpMax": {
-                    "value": 0
-                }
-            },
-            "general": {
-                "poids":"",
-                "classe":"",
-                "milieu":"",
-                "role":"",
-                "taille":""
-            }
-        },
-        "Loot":{
-            "lootSheetType":"Loot",
-            "attributes":{
-                "crédos":0
-            },
-            "details":{
-                "description":""
-            },
-            "hiddenWhenEmpty":false
+  "Actor": {
+    "types": ["Personnage", "PNJ", "Shaani", "Réseau", "Créature", "Loot"],
+    "templates": {
+      "common": {
+        "attributes": {
+          "hpEsprit": {
+            "value": 0,
+            "temp": 0,
+            "max": 0
+          },
+          "hpAme": {
+            "value": 0,
+            "temp": 0,
+            "max": 0
+          },
+          "hpCorps": {
+            "value": 0,
+            "temp": 0,
+            "max": 0
+          },
+          "préstige": 0,
+          "préstigeMax": 0,
+          "credos": 0,
+          "initiative": {
+            "statistic": "Shaan",
+            "value": 0
+          },
+          "isIndar": false,
+          "isMorph": false
         }
+      },
+      "spés": {
+        "skills": {
+          "Technique": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "engrenages": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "pilotage": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "recuperation": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "sensdelapierre": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "sensdubois": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "sensducuir": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "sensdumetal": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "sensdutissu": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "sensduverre": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "technologie": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Savoir": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "alchimie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "bibliothèque": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "botanique": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "culturehumaine": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "esoterisme": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "geologie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "histoired'heos": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "medecine": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "protocoles": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "zoologie": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Social": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "arpege": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "bluff": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "commerce": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "diplomatie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "enseignement": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "langageprimal": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "languesexotiques": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "psychologie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "seduction": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "vieurbaine": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Arts": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "artsappliques": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "artsdufeu": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "chant": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "comedie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "deguisement": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "gastronomie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "langageducorps": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "lettres": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "musique": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "trucages": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Shaan": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "embiose": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "empathieanimale": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "empathieantheenne": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "empathieminerale": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "empathievegetale": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "intuition": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "reve": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "soinsdel'ame": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "soinsdel'esprit": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "soinsducorps": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Magie": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "arcanes": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "conjuration": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "defensemagique": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "enchantement": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "invocation": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "incandescence": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "maîtrisedesschemes": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "regenerationdetrihn": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "transfert": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "voile": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Rituels": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "rited'arts": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedecombat": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedel'animal": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedemagie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedenecrose": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedesavoir": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedeshaan": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedesocial": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedesurvie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "ritedetechnique": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Survie": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "acrobatie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "caravane": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "cultureheossienne": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "culturenecrosienne": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "discretion": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "educationphysique": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "monture": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "navigation": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "viesauvage": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "vigilance": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Combat": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "maxSpé": 0,
+            "specialisations": {
+              "armeslancees": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "armesdemelee": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "armesaprojectiles": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "armimales": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "enginsdeguerre": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "esquive": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "forcer": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "intimidation": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "pugilat": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "strategie": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          },
+          "Nécrose": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "SpéMax": 0,
+            "specialisations": {
+              "armeshumaines": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "biomorphie": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "cauchemar": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "contrebande": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "corruption": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "explosifs": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "fraude": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "harcelèment": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "larcin": {
+                "bonus": "",
+                "acquis": ""
+              },
+              "pactenecrotique": {
+                "bonus": "",
+                "acquis": ""
+              }
+            }
+          }
+        }
+      },
+      "Ressources": {
+        "Verre": 0,
+        "Bois": 0,
+        "Or": 0,
+        "Population": 0,
+        "Pierre": 0,
+        "Trihnite": 0,
+        "Animal": 0,
+        "Cultures": 0,
+        "Métal": 0,
+        "Hydrocarbures": 0
+      },
+      "biography": {
+        "apparence": 0,
+        "histoire": "",
+        "langues": "",
+        "personnalité": {
+          "temper": 0,
+          "element1": 0,
+          "element2": 0,
+          "culte": 0
+        },
+        "campagne": {
+          "notes": 0,
+          "allies": 0,
+          "enemies": 0,
+          "gm": 0
+        }
+      },
+      "reserve": {
+        "reserve": {
+          "checkbox1": false,
+          "checkbox2": false,
+          "checkbox3": false,
+          "checkbox4": false,
+          "checkbox5": false,
+          "checkbox6": false,
+          "checkbox7": false,
+          "checkbox8": false,
+          "checkbox9": false,
+          "checkbox10": false,
+          "checkbox20": false
+        }
+      },
+      "Magic": {
+        "schemes": "",
+        "alchimie": "",
+        "enchantement": ""
+      }
     },
-    "Item": {
-        "types": [
-            "Armement",
-            "Armimale",
-            "Artefact",
-            "Manuscrit",
-            "Outil",
-            "Protection",
-            "Relation",
-            "Richesse",
-            "Technologie",
-            "Transport",
-            "Bâtiment",
-            "Trihn",
-            "Pouvoir",
-            "Race",
-            "Peuple",
-            "Caste", 
-            "Métier",
-            "condition"
-        ],
-        "templates": {
-            "common": {
-                "description": {
-                    "gm": "",
-                    "value": ""
-                },
-                "source": {
-                    "value":""
-                },
-                "slug": null,
-                "class": "Classe 1",
-                "trihn": 0,
-                "pouvoir": {
-                    "value": " "
-                },
-                "quantity":1,
-                "isUsed": false
-            },
-            "spés":{
-                "skills": {
-                    "Technique": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "engrenages": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "pilotage": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "recuperation": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "sensdelapierre": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "sensdubois": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "sensducuir": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "sensdumetal": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "sensdutissu": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "sensduverre": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "technologie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Savoir": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "alchimie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "bibliotheque": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "botanique": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "culturehumaine": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "esoterisme": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "geologie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "histoiredheos": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "medecine": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "protocoles": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "zoologie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Social": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "arpege": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "bluff": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "commerce": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "diplomatie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "enseignement": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "langageprimal": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "languesexotiques": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "psychologie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "seduction": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "vieurbaine": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Arts": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "artsappliques": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "artsdufeu": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "chant": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "comedie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "deguisement": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "gastronomie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "langageducorps": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "lettres": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "musique": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "trucages": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Shaan": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "embiose": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "empathieanimale": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "empathieantheenne": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "empathieminerale": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "empathievegetale": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "intuition": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "reve": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "soinsdelame": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "soinsdelesprit": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "soinsducorps": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Magie": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "arcanes": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "conjuration": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "defensemagique": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "enchantement": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "invocation": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "incandescence": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "maitrisedesschemes": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "regenerationdetrihn": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "transfert": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "voile": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Rituels": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "ritedarts": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedecombat": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedelanimal": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedemagie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedenecrose": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedesavoir": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedeshaan": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedesocial": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedesurvie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "ritedetechnique": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Survie": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "acrobatie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "caravane": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "cultureheossienne": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "culturenecrosienne": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "discretion": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "educationphysique": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "monture": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "navigation": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "viesauvage": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "vigilance": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Combat": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "armeslancees": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "armesdemelee": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "armesaprojectiles": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "armimales": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "enginsdeguerre": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "esquive": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "forcer": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "intimidation": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "pugilat": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "strategie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    },
-                    "Nécrose": {
-                        "rank": 0,
-                        "temp": 0,
-                        "exp": 0,
-                        "specialisations":{
-                            "armeshumaines": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "biomorphie": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "cauchemar": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "contrebande": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "corruption": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "explosifs": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "fraude": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "harcelement": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "larcin": {
-                                "bonus": 0,
-                                "acquis": 0
-                            },
-                            "pactenecrotique": {
-                                "bonus": 0,
-                                "acquis": 0
-                            }
-                        }
-                    }
-                }
-            },
-            "acquis": {
-                "caste": 0,
-                "portée": 0,
-                "price": 0,
-                "prestige": 0,
-                "specialisations": 0,
-                "ressources": 0,
-                "fabrication": 0,
-                "entretien": 0,
-                "capacité": 0,
-                "trihns": {
-                    "Esprit":0,
-                    "Ame":0,
-                    "Corps":0
-                },
-                "places":0,
-                "voie":0,
-                "speed":0,
-                "protéction":0
-            },
-            "morphe": {
-                "morphe": false
-            }
+    "character": {
+      "templates": [
+        "common",
+        "spés",
+        "Ressources",
+        "biography",
+        "reserve",
+        "Magic"
+      ],
+      "protections": {
+        "esprit": {
+          "value": 0
         },
-        "Armement": {
-            "templates": [
-                "common",
-                "acquis",
-                "morphe"
-            ]
+        "ame": {
+          "value": 0
         },
-        "Armimale": {
-            "templates": [
-                "common",
-                "acquis"
-            ],
-            "peuple":0,
-            "instinct":0
-        },
-        "Artefact": {
-            "templates": [
-                "common",
-                "acquis"
-            ]
-        },
-        "Manuscrit": {
-            "templates": [
-                "common",
-                "acquis"
-            ]
-        },
-        "Outil": {
-            "templates": [
-                "common",
-                "acquis",
-                "morphe"
-            ]
-        },
-        "Protection": {
-            "templates": [
-                "common",
-                "acquis",
-                "morphe"
-            ]
-        },
-        "Relation": {
-            "templates": [
-                "common",
-                "acquis"
-            ]
-        },
-        "Richesse": {
-            "templates": [
-                "common",
-                "acquis"
-            ]
-        },
-        "Technologie": {
-            "templates": [
-                "common",
-                "acquis",
-                "morphe"
-            ]
-        },
-        "Transport": {
-            "templates": [
-                "common",
-                "acquis"
-            ],
-            "autonomie": 0
-        },
-        "Pouvoir": {
-            "templates": [
-                "common",
-                "acquis"
-            ],
-            "PouvoirType": {
-                    "value": ""
-            },
-            "rang":{
-                "value": ""
-            },
-            "fréquence": {
-                "value":""
-            },
-            "activation": {
-                "value":""
-            },
-            "score": {
-                "value":""
-            },
-            "nbcibles": {
-                "value":""
-            },
-            "durée": {
-                "value":""
-            },
-            "résumé": {
-                "value":""
-            }   
-        },
-        "Trihn": {
-            "templates": [
-                "common"
-            ],
-            "emplacement":null,
-            "puissance":null,
-            "trihnTypes": {
-                "Esprit":null,
-                "Âme":null,
-                "Corps":null,
-                "Anti-Âme":null
-            },
-            "trihnType":"Esprit"
-        },
-        "Race": {
-            "templates": [
-                "common"
-            ],
-            "domain":"",
-            "spé1":"",
-            "spé2":"",
-            "resume":"",
-            "citation":"",
-            "pouvoir":"",
-            "pouvoirNom":""
-        },
-        "Peuple": {
-            "templates": [
-                "common"
-            ],
-            "domain":"",
-            "spé1":"",
-            "spé2":"",
-            "résumé":"",
-            "moeurs":""
-        },
-        "Caste": {
-            "templates": [
-                "common"
-            ],
-            "domain":"",
-            "spé":"",
-            "description":""
-        },
-        "Métier": {
-            "templates": [
-                "common"
-            ],
-            "spé":"",
-            "resume":"",
-            "domain":""
-        },
-        "Bâtiment": {
-            "templates": [
-                "common"
-            ],
-            "price":"",
-            "spécialisations":"",
-            "resume":"",
-            "ressources":"",
-            "fabrication":""
-        },
-        "condition": {
-            "templates": [
-                "common"
-            ],
-            "duration": {
-                "value":0
-            },
-            "references": {
-                "children":[],
-                "overrides":[],
-                "overriddenBy":[]
-            }
+        "corps": {
+          "value": 0
         }
-
-    }}
+      },
+      "details": {
+        "xp": {
+          "value": 0
+        },
+        "xpMax": {
+          "value": 0
+        }
+      },
+      "general": {
+        "shaani": {
+          "value": 0
+        },
+        "race": {
+          "value": 0
+        },
+        "people": {
+          "value": 0
+        },
+        "caste": {
+          "value": 0
+        },
+        "job": {
+          "value": 0
+        },
+        "genre": {
+          "value": 0
+        },
+        "age": {
+          "value": 0
+        },
+        "taille": {
+          "value": 0
+        },
+        "poids": {
+          "value": 0
+        },
+        "motivations": {
+          "value": ""
+        }
+      }
+    },
+    "PNJ": {
+      "templates": ["common", "spés", "biography", "reserve", "Magic"],
+      "protections": {
+        "esprit": {
+          "value": 0
+        },
+        "ame": {
+          "value": 0
+        },
+        "corps": {
+          "value": 0
+        }
+      },
+      "details": {
+        "xp": {
+          "value": 0
+        },
+        "xpMax": {
+          "value": 0
+        }
+      },
+      "general": {
+        "classe": "",
+        "milieu": "",
+        "role": "",
+        "shaani": {
+          "value": 0
+        },
+        "race": {
+          "value": 0
+        },
+        "people": {
+          "value": 0
+        },
+        "caste": {
+          "value": 0
+        },
+        "job": {
+          "value": 0
+        },
+        "genre": {
+          "value": 0
+        },
+        "age": {
+          "value": 0
+        },
+        "taille": {
+          "value": 0
+        },
+        "poids": {
+          "value": 0
+        },
+        "motivations": {
+          "value": 0
+        }
+      }
+    },
+    "Shaani": {
+      "templates": ["common", "spés", "biography", "reserve", "Magic"],
+      "shaandars": {
+        "shaandar1": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar2": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar3": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar4": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar5": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar6": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar7": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar8": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar9": {
+          "name": "",
+          "domain": ""
+        },
+        "shaandar10": {
+          "name": "",
+          "domain": ""
+        }
+      },
+      "soucheCorps": "",
+      "soucheAme": "",
+      "soucheEsprit": "",
+      "decision": "",
+      "motivations": "",
+      "symbioses": {
+        "langagesecret": {
+          "label": "Langage secret",
+          "cout": "2 PXs",
+          "frequence": "Permanent",
+          "durée": "",
+          "description": "Les membres d'un Shaani développent naturellement une langue inventée qui rassemble les grammaires et les intonations des différentes cultures présentes. Cette langue ne peut être comprise que par eux et ne peut s'enseigner à une personne extérieur tant qu'elle n'a pas rejoint le groupe. Ce langage peut s'écrire de façon codée.",
+          "active": false
+        },
+        "chaînage": {
+          "label": "Chaînage",
+          "cout": "3 PXs",
+          "frequence": "Permanent",
+          "durée": "",
+          "description": "Un Shaandar peut franchir une porte trihnique en sens inverse si un membre de son Shaani se trouve à moins d'un kilomètre de la porte d'entrée, sans qu'il ait besoin de passer le bras à travers. La Symbiose permet aux Shaandars de ne faire qu'un aux yeux de la Trihnite, et donc de faire revenir le Shaandar qui se trouvait de l'autre côté.",
+          "active": true
+        },
+        "localisation": {
+          "label": "Localisation",
+          "cout": "4 PXs",
+          "frequence": "Permanent",
+          "durée": "",
+          "description": "Chacun sait à tout instant où se trouvent les autres membres du Shaani, quelle que soit la distance qui les sépare, avec une précision de l'ordre du kilomètre.",
+          "active": true
+        },
+        "cohésion": {
+          "label": "Cohésion",
+          "cout": "5 PXs",
+          "frequence": "Permanent",
+          "durée": "",
+          "description": "Le niveau de chaque Domaine non-représenté du Shaani est égal au deuxième niveau le plus faible des Shaandars, plutôt qu'au niveau du Domaine le plus faible .",
+          "active": true
+        },
+        "complicité": {
+          "label": "Complicité",
+          "cout": "5 PXs",
+          "frequence": "Jour",
+          "durée": "",
+          "description": "Un Shaandar peut prêter son niveau de Domaine au Shaani pour une Action, même s'il est absent du groupe.",
+          "active": true
+        },
+        "perception": {
+          "label": "Perception",
+          "cout": "6 PXs",
+          "frequence": "Jour",
+          "durée": "/20 Min",
+          "description": "Chaque Shaandar peut percevoir au travers des sens d'un autre membre du Shaani (vue, ouïe, odorat, toucher, goût) et ressentir les mêmes émotions au même instant. Ce Pouvoir n'est limité par aucun éloignement géographique.",
+          "active": true
+        },
+        "télépathie": {
+          "label": "Télépathie",
+          "cout": "8 PXs",
+          "frequence": "Permanent",
+          "durée": "",
+          "description": "Les membres du Shaani peuvent établir entre eux une communication mentale (qui ne fait pas usage de la parole). La portée d'une telle communication est de 1000 km. Ainsi, ils peuvent être séparés les uns des autres par un milier de kilomètres et converser comme si de rien n'était. Branchés en permanence les uns aux autres, il peuvent, s'ils le désirent, s'isoler à tout moment pour préserver leur intimité. Lorsque l'un d'eux est en danger ou vient à mourir, les autres en sont immédiatement avertis par un signal mental.",
+          "active": true
+        },
+        "matérialisation": {
+          "label": "Matérialisation",
+          "cout": "10 PXs",
+          "frequence": "Jour",
+          "durée": "/1 Situation",
+          "description": "Cette Symbiose permet de matérialiser sous forme translucide et légèrement bleutée, n'importe quel objet ou équipement appartenant à un membre du Shaani. Elle est en fait la résultante de l'énergie trihnique mise en œuvre par l'inconscient de chaque Shaandar. La forme ectoplasmique dispose de toutes les Capacités de l'objet et s'adapte à la taille de celui qui en bénéficie. C'est ainsi qu'un Kelwin peut disposer de la Protection qu'offre l'armure Darken de son Shaandar combattant préféré. La matérialisation peut aussi s'appliquer aux véhicules. Les légendes relatant la présence de navires fantomatiques bleutés et translucides ne font en fait état que d'une matérialisation d'un Shaandar navigateur ... Il est intéressant de remarquer que la matérialisation peut aussi fonctionner pour soi si tous les Shaandars ont bien connaissance de l'équipement de chacun. Grâce à cela, un guerrier Darken jeté en prison désarmé, peut en fait se révéler tout aussi redoutable que s'il était armé. ",
+          "active": true
+        },
+        "aura": {
+          "label": "Aura",
+          "cout": "12 PXs",
+          "frequence": "Jour",
+          "durée": "/1 Situation",
+          "description": "Les membres d'un Shaani peuvent additionner leur niveau de SOCIAL. Pour une Action de groupe, jusqu'à un maximum de 15 en SOCIAL. ",
+          "active": true
+        },
+        "échange": {
+          "label": "Échange",
+          "cout": "14 PXs",
+          "frequence": "Jour",
+          "durée": "/1 Situation",
+          "description": " Chaque membre peut échanger avec l'autre son apparence, un Trihn, un Domaine, une Spécialisation, un Pouvoir ou une aptitude particulière. Les Shaandars échangent une seule caractéristique et doivent se toucher pour que l'échange ait lieu. !.'.échange fonctionne toujours dans les deux sens : un Woon qui donne son apparence ou sa valeur en Corps à un Kelwin, recevra en même temps l'apparence ou la valeur en Corps du Kelwin en question.",
+          "active": true
+        },
+        "Transfert": {
+          "label": "Transfert",
+          "cout": "16 PXs",
+          "frequence": "Jour",
+          "durée": "/1 Situation",
+          "description": "Deux membres d'un Shaani peuvent inverser simultanément le contrôle de leurs Corps respectifs en intervertissant leur Esprit et leur Âme. Ainsi, un Delhion prendra le contrôle du Corps d'un Feling et inversement, chacun déplaçant son Esprit et son Âme dans le Corps de l'autre. ",
+          "active": true
+        },
+        "téléportation": {
+          "label": "Téléportation",
+          "cout": "18 PXs",
+          "frequence": "Jour",
+          "durée": "",
+          "description": "Deux membres du Shaani peuvent échanger leur place, quelque soit la distance qui les sépare. Un personnage peut également se téléporter au côté d'un membre de son Shaani, s'il le souhaite, sans limitation de distance non plus. ",
+          "active": true
+        }
+      }
+    },
+    "Réseau": {
+      "templates": ["common", "spés", "biography", "reserve", "Magic"],
+      "motivations": "",
+      "typeReseau": "",
+      "nombreMembres": "",
+      "typesMembres": "",
+      "nomChef": "",
+      "QG": "",
+      "region": "",
+      "contacts": "",
+      "valeurs": "",
+      "influence": "",
+      "moyens": ""
+    },
+    "Créature": {
+      "templates": ["common", "spés", "biography", "reserve", "Magic"],
+      "protections": {
+        "esprit": {
+          "value": 0
+        },
+        "ame": {
+          "value": 0
+        },
+        "corps": {
+          "value": 0
+        }
+      },
+      "details": {
+        "xp": {
+          "value": 0
+        },
+        "xpMax": {
+          "value": 0
+        }
+      },
+      "general": {
+        "poids": "",
+        "classe": "",
+        "milieu": "",
+        "role": "",
+        "taille": ""
+      }
+    },
+    "Loot": {
+      "lootSheetType": "Loot",
+      "attributes": {
+        "crédos": 0
+      },
+      "details": {
+        "description": ""
+      },
+      "hiddenWhenEmpty": false
+    }
+  },
+  "Item": {
+    "types": [
+      "Armement",
+      "Armimale",
+      "Artefact",
+      "Manuscrit",
+      "Outil",
+      "Protection",
+      "Relation",
+      "Richesse",
+      "Technologie",
+      "Transport",
+      "Bâtiment",
+      "Trihn",
+      "Pouvoir",
+      "Race",
+      "Peuple",
+      "Caste",
+      "Métier",
+      "condition"
+    ],
+    "templates": {
+      "common": {
+        "description": {
+          "gm": "",
+          "value": ""
+        },
+        "source": {
+          "value": ""
+        },
+        "slug": null,
+        "class": "Classe 1",
+        "trihn": 0,
+        "pouvoir": {
+          "value": " "
+        },
+        "quantity": 1,
+        "isUsed": false
+      },
+      "spés": {
+        "skills": {
+          "Technique": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "engrenages": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "pilotage": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "recuperation": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "sensdelapierre": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "sensdubois": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "sensducuir": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "sensdumetal": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "sensdutissu": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "sensduverre": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "technologie": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Savoir": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "alchimie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "bibliotheque": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "botanique": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "culturehumaine": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "esoterisme": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "geologie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "histoiredheos": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "medecine": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "protocoles": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "zoologie": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Social": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "arpege": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "bluff": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "commerce": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "diplomatie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "enseignement": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "langageprimal": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "languesexotiques": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "psychologie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "seduction": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "vieurbaine": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Arts": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "artsappliques": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "artsdufeu": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "chant": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "comedie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "deguisement": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "gastronomie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "langageducorps": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "lettres": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "musique": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "trucages": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Shaan": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "embiose": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "empathieanimale": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "empathieantheenne": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "empathieminerale": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "empathievegetale": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "intuition": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "reve": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "soinsdelame": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "soinsdelesprit": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "soinsducorps": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Magie": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "arcanes": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "conjuration": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "defensemagique": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "enchantement": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "invocation": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "incandescence": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "maitrisedesschemes": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "regenerationdetrihn": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "transfert": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "voile": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Rituels": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "ritedarts": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedecombat": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedelanimal": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedemagie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedenecrose": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedesavoir": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedeshaan": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedesocial": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedesurvie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "ritedetechnique": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Survie": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "acrobatie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "caravane": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "cultureheossienne": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "culturenecrosienne": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "discretion": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "educationphysique": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "monture": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "navigation": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "viesauvage": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "vigilance": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Combat": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "armeslancees": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "armesdemelee": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "armesaprojectiles": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "armimales": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "enginsdeguerre": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "esquive": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "forcer": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "intimidation": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "pugilat": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "strategie": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          },
+          "Nécrose": {
+            "rank": 0,
+            "temp": 0,
+            "exp": 0,
+            "specialisations": {
+              "armeshumaines": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "biomorphie": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "cauchemar": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "contrebande": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "corruption": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "explosifs": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "fraude": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "harcelement": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "larcin": {
+                "bonus": 0,
+                "acquis": 0
+              },
+              "pactenecrotique": {
+                "bonus": 0,
+                "acquis": 0
+              }
+            }
+          }
+        }
+      },
+      "acquis": {
+        "caste": 0,
+        "portée": 0,
+        "price": 0,
+        "prestige": 0,
+        "specialisations": 0,
+        "ressources": 0,
+        "fabrication": 0,
+        "entretien": 0,
+        "capacité": 0,
+        "trihns": {
+          "Esprit": 0,
+          "Ame": 0,
+          "Corps": 0
+        },
+        "places": 0,
+        "voie": 0,
+        "speed": 0,
+        "protéction": 0
+      },
+      "morphe": {
+        "morphe": false
+      }
+    },
+    "Armement": {
+      "templates": ["common", "acquis", "morphe"]
+    },
+    "Armimale": {
+      "templates": ["common", "acquis"],
+      "peuple": 0,
+      "instinct": 0
+    },
+    "Artefact": {
+      "templates": ["common", "acquis"]
+    },
+    "Manuscrit": {
+      "templates": ["common", "acquis"]
+    },
+    "Outil": {
+      "templates": ["common", "acquis", "morphe"]
+    },
+    "Protection": {
+      "templates": ["common", "acquis", "morphe"]
+    },
+    "Relation": {
+      "templates": ["common", "acquis"]
+    },
+    "Richesse": {
+      "templates": ["common", "acquis"]
+    },
+    "Technologie": {
+      "templates": ["common", "acquis", "morphe"]
+    },
+    "Transport": {
+      "templates": ["common", "acquis"],
+      "autonomie": 0
+    },
+    "Pouvoir": {
+      "templates": ["common", "acquis"],
+      "PouvoirType": {
+        "value": ""
+      },
+      "rang": {
+        "value": ""
+      },
+      "fréquence": {
+        "value": ""
+      },
+      "activation": {
+        "value": ""
+      },
+      "score": {
+        "value": ""
+      },
+      "nbcibles": {
+        "value": ""
+      },
+      "durée": {
+        "value": ""
+      },
+      "résumé": {
+        "value": ""
+      }
+    },
+    "Trihn": {
+      "templates": ["common"],
+      "emplacement": null,
+      "puissance": null,
+      "trihnTypes": {
+        "Esprit": null,
+        "Âme": null,
+        "Corps": null,
+        "Anti-Âme": null
+      },
+      "trihnType": "Esprit"
+    },
+    "Race": {
+      "templates": ["common"],
+      "domain": "",
+      "spé1": "",
+      "spé2": "",
+      "resume": "",
+      "citation": "",
+      "pouvoir": "",
+      "pouvoirNom": ""
+    },
+    "Peuple": {
+      "templates": ["common"],
+      "domain": "",
+      "spé1": "",
+      "spé2": "",
+      "résumé": "",
+      "moeurs": ""
+    },
+    "Caste": {
+      "templates": ["common"],
+      "domain": "",
+      "spé": "",
+      "description": ""
+    },
+    "Métier": {
+      "templates": ["common"],
+      "spé": "",
+      "resume": "",
+      "domain": ""
+    },
+    "Bâtiment": {
+      "templates": ["common"],
+      "price": "",
+      "spécialisations": "",
+      "resume": "",
+      "ressources": "",
+      "fabrication": ""
+    },
+    "condition": {
+      "templates": ["common"],
+      "duration": {
+        "value": 0
+      },
+      "value": {
+        "isValued": false,
+        "value": 0
+      },
+      "references": {
+        "children": [],
+        "overrides": [],
+        "overriddenBy": []
+      },
+      "overrides": []
+    }
+  }
+}

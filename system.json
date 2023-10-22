@@ -54,6 +54,14 @@
       "flags": {}
     },
     {
+      "name": "conditionitems",
+      "label": "Conditions",
+      "system": "shaanrenaissance",
+      "path": "packs/conditionitems.db",
+      "type": "Item",
+      "flags": {}
+    },
+    {
       "name": "pouvoirs",
       "label": "Pouvoirs",
       "system": "shaanrenaissance",
