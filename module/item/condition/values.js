@@ -1,0 +1,18 @@
+export const CONDITION_SLUGS = new Set([
+  "blinded",
+  "deafened",
+  "stunned",
+  "obscurity",
+  "weakened",
+  "dazzled",
+  "muted",
+  "dominated",
+  "slowed",
+  "bewitched",
+  "paralyzed",
+  "unconscious",
+  "advantaged",
+  "protected",
+  "invisible",
+  "prone",
+]);

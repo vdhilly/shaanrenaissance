@@ -1,6 +1,8 @@
 import { ActorSR } from "./actor/ActorSR.js";
 import { PersonnageSR } from "./actor/Personnage/PersonnageSR.js";
 import { LootSR } from "./actor/loot/LootSR.js";
+import { AcquisSR } from "./item/Acquis/base.js";
+import { CreatorSet } from "./item/CreatorSet/base.js";
 import { ItemSR } from "./item/ItemSR.js";
 import { ConditionSR } from "./item/condition/document.js";
 import { domainTest, necroseTest } from "./jets/dice.js"
@@ -20,23 +22,23 @@ shaanRenaissance.Actor = {
 }
 shaanRenaissance.Item = {
     documentClasses: {
-        Armement: ItemSR,
-        Artefact: ItemSR,
-        Armimale: ItemSR,
-        Manuscrit: ItemSR,
-        Outil: ItemSR,
-        Protection: ItemSR,
-        Relation: ItemSR,
-        Richesse: ItemSR,
-        Technologie: ItemSR,
-        Transport: ItemSR,
-        Bâtiment: ItemSR,
+        Armement: AcquisSR,
+        Artefact: AcquisSR,
+        Armimale: AcquisSR,
+        Manuscrit: AcquisSR,
+        Outil: AcquisSR,
+        Protection: AcquisSR,
+        Relation: AcquisSR,
+        Richesse: AcquisSR,
+        Technologie: AcquisSR,
+        Transport: AcquisSR,
+        Bâtiment: AcquisSR,
         Trihn: ItemSR,
         Pouvoir: ItemSR,
-        Race: ItemSR,
-        Peuple: ItemSR,
-        Caste: ItemSR,
-        Métier: ItemSR,
+        Race: CreatorSet,
+        Peuple: CreatorSet,
+        Caste: CreatorSet,
+        Métier: CreatorSet,
         condition: ConditionSR
     }
 }
@@ -58,12 +60,15 @@ shaanRenaissance.tokenHUDStatuses = {
     dominated: "SR.ConditionTypeDominated",
     slowed: "SR.ConditionTypeSlowed",
     bewitched: "SR.ConditionTypeBewitched",
-    paralysed: "SR.ConditionTypeParalysed",
+    paralyzed: "SR.ConditionTypeParalyzed",
     unconscious: "SR.ConditionTypeUnconscious",
     advantaged: "SR.ConditionTypeAdvantaged",
     protected: "SR.ConditionTypeProtected",
     invisible: "SR.ConditionTypeInvisible",
     prone: "SR.ConditionTypeProne"
+}
+shaanRenaissance.conditionTypes ={
+    ...shaanRenaissance.tokenHUDStatuses
 }
 shaanRenaissance.statusEffects = {
     IconTheme: "default",

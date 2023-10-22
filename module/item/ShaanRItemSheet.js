@@ -17,12 +17,7 @@ export default class ShaanRItemSheet extends ItemSheet {
       options
     );
   }
-  #selectedRuleElementType = Object.keys(RuleElements.all)[0] || null;
 
-  #editingRuleElementIndex = null;
-  #rulesLastScrollTop = null;
-
-  #ruleElementForms = [];
   async getData(options = this.options) {
     options.id || (options.id = this.id);
     const itemData = this.item.toObject(!1),
@@ -37,21 +32,6 @@ export default class ShaanRItemSheet extends ItemSheet {
         data: itemData.system,
         effects: itemData.effects,
         config: CONFIG.shaanRenaissance,
-        rules: {
-          selection: {
-            selected: this.#selectedRuleElementType,
-            types: sortStringRecord(
-              Object.keys(RuleElements.all).reduce(function (result, key) {
-                result[key] = `SR.RuleElement.${key}`;
-              }, {})
-            ),
-          },
-          elements: await Promise.all(
-            this.#ruleElementForms.map(async (form) => ({
-              template: await form.render(),
-            }))
-          ),
-        },
         user: {
           isGM: game.user.isGM,
         },
@@ -62,6 +42,7 @@ export default class ShaanRItemSheet extends ItemSheet {
   }
 
   activateListeners(html) {
+    super.activateListeners(html);
     if (this.isEditable) {
       html.find(".effect-control").click(this._onEffectControl.bind(this));
     }

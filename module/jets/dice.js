@@ -45,6 +45,8 @@ export async function domainTest({
   domain = null,
   difficulty = null,
   spécialisation = null,
+  state = null,
+  race = null,
 } = {}) {
   const messageTemplate =
     "systems/shaanrenaissance/templates/chat/domainTest.hbs";
@@ -233,37 +235,25 @@ export async function domainTest({
     score = domainDice.total;
   }
   // Check
-  let isSuccess;
+  let isSuccess = false;
+  let statuses = await processStatuses({ actor, race, state, domain });
+  spéAcquisF = spéAcquisF || 0;
+  spéBonusF = spéBonusF || 0;
   if (score > domainLevel) {
-    isSuccess = false;
     if (rollResult.symbiose == "Réussite") {
       isSuccess = true;
       score = spéAcquisF + spéBonusF + 10;
-    }
-    if (spéAcquisF + spéBonusF > difficulty && score != 0) {
+    } else if (spéAcquisF + spéBonusF > difficulty && score != 0) {
       isSuccess = true;
       score = spéAcquisF + spéBonusF;
     }
-  } else {
-    if (score == 0) {
-      isSuccess = false;
-    } else {
-      if (!spéAcquisF) {
-        spéAcquisF = 0;
-      }
-      if (!spéBonusF) {
-        spéBonusF = 0;
-      }
-      score = score + spéAcquisF + spéBonusF;
-      if (score > difficulty) {
-        isSuccess = true;
-      } else {
-        isSuccess = false;
-        if (rollResult.symbiose == "Réussite") {
-          isSuccess = true;
-          score = score + 10;
-        }
-      }
+  } else if (score > 0) {
+    score += spéAcquisF + spéBonusF + statuses;
+    if (score > difficulty) {
+      isSuccess = true;
+    } else if (rollResult.symbiose == "Réussite") {
+      isSuccess = true;
+      score += 10;
     }
   }
   if (sendMessage) {
@@ -272,7 +262,16 @@ export async function domainTest({
       domain: domain,
       spécialisation: spécialisation,
       score: score,
+      race,
       isSuccess,
+      advantaged: actor.conditions.advantaged,
+      stunned: actor.conditions.stunned,
+      obscurity: actor.conditions.obscurity,
+      weakened: actor.conditions.weakened,
+      deafened: actor.conditions.deafened,
+      dazzled: actor.conditions.dazzled,
+      blinded: actor.conditions.blinded,
+      muted: actor.conditions.muted,
       actorID: actor.uuid,
     });
   }
@@ -335,6 +334,8 @@ export async function SpéTest({
   spécialisation = null,
   description = null,
   invocation = false,
+  state = null,
+  race,
 } = {}) {
   const messageTemplate =
     "systems/shaanrenaissance/templates/chat/domainTest.hbs";
@@ -505,37 +506,26 @@ export async function SpéTest({
     score = domainDice.total;
   }
   // Check
-  let isSuccess;
+  let statuses = await processStatuses({ actor, race, state, domain });
+  let isSuccess = false;
+  spéAcquisF = spéAcquisF || 0;
+  spéBonusF = spéBonusF || 0;
   if (score > domainLevel) {
-    isSuccess = false;
-    if (spéAcquisF + spéBonusF > difficulty) {
-      isSuccess = true;
-      score = spéAcquisF + spéBonusF;
-    }
-    if (rollResult.symbiose == "Réussite") {
-      isSuccess = true;
-      score = spéAcquisF + spéBonusF + 10;
-    }
+    isSuccess =
+      spéAcquisF + spéBonusF > difficulty || rollResult.symbiose === "Réussite";
+    console.log(spéAcquisF, spéBonusF);
+    score = isSuccess
+      ? spéAcquisF + spéBonusF + (rollResult.symbiose === "Réussite" ? 10 : 0)
+      : score;
   } else {
-    if (score == 0) {
+    if (score === 0) {
       isSuccess = false;
     } else {
-      if (!spéAcquisF) {
-        spéAcquisF = 0;
-      }
-      if (!spéBonusF) {
-        spéBonusF = 0;
-      }
-      score = score + spéAcquisF + spéBonusF;
-      if (score > difficulty) {
-        isSuccess = true;
-        if (rollResult.symbiose == "Réussite") {
-          isSuccess = true;
-          score = score + 10;
-        }
-      } else {
-        isSuccess = false;
-      }
+      score += spéAcquisF + spéBonusF + statuses;
+      isSuccess = score > difficulty || rollResult.symbiose === "Réussite";
+      score = isSuccess
+        ? score + (rollResult.symbiose === "Réussite" ? 10 : 0)
+        : score;
     }
   }
   if (sendMessage) {
@@ -547,7 +537,16 @@ export async function SpéTest({
       spéBonus: spéBonusF,
       spéAcquis: spéAcquisF,
       score: score,
+      race,
       isSuccess,
+      advantaged: actor.conditions.advantaged,
+      stunned: actor.conditions.stunned,
+      obscurity: actor.conditions.obscurity,
+      weakened: actor.conditions.weakened,
+      deafened: actor.conditions.deafened,
+      dazzled: actor.conditions.dazzled,
+      blinded: actor.conditions.blinded,
+      muted: actor.conditions.muted,
       actorID: actor.uuid,
     });
   }
@@ -619,6 +618,7 @@ export async function necroseTest({
   difficulty = null,
   spécialisation = null,
   race = null,
+  state = null,
 } = {}) {
   const messageTemplate =
     "systems/shaanrenaissance/templates/chat/nécroseTest.hbs";
@@ -793,18 +793,20 @@ export async function necroseTest({
 
   // Check
   let isSuccess;
+  let statuses = await processStatuses({ actor, race, state, domain });
   if (score > domainLevel) {
     isSuccess = false;
     if (spéAcquisF + spéBonusF > difficulty) {
       isSuccess = true;
       score = spéAcquisF + spéBonusF;
+      score += statuses;
     }
   } else {
     isSuccess = true;
     if (domainDice.total == "10") {
       score = domainLevel;
     }
-    score = score + spéAcquisF + spéBonusF;
+    score += spéAcquisF + spéBonusF + statuses;
     if (score <= difficulty) {
       isSuccess = false;
     }
@@ -817,6 +819,14 @@ export async function necroseTest({
       spécialisation: spécialisation,
       score: score,
       isSuccess,
+      advantaged: actor.conditions.advantaged,
+      stunned: actor.conditions.stunned,
+      obscurity: actor.conditions.obscurity,
+      weakened: actor.conditions.weakened,
+      deafened: actor.conditions.deafened,
+      dazzled: actor.conditions.dazzled,
+      blinded: actor.conditions.blinded,
+      muted: actor.conditions.muted,
       actorID: actor.uuid,
       race: race,
     });
@@ -879,6 +889,7 @@ export async function SpéTestNécr({
   askForOptions = true,
   spécialisation = null,
   description = null,
+  state = null,
 } = {}) {
   const messageTemplate =
     "systems/shaanrenaissance/templates/chat/spéTestNécr.hbs";
@@ -1033,26 +1044,22 @@ export async function SpéTestNécr({
   } else {
     score = domainDice.total;
   }
-  if (!spéAcquisF) {
-    spéAcquisF = 0;
-  }
-  if (!spéBonusF) {
-    spéBonusF = 0;
-  }
-  // Check
-  let isSuccess;
+  spéAcquisF = spéAcquisF || 0;
+  spéBonusF = spéBonusF || 0;
+  let statuses = await processStatuses({ actor, race, state, domain });
+  let isSuccess = false;
+
   if (score > domainLevel) {
-    isSuccess = false;
     if (spéAcquisF + spéBonusF > difficulty) {
       isSuccess = true;
-      score = spéAcquisF + spéBonusF;
+      score = spéAcquisF + spéBonusF + statuses;
     }
   } else {
     isSuccess = true;
     if (domainDice.total == "10") {
       score = domainLevel;
     }
-    score = score + spéAcquisF + spéBonusF;
+    score += spéAcquisF + spéBonusF + statuses;
     if (score <= difficulty) {
       isSuccess = false;
     }
@@ -1066,6 +1073,14 @@ export async function SpéTestNécr({
       spéBonus: spéBonusF,
       spéAcquis: spéAcquisF,
       isSuccess,
+      advantaged: actor.conditions.advantaged,
+      stunned: actor.conditions.stunned,
+      obscurity: actor.conditions.obscurity,
+      weakened: actor.conditions.weakened,
+      deafened: actor.conditions.deafened,
+      dazzled: actor.conditions.dazzled,
+      blinded: actor.conditions.blinded,
+      muted: actor.conditions.muted,
       score: score,
       actorID: actor.uuid,
       race: race,
@@ -1372,6 +1387,8 @@ export async function trihnTest({
   hp = null,
   trihn = null,
   sendMessage = true,
+  race = "string",
+  state = null,
 } = {}) {
   const actorData = actor ? actor.system : null;
   const messageTemplate =
@@ -1402,14 +1419,16 @@ export async function trihnTest({
     dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
     dice3d;
   }
+  let statuses = await processStatuses({ actor, race, state });
   let diceResult;
   if (rollResult._total == 10) {
     diceResult = 0;
   } else {
     diceResult = rollResult._total;
+    diceResult += statuses;
   }
   let isSuccess = true;
-  if (diceResult == 0 || diceResult > maxTest) {
+  if (diceResult <= 0 || diceResult > maxTest) {
     isSuccess = false;
   }
 
@@ -1418,6 +1437,14 @@ export async function trihnTest({
       ...extraMessageData,
       actor: actor,
       hp: hp,
+      advantaged: actor.conditions.advantaged,
+      stunned: actor.conditions.stunned,
+      obscurity: actor.conditions.obscurity,
+      weakened: actor.conditions.weakened,
+      deafened: actor.conditions.deafened,
+      dazzled: actor.conditions.dazzled,
+      blinded: actor.conditions.blinded,
+      muted: actor.conditions.muted,
       actorID: actor.uuid,
     });
   }
@@ -1446,4 +1473,23 @@ export async function trihnTest({
     };
     ChatMessage.create(chatData);
   }
+}
+function processStatuses({ actor, race, state, domain } = {}) {
+  state = 0;
+  if (actor.conditions.advantaged) state += 1;
+  if (actor.conditions.stunned) state -= 1;
+  if (actor.conditions.obscurity && (race != "Boreal" || race != "Boréal"))
+    state -= 2;
+  if (actor.conditions.weakened) state -= 2;
+  if (actor.conditions.deafened) state -= 2;
+  if (actor.conditions.dazzled) state -= 2;
+  if (actor.conditions.blinded) state -= 4;
+  if (
+    actor.conditions.muted &&
+    (domain === "Social" || domain === "Magie" || domain === "Rituels")
+  )
+    state -= 4;
+
+  console.log(state);
+  return state;
 }

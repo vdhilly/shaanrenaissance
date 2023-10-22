@@ -1,0 +1,37 @@
+{{#if @root.advantaged}}
+  <span>{{localize "chat.conditions.advantaged"}}: + <b>1</b></span>
+{{/if}}
+{{#if @root.stunned}}
+  <span>{{localize "chat.conditions.stunned"}}: - <b>1</b></span>
+{{/if}}
+{{#if @root.obscurity}}
+  {{#ifeq @root.race "Boréal"}}
+    <span>{{localize "chat.conditions.obscurity"}}: - <b>2</b></span>
+  {{/ifeq}}
+  {{#ifeq @root.race "Boreal"}}
+    <span>{{localize "chat.conditions.obscurity"}}: - <b>2</b></span>
+  {{/ifeq}}
+{{/if}}
+{{#if @root.weakened}}
+  <span>{{localize "chat.conditions.weakened"}}: - <b>2</b></span>
+{{/if}}
+{{#if @root.deafened}}
+  <span>{{localize "chat.conditions.deafened"}}: - <b>2</b></span>
+{{/if}}
+{{#if @root.dazzled}}
+  <span>{{localize "chat.conditions.dazzled"}}: - <b>2</b></span>
+{{/if}}
+{{#if @root.blinded}}
+  <span>{{localize "chat.conditions.blinded"}}: - <b>4</b></span>
+{{/if}}
+{{#if @root.muted}}
+  {{#ifeq @root.domain "Social"}}
+    <span>{{localize "chat.conditions.muted"}}: - <b>4</b></span>
+  {{/ifeq}}
+  {{#ifeq @root.domain "Magie"}}
+    <span>{{localize "chat.conditions.muted"}}: - <b>4</b></span>
+  {{/ifeq}}
+  {{#ifeq @root.domain "Rituels"}}
+    <span>{{localize "chat.conditions.muted"}}: - <b>4</b></span>
+  {{/ifeq}}
+{{/if}}

@@ -89,7 +89,6 @@ export const templatePaths = [
   // Item partials
   "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs",
   "systems/shaanrenaissance/templates/items/partials/activeEffect-config.hbs",
-  "systems/shaanrenaissance/templates/items/condition/rules-panel.hbs",
 
   // JETS
   "systems/shaanrenaissance/templates/chat/initiative.hbs",
@@ -104,4 +103,6 @@ export const templatePaths = [
   "systems/shaanrenaissance/templates/compendium-browser/settings/settings.hbs",
   "systems/shaanrenaissance/templates/compendium-browser/settings/source-settings.hbs",
   "systems/shaanrenaissance/templates/compendium-browser/settings/pack-settings.hbs",
+
+  "systems/shaanrenaissance/templates/chat/partials/chat-conditions.hbs",
 ];

@@ -18,6 +18,13 @@ async function onPuiser(event) {
     return ui.notifications.warn("Vous devez sélectionner au moins un token.");
   const chatCard = $(this.parentElement);
   const dice = chatCard.find("input.dice-value");
+  console.log(chatCard);
+  const isParalyzed =
+    chatCard.find(".die.Corps").attr("data-paralyzed") === "true";
+  const isBewitched =
+    chatCard.find(".die.Ame").attr("data-bewitched") === "true";
+  const isDominated =
+    chatCard.find(".die.Esprit").attr("data-dominated") === "true";
   const domain = Number(chatCard.find("b.domain").text());
   const domainName = chatCard.find("span.domainName").text();
   const spéBonus = Number(chatCard.find("b.spéBonus").text());
@@ -27,6 +34,9 @@ async function onPuiser(event) {
   let esprit = Number(dice[2].value);
   let ame = Number(dice[1].value);
   let corps = Number(dice[0].value);
+  if (isParalyzed) corps = 0;
+  if (isBewitched) ame = 0;
+  if (isDominated) esprit = 0;
 
   let baseDice;
   let puiser1;
@@ -322,6 +332,8 @@ async function onPuiserNecrose(event) {
     return ui.notifications.warn("Vous devez sélectionner au moins un token.");
   const chatCard = $(this.parentElement);
   const dice = chatCard.find("input.dice-value");
+  const isDominated =
+    chatCard.find(".die.Esprit").attr("data-dominated") === "true";
   const necroseTest = chatCard.find(".necroseTest");
   const domain = Number(chatCard.find("b.domain").text());
   const domainName = chatCard.find("span.domainName").text();
@@ -331,6 +343,7 @@ async function onPuiserNecrose(event) {
   let sendMessage = true;
   let esprit = Number(dice[1].value);
   let necrose = Number(dice[0].value);
+  if (isDominated) esprit = 0;
 
   console.log(esprit, necrose);
   if (esprit == 10) {

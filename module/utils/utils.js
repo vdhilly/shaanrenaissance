@@ -19,6 +19,24 @@ const lowerCaseThenUpperCaseRE = new RegExp(`(${lowerCaseLetter})(${upperCaseLet
 const nonWordCharacterHyphenOrSpaceRE = /[^-\p{White_Space}\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Join_Control}]/gu;
 const upperOrWordBoundariedLowerRE = new RegExp(`${upperCaseLetter}|(?:${wordBoundary})${lowerCaseLetter}`, "gu");
 
+export function sortStringRecord(record) {
+    return Object.fromEntries(
+        Object.entries(record)
+            .map(function (entry) {
+                entry[1] = game.i18n.localize(entry[1]);
+                return entry;
+            })
+            .sort(function (a, b) {
+                return a[1].localeCompare(b[1], game.i18n.lang);
+            })
+    );
+}
+
+
+
+
+
+
 export function sluggify(text, { camel = null } = {}) {
     if (typeof text !== "string") {
         console.warn("Non-string argument passed to `sluggify`");
@@ -77,6 +95,11 @@ export function htmlQueryAll(parent, selectors) {
 }
 export function htmlClosest(child, selectors) {
     return child instanceof Element ? child.closest(selectors) : null
+}
+export function localizer(prefix) {
+    return function (...[suffix, formatArgs]) {
+        return formatArgs ? game.i18n.format(`${prefix}.${suffix}`, formatArgs) : game.i18n.localize(`${prefix}.${suffix}`);
+    };
 }
 export function fontAwesomeIcon(glyph, {
     style = "solid",

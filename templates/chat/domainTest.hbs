@@ -3,28 +3,35 @@
     <div class="check-type">{{localize "chat.domainTest.title" type=type}}</div>
   </h2>
   <div class="domainDice">
+    {{log this}}
   {{#with roll.terms as |data|}}
     {{#each data as |dice|}}
         {{#with dice.rolls as |die|}}
             {{#each die as |dieInfo|}}
             {{#ifeq dieInfo.formula "1d10[Esprit]"}}
-            <div class="die Esprit">
-            <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
-            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
+            <div class="die Esprit" data-dominated="{{#if @root.dominated}}true{{else}}false{{/if}}">
+              {{#unless @root.dominated}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{dieInfo.total}}.png">
+              {{/unless}}
+            <input type="hidden" class="dice-value" value="{{#if @root.dominated}}0{{else}}{{dieInfo.total}}{{/if}}">
             </div>
             {{/ifeq}}
             {{#ifeq dieInfo.formula "1d10[Ame]"}}
-            <div class="die Ame">
-            <img src="systems/shaanrenaissance/assets/icons/dice-result/Ame/d10_bleu_{{dieInfo.total}}.png">
-            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
+            <div class="die Ame" data-bewitched="{{#if @root.bewitched}}true{{else}}false{{/if}}">
+              {{#unless @root.bewitched}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Ame/d10_bleu_{{dieInfo.total}}.png">
+              {{/unless}}
+            <input type="hidden" class="dice-value" value="{{#if @root.bewitched}}0{{else}}{{dieInfo.total}}{{/if}}">
             </div>
             {{/ifeq}}
-            {{#ifeq dieInfo.formula "1d10[Corps]"}}
-            <div class="die Corps">
-            <img src="systems/shaanrenaissance/assets/icons/dice-result/Corps/d10_rouge_{{dieInfo.total}}.png">
-            <input type="hidden" class="dice-value" value="{{dieInfo.total}}">
-            </div>
-            {{/ifeq}}
+              {{#ifeq dieInfo.formula "1d10[Corps]"}}
+              <div class="die Corps" data-paralyzed="{{#if @root.paralyzed}}true{{else}}false{{/if}}">
+              {{#unless @root.paralyzed}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Corps/d10_rouge_{{dieInfo.total}}.png">
+              {{/unless}}
+              <input type="hidden" class="dice-value" value="{{#if @root.paralyzed}}0{{else}}{{dieInfo.total}}{{/if}}">
+              </div>
+              {{/ifeq}}
             {{/each}}
         {{/with}}
     {{/each}}
@@ -52,6 +59,7 @@
       {{#if roll.data.difficulty}}
         <span>{{localize "chat.domainTest.options.difficulty"}} {{roll.data.difficulty}}</span>
       {{/if}}
+      {{> "systems/shaanrenaissance/templates/chat/partials/chat-conditions.hbs"}}
     </div>
     <div class="result-container {{#ifeq isSuccess true}}success{{/ifeq}}{{#ifeq isSuccess false}}fail{{/ifeq}}">
       <span class="check-result">{{#ifeq isSuccess true}}{{localize "SR.Réussite"}}: {{/ifeq}}{{#ifnoteq isSuccess true}}{{localize "SR.Echec"}}{{/ifnoteq}}</span>{{#ifeq isSuccess true}}<span class="check-score">{{score}}</span>{{/ifeq}}

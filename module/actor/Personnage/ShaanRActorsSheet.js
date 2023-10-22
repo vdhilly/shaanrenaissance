@@ -602,7 +602,7 @@ export default class ShaanRActorsSheet extends ActorSheet {
       !schemes.maitrise
     ) {
       for (const key in schemes_cles) {
-        if (schemes_cles.hasOwnProperty(key)) {
+        if (schemes_cles.hasOwnProperty(key) && schemes_cles[key]) {
           schemes_cles[key].learned = true;
         }
       }
@@ -672,15 +672,32 @@ export default class ShaanRActorsSheet extends ActorSheet {
     const trihn = event.currentTarget.dataset.trihn;
     let actor = this.actor;
     let hp = actor.system.attributes;
+    const actorData = this.actor.toObject(!1);
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    race = lastElement.name;
 
     Dice.trihnTest({
       actor,
       hp,
+      race,
       trihn,
     });
   }
   _onSpéTest(event) {
     let actor = this.actor;
+    const actorData = this.actor.toObject(!1);
+    console.log(actor);
     let domain = $(event.target.closest(".pc"))
       .children(".specialisations-title")
       .find(".specialisations-label")
@@ -698,12 +715,27 @@ export default class ShaanRActorsSheet extends ActorSheet {
       .replace("î", "i");
     let description = game.i18n.translations.SRspéDesc[spécialisation];
 
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    race = lastElement.name;
+
     Dice.SpéTest({
       actor,
       domain: domain,
       spécialisation: spécialisation,
       description: description,
       askForOptions: event.shiftKey,
+      race: race,
     });
   }
 

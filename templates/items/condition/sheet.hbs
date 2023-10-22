@@ -1,3 +1,17 @@
-<form class="item sheet crb-style state" autocomplete="off">
-    <input name="system.slug" value="{{data.slug}}">
+<form class="item sheet crb-style condition" autocomplete="off">
+    {{> "systems/shaanrenaissance/templates/items/partials/header.hbs"}}
+    <nav class="sheet-navigation" data-group="primary">
+        <a class="item" data-tab="general">
+            <span>{{localize "SR.General"}}</span>
+        </a>
+        <a class="item" data-tab="effects">
+            <span>{{localize "SR.Effects"}}</span>
+        </a>
+    </nav>
+    <section class="sheet-content">
+        <div class="tab item-general" data-tab="general">
+            <input class="slug" name="system.slug" value="{{data.slug}}">
+        </div>
+        {{> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
+    </section>
 </form>

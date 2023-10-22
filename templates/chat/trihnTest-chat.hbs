@@ -11,6 +11,8 @@
       {{#if roll.data.difficulty}}
         <span>{{localize "chat.trihnTest.difficulty"}} {{roll.data.difficulty}}</span>
       {{/if}}
+      {{> "systems/shaanrenaissance/templates/chat/partials/chat-conditions.hbs"}}
+
     </div>
     <div class="result-container {{#ifeq isSuccess true}}success{{/ifeq}}{{#ifeq isSuccess false}}fail{{/ifeq}}">
       <span class="check-result">{{#ifeq isSuccess true}}{{localize "SR.Réussite"}}: {{/ifeq}}{{#ifnoteq isSuccess true}}{{localize "SR.Echec"}}{{/ifnoteq}}</span>{{#ifeq isSuccess true}}<span class="check-score">{{score}}</span>{{/ifeq}}

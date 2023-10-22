@@ -1,310 +1,353 @@
-.system-shaanrenaissance #pause img{
-    content:url("../assets/symbole_pause.webp");
-    object-fit: contain;
+.system-shaanrenaissance #pause img {
+  content: url("../assets/symbole_pause.webp");
+  object-fit: contain;
 }
 .system-shaanrenaissance #ui-left img {
-    content: url("../assets/logo-shaan.webp");
-    height: 100px;
-    object-fit: contain;
+  content: url("../assets/logo-shaan.webp");
+  height: 100px;
+  object-fit: contain;
 }
 
 /* TOKEN HUD */
 #token-hud {
-    display: flex;
+  display: flex;
 }
 
 #token-hud .SRTokenStats {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-#token-hud .attribute.bar1 img{
-    border: none;
-    width: 60%;
-    position: absolute;
-    left: -30%;
-    top: 90%
+#token-hud .attribute.bar1 img {
+  border: none;
+  width: 60%;
+  position: absolute;
+  left: -30%;
+  top: 90%;
 }
 #token-hud .col.middle .attribute.bar1 input {
-    position: absolute;
-    left: -25%;
-    top: 97%;
-    color: black;
+  position: absolute;
+  left: -25%;
+  top: 97%;
+  color: black;
 }
-#token-hud .attribute.bar2 img{
-    border: none;
-    width: 60%;
-    position: absolute;
-    left: 19%;
-    top: 90%
+#token-hud .attribute.bar2 img {
+  border: none;
+  width: 60%;
+  position: absolute;
+  left: 19%;
+  top: 90%;
 }
 #token-hud .col.middle .attribute.bar2 input {
-    position: absolute;
-    left: 24%;
-    top: 95%;
-    color: black;
+  position: absolute;
+  left: 24%;
+  top: 95%;
+  color: black;
 }
-#token-hud .attribute.bar3 img{
-    border: none;
-    width: 60%;
-    position: absolute;
-    left: 72%;
-    top: 90%
+#token-hud .attribute.bar3 img {
+  border: none;
+  width: 60%;
+  position: absolute;
+  left: 72%;
+  top: 90%;
 }
 #token-hud .col.middle .attribute.bar3 input {
-    position: absolute;
-    left: 77%;
-    top: 95%;
-    color: black;
+  position: absolute;
+  left: 77%;
+  top: 95%;
+  color: black;
 }
 #token-hud .col.middle .attribute input {
-    border: none;
-    background: none;
-    box-shadow: none;
-    width:50%;
+  border: none;
+  background: none;
+  box-shadow: none;
+  width: 50%;
+}
+#token-hud .status-effects .title-bar {
+  background: rgba(0, 0, 0, 0.6);
+  border: inherit;
+  border-radius: inherit;
+  box-shadow: inherit;
+  box-sizing: content-box;
+  font-size: var(--font-size-14);
+  font-weight: 400;
+  left: 0;
+  line-height: normal;
+  padding: 3px 0;
+  position: absolute;
+  text-align: center;
+  top: -30px;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+#token-hud .status-effects .title-bar.active {
+  visibility: visible;
 }
 .placeable-hud input[type="number"] {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 15px var(--color-shadow-dark);
-    border: 1px solid var(--color-border-dark-3);
-    color: var(--color-text-light-2);
-    height: 20%;
-    line-height: 40px;
-    margin: 0;
-    border-radius: 8px;
-    font-size: var(--font-size-28);
-    font-weight: bold;
-    pointer-events: all;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px var(--color-shadow-dark);
+  border: 1px solid var(--color-border-dark-3);
+  color: var(--color-text-light-2);
+  height: 20%;
+  line-height: 40px;
+  margin: 0;
+  border-radius: 8px;
+  font-size: var(--font-size-28);
+  font-weight: bold;
+  pointer-events: all;
 }
 
 /* INITIATIVE */
 .chat-message .dice-roll {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* JET DE DOMAINE */
 
 .chat-message .dice-roll.domainTest .domainDice {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    position: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: center;
 }
 .chat-message .dice-roll.domainTest .domainDice .die img {
-    width: 80px;
-    display: flex;
-    margin: 0;
+  width: 80px;
+  display: flex;
+  margin: 0;
 }
-.chat-message .dice-roll.domainTest .domainDice .Esprit { grid-area: 1 / 1 / 2 / 2; justify-self: center;}
-.chat-message .dice-roll.domainTest .domainDice .Ame { grid-area: 1 / 2 / 2 / 3; justify-self: center;}
-.chat-message .dice-roll.domainTest .domainDice .Corps { grid-area: 1 / 3 / 2 / 4; justify-self: center;}
+.chat-message .dice-roll.domainTest .domainDice .Esprit {
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: center;
+}
+.chat-message .dice-roll.domainTest .domainDice .Ame {
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: center;
+}
+.chat-message .dice-roll.domainTest .domainDice .Corps {
+  grid-area: 1 / 3 / 2 / 4;
+  justify-self: center;
+}
 
-.chat-message .dice-roll.domainTest .domainDice .Esprit img, .chat-message .dice-roll.domainTest .domainDice .Ame img, .chat-message .dice-roll.domainTest .domainDice .Corps img {
-    border: 0;
+.chat-message .dice-roll.domainTest .domainDice .Esprit img,
+.chat-message .dice-roll.domainTest .domainDice .Ame img,
+.chat-message .dice-roll.domainTest .domainDice .Corps img {
+  border: 0;
 }
 
 .chat-message .dice-roll.domainTest .domainInfos {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
 }
 
-.chat-message .dice-roll.necroseTest .domainDice{
-    flex-direction: row;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.chat-message .dice-roll.necroseTest .domainDice {
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
-.chat-message .dice-roll.necroseTest .domainDice .Nécrose { grid-area: 1 / 1 / 2 / 2; justify-self: center; }
-.chat-message .dice-roll.necroseTest .domainDice .Nécrose img, .chat-message .dice-roll.necroseTest .domainDiceH .Nécrose img {
-    border: 0;
-    width: 80px;
-    display: flex;
-    margin: 0;
+.chat-message .dice-roll.necroseTest .domainDice .Nécrose {
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: center;
 }
-.chat-message .dice-roll.necroseTest .domainDice .Esprit img, .chat-message .dice-roll.necroseTest .domainDiceH .Esprit img {
-    border: 0;
-    width: 80px;
-    display: flex;
-    margin: 0;
+.chat-message .dice-roll.necroseTest .domainDice .Nécrose img,
+.chat-message .dice-roll.necroseTest .domainDiceH .Nécrose img {
+  border: 0;
+  width: 80px;
+  display: flex;
+  margin: 0;
+}
+.chat-message .dice-roll.necroseTest .domainDice .Esprit img,
+.chat-message .dice-roll.necroseTest .domainDiceH .Esprit img {
+  border: 0;
+  width: 80px;
+  display: flex;
+  margin: 0;
 }
 .chat-message .dice-roll.necroseTest .domainDiceH {
-    display: grid;
-    flex-direction: column;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
-.chat-message .dice-roll.necroseTest .domainDiceH .Esprit { grid-area: 1 / 1 / 2 / 2; justify-self: center;}
-.chat-message .dice-roll.necroseTest .domainDiceH .Nécrose { grid-area: 1 / 2 / 2 / 3; justify-self: center;}
+.chat-message .dice-roll.necroseTest .domainDiceH .Esprit {
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: center;
+}
+.chat-message .dice-roll.necroseTest .domainDiceH .Nécrose {
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: center;
+}
 
 .chat-message .dice-roll.necroseTest .domainInfos {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
 }
 
 .chat-message .dice-roll .symbiose {
-    text-align: center;
-    height: 20px;
-    font: 700 var(--font-size-14) var(--sans-serif);
-    text-transform: uppercase
+  text-align: center;
+  height: 20px;
+  font: 700 var(--font-size-14) var(--sans-serif);
+  text-transform: uppercase;
 }
 .chat-message .dice-roll .symbiose.Réussite {
-    background: #328021;
-    color: white;
+  background: #328021;
+  color: white;
 }
 .chat-message .dice-roll .symbiose.Echec {
-    background: rgb(40, 38, 38);
-    color: white;
+  background: rgb(40, 38, 38);
+  color: white;
 }
 .chat-message .result-container {
-    width: 100%;
-    margin-top: 5px;
-    border: 1px solid rgba(77, 77, 77, 0.9);
-    border-radius:2px;
-    padding: 3px;
-    text-align: center;
-    font: 700 var(--font-size-16) var(--sans-serif);
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid rgba(77, 77, 77, 0.9);
+  border-radius: 2px;
+  padding: 3px;
+  text-align: center;
+  font: 700 var(--font-size-16) var(--sans-serif);
 }
 .chat-message .result-container.success {
-    background:#328021;
+  background: #328021;
 }
 .chat-message .result-container.fail {
-    background:#802121
+  background: #802121;
 }
 .chat-message button {
-    margin-top: 3px;
+  margin-top: 3px;
 }
 /* SETTINGS */
 
 .system-info a {
-    margin-left: 3px;
-    margin-right: 3px;
-    text-transform: uppercase;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-transform: uppercase;
 }
-
 
 /* POUVOIR CHAT */
 
-.chat-message .pouvoir-chat header{
-    display: grid;
-    grid-template-columns: 19% 81%;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 3px;
+.chat-message .pouvoir-chat header {
+  display: grid;
+  grid-template-columns: 19% 81%;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 3px;
 }
 .chat-message .pouvoir-chat header img {
-    border: none;
-    margin-right: 10px;
+  border: none;
+  margin-right: 10px;
 }
 .chat-message .pouvoir-chat header h2 {
-    border: none;
-    font-family: var(--sans-serif);
-    font-weight: 700;
-    margin: 0;
-    margin-left: 5px;
-    align-self: center;
+  border: none;
+  font-family: var(--sans-serif);
+  font-weight: 700;
+  margin: 0;
+  margin-left: 5px;
+  align-self: center;
 }
 .chat-message .pouvoir-chat .pouvoir-infos {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .chat-message .pouvoir-chat .pouvoir-infos .label {
-    color: var(--primary);
-    font-family: var(--sans-serif);
-    font-size: .8rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-right: 2px;
-    text-transform: uppercase;
-    white-space: nowrap
+  color: var(--primary);
+  font-family: var(--sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .chat-message .pouvoir-chat .pouvoir-infos .detail {
-    font: 600 var(--font-size-14) var(--body-serif)
+  font: 600 var(--font-size-14) var(--body-serif);
 }
 
 /* ACQUIS CHAT */
 
-.chat-message .acquis-chat header{
-    display: grid;
-    grid-template-columns: 19% 81%;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 3px;
+.chat-message .acquis-chat header {
+  display: grid;
+  grid-template-columns: 19% 81%;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 3px;
 }
 .chat-message .acquis-chat header img {
-    border: none;
-    margin-right: 10px;
+  border: none;
+  margin-right: 10px;
 }
 .chat-message .acquis-chat header h2 {
-    border: none;
-    font-family: var(--sans-serif);
-    font-weight: 700;
-    margin: 0;
-    margin-left: 5px;
-    align-self: center;
+  border: none;
+  font-family: var(--sans-serif);
+  font-weight: 700;
+  margin: 0;
+  margin-left: 5px;
+  align-self: center;
 }
 .chat-message .acquis-chat .acquis-infos {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .chat-message .acquis-chat .acquis-infos .label {
-    color: var(--primary);
-    font-family: var(--sans-serif);
-    font-size: .8rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-right: 2px;
-    text-transform: uppercase;
-    white-space: nowrap
+  color: var(--primary);
+  font-family: var(--sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .chat-message .acquis-chat .acquis-infos .detail {
-    font: 600 var(--font-size-14) var(--body-serif)
+  font: 600 var(--font-size-14) var(--body-serif);
 }
 
 /* Dialog Puiser */
 
 .puiser-dialog img {
-    width: 15%;
-    border: none;
+  width: 15%;
+  border: none;
 }
-.puiser-dialog fieldset div, .puiser-dialog fieldset div label {
-    display: flex;
+.puiser-dialog fieldset div,
+.puiser-dialog fieldset div label {
+  display: flex;
 }
-.puiser-dialog input[type="radio"], .puiser-dialog span {
-    align-self: center;
+.puiser-dialog input[type="radio"],
+.puiser-dialog span {
+  align-self: center;
 }
 
 .editor {
-    background-color: rgba(28, 28, 28, .1);
-    padding: 8px 4px 6px;
-    min-height: 200px;
-    height: max-content;
-    font: 700 var(--font-size-14) var(--body-serif);
+  background-color: rgba(28, 28, 28, 0.1);
+  padding: 8px 4px 6px;
+  min-height: 200px;
+  height: max-content;
+  font: 700 var(--font-size-14) var(--body-serif);
 }
 .sheet .editor-content {
-    height: 100%;
-    overflow-y: auto;
-    word-break: break-word;
-    
+  height: 100%;
+  overflow-y: auto;
+  word-break: break-word;
 }
 
-.chat-message .dice-roll.trihnTest .domainDice{
-    flex-direction: row;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.chat-message .dice-roll.trihnTest .domainDice {
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
-.chat-message .dice-roll.trihnTest .domainDice img { 
-    grid-area: 1 / 1 / 2 / 2; 
-    justify-self: center;
-    border: 0;
-    width: 80px;
-    display: flex;
-    margin: 0;
+.chat-message .dice-roll.trihnTest .domainDice img {
+  grid-area: 1 / 1 / 2 / 2;
+  justify-self: center;
+  border: 0;
+  width: 80px;
+  display: flex;
+  margin: 0;
 }
