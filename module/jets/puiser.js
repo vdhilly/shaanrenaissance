@@ -18,7 +18,6 @@ async function onPuiser(event) {
     return ui.notifications.warn("Vous devez sélectionner au moins un token.");
   const chatCard = $(this.parentElement);
   const dice = chatCard.find("input.dice-value");
-  console.log(chatCard);
   const isParalyzed =
     chatCard.find(".die.Corps").attr("data-paralyzed") === "true";
   const isBewitched =
@@ -130,7 +129,6 @@ async function onPuiser(event) {
   if (puiser2.value == 10) {
     puiser2.value = 0;
   }
-  console.log(baseDice, puiser1, puiser2);
   if (
     baseDice.value > domain &&
     puiser1.value > domain &&
@@ -142,7 +140,6 @@ async function onPuiser(event) {
   let choix = {};
   choix.bonus = spéBonus + acquisBonus;
   if (puiser1.value != 0 && puiser1.value <= domain) {
-    console.log(puiser1.value, baseDice.value);
     if (puiser1.value > baseDice.value || baseDice.value > domain) {
       choix.choix1 = puiser1;
     }
@@ -179,7 +176,8 @@ async function onPuiser(event) {
   if (
     puiser1.value != 0 &&
     puiser2.value != 0 &&
-    puiser1.value + puiser2.value <= domain
+    puiser1.value + puiser2.value <= domain &&
+    domain >= 10
   ) {
     choix.choix5 = {
       value: puiser1.value + puiser2.value,
@@ -353,11 +351,8 @@ async function onPuiserNecrose(event) {
   }
   let choix = {};
   choix.bonus = spéBonus + acquisBonus;
-  console.log(esprit, domain);
   if (esprit != 0 && esprit <= domain) {
-    console.log("test1");
     if (esprit > necrose || necrose > domain) {
-      console.log("test2");
       choix.choix1 = {
         value: esprit,
         label: "esprit",
@@ -377,7 +372,6 @@ async function onPuiserNecrose(event) {
       checked: false,
     };
   }
-  console.log(choix);
   if (!choix.choix1 && !choix.choix2) {
     return ui.notifications.error("Vous ne pouvez puiser dans aucun Trihn.");
   }

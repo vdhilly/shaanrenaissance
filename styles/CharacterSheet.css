@@ -1372,6 +1372,14 @@ h3 {
   margin-left: 5px;
   align-items: center;
 }
+.actor.sheet.character .tab.character .vide .isIndarDiv,
+.actor.sheet.character .tab.character .vide .isMorphDiv {
+  display: flex;
+}
+.actor.sheet.character .tab.character .vide input {
+  width: 17px;
+  flex: none;
+}
 .actor.sheet.character .tab.character .vide label {
   color: var(--primary);
   font-family: var(--sans-serif);
@@ -1382,7 +1390,6 @@ h3 {
   margin-right: 2px;
   text-transform: uppercase;
   white-space: nowrap;
-  padding-bottom: 2px;
   align-self: center;
 }
 
