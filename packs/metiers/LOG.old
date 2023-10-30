@@ -1,3 +1,8 @@
-2023/10/08-16:22:17.796 ab28 Recovering log #671
-2023/10/08-16:22:17.805 ab28 Delete type=0 #671
-2023/10/08-16:22:17.805 ab28 Delete type=3 #670
+2023/10/30-09:53:15.778 2d14 Recovering log #775
+2023/10/30-09:53:15.788 2d14 Delete type=0 #775
+2023/10/30-09:53:15.789 2d14 Delete type=3 #774
+2023/10/30-10:21:44.992 7bbc Level-0 table #779: started
+2023/10/30-10:21:44.998 7bbc Level-0 table #779: 0 bytes OK
+2023/10/30-10:21:45.001 7bbc Delete type=0 #777
+2023/10/30-10:21:45.015 7bbc Manual compaction at level-0 from '!folders!04BqgSwR3wXPzRt5' @ 72057594037927935 : 1 .. '!items!zl5mlnHMFYyWhf9U' @ 0 : 0; will stop at (end)
+2023/10/30-10:21:45.015 7bbc Manual compaction at level-1 from '!folders!04BqgSwR3wXPzRt5' @ 72057594037927935 : 1 .. '!items!zl5mlnHMFYyWhf9U' @ 0 : 0; will stop at (end)
