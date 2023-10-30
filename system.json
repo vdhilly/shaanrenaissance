@@ -21,19 +21,14 @@
       "flags": {}
     }
   ],
-  "version": "v1.1.0",
+  "version": "v1.1.1",
   "compatibility": {
     "minimum": "11",
     "verified": "11",
     "maximum": "11"
   },
-  "esmodules": [
-    "scripts/shaanRenaissance.js"
-  ],
-  "scripts": [
-    "greensock/dist/gsap.min.js",
-    "lib/tooltipster.bundle.min.js"
-  ],
+  "esmodules": ["scripts/shaanRenaissance.js"],
+  "scripts": ["greensock/dist/gsap.min.js", "lib/tooltipster.bundle.min.js"],
   "styles": [
     "styles/ui.css",
     "styles/CharacterSheet.css",
@@ -138,5 +133,5 @@
   "initiative": "1d10 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
   "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.1.0/shaanrenaissance.zip"
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.1.1/shaanrenaissance.zip"
 }
