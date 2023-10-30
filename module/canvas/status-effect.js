@@ -1,10 +1,15 @@
 import { CONDITION_SLUGS } from "../item/condition/values.js";
 import {
   ErrorSR,
+  fontAwesomeIcon,
   htmlQueryAll,
   objectHasKey,
   setHasElement,
 } from "../utils/utils.js";
+
+const debouncedRender = foundry.utils.debounce(() => {
+  canvas.tokens.hud.render();
+}, 20);
 
 export class StatusEffects {
   static initialize() {
@@ -40,15 +45,11 @@ export class StatusEffects {
     const iconGrid = html.querySelector(".status-effects");
     if (!iconGrid)
       throw (0, ErrorSR)("Unexpected error retrieving status effects grid");
-    const affectingConditions =
-        null !==
-          (_c =
-            null === (_b = token.actor) || void 0 === _b
-              ? void 0
-              : _b.conditions.active.filter((c) => c.isInHUD)) && void 0 !== _c
-          ? _c
-          : [],
-      titleBar = document.createElement("div");
+    const actor = token.actor;
+    const activeConditions = (actor && actor.conditions.active) || [];
+
+    const affectingConditions = activeConditions.filter((c) => c.isInHUD);
+    const titleBar = document.createElement("div");
     (titleBar.className = "title-bar"), iconGrid.append(titleBar);
     const statusIcons = iconGrid.querySelectorAll(".effect-control");
     for (const icon of statusIcons) {
@@ -65,36 +66,8 @@ export class StatusEffects {
       const slug =
           null !== (_d = picture.dataset.statusId) && void 0 !== _d ? _d : "",
         affecting = affectingConditions.filter((c) => c.slug === slug);
-      if (
-        ((affecting.length > 0 || iconSrc === token.document.overlayEffect) &&
-          picture.classList.add("active"),
-        affecting.length > 0)
-      ) {
-        const isOverridden = affecting.every(
-            (c) => c.system.references.overriddenBy.length > 0
-          ),
-          isLocked = affecting.every((c) => c.isLocked),
-          hasValue = affecting.some((c) => c.value);
-        if (isOverridden) {
-          picture.classList.add("overridden");
-          const badge = (0, _util_1.fontAwesomeIcon)("angle-double-down");
-          badge.classList.add("badge"), picture.append(badge);
-        } else if (isLocked) {
-          picture.classList.add("locked");
-          const badge = (0, _util_1.fontAwesomeIcon)("lock");
-          badge.classList.add("badge"), picture.append(badge);
-        } else if (hasValue) {
-          picture.classList.add("valued");
-          const badge = document.createElement("i");
-          badge.classList.add("badge");
-          const value = Math.max(
-            ...affecting.map((c) => {
-              var _b;
-              return null !== (_b = c.value) && void 0 !== _b ? _b : 1;
-            })
-          );
-          (badge.innerText = value.toString()), picture.append(badge);
-        }
+      if (affecting.length > 0 || iconSrc === token.document.overlayEffect) {
+        picture.classList.add("active");
       }
     }
     this.activateListeners.call(this, iconGrid);
@@ -127,7 +100,6 @@ export class StatusEffects {
     event.stopPropagation();
 
     const slug = control.dataset.statusId;
-    console.log(slug);
     if (!setHasElement(CONDITION_SLUGS, slug) && slug !== "dead") {
       return;
     }
@@ -141,17 +113,14 @@ export class StatusEffects {
 
       if (event.type === "click") {
         if (typeof condition?.value === "number") {
-          console.log("click1");
           await game.shaanRenaissance.ConditionManager.updateConditionValue(
             condition.id,
             token,
             condition.value + 1
           );
         } else if (objectHasKey(CONFIG.shaanRenaissance.conditionTypes, slug)) {
-          console.log("click2");
-          await token.actor?.increaseCondition(slug);
+          await this.toggleStatus(token, control, event);
         } else {
-          console.log("click3");
           this.toggleStatus(token, control, event);
         }
       } else if (event.type === "contextmenu") {
@@ -161,7 +130,6 @@ export class StatusEffects {
           const conditionIds = actor.conditions
             .bySlug(slug, { temporary: false })
             .map((c) => c.id);
-          console.log(conditionIds);
           await token.actor?.deleteEmbeddedDocuments("Item", conditionIds);
         } else if (condition?.value) {
           await game.shaanRenaissance.ConditionManager.updateConditionValue(
@@ -191,7 +159,6 @@ export class StatusEffects {
     const affecting = actor.conditions
       .bySlug(slug, { active: true, temporary: false })
       .find((c) => !c.system.references.parent);
-    console.log(affecting);
     const conditionIds = [];
 
     if (event.type === "click" && !affecting) {
@@ -213,6 +180,11 @@ export class StatusEffects {
       } else if (token.document.overlayEffect === iconSrc) {
         await token.document.update({ overlayEffect: "" });
       }
+    }
+  }
+  static refresh() {
+    if (canvas.ready && canvas.tokens.hud.rendered) {
+      debouncedRender();
     }
   }
 }

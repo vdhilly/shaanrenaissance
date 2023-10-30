@@ -66,6 +66,22 @@ export async function domainTest({
   const spé = checkOptions.spécialisation;
   difficulty = checkOptions.difficulty;
 
+  if (
+    actor.conditions.paralyzed &&
+    (domain === "Rituels" || domain === "Survie" || domain === "Combat")
+  )
+    return ui.notifications.warn("Ce personnage est Paralysé");
+  if (
+    actor.conditions.dominated &&
+    (domain === "Technique" || domain === "Savoir" || domain === "Social")
+  )
+    return ui.notifications.warn("Ce personnage est Dominé");
+  if (
+    actor.conditions.bewitched &&
+    (domain === "Arts" || domain === "Shaan" || domain === "Magie")
+  )
+    return ui.notifications.warn("Ce personnage est Envoûté");
+
   let corps = "1d10[Corps]";
   let ame = "1d10[Ame]";
   let esprit = "1d10[Esprit]";
@@ -272,6 +288,9 @@ export async function domainTest({
       dazzled: actor.conditions.dazzled,
       blinded: actor.conditions.blinded,
       muted: actor.conditions.muted,
+      paralyzed: actor.conditions.paralyzed,
+      bewitched: actor.conditions.bewitched,
+      dominated: actor.conditions.dominated,
       actorID: actor.uuid,
     });
   }
@@ -547,6 +566,9 @@ export async function SpéTest({
       dazzled: actor.conditions.dazzled,
       blinded: actor.conditions.blinded,
       muted: actor.conditions.muted,
+      paralyzed: actor.conditions.paralyzed,
+      bewitched: actor.conditions.bewitched,
+      dominated: actor.conditions.dominated,
       actorID: actor.uuid,
     });
   }
@@ -827,6 +849,9 @@ export async function necroseTest({
       dazzled: actor.conditions.dazzled,
       blinded: actor.conditions.blinded,
       muted: actor.conditions.muted,
+      paralyzed: actor.conditions.paralyzed,
+      bewitched: actor.conditions.bewitched,
+      dominated: actor.conditions.dominated,
       actorID: actor.uuid,
       race: race,
     });
@@ -1081,6 +1106,9 @@ export async function SpéTestNécr({
       dazzled: actor.conditions.dazzled,
       blinded: actor.conditions.blinded,
       muted: actor.conditions.muted,
+      paralyzed: actor.conditions.paralyzed,
+      bewitched: actor.conditions.bewitched,
+      dominated: actor.conditions.dominated,
       score: score,
       actorID: actor.uuid,
       race: race,
@@ -1445,6 +1473,9 @@ export async function trihnTest({
       dazzled: actor.conditions.dazzled,
       blinded: actor.conditions.blinded,
       muted: actor.conditions.muted,
+      paralyzed: actor.conditions.paralyzed,
+      bewitched: actor.conditions.bewitched,
+      dominated: actor.conditions.dominated,
       actorID: actor.uuid,
     });
   }

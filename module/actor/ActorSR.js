@@ -6,11 +6,19 @@ import {
 } from "../utils/utils.js";
 import { ActorInventory } from "./Inventory/ActorInventory.js";
 import { ActorConditions } from "./conditions.js";
+import { TokenEffect } from "./token-effect.js";
 export class ActorSR extends Actor {
   get hasPlayerOwner() {
     return game.users.some(
       (u) => !u.isGM && this.testUserPermission(u, "OWNER")
     );
+  }
+  get temporaryEffects() {
+    const fromConditions = this.conditions.active.map(
+      (c) => new TokenEffect(c)
+    );
+
+    return [...super.temporaryEffects, ...fromConditions];
   }
   isOfType(...types) {
     return types.some((t) =>
@@ -41,6 +49,11 @@ export class ActorSR extends Actor {
       null !== (_b = flags.shaanRenaissance.sheetTabs) && void 0 !== _b
         ? _b
         : {}
+    );
+  }
+  hasCondition(...slugs) {
+    return slugs.some(
+      (slug) => this.conditions.bySlug(slug, { active: true }).length > 0
     );
   }
   async increaseCondition(

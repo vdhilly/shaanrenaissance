@@ -399,6 +399,7 @@ export default class ShaanNPCSheet extends ActorSheet {
   }
   _onSpéTest(event) {
     let actor = this.actor;
+    const actorData = this.actor.toObject(!1);
     let domain = $(event.target.closest(".npc"))
       .children(".specialisations-title")
       .find(".specialisations-label")
@@ -416,12 +417,42 @@ export default class ShaanNPCSheet extends ActorSheet {
       .replace("î", "i");
     let description = game.i18n.translations.SRspéDesc[spécialisation];
 
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    race = lastElement.name;
+    if (
+      actor.conditions.paralyzed &&
+      (domain === "Rituels" || domain === "Survie" || domain === "Combat")
+    )
+      return ui.notifications.warn("Ce personnage est Paralysé");
+    if (
+      actor.conditions.dominated &&
+      (domain === "Technique" || domain === "Savoir" || domain === "Social")
+    )
+      return ui.notifications.warn("Ce personnage est Dominé");
+    if (
+      actor.conditions.bewitched &&
+      (domain === "Arts" || domain === "Shaan" || domain === "Magie")
+    )
+      return ui.notifications.warn("Ce personnage est Envoûté");
+    if (actor.conditions.unconscious) return ui.notifications.warn("Ce personnage est Inconscient");
     Dice.SpéTest({
       actor,
       domain: domain,
       spécialisation: spécialisation,
       description: description,
       askForOptions: event.shiftKey,
+      race,
     });
   }
   _onAcquisCreate(event) {
@@ -882,6 +913,8 @@ export default class ShaanNPCSheet extends ActorSheet {
       }
     });
     race = lastElement.name;
+    if (actor.conditions.unconscious) return ui.notifications.warn("Ce personnage est Inconscient");
+
 
     Dice.SpéTestNécr({
       actor,
@@ -907,6 +940,8 @@ export default class ShaanNPCSheet extends ActorSheet {
     const dataset = event.target.closest(".roll-data").dataset.itemId;
     let actor = this.actor;
     const actorData = this.actor.toObject(!1);
+    if (actor.conditions.unconscious) return ui.notifications.warn("Ce personnage est Inconscient");
+
     // Filtre Race
     let race = actorData.items.filter(function (item) {
       return item.type == "Race";

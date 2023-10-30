@@ -31,6 +31,12 @@ export const RenderDialog = {
           ),
           select.append(extractOptGroup(select, categories.Autres)),
           (select.querySelector("option").selected = !0));
+        // Afficher Condition
+        [...select.options].forEach((option) => {
+          if (option.value.toLowerCase() === "condition") {
+            option.style.display = "none";
+          }
+        });
       }
     });
   },

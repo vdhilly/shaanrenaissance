@@ -1,12 +1,6 @@
-import { CONDITION_SLUGS } from "../item/condition/values.js";
-
-const conditionSlugsArray = Array.from(CONDITION_SLUGS);
-const ConditionSlug = conditionSlugsArray[0];
-
 export class ActorConditions extends Collection {
   #idMap = new Collection();
 
-  /** A secondary map by condition slug */
   #slugMap = new Collection();
 
   get active() {
@@ -121,7 +115,6 @@ export class ActorConditions extends Collection {
     return this.#idMap.contents.flatMap(transformer);
   }
 
-  /** No deletions: a new instance is created every data preparation cycle */
   delete() {
     return false;
   }

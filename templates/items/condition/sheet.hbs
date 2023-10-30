@@ -10,7 +10,18 @@
     </nav>
     <section class="sheet-content">
         <div class="tab item-general" data-tab="general">
-            <input class="slug" name="system.slug" value="{{data.slug}}">
+            <section class="slug">
+                <label for="{{options.id}}-slug">
+                    <span>{{localize "SRLabels.Slug"}}</span>
+                    <i class="fa-solid fa-info-circle small" title="{{localize "SR.Item.Rules.Hint.Slug"}}"></i>
+                </label>
+                <input id="{{options.id}}-slug" type="text" name="system.slug" value="{{item.system.slug}}" spellcheck="off"/>
+                <div class="item-controls">
+                    <a data-action="regenerate-slug" title="{{localize "SR.Item.Rules.RegenerateSlug"}}"><i class="fa-solid fa-fw fa-sync-alt"></i></a>
+                </div>
+            </section>
+            <label for="condition-description">{{localize "SRLabels.description"}}</label>
+            <textarea id="condition-description" class="description" name="system.description.value" spellcheck="off">{{data.description.value}}</textarea>
         </div>
         {{> "systems/shaanrenaissance/templates/items/partials/activeEffects.hbs"}}
     </section>

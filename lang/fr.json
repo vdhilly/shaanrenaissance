@@ -3,6 +3,9 @@
     "Personnage": "Personnage",
     "Pnj": "PNJ"
   },
+  "ITEM": {
+    "condition": "État"
+  },
   "SRLabels": {
     "trihnTest": "Test de Trihn",
     "type": "Type",

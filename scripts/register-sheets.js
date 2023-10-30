@@ -52,7 +52,7 @@ export function registerSheets() {
   });
   Items.registerSheet("shaanrenaissance", ShaanConditionSheet, {
     types: ["condition"],
-    label: "condition",
+    label: "Condition",
   });
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("shaanrenaissance", ShaanRActorsSheet, {

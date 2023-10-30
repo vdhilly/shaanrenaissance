@@ -678,6 +678,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
       return item.type == "Race";
     });
     let lastElement = race[race.length - 1];
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
 
     race.forEach((element) => {
       if (element != lastElement) {
@@ -686,6 +688,12 @@ export default class ShaanRActorsSheet extends ActorSheet {
       }
     });
     race = lastElement.name;
+    if (actor.conditions.paralyzed && trihn === "Corps")
+      return ui.notifications.warn("Ce personnage est Paralysé");
+    if (actor.conditions.dominated && trihn === "Esprit")
+      return ui.notifications.warn("Ce personnage est Dominé");
+    if (actor.conditions.bewitched && trihn === "Ame")
+      return ui.notifications.warn("Ce personnage est Envoûté");
 
     Dice.trihnTest({
       actor,
@@ -697,7 +705,9 @@ export default class ShaanRActorsSheet extends ActorSheet {
   _onSpéTest(event) {
     let actor = this.actor;
     const actorData = this.actor.toObject(!1);
-    console.log(actor);
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
+
     let domain = $(event.target.closest(".pc"))
       .children(".specialisations-title")
       .find(".specialisations-label")
@@ -728,7 +738,21 @@ export default class ShaanRActorsSheet extends ActorSheet {
       }
     });
     race = lastElement.name;
-
+    if (
+      actor.conditions.paralyzed &&
+      (domain === "Rituels" || domain === "Survie" || domain === "Combat")
+    )
+      return ui.notifications.warn("Ce personnage est Paralysé");
+    if (
+      actor.conditions.dominated &&
+      (domain === "Technique" || domain === "Savoir" || domain === "Social")
+    )
+      return ui.notifications.warn("Ce personnage est Dominé");
+    if (
+      actor.conditions.bewitched &&
+      (domain === "Arts" || domain === "Shaan" || domain === "Magie")
+    )
+      return ui.notifications.warn("Ce personnage est Envoûté");
     Dice.SpéTest({
       actor,
       domain: domain,
@@ -741,6 +765,9 @@ export default class ShaanRActorsSheet extends ActorSheet {
 
   _onSpéTestNécr(event) {
     let actor = this.actor;
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
+
     let domain = $(event.target.closest(".pc"))
       .children(".specialisations-title")
       .find(".specialisations-label")
@@ -801,6 +828,8 @@ export default class ShaanRActorsSheet extends ActorSheet {
       return item.type == "Race";
     });
     let lastElement = race[race.length - 1];
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
 
     race.forEach((element) => {
       if (element != lastElement) {

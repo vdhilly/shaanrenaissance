@@ -317,6 +317,10 @@ export default class ShaanCreatureSheet extends ActorSheet {
   }
   _onSpéTest(event) {
     let actor = this.actor;
+    const actorData = this.actor.toObject(!1);
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
+
     let domain = $(event.target.closest(".creature"))
       .children(".specialisations-title")
       .find(".specialisations-label")
@@ -334,6 +338,22 @@ export default class ShaanCreatureSheet extends ActorSheet {
       .replace("î", "i");
     let description = game.i18n.translations.SRspéDesc[spécialisation];
 
+    if (
+      actor.conditions.paralyzed &&
+      (domain === "Rituels" || domain === "Survie" || domain === "Combat")
+    )
+      return ui.notifications.warn("Ce personnage est Paralysé");
+    if (
+      actor.conditions.dominated &&
+      (domain === "Technique" || domain === "Savoir" || domain === "Social")
+    )
+      return ui.notifications.warn("Ce personnage est Dominé");
+    if (
+      actor.conditions.bewitched &&
+      (domain === "Arts" || domain === "Shaan" || domain === "Magie")
+    )
+      return ui.notifications.warn("Ce personnage est Envoûté");
+
     Dice.SpéTest({
       actor,
       domain: domain,
@@ -345,6 +365,9 @@ export default class ShaanCreatureSheet extends ActorSheet {
 
   _onSpéTestNécr(event) {
     let actor = this.actor;
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
+
     let domain = $(event.target.closest(".creature"))
       .children(".specialisations-title")
       .find(".specialisations-label")
@@ -704,6 +727,8 @@ export default class ShaanCreatureSheet extends ActorSheet {
   _onTest(event) {
     const dataset = event.target.closest(".roll-data").dataset.itemId;
     let actor = this.actor;
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
 
     if (dataset == "domainTest" || "necroseTest") {
       Dice[dataset]({

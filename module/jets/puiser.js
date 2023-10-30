@@ -345,7 +345,6 @@ async function onPuiserNecrose(event) {
   let necrose = Number(dice[0].value);
   if (isDominated) esprit = 0;
 
-  console.log(esprit, necrose);
   if (esprit == 10) {
     esprit = 0;
   }
