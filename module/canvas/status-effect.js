@@ -14,7 +14,7 @@ const debouncedRender = foundry.utils.debounce(() => {
 export class StatusEffects {
   static initialize() {
     CONFIG.shaanRenaissance.statusEffects.iconDir =
-      "systems/shaanRenaissance/icons/conditions/";
+      "systems/shaanrenaissance/icons/conditions/";
     this.updateStatusIcons();
   }
   static get conditions() {
