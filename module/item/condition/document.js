@@ -22,6 +22,10 @@ export class ConditionSR extends ItemSR {
     super._onCreate(data, options, userId);
     this.handleChange({ create: this });
   }
+  _onDelete(options, userId) {
+    super._onDelete(options, userId);
+    this.handleChange({ delete: { name: this._source.name } });
+  }
   handleChange(change) {
     if (this.isOfType("condition")) {
       const activeTokens = this.actor ? this.actor.getActiveTokens() : [];

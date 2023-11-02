@@ -112,13 +112,7 @@ export class StatusEffects {
         .find((c) => c.isInHUD && !c.system.references.parent);
 
       if (event.type === "click") {
-        if (typeof condition?.value === "number") {
-          await game.shaanRenaissance.ConditionManager.updateConditionValue(
-            condition.id,
-            token,
-            condition.value + 1
-          );
-        } else if (objectHasKey(CONFIG.shaanRenaissance.conditionTypes, slug)) {
+        if (objectHasKey(CONFIG.shaanRenaissance.conditionTypes, slug)) {
           await this.toggleStatus(token, control, event);
         } else {
           this.toggleStatus(token, control, event);
@@ -131,12 +125,6 @@ export class StatusEffects {
             .bySlug(slug, { temporary: false })
             .map((c) => c.id);
           await token.actor?.deleteEmbeddedDocuments("Item", conditionIds);
-        } else if (condition?.value) {
-          await game.shaanRenaissance.ConditionManager.updateConditionValue(
-            condition.id,
-            token,
-            condition.value - 1
-          );
         } else {
           await this.toggleStatus(token, control, event);
         }

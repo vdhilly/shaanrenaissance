@@ -18,7 +18,7 @@ export class ActorSR extends Actor {
       (c) => new TokenEffect(c)
     );
 
-    return [...super.temporaryEffects, ...fromConditions];
+    return [...super.temporaryEffects, ...fromConditions].flat();
   }
   isOfType(...types) {
     return types.some((t) =>
@@ -55,61 +55,6 @@ export class ActorSR extends Actor {
     return slugs.some(
       (slug) => this.conditions.bySlug(slug, { active: true }).length > 0
     );
-  }
-  async increaseCondition(
-    conditionSlug,
-    { min, max = Number.MAX_SAFE_INTEGER, value } = {}
-  ) {
-    const existing = (() => {
-      if (typeof conditionSlug !== "string") return conditionSlug;
-      const conditions = this.conditions.stored;
-      return value
-        ? conditions.find((c) => c.slug === conditionSlug && !c.isLocked)
-        : conditions.find((c) => c.slug === conditionSlug && c.active);
-    })();
-
-    if (existing) {
-      const conditionValue = (() => {
-        if (existing.value === null) return null;
-        if (min && max && min > max)
-          throw ErrorSR(`min (${min}) > max (${max})`);
-        return min && max
-          ? Math.clamped(existing.value + 1, min, max)
-          : max
-          ? Math.min(existing.value + 1, max)
-          : existing.value + 1;
-      })();
-
-      if (conditionValue === null || conditionValue > (max || 0)) {
-        return null;
-      }
-
-      await game.shaanRenaissance.ConditionManager.updateConditionValue(
-        existing.id,
-        this,
-        conditionValue
-      );
-      return existing;
-    }
-
-    if (typeof conditionSlug === "string") {
-      const conditionSource =
-        game.shaanRenaissance.ConditionManager.getCondition(
-          conditionSlug
-        ).toObject();
-      const conditionValue =
-        typeof conditionSource?.system.value.value === "number" && min && max
-          ? Math.clamped(conditionSource.system.value.value, min, max)
-          : null;
-      conditionSource.system.value.value = conditionValue;
-
-      const newItem = (
-        await this.createEmbeddedDocuments("Item", [conditionSource])
-      ).shift();
-      return newItem || null;
-    }
-
-    return null;
   }
   prepareEmbeddedDocuments() {
     super.prepareEmbeddedDocuments();
