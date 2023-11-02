@@ -13,6 +13,7 @@ export const Init = {
       console.log("SHAAN RENAISSANCE | Initialising Shaan Renaissance System");
 
       CONFIG.shaanRenaissance = shaanRenaissance;
+      CONFIG.specialStatusEffects.BLIND = "blinded";
       registerFonts();
       registerHandlebarsHelpers();
       registerSettings();
