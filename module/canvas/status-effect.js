@@ -78,7 +78,7 @@ export class StatusEffects {
     ).map(([id, label]) => ({
       id,
       label,
-      icon: `systems/shaanRenaissance/icons/conditions/${id}.webp`,
+      icon: `systems/shaanrenaissance/icons/conditions/${id}.webp`,
     }))),
       CONFIG.statusEffects.push({
         id: "dead",
