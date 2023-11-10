@@ -132,8 +132,6 @@ export default class ShaanRéseauSheet extends ActorSheetSR {
     )
       return;
     if (this.isEditable) {
-      html.find(".regen-hp").click(this._onRegen.bind(this));
-      html.find(".select-input").focus(this._onInputSelect);
       html
         .find("button[data-action=add-coins]")
         .click(this._onAddCoins.bind(this));
@@ -255,9 +253,6 @@ export default class ShaanRéseauSheet extends ActorSheetSR {
       html.find("a[data-action=manage-tabs]")[0]
     );
   }
-  _onInputSelect(event) {
-    event.currentTarget.select();
-  }
   _onAddCoins(event) {
     new AddCoinsPopup(this.actor).render(true);
     return;
@@ -265,48 +260,6 @@ export default class ShaanRéseauSheet extends ActorSheetSR {
   _onRemoveCoins(event) {
     new RemoveCoinsPopup(this.actor).render(true);
     return;
-  }
-  _onRegen(event) {
-    let actor = this.actor;
-    let hp = actor.system.attributes;
-    hp.hpEsprit.max =
-      Math.max(
-        actor.system.skills.Technique.rank,
-        actor.system.skills.Savoir.rank,
-        actor.system.skills.Social.rank
-      ) +
-      Math.min(
-        actor.system.skills.Technique.rank,
-        actor.system.skills.Savoir.rank,
-        actor.system.skills.Social.rank
-      );
-    hp.hpAme.max =
-      Math.max(
-        actor.system.skills.Arts.rank,
-        actor.system.skills.Shaan.rank,
-        actor.system.skills.Magie.rank
-      ) +
-      Math.min(
-        actor.system.skills.Arts.rank,
-        actor.system.skills.Shaan.rank,
-        actor.system.skills.Magie.rank
-      );
-    hp.hpCorps.max =
-      Math.max(
-        actor.system.skills.Rituels.rank,
-        actor.system.skills.Survie.rank,
-        actor.system.skills.Combat.rank
-      ) +
-      Math.min(
-        actor.system.skills.Rituels.rank,
-        actor.system.skills.Survie.rank,
-        actor.system.skills.Combat.rank
-      );
-
-    Dice.RegenHP({
-      actor,
-      hp,
-    });
   }
   _onSpéTest(event) {
     let actor = this.actor;

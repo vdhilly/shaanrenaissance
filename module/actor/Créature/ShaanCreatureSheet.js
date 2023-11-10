@@ -77,8 +77,6 @@ export default class ShaanCreatureSheet extends ActorSheetSR {
     )
       return;
     if (this.isEditable) {
-      html.find(".regen-hp").click(this._onRegen.bind(this));
-      html.find(".select-input").focus(this._onInputSelect);
       html.find(".open-compendium").on("click", (event) => {
         if (event.currentTarget.dataset.compendium) {
           const compendium = game.packs.get(
@@ -170,21 +168,6 @@ export default class ShaanCreatureSheet extends ActorSheetSR {
             ]);
         }
       });
-  }
-  _onInputSelect(event) {
-    event.currentTarget.select();
-  }
-  _onRegen(event) {
-    let actor = this.actor;
-    let hp = actor.system.attributes;
-    hp.hpEsprit.max = actor.system.attributes.hpEsprit.max;
-    hp.hpAme.max = actor.system.attributes.hpAme.max;
-    hp.hpCorps.max = actor.system.attributes.hpCorps.max;
-    console.log(hp);
-    Dice.RegenHP({
-      actor,
-      hp,
-    });
   }
   _onSpéTest(event) {
     let actor = this.actor;

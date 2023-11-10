@@ -1,3 +1,4 @@
+export * as Dice from "../jets/dice.js";
 export class ActorSheetSR extends ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
@@ -261,6 +262,53 @@ export class ActorSheetSR extends ActorSheet {
     html.find(".acquis-chat").click(this._onAcquisChat.bind(this));
     html.find(".pouvoir-use").click(this._onPouvoirUse.bind(this));
     html.find(".item-wear").click(this._onAcquisUse.bind(this));
+    html.find(".regen-hp").click(this._onRegen.bind(this));
+    html.find(".select-input").focus(this._onInputSelect);
+  }
+  _onInputSelect(event) {
+    event.currentTarget.select();
+  }
+  _onRegen(event) {
+    let actor = this.actor;
+    let hp = actor.system.attributes;
+    hp.hpEsprit.max =
+      Math.max(
+        actor.system.skills.Technique.rank,
+        actor.system.skills.Savoir.rank,
+        actor.system.skills.Social.rank
+      ) +
+      Math.min(
+        actor.system.skills.Technique.rank,
+        actor.system.skills.Savoir.rank,
+        actor.system.skills.Social.rank
+      );
+    hp.hpAme.max =
+      Math.max(
+        actor.system.skills.Arts.rank,
+        actor.system.skills.Shaan.rank,
+        actor.system.skills.Magie.rank
+      ) +
+      Math.min(
+        actor.system.skills.Arts.rank,
+        actor.system.skills.Shaan.rank,
+        actor.system.skills.Magie.rank
+      );
+    hp.hpCorps.max =
+      Math.max(
+        actor.system.skills.Rituels.rank,
+        actor.system.skills.Survie.rank,
+        actor.system.skills.Combat.rank
+      ) +
+      Math.min(
+        actor.system.skills.Rituels.rank,
+        actor.system.skills.Survie.rank,
+        actor.system.skills.Combat.rank
+      );
+
+    Dice.RegenHP({
+      actor,
+      hp,
+    });
   }
   _onAcquisCreate(event) {
     let actor = this.actor;
