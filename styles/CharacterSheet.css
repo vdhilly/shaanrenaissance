@@ -1009,11 +1009,13 @@ h3 {
   flex-direction: row;
   margin-left: 10px;
 }
-.actor.sheet.shaani aside .sidebar .HP .hp-big .data-value span {
+.actor.sheet.shaani aside .sidebar .HP .hp-big .data-value span,
+.actor.sheet.reseau aside .sidebar .HP .hp-big .data-value span {
   color: var(--tertiary);
   margin-left: 0;
   margin-right: 2px;
 }
+
 .actor.sheet aside .sidebar .HP .hp-big span a {
   display: flex;
 }
