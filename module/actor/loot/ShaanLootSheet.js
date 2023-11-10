@@ -37,63 +37,7 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
         },
       };
     this.itemSort(sheetData.items);
-
-    (sheetData.items.Category = {}),
-      (sheetData.items.Category.Armement = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Armement" && item.system.morphe == false;
-      })),
-      (sheetData.items.Category.Armimales = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Armimale";
-      })),
-      (sheetData.items.Category.Artefacts = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Artefact";
-      })),
-      (sheetData.items.Category.Manuscrits = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Manuscrit";
-      })),
-      (sheetData.items.Category.Outils = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Outil" && item.system.morphe == false;
-      })),
-      (sheetData.items.Category.Protections = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Protection" && item.system.morphe == false;
-      })),
-      (sheetData.items.Category.Relations = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Relation";
-      })),
-      (sheetData.items.Category.Richesses = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Richesse";
-      })),
-      (sheetData.items.Category.Technologie = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Technologie" && item.system.morphe == false;
-      })),
-      (sheetData.items.Category.Transports = actorData.items.filter(function (
-        item
-      ) {
-        return item.type == "Transport";
-      }));
-    sheetData.items.Category.Bâtiments = actorData.items.filter(function (
-      item
-    ) {
-      return item.type == "Bâtiment";
-    });
+    this.itemFilter(sheetData, actorData);
 
     sheetData.enrichedGMnotes = await TextEditor.enrichHTML(
       getProperty(this.actor.system, "details.description"),
