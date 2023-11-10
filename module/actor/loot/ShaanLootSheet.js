@@ -1,12 +1,13 @@
 import { ItemSR } from "../../item/ItemSR.js";
 import { getSelectedOrOwnActors, htmlQuery } from "../../utils/utils.js";
+import { ActorSheetSR } from "../sheet.js";
 import { ItemSummaryRenderer } from "../sheet/item-summary-renderer.js";
 import { LootNPCsPopup } from "../sheet/loot/loot-npcs-popup.js";
 import { AddCoinsPopup } from "../sheet/popups/add-coins-popup.js";
 import { DistributeCoinsPopup } from "../sheet/popups/distribute-coins-popup.js";
 import { RemoveCoinsPopup } from "../sheet/popups/remove-coins-popup.js";
 
-export default class ShaanLootSheetSR extends ActorSheet {
+export default class ShaanLootSheetSR extends ActorSheetSR {
   constructor() {
     super(...arguments), (this.itemRenderer = new ItemSummaryRenderer(this));
   }
@@ -19,9 +20,6 @@ export default class ShaanLootSheetSR extends ActorSheet {
       options.scrollY.push(".sheet-body"),
       options
     );
-  }
-  get template() {
-    return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
   }
   async getData(options = this.options) {
     options.id || (options.id = this.id);
@@ -38,6 +36,7 @@ export default class ShaanLootSheetSR extends ActorSheet {
           isGM: game.user.isGM,
         },
       };
+    this.itemSort(sheetData.items);
 
     (sheetData.items.Category = {}),
       (sheetData.items.Category.Armement = actorData.items.filter(function (
@@ -146,11 +145,7 @@ export default class ShaanLootSheetSR extends ActorSheet {
         .find("button[data-action=remove-coins]")
         .click(this._onRemoveCoins.bind(this));
       html.find("a.item-take").click(this._onTakeAcquis.bind(this));
-      html.find(".acquis-chat").click(this._onAcquisChat.bind(this));
       html.find("a.item-buy").click(this._onBuyAcquis.bind(this));
-      html.find(".add-acquis").click(this._onAcquisCreate.bind(this));
-      html.find(".item-edit").click(this._onItemEdit.bind(this));
-      html.find(".item-delete").click(this._onItemDelete.bind(this));
     }
     html.find(".open-compendium").on("click", (event) => {
       if (event.currentTarget.dataset.compendium) {
@@ -382,148 +377,5 @@ export default class ShaanLootSheetSR extends ActorSheet {
         "Unexpected failure retrieving compendium item"
       );
     return item;
-  }
-  _onAcquisChat(event) {
-    event.preventDefault();
-    let element = event.target;
-    let itemId = element.closest(".item").dataset.itemId;
-    let actor = this.actor;
-    let item = actor.items.get(itemId);
-
-    AcquisChat({
-      actor: actor,
-      acquis: item,
-    });
-
-    async function AcquisChat({
-      actor = null,
-      acquis = null,
-      extraMessageData = {},
-      sendMessage = true,
-    } = {}) {
-      const messageTemplate =
-        "systems/shaanrenaissance/templates/chat/acquis-chat.hbs";
-
-      if (sendMessage) {
-        ToCustomMessage(actor, acquis, messageTemplate, {
-          ...extraMessageData,
-          actorID: actor.uuid,
-        });
-      }
-
-      async function ToCustomMessage(
-        actor = null,
-        acquis,
-        template,
-        extraData
-      ) {
-        let templateContext = {
-          ...extraData,
-          acquisData: acquis,
-        };
-
-        let chatData = {
-          user: game.user.id,
-          speaker: ChatMessage.getSpeaker({ actor }),
-          content: await renderTemplate(template, templateContext),
-          sound: CONFIG.sounds.notification,
-          type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-        };
-
-        ChatMessage.create(chatData);
-      }
-    }
-  }
-  _onAcquisCreate(event) {
-    let actor = this.actor;
-    acquisCreate({
-      actor,
-    });
-
-    async function acquisCreate({ actor = null, type = null } = {}) {
-      const actorData = actor ? actor.system : null;
-      let checkOptions = await GetAcquisOptions({ type });
-
-      if (checkOptions.cancelled) {
-        return;
-      }
-
-      type = checkOptions.type;
-
-      let itemData = {
-        name: "Nouvel Acquis",
-        type: type,
-        img: "systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp",
-      };
-      return actor.createEmbeddedDocuments("Item", [itemData]);
-
-      async function GetAcquisOptions({
-        type = null,
-        template = "systems/shaanrenaissance/templates/actors/PNJ/partials/createAcquis-dialog.hbs",
-      } = {}) {
-        const actorData = actor.toObject(!1);
-        actorData.itemTypes = {
-          Armement: {},
-          Armimale: {},
-          Artefact: {},
-          Manuscrit: {},
-          Outil: {},
-          Protection: {},
-          Relation: {},
-          Richesse: {},
-          Technologie: {},
-          Transport: {},
-          Bâtiment: {},
-        };
-        const html = await renderTemplate(template, {
-          actor,
-          type,
-          config: CONFIG.shaanRenaissance,
-        });
-
-        return new Promise((resolve) => {
-          const data = {
-            title: game.i18n.format("Création d'Acquis"),
-            content: html,
-            actor: actorData,
-            buttons: {
-              normal: {
-                label: game.i18n.localize("chat.actions.create"),
-                callback: (html) =>
-                  resolve(
-                    _processAcquisCreateOptions(html[0].querySelector("form"))
-                  ),
-              },
-              cancel: {
-                label: game.i18n.localize("chat.actions.cancel"),
-                callback: (html) => resolve({ cancelled: true }),
-              },
-            },
-            default: "normal",
-            close: () => resolve({ cancelled: true }),
-          };
-          new Dialog(data, null).render(true);
-        });
-      }
-      function _processAcquisCreateOptions(form) {
-        return {
-          type: form.type?.value,
-        };
-      }
-    }
-  }
-  _onItemEdit(event) {
-    event.preventDefault();
-    let element = event.target;
-    let itemId = element.closest(".item").dataset.itemId;
-    let item = this.actor.items.get(itemId);
-
-    item.sheet.render(true);
-  }
-  _onItemDelete(event) {
-    event.preventDefault();
-    let element = event.target;
-    let itemId = element.closest(".item").dataset.itemId;
-    return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
   }
 }

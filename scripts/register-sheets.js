@@ -1,7 +1,7 @@
 import { SRActiveEffectConfig } from "../module/ActiveEffects/SRActiveEffectConfig.js";
 import ShaanCreatureSheet from "../module/actor/Créature/ShaanCreatureSheet.js";
 import ShaanNPCSheet from "../module/actor/PNJ/ShaanNPCSheet.js";
-import ShaanRActorsSheet from "../module/actor/Personnage/ShaanRActorsSheet.js";
+import ShaanPersonnageSheet from "../module/actor/Personnage/sheet.js";
 import ShaanRéseauSheet from "../module/actor/Réseau/ShaanRéseauSheet.js";
 import ShaanShaaniSheet from "../module/actor/Shaani/ShaanShaaniSheet.js";
 import ShaanLootSheetSR from "../module/actor/loot/ShaanLootSheet.js";
@@ -55,7 +55,7 @@ export function registerSheets() {
     label: "Condition",
   });
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("shaanrenaissance", ShaanRActorsSheet, {
+  Actors.registerSheet("shaanrenaissance", ShaanPersonnageSheet, {
     types: ["Personnage"],
     label: "Personnage",
   });
