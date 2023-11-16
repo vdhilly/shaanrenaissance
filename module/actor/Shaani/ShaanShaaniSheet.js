@@ -160,10 +160,6 @@ export default class ShaanShaaniSheet extends ActorSheetSR {
       });
     }
     if (this.actor.isOwner) {
-      html.find(".roll-initiative").click(this._onInitiative.bind(this));
-      html.find(".roll-icon").click(this._onTest.bind(this));
-      html.find(".spéTest").click(this._onSpéTest.bind(this));
-      html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
     }
     html.find(".item-increase-quantity").on("click", (event) => {
       var _a;
@@ -252,82 +248,5 @@ export default class ShaanShaaniSheet extends ActorSheetSR {
   _onRemoveCoins(event) {
     new RemoveCoinsPopup(this.actor).render(true);
     return;
-  }
-  _onSpéTest(event) {
-    let actor = this.actor;
-    let domain = $(event.target.closest(".pc"))
-      .children(".specialisations-title")
-      .find(".specialisations-label")
-      .text();
-    let spécialisation = $(event.target)
-      .text()
-      .toLowerCase()
-      .replaceAll(" ", "")
-      .replace("'", "")
-      .replaceAll("é", "e")
-      .replace("è", "e")
-      .replace("ê", "e")
-      .replace("à", "a")
-      .replace("â", "a")
-      .replace("î", "i");
-    let description = game.i18n.translations.SRspéDesc[spécialisation];
-
-    Dice.SpéTest({
-      actor,
-      domain: domain,
-      spécialisation: spécialisation,
-      description: description,
-      askForOptions: event.shiftKey,
-    });
-  }
-
-  _onSpéTestNécr(event) {
-    let actor = this.actor;
-    let domain = $(event.target.closest(".pc"))
-      .children(".specialisations-title")
-      .find(".specialisations-label")
-      .text();
-    let spécialisation = $(event.target)
-      .text()
-      .toLowerCase()
-      .replaceAll(" ", "")
-      .replace("'", "")
-      .replaceAll("é", "e")
-      .replace("è", "e")
-      .replace("ê", "e")
-      .replace("à", "a")
-      .replace("â", "a")
-      .replace("î", "i");
-    let description = game.i18n.translations.SRspéDesc[spécialisation];
-
-    Dice.SpéTestNécr({
-      actor,
-      domain: domain,
-      spécialisation: spécialisation,
-      description: description,
-      askForOptions: event.shiftKey,
-    });
-  }
-
-  _onInitiative(event) {
-    const dataset = event.currentTarget.dataset;
-    let actor = this.actor;
-
-    Dice.Initiative({
-      actor,
-      domain: dataset.domain,
-      domainLevel: dataset.domainLevel,
-    });
-  }
-  _onTest(event) {
-    const dataset = event.target.closest(".roll-data").dataset.itemId;
-    let actor = this.actor;
-
-    if (dataset == "domainTest" || "necroseTest") {
-      Dice[dataset]({
-        actor,
-        checkType: dataset,
-      });
-    }
   }
 }

@@ -88,10 +88,10 @@ export default class ShaanCreatureSheet extends ActorSheetSR {
       });
     }
     if (this.actor.isOwner) {
-      html.find(".roll-initiative").click(this._onInitiative.bind(this));
-      html.find(".roll-icon").click(this._onTest.bind(this));
-      html.find(".spéTest").click(this._onSpéTest.bind(this));
-      html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
+      // html.find(".roll-initiative").click(this._onInitiative.bind(this));
+      // html.find(".roll-icon").click(this._onTest.bind(this));
+      // html.find(".spéTest").click(this._onSpéTest.bind(this));
+      // html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
     }
     html.find(".item-increase-quantity").on("click", (event) => {
       var _a;
@@ -169,105 +169,105 @@ export default class ShaanCreatureSheet extends ActorSheetSR {
         }
       });
   }
-  _onSpéTest(event) {
-    let actor = this.actor;
-    const actorData = this.actor.toObject(!1);
-    if (actor.conditions.unconscious)
-      return ui.notifications.warn("Ce personnage est Inconscient");
+  // _onSpéTest(event) {
+  //   let actor = this.actor;
+  //   const actorData = this.actor.toObject(!1);
+  //   if (actor.conditions.unconscious)
+  //     return ui.notifications.warn("Ce personnage est Inconscient");
 
-    let domain = $(event.target.closest(".creature"))
-      .children(".specialisations-title")
-      .find(".specialisations-label")
-      .text();
-    let spécialisation = $(event.target)
-      .text()
-      .toLowerCase()
-      .replaceAll(" ", "")
-      .replace("'", "")
-      .replaceAll("é", "e")
-      .replace("è", "e")
-      .replace("ê", "e")
-      .replace("à", "a")
-      .replace("â", "a")
-      .replace("î", "i");
-    let description = game.i18n.translations.SRspéDesc[spécialisation];
+  //   let domain = $(event.target.closest(".creature"))
+  //     .children(".specialisations-title")
+  //     .find(".specialisations-label")
+  //     .text();
+  //   let spécialisation = $(event.target)
+  //     .text()
+  //     .toLowerCase()
+  //     .replaceAll(" ", "")
+  //     .replace("'", "")
+  //     .replaceAll("é", "e")
+  //     .replace("è", "e")
+  //     .replace("ê", "e")
+  //     .replace("à", "a")
+  //     .replace("â", "a")
+  //     .replace("î", "i");
+  //   let description = game.i18n.translations.SRspéDesc[spécialisation];
 
-    if (
-      actor.conditions.paralyzed &&
-      (domain === "Rituels" || domain === "Survie" || domain === "Combat")
-    )
-      return ui.notifications.warn("Ce personnage est Paralysé");
-    if (
-      actor.conditions.dominated &&
-      (domain === "Technique" || domain === "Savoir" || domain === "Social")
-    )
-      return ui.notifications.warn("Ce personnage est Dominé");
-    if (
-      actor.conditions.bewitched &&
-      (domain === "Arts" || domain === "Shaan" || domain === "Magie")
-    )
-      return ui.notifications.warn("Ce personnage est Envoûté");
+  //   if (
+  //     actor.conditions.paralyzed &&
+  //     (domain === "Rituels" || domain === "Survie" || domain === "Combat")
+  //   )
+  //     return ui.notifications.warn("Ce personnage est Paralysé");
+  //   if (
+  //     actor.conditions.dominated &&
+  //     (domain === "Technique" || domain === "Savoir" || domain === "Social")
+  //   )
+  //     return ui.notifications.warn("Ce personnage est Dominé");
+  //   if (
+  //     actor.conditions.bewitched &&
+  //     (domain === "Arts" || domain === "Shaan" || domain === "Magie")
+  //   )
+  //     return ui.notifications.warn("Ce personnage est Envoûté");
 
-    Dice.SpéTest({
-      actor,
-      domain: domain,
-      spécialisation: spécialisation,
-      description: description,
-      askForOptions: event.shiftKey,
-    });
-  }
+  //   Dice.SpéTest({
+  //     actor,
+  //     domain: domain,
+  //     spécialisation: spécialisation,
+  //     description: description,
+  //     askForOptions: event.shiftKey,
+  //   });
+  // }
 
-  _onSpéTestNécr(event) {
-    let actor = this.actor;
-    if (actor.conditions.unconscious)
-      return ui.notifications.warn("Ce personnage est Inconscient");
+  // _onSpéTestNécr(event) {
+  //   let actor = this.actor;
+  //   if (actor.conditions.unconscious)
+  //     return ui.notifications.warn("Ce personnage est Inconscient");
 
-    let domain = $(event.target.closest(".creature"))
-      .children(".specialisations-title")
-      .find(".specialisations-label")
-      .text();
-    let spécialisation = $(event.target)
-      .text()
-      .toLowerCase()
-      .replaceAll(" ", "")
-      .replace("'", "")
-      .replaceAll("é", "e")
-      .replace("è", "e")
-      .replace("ê", "e")
-      .replace("à", "a")
-      .replace("â", "a")
-      .replace("î", "i");
-    let description = game.i18n.translations.SRspéDesc[spécialisation];
+  //   let domain = $(event.target.closest(".creature"))
+  //     .children(".specialisations-title")
+  //     .find(".specialisations-label")
+  //     .text();
+  //   let spécialisation = $(event.target)
+  //     .text()
+  //     .toLowerCase()
+  //     .replaceAll(" ", "")
+  //     .replace("'", "")
+  //     .replaceAll("é", "e")
+  //     .replace("è", "e")
+  //     .replace("ê", "e")
+  //     .replace("à", "a")
+  //     .replace("â", "a")
+  //     .replace("î", "i");
+  //   let description = game.i18n.translations.SRspéDesc[spécialisation];
 
-    Dice.SpéTestNécr({
-      actor,
-      domain: domain,
-      spécialisation: spécialisation,
-      description: description,
-      askForOptions: event.shiftKey,
-    });
-  }
-  _onInitiative(event) {
-    const dataset = event.currentTarget.dataset;
-    let actor = this.actor;
+  //   Dice.SpéTestNécr({
+  //     actor,
+  //     domain: domain,
+  //     spécialisation: spécialisation,
+  //     description: description,
+  //     askForOptions: event.shiftKey,
+  //   });
+  // }
+  // _onInitiative(event) {
+  //   const dataset = event.currentTarget.dataset;
+  //   let actor = this.actor;
 
-    Dice.Initiative({
-      actor,
-      domain: dataset.domain,
-      domainLevel: dataset.domainLevel,
-    });
-  }
-  _onTest(event) {
-    const dataset = event.target.closest(".roll-data").dataset.itemId;
-    let actor = this.actor;
-    if (actor.conditions.unconscious)
-      return ui.notifications.warn("Ce personnage est Inconscient");
+  //   Dice.Initiative({
+  //     actor,
+  //     domain: dataset.domain,
+  //     domainLevel: dataset.domainLevel,
+  //   });
+  // }
+  // _onTest(event) {
+  //   const dataset = event.target.closest(".roll-data").dataset.itemId;
+  //   let actor = this.actor;
+  //   if (actor.conditions.unconscious)
+  //     return ui.notifications.warn("Ce personnage est Inconscient");
 
-    if (dataset == "domainTest" || "necroseTest") {
-      Dice[dataset]({
-        actor,
-        checkType: dataset,
-      });
-    }
-  }
+  //   if (dataset == "domainTest" || "necroseTest") {
+  //     Dice[dataset]({
+  //       actor,
+  //       checkType: dataset,
+  //     });
+  //   }
+  // }
 }

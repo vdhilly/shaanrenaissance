@@ -1,4 +1,4 @@
-export * as Dice from "../jets/dice.js";
+import * as Dice from "../jets/dice.js";
 export class ActorSheetSR extends ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
@@ -264,9 +264,108 @@ export class ActorSheetSR extends ActorSheet {
     html.find(".item-wear").click(this._onAcquisUse.bind(this));
     html.find(".regen-hp").click(this._onRegen.bind(this));
     html.find(".select-input").focus(this._onInputSelect);
+    html.find(".roll-initiative").click(this._onInitiative.bind(this));
+    html.find(".roll-icon").click(this._onTest.bind(this));
+    html.find(".spéTest").click(this._onSpéTest.bind(this));
+    html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
   }
   _onInputSelect(event) {
     event.currentTarget.select();
+  }
+  // ICI
+  _onSpéTest(event) {
+    let actor = this.actor;
+    let domain;
+    console.log(actor.type);
+    if (actor.type !== "Créature" || actor.type !== "PNJ") {
+      domain = $(event.target.closest(".pc"))
+        .children(".specialisations-title")
+        .find(".specialisations-label")
+        .text();
+    } else if (actor.type !== "Créature") {
+      domain = $(event.target.closest(".creature"))
+        .children(".specialisations-title")
+        .find(".specialisations-label")
+        .text();
+
+      console.log("oui");
+    } else {
+      domain = $(event.target.closest(".npc"))
+        .children(".specialisations-title")
+        .find(".specialisations-label")
+        .text();
+    }
+    let spécialisation = $(event.target)
+      .text()
+      .toLowerCase()
+      .replaceAll(" ", "")
+      .replace("'", "")
+      .replaceAll("é", "e")
+      .replace("è", "e")
+      .replace("ê", "e")
+      .replace("à", "a")
+      .replace("â", "a")
+      .replace("î", "i");
+    let description = game.i18n.translations.SRspéDesc[spécialisation];
+    console.log(domain, spécialisation);
+
+    Dice.SpéTest({
+      actor,
+      domain: domain,
+      spécialisation: spécialisation,
+      description: description,
+      askForOptions: event.shiftKey,
+    });
+  }
+
+  _onSpéTestNécr(event) {
+    let actor = this.actor;
+    let domain = $(event.target.closest(".pc"))
+      .children(".specialisations-title")
+      .find(".specialisations-label")
+      .text();
+    let spécialisation = $(event.target)
+      .text()
+      .toLowerCase()
+      .replaceAll(" ", "")
+      .replace("'", "")
+      .replaceAll("é", "e")
+      .replace("è", "e")
+      .replace("ê", "e")
+      .replace("à", "a")
+      .replace("â", "a")
+      .replace("î", "i");
+    let description = game.i18n.translations.SRspéDesc[spécialisation];
+
+    Dice.SpéTestNécr({
+      actor,
+      domain: domain,
+      spécialisation: spécialisation,
+      description: description,
+      askForOptions: event.shiftKey,
+    });
+  }
+
+  _onInitiative(event) {
+    const dataset = event.currentTarget.dataset;
+    let actor = this.actor;
+
+    Dice.Initiative({
+      actor,
+      domain: dataset.domain,
+      domainLevel: dataset.domainLevel,
+    });
+  }
+  _onTest(event) {
+    const dataset = event.target.closest(".roll-data").dataset.itemId;
+    let actor = this.actor;
+
+    if (dataset == "domainTest" || "necroseTest") {
+      Dice[dataset]({
+        actor,
+        checkType: dataset,
+      });
+    }
   }
   _onRegen(event) {
     let actor = this.actor;
