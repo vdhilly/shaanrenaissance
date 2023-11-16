@@ -297,7 +297,7 @@ export default class ShaanPersonnageSheet extends ActorSheetSR {
           learnedCountDomaine++;
         }
       }
-      schemes.learnedCountDomaine = schemes.domaine - learnedCountDomaine - 4;
+      schemes.learnedCountDomaine = schemes.domaine - learnedCountDomaine;
       let learnedCountSpe = 0;
       for (const key in schemes_action) {
         if (
