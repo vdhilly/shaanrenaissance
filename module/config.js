@@ -73,7 +73,7 @@ shaanRenaissance.conditionTypes = {
 };
 (shaanRenaissance.statusEffects = {
   IconTheme: "default",
-  iconDir: "systems/shaan/icons/conditions/",
+  iconDir: "systems/shaanrenaissance/icons/conditions/",
   conditions: shaanRenaissance.tokenHUDStatuses,
 }),
   (shaanRenaissance.SRdomains = {
