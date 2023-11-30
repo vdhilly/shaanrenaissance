@@ -302,6 +302,7 @@ export default class ShaanPersonnageSheet extends ActorSheetSR {
     }
     this.actor.update({ "flags.shaanRenaissance.schemes": schemes });
   }
+
   _onAddCoins(event) {
     new AddCoinsPopup(this.actor).render(true);
     return;

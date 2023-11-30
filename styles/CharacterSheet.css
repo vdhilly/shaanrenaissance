@@ -2950,3 +2950,7 @@ form.sheet.actor.loot .sheet-content {
 .actor.sheet.loot .itemCategory .liste-items .item-controls {
   gap: 5px;
 }
+
+.schemes-category {
+  justify-content: space-between !important;
+}
