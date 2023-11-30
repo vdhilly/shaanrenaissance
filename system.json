@@ -21,7 +21,7 @@
       "flags": {}
     }
   ],
-  "version": "v1.1.2",
+  "version": "v1.1.3",
   "compatibility": {
     "minimum": "11",
     "verified": "11",
@@ -41,10 +41,22 @@
   ],
   "packs": [
     {
+      "name": "macrosGM",
+      "label": "Macros GM",
+      "system": "shaanrenaissance",
+      "path": "packs/macrosGM",
+      "type": "Macro",
+      "ownership": {
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "macros",
       "label": "Macros",
       "system": "shaanrenaissance",
-      "path": "packs/macros.db",
+      "path": "packs/macros",
       "type": "Macro",
       "flags": {}
     },
@@ -52,7 +64,7 @@
       "name": "conditionitems",
       "label": "Conditions",
       "system": "shaanrenaissance",
-      "path": "packs/conditionitems.db",
+      "path": "packs/conditionitems",
       "type": "Item",
       "flags": {}
     },
@@ -60,7 +72,7 @@
       "name": "pouvoirs",
       "label": "Pouvoirs",
       "system": "shaanrenaissance",
-      "path": "packs/pouvoirs.db",
+      "path": "packs/pouvoirs",
       "type": "Item",
       "flags": {}
     },
@@ -68,7 +80,7 @@
       "name": "races",
       "label": "Races",
       "system": "shaanrenaissance",
-      "path": "packs/races.db",
+      "path": "packs/races",
       "type": "Item",
       "flags": {}
     },
@@ -76,7 +88,7 @@
       "name": "peuples",
       "label": "Peuples",
       "system": "shaanrenaissance",
-      "path": "packs/peuples.db",
+      "path": "packs/peuples",
       "type": "Item",
       "flags": {}
     },
@@ -84,7 +96,7 @@
       "name": "castes",
       "label": "Castes",
       "system": "shaanrenaissance",
-      "path": "packs/castes.db",
+      "path": "packs/castes",
       "type": "Item",
       "flags": {}
     },
@@ -92,7 +104,7 @@
       "name": "metiers",
       "label": "Metiers",
       "system": "shaanrenaissance",
-      "path": "packs/metiers.db",
+      "path": "packs/metiers",
       "type": "Item",
       "flags": {}
     },
@@ -100,7 +112,7 @@
       "name": "acquis",
       "label": "Acquis",
       "system": "shaanrenaissance",
-      "path": "packs/acquis.db",
+      "path": "packs/acquis",
       "type": "Item",
       "flags": {}
     },
@@ -108,9 +120,29 @@
       "name": "bestiaire",
       "label": "Bestiaire",
       "system": "shaanrenaissance",
-      "path": "packs/bestiaire.db",
+      "path": "packs/bestiaire",
       "type": "Actor",
       "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Personnage",
+      "sorting": "m",
+      "packs": [
+        "races",
+        "peuples",
+        "castes",
+        "metiers",
+        "pouvoirs",
+        "acquis",
+        "conditionitems"
+      ]
+    },
+    {
+      "name": "Macros",
+      "sorting": "m",
+      "packs": ["macros", "macrosGM"]
     }
   ],
   "languages": [
@@ -133,5 +165,5 @@
   "initiative": "1d10 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
   "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.1.2/shaanrenaissance.zip"
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.1.3/shaanrenaissance.zip"
 }
