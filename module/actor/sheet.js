@@ -148,6 +148,18 @@ export class ActorSheetSR extends ActorSheet {
     } else {
       sheetData.Race = lastElement;
     }
+    if (
+      typeof sheetData.data.attributes !== "undefined" &&
+      typeof sheetData.Race !== "undefined"
+    ) {
+      if (sheetData.Race.name === "Nécrosien") {
+        this.actor.update({
+          data: {
+            attributes: { isNecrosian: true },
+          },
+        });
+      }
+    }
     // Filtre Peuple
     let peuple = actorData.items.filter(function (item) {
       return item.type == "Peuple";
@@ -190,51 +202,86 @@ export class ActorSheetSR extends ActorSheet {
   }
   defineMaxHealth(sheetData) {
     if (typeof sheetData.data.attributes !== "undefined") {
-      this.actor.update({
-        data: {
-          attributes: {
-            hpEsprit: {
-              max:
-                Math.max(
-                  sheetData.data.skills.Technique.rank,
-                  sheetData.data.skills.Savoir.rank,
-                  sheetData.data.skills.Social.rank
-                ) +
-                Math.min(
-                  sheetData.data.skills.Technique.rank,
-                  sheetData.data.skills.Savoir.rank,
-                  sheetData.data.skills.Social.rank
-                ),
-            },
-            hpAme: {
-              max:
-                Math.max(
-                  sheetData.data.skills.Arts.rank,
-                  sheetData.data.skills.Shaan.rank,
-                  sheetData.data.skills.Magie.rank
-                ) +
-                Math.min(
-                  sheetData.data.skills.Arts.rank,
-                  sheetData.data.skills.Shaan.rank,
-                  sheetData.data.skills.Magie.rank
-                ),
-            },
-            hpCorps: {
-              max:
-                Math.max(
-                  sheetData.data.skills.Rituels.rank,
-                  sheetData.data.skills.Survie.rank,
-                  sheetData.data.skills.Combat.rank
-                ) +
-                Math.min(
-                  sheetData.data.skills.Rituels.rank,
-                  sheetData.data.skills.Survie.rank,
-                  sheetData.data.skills.Combat.rank
-                ),
+      if (sheetData.data.attributes.isNecrosian) {
+        this.actor.update({
+          data: {
+            attributes: {
+              hpEsprit: {
+                max:
+                  Math.max(
+                    sheetData.data.skills.Technique.rank,
+                    sheetData.data.skills.Savoir.rank,
+                    sheetData.data.skills.Social.rank
+                  ) +
+                  Math.min(
+                    sheetData.data.skills.Technique.rank,
+                    sheetData.data.skills.Savoir.rank,
+                    sheetData.data.skills.Social.rank
+                  ),
+              },
+              hpCorps: {
+                max:
+                  Math.max(
+                    sheetData.data.skills.Rituels.rank,
+                    sheetData.data.skills.Survie.rank,
+                    sheetData.data.skills.Combat.rank
+                  ) +
+                  Math.min(
+                    sheetData.data.skills.Rituels.rank,
+                    sheetData.data.skills.Survie.rank,
+                    sheetData.data.skills.Combat.rank
+                  ),
+              },
             },
           },
-        },
-      });
+        });
+      } else {
+        this.actor.update({
+          data: {
+            attributes: {
+              hpEsprit: {
+                max:
+                  Math.max(
+                    sheetData.data.skills.Technique.rank,
+                    sheetData.data.skills.Savoir.rank,
+                    sheetData.data.skills.Social.rank
+                  ) +
+                  Math.min(
+                    sheetData.data.skills.Technique.rank,
+                    sheetData.data.skills.Savoir.rank,
+                    sheetData.data.skills.Social.rank
+                  ),
+              },
+              hpAme: {
+                max:
+                  Math.max(
+                    sheetData.data.skills.Arts.rank,
+                    sheetData.data.skills.Shaan.rank,
+                    sheetData.data.skills.Magie.rank
+                  ) +
+                  Math.min(
+                    sheetData.data.skills.Arts.rank,
+                    sheetData.data.skills.Shaan.rank,
+                    sheetData.data.skills.Magie.rank
+                  ),
+              },
+              hpCorps: {
+                max:
+                  Math.max(
+                    sheetData.data.skills.Rituels.rank,
+                    sheetData.data.skills.Survie.rank,
+                    sheetData.data.skills.Combat.rank
+                  ) +
+                  Math.min(
+                    sheetData.data.skills.Rituels.rank,
+                    sheetData.data.skills.Survie.rank,
+                    sheetData.data.skills.Combat.rank
+                  ),
+              },
+            },
+          },
+        });
+      }
     }
   }
   defineInitiative(sheetData, actorData) {
