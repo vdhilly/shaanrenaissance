@@ -1,76 +1,102 @@
-{{!-- Image --}}
+{{! Image }}
 <div class="npc_frame-container">
-    <div class="frame image-container">
-        <img class="player-image" alt="{{actor.name}}" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
-    </div>
+  <div class="frame image-container">
+    <img
+      class="player-image"
+      alt="{{actor.name}}"
+      src="{{actor.img}}"
+      title="{{actor.name}}"
+      {{#if editable}}data-edit="img"{{/if}}
+    />
+    <a class="hover-icon" data-action="show-image"><i
+        class="fa-solid fa-image fa-fw"
+      ></i></a>
+  </div>
 </div>
-{{!-- Nom --}}
+{{! Nom }}
 <section class="npc_char-details">
-    <h1 class="char-name">
-        <input name="name" type="text" value="{{actor.name}}" placeholder="Nom du Personnage" spellcheck="false" />
-    </h1>
+  <h1 class="char-name">
+    <input
+      name="name"
+      type="text"
+      value="{{actor.name}}"
+      placeholder="Nom du Personnage"
+      spellcheck="false"
+    />
+  </h1>
 </section>
-{{!-- race --}}
+{{! race }}
 <div class="npc npc_race item" data-item-id="{{Race._id}}">
-    <div class="input">
-        <label class="details-label">{{localize "Item.Race"}}</label>
-        <h3>
-            <span class="value">{{Race.name}}</span>
-            {{#if @root.editable}}
-            {{#if Race}}
-                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
-            {{else}}
-                <a class="open-compendium" data-compendium="shaanrenaissance.races"><i class="fas fa-fw fa-circle-plus"></i></a>
-            {{/if}}
-            {{/if}}
-        </h3>
-    </div>
+  <div class="input">
+    <label class="details-label">{{localize "Item.Race"}}</label>
+    <h3>
+      <span class="value">{{Race.name}}</span>
+      {{#if @root.editable}}
+        {{#if Race}}
+          <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+        {{else}}
+          <a class="open-compendium" data-compendium="shaanrenaissance.races"><i
+              class="fas fa-fw fa-circle-plus"
+            ></i></a>
+        {{/if}}
+      {{/if}}
+    </h3>
+  </div>
 </div>
-{{!-- caste --}}
+{{! caste }}
 <div class="npc npc_caste item" data-item-id="{{Caste._id}}">
-    <div class="input">
-        <label class="details-label">{{localize "Item.Caste"}}</label>
-        <h3>
-            <span class="value">{{Caste.name}}</span>
-            {{#if @root.editable}}
-            {{#if Caste}}
-                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
-            {{else}}
-                <a class="open-compendium" data-compendium="shaanrenaissance.castes"><i class="fas fa-fw fa-circle-plus"></i></a>
-            {{/if}}
-            {{/if}}
-        </h3>
-    </div> 
+  <div class="input">
+    <label class="details-label">{{localize "Item.Caste"}}</label>
+    <h3>
+      <span class="value">{{Caste.name}}</span>
+      {{#if @root.editable}}
+        {{#if Caste}}
+          <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+        {{else}}
+          <a
+            class="open-compendium"
+            data-compendium="shaanrenaissance.castes"
+          ><i class="fas fa-fw fa-circle-plus"></i></a>
+        {{/if}}
+      {{/if}}
+    </h3>
+  </div>
 </div>
-{{!-- peuple --}}
+{{! peuple }}
 <div class="npc npc_people item" data-item-id="{{Peuple._id}}">
-    <div class="input">
-        <label class="details-label">{{localize "Item.People"}}</label>
-        <h3>
-            <span class="value">{{Peuple.name}}</span>
-            {{#if @root.editable}}
-            {{#if Peuple}}
-                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
-            {{else}}
-                <a class="open-compendium" data-compendium="shaanrenaissance.peuples"><i class="fas fa-fw fa-circle-plus"></i></a>
-            {{/if}}
-            {{/if}}                        
-        </h3>
-    </div>   
+  <div class="input">
+    <label class="details-label">{{localize "Item.People"}}</label>
+    <h3>
+      <span class="value">{{Peuple.name}}</span>
+      {{#if @root.editable}}
+        {{#if Peuple}}
+          <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+        {{else}}
+          <a
+            class="open-compendium"
+            data-compendium="shaanrenaissance.peuples"
+          ><i class="fas fa-fw fa-circle-plus"></i></a>
+        {{/if}}
+      {{/if}}
+    </h3>
+  </div>
 </div>
-{{!-- métier --}}
+{{! métier }}
 <div class="npc npc_job item" data-item-id="{{Metier._id}}">
-    <div class="input">
-        <label class="details-label">{{localize "Item.Job"}}</label>
-        <h3>
-            <span class="value">{{Metier.name}}</span>
-            {{#if @root.editable}}
-            {{#if Metier}}
-                <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
-            {{else}}
-                <a class="open-compendium" data-compendium="shaanrenaissance.metiers"><i class="fas fa-fw fa-circle-plus"></i></a>
-            {{/if}}
-            {{/if}}
-        </h3>
-    </div>             
+  <div class="input">
+    <label class="details-label">{{localize "Item.Job"}}</label>
+    <h3>
+      <span class="value">{{Metier.name}}</span>
+      {{#if @root.editable}}
+        {{#if Metier}}
+          <a class="item-edit"><i class="fas fa-fw fa-edit"></i></a>
+        {{else}}
+          <a
+            class="open-compendium"
+            data-compendium="shaanrenaissance.metiers"
+          ><i class="fas fa-fw fa-circle-plus"></i></a>
+        {{/if}}
+      {{/if}}
+    </h3>
+  </div>
 </div>

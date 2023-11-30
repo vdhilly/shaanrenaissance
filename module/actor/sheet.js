@@ -1,4 +1,5 @@
 import * as Dice from "../jets/dice.js";
+import { htmlQuery } from "../utils/utils.js";
 export class ActorSheetSR extends ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
@@ -300,6 +301,7 @@ export class ActorSheetSR extends ActorSheet {
   }
   activateListeners(html) {
     super.activateListeners(html);
+    const $html = html[0];
 
     html.find(".add-acquis").click(this._onAcquisCreate.bind(this));
     html.find(".item-create").click(this._onItemCreate.bind(this));
@@ -315,6 +317,20 @@ export class ActorSheetSR extends ActorSheet {
     html.find(".roll-icon").click(this._onTest.bind(this));
     html.find(".spéTest").click(this._onSpéTest.bind(this));
     html.find(".spéTestNécr").click(this._onSpéTestNécr.bind(this));
+
+    const imageLink = htmlQuery($html, "a[data-action=show-image]");
+    if (!imageLink) return;
+
+    imageLink.addEventListener("click", () => {
+      const actor = this.actor;
+      const title =
+        actor?.token?.name || actor?.prototypeToken?.name || actor.name;
+
+      new ImagePopout(actor.img, {
+        title,
+        uuid: actor.uuid,
+      }).render(true);
+    });
   }
   _onInputSelect(event) {
     event.currentTarget.select();
