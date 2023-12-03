@@ -1,5 +1,5 @@
 <div class="sidebar_title">
-    <h2><span>{{localize "SRLabels.Trihns"}}</span><a class="regen-hp" title="{{localize "SR.RegenTitle"}}"><i class="fa-solid fa-bed"></i></a></h2>
+    <h2><span>{{localize "SRLabels.Trihns"}}</span><a class="regen-hp" title="{{localize "SR.RegenTitle"}}"><i class="fa-solid fa-bed"></i></a><input type="checkbox" id="isNecrosian" style="display:none;" name="system.attributes.isNecrosian" {{checked data.attributes.isNecrosian}}><label for="isNecrosian" style="cursor:pointer;float:right;margin-right:3px;"><i class="fa-solid fa-skull"></i></label></h2>
 </div>
 <div class="HP">
     <div class="hp-big">
@@ -24,9 +24,22 @@
             <div class="data-value hpActuel-ame" title="Âme Actuel">
                 <input class="select-input" name="system.attributes.hpAme.value" id="{{option.id}}-pc-hp-ame-value" type="number" value="{{data.attributes.hpAme.value}}" max="{{data.attributes.hpAme.max}}">
             </div>
+            {{#unless data.attributes.isNecrosian}}
             <div class="data-value hpMax-ame" title="Âme Max">
             <h2 class="hpMax-Ame">/{{data.attributes.hpAme.max}}</h2>            
             </div>
+            {{/unless}}
+            {{#if data.attributes.isNecrosian}}
+            <div class="data-value hpMax-ame" title="Âme Max">
+            <span style="color:var(--tertiary);margin:0">/</span><input
+                class="select-input"
+                name="system.attributes.hpAme.max"
+                id="{{option.id}}-pc-hp-ame-max"
+                type="number"
+                value="{{data.attributes.hpAme.max}}"
+            />
+            </div>
+            {{/if}}
                 <span class="corps-label">
                 <a class="trihnTest" data-trihn="Corps">
                 {{> "systems/shaanrenaissance/templates/actors/icons/d10Red.hbs"}}

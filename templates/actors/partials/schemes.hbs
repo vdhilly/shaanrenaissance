@@ -10,7 +10,7 @@
         </div>
     <div class="schemes-container">
     {{#each flags.shaanRenaissance.schemes.element as |element|}}
-    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.element.{{@key}}.learned" {{checked element.learned}} {{#ifeq element.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.element.{{@key}}.learned" {{checked element.learned}} {{#ifeq element.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}}{{/ifeq}}/>
     <label id="scheme_label" for="{{@key}}" class="{{#if element.learned}}checked{{/if}}" title="{{element.title}}" ><img src="systems/shaanrenaissance/icons/schemes/scheme-{{@key}}.png" /></label>
     {{/each}}
     </div>
@@ -21,7 +21,7 @@
         </div>
     <div class="schemes-container">
     {{#each flags.shaanRenaissance.schemes.action as |action|}}
-    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.action.{{@key}}.learned" {{checked action.learned}} {{#ifeq action.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountSpe 0}}disabled{{/ifeq}}{{/ifeq}}/>
+    <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.action.{{@key}}.learned" {{checked action.learned}} {{#ifeq action.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountSpe 0}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}}{{/ifeq}}/>
     <label id="scheme_label" for="{{@key}}" class="{{#if action.learned}}checked{{/if}}" title="{{action.title}}"><img src="systems/shaanrenaissance/icons/schemes/scheme-{{@key}}.png" /></label>
     {{/each}}
     </div>
@@ -44,7 +44,7 @@
         </div>
         <div class="schemes-container">
         {{#each flags.shaanRenaissance.schemes.frequence as |frequence|}}
-        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.frequence.{{@key}}.learned" {{checked frequence.learned}} {{#ifeq @key "frequence1"}}disabled{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}disabled{{/if}} {{#ifeq frequence.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.frequence.{{@key}}.learned" {{checked frequence.learned}} {{#ifeq @key "frequence1"}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/if}} {{#ifeq frequence.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}}{{/ifeq}}/>
         <label id="scheme_label" for="{{@key}}" class="{{#if frequence.learned}}checked{{/if}}" title="{{frequence.title}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
         {{/each}}
         </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="schemes-container">
         {{#each flags.shaanRenaissance.schemes.portee as |portee|}}
-        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.portee.{{@key}}.learned" {{checked portee.learned}} {{#ifeq @key "contact"}}disabled{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}disabled{{/if}} {{#ifeq portee.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}} />
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.portee.{{@key}}.learned" {{checked portee.learned}} {{#ifeq @key "contact"}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/if}} {{#ifeq portee.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}}{{/ifeq}} />
         <label id="scheme_label" id="scheme_{{@key}}" for="{{@key}}" class="{{#if portee.learned}}checked{{/if}}" title="{{portee.title}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
         {{/each}}
         </div>
@@ -66,7 +66,7 @@
         </div>
         <div class="schemes-container">
         {{#each flags.shaanRenaissance.schemes.duree as |duree|}}
-        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.duree.{{@key}}.learned" {{checked duree.learned}} {{#ifeq @key "duree1"}}disabled{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}disabled{{/if}} {{#ifeq duree.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.duree.{{@key}}.learned" {{checked duree.learned}} {{#ifeq @key "duree1"}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/if}} {{#ifeq duree.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}}{{/ifeq}}/>
         <label id="scheme_label" for="{{@key}}" class="{{#if duree.learned}}checked{{/if}}" title="{{duree.title}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
         {{/each}}
         </div>
@@ -77,7 +77,7 @@
         </div>
         <div class="schemes-container">
         {{#each flags.shaanRenaissance.schemes.cibles as |cibles|}}
-        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.cibles.{{@key}}.learned" {{checked cibles.learned}} {{#ifeq @key "cibles1"}}disabled{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}disabled{{/if}} {{#ifeq cibles.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}disabled{{/ifeq}}{{/ifeq}}/>
+        <input class="scheme" type="checkbox" id="{{@key}}" name="flags.shaanRenaissance.schemes.cibles.{{@key}}.learned" {{checked cibles.learned}} {{#ifeq @key "cibles1"}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}} {{#if (lt @root.actor.system.skills.Magie.rank 6)}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/if}} {{#ifeq cibles.learned false}}{{#ifeq @root.flags.shaanRenaissance.schemes.learnedCountDomaine 0}}{{#if (ne @root.user.isGM true)}}disabled{{/if}}{{/ifeq}}{{/ifeq}}/>
         <label id="scheme_label" for="{{@key}}" class="{{#if cibles.learned}}checked{{/if}}" title="{{cibles.title}}"><img src="systems/shaanrenaissance/icons/schemes/{{@key}}.png" /></label>
         {{/each}}
         </div>

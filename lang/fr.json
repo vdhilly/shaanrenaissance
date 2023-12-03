@@ -485,7 +485,8 @@
       "cancel": "Annuler",
       "create": "Créer",
       "graft": "Greffer",
-      "puiser": "Puiser"
+      "puiser": "Puiser",
+      "valider": "Valider"
     },
     "initiative": {
       "title": "Jet d'Initiative",
@@ -501,6 +502,18 @@
         "difficulty": "Difficulté: ",
         "closedRoll": "Test caché ?"
       }
+    },
+    "addCoins": {
+      "title": "Crédos",
+      "options": { "credos": "Crédos: " }
+    },
+    "addXP": {
+      "title": "Donner des XPs",
+      "options": { "xp": "Experience: " }
+    },
+    "addPrestige": {
+      "title": "Donner du Prestige",
+      "options": { "prestige": "Prestige: " }
     },
     "trihnTest": {
       "title": "Test de Trihn",

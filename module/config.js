@@ -7,6 +7,7 @@ import { ItemSR } from "./item/ItemSR.js";
 import { Ability } from "./item/ability/base.js";
 import { ConditionSR } from "./item/condition/document.js";
 import { domainTest, necroseTest } from "./jets/dice.js";
+import { AddCoins, AddPrestige, AddXP, RemoveCoins } from "./macros/macros.js";
 import { getSelectedOrOwnActors } from "./utils/utils.js";
 
 export const shaanRenaissance = {};
@@ -46,6 +47,10 @@ shaanRenaissance.Item = {
 shaanRenaissance.macros = {
   domainTest: domainTest,
   necroseTest: necroseTest,
+  addCoins: AddCoins,
+  removeCoins: RemoveCoins,
+  addXP: AddXP,
+  addPrestige: AddPrestige,
 };
 shaanRenaissance.utils = {
   getSelectedOrOwnActors: getSelectedOrOwnActors,

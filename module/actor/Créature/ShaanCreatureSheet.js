@@ -47,34 +47,7 @@ export default class ShaanCreatureSheet extends ActorSheetSR {
     var _a, _b, _c;
     super.activateListeners(html);
     const $html = html[0];
-    if (
-      (this.itemRenderer.activateListeners($html),
-      null === (_a = (0, htmlQuery)($html, "a[data-action=show-image]")) ||
-        void 0 === _a ||
-        _a.addEventListener("click", () => {
-          var _a, _b, _c, _d;
-          const actor = this.actor,
-            title =
-              null !==
-                (_d =
-                  null !==
-                    (_b =
-                      null === (_a = actor.token) || void 0 === _a
-                        ? void 0
-                        : _a.name) && void 0 !== _b
-                    ? _b
-                    : null === (_c = actor.prototypeToken) || void 0 === _c
-                    ? void 0
-                    : _c.name) && void 0 !== _d
-                ? _d
-                : actor.name;
-          new ImagePopout(actor.img, {
-            title,
-            uuid: actor.uuid,
-          }).render(!0);
-        }),
-      !this.options.editable)
-    )
+    if ((this.itemRenderer.activateListeners($html), !this.options.editable))
       return;
     if (this.isEditable) {
       html.find(".open-compendium").on("click", (event) => {

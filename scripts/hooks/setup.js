@@ -15,8 +15,7 @@ export const Setup = {
         game.settings.settings.get("core.defaultToken").default;
       defaultTokenSettingsDefaults.displayName =
         CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER;
-      defaultTokenSettingsDefaults.displayBars =
-        CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER;
+      defaultTokenSettingsDefaults.displayBars = CONST.TOKEN_DISPLAY_MODES.NONE;
     });
   },
 };
