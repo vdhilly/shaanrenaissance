@@ -338,26 +338,10 @@ export class ActorSheetSR extends ActorSheet {
   // ICI
   _onSpéTest(event) {
     let actor = this.actor;
-    let domain;
-    console.log(actor.type);
-    if (actor.type !== "Créature" || actor.type !== "PNJ") {
-      domain = $(event.target.closest(".pc"))
-        .children(".specialisations-title")
-        .find(".specialisations-label")
-        .text();
-    } else if (actor.type !== "Créature") {
-      domain = $(event.target.closest(".creature"))
-        .children(".specialisations-title")
-        .find(".specialisations-label")
-        .text();
-
-      console.log("oui");
-    } else {
-      domain = $(event.target.closest(".npc"))
-        .children(".specialisations-title")
-        .find(".specialisations-label")
-        .text();
-    }
+    let domain = $(event.target.closest(".pc"))
+      .children(".specialisations-title")
+      .find(".specialisations-label")
+      .text();
     let spécialisation = $(event.target)
       .text()
       .toLowerCase()
