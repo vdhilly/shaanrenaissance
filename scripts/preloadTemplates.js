@@ -48,21 +48,10 @@ export const templatePaths = [
   "systems/shaanrenaissance/templates/actors/Créature/partials/armor.hbs",
 
   // Shaani
-  // Sidebar
-  "systems/shaanrenaissance/templates/actors/Shaani/sidebar/health.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/sidebar/armor.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/partials/header.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/sidebar/initiative.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/sidebar/jets.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/sidebar/reserve.hbs",
-
-  // Content
-  "systems/shaanrenaissance/templates/actors/Shaani/tabs/details.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/tabs/general.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/tabs/symbioses.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/tabs/powers.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/partials/background.hbs",
-  "systems/shaanrenaissance/templates/actors/Shaani/partials/specialisations.hbs",
+  "systems/shaanrenaissance/templates/actors/Shaani/partials/members.hbs",
+  "systems/shaanrenaissance/templates/actors/Shaani/partials/pouvoirs.hbs",
+  "systems/shaanrenaissance/templates/actors/Shaani/partials/acquis.hbs",
+  "systems/shaanrenaissance/templates/actors/Shaani/partials/cercle.hbs",
 
   // Réseau
   // Sidebar

@@ -8,6 +8,10 @@ import { ActorInventory } from "./Inventory/ActorInventory.js";
 import { ActorConditions } from "./conditions.js";
 import { TokenEffect } from "./token-effect.js";
 export class ActorSR extends Actor {
+  constructor(...args) {
+    super(...args),
+    this.shaanis = new Set;
+  }
   get hasPlayerOwner() {
     return game.users.some(
       (u) => !u.isGM && this.testUserPermission(u, "OWNER")

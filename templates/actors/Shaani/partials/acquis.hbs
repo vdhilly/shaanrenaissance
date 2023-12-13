@@ -1,0 +1,41 @@
+<div class="content">
+  <ol class="itemCategory-list directory-list">
+    {{#each Acquis as |Category|}}
+      {{#ifnoteq Category.length 0}}
+        <li class="item item-container itemCategory {{@key}}">
+          <div class="category-header">
+            <h3 class="item-name">{{@key}}</h3>
+          </div>
+          <ol class="item-list liste-items liste-item {{@key}}">
+            {{#each Category as |acquis id|}}
+              <li
+                class="item acquis"
+                draggable="true"
+                data-item-id="{{acquis._id}}",
+                data-parent-id="{{acquis.parent._id}}"
+              >
+                <div class="acquis-header">
+                  <div class="acquis-image">
+                    <img
+                      class="acquis-icon"
+                      src="{{acquis.img}}"
+                      alt="{{acquis.name}}"
+                    />
+                    <i class="acquis-chat fa-solid fa-message"></i>
+                  </div>
+                  <h4 class="acquis-name">
+                    {{acquis.name}}
+                  </h4>
+                </div>
+                <span class="owner">{{acquis.parent.name}}</span>
+                <span class="quantity">
+                  <span>{{acquis.system.quantity}}</span>
+                </span>
+              </li>
+            {{/each}}
+          </ol>
+        </li>
+      {{/ifnoteq}}
+    {{/each}}
+  </ol>
+</div>

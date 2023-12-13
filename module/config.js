@@ -1,5 +1,8 @@
 import { ActorSR } from "./actor/ActorSR.js";
+import { CreatureSR } from "./actor/Créature/document.js";
+import { NpcSR } from "./actor/PNJ/document.js";
 import { PersonnageSR } from "./actor/Personnage/PersonnageSR.js";
+import { ShaaniSR } from "./actor/Shaani/document.js";
 import { LootSR } from "./actor/loot/LootSR.js";
 import { AcquisSR } from "./item/Acquis/base.js";
 import { CreatorSet } from "./item/CreatorSet/base.js";
@@ -16,10 +19,10 @@ shaanRenaissance.Actor = {
   documentClasses: {
     Personnage: PersonnageSR,
     Loot: LootSR,
-    Shaani: ActorSR,
+    Shaani: ShaaniSR,
     Réseau: ActorSR,
-    Créature: ActorSR,
-    PNJ: ActorSR,
+    Créature: CreatureSR,
+    PNJ: NpcSR,
   },
 };
 shaanRenaissance.Item = {

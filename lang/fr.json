@@ -450,6 +450,8 @@
     "AcquisLabel": "Acquis",
     "BiographyLabel": "Biographie",
     "symbioses": "Symbioses",
+    "General": "Général",
+    "Members": "Membres",
     "ManageTabsLabel": "Gérer les onglets",
     "DetailsLabel": "Détails",
     "RéseauLabel": "Réseau",
@@ -1263,6 +1265,10 @@
     "CompendiumBrowserPacks": {
       "Hint": "Settings to exclude packs from loading",
       "Name": "Compendium Browser Packs"
+    },
+    "showShaaniStats": {
+      "Hint": "Permet de montrer les statistiques des Shaandars à vos joueurs",
+      "Name": "Montrer les statistiques des Shaandars"
     }
   },
   "SRActiveEffect": {

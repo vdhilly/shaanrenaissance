@@ -29,4 +29,7 @@ export function registerHandlebarsHelpers() {
   Handlebars.registerHelper("ne", function (a, b) {
     return a !== b;
   });
+  Handlebars.registerHelper("percentage", function (value, max) {
+    return (Number(value) * 100) / Number(max);
+  });
 }
