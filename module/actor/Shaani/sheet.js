@@ -48,9 +48,103 @@ export class ShaaniSheetSR extends ActorSheetSR {
         },
       };
     this.prepareMembersItems(sheetData);
+    this.defineTrihnMax(sheetData);
+    this.processDomains(sheetData);
+    this.processSkills(sheetData)
 
     console.log(sheetData);
     return sheetData;
+  }
+  processDomains(sheetData){
+    const shaandars = sheetData.data.details.shaandars
+
+    for(const key in shaandars){
+      if(shaandars[key].length === 1) {
+        sheetData.data.skills[key].rank = shaandars[key][0].system.skills[key].rank
+      } else if(shaandars[key].length > 1) {
+        let ranks = []
+          for (const shaandar in shaandars[key]){
+            if(shaandar !== "") {
+            ranks.push(shaandars[key][shaandar].system.skills[key].rank)
+            }
+          }
+          let highestRank = Math.max(...ranks);
+          let rankValue = highestRank + shaandars[key].length - 1
+          sheetData.data.skills[key].rank = rankValue
+        } else {
+          let ranks = []
+          for (const shaandar in this.actor.members){
+            if(shaandar !== "") {
+            ranks.push(this.actor.members[shaandar].system.skills[key].rank)
+            }
+          }
+          let minRank = Math.min(...ranks);
+          sheetData.data.skills[key].rank = minRank
+      }
+    }
+  }
+  processSkills(sheetData){
+    const members = sheetData.members 
+
+    function updateSheetData(sheetData, members) {
+      members.forEach((member) => {
+        Object.keys(member.skills).forEach((category) => {
+          Object.keys(sheetData.data.skills[category].specialisations).forEach((skill) => {
+            const memberBonus = member.skills[category].specialisations[skill].bonus;
+            const memberAcquis = member.skills[category].specialisations[skill].acquis;
+            
+            const sheetBonus = sheetData.data.skills[category].specialisations[skill].bonus;
+            const sheetAcquis = sheetData.data.skills[category].specialisations[skill].acquis;
+    
+            // Compare and update if member has better bonus or acquis
+            if (memberBonus > sheetBonus) {
+              sheetData.data.skills[category].specialisations[skill].bonus = memberBonus;
+            }
+    
+            if (memberAcquis > sheetAcquis) {
+              sheetData.data.skills[category].specialisations[skill].acquis = memberAcquis;
+            }
+          });
+        });
+      });
+    }
+    
+    // Update sheetData with members' data
+    updateSheetData(sheetData, members);
+  }
+  defineTrihnMax(sheetData) {
+    const soucheEspritKey = sheetData.data.soucheEsprit
+    const soucheEsprit = sheetData.members[soucheEspritKey]
+    const soucheAmeKey = sheetData.data.soucheAme
+    const soucheAme = sheetData.members[soucheAmeKey]
+    const soucheCorpsKey = sheetData.data.soucheCorps
+    const soucheCorps = sheetData.members[soucheCorpsKey];
+    let espritMax = 0;
+    if(soucheEsprit !== undefined) {
+      espritMax = soucheEsprit.hp.esprit.max
+    }
+    let ameMax = 0
+    if(soucheAme !== undefined) {
+      ameMax = soucheAme.hp.ame.max
+    }
+    let corpsMax = 0
+    if(soucheCorps !== undefined){
+      corpsMax = soucheCorps.hp.corps.max
+    }
+
+    this.actor.update({
+      "system.attributes":{
+          hpEsprit:{
+            max: espritMax
+          },
+          hpAme:{
+            max: ameMax
+          },
+          hpCorps:{
+            max: corpsMax
+          }
+        }
+    })
   }
   prepareMembersItems(sheetData) {
     sheetData.Acquis = {
@@ -218,6 +312,7 @@ export class ShaaniSheetSR extends ActorSheetSR {
           ame: actor.system.attributes.hpAme,
           corps: actor.system.attributes.hpCorps,
         },
+        skills: actor.system.skills,
         items: actor.items,
         race: race[0],
         peuple: peuple[0],
@@ -234,6 +329,9 @@ export class ShaaniSheetSR extends ActorSheetSR {
     if ((this.itemRenderer.activateListeners(html), !this.options.editable))
     return;
 
+    // Define Shaandars
+
+    $html.find(".shaandars[data-action=shaandars]").click(this._ondefineShaandars.bind(this));
     // Add open actor sheet links
     for (const openSheetLink of htmlQueryAll(
       html,
@@ -271,6 +369,119 @@ export class ShaaniSheetSR extends ActorSheetSR {
           }
         );
       }
+    }
+  }
+  async _ondefineShaandars(event){
+    const actor = this.actor
+    const members = actor.members
+
+    this.defineShaandars(actor, members);
+  }
+  async defineShaandars(actor, members, shaandars = {}){
+    let Options = await getShaandarOptions({shaandars}) 
+
+    if (Options.cancelled){
+      return
+    }
+
+    shaandars = Options.shaandars
+
+    shaandars = await mergeShaandars(this.actor.system.details.shaandars, shaandars);
+
+    this.actor.update({
+      "system.details.shaandars": shaandars
+    })
+
+    async function getShaandarOptions({
+      shaandars,
+      template = "systems/shaanrenaissance/templates/actors/Shaani/partials/defineShaandars.hbs",
+    } = {}){
+      const html = await renderTemplate(template, {actor,members,shaandars, config:CONFIG.shaanRenaissance});
+
+      return new Promise((resolve) => {
+        const data = {
+          title: game.i18n.localize("SRLabels.Shaandars"),
+          content:html,
+          actor: actor,
+          buttons:{
+            normal: {
+              label: game.i18n.localize("chat.actions.valider"),
+              callback: (html) =>
+                resolve(_processShaandarOptions(html[0].querySelector("form"))
+                ),
+            },
+            cancel:{
+              label: game.i18n.localize("chat.actions.cancel"),
+              callback: (html) => resolve ({cancelled:true}),
+            }
+          },
+          default: "normal",
+          close: () => resolve({cancelled:true})
+        };
+        new Dialog(data, null).render(true);
+      })
+    }
+    function _processShaandarOptions(form){
+    // Access all select elements with a name starting with "shaandars."
+    const selectElements = form.querySelectorAll('select[name^="shaandars."]');
+
+    // Create an object to store grouped members
+    const groupedMembers = {};
+
+    // Loop through each select element
+    selectElements.forEach((selectElement, index) => {
+        // Extract the key and value
+        const key = selectElement.value;
+        if(key === "") return;
+        const member = members[index];
+
+        // Initialize the array if it doesn't exist
+        if (!groupedMembers[key]) {
+            groupedMembers[key] = [];
+        }
+
+        // Add the member to the array
+        groupedMembers[key].push(member);
+    });
+
+    return{
+      shaandars: groupedMembers
+    }
+    }
+    async function mergeShaandars(existingShaandars, newShaandars) {
+      for (const key in newShaandars) {
+          if (Object.prototype.hasOwnProperty.call(newShaandars, key)) {
+              const newMembers = newShaandars[key];
+
+              if (!existingShaandars[key]) {
+                  existingShaandars[key] = [];
+              }
+
+              // Vérifier et ajouter uniquement les membres qui n'existent pas encore
+              newMembers.forEach((newMember) => {
+                // Vérifier si le membre existe déjà dans d'autres tableaux
+                const memberExistsElsewhere = Object.keys(existingShaandars).some((otherKey) => {
+                    return otherKey !== key && existingShaandars[otherKey].some((otherMember) => otherMember._id === newMember._id);
+                });
+
+                // Si le membre existe ailleurs, le supprimer des autres tableaux
+                if (memberExistsElsewhere) {
+                    Object.keys(existingShaandars).forEach((otherKey) => {
+                        if (otherKey !== key) {
+                            existingShaandars[otherKey] = existingShaandars[otherKey].filter((otherMember) => otherMember._id !== newMember._id);
+                        }
+                    });
+                }
+
+                // Ajouter le membre au tableau actuel s'il n'existe pas encore
+                const isNewMemberExist = existingShaandars[key].some((existingMember) => existingMember._id === newMember._id);
+                if (!isNewMemberExist) {
+                    existingShaandars[key].push(newMember);
+                }
+            });
+          }
+      }
+      return existingShaandars
     }
   }
   async _onDropActor(event, data) {

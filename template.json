@@ -686,11 +686,23 @@
     "Shaani": {
       "templates": ["common", "spés", "biography", "reserve", "Magic"],
       "details": {
-        "members": []
+        "members": [],
+        "shaandars":{
+          "Technique":[],
+          "Savoir":[],
+          "Social":[],
+          "Arts":[],
+          "Shaan":[],
+          "Magie":[],
+          "Rituels":[],
+          "Survie":[],
+          "Combat":[],
+          "Nécrose":[]
+        }
       },
-      "soucheCorps": "",
-      "soucheAme": "",
-      "soucheEsprit": "",
+      "soucheCorps": null,
+      "soucheAme": null,
+      "soucheEsprit": null,
       "decision": "",
       "motivations": ""
     },

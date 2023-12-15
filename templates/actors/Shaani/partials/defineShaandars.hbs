@@ -1,0 +1,26 @@
+<form>
+    <section class="shaandar-list">
+        {{#each members as |member|}}
+        <section class="form-group member" data-actor-uuid="{{member.uuid}}">
+        <div class="portrait">
+          <img src="{{member.img}}" style="border:none;width:60px;height:60px;"/>
+        </div>
+        <div class="data">
+          <header>
+            <div class="name">
+              <a data-action="open-sheet">{{member.name}}</a>
+            </div>
+          </header>
+          <select name="shaandars.{{@key}}">
+            {{#select (concat "shaandars." @key)}}
+                <option value=""></option>
+                {{#each @root.config.SRdomains as |domain|}}
+                    <option value="{{@key}}">{{@key}}</option>
+                {{/each}}
+            {{/select}}
+          </select>
+        </div>
+      </section>
+        {{/each}}
+    </section>
+</form>

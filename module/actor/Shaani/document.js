@@ -31,6 +31,9 @@ export class ShaaniSR extends ActorSR {
     const existing = this.system.details.members.filter((d) =>
       this.members.some((m) => m.uuid === d.uuid)
     );
+    if (existing.length === 10){
+      return ui.notifications.warn("Le maximum de membre dans un Shaani est de 10.")
+    }
     const existingUUIDs = new Set(existing.map((data) => data.uuid));
     const newMembers = membersToAdd.filter(
       (a) => a.uuid.startsWith("Actor.") && !existingUUIDs.has(a.uuid)

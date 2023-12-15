@@ -92,7 +92,8 @@
     "description": "Description",
     "details": "Détails",
     "rules": "Règles",
-    "Slug": "Slug"
+    "Slug": "Slug",
+    "Shaandars":"Shaandars"
   },
   "SRdomains": {
     "Technique": "Technique",
@@ -110,7 +111,7 @@
     "engrenages": "Engrenages",
     "pilotage": "Pilotage",
     "recuperation": "Récupération",
-    "sensdelapierrefull": "Sens de la pierre",
+    "sensdelapierre": "Sens de la pierre",
     "sensdelapierre1": "Sens de la",
     "sensdelapierre2": "pierre",
     "sensdubois": "Sens du bois",
@@ -135,7 +136,7 @@
     "diplomatie": "Diplomatie",
     "enseignement": "Enseignement",
     "langageprimal": "Langage Primal",
-    "languesexotiquesfull": "Langues Exotiques",
+    "languesexotiques": "Langues Exotiques",
     "languesexotiques1": "Langues",
     "languesexotiques2": "Exotiques",
     "psychologie": "Psychologie",
@@ -147,7 +148,7 @@
     "comedie": "Comédie",
     "deguisement": "Déguisement",
     "gastronomie": "Gastronomie",
-    "langageducorpsfull": "Langage du corps",
+    "langageducorps": "Langage du corps",
     "langageducorps1": "Langage du",
     "langageducorps2": "corps",
     "lettres": "Lettres",
@@ -155,7 +156,7 @@
     "trucages": "Trucages",
     "embiose": "Embiose",
     "empathieanimale": "Empathie Animale",
-    "empathieantheennefull": "Empathie Anthéenne",
+    "empathieantheenne": "Empathie Anthéenne",
     "empathieantheenne1": "Empathie",
     "empathieantheenne2": "Anthéenne",
     "empathieminerale": "Empathie Minérale",
@@ -171,10 +172,10 @@
     "enchantement": "Enchantement",
     "invocation": "Invocation",
     "incandescence": "Incandescence",
-    "maitrisedesschemesfull": "Maîtrise des schèmes",
+    "maitrisedesschemes": "Maîtrise des schèmes",
     "maitrisedesschemes1": "Maîtrise des",
     "maitrisedesschemes2": "schèmes",
-    "regenerationdetrihnfull": "Régénération de Trihn",
+    "regenerationdetrihn": "Régénération de Trihn",
     "regenerationdetrihn1": "Régénération de",
     "regenerationdetrihn2": "Trihn",
     "transfert": "Transfert",
@@ -201,7 +202,7 @@
     "vigilance": "Vigilance",
     "armeslancees": "Armes lancées",
     "armesdemelee": "Armes de mêlée",
-    "armesaprojectilesfull": "Armes à projectiles",
+    "armesaprojectiles": "Armes à projectiles",
     "armesaprojectiles1": "Armes à",
     "armesaprojectiles2": "projectiles",
     "armimales": "Armimales",
@@ -455,7 +456,8 @@
     "ManageTabsLabel": "Gérer les onglets",
     "DetailsLabel": "Détails",
     "RéseauLabel": "Réseau",
-    "MorpheLabel": "Morphe"
+    "MorpheLabel": "Morphe",
+    "Cercle":"Cercle"
   },
   "Item": {
     "Race": "Race",
@@ -649,7 +651,14 @@
   },
   "SR": {
     "Actor": {
-      "Dead": "Mort"
+      "Dead": "Mort",
+      "Shaani":{
+        "RemoveMember":{
+          "Title":"Supprimer un membre",
+          "Content": "Êtes-vous sûr de vouloir supprimer ce membre du Shaani ?"
+        },
+        "BlankSlate":"Il n'y a aucun membre dans le Shaani"
+      }
     },
     "Inventory": {
       "ItemQuantity": {

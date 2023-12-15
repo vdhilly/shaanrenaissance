@@ -52,6 +52,7 @@ export const templatePaths = [
   "systems/shaanrenaissance/templates/actors/Shaani/partials/pouvoirs.hbs",
   "systems/shaanrenaissance/templates/actors/Shaani/partials/acquis.hbs",
   "systems/shaanrenaissance/templates/actors/Shaani/partials/cercle.hbs",
+  "systems/shaanrenaissance/templates/actors/Shaani/partials/spe.hbs",
 
   // Réseau
   // Sidebar

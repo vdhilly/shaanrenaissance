@@ -136,7 +136,6 @@ export class ItemSummaryRenderer {
 
         
     if (!(item instanceof ItemSR)) return;
-    console.log("test")
     const summary = await (async () => {
       const existing = (0, htmlQuery)(element, ":scope > .item-summary");
       if (existing) return existing;
@@ -145,7 +144,6 @@ export class ItemSummaryRenderer {
           element,
           ":scope > .acquis-name, :scope > .quantity, :scope > .pouvoir-header"
         ).at(-1);
-        console.log(insertLocation)
         if (!insertLocation) return null;
         const summary = document.createElement("div");
         summary.classList.add("item-summary"),
@@ -157,7 +155,6 @@ export class ItemSummaryRenderer {
           },
           element.dataset
         );
-        console.log(summary)
         return await this.renderItemSummary(summary, item, chatData), summary;
       }
       return null;

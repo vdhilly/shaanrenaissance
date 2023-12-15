@@ -101,6 +101,7 @@
   font: 400 var(--font-size-16) Komikazoom;
   flex: 1;
   margin: 0 0.25rem;
+  padding-right: 8px;
   max-width: 30%;
   text-align: center;
   text-decoration: none;
@@ -205,6 +206,86 @@
   padding-left: 0.25rem;
   position: relative;
 }
+/* Souches */
+.actor.sheet.shaani .tab.cercle.active .souches {
+  display: flex;
+  flex-direction: column;
+}
+.actor.sheet.shaani .tab.cercle.active .souches-container {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.actor.sheet.shaani .tab.cercle.active .souches-container .souche {
+  display:flex; 
+  flex-direction:column;
+  text-align:center;
+  gap: 5px;
+  width: 30%;
+}
+.actor.sheet.shaani .tab.cercle.active .souches span.SouchesLabel {
+  color: var(--primary);
+  font-family: Komikazoom;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-right: 2px;
+  width:100%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+}
+.actor.sheet.shaani .tab.cercle.active .souches-container .souche.esprit .souche-label{
+  background: var(--color-esprit);
+    color: #fffcdb;
+    font-family: var(--sans-serif);
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-right: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+.actor.sheet.shaani .tab.cercle.active .souches-container .souche.ame .souche-label{
+  background: var(--color-ame);
+  color: #d5eefc;
+  font-family: var(--sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.actor.sheet.shaani .tab.cercle.active .souches-container .souche.corps .souche-label{
+  background: var(--color-corps);
+  color: #fbdaca;
+  font-family: var(--sans-serif);
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.actor.sheet.shaani .tab.cercle.active .souches-container .souche .trihn-container {
+  width:100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+}
+.actor.sheet.shaani .tab.cercle.active .souches-container .souche .trihn-container input {
+  width: calc(100% - 2px);
+  min-width: 20px;
+  height: var(--form-field-height);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 3px;
+}
+
 /* Cercle */
 .actor.sheet.shaani
   .tab.cercle.active
@@ -231,7 +312,7 @@
   .DomainsLabel {
   grid-area: titre;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -246,10 +327,21 @@
   .tab.cercle.active
   .character-domains {
   display: grid;
-  grid: "titre titre titre" "technique arts rituels" "savoir shaan survie" "social magie combat" "vide2 necrose vide3";
+  grid: "titre titre titre" "shaandars shaandars shaandars" "technique arts rituels" "savoir shaan survie" "social magie combat" "vide2 necrose vide3";
   gap: 1%;
   margin-bottom: 10px;
 }
+.actor.sheet.shaani .tab.cercle.active .character-domains [data-action="shaandars"]{
+  grid-area:shaandars;
+  width: 15%;
+  background: #65503e;
+  font: 400 var(--font-size-16) Komikazoom;
+  justify-self: center;
+}
+.actor.sheet.shaani .tab.cercle.active .character-domains [data-action="shaandars"] i {
+  margin-right:2px;
+}
+
 .actor.sheet.shaani
   .tab.cercle.active
   .character-domains
@@ -349,7 +441,7 @@
   input {
   font: 800 var(--font-size-19) var(--body-serif);
 }
-/* General Tab domaines Esprit */
+/* Cercle Tab domaines Esprit */
 
 .actor.sheet.shaani
   .tab.cercle.active
@@ -366,7 +458,7 @@
   white-space: nowrap;
 }
 
-/* General Tab domaines Ame */
+/* Cercle Tab domaines Ame */
 
 .actor.sheet.shaani
   .tab.cercle.active
@@ -383,7 +475,7 @@
   white-space: nowrap;
 }
 
-/* General Tab domaines Corps */
+/* Cercle Tab domaines Corps */
 
 .actor.sheet.shaani
   .tab.cercle.active
@@ -400,7 +492,7 @@
   white-space: nowrap;
 }
 
-/* General Tab domaine Necrose */
+/* Cercle Tab domaine Necrose */
 .actor.sheet.shaani
   .tab.cercle.active
   .character-domains
@@ -432,4 +524,140 @@
   width: 28%;
   background-color: rgba(28, 28, 28, 0.1);
   border-left: 1px solid black;
+}
+
+
+/* SPECIALISATIONS */
+
+.actor.sheet .character-specialisations {
+  display:grid;
+  grid: "spésTitre spésTitre spésTitre" "spéstechnique spésarts spésrituels" "spéssavoir spésshaan spéssurvie" "spéssocial spésmagie spéscombat" "spésvide spésnecrose spésvide2";
+  gap: 1%;
+}
+.actor.sheet .character-specialisations .SpecialisationsLabel {
+  grid-area:spésTitre;
+  color: var(--primary);
+  font-family: Komikazoom;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+}
+.actor.sheet .character-specialisations .spe-container {
+  display:grid;
+  grid: "spéInTitre spéInTitre spéInTitre" "spé1 spé1 spé1" "spé2 spé2 spé2" "spé3 spé3 spé3" "spé4 spé4 spé4" "spé5 spé5 spé5" "spé6 spé6 spé6" "spé7 spé7 spé7" "spé8 spé8 spé8" "spé9 spé9 spé9" "spé10 spé10 spé10";
+  column-gap:1%;
+  row-gap:3px;
+  color:black;
+  font-family:var(--sans-serif);
+  font-size:0.7rem;
+  font-weight:800;
+  margin-right:2px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.actor.sheet .character-specialisations .spe-container .specialisations-title {
+  grid-area:spéInTitre
+}
+.actor.sheet .character-specialisations .spe-container .specialisations-bonus-label {
+  margin-right: -15px;
+}
+.actor.sheet .character-specialisations [data-domain="Technique"] {
+  grid-area: spéstechnique;
+}
+.actor.sheet .character-specialisations [data-domain="Arts"] {
+  grid-area: spésarts;
+}
+.actor.sheet .character-specialisations [data-domain="Rituels"] {
+  grid-area: spésrituels;
+}
+.actor.sheet .character-specialisations [data-domain="Savoir"] {
+  grid-area: spéssavoir;
+}
+.actor.sheet .character-specialisations [data-domain="Shaan"] {
+  grid-area: spésshaan;
+}
+.actor.sheet .character-specialisations [data-domain="Survie"] {
+  grid-area: spéssurvie;
+}
+.actor.sheet .character-specialisations [data-domain="Social"] {
+  grid-area: spéssocial;
+}
+.actor.sheet .character-specialisations [data-domain="Magie"] {
+  grid-area: spésmagie;
+}
+.actor.sheet .character-specialisations [data-domain="Combat"] {
+  grid-area: spéscombat;
+}
+.actor.sheet .character-specialisations [data-domain="Nécrose"] {
+  grid-area: spésnecrose;
+}
+.actor.sheet .character-specialisations [data-domain="Technique"] .specialisations-title, .actor.sheet .character-specialisations [data-domain="Savoir"] .specialisations-title, .actor.sheet .character-specialisations [data-domain="Social"] .specialisations-title {
+  background-color: var(--color-esprit);
+  display:grid;
+  grid:"spéInsideTitre spéInsideAcquis";
+  color:#fffcdb;
+  font-family: var(--sans-serif);
+  column-gap: 1%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+.actor.sheet .character-specialisations [data-domain="Arts"] .specialisations-title, .actor.sheet .character-specialisations [data-domain="Shaan"] .specialisations-title, .actor.sheet .character-specialisations [data-domain="Magie"] .specialisations-title {
+  background-color: var(--color-ame);
+  display:grid;
+  grid:"spéInsideTitre spéInsideAcquis";
+  color:#d5eefc;
+  font-family: var(--sans-serif);
+  column-gap: 1%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+.actor.sheet .character-specialisations [data-domain="Rituels"] .specialisations-title, .actor.sheet .character-specialisations [data-domain="Survie"] .specialisations-title, .actor.sheet .character-specialisations [data-domain="Combat"] .specialisations-title {
+  background-color: var(--color-corps);
+  display:grid;
+  grid:"spéInsideTitre spéInsideAcquis";
+  color:#fbdaca;
+  font-family: var(--sans-serif);
+  column-gap: 1%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+.actor.sheet .character-specialisations [data-domain="Nécrose"] .specialisations-title {
+  background-color: var(--color-necrose);
+  display:grid;
+  grid:"spéInsideTitre spéInsideAcquis";
+  color:black;
+  font-family: var(--sans-serif);
+  column-gap: 1%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  margin-right: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+.actor.sheet
+  .character-specialisations
+  a {
+  align-self: center;
+}
+.actor.sheet .character-specialisations input[type="number"] {
+  font: 700 var(--font-size-14) var(--body-serif);
+  text-align: center;
 }
