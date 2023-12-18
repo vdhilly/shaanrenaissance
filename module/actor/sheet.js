@@ -384,12 +384,32 @@ export class ActorSheetSR extends ActorSheet {
       .replace("î", "i");
     let description = game.i18n.translations.SRspéDesc[spécialisation];
 
+    const actorData = actor.toObject(!1)
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
+
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    if(lastElement){
+      race = lastElement.name;
+    }
+
     Dice.SpéTestNécr({
       actor,
       domain: domain,
       spécialisation: spécialisation,
       description: description,
       askForOptions: event.shiftKey,
+      race:race
     });
   }
 
@@ -406,11 +426,29 @@ export class ActorSheetSR extends ActorSheet {
   _onTest(event) {
     const dataset = event.target.closest(".roll-data").dataset.itemId;
     let actor = this.actor;
+    const actorData = actor.toObject(!1)
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
 
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    if(lastElement){
+      race = lastElement.name;
+    }
     if (dataset == "domainTest" || "necroseTest") {
       Dice[dataset]({
         actor,
         checkType: dataset,
+        race: race
       });
     }
   }

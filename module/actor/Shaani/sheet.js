@@ -1,3 +1,4 @@
+import * as Dice from "../../jets/dice.js";
 import { htmlClosest, htmlQuery, htmlQueryAll } from "../../utils/utils.js";
 import { CreatureSR } from "../Créature/document.js";
 import { NpcSR } from "../PNJ/document.js";
@@ -108,9 +109,12 @@ export class ShaaniSheetSR extends ActorSheetSR {
         });
       });
     }
-    
     // Update sheetData with members' data
     updateSheetData(sheetData, members);
+    const skills = sheetData.data.skills
+    this.actor.update({
+      "system.skills": skills
+    })
   }
   defineTrihnMax(sheetData) {
     const soucheEspritKey = sheetData.data.soucheEsprit
@@ -332,6 +336,7 @@ export class ShaaniSheetSR extends ActorSheetSR {
     // Define Shaandars
 
     $html.find(".shaandars[data-action=shaandars]").click(this._ondefineShaandars.bind(this));
+    $html.find(".shaaniTest").click(this._onShaaniTest.bind(this));
     // Add open actor sheet links
     for (const openSheetLink of htmlQueryAll(
       html,
@@ -483,6 +488,28 @@ export class ShaaniSheetSR extends ActorSheetSR {
       }
       return existingShaandars
     }
+  }
+  _onShaaniTest(event){
+    let actor = this.actor
+
+    Dice.shaaniTest({
+      actor
+    })
+  }
+  _onSpéTest(event) {
+    let actor = this.actor;
+    let domain = event.target.closest(".pc").dataset.domain
+    let spécialisation = event.target.dataset.spe
+    let description = game.i18n.translations.SRspéDesc[spécialisation];
+    console.log(domain, spécialisation);
+
+    Dice.SpéTest({
+      actor,
+      domain: domain,
+      spécialisation: spécialisation,
+      description: description,
+      askForOptions: event.shiftKey,
+    });
   }
   async _onDropActor(event, data) {
     await super._onDropActor(event, data);

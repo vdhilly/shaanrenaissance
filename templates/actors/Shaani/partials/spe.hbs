@@ -2,15 +2,15 @@
     <div class="character-specialisations">
         <span class="SpecialisationsLabel">{{localize "SRLabels.SpecialisationsTitle"}}</span>
         {{#each data.skills as |domain d|}}
-            <div class="spe-container" data-domain="{{@key}}">
+            <div class="pc spe-container" data-domain="{{@key}}">
                 <div class="specialisations-title">
                 <span class="specialisations-label">{{localize (concat "SRdomains." @key)}}</span>
                 <span class="specialisations-bonus-label">{{localize "SRLabels.BonusLabel"}}
                 {{localize "SRLabels.AcquisBonusLabel"}}</span>
                 </div>
                 {{#each domain.specialisations as |spe s|}}
-                    <a class="spéTest">
-                        <label class="specialisation-label">
+                    <a class="spéTest" >
+                        <label class="specialisation-label" data-spe="{{@key}}">
                             {{localize (concat "SRspecialisations." @key)}}
                         </label>
                     </a>

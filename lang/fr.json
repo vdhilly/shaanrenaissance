@@ -653,6 +653,9 @@
     "Actor": {
       "Dead": "Mort",
       "Shaani":{
+        "check":{
+          "title":"Actions de Shaani"
+        },
         "RemoveMember":{
           "Title":"Supprimer un membre",
           "Content": "Êtes-vous sûr de vouloir supprimer ce membre du Shaani ?"
