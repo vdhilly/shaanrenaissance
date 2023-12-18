@@ -849,11 +849,11 @@ label.checkbox {
   padding: 0 !important;
 }
 h2 {
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-weight: 400;
 }
 h3 {
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-weight: 400;
   border: 0;
 }
