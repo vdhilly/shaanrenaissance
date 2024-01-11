@@ -2,6 +2,7 @@ import { Symbiose } from "../item/ability/symbiose.js";
 import * as Dice from "../jets/dice.js";
 import { htmlQuery } from "../utils/utils.js";
 import { ShaaniSR } from "./Shaani/document.js";
+import { LootSR } from "./loot/LootSR.js";
 export class ActorSheetSR extends ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
@@ -1159,6 +1160,12 @@ export class ActorSheetSR extends ActorSheet {
         return this._onDropItemCreate(itemData);
       } else {
         return ui.notifications.warn("Une Symbiose ne peut être ajoutées qu'à un Shaani")
+      }
+    } else if(this.document instanceof LootSR) {
+      if(game.user.role == 4) {
+        return this._onDropItemCreate(itemData);
+      } else {
+        return;
       }
     } else {
       return this._onDropItemCreate(itemData);
