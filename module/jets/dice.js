@@ -1,3 +1,5 @@
+import { CheckDialog } from "../system/check/dialog.js";
+
 export async function Initiative({
   actor = null,
   extraMessageData = {},
@@ -331,7 +333,7 @@ export async function domainTest({
         close: () => resolve({ cancelled: true }),
       };
 
-      new Dialog(data, null).render(true);
+      new CheckDialog(data, null).render(true);
     });
   }
   function _processdomainTestOptions(form) {
@@ -892,7 +894,7 @@ export async function necroseTest({
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new Dialog(data, null).render(true);
+      new CheckDialog(data, null).render(true);
     });
   }
   function _processdomainTestOptions(form) {
@@ -1196,7 +1198,9 @@ export async function shaaniTest({
 
   // Bonus et Acquis
   for (const trihn of Object.values(checkOptions)) {
-    trihn.domaineRank = actorData.skills[trihn.domain].rank;    if (trihn.spe !== "pur") {
+    trihn.domaineRank = actorData.skills[trihn.domain].rank;  
+    console.log(actorData)
+    if (trihn.spe !== "pur") {
       let spéDomain;
       let données;
       for (const [category, details] of Object.entries(actorData.skills)) {
@@ -1324,7 +1328,7 @@ export async function shaaniTest({
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new Dialog(data, null).render(true);
+      new CheckDialog(data, null).render(true);
     });
   }
   function _processShaaniTestOptions(form){

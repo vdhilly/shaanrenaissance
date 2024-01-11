@@ -1,7 +1,6 @@
 <form>
   <div class="form-group">
-    <label>{{localize "chat.domainTest.options.domain"}}</label>
-    <select class="domainCheck-domain" name="domain" value="{{domain}}">
+    <select class="domainCheck-domain domain" name="domain" >
       {{#select domain}}
       {{#each actor.system.skills as |domainItem|}}
       {{#ifnoteq @key "Nécrose"}}
@@ -10,10 +9,7 @@
       {{/each}}
       {{/select}}
     </select>
-  </div>
-  <div class="form-group">
-    <label>{{localize "chat.domainTest.options.spécialisation"}}</label>
-    <select name="spécialisation" value="{{spécialisation}}">
+    <select name="spécialisation" class="spe">
       <option value="pur">{{localize "SR.jetPur"}}</option>
       {{#each actor.system.skills as |domainItem|}}
       <optgroup label="{{@key}}">
