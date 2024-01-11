@@ -6,6 +6,15 @@
             <button type="button" class="add-acquis"><i class="fa-solid fa-plus"></i>{{localize "SRLabels.create"}}</button>       
         </div>
     </div>
+    {{#ifeq actor.type "PNJ"}}
+        <div class="acquis-top">
+            <div class="acquis-money">
+                <label class="money-input money-label" for="{{options.id}}-pc-money">{{localize "SRLabels.Crédos"}}</label>
+                <input type="text" class="money-input" title="{{localize "SRLabels.CrédosTitle"}}" id="{{options.id}}-pc-money" name="system.attributes.crédos" value="{{data.attributes.crédos}}" readonly/>
+            </div>
+            {{> "systems/shaanrenaissance/templates/actors/partials/coinage.hbs"}}
+        </div>
+    {{/ifeq}}
     <ol class="itemCategory-list directory-list">
         {{#each items.Category as |Category|}}
             {{#ifnoteq Category.length 0}}
