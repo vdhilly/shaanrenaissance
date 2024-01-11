@@ -168,7 +168,7 @@
 }
 .actor.sheet.reseau .char-header .char-details .char-name input {
     color: var(--tertiary);
-    font-family: var(--title);
+    font-family: Komikazoom;
     font-size: var(--font-size-26);
     align-self: center;
     height: 40px;
@@ -345,7 +345,7 @@
 .actor.sheet.reseau .sheet-body .sheet-content .tab.character.active .character-domains .DomainsLabel {
     grid-area: titre;
     color: var(--primary);
-    font-family: var(--title);
+    font-family: Komikazoom;
     font-size: 1rem;
     font-weight: 800;
     line-height: 1;
@@ -465,7 +465,7 @@
 .actor.sheet.reseau .sheet-body .sheet-content .tab.character.active .character-specialisations .SpecialisationsLabel {
     grid-area: spésTitre;
     color: var(--primary);
-    font-family: var(--title);
+    font-family: Komikazoom;
     font-size: 1rem;
     font-weight: 800;
     line-height: 1;

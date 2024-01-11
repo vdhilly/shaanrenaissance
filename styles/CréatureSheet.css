@@ -62,7 +62,7 @@
   text-align: center;
 }
 .actor.sheet.creature .char-name input {
-  font-family: var(--title) !important;
+  font-family: Komikazoom !important;
   font-size: var(--font-size-20);
   text-transform: uppercase;
 }
@@ -135,7 +135,7 @@
 .actor.sheet.creature .creature-HP .TrihnsLabel {
   grid-area: 1 / 1 / 2 / 4;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -186,7 +186,7 @@
 .actor.sheet.creature .creature-cercle .DomainsLabel {
   grid-area: 1 / 1 / 2 / 4;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -361,7 +361,7 @@
 .actor.sheet.creature .creature-spés .SpecialisationsLabel {
   grid-area: spésTitre;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
