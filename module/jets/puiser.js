@@ -240,12 +240,33 @@ async function onPuiser(event) {
         trihns: flavor,
       };
       let chatData;
+      let rollMode = game.settings.get("core", "rollMode");
+      let whispers
+      switch(rollMode){
+        case "publicroll" : 
+        whispers = []
+        break;
+        
+        case "gmroll" : 
+        whispers = ChatMessage.getWhisperRecipients("GM")
+        break;
+
+        case "blindroll" : 
+        whispers = ChatMessage.getWhisperRecipients("GM")
+        break;
+
+        case "selfroll" : 
+        whispers = [game.user.id]
+        break;
+      }
+      console.log(whispers)
       chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor }),
         content: await renderTemplate(messageTemplate, templateContext),
         sound: CONFIG.sounds.notification,
         type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+        whisper: whispers
       };
       ChatMessage.create(chatData);
     }
@@ -401,12 +422,32 @@ async function onPuiserNecrose(event) {
         trihns: flavor,
       };
       let chatData;
+      let rollMode = game.settings.get("core", "rollMode");
+      let whispers
+      switch(rollMode){
+        case "publicroll" : 
+        whispers = []
+        break;
+        
+        case "gmroll" : 
+        whispers = ChatMessage.getWhisperRecipients("GM")
+        break;
+
+        case "blindroll" : 
+        whispers = ChatMessage.getWhisperRecipients("GM")
+        break;
+
+        case "selfroll" : 
+        whispers = [game.user.id]
+        break;
+      }
       chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor }),
         content: await renderTemplate(messageTemplate, templateContext),
         sound: CONFIG.sounds.notification,
         type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+        whisper: whispers
       };
       ChatMessage.create(chatData);
     }
