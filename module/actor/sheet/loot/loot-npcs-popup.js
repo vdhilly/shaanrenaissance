@@ -18,6 +18,7 @@ export class LootNPCsPopup extends FormApplication {
       selectionData = Array.isArray(formData.selection)
         ? formData.selection
         : [formData.selection];
+    let credos = 0
     for (let i = 0; i < selectionData.length; i++) {
       const token = canvas.tokens.placeables.find((token) => {
         var _a;
@@ -41,10 +42,17 @@ export class LootNPCsPopup extends FormApplication {
         itemData.push(...currentSourceItemData);
         const idsToDelete = currentSourceItemData.map((item) => item._id);
         currentSource.deleteEmbeddedDocuments("Item", idsToDelete);
+
+        // Credos
+        credos += Number(currentSource.system.attributes.crédos)
+        await currentSource.update({"system.attributes.crédos": 0})
       }
     }
+    let updateCredos = Number(this.object.system.attributes.crédos) + credos
+    
     itemData.length > 0 &&
       (await this.object.createEmbeddedDocuments("Item", itemData));
+    await this.object.update({"system.attributes.crédos": updateCredos})
   }
   async getData() {
     const tokenInfo = canvas.tokens.controlled
