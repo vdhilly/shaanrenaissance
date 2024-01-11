@@ -10,7 +10,7 @@ import { ItemSR } from "./item/ItemSR.js";
 import { Ability } from "./item/ability/base.js";
 import { Symbiose } from "./item/ability/symbiose.js";
 import { ConditionSR } from "./item/condition/document.js";
-import { domainTest, necroseTest } from "./jets/dice.js";
+import { SpéTest, SpéTestNécr, domainTest, necroseTest } from "./jets/dice.js";
 import { AddCoins, AddPrestige, AddXP, RemoveCoins } from "./macros/macros.js";
 import { getSelectedOrOwnActors } from "./utils/utils.js";
 
@@ -52,6 +52,8 @@ shaanRenaissance.Item = {
 shaanRenaissance.macros = {
   domainTest: domainTest,
   necroseTest: necroseTest,
+  speTest: SpéTest,
+  speTestNecrose: SpéTestNécr,
   addCoins: AddCoins,
   removeCoins: RemoveCoins,
   addXP: AddXP,
