@@ -8,20 +8,12 @@
       "flags": {}
     },
     {
-      "name": "Pretre",
-      "flags": {}
-    },
-    {
-      "name": "Colonelb",
-      "flags": {}
-    },
-    {
       "name": "Shaan Renaissance",
       "url": "https://www.shaan-rpg.com/",
       "flags": {}
     }
   ],
-  "version": "v1.1.4",
+  "version": "v1.5",
   "compatibility": {
     "minimum": "11",
     "verified": "11",
@@ -173,5 +165,5 @@
   "initiative": "1d10 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
   "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv11/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.1.4/shaanrenaissance.zip"
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v1.5/shaanrenaissance.zip"
 }
