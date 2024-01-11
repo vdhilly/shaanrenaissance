@@ -261,22 +261,20 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
     ]);
     const itemID = event.currentTarget.closest(".item").dataset.itemId,
       item = await this.getAcquisItem(itemID, LootActoruuID);
-    console.log(item);
     if (0 === actors.length)
       return void ui.notifications.error(
         game.i18n.format("SR.ErrorMessage.NoTokenSelected")
       );
     let purchasesSucceeded = 0;
-    console.log(item);
     for (const actor of actors) {
-      if (actor.system.attributes.crédos - item.system.acquis.valeur < 0) {
+      if (Number(actor.system.attributes.crédos) - Number(item.system.acquis.valeur.replace(' crédos', '')) <= 0) {
         return ui.notifications.warn(
           "Vous ne pouvez pas vous permettre cet achat."
         );
       } else {
-        await actor.inventory.removeCoins(Number(item.system.acquis.valeur)),
+        await actor.inventory.removeCoins(Number(item.system.acquis.valeur.replace(' crédos', ''))),
           (purchasesSucceeded += 1);
-        await this.actor.inventory.addCoins(Number(item.system.acquis.valeur)),
+        await this.actor.inventory.addCoins(Number(item.system.acquis.valeur.replace(' crédos', ''))),
           await actor.createEmbeddedDocuments("Item", [item.toObject()]);
       }
     }
