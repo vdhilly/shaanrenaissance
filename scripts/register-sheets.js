@@ -8,6 +8,7 @@ import ShaanLootSheetSR from "../module/actor/loot/ShaanLootSheet.js";
 import ShaanCreatorSet from "../module/item/CreatorSet/ShaanCreatorSet.js";
 import ShaanRItemSheet from "../module/item/ShaanRItemSheet.js";
 import ShaanTrihnSheet from "../module/item/ShaanTrihnSheet.js";
+import { symbioseSheet } from "../module/item/ability/symbioseSheet.js";
 import { ShaanConditionSheet } from "../module/item/condition/sheet.js";
 import { TokenConfigSR } from "../module/token/TokenConfigSR.js";
 
@@ -53,6 +54,10 @@ export function registerSheets() {
   Items.registerSheet("shaanrenaissance", ShaanConditionSheet, {
     types: ["condition"],
     label: "Condition",
+  });
+  Items.registerSheet("shaanrenaissance", symbioseSheet, {
+    types: ["Symbiose"],
+    label: "Symbiose",
   });
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("shaanrenaissance", ShaanPersonnageSheet, {

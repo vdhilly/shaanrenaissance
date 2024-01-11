@@ -8,6 +8,7 @@ import { AcquisSR } from "./item/Acquis/base.js";
 import { CreatorSet } from "./item/CreatorSet/base.js";
 import { ItemSR } from "./item/ItemSR.js";
 import { Ability } from "./item/ability/base.js";
+import { Symbiose } from "./item/ability/symbiose.js";
 import { ConditionSR } from "./item/condition/document.js";
 import { domainTest, necroseTest } from "./jets/dice.js";
 import { AddCoins, AddPrestige, AddXP, RemoveCoins } from "./macros/macros.js";
@@ -45,6 +46,7 @@ shaanRenaissance.Item = {
     Caste: CreatorSet,
     Métier: CreatorSet,
     condition: ConditionSR,
+    Symbiose: Symbiose
   },
 };
 shaanRenaissance.macros = {

@@ -32,7 +32,11 @@
             {{#if (eq die.flavor "Ame")}}
             <div class="die Ame" data-depressed="{{#if @root.depressed}}true{{else}}false{{/if}}">
                 {{#unless @root.depressed}}
+                {{#if (eq @root.actions.ame.domain "Nécrose")}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{die.total}}.png">
+                {{else}}
                 <img src="systems/shaanrenaissance/assets/icons/dice-result/Ame/d10_bleu_{{die.total}}.png">
+                {{/if}}
                 <div class="ame details">
                     <span>{{@root.actions.ame.domain}} - <b>{{@root.actions.ame.domaineRank}}</b></span>
                     {{#if (ne @root.actions.ame.spe "pur")}}

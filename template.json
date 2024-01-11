@@ -779,7 +779,8 @@
       "Peuple",
       "Caste",
       "Métier",
-      "condition"
+      "condition",
+      "Symbiose"
     ],
     "templates": {
       "common": {
@@ -1422,6 +1423,15 @@
         "overriddenBy": []
       },
       "overrides": []
+    },
+    "Symbiose": {
+      "templates":[],
+      "frequence":"",
+      "duration":"",
+      "description":"",
+      "cost":"",
+      "source":{"value":""},
+      "isUsed": false
     }
   }
 }

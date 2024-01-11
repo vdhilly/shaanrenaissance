@@ -160,7 +160,7 @@
 .sheet.shaani [data-tab="members"] .member > .portrait img {
   position: absolute;
   border: none;
-  height: 100%;
+  height: 87px;
   width: 100%;
   object-fit: contain;
 }
@@ -212,6 +212,32 @@
 .sheet.shaani [data-tab="members"] .member > .portrait .health-bars span {
   padding-left: 0.25rem;
   position: relative;
+}
+
+.sheet.shaani [data-tab="members"] .member span.shaandar p {
+  font-family: var(--sans-serif);
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  margin:0;
+}
+.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Technique"],.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Savoir"],.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Social"]{
+  background: var(--color-esprit);
+  color: #fffcdb;
+}
+.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Arts"],.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Shaan"],.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Magie"]{
+  background: var(--color-ame);
+  color: #d5eefc;
+}
+.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Rituels"],.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Survie"],.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Combat"]{
+  background: var(--color-corps);
+  color: #fbdaca;
+}
+.sheet.shaani [data-tab="members"] .member span.shaandar p[data-domain="Nécrose"]{
+  background: var(--color-necrose);
+  color: black;
 }
 /* Souches */
 .actor.sheet.shaani .tab.cercle.active .souches {
@@ -292,7 +318,25 @@
   background: rgba(0, 0, 0, 0.05);
   padding: 1px 3px;
 }
+/* Shaandars */
 
+.dialog .shaandar-list .portrait {
+  display: flex;
+  justify-content: center;
+}
+.dialog .shaandar-list select {
+  border: none;
+    border-radius: 0;
+    font: 500 var(--font-size-14) var(--body-serif);
+    width: 100%;
+}
+.dialog .shaandar-list a {
+  font-family: Komikazoom;
+  font-size: var(--font-size-22);
+  font-weight: 500;
+  justify-content: center;
+  display: flex;
+}
 /* Cercle */
 .actor.sheet.shaani
   .tab.cercle.active
@@ -524,7 +568,7 @@
 .sheet.shaani .content {
   padding: 10px;
 }
-.sheet.shaani .tab.acquis.active .item.acquis .owner {
+.sheet.shaani .tab.acquis.active .item.acquis .owner, .sheet.shaani .tab.powers.active .item.pouvoir .owner {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -667,4 +711,106 @@
 .actor.sheet .character-specialisations input[type="number"] {
   font: 700 var(--font-size-14) var(--body-serif);
   text-align: center;
+}
+
+/* Symbioses */
+
+.actor.sheet.shaani .tab.symbioses .category-header {
+  display: grid;
+  grid: "acquisCategory power-add" "acquisContent acquisContent";
+  border-top-right-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 30%),
+  inset 0 0 0 2px rgb(255 255 255 / 20%);
+  align-items: center;
+  background-color: #755137;
+  color: var(--color-text-light-0);
+  display: flex;
+  font-size: var(--font-size-10);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-top: 6px;
+  padding: 0.25rem;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+  width: 100%;
+}
+.actor.sheet.shaani .tab.symbioses .category-header h3 {
+  font-size: var(--font-size-14);
+  margin: 2px 0;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+.actor.sheet.shaani .tab.symbioses .category-header h3:hover {
+  color: var(--color-text-light-0);
+}
+.actor.sheet.shaani .item-container.symbioses {
+  list-style-type: none;
+  padding: 0;
+}
+.actor.sheet.shaani .tab.symbioses .liste-items .item {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--font-size-12);
+  justify-content: flex-start;
+  width: 100%;
+}
+.actor.sheet.shaani .tab.symbioses .liste-items li .symbiose-header {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  flex: 2;
+  background-color: rgba(28, 28, 28, 0.1);
+  padding: 0.5em;
+}
+.actor.sheet.shaani .tab.symbioses .liste-items .symbiose-header h4 {
+  cursor: pointer;
+  font-weight: 500;
+  line-height: var(--font-size-12);
+  margin: auto auto auto 0;
+  padding: 2px;
+  word-break: break-word;
+  font: var(--body-serif);
+}
+.actor.sheet.shaani .tab.symbioses .symbiose-header h4:hover {
+  color: var(--primary);
+}
+.actor.sheet.shaani .tab.symbioses .liste-items {
+  display: grid;
+}
+.actor.sheet.shaani .tab.symbioses .liste-items {
+  border: 3px solid #755137;
+  border-top: none;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.actor.sheet.shaani .tab.symbioses .item-summary {
+  --space-s: 0.25em;
+  --space-m: 0.5em;
+  --space-l: 1em;
+  --space-xl: 1.5em;
+  --space-2xl: 2em;
+  --radius: 3px;
+  overflow: hidden;
+}
+.actor.sheet.shaani .tab.symbioses .item-summary {
+  flex: 100%;
+  padding: 4px 8px 8px;
+  border-top: 1px solid var(--alt);
+  border-bottom: 1px solid var(--alt);
+  background: var(--bg);
+}
+
+.actor.sheet.shaani .tab.symbioses .item-summary .item-details.border-bottom {
+  padding-bottom: 2px;
+}
+.actor.sheet.shaani .tab.symbioses .item-summary .item-description {
+  padding-top: 2px;
+}
+.actor.sheet.shaani .tab.symbioses .liste-items .item-controls {
+  float: right;
+  align-items: center;
+  display: flex;
+  background-color: rgba(28, 28, 28, 0.1);
+  padding: 0.5em;
+  border-left: 1px solid var(--alt);
 }

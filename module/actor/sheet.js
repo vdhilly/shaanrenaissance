@@ -1,5 +1,7 @@
+import { Symbiose } from "../item/ability/symbiose.js";
 import * as Dice from "../jets/dice.js";
 import { htmlQuery } from "../utils/utils.js";
+import { ShaaniSR } from "./Shaani/document.js";
 export class ActorSheetSR extends ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
@@ -1142,5 +1144,24 @@ export class ActorSheetSR extends ActorSheet {
     let element = event.target;
     let itemId = element.closest(".item").dataset.itemId;
     return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+  }
+  async _onDropItem(event, data) {
+    if ( !this.actor.isOwner ) return false;
+    const item = await Item.implementation.fromDropData(data);
+    const itemData = item.toObject();
+
+    // Handle item sorting within the same Actor
+    if ( this.actor.uuid === item.parent?.uuid ) return this._onSortItem(event, itemData);
+
+    // Create the owned item
+    if(item instanceof Symbiose){
+      if(this.document instanceof ShaaniSR){
+        return this._onDropItemCreate(itemData);
+      } else {
+        return ui.notifications.warn("Une Symbiose ne peut être ajoutées qu'à un Shaani")
+      }
+    } else {
+      return this._onDropItemCreate(itemData);
+    }
   }
 }

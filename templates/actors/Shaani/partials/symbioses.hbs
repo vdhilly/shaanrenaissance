@@ -1,0 +1,24 @@
+<div class="content">
+    <li class="item item-container symbioses">
+        <div class="category-header">
+            <h3 class="item-name">{{localize "SRTabs.symbioses"}}</h3>
+        </div>
+        <ol class="item-list liste-items">
+            {{#each items as |symbiose s|}}
+                {{#if (eq symbiose.type "Symbiose")}}
+                <li class="item symbiose" draggable="true" data-item-id="{{symbiose._id}}" data-item-type="{{symbiose.type}}">
+                    <div class="symbiose-header">
+                        <h4 class="symbiose-name">
+                            {{symbiose.name}}
+                        </h4>
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
+                        <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/if}}
+            {{/each}}
+        </ol>
+    </li>
+</div>

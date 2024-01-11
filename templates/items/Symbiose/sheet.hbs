@@ -1,0 +1,50 @@
+<form class="item sheet crb-style symbiose" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img">
+        <h2 class="item-name">
+            <input name="name" type="text" value="{{item.name}}" placeholder="Nom du item" spellcheck="false" />
+        </h2>
+        <span class="item-source">
+            <input name="system.source.value" type="text" value="{{data.source.value}}" placeholder="Source" spellcheck="false" />
+        </span>
+    </header>
+    <div class="details">
+        {{#if editable}}
+        <div class="pouvoir-fréquence">
+            <h3>
+                <label for="{{options.id}}-frequence">{{localize "SR.pouvoirFréquence"}}</label><br>
+                <select class="select" name="system.frequence" id="{{options.id}}-frequence">
+                    {{#select data.frequence}}
+                    {{#each config.pouvoirs.pouvoirFréquence as |frequence|}}
+                    <option value="{{frequence}}">{{localize frequence}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+            </h3>
+            </div>
+            {{else}}
+            <div class="frequence">
+            <h3>
+                <label for="{{options.id}}-pouvoir-fréquence">{{localize "SR.pouvoirFréquence"}}</label>
+                <input name="system.fréquence.value" id="{{options.id}}-pouvoir-fréquence" type="text" value="{{data.fréquence.value}}"spellcheck="false"/>
+            </h3>
+            </div>
+        {{/if}}
+        <div class="duration">
+            <h3>
+                <label for="{{options.id}}-duration">{{localize "SR.pouvoirDurée"}}</label>
+                <input name="system.duration" id="{{options.id}}-duration" type="text" value="{{data.duration}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="cost">
+            <h3>
+                <label for="{{options.id}}-cost">{{localize "SRLabels.Cost"}}</label>
+                <input name="system.cost" id="{{options.id}}-cost" type="text" value="{{data.cost}}" spellcheck="false"/>
+            </h3>
+        </div>
+        <div class="description">
+            <label for="{{options.id}}-description">{{localize "SR.Déscription"}}</label>
+            <textarea name="system.description" id="{{options.id}}-description" type="text" value="{{data.description}}" spellcheck="false">{{data.description}}</textarea>
+        </div>
+    </div>
+</form>

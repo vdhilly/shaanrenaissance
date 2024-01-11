@@ -35,6 +35,7 @@
     <a data-tab="spe">{{localize "SRLabels.SpecialisationsTitle"}}</a>
     <a data-tab="powers">{{localize "SRTabs.PowersLabel"}}</a>
     <a data-tab="acquis">{{localize "SRTabs.AcquisLabel"}}</a>
+    <a data-tab="symbioses">{{localize "SRTabs.symbioses"}}</a>
   </nav>
   <section class="container">
     {{#unless restricted}}<div class="tab members" data-tab="members">{{~> "systems/shaanrenaissance/templates/actors/Shaani/partials/members.hbs"}}</div>{{/unless}}
@@ -42,5 +43,6 @@
     <div class="tab spe" data-tab="spe">{{~> "systems/shaanrenaissance/templates/actors/Shaani/partials/spe.hbs"}}</div>    
     <div class="tab powers" data-tab="powers">{{~> "systems/shaanrenaissance/templates/actors/Shaani/partials/pouvoirs.hbs"}}</div>
     <div class="tab acquis" data-tab="acquis">{{~> "systems/shaanrenaissance/templates/actors/Shaani/partials/acquis.hbs"}}</div>
+    <div class="tab symbioses" data-tab="symbioses">{{~> "systems/shaanrenaissance/templates/actors/Shaani/partials/symbioses.hbs"}}</div>
   </section>
 </form>

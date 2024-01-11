@@ -51,7 +51,7 @@ export class ShaaniSheetSR extends ActorSheetSR {
     this.prepareMembersItems(sheetData);
     this.defineTrihnMax(sheetData);
     this.processDomains(sheetData);
-    this.processSkills(sheetData)
+    this.processSkills(sheetData);
 
     console.log(sheetData);
     return sheetData;
@@ -86,6 +86,8 @@ export class ShaaniSheetSR extends ActorSheetSR {
   }
   processSkills(sheetData){
     const members = sheetData.members 
+    const beforeSkills = JSON.parse(JSON.stringify(sheetData.data.skills))
+    const actorSkills = JSON.parse(JSON.stringify(this.actor.system.skills))
 
     function updateSheetData(sheetData, members) {
       members.forEach((member) => {
@@ -112,9 +114,11 @@ export class ShaaniSheetSR extends ActorSheetSR {
     // Update sheetData with members' data
     updateSheetData(sheetData, members);
     const skills = sheetData.data.skills
-    this.actor.update({
-      "system.skills": skills
-    })
+    if(JSON.stringify(skills) !== JSON.stringify(beforeSkills) || JSON.stringify(skills) !== JSON.stringify(actorSkills)) {
+      this.actor.update({
+        "system.skills": skills
+      })
+    }
   }
   defineTrihnMax(sheetData) {
     const soucheEspritKey = sheetData.data.soucheEsprit
@@ -510,6 +514,113 @@ export class ShaaniSheetSR extends ActorSheetSR {
       description: description,
       askForOptions: event.shiftKey,
     });
+  }
+  async _onAcquisChat(event) {
+    event.preventDefault();
+    let element = event.target;
+    let itemId = element.closest(".item").dataset.itemId;
+    let parentId = element.closest(".item").dataset.parentId;
+    let actor = this.actor
+    let item = await fromUuid(`Actor.${parentId}.Item.${itemId}`)
+
+    AcquisChat({
+      actor: actor,
+      acquis: item,
+    });
+
+    async function AcquisChat({
+      actor = null,
+      acquis = null,
+      extraMessageData = {},
+      sendMessage = true,
+    } = {}) {
+      const messageTemplate =
+        "systems/shaanrenaissance/templates/chat/acquis-chat.hbs";
+
+      if (sendMessage) {
+        ToCustomMessage(actor, acquis, messageTemplate, {
+          ...extraMessageData,
+          actorID: actor.uuid,
+        });
+      }
+
+      async function ToCustomMessage(
+        actor = null,
+        acquis,
+        template,
+        extraData
+      ) {
+        let templateContext = {
+          ...extraData,
+          acquisData: acquis,
+        };
+
+        let chatData = {
+          user: game.user.id,
+          speaker: ChatMessage.getSpeaker({ actor }),
+          content: await renderTemplate(template, templateContext),
+          sound: CONFIG.sounds.notification,
+          type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+        };
+
+        ChatMessage.create(chatData);
+      }
+    }
+  }
+  async _onPouvoirChat(event) {
+    event.preventDefault();
+    let element = event.target;
+    let itemId = element.closest(".item").dataset.itemId;
+    let parentId = element.closest(".item").dataset.parentId;
+    let actor = this.actor
+    let item = await fromUuid(`Actor.${parentId}.Item.${itemId}`)
+
+    PouvoirChat({
+      actor: actor,
+      pouvoir: item,
+    });
+
+    async function PouvoirChat({
+      actor = null,
+      pouvoir = null,
+      extraMessageData = {},
+      sendMessage = true,
+    } = {}) {
+      const messageTemplate =
+        "systems/shaanrenaissance/templates/chat/pouvoir-chat.hbs";
+
+      if (sendMessage) {
+        ToCustomMessage(actor, pouvoir, messageTemplate, {
+          ...extraMessageData,
+          actorID: actor.uuid,
+        });
+      }
+
+      async function ToCustomMessage(
+        actor = null,
+        pouvoir,
+        template,
+        extraData
+      ) {
+        let templateContext = {
+          ...extraData,
+          pouvoirData: pouvoir,
+        };
+        console.log(templateContext);
+        console.log(pouvoir);
+
+        let chatData = {
+          user: game.user.id,
+          speaker: ChatMessage.getSpeaker({ actor }),
+          content: await renderTemplate(template, templateContext),
+          sound: CONFIG.sounds.notification,
+          type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+        };
+        console.log(chatData);
+
+        ChatMessage.create(chatData);
+      }
+    }
   }
   async _onDropActor(event, data) {
     await super._onDropActor(event, data);

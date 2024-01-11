@@ -12,7 +12,7 @@ export class ItemSummaryRenderer {
   activateListeners(html) {
     const itemNameElems = (0, htmlQueryAll)(
       html,
-      ".item .acquis-header h4, .item .pouvoir-header h4"
+      ".item .acquis-header h4, .item .pouvoir-header h4, .symbiose-header h4"
     );
     for (const itemNameElem of itemNameElems)
       itemNameElem.addEventListener("click", async () => {
@@ -21,7 +21,8 @@ export class ItemSummaryRenderer {
           itemNameElem,
           "[data-item-id], .expandable"
         );
-        if(this.sheet.actor.type !== "Shaani"){
+    
+        if(this.sheet.actor.type !== "Shaani" || element.dataset.itemType == "Symbiose"){
           element && (await this.toggleSummary(element));
         } else {
           element && (await this.toggleSummaryShaani(element))
@@ -58,7 +59,7 @@ export class ItemSummaryRenderer {
       if (!item.isOfType("Trihn")) {
         const insertLocation = (0, htmlQueryAll)(
           element,
-          ":scope > .acquis-name, :scope > .item-controls, :scope > pouvoir-name"
+          ":scope > .acquis-name, :scope > .item-controls, :scope > pouvoir-name, :scope > .symbiose-header"
         ).at(-1);
         if (!insertLocation) return null;
         const summary = document.createElement("div");
@@ -142,7 +143,7 @@ export class ItemSummaryRenderer {
       if (!item.isOfType("Trihn")) {
         const insertLocation = (0, htmlQueryAll)(
           element,
-          ":scope > .acquis-name, :scope > .quantity, :scope > .pouvoir-header"
+          ":scope > .acquis-name, :scope > .quantity, :scope > .pouvoir-header, :scope > .owner"
         ).at(-1);
         if (!insertLocation) return null;
         const summary = document.createElement("div");

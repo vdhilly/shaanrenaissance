@@ -69,6 +69,14 @@
       "flags": {}
     },
     {
+      "name": "symbioses",
+      "label": "Symbioses",
+      "system": "shaanrenaissance",
+      "path": "packs/symbioses",
+      "type": "Item",
+      "flags": {}
+    },
+    {
       "name": "pouvoirs",
       "label": "Pouvoirs",
       "system": "shaanrenaissance",

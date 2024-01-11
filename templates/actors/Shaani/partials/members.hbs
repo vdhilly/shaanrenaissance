@@ -8,6 +8,15 @@
     {{#each members as |member i|}}
       <section class="member" data-actor-uuid="{{member.actor.uuid}}">
         <div class="portrait">
+          <span class="shaandar">
+              {{#each @root.data.details.shaandars as |list l|}}
+                {{#each list as |shaandars|}}
+                  {{#if (eq shaandars._id member.actor._id)}}
+                    <p data-domain="{{l}}">{{l}}</p>
+                  {{/if}}
+                {{/each}}
+              {{/each}}
+            </span>
           <a data-action="open-sheet"><img src="{{member.actor.img}}" /></a>
           {{#if member.hp}}
             <div class="health-bars">

@@ -14,8 +14,10 @@
           <select name="shaandars.{{@key}}">
             {{#select (concat "shaandars." @key)}}
                 <option value=""></option>
-                {{#each @root.config.SRdomains as |domain|}}
-                    <option value="{{@key}}">{{@key}}</option>
+                {{#each member.system.skills as |domain d|}}
+                    {{#if (gte domain.rank 5)}}
+                      <option value="{{@key}}">{{@key}}</option>
+                    {{/if}}
                 {{/each}}
             {{/select}}
           </select>
@@ -23,4 +25,5 @@
       </section>
         {{/each}}
     </section>
+    {{log this}}
 </form>
