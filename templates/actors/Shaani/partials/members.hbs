@@ -1,0 +1,75 @@
+<div class="content">
+  {{#unless members}}
+    <div class="summary">
+      {{localize "SR.Actor.Shaani.BlankSlate"}}
+    </div>
+  {{/unless}}
+  {{#if members}}
+    {{#each members as |member i|}}
+      <section class="member" data-actor-uuid="{{member.actor.uuid}}">
+        <div class="portrait">
+          <span class="shaandar">
+              {{#each @root.data.details.shaandars as |list l|}}
+                {{#each list as |shaandars|}}
+                  {{#if (eq shaandars._id member.actor._id)}}
+                    <p data-domain="{{l}}">{{l}}</p>
+                  {{/if}}
+                {{/each}}
+              {{/each}}
+            </span>
+          <a data-action="open-sheet"><img src="{{member.actor.img}}" /></a>
+          {{#if member.hp}}
+            <div class="health-bars">
+              <div class="esprit-bar">
+                <div
+                  class="bar"
+                  style="width: {{percentage
+                    member.hp.esprit.value
+                    member.hp.esprit.max
+                  }}%;"
+                ></div>
+              </div>
+              <div class="ame-bar">
+                <div
+                  class="bar"
+                  style="width: {{percentage
+                    member.hp.ame.value
+                    member.hp.ame.max
+                  }}%;"
+                ></div>
+              </div>
+              <div class="corps-bar">
+                <div
+                  class="bar"
+                  style="width: {{percentage
+                    member.hp.corps.value
+                    member.hp.corps.max
+                  }}%;"
+                ></div>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+        <div class="data">
+          <header>
+            <div class="name">
+              <a data-action="open-sheet">{{member.actor.name}}</a>
+              {{#if @root.user.isGM}}<a data-action="remove-member"><i
+                    class="fa-solid fa-fw fa-times"
+                  ></i></a>
+              {{/if}}
+            </div>
+          </header>
+          <div class="details">
+            <span>
+              {{member.race.name}}
+              {{member.caste.name}}
+              ({{member.metier.name}}) des
+              {{member.peuple.name}}
+            </span>
+          </div>
+        </div>
+      </section>
+    {{/each}}
+  {{/if}}
+</div>

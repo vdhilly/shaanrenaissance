@@ -351,3 +351,48 @@
   display: flex;
   margin: 0;
 }
+
+/* Shaani Test */
+.chat-card.shaaniTest .domainDice {
+flex-direction: column-reverse;
+display: flex;
+
+}
+.chat-card.shaaniTest .domainDice img {
+  border:none;
+  width: 75px;
+  height: 75px;
+  align-self:center;
+}
+.chat-card.shaaniTest .domainDice .die {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+.chat-card.shaaniTest .domainDice .die .details, .chat-card.shaaniTest .domainDice .die .score {
+  display: flex;
+  flex-direction:column;
+  align-self: center;
+}
+.chat-card.shaaniTest .domainDice .die .score {
+  width: 50px;
+  text-align:center;
+  border: 2px solid black;
+  border-radius:5px;
+  font-family:Komikazoom
+}
+.chat-card.shaaniTest .domainDice .die.Esprit .score {
+  color:#fffcdb;
+  background:var(--color-esprit)
+}
+.chat-card.shaaniTest .domainDice .die.Ame .score {
+  color:#d5eefc;
+  background:var(--color-ame)
+}
+.chat-card.shaaniTest .domainDice .die.Corps .score {
+  color:#fbdaca;
+  background:var(--color-corps)
+}
+.chat-card hr {
+  margin: 10px 6px 10px 0;
+}

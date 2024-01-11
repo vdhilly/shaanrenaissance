@@ -62,7 +62,7 @@
   text-align: center;
 }
 .actor.sheet.npc .char-name input {
-  font-family: var(--title) !important;
+  font-family: Komikazoom !important;
   font-size: var(--font-size-20);
   text-transform: uppercase;
 }
@@ -135,7 +135,7 @@
 .actor.sheet.npc .npc-HP .TrihnsLabel {
   grid-area: 1 / 1 / 2 / 4;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -186,7 +186,7 @@
 .actor.sheet.npc .npc-cercle .DomainsLabel {
   grid-area: 1 / 1 / 2 / 4;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -361,7 +361,7 @@
 .actor.sheet.npc .npc-spés .SpecialisationsLabel {
   grid-area: spésTitre;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -591,4 +591,36 @@
   font-weight: 800;
   font-size: 0.625rem;
   text-transform: uppercase;
+}
+
+/* Coins */
+
+.actor.sheet.npc .acquis-top {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+.actor.sheet.npc .acquis-top .coinage {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: end;
+}
+.actor.sheet.npc .acquis-top .acquis-money label {
+  color: var(--primary);
+  font-family: var(--sans-serif);
+  font-weight: 800;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+}
+.actor.sheet.npc .acquis-top .acquis-money input {
+  background-color: rgba(28, 28, 28, 0.1);
+  border: none;
+  color: var(--body);
+  display: flex;
+  font: 700 var(--font-size-14) var(--body-serif);
+  line-height: 1;
+  margin: 0;
+  padding: 8px 4px 6px;
+  width: calc(100% - 6px);
 }

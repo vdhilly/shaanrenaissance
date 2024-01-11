@@ -3,11 +3,12 @@ import ShaanCreatureSheet from "../module/actor/Créature/ShaanCreatureSheet.js"
 import ShaanNPCSheet from "../module/actor/PNJ/ShaanNPCSheet.js";
 import ShaanPersonnageSheet from "../module/actor/Personnage/sheet.js";
 import ShaanRéseauSheet from "../module/actor/Réseau/ShaanRéseauSheet.js";
-import ShaanShaaniSheet from "../module/actor/Shaani/ShaanShaaniSheet.js";
+import { ShaaniSheetSR } from "../module/actor/Shaani/sheet.js";
 import ShaanLootSheetSR from "../module/actor/loot/ShaanLootSheet.js";
 import ShaanCreatorSet from "../module/item/CreatorSet/ShaanCreatorSet.js";
 import ShaanRItemSheet from "../module/item/ShaanRItemSheet.js";
 import ShaanTrihnSheet from "../module/item/ShaanTrihnSheet.js";
+import { symbioseSheet } from "../module/item/ability/symbioseSheet.js";
 import { ShaanConditionSheet } from "../module/item/condition/sheet.js";
 import { TokenConfigSR } from "../module/token/TokenConfigSR.js";
 
@@ -54,6 +55,10 @@ export function registerSheets() {
     types: ["condition"],
     label: "Condition",
   });
+  Items.registerSheet("shaanrenaissance", symbioseSheet, {
+    types: ["Symbiose"],
+    label: "Symbiose",
+  });
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("shaanrenaissance", ShaanPersonnageSheet, {
     types: ["Personnage"],
@@ -67,7 +72,7 @@ export function registerSheets() {
     types: ["Créature"],
     label: "Créature",
   });
-  Actors.registerSheet("shaanrenaissance", ShaanShaaniSheet, {
+  Actors.registerSheet("shaanrenaissance", ShaaniSheetSR, {
     types: ["Shaani"],
     label: "Shaani",
   });

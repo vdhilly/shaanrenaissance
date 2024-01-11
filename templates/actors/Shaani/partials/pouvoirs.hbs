@@ -1,0 +1,100 @@
+<div class="content">
+    <ol class="pouvoirTrihn-list directory-list">
+        <li class="item item-container pouvoirTrihn Esprit">
+            <div class="trihn-header">
+                <h3 class="item-name">
+                    {{localize "SRLabels.pouvoirsEsprit"}}
+                </h3>
+
+            </div>
+            <ol class="item-list liste-pouvoir liste-pouvoirEsprit ">
+                {{#each Powers.Esprit as |pouvoir|}}
+                <li class="item pouvoir {{#ifeq pouvoir.system.isUsed true}}used{{/ifeq}}" draggable="true" data-item-id="{{pouvoir._id}}" data-parent-id="{{pouvoir.parent._id}}">
+                <div class="pouvoir-header">
+                    <div class="pouvoir-image">
+                        <img src="{{pouvoir.img}}" data-edit="img">
+                        <i class="pouvoir-chat fa-solid fa-message"></i>
+                    </div>
+                    <h4 class="pouvoir-name">
+                        {{pouvoir.name}}
+                    </h4>
+                </div>
+                <span class="owner">{{pouvoir.parent.name}}</span>
+                {{/each}}
+            </ol>
+        </li>
+        <li class="item item-container pouvoirTrihn Ame">
+            <div class="trihn-header">
+                <h3 class="item-name">
+                    {{localize "SRLabels.pouvoirsAme"}}
+                </h3>
+
+            </div>
+            <ol class="item-list liste-pouvoir liste-pouvoirAme">
+                {{#each Powers.Ame as |pouvoir|}}
+                <li class="item pouvoir {{#ifeq pouvoir.system.isUsed true}}used{{/ifeq}}" draggable="true" data-item-id="{{pouvoir._id}}" data-parent-id="{{pouvoir.parent._id}}">
+                <div class="pouvoir-header">
+                    <div class="pouvoir-image">
+                        <img src="{{pouvoir.img}}" data-edit="img">
+                        <i class="pouvoir-chat fa-solid fa-message"></i>
+                    </div>
+                    <h4 class="pouvoir-name">
+                        {{pouvoir.name}}
+                    </h4>
+                </div>
+                <span class="owner">{{pouvoir.parent.name}}</span>
+                </li>
+                {{/each}}
+            </ol>
+        </li>
+        <li class="item item-container pouvoirTrihn Corps">
+            <div class="trihn-header">
+                <h3 class="item-name">
+                    {{localize "SRLabels.pouvoirsCorps"}}
+                </h3>
+
+            </div>
+            <ol class="item-list liste-pouvoir liste-pouvoirCorps">
+                {{#each Powers.Corps as |pouvoir|}}
+                <li class="item pouvoir {{#ifeq pouvoir.system.isUsed true}}used{{/ifeq}}" draggable="true" data-item-id="{{pouvoir._id}}" data-parent-id="{{pouvoir.parent._id}}">
+                <div class="pouvoir-header">
+                    <div class="pouvoir-image">
+                        <img src="{{pouvoir.img}}" data-edit="img">
+                        <i class="pouvoir-chat fa-solid fa-message"></i>
+                    </div>
+                    <h4 class="pouvoir-name">
+                        {{pouvoir.name}}
+                    </h4>
+                </div>
+                <span class="owner">{{pouvoir.parent.name}}</span>
+                </li>
+                {{/each}}
+            </ol>
+        </li>
+        <li class="item item-container pouvoirTrihn Nécrose">
+            <div class="trihn-header">
+                <h3 class="item-name">
+                    {{localize "SRLabels.pouvoirsNecrose"}}
+                </h3>
+            </div>
+            <ol class="item-list liste-pouvoir liste-pouvoirNécrose">
+                {{#each Powers.Necrose as |pouvoir|}}
+                <li class="item pouvoir {{#ifeq pouvoir.system.isUsed true}}used{{/ifeq}}" draggable="true" data-item-id="{{pouvoir._id}}" data-parent-id="{{pouvoir.parent._id}}">
+                <div class="pouvoir-header">
+                    <div class="pouvoir-image">
+                        <img src="{{pouvoir.img}}" data-edit="img">
+                        <i class="pouvoir-chat fa-solid fa-message"></i>
+                    </div>
+                    <h4 class="pouvoir-name">
+                        {{pouvoir.name}}
+                    </h4>
+                </div>
+                <span class="owner">{{pouvoir.parent.name}}</span>
+                </li>
+                {{/each}}
+            </ol>
+        </li>
+
+
+    </ol>
+</div>

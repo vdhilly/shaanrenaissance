@@ -1,12 +1,16 @@
 import { ActorSR } from "./actor/ActorSR.js";
+import { CreatureSR } from "./actor/Créature/document.js";
+import { NpcSR } from "./actor/PNJ/document.js";
 import { PersonnageSR } from "./actor/Personnage/PersonnageSR.js";
+import { ShaaniSR } from "./actor/Shaani/document.js";
 import { LootSR } from "./actor/loot/LootSR.js";
 import { AcquisSR } from "./item/Acquis/base.js";
 import { CreatorSet } from "./item/CreatorSet/base.js";
 import { ItemSR } from "./item/ItemSR.js";
 import { Ability } from "./item/ability/base.js";
+import { Symbiose } from "./item/ability/symbiose.js";
 import { ConditionSR } from "./item/condition/document.js";
-import { domainTest, necroseTest } from "./jets/dice.js";
+import { SpéTest, SpéTestNécr, domainTest, necroseTest } from "./jets/dice.js";
 import { AddCoins, AddPrestige, AddXP, RemoveCoins } from "./macros/macros.js";
 import { getSelectedOrOwnActors } from "./utils/utils.js";
 
@@ -16,10 +20,10 @@ shaanRenaissance.Actor = {
   documentClasses: {
     Personnage: PersonnageSR,
     Loot: LootSR,
-    Shaani: ActorSR,
+    Shaani: ShaaniSR,
     Réseau: ActorSR,
-    Créature: ActorSR,
-    PNJ: ActorSR,
+    Créature: CreatureSR,
+    PNJ: NpcSR,
   },
 };
 shaanRenaissance.Item = {
@@ -42,11 +46,14 @@ shaanRenaissance.Item = {
     Caste: CreatorSet,
     Métier: CreatorSet,
     condition: ConditionSR,
+    Symbiose: Symbiose
   },
 };
 shaanRenaissance.macros = {
   domainTest: domainTest,
   necroseTest: necroseTest,
+  speTest: SpéTest,
+  speTestNecrose: SpéTestNécr,
   addCoins: AddCoins,
   removeCoins: RemoveCoins,
   addXP: AddXP,

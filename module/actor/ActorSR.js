@@ -8,6 +8,10 @@ import { ActorInventory } from "./Inventory/ActorInventory.js";
 import { ActorConditions } from "./conditions.js";
 import { TokenEffect } from "./token-effect.js";
 export class ActorSR extends Actor {
+  constructor(...args) {
+    super(...args),
+    this.shaanis = new Set;
+  }
   get hasPlayerOwner() {
     return game.users.some(
       (u) => !u.isGM && this.testUserPermission(u, "OWNER")
@@ -20,6 +24,25 @@ export class ActorSR extends Actor {
 
     return [...super.temporaryEffects, ...fromConditions].flat();
   }
+  get primaryUpdater() {
+    // 1. The first active GM, sorted by ID
+    const { activeGM } = game.users;
+    if (activeGM) return activeGM;
+
+    const activeUsers = game.users.filter((u) => u.active);
+    
+    // 2. The user with this actor assigned
+    const primaryPlayer = this.isToken ? null : activeUsers.find((u) => u.character && u.character.id === this.id);
+    if (primaryPlayer) return primaryPlayer;
+
+    // 3. Anyone who can update the actor
+    const firstUpdater = game.users
+        .filter((u) => this.canUserModify(u, "update"))
+        .sort((a, b) => (a.id > b.id ? 1 : -1))
+        .shift();
+    
+    return firstUpdater || null;
+}
   isOfType(...types) {
     return types.some((t) =>
       "character" === t
@@ -114,6 +137,7 @@ export class ActorSR extends Actor {
     );
     return allowed !== false ? this.update(updates) : this;
   }
+  
 }
 export const ActorProxySR = new Proxy(ActorSR, {
   construct: (_target, args) =>

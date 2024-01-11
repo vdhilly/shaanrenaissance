@@ -66,7 +66,7 @@
 }
 .item.sheet .sheet-header .item-name input {
   height: 50px;
-  font: 700 var(--font-size-22) var(--body-serif);
+  font: 700 var(--font-size-22) Komikazoom;
 }
 .item.sheet .sheet-header img {
   border: none;
@@ -1289,4 +1289,39 @@
 }
 .item.sheet.condition textarea:focus {
   box-shadow: none;
+}
+
+/* Symbiose */
+.item.sheet.symbiose {
+  width: 100%;
+  height: 100%;
+  font-family: var(--body-serif);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr;
+}
+.item.sheet.symbiose label {
+  color: var(--primary);
+  font-family: var(--sans-serif);
+  font-weight: 800;
+  font-size: 0.725rem;
+  text-transform: uppercase;
+}
+.item.sheet.symbiose textarea:focus {
+  box-shadow: none;
+}
+.item.sheet.symbiose .details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr;
+}
+.item.sheet.symbiose .details .description {
+  grid-area: 2 / 1 / 3 / 4;
+}
+.item.sheet.symbiose .details .description textarea {
+  width: 100% !important;
+  min-height: 300px;
+  border: none;
+  margin-bottom: 0;
+  resize: none;
 }

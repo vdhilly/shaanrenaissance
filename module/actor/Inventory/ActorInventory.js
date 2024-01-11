@@ -6,16 +6,18 @@ export class ActorInventory extends Collection {
   async addCoins(coins) {
     const actor = this.actor;
     const credos = Number(actor.system.attributes.crédos);
+    let updateCredos = Number(credos) + Number(coins)
     this.actor.update({
-      "system.attributes.crédos": Number(credos + coins),
+      "system.attributes.crédos": updateCredos,
     });
   }
   async removeCoins(coins) {
+    console.log(coins)
     const actor = this.actor;
     const credos = Number(actor.system.attributes.crédos);
-    console.log(credos, coins, credos - coins);
+    let updateCredos = Number(credos) - Number(coins)
     this.actor.update({
-      "system.attributes.crédos": Number(credos - coins),
+      "system.attributes.crédos": updateCredos,
     });
   }
 }

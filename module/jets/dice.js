@@ -1,3 +1,5 @@
+import { CheckDialog } from "../system/check/dialog.js";
+
 export async function Initiative({
   actor = null,
   extraMessageData = {},
@@ -307,7 +309,6 @@ export async function domainTest({
       spécialisation,
       difficulty,
     });
-    console.log(actor);
     const actorData = actor.toObject(!1);
     const config = CONFIG.shaanRenaissance;
 
@@ -332,7 +333,7 @@ export async function domainTest({
         close: () => resolve({ cancelled: true }),
       };
 
-      new Dialog(data, null).render(true);
+      new CheckDialog(data, null).render(true);
     });
   }
   function _processdomainTestOptions(form) {
@@ -663,6 +664,7 @@ export async function necroseTest({
 
   let rollFormula;
 
+  console.log(raceName)
   if (raceName == "Humain") {
     let nécrose = "1d10[Necrose]";
     let esprit = "1d10[Esprit]";
@@ -892,7 +894,7 @@ export async function necroseTest({
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new Dialog(data, null).render(true);
+      new CheckDialog(data, null).render(true);
     });
   }
   function _processdomainTestOptions(form) {
@@ -1172,7 +1174,180 @@ export async function SpéTestNécr({
     };
   }
 }
+export async function shaaniTest({
+  actor,
+  esprit = {domain:"",spe:""},
+  ame = {domain:"",spe:""}, 
+  corps = {domain:"",spe:""},
+  extraMessageData ={}
+} = {}){
+  const messageTemplate = "systems/shaanrenaissance/templates/actors/Shaani/chat/shaaniTest.hbs";
+  const actorData = actor ? actor.system : null;
+  corps = "1d10[Corps]";
+  ame = "1d10[Ame]";
+  esprit = "1d10[Esprit]";
+  let rollFormula = `{${corps}, ${ame}, ${esprit}}`;
 
+  let checkOptions = await getRollOptions({esprit, ame, corps})
+
+  if(checkOptions.cancelled) {
+    return;
+  }
+
+  ({ esprit, ame, corps } = checkOptions);
+
+  // Bonus et Acquis
+  for (const trihn of Object.values(checkOptions)) {
+    trihn.domaineRank = actorData.skills[trihn.domain].rank;  
+    console.log(actorData)
+    if (trihn.spe !== "pur") {
+      let spéDomain;
+      let données;
+      for (const [category, details] of Object.entries(actorData.skills)) {
+        if (details.specialisations && details.specialisations[trihn.spe]) {
+          spéDomain = category;
+          données = details.specialisations[trihn.spe];
+          break;
+        }
+      }
+      trihn.bonus = données.bonus;
+      trihn.acquis = données.acquis;
+    }
+  }
+
+  console.log(checkOptions)
+  let rollData = {
+    ...actorData,
+    actions:checkOptions
+  }
+  let rollResult = await new Roll(rollFormula, rollData).roll({async: true});
+  let dice3d;
+  if (game.dice3d != undefined) {
+    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
+    dice3d;
+  }
+
+  console.log(rollResult)
+  let dice = rollResult.dice;
+  let déCorps = rollResult.dice[dice.length - 3];
+  let déAme = rollResult.dice[dice.length - 2];
+  let déEsprit = rollResult.dice[dice.length - 1];
+
+  // Esprit
+  if(déEsprit.total < esprit.domaineRank) {
+    esprit.score = déEsprit.total 
+    if(esprit.bonus){
+      esprit.score += esprit.bonus
+    }
+    if(esprit.acquis){
+      esprit.score += esprit.acquis
+    }
+  }
+  else if(déEsprit.total === 10){
+    esprit.score = 0
+  }
+  else {
+    esprit.score = 0
+    if(esprit.bonus){
+      esprit.score += esprit.bonus
+    }
+    if(esprit.acquis){
+      esprit.score += esprit.acquis
+    }
+  }
+  // Ame
+  if(déAme.total < ame.domaineRank) {
+    ame.score = déAme.total 
+  }
+  else if(déAme.total === 10){
+    ame.score = 0
+  }
+  else {
+    ame.score = 0
+    if(ame.bonus){
+      ame.score += ame.bonus
+    }
+    if(ame.acquis){
+      ame.score += ame.acquis
+    }
+  }
+  // Corps
+  if(déCorps.total < corps.domaineRank) {
+    corps.score = déCorps.total 
+  }
+  else if(déCorps.total === 10){
+    corps.score = 0
+  }
+  else {
+    corps.score = 0
+    if(corps.bonus){
+      corps.score += corps.bonus
+    }
+    if(corps.acquis){
+      corps.score += corps.acquis
+    }
+  }
+
+  RollToCustomMessage(actor, rollResult, messageTemplate, {
+    ...extraMessageData,
+    actions:checkOptions,
+    actorID: actor.uuid,
+  });
+
+
+
+  async function getRollOptions({
+    esprit, ame, corps,
+    template = "systems/shaanrenaissance/templates/actors/Shaani/chat/shaaniTest-dialog.hbs"
+  }={}){
+    const html = await renderTemplate(template,{actor,esprit,ame,corps})
+    const actorData = actor.toObject(!1);
+    const config = CONFIG.shaanRenaissance;
+
+    return new Promise((resolve) => {
+      const data = {
+        title:game.i18n.localize("chat.shaaniTest.title"),
+        content:html,
+        esprit,
+        ame,
+        corps,
+        actor:actorData,
+        buttons: {
+          normal: {
+            label: game.i18n.localize("chat.actions.roll"),
+            callback: (html) => {
+              const form = html[0].querySelector("form");
+              resolve(_processShaaniTestOptions(form));
+          },
+          },
+          cancel: {
+            label: game.i18n.localize("chat.actions.cancel"),
+            callback: (html) => resolve({ cancelled: true }),
+          },
+        },
+        default: "normal",
+        close: () => resolve({ cancelled: true }),
+      };
+      new CheckDialog(data, null).render(true);
+    });
+  }
+  function _processShaaniTestOptions(form){
+    return {
+      esprit: {
+          domain: form['esprit.domain']?.value,
+          spe: form['esprit.spe']?.value
+      },
+      ame: {
+        domain: form['ame.domain']?.value,
+        spe: form['ame.spe']?.value
+      },
+      corps: {
+        domain: form['corps.domain']?.value,
+        spe: form['corps.spe']?.value
+      },
+    };
+  }
+}
 export async function RollToCustomMessage(
   actor = null,
   rollResult,

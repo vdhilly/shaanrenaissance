@@ -1,0 +1,88 @@
+<div class="dice-roll SR shaaniTest chat-card" data-actor-id="{{actorID}}">
+    {{log this}}
+    <h2 class="title">
+        {{localize "SR.Actor.Shaani.check.title"}}
+    </h2>
+    <div class="domainDice">
+        {{#each roll.dice as |die|}}
+            {{#if (eq die.flavor "Esprit")}}
+            <div class="die Esprit" data-dominated="{{#if @root.dominated}}true{{else}}false{{/if}}">
+                {{#unless @root.dominated}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Esprit/d10_jaune_{{die.total}}.png">
+                <div class="esprit details">
+                    <span>{{@root.actions.esprit.domain}} - <b>{{@root.actions.esprit.domaineRank}}</b></span>
+                    {{#if (ne @root.actions.esprit.spe "pur")}}
+                        <span>{{localize @root.actions.esprit.spe}}</span>
+                        {{#if @root.actions.esprit.bonus}}
+                            <span>Bonus : +{{@root.actions.esprit.bonus}}</span>
+                        {{/if}}
+                        {{#if @root.actions.esprit.acquis}}
+                            <span>Acquis : +{{@root.actions.esprit.acquis}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                <div class="score">
+                    <span>Score</span>
+                    <span>{{@root.actions.esprit.score}}</span>
+                </div>
+                {{/unless}}
+            <input type="hidden" class="dice-value" value="{{#if @root.dominated}}0{{else}}{{die.total}}{{/if}}">
+            </div>
+            {{/if}}
+            {{#if (eq die.flavor "Ame")}}
+            <div class="die Ame" data-depressed="{{#if @root.depressed}}true{{else}}false{{/if}}">
+                {{#unless @root.depressed}}
+                {{#if (eq @root.actions.ame.domain "Nécrose")}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Nécrose/d10_noir_{{die.total}}.png">
+                {{else}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Ame/d10_bleu_{{die.total}}.png">
+                {{/if}}
+                <div class="ame details">
+                    <span>{{@root.actions.ame.domain}} - <b>{{@root.actions.ame.domaineRank}}</b></span>
+                    {{#if (ne @root.actions.ame.spe "pur")}}
+                        <span>{{localize @root.actions.ame.spe}}</span>
+                        {{#if @root.actions.ame.bonus}}
+                            <span>Bonus : +{{@root.actions.ame.bonus}}</span>
+                        {{/if}}
+                        {{#if @root.actions.ame.acquis}}
+                            <span>Acquis : +{{@root.actions.ame.acquis}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                <div class="score">
+                    <span>Score</span>
+                    <span>{{@root.actions.ame.score}}</span>
+                </div>
+                {{/unless}}
+            <input type="hidden" class="dice-value" value="{{#if @root.depressed}}0{{else}}{{die.total}}{{/if}}">
+            </div>
+            <hr>
+            {{/if}}
+            {{#if (eq die.flavor "Corps")}}
+            <div class="die Corps" data-paralyzed="{{#if @root.paralyzed}}true{{else}}false{{/if}}">
+                {{#unless @root.paralyzed}}
+                <img src="systems/shaanrenaissance/assets/icons/dice-result/Corps/d10_rouge_{{die.total}}.png">
+                <div class="corps details">
+                    <span>{{@root.actions.corps.domain}} - <b>{{@root.actions.corps.domaineRank}}</b></span>
+                    {{#if (ne @root.actions.corps.spe "pur")}}
+                        <span>{{localize @root.actions.corps.spe}}</span>
+                        {{#if @root.actions.corps.bonus}}
+                            <span>Bonus : +{{@root.actions.corps.bonus}}</span>
+                        {{/if}}
+                        {{#if @root.actions.corps.acquis}}
+                            <span>Acquis : +{{@root.actions.corps.acquis}}</span>
+                        {{/if}}
+                    {{/if}}
+                </div>
+                <div class="score">
+                    <span>Score</span>
+                    <span>{{@root.actions.corps.score}}</span>
+                </div>
+                {{/unless}}
+            <input type="hidden" class="dice-value" value="{{#if @root.paralyzed}}0{{else}}{{die.total}}{{/if}}">
+            </div>
+            <hr>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>

@@ -92,7 +92,9 @@
     "description": "Description",
     "details": "Détails",
     "rules": "Règles",
-    "Slug": "Slug"
+    "Slug": "Slug",
+    "Shaandars":"Shaandars",
+    "Cost":"Coût"
   },
   "SRdomains": {
     "Technique": "Technique",
@@ -110,7 +112,7 @@
     "engrenages": "Engrenages",
     "pilotage": "Pilotage",
     "recuperation": "Récupération",
-    "sensdelapierrefull": "Sens de la pierre",
+    "sensdelapierre": "Sens de la pierre",
     "sensdelapierre1": "Sens de la",
     "sensdelapierre2": "pierre",
     "sensdubois": "Sens du bois",
@@ -135,7 +137,7 @@
     "diplomatie": "Diplomatie",
     "enseignement": "Enseignement",
     "langageprimal": "Langage Primal",
-    "languesexotiquesfull": "Langues Exotiques",
+    "languesexotiques": "Langues Exotiques",
     "languesexotiques1": "Langues",
     "languesexotiques2": "Exotiques",
     "psychologie": "Psychologie",
@@ -147,7 +149,7 @@
     "comedie": "Comédie",
     "deguisement": "Déguisement",
     "gastronomie": "Gastronomie",
-    "langageducorpsfull": "Langage du corps",
+    "langageducorps": "Langage du corps",
     "langageducorps1": "Langage du",
     "langageducorps2": "corps",
     "lettres": "Lettres",
@@ -155,7 +157,7 @@
     "trucages": "Trucages",
     "embiose": "Embiose",
     "empathieanimale": "Empathie Animale",
-    "empathieantheennefull": "Empathie Anthéenne",
+    "empathieantheenne": "Empathie Anthéenne",
     "empathieantheenne1": "Empathie",
     "empathieantheenne2": "Anthéenne",
     "empathieminerale": "Empathie Minérale",
@@ -171,10 +173,10 @@
     "enchantement": "Enchantement",
     "invocation": "Invocation",
     "incandescence": "Incandescence",
-    "maitrisedesschemesfull": "Maîtrise des schèmes",
+    "maitrisedesschemes": "Maîtrise des schèmes",
     "maitrisedesschemes1": "Maîtrise des",
     "maitrisedesschemes2": "schèmes",
-    "regenerationdetrihnfull": "Régénération de Trihn",
+    "regenerationdetrihn": "Régénération de Trihn",
     "regenerationdetrihn1": "Régénération de",
     "regenerationdetrihn2": "Trihn",
     "transfert": "Transfert",
@@ -201,7 +203,7 @@
     "vigilance": "Vigilance",
     "armeslancees": "Armes lancées",
     "armesdemelee": "Armes de mêlée",
-    "armesaprojectilesfull": "Armes à projectiles",
+    "armesaprojectiles": "Armes à projectiles",
     "armesaprojectiles1": "Armes à",
     "armesaprojectiles2": "projectiles",
     "armimales": "Armimales",
@@ -450,10 +452,13 @@
     "AcquisLabel": "Acquis",
     "BiographyLabel": "Biographie",
     "symbioses": "Symbioses",
+    "General": "Général",
+    "Members": "Membres",
     "ManageTabsLabel": "Gérer les onglets",
     "DetailsLabel": "Détails",
     "RéseauLabel": "Réseau",
-    "MorpheLabel": "Morphe"
+    "MorpheLabel": "Morphe",
+    "Cercle":"Cercle"
   },
   "Item": {
     "Race": "Race",
@@ -502,6 +507,9 @@
         "difficulty": "Difficulté: ",
         "closedRoll": "Test caché ?"
       }
+    },
+    "shaaniTest":{
+      "title":"Actions de Shaani"
     },
     "addCoins": {
       "title": "Crédos",
@@ -557,97 +565,18 @@
     "costLabel": "Coût",
     "acquisLabel": "Acquis",
     "frequenceLabel": "Fréquence/Durée",
-    "descriptionLabel": "Description",
-    "symbioses": {
-      "langagesecret": {
-        "label": "Langage secret",
-        "cout": "2 PXs",
-        "frequence": "Permanent",
-        "durée": "",
-        "description": "Les membres d'un Shaani développent naturellement une langue inventée qui rassemble les grammaires et les intonations des différentes cultures présentes. Cette langue ne peut être comprise que par eux et ne peut s'enseigner à une personne extérieur tant qu'elle n'a pas rejoint le groupe. Ce langage peut s'écrire de façon codée."
-      },
-      "chaînage": {
-        "label": "Chaînage",
-        "cout": "3 PXs",
-        "frequence": "Permanent",
-        "durée": "",
-        "description": "Un Shaandar peut franchir une porte trihnique en sens inverse si un membre de son Shaani se trouve à moins d'un kilomètre de la porte d'entrée, sans qu'il ait besoin de passer le bras à travers. La Symbiose permet aux Shaandars de ne faire qu'un aux yeux de la Trihnite, et donc de faire revenir le Shaandar qui se trouvait de l'autre côté."
-      },
-      "localisation": {
-        "label": "Localisation",
-        "cout": "4 PXs",
-        "frequence": "Permanent",
-        "durée": "",
-        "description": "Chacun sait à tout instant où se trouvent les autres membres du Shaani, quelle que soit la distance qui les sépare, avec une précision de l'ordre du kilomètre."
-      },
-      "cohésion": {
-        "label": "Cohésion",
-        "cout": "5 PXs",
-        "frequence": "Permanent",
-        "durée": "",
-        "description": "Le niveau de chaque Domaine non-représenté du Shaani est égal au deuxième niveau le plus faible des Shaandars, plutôt qu'au niveau du Domaine le plus faible ."
-      },
-      "complicité": {
-        "label": "Complicité",
-        "cout": "5 PXs",
-        "frequence": "1/Jour",
-        "durée": "",
-        "description": "Un Shaandar peut prêter son niveau de Domaine au Shaani pour une Action, même s'il est absent du groupe."
-      },
-      "perception": {
-        "label": "Perception",
-        "cout": "6 PXs",
-        "frequence": "1/Jour",
-        "durée": "20 Min",
-        "description": "Chaque Shaandar peut percevoir au travers des sens d'un autre membre du Shaani (vue, ouïe, odorat, toucher, goût) et ressentir les mêmes émotions au même instant. Ce Pouvoir n'est limité par aucun éloignement géographique."
-      },
-      "télépathie": {
-        "label": "Télépathie",
-        "cout": "8 PXs",
-        "frequence": "Permanent",
-        "durée": "",
-        "description": "Les membres du Shaani peuvent établir entre eux une communication mentale (qui ne fait pas usage de la parole). La portée d'une telle communication est de 1000 km. Ainsi, ils peuvent être séparés les uns des autres par un milier de kilomètres et converser comme si de rien n'était. Branchés en permanence les uns aux autres, il peuvent, s'ils le désirent, s'isoler à tout moment pour préserver leur intimité. Lorsque l'un d'eux est en danger ou vient à mourir, les autres en sont immédiatement avertis par un signal mental."
-      },
-      "matérialisation": {
-        "label": "Matérialisation",
-        "cout": "10 PXs",
-        "frequence": "1/Jour",
-        "durée": "1 Situation",
-        "description": "Cette Symbiose permet de matérialiser sous forme translucide et légèrement bleutée, n'importe quel objet ou équipement appartenant à un membre du Shaani. Elle est en fait la résultante de l'énergie trihnique mise en œuvre par l'inconscient de chaque Shaandar. La forme ectoplasmique dispose de toutes les Capacités de l'objet et s'adapte à la taille de celui qui en bénéficie. C'est ainsi qu'un Kelwin peut disposer de la Protection qu'offre l'armure Darken de son Shaandar combattant préféré. La matérialisation peut aussi s'appliquer aux véhicules. Les légendes relatant la présence de navires fantomatiques bleutés et translucides ne font en fait état que d'une matérialisation d'un Shaandar navigateur ... Il est intéressant de remarquer que la matérialisation peut aussi fonctionner pour soi si tous les Shaandars ont bien connaissance de l'équipement de chacun. Grâce à cela, un guerrier Darken jeté en prison désarmé, peut en fait se révéler tout aussi redoutable que s'il était armé."
-      },
-      "aura": {
-        "label": "Aura",
-        "cout": "12 PXs",
-        "frequence": "1/Jour",
-        "durée": "1 Situation",
-        "description": "Les membres d'un Shaani peuvent additionner leur niveau de SOCIAL. Pour une Action de groupe, jusqu'à un maximum de 15 en SOCIAL."
-      },
-      "échange": {
-        "label": "Échange",
-        "cout": "14 PXs",
-        "frequence": "1/Jour",
-        "durée": "1 Situation",
-        "description": " Chaque membre peut échanger avec l'autre son apparence, un Trihn, un Domaine, une Spécialisation, un Pouvoir ou une aptitude particulière. Les Shaandars échangent une seule caractéristique et doivent se toucher pour que l'échange ait lieu. !.'.échange fonctionne toujours dans les deux sens : un Woon qui donne son apparence ou sa valeur en Corps à un Kelwin, recevra en même temps l'apparence ou la valeur en Corps du Kelwin en question."
-      },
-      "transfert": {
-        "label": "Transfert",
-        "cout": "16 PXs",
-        "frequence": "1/Jour",
-        "durée": "1 Situation",
-        "description": "Deux membres d'un Shaani peuvent inverser simultanément le contrôle de leurs Corps respectifs en intervertissant leur Esprit et leur Âme. Ainsi, un Delhion prendra le contrôle du Corps d'un Feling et inversement, chacun déplaçant son Esprit et son Âme dans le Corps de l'autre."
-      },
-      "téléportation": {
-        "label": "Téléportation",
-        "cout": "18 PXs",
-        "frequence": "1/Jour",
-        "durée": "",
-        "description": "Deux membres du Shaani peuvent échanger leur place, quelque soit la distance qui les sépare. Un personnage peut également se téléporter au côté d'un membre de son Shaani, s'il le souhaite, sans limitation de distance non plus."
-      }
-    }
+    "descriptionLabel": "Description"
   },
   "SR": {
     "Actor": {
-      "Dead": "Mort"
+      "Dead": "Mort",
+      "Shaani":{
+        "RemoveMember":{
+          "Title":"Supprimer un membre",
+          "Content": "Êtes-vous sûr de vouloir supprimer ce membre du Shaani ?"
+        },
+        "BlankSlate":"Il n'y a aucun membre dans le Shaani"
+      }
     },
     "Inventory": {
       "ItemQuantity": {
@@ -1263,110 +1192,14 @@
     "CompendiumBrowserPacks": {
       "Hint": "Settings to exclude packs from loading",
       "Name": "Compendium Browser Packs"
+    },
+    "showShaaniStats": {
+      "Hint": "Permet de montrer les statistiques des Shaandars à vos joueurs",
+      "Name": "Montrer les statistiques des Shaandars"
     }
   },
   "SRActiveEffect": {
     "changes": {
-      "engrenagesBonus": "Engrenages Bonus",
-      "pilotageBonus": "Pilotage Bonus",
-      "recuperationBonus": "Récupération Bonus",
-      "sensdelapierreBonus": "Sens de la pierre Bonus",
-      "sensduboisBonus": "Sens du bois Bonus",
-      "sensducuirBonus": "Sens du cuir Bonus",
-      "sensdumetalBonus": "Sens du métal Bonus",
-      "sensdutissuBonus": "Sens du tissu Bonus",
-      "sensduverreBonus": "Sens du verre Bonus",
-      "technologieBonus": "Technologie Bonus",
-      "alchimieBonus": "Alchimie Bonus",
-      "bibliothequeBonus": "Bibliothèque Bonus",
-      "botaniqueBonus": "Botanique Bonus",
-      "culturehumaineBonus": "Culture humaine Bonus",
-      "esoterismeBonus": "Ésotérisme Bonus",
-      "geologieBonus": "Géologie Bonus",
-      "histoiredheosBonus": "Histoire d'Héos Bonus",
-      "medecineBonus": "Médecine Bonus",
-      "protocolesBonus": "Protocoles Bonus",
-      "zoologieBonus": "Zoologie Bonus",
-      "arpegeBonus": "Arpège Bonus",
-      "bluffBonus": "Bluff Bonus",
-      "commerceBonus": "Commerce Bonus",
-      "diplomatieBonus": "Diplomatie Bonus",
-      "enseignementBonus": "Enseignement Bonus",
-      "langageprimalBonus": "Langage Primal Bonus",
-      "languesexotiquesBonus": "Langues Exotiques Bonus",
-      "psychologieBonus": "Psychologie Bonus",
-      "seductionBonus": "Séduction Bonus",
-      "vieurbaineBonus": "Vie Urbaine Bonus",
-      "artsappliquesBonus": "Arts Appliqués Bonus",
-      "artsdufeuBonus": "Arts du feu Bonus",
-      "chantBonus": "Chant Bonus",
-      "comedieBonus": "Comédie Bonus",
-      "deguisementBonus": "Déguisement Bonus",
-      "gastronomieBonus": "Gastronomie Bonus",
-      "langageducorpsBonus": "Langage du corps Bonus",
-      "lettresBonus": "Lettres Bonus",
-      "musiqueBonus": "Musique Bonus",
-      "trucagesBonus": "Trucages Bonus",
-      "embioseBonus": "Embiose Bonus",
-      "empathieanimaleBonus": "Empathie Animale Bonus",
-      "empathieantheenneBonus": "Empathie Anthéenne Bonus",
-      "empathiemineraleBonus": "Empathie Minérale Bonus",
-      "empathievegetaleBonus": "Empathie Végétale Bonus",
-      "intuitionBonus": "Intuition Bonus",
-      "reveBonus": "Rêve Bonus",
-      "soinsdelameBonus": "Soins de l'Âme Bonus",
-      "soinsdelespritBonus": "Soins de l'Esprit Bonus",
-      "soinsducorpsBonus": "Soins du Corps Bonus",
-      "arcanesBonus": "Arcanes Bonus",
-      "conjurationBonus": "Conjuration Bonus",
-      "defensemagiqueBonus": "Défense magique Bonus",
-      "enchantementBonus": "Enchantement Bonus",
-      "invocationBonus": "Invocation Bonus",
-      "incandescenceBonus": "Incandescence Bonus",
-      "maitrisedesschemesBonus": "Maîtrise des schèmes Bonus",
-      "regenerationdetrihnBonus": "Régénération de Trihn Bonus",
-      "transfertBonus": "Transfert Bonus",
-      "voileBonus": "Voile Bonus",
-      "ritedartsBonus": "Rite d'Arts Bonus",
-      "ritedecombatBonus": "Rite de Combat Bonus",
-      "ritedelanimalBonus": "Rite de l'Animal Bonus",
-      "ritedemagieBonus": "Rite de Magie Bonus",
-      "ritedenecroseBonus": "Rite de Nécrose Bonus",
-      "ritedesavoirBonus": "Rite de Savoir Bonus",
-      "ritedeshaanBonus": "Rite de Shaan Bonus",
-      "ritedesocialBonus": "Rite de Social Bonus",
-      "ritedesurvieBonus": "Rite de Survie Bonus",
-      "ritedetechniqueBonus": "Rite de Technique Bonus",
-      "acrobatieBonus": "Acrobatie Bonus",
-      "caravaneBonus": "Caravane Bonus",
-      "cultureheossienneBonus": "Culture Héossienne Bonus",
-      "culturenecrosienneBonus": "Culture Nécrosienne Bonus",
-      "discretionBonus": "Discretion Bonus",
-      "educationphysiqueBonus": "Éducation Physique Bonus",
-      "montureBonus": "Monture Bonus",
-      "navigationBonus": "Navigation Bonus",
-      "viesauvageBonus": "Vie Sauvage Bonus",
-      "vigilanceBonus": "Vigilance Bonus",
-      "armeslanceesBonus": "Armes lancées Bonus",
-      "armesdemeleeBonus": "Armes de mêlée Bonus",
-      "armesaprojectilesBonus": "Armes à projectiles Bonus",
-      "armimalesBonus": "Armimales Bonus",
-      "enginsdeguerreBonus": "Engins de guerre Bonus",
-      "esquiveBonus": "Esquive Bonus",
-      "forcerBonus": "Forcer Bonus",
-      "intimidationBonus": "Intimidation Bonus",
-      "pugilatBonus": "Pugilat Bonus",
-      "strategieBonus": "Stratégie Bonus",
-      "armeshumainesBonus": "Armes humaines Bonus",
-      "biomorphieBonus": "Biomorphie Bonus",
-      "cauchemarBonus": "Cauchemar Bonus",
-      "contrebandeBonus": "Contrebande Bonus",
-      "corruptionBonus": "Corruption Bonus",
-      "explosifsBonus": "Explosifs Bonus",
-      "fraudeBonus": "Fraude Bonus",
-      "harcelementBonus": "Harcèlement Bonus",
-      "larcinBonus": "Larcin Bonus",
-      "pactenecrotiqueBonus": "Pacte nécrotique Bonus",
       "engrenagesAcquis": "Engrenages Acquis",
       "pilotageAcquis": "Pilotage Acquis",
       "recuperationAcquis": "Récupération Acquis",

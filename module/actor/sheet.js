@@ -1,5 +1,8 @@
+import { Symbiose } from "../item/ability/symbiose.js";
 import * as Dice from "../jets/dice.js";
 import { htmlQuery } from "../utils/utils.js";
+import { ShaaniSR } from "./Shaani/document.js";
+import { LootSR } from "./loot/LootSR.js";
 export class ActorSheetSR extends ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
@@ -384,12 +387,32 @@ export class ActorSheetSR extends ActorSheet {
       .replace("î", "i");
     let description = game.i18n.translations.SRspéDesc[spécialisation];
 
+    const actorData = actor.toObject(!1)
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
+
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    if(lastElement){
+      race = lastElement.name;
+    }
+
     Dice.SpéTestNécr({
       actor,
       domain: domain,
       spécialisation: spécialisation,
       description: description,
       askForOptions: event.shiftKey,
+      race:race
     });
   }
 
@@ -406,11 +429,29 @@ export class ActorSheetSR extends ActorSheet {
   _onTest(event) {
     const dataset = event.target.closest(".roll-data").dataset.itemId;
     let actor = this.actor;
+    const actorData = actor.toObject(!1)
+    // Filtre Race
+    let race = actorData.items.filter(function (item) {
+      return item.type == "Race";
+    });
+    let lastElement = race[race.length - 1];
+    if (actor.conditions.unconscious)
+      return ui.notifications.warn("Ce personnage est Inconscient");
 
+    race.forEach((element) => {
+      if (element != lastElement) {
+        let itemId = element._id;
+        return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+      }
+    });
+    if(lastElement){
+      race = lastElement.name;
+    }
     if (dataset == "domainTest" || "necroseTest") {
       Dice[dataset]({
         actor,
         checkType: dataset,
+        race: race
       });
     }
   }
@@ -1104,5 +1145,30 @@ export class ActorSheetSR extends ActorSheet {
     let element = event.target;
     let itemId = element.closest(".item").dataset.itemId;
     return this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+  }
+  async _onDropItem(event, data) {
+    if ( !this.actor.isOwner ) return false;
+    const item = await Item.implementation.fromDropData(data);
+    const itemData = item.toObject();
+
+    // Handle item sorting within the same Actor
+    if ( this.actor.uuid === item.parent?.uuid ) return this._onSortItem(event, itemData);
+
+    // Create the owned item
+    if(item instanceof Symbiose){
+      if(this.document instanceof ShaaniSR){
+        return this._onDropItemCreate(itemData);
+      } else {
+        return ui.notifications.warn("Une Symbiose ne peut être ajoutées qu'à un Shaani")
+      }
+    } else if(this.document instanceof LootSR) {
+      if(game.user.role == 4) {
+        return this._onDropItemCreate(itemData);
+      } else {
+        return;
+      }
+    } else {
+      return this._onDropItemCreate(itemData);
+    }
   }
 }

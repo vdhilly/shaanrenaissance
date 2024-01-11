@@ -849,11 +849,11 @@ label.checkbox {
   padding: 0 !important;
 }
 h2 {
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-weight: 400;
 }
 h3 {
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-weight: 400;
   border: 0;
 }
@@ -949,14 +949,6 @@ h3 {
   grid-column-gap: 2px;
   grid-row-gap: 2px;
 }
-.actor.sheet.shaani aside .sidebar .HP .hp-big {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 0.5fr 0.5fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 2px;
-  grid-row-gap: 2px;
-}
 .actor.sheet aside .sidebar .HP .hp-big .container {
   display: flex;
   align-items: center;
@@ -1009,7 +1001,7 @@ h3 {
   flex-direction: row;
   margin-left: 10px;
 }
-.actor.sheet.shaani aside .sidebar .HP .hp-big .data-value span,
+
 .actor.sheet.reseau aside .sidebar .HP .hp-big .data-value span {
   color: var(--tertiary);
   margin-left: 0;
@@ -1224,7 +1216,7 @@ h3 {
 }
 .actor.sheet.character .char-header .char-details .char-name input {
   color: var(--tertiary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: var(--font-size-26);
   align-self: center;
   height: 40px;
@@ -1601,7 +1593,7 @@ h3 {
   .DomainsLabel {
   grid-area: titre;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -1846,7 +1838,7 @@ h3 {
   .SpecialisationsLabel {
   grid-area: spésTitre;
   color: var(--primary);
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1;
@@ -2910,7 +2902,7 @@ form.sheet.actor.loot .sheet-content {
 }
 .sheet.actor.loot .sheet-header h1,
 .sheet.actor.loot .sheet-header input {
-  font-family: var(--title);
+  font-family: Komikazoom;
   font-size: var(--font-size-30);
   font-weight: 700;
 }

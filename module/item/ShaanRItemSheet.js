@@ -27,6 +27,7 @@ export default class ShaanRItemSheet extends ItemSheet {
         document: this.item,
         limited: this.item.limited,
         owner: this.item.isOwner,
+        parent: this.item.parent,
         title: this.title,
         item: itemData,
         data: itemData.system,
@@ -37,6 +38,7 @@ export default class ShaanRItemSheet extends ItemSheet {
         },
       };
 
+    console.log(itemData);
     console.log(sheetData);
     return sheetData;
   }

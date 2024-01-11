@@ -1,3 +1,4 @@
+import * as Dice from "../../jets/dice.js";
 import {
   ErrorSR,
   htmlClosest,
