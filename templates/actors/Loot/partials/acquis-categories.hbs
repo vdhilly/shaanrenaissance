@@ -42,8 +42,10 @@
                             <div class="item-controls">
                                 <a class="item-control item-take"><i class="far fa-hand-rock"></i></a>
                                 {{#ifeq @root.actor.system.lootSheetType "Merchant"}}<a class="item-control item-buy"><i class="fas fa-coins"></i></a>{{/ifeq}}
+                                {{#if @root.user.isGM}}
                                 <a class="item-control item-edit"><i class="fas fa-fw fa-edit"></i></a>
                                 <a class="item-control item-delete"><i class="fas fa-fw fa-trash"></i></a>
+                                {{/if}}
                             </div>
                         </li>
                     {{/each}}
