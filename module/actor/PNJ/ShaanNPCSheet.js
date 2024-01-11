@@ -2,6 +2,8 @@ import * as Dice from "../../jets/dice.js";
 import { htmlQuery } from "../../utils/utils.js";
 import { ActorSheetSR } from "../sheet.js";
 import { ItemSummaryRenderer } from "../sheet/item-summary-renderer.js";
+import { AddCoinsPopup } from "../sheet/popups/add-coins-popup.js";
+import { RemoveCoinsPopup } from "../sheet/popups/remove-coins-popup.js";
 
 export default class ShaanNPCSheet extends ActorSheetSR {
   constructor() {
@@ -47,6 +49,14 @@ export default class ShaanNPCSheet extends ActorSheetSR {
     var _a, _b, _c;
     super.activateListeners(html);
     const $html = html[0];
+
+    html
+        .find("button[data-action=add-coins]")
+        .click(this._onAddCoins.bind(this));
+      html
+        .find("button[data-action=remove-coins]")
+        .click(this._onRemoveCoins.bind(this));
+
     if ((this.itemRenderer.activateListeners($html), !this.options.editable))
       return;
     if (this.isEditable) {
@@ -136,7 +146,14 @@ export default class ShaanNPCSheet extends ActorSheetSR {
         }
       });
   }
-
+  _onAddCoins(event) {
+    new AddCoinsPopup(this.actor).render(true);
+    return;
+  }
+  _onRemoveCoins(event) {
+    new RemoveCoinsPopup(this.actor).render(true);
+    return;
+  }
   _onItemCreateNPC(event) {
     event.preventDefault();
     const pouvoirBtn = event.target.closest("#pouvoir-add");
