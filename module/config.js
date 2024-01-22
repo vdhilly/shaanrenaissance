@@ -175,6 +175,7 @@ shaanRenaissance.pouvoirs = {
     controle: "Contrôle",
     perception: "Perception",
     recuperation: "Récupération",
+    communication: "Communication"
   },
   pouvoirFréquence: {
     none: "",
@@ -193,12 +194,15 @@ shaanRenaissance.pouvoirs = {
     heure: "1 Heure",
     jour: "1 Jour",
     transition: "1 Transition",
+    semaine: "1 Semaine",
     testparaction: "1 Test par Action",
     testparheure: "1 Test par Heure",
     testparjour: "1 Test par Jour",
+    uneheureptcorps: "1 Heure et 1 point de Corps",
     deuxactoumoinscorps: "2 Actions ou 1 Actions et -1 de Corps",
     untestdeuxactoumoinscorps:
       "1 Test toutes les 2 Actions ou 1 Test et -1 points de corps par Action",
+    deuxactionsou3actionsmoinscorps: "2 Actions et -2 points de Corps ou 3 Actions et -1 point de Corps"
   },
   pouvoirPortée: {
     none: "",
