@@ -1496,6 +1496,7 @@ export async function RegenHP({
       },
     },
   });
+  actor.sheet.render()
   if (sendMessage) {
     RegenToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,

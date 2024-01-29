@@ -1,3 +1,7 @@
-2024/01/22-16:23:28.861 5cd8 Recovering log #401
-2024/01/22-16:23:28.878 5cd8 Delete type=0 #401
-2024/01/22-16:23:28.879 5cd8 Delete type=3 #400
+2024/01/23-15:20:08.611 b4ac Recovering log #403
+2024/01/23-15:20:08.627 b4ac Delete type=0 #403
+2024/01/23-15:20:08.628 b4ac Delete type=3 #402
+2024/01/23-16:25:03.395 e4a4 Level-0 table #407: started
+2024/01/23-16:25:03.396 e4a4 Level-0 table #407: 0 bytes OK
+2024/01/23-16:25:03.403 e4a4 Delete type=0 #405
+2024/01/23-16:25:03.412 e4a4 Manual compaction at level-0 from '!folders!2DDyzosiflSRi4j2' @ 72057594037927935 : 1 .. '!macros!zoNScSgTfmkWcQUl' @ 0 : 0; will stop at (end)
