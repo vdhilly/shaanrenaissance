@@ -81,10 +81,20 @@ export class ShaaniSheetSR extends ActorSheetSR {
             ranks.push(this.actor.members[shaandar].system.skills[key].rank);
           }
         }
-        let minRank = Math.min(...ranks);
-        sheetData.system.skills[key].rank = minRank;
+
+        if (this.hasCohesion) {
+          let sortedRanks = [...ranks].sort((a, b) => a - b); 
+          let secondMinRank = sortedRanks[1] !== undefined ? sortedRanks[1] : sortedRanks[0]; 
+          sheetData.system.skills[key].rank = secondMinRank;
+      } else {
+          let minRank = Math.min(...ranks);
+          sheetData.system.skills[key].rank = minRank;
+      }
       }
     }
+  }
+  get hasCohesion(){
+    return this.actor.items.contents.some(item => item.name === "Cohésion");
   }
   processSkills(sheetData) {
     const members = sheetData.members;
