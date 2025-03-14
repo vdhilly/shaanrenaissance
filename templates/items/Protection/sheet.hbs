@@ -17,8 +17,8 @@
                         <i>
                             {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
                             {{#if editable}}
-                            <select name="system.acquis.caste">
-                                {{selectOptions config.acquis.caste selected=system.acquis.caste localize=true}}
+                            <select name="system.acquis.caste" value="{{system.acquis.caste}}">
+                                {{selectOptions config.acquis.caste selected=system.caste localize=true}}
                             </select>
                             {{localize "SR.de"}}
                             {{else}}

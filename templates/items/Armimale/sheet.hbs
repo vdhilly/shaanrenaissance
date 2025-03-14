@@ -17,7 +17,7 @@
                         <i>
                             {{localize "SRLabels.acquis"}} {{localize "SR.de"}}
                             {{#if editable}}
-                            <select name="system.acquis.caste">
+                            <select name="system.acquis.caste" value="{{system.acquis.caste}}">
                                 {{selectOptions config.acquis.caste selected=system.acquis.caste localize=true}}
                             </select>
                             {{localize "SR.de"}}
@@ -26,7 +26,7 @@
                             {{/if}}
                             <b>{{#if editable}}
                             <select name="system.class">
-                                    {{selectOptions config.acquis.class selected=system.acquis.class localize=true}}
+                                    {{selectOptions config.acquis.class selected=system.class localize=true}}
                             </select>
                             {{else}}
                                 <input class="locked-input-rank" name="system.class" type="text" value="{{system.class}}"/>
