@@ -1215,6 +1215,12 @@ export async function shaaniTest({
   // Ame
   if (déAme.total < ame.domaineRank) {
     ame.score = déAme.total;
+    if (ame.bonus) {
+      ame.score += ame.bonus;
+    }
+    if (ame.acquis) {
+      ame.score += ame.acquis;
+    }
   } else if (déAme.total === 10) {
     ame.score = 0;
   } else {
@@ -1229,6 +1235,12 @@ export async function shaaniTest({
   // Corps
   if (déCorps.total < corps.domaineRank) {
     corps.score = déCorps.total;
+    if (corps.bonus) {
+      corps.score += corps.bonus;
+    }
+    if (corps.acquis) {
+      corps.score += corps.acquis;
+    }
   } else if (déCorps.total === 10) {
     corps.score = 0;
   } else {
