@@ -1267,7 +1267,6 @@ export async function shaaniTest({
   } = {}) {
     const html = await renderTemplate(template, { actor, esprit, ame, corps });
     const actorData = actor.toObject(!1);
-    const config = CONFIG.shaanRenaissance;
 
     return new Promise((resolve) => {
       const data = {
