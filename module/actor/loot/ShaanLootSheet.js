@@ -29,6 +29,7 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
         isLoot: this.actor.system.lootSheetType == "Loot",
         editable: this.isEditable,
         actor: this.actor,
+        system: actorData.system,
         inventory: this.actor.inventory,
         prototypeToken: actorData.prototypeToken,
         items: actorData.items,
@@ -50,6 +51,9 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
     var _a, _b, _c;
     super.activateListeners(html);
     const $html = html[0];
+
+    html.find("a.item-buy").click(this._onBuyAcquis.bind(this));
+    
     if (
       (this.itemRenderer.activateListeners($html),
       null === (_a = (0, htmlQuery)($html, "a[data-action=show-image]")) ||
@@ -71,8 +75,7 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
             title,
             uuid: actor.uuid,
           }).render(!0);
-        }),
-      !this.options.editable)
+        }))
     )
       return;
 
@@ -80,8 +83,8 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
       html.find("button[data-action=add-coins]").click(this._onAddCoins.bind(this));
       html.find("button[data-action=remove-coins]").click(this._onRemoveCoins.bind(this));
       html.find("a.item-take").click(this._onTakeAcquis.bind(this));
-      html.find("a.item-buy").click(this._onBuyAcquis.bind(this));
     }
+
     html.find(".open-compendium").on("click", (event) => {
       if (event.currentTarget.dataset.compendium) {
         const compendium = game.packs.get(event.currentTarget.dataset.compendium);
@@ -206,6 +209,7 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
       return this.actor.deleteEmbeddedDocuments("Item", [itemID]);
     } else ui.notifications.error(game.i18n.format("SR.ErrorMessage.NoTokenSelected"));
   }
+  
   async _onBuyAcquis(event) {
     let LootActoruuID = this.actor.uuid;
     if (this.actor.isToken) {
@@ -221,8 +225,8 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
         return ui.notifications.warn("Vous ne pouvez pas vous permettre cet achat.");
       } else {
         await actor.inventory.removeCoins(Number(item.system.acquis.valeur.replace(" crédos", ""))), (purchasesSucceeded += 1);
-        await this.actor.inventory.addCoins(Number(item.system.acquis.valeur.replace(" crédos", ""))),
-          await actor.createEmbeddedDocuments("Item", [item.toObject()]);
+
+        return this.actor.transferItemToActor(actor, item, true)
       }
     }
     1 === actors.length
@@ -250,7 +254,6 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
             item: item.name,
           })
         );
-    return this.actor.deleteEmbeddedDocuments("Item", [itemID]);
   }
   async getAcquisItem(itemID, actor) {
     const item = await fromUuid(`${actor}.Item.${itemID}`);

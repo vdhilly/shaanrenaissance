@@ -36,6 +36,9 @@ export class ActorSR extends Actor {
   isOfType(...types) {
     return types.some((t) => ("character" === t ? (0, tupleHasValue)(CHARACTER_ACTOR_TYPES, this.type) : this.type === t));
   }
+  isLootableBy(user) {
+    return this.canUserModify(user, "update");
+  }
   _initialize(options) {
     this.conditions = new ActorConditions();
     super._initialize(options);

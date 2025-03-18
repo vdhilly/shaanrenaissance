@@ -160,5 +160,6 @@
   "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv12/system.json",
   "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v2.0.3/shaanrenaissance.zip",
   "primaryTokenAttribute": "attributes.hpEsprit",
-  "secondaryTokenAttribute": "attributes.hpAme"
+  "secondaryTokenAttribute": "attributes.hpAme",
+  "socket": true
 }

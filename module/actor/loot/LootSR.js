@@ -1,4 +1,5 @@
 import { ActorSR } from "../ActorSR.js";
+import { ItemTransfer } from "../item-transfer.js";
 export class LootSR extends ActorSR {
   get isLoot() {
     return "Loot" === this.system.lootSheetType;
@@ -9,6 +10,7 @@ export class LootSR extends ActorSR {
   get hiddenWhenEmpty() {
     return this.isLoot && this.system.hiddenWhenEmpty;
   }
+
   async toggleTokenHiding() {
     if (!this.hiddenWhenEmpty || !this.isOwner) return;
     const hiddenStatus = 0 === this.items.size;
@@ -27,6 +29,43 @@ export class LootSR extends ActorSR {
     );
     await Promise.allSettled(promises);
   }
+
+  // TODO : ici
+  async transferItemToActor(targetActor, item, isPurchase){
+    isPurchase ??= this.isOfType("loot") && this.isMerchant;
+
+    const gmMustTransfer = (source, target) => {
+      const bothAreOwned = source.isOwner && target.isOwner
+      const sourceIsOwnedOrLoot = source.isLootableBy(game.user);
+      const targetIsOwnedOrLoot = target.isLootableBy(game.user);
+      
+      return !bothAreOwned && !sourceIsOwnedOrLoot && targetIsOwnedOrLoot;
+    }
+    
+
+    if (gmMustTransfer(this, targetActor)) {
+      const source = { tokenId: this.token?.id, actorId: this.id, itemId: item.id };
+      const target = { tokenId: targetActor.token?.id, actorId: targetActor.id };
+      await new ItemTransfer({ source, target, isPurchase }).request();
+      return null;
+    }
+
+    if (!this.canUserModify(game.user, "update")) {
+      return null;
+    }
+    if (!targetActor.canUserModify(game.user, "update")) {
+        return null;
+    }
+
+    await targetActor.createEmbeddedDocuments("Item", [item.toObject()]);
+
+    return item.delete();
+  }
+
+  isLootableBy(user) {
+    return this.canUserModify(user, "update");
+  }
+
   _onCreate(data, options, userId) {
     this.toggleTokenHiding(), super._onCreate(data, options, userId);
   }

@@ -6,6 +6,7 @@ import { registerSettings } from "../../module/system/settings/index.js";
 import { registerHandlebarsHelpers } from "../handlebars.js";
 import { templatePaths } from "../preloadTemplates.js";
 import { registerFonts } from "../register-fonts.js";
+import { activateSocketListeners } from "../socket.js";
 
 export const Init = {
   listen: () => {
@@ -24,6 +25,9 @@ export const Init = {
       game.shaanRenaissance.LicenseViewer = new LicenseViewer();
 
       game.shaanRenaissance.system = { moduleArt: new ModuleArt() };
+
+      
+      activateSocketListeners()
     });
   },
 };

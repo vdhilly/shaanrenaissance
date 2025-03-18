@@ -1,6 +1,7 @@
 import { compendiumBrowser } from "../../module/apps/compendium-browser/compendiumBrowser.js";
 import { StatusEffects } from "../../module/canvas/status-effect.js";
 import { SRTokenHUD } from "../../module/token/SRTokenHUD.js";
+import { activateSocketListeners } from "../socket.js";
 
 export const Ready = {
   listen: () => {
@@ -10,6 +11,7 @@ export const Ready = {
       game.shaanRenaissance.StatusEffects = StatusEffects;
       game.shaanRenaissance.StatusEffects.initialize();
       game.shaanRenaissance.ConditionManager.initialize();
+
     });
   },
 };
