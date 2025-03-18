@@ -36,10 +36,9 @@
                     <section class="sheet-type traits-bar">
                     {{#if user.isGM}}
                         <i class="fas fa-info-circle help" title="<p><strong>{{localize "SR.loot.LootLabel"}}</strong>: {{localize "SR.loot.LootDescription"}}</p><p><strong>{{localize "SR.loot.MerchantLabel"}}</strong>: {{localize "SR.loot.MerchantDescription"}}</p>"></i>
-                        {{!-- TO DO --}}
-                        <select name="system.lootSheetType" class="trait" value="{{actor.system.lootSheetType}}">
-                            <option value="Loot">{{localize "SR.loot.LootLabel"}}</option>
-                            <option value="Merchant">{{localize "SR.loot.MerchantLabel"}}</option>
+
+                        <select name="system.lootSheetType" class="trait" value="{{system.lootSheetType}}">
+                            {{selectOptions config.lootSheetTypeOptions selected=system.lootSheetType localize=true}}
                         </select>
                     {{else}}
                         <span class="trait">{{system.lootSheetType}}</span>
