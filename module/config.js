@@ -433,3 +433,8 @@ shaanRenaissance.activeEffectChanges = {
     { value: "system.protections.corps.value", label: "Corps" },
   ],
 };
+
+shaanRenaissance.lootSheetTypeOptions = {
+  "Loot": "SR.loot.LootLabel", 
+  "Merchant": "SR.loot.MerchantLabel",
+}

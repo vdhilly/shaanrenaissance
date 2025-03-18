@@ -36,6 +36,7 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
         user: {
           isGM: game.user.isGM,
         },
+        config: CONFIG.shaanRenaissance
       };
     this.itemSort(sheetData.items);
     this.itemFilter(sheetData, actorData);
