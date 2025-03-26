@@ -546,7 +546,8 @@
       "choices": "Choix possibles",
       "et": "et en",
       "score": "Son nouveau score est de",
-      "aPuisé": "a puisé en"
+      "aPuisé": "a puisé en",
+      "noLose": "Ne pas consommer le Trihn"
     },
     "necroseTest": {
       "title": "Test de Necrose"

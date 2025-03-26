@@ -321,6 +321,11 @@
 .puiser-dialog span {
   align-self: center;
 }
+.puiser-dialog .puiser-lose-trihn{
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
 
 .editor {
   background-color: rgba(28, 28, 28, 0.1);

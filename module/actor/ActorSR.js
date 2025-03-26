@@ -132,6 +132,7 @@ export class ActorSR extends Actor {
     await this.updateSource({ img: icon });
 
     return await super._preCreate(data, options, user);
+    
   }
 }
 export const ActorProxySR = new Proxy(ActorSR, {

@@ -209,6 +209,7 @@ export default class ShaanPersonnageSheet extends ActorSheetSR {
     scheme.on("change");
     PersonnageSheetTabManager.initialize(this.actor, html.find("a[data-action=manage-tabs]")[0]);
   }
+  
   SchemesSystem(sheetData) {
     let actor = sheetData.actor;
     const schemes = actor.flags.shaanRenaissance.schemes;

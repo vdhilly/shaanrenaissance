@@ -168,24 +168,31 @@ async function onPuiser(event) {
   for (const actor of actors) {
     const attributes = actor.system.attributes;
     let flavor = puiserOptions.flavor;
-    var hp = "hp";
+    let hp = "hp";
+  
+    let updateData = {};
+  
     let flavor1 = hp.concat("", flavor.flavor1);
-    let flavor1Base = attributes[flavor1].value;
-    let flavor1End = flavor1Base - 1;
-    attributes[flavor1].value = flavor1End;
-    let flavor2;
-    if (flavor.flavor2) {
-      flavor2 = hp.concat("", flavor.flavor2);
-      let flavor2Base = attributes[flavor2].value;
-      let flavor2End = flavor2Base - 1;
-      attributes[flavor2].value = flavor2End;
+    if (attributes[flavor1]?.value > 0) {
+      updateData[`system.attributes.${flavor1}.value`] = attributes[flavor1].value - 1;
     }
-    actor.update(attributes);
-    actor.sheet.render();
-
+  
+    if (flavor.flavor2) {
+      let flavor2 = hp.concat("", flavor.flavor2);
+      if (attributes[flavor2]?.value > 0) {
+        updateData[`system.attributes.${flavor2}.value`] = attributes[flavor2].value - 1;
+      }
+    }
+    
+    if (Object.keys(updateData).length > 0 && puiserOptions.lose) {
+      await actor.update(updateData);
+      actor.sheet.render(false);
+    }
+  
     if (sendMessage) {
       ToCustomMessage(actor, result, messageTemplate);
     }
+
     async function ToCustomMessage(Token, result, messageTemplate) {
       let actor = Token.actor;
       let templateContext = {
@@ -280,12 +287,14 @@ async function onPuiser(event) {
       return {
         result: Number(form.result?.value),
         flavor: flavor,
+        lose: !form.puiserLoseTrihn.checked
       };
     } else {
       ui.notifications.warn("Vous devez faire un choix.");
     }
   }
 }
+
 async function onPuiserNecrose(event) {
   const actors = (0, getSelectedOrOwnActors)(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]);
   if (actors.length == 0) return ui.notifications.warn("Vous devez sélectionner au moins un token.");

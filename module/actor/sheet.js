@@ -167,90 +167,47 @@ export class ActorSheetSR extends ActorSheet {
     });
     sheetData.Metier = lastElement;
   }
+
   defineMaxHealth(sheetData) {
-    if (typeof sheetData.system.attributes !== "undefined") {
-      if (sheetData.system.attributes.isNecrosian) {
-        this.actor.update({
-          system: {
-            attributes: {
-              hpEsprit: {
-                max:
-                  Math.max(
-                    sheetData.system.skills.Technique.rank,
-                    sheetData.system.skills.Savoir.rank,
-                    sheetData.system.skills.Social.rank
-                  ) +
-                  Math.min(
-                    sheetData.system.skills.Technique.rank,
-                    sheetData.system.skills.Savoir.rank,
-                    sheetData.system.skills.Social.rank
-                  ),
-              },
-              hpCorps: {
-                max:
-                  Math.max(
-                    sheetData.system.skills.Rituels.rank,
-                    sheetData.system.skills.Survie.rank,
-                    sheetData.system.skills.Combat.rank
-                  ) +
-                  Math.min(
-                    sheetData.system.skills.Rituels.rank,
-                    sheetData.system.skills.Survie.rank,
-                    sheetData.system.skills.Combat.rank
-                  ),
-              },
-            },
-          },
-        });
-      } else {
-        this.actor.update({
-          system: {
-            attributes: {
-              hpEsprit: {
-                max:
-                  Math.max(
-                    sheetData.system.skills.Technique.rank,
-                    sheetData.system.skills.Savoir.rank,
-                    sheetData.system.skills.Social.rank
-                  ) +
-                  Math.min(
-                    sheetData.system.skills.Technique.rank,
-                    sheetData.system.skills.Savoir.rank,
-                    sheetData.system.skills.Social.rank
-                  ),
-              },
-              hpAme: {
-                max:
-                  Math.max(
-                    sheetData.system.skills.Arts.rank,
-                    sheetData.system.skills.Shaan.rank,
-                    sheetData.system.skills.Magie.rank
-                  ) +
-                  Math.min(
-                    sheetData.system.skills.Arts.rank,
-                    sheetData.system.skills.Shaan.rank,
-                    sheetData.system.skills.Magie.rank
-                  ),
-              },
-              hpCorps: {
-                max:
-                  Math.max(
-                    sheetData.system.skills.Rituels.rank,
-                    sheetData.system.skills.Survie.rank,
-                    sheetData.system.skills.Combat.rank
-                  ) +
-                  Math.min(
-                    sheetData.system.skills.Rituels.rank,
-                    sheetData.system.skills.Survie.rank,
-                    sheetData.system.skills.Combat.rank
-                  ),
-              },
-            },
-          },
-        });
+    if (!sheetData.system?.attributes || !sheetData.system.skills) return;
+  
+    const skills = sheetData.system.skills;
+    const isNecrosian = sheetData.system.attributes.isNecrosian;
+  
+    const hpEspritMax = Math.max(skills.Technique.rank, skills.Savoir.rank, skills.Social.rank) +
+                        Math.min(skills.Technique.rank, skills.Savoir.rank, skills.Social.rank);
+  
+    const hpCorpsMax = Math.max(skills.Rituels.rank, skills.Survie.rank, skills.Combat.rank) +
+                       Math.min(skills.Rituels.rank, skills.Survie.rank, skills.Combat.rank);
+  
+    const hpAmeMax = !isNecrosian
+      ? Math.max(skills.Arts.rank, skills.Shaan.rank, skills.Magie.rank) +
+        Math.min(skills.Arts.rank, skills.Shaan.rank, skills.Magie.rank)
+      : null;
+  
+    const newAttributes = {
+      hpEsprit: { max: hpEspritMax },
+      hpCorps: { max: hpCorpsMax },
+      ...(hpAmeMax !== null ? { hpAme: { max: hpAmeMax } } : {})
+    };
+  
+    // Vérifier si une mise à jour est nécessaire
+    const currentAttributes = sheetData.system.attributes;
+    let needsUpdate = false;
+  
+    for (const [key, value] of Object.entries(newAttributes)) {
+      if (currentAttributes[key]?.max !== value.max) {
+        needsUpdate = true;
+        break;
       }
     }
+  
+    if (needsUpdate) {
+      this.actor.update({ system: { attributes: newAttributes } });
+    }
   }
+  
+
   defineInitiative(sheetData, actorData) {
     if (typeof sheetData.system.attributes !== "undefined") {
       const domain = sheetData.system.attributes.initiative.statistic,
@@ -261,6 +218,7 @@ export class ActorSheetSR extends ActorSheet {
       }
     }
   }
+  
   activateListeners(html) {
     super.activateListeners(html);
     const $html = html[0];
