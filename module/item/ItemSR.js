@@ -74,31 +74,33 @@ export class ItemSR extends Item {
     let icon = data.img;
     const type = data.type;
 
-    switch (type) {
-      case "Armement":
-      case "Armimale":
-      case "Artefact":
-      case "Bâtiment":
-      case "Outil":
-      case "Protection":
-      case "Relation":
-      case "Richesse":
-      case "Technologie":
-      case "Transport":
-        icon = "systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp";
-        break;
-      case "Manuscrit":
-        icon = "systems/shaanrenaissance/assets/icons/navbar/icon_biographie.webp";
-        break;
-      case "Pouvoir":
-        if (icon && !icon.includes("domaines")) icon = "systems/shaanrenaissance/assets/icons/navbar/icon_pouvoir.webp";
-        break;
-      case "Symbiose":
-        icon = "systems/shaanrenaissance/assets/icons/navbar/icon_symbiose.webp";
-        break;
-      case "Trihn":
-        icon = "systems/shaanrenaissance/assets/icons/navbar/icon_magie.webp";
-        break;
+    if(icon.includes("navbar") || icon.includes("svg")){
+      switch (type) {
+        case "Armement":
+        case "Armimale":
+        case "Artefact":
+        case "Bâtiment":
+        case "Outil":
+        case "Protection":
+        case "Relation":
+        case "Richesse":
+        case "Technologie":
+        case "Transport":
+          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp";
+          break;
+        case "Manuscrit":
+          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_biographie.webp";
+          break;
+        case "Pouvoir":
+          if (icon && !icon.includes("domaines")) icon = "systems/shaanrenaissance/assets/icons/navbar/icon_pouvoir.webp";
+          break;
+        case "Symbiose":
+          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_symbiose.webp";
+          break;
+        case "Trihn":
+          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_magie.webp";
+          break;
+      }
     }
 
     await this.updateSource({ img: icon });
