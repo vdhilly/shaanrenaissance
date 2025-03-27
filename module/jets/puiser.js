@@ -301,9 +301,7 @@ async function onPuiserNecrose(event) {
   const chatCard = $(this.parentElement);
   const dice = chatCard.find("input.dice-value");
   const isDominated = chatCard.find(".die.Esprit").attr("data-dominated") === "true";
-  const necroseTest = chatCard.find(".necroseTest");
   const domain = Number(chatCard.find("b.domain").text());
-  const domainName = chatCard.find("span.domainName").text();
   const spéBonus = Number(chatCard.find("b.spéBonus").text());
   const acquisBonus = Number(chatCard.find("b.acquisBonus").text());
   const messageTemplate = "systems/shaanrenaissance/templates/chat/puiser.hbs";
@@ -350,18 +348,26 @@ async function onPuiserNecrose(event) {
   if (puiserOptions.cancelled) {
     return;
   }
+
   result = puiserOptions.result + spéBonus + acquisBonus;
   let flavor = puiserOptions.flavor;
 
   for (const actor of actors) {
-    const attributes = actor.system.attributes;
-    attributes.hpEsprit.value = attributes.hpEsprit.value - 1;
-    actor.update(attributes);
-    actor.sheet.render();
+    const updateData = {};
+
+    if (actor.system.attributes.hpEsprit.value > 0) {
+      updateData["system.attributes.hpEsprit.value"] = actor.system.attributes.hpEsprit.value - 1;
+    }
+
+    if (Object.keys(updateData).length > 0 && puiserOptions.lose) {
+      await actor.update(updateData);
+      actor.sheet.render();
+    }
 
     if (sendMessage) {
       ToCustomMessage(actor, result, messageTemplate);
     }
+
     async function ToCustomMessage(Token, result, messageTemplate) {
       let actor = Token.actor;
       let templateContext = {
@@ -447,6 +453,7 @@ async function onPuiserNecrose(event) {
       return {
         result: Number(form.result?.value),
         flavor: flavor,
+        lose: !form.puiserLoseTrihn.checked
       };
     } else {
       ui.notifications.warn("Vous devez faire un choix.");
