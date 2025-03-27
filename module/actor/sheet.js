@@ -457,406 +457,159 @@ export class ActorSheetSR extends ActorSheet {
     }
   }
 
-  _onItemCreate(event) {
+  async _onItemCreate(event) {
     event.preventDefault();
-    let actor = this.actor;
-    const espritBtn = event.target.closest("#Esprit-add");
-    const ameBtn = event.target.closest("#Ame-add");
-    const corpsBtn = event.target.closest("#Corps-add");
-    const necroseBtn = event.target.closest("#Nécrose-add");
-    const magicTrihnBtn = event.target.closest("#MagicTrihn-add");
-    const magicTrihnRoll = event.target.closest("#MagicTrihn-roll");
-    const graftAddBtn = event.target.closest("#graft-add");
+    const actor = this.actor;
+    const targetId = event.target.closest("[id$='-add']")?.id;
 
-    if (magicTrihnRoll) {
-      Dice.SpéTest({
-        actor,
-        domain: "Magie",
-        spécialisation: "invocation",
-        askForOptions: false,
-      });
+    if (!targetId) return;
+
+    switch (targetId) {
+        case "MagicTrihn-roll":
+            return Dice.SpéTest({
+                actor,
+                domain: "Magie",
+                spécialisation: "invocation",
+                askForOptions: false,
+            });
+
+        case "MagicTrihn-add":
+            return this._createTrihn(actor);
+
+        case "Esprit-add":
+            return this._createPouvoir(actor, "Esprit", "createPouvoirEsprit-dialog.hbs", {
+                Technique: {},
+                Savoir: {},
+                Social: {},
+            });
+
+        case "Ame-add":
+            return this._createPouvoir(actor, "Ame", "createPouvoirAme-dialog.hbs", {
+                Arts: {},
+                Shaan: {},
+                Magie: {},
+            });
+
+        case "Corps-add":
+            return this._createPouvoir(actor, "Corps", "createPouvoirCorps-dialog.hbs", {
+                Rituels: {},
+                Survie: {},
+                Combat: {},
+            });
+
+        case "Nécrose-add":
+            return this._createNecrose(actor);
+
+        case "graft-add":
+            return this._addGraft(actor);
     }
+}
 
-    if (magicTrihnBtn) {
-      trihnCreate({
-        actor,
-      });
+async _createPouvoir(actor, type, template, pouvoirTypes) {
+    const checkOptions = await this._getDialogOptions(template, { pouvoirTypes });
 
-      async function trihnCreate({ actor = null, trihn = null, puissance = null } = {}) {
-        const actorData = actor ? actor.system : null;
-        let checkOptions = await GetPouvoirOptions({ trihn, puissance });
+    if (checkOptions.cancelled) return;
 
-        if (checkOptions.cancelled) {
-          return;
-        }
-        (trihn = checkOptions.trihn), (puissance = checkOptions.puissance);
+    const pouvoir = checkOptions.type;
+    const itemData = {
+        name: pouvoir,
+        type: "Pouvoir",
+        system: { pouvoir: { value: pouvoir } },
+        img: `systems/shaanrenaissance/assets/icons/domaines/${pouvoir.replace(/(Astuce de |Secret de |Privilège de |Création d'|Symbiose de |Sort de |Transe de |Exploit de |Tactique de )/, "")}.png`,
+    };
 
-        let itemData = {
-          name: `${trihn}`,
-          type: "Trihn",
-          system: {
+    await actor.createEmbeddedDocuments("Item", [itemData]);
+    actor.sheet.render();
+}
+
+async _createTrihn(actor) {
+    const checkOptions = await this._getDialogOptions("createTrihn-dialog.hbs");
+
+    if (checkOptions.cancelled) return;
+
+    const { trihn, puissance } = checkOptions;
+    const itemData = {
+        name: trihn,
+        type: "Trihn",
+        system: {
             trihnType: trihn,
             puissance: puissance,
             emplacement: "Transit",
-          },
-          img: `systems/shaanrenaissance/assets/icons/trihns/${trihn}.webp`,
-        };
-        return actor.createEmbeddedDocuments("Item", [itemData]);
+        },
+        img: `systems/shaanrenaissance/assets/icons/trihns/${trihn}.webp`,
+    };
 
-        async function GetPouvoirOptions({
-          type = null,
-          puissance = null,
-          template = "systems/shaanrenaissance/templates/dialogs/createTrihn-dialog.hbs",
-        } = {}) {
-          const actorData = actor.toObject(!1);
-          actorData.pouvoirTypes = {
-            Esprit: {},
-            Ame: {},
-            Corps: {},
-            "Anti-Âme": {},
-          };
-          const html = await renderTemplate(template, {
-            actor,
-            trihn,
-            puissance,
-            config: CONFIG.shaanRenaissance,
-          });
+    await actor.createEmbeddedDocuments("Item", [itemData]);
+    actor.sheet.render();
+}
 
-          return new Promise((resolve) => {
-            const data = {
-              title: game.i18n.format("Invocation de Trihn"),
-              content: html,
-              actor: actorData,
-              buttons: {
-                normal: {
-                  label: game.i18n.localize("chat.actions.create"),
-                  callback: (html) => resolve(_processAcquisCreateOptions(html[0].querySelector("form"))),
-                },
-                cancel: {
-                  label: game.i18n.localize("chat.actions.cancel"),
-                  callback: (html) => resolve({ cancelled: true }),
-                },
-              },
-              default: "normal",
-              close: () => resolve({ cancelled: true }),
-            };
-            new Dialog(data, null).render(true);
-          });
-        }
-        function _processAcquisCreateOptions(form) {
-          return {
-            trihn: form.trihn?.value,
-            puissance: form.puissance?.value,
-          };
-        }
-      }
-    }
-    this.actor.sheet.render();
-
-    if (espritBtn) {
-      espritPouvoirCreate({
-        actor,
-      });
-
-      async function espritPouvoirCreate({ actor = null, type = null } = {}) {
-        const actorData = actor ? actor.system : null;
-        let checkOptions = await GetPouvoirOptions({ type });
-
-        if (checkOptions.cancelled) {
-          return;
-        }
-
-        type = checkOptions.type;
-        let itemData = {
-          name: `${type}`,
-          type: "Pouvoir",
-          system: { pouvoir: { value: type } },
-          img: `systems/shaanrenaissance/assets/icons/domaines/${type
-            .replace("Astuce de ", "")
-            .replace("Secret de ", "")
-            .replace("Privilège de ", "")}.png`,
-        };
-        return actor.createEmbeddedDocuments("Item", [itemData]);
-
-        async function GetPouvoirOptions({
-          type = null,
-          template = "systems/shaanrenaissance/templates/dialogs/createPouvoirEsprit-dialog.hbs",
-        } = {}) {
-          const actorData = actor.toObject(!1);
-          actorData.pouvoirTypes = {
-            Technique: {},
-            Savoir: {},
-            Social: {},
-          };
-          const html = await renderTemplate(template, {
-            actor,
-            type,
-            config: CONFIG.shaanRenaissance,
-          });
-
-          return new Promise((resolve) => {
-            const data = {
-              title: game.i18n.format("Création de Pouvoir"),
-              content: html,
-              actor: actorData,
-              buttons: {
-                normal: {
-                  label: game.i18n.localize("chat.actions.create"),
-                  callback: (html) => resolve(_processAcquisCreateOptions(html[0].querySelector("form"))),
-                },
-                cancel: {
-                  label: game.i18n.localize("chat.actions.cancel"),
-                  callback: (html) => resolve({ cancelled: true }),
-                },
-              },
-              default: "normal",
-              close: () => resolve({ cancelled: true }),
-            };
-            new Dialog(data, null).render(true);
-          });
-        }
-        function _processAcquisCreateOptions(form) {
-          return {
-            type: form.type?.value,
-          };
-        }
-      }
-    }
-    this.actor.sheet.render();
-
-    if (ameBtn) {
-      amePouvoirCreate({
-        actor,
-      });
-
-      async function amePouvoirCreate({ actor = null, type = null } = {}) {
-        const actorData = actor ? actor.system : null;
-        let checkOptions = await GetPouvoirOptions({ type });
-
-        if (checkOptions.cancelled) {
-          return;
-        }
-
-        type = checkOptions.type;
-        let itemData = {
-          name: `${type}`,
-          type: "Pouvoir",
-          system: { pouvoir: { value: type } },
-          img: `systems/shaanrenaissance/assets/icons/domaines/${type
-            .replace("Création d'", "")
-            .replace("Symbiose de ", "")
-            .replace("Sort de ", "")}.png`,
-        };
-        return actor.createEmbeddedDocuments("Item", [itemData]);
-
-        async function GetPouvoirOptions({
-          type = null,
-          template = "systems/shaanrenaissance/templates/dialogs/createPouvoirAme-dialog.hbs",
-        } = {}) {
-          const actorData = actor.toObject(!1);
-          actorData.pouvoirTypes = {
-            Arts: {},
-            Shaan: {},
-            Magie: {},
-          };
-          const html = await renderTemplate(template, {
-            actor,
-            type,
-            config: CONFIG.shaanRenaissance,
-          });
-
-          return new Promise((resolve) => {
-            const data = {
-              title: game.i18n.format("Création de Pouvoir"),
-              content: html,
-              actor: actorData,
-              buttons: {
-                normal: {
-                  label: game.i18n.localize("chat.actions.create"),
-                  callback: (html) => resolve(_processAcquisCreateOptions(html[0].querySelector("form"))),
-                },
-                cancel: {
-                  label: game.i18n.localize("chat.actions.cancel"),
-                  callback: (html) => resolve({ cancelled: true }),
-                },
-              },
-              default: "normal",
-              close: () => resolve({ cancelled: true }),
-            };
-            new Dialog(data, null).render(true);
-          });
-        }
-        function _processAcquisCreateOptions(form) {
-          return {
-            type: form.type?.value,
-          };
-        }
-      }
-    }
-    this.actor.sheet.render();
-
-    if (corpsBtn) {
-      corpsPouvoirCreate({
-        actor,
-      });
-
-      async function corpsPouvoirCreate({ actor = null, type = null } = {}) {
-        const actorData = actor ? actor.system : null;
-        let checkOptions = await GetPouvoirOptions({ type });
-
-        if (checkOptions.cancelled) {
-          return;
-        }
-
-        type = checkOptions.type;
-        let itemData = {
-          name: `${type}`,
-          type: "Pouvoir",
-          system: { pouvoir: { value: type } },
-          img: `systems/shaanrenaissance/assets/icons/domaines/${type
-            .replace("Transe de ", "")
-            .replace("Exploit de ", "")
-            .replace("Tactique de ", "")}.png`,
-        };
-        return actor.createEmbeddedDocuments("Item", [itemData]);
-
-        async function GetPouvoirOptions({
-          type = null,
-          template = "systems/shaanrenaissance/templates/dialogs/createPouvoirCorps-dialog.hbs",
-        } = {}) {
-          const actorData = actor.toObject(!1);
-          actorData.pouvoirTypes = {
-            Rituels: {},
-            Survie: {},
-            Combat: {},
-          };
-          const html = await renderTemplate(template, {
-            actor,
-            type,
-            config: CONFIG.shaanRenaissance,
-          });
-
-          return new Promise((resolve) => {
-            const data = {
-              title: game.i18n.format("Création de Pouvoir"),
-              content: html,
-              actor: actorData,
-              buttons: {
-                normal: {
-                  label: game.i18n.localize("chat.actions.create"),
-                  callback: (html) => resolve(_processAcquisCreateOptions(html[0].querySelector("form"))),
-                },
-                cancel: {
-                  label: game.i18n.localize("chat.actions.cancel"),
-                  callback: (html) => resolve({ cancelled: true }),
-                },
-              },
-              default: "normal",
-              close: () => resolve({ cancelled: true }),
-            };
-            new Dialog(data, null).render(true);
-          });
-        }
-        function _processAcquisCreateOptions(form) {
-          return {
-            type: form.type?.value,
-          };
-        }
-      }
-    }
-    this.actor.sheet.render();
-
-    if (necroseBtn) {
-      let itemData = {
+async _createNecrose(actor) {
+    const itemData = {
         name: `Tourment de Nécrose`,
         type: "Pouvoir",
         system: { pouvoir: { value: "Tourment de Nécrose" } },
         img: `systems/shaanrenaissance/assets/icons/domaines/Nécrose.png`,
-      };
+    };
 
-      return this.actor.createEmbeddedDocuments("Item", [itemData]);
+    await actor.createEmbeddedDocuments("Item", [itemData]);
+    actor.sheet.render();
+}
+
+async _addGraft(actor) {
+    const itemsNotGraft = actor.items.filter(
+        (item) => !item.system.morphe && ["Armement", "Outil", "Protection", "Technologie"].includes(item.type)
+    );
+
+    const checkOptions = await this._getDialogOptions("createGraft-dialog.hbs", { itemsNotGraft });
+
+    if (checkOptions.cancelled) return;
+
+    const itemF = actor.items.get(checkOptions.item);
+
+    if (!itemF) {
+        console.error("L'objet sélectionné est introuvable.");
+        return;
     }
-    this.actor.sheet.render();
 
-    if (graftAddBtn) {
-      let actor = this.actor;
-      const actorData = actor.toObject(!1);
-      const itemsF = actorData.items.filter(function (item) {
-        return (
-          (item.system.morphe == false && item.type == "Armement") ||
-          (item.system.morphe == false && item.type == "Outil") ||
-          (item.system.morphe == false && item.type == "Protection") ||
-          (item.system.morphe == false && item.type == "Technologie")
-        );
-      });
+    await itemF.update({ "system.morphe": true });
+    actor.sheet.render();
+}
 
-      graftCreate({
-        actor: actor,
-        items: itemsF,
-      });
+async _getDialogOptions(template, extraData = {}) {
+    const htmlString = await renderTemplate(`systems/shaanrenaissance/templates/dialogs/${template}`, {
+        actor: this.actor,
+        config: CONFIG.shaanRenaissance,
+        ...extraData,
+    });
 
-      async function graftCreate({ actor = null, items = null } = {}) {
-        let item;
-        let actorId = actor._id;
-        let checkOptions = await GetGraftOptions({ item });
-
-        if (checkOptions.cancelled) {
-          return;
-        }
-
-        item = checkOptions.item;
-        const itemF = actor.items.get(item);
-        itemF.update({
-          system: {
-            morphe: true,
-          },
-        });
-        actor.sheet.render();
-
-        async function GetGraftOptions({
-          item = null,
-          template = "systems/shaanrenaissance/templates/actors/Personnage/partials/createGraft-dialog.hbs",
-        } = {}) {
-          const actorData = actor;
-          actorData.itemsNotGraft = actorData.items.filter(function (item) {
-            return (
-              (item.system.morphe == false && item.type == "Armement") ||
-              (item.system.morphe == false && item.type == "Outil") ||
-              (item.system.morphe == false && item.type == "Protection") ||
-              (item.system.morphe == false && item.type == "Technologie")
-            );
-          });
-          const html = await renderTemplate(template, { actor, item });
-
-          return new Promise((resolve) => {
-            const data = {
-              title: game.i18n.format("Greffe de module"),
-              content: html,
-              actor: actorData,
-              buttons: {
+    return new Promise((resolve) => {
+        new Dialog({
+            title: game.i18n.format("Création d'un élément"),
+            content: htmlString,
+            buttons: {
                 normal: {
-                  label: game.i18n.localize("chat.actions.graft"),
-                  callback: (html) => resolve(_processGraftCreateOptions(html[0].querySelector("form"))),
+                    label: game.i18n.localize("chat.actions.create"),
+                    callback: (html) => {
+                        const form = html.get(0)?.querySelector("form");
+                        if (!form) {
+                            console.error("Formulaire introuvable.");
+                            resolve({ cancelled: true });
+                            return;
+                        }
+                        resolve(Object.fromEntries(new FormData(form)));
+                    },
                 },
                 cancel: {
-                  label: game.i18n.localize("chat.actions.cancel"),
-                  callback: (html) => resolve({ cancelled: true }),
+                    label: game.i18n.localize("chat.actions.cancel"),
+                    callback: () => resolve({ cancelled: true }),
                 },
-              },
-              default: "normal",
-              close: () => resolve({ cancelled: true }),
-            };
-            new Dialog(data, null).render(true);
-          });
-        }
-        function _processGraftCreateOptions(form) {
-          return {
-            item: form.item?.value,
-          };
-        }
-      }
-    }
-  }
+            },
+            default: "normal",
+            close: () => resolve({ cancelled: true }),
+        }).render(true);
+    });
+}
+
   _onAcquisChat(event) {
     event.preventDefault();
     let element = event.target;

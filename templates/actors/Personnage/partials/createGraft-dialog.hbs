@@ -2,7 +2,9 @@
   <div class="form-group">
     <label>Acquis à greffer</label>
     <select name="item" value="{{item}}">
-      {{selectOptions actor.itemsNotGraft selected=item}}
+      {{#each itemsNotGraft as |item|}}
+        <option value="{{item.id}}">{{item.name}}</option>
+      {{/each}}
     </select>
   </div>
 </form>
