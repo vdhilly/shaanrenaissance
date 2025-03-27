@@ -829,7 +829,7 @@ export async function necroseTest({
     domain = null,
     spécialisation = null,
     difficulty = 0,
-    template = "systems/shaanrenaissance/templates/chat/nécroseTest-dialog.hbs",
+    template = "systems/shaanrenaissance/templates/chat/necroseTest-dialog.hbs",
   } = {}) {
     const html = await renderTemplate(template, {
       actor,
