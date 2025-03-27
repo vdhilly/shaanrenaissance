@@ -2590,7 +2590,7 @@ a.spéTestNécr label {
 .actor.sheet .itemCategory .liste-items .acquis-header .acquis-image {
   grid-area: acquis-item-img;
 }
-.actor.sheet .acquis-prestige {
+.actor.sheet .acquis-prestige, .actor.sheet .acquis-price {
   display: flex;
   gap:0.2em;
   align-items: center;

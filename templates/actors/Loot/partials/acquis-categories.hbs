@@ -34,6 +34,18 @@
                                     {{acquis.name}}
                                 </h4>
                             </div>
+                            {{#if (ne (number acquis.system.acquis.prestige) 0)}}
+                            <span class="acquis-prestige" title="SR.prestige">
+                                <i class="fa-solid fa-star"></i>
+                                <span>{{number acquis.system.acquis.prestige}}</span>
+                            </span>
+                            {{/if}}
+                            {{#if (ne (number acquis.system.acquis.valeur) 0)}}
+                            <span class="acquis-price" title="SRLabels.price">
+                                <i class="fa-solid fa-coins"></i>
+                                <span>{{number acquis.system.acquis.valeur}}</span>
+                            </span>
+                            {{/if}}
                             <span class="quantity">
                                 {{#if @root.editable}}<a class="item-decrease-quantity" data-action="decrease-quantity" title="{{localize "SR.Inventory.ItemQuantity.Decrease.Click"}}&#013;{{localize "SR.Inventory.ItemQuantity.Decrease.ShiftClick"}}&#013;{{localize "SR.Inventory.ItemQuantity.Decrease.ControlClick"}}">&ndash;</a>{{/if}}
                                 <span>{{acquis.system.quantity}}</span>
