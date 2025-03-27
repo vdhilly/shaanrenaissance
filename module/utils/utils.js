@@ -3,10 +3,19 @@ export function objectHasKey(obj, key) {
     return (typeof key === "string" || typeof key === "number") && key in obj;
 }
 
-export function getSelectedOrOwnActors(types, useOwnCharacter = !0) {
-    const actors = canvas.tokens.controlled.flatMap((token => token.actor ? token.actor : [])).filter((actor => actor.isOwner)).filter((actor => !types || actor.isOfType(...types)));
-    return 0 === actors.length && game.user.character && useOwnCharacter && actors.push(game.user.character), actors
-}
+export function getSelectedOrOwnActors(types, useOwnCharacter = true) {
+    const actors = canvas.tokens.controlled
+      .flatMap(token => token.actor ? token.actor : [])
+      .filter(actor => actor.isOwner) 
+      .filter(actor => !types || actor.isOfType(...types)); 
+  
+    if (actors.length === 0 && game.user.character && useOwnCharacter) {
+      actors.push(game.user.character); 
+    }
+  
+    return actors;
+  }
+  
 
 const wordCharacter = String.raw`[\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Join_Control}]`;
 const nonWordCharacter = String.raw`[^\p{Alphabetic}\p{Mark}\p{Decimal_Number}\p{Join_Control}]`;
