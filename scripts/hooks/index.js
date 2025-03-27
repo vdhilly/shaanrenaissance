@@ -1,4 +1,5 @@
 import { DiceSoNiceReady } from "./dice-so-nice-ready.js";
+import { HotBar } from "./hot-bar.js";
 import { Init } from "./init.js";
 import { Load } from "./load.js";
 import { Ready } from "./ready.js";
@@ -20,6 +21,7 @@ export const HooksSR = {
       RenderSettings,
       RenderTokenHUD,
       Setup,
+      HotBar
     ];
     for (const Listener of listeners) {
       Listener.listen();
