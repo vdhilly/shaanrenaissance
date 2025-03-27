@@ -45,4 +45,12 @@ export function registerHandlebarsHelpers() {
 
     return str.charAt(0).toUpperCase() + str.slice(1);
   });
+
+  Handlebars.registerHelper("number", function(value) {
+    if (typeof value === "string") {
+        let match = value.match(/\d+/);
+        return match ? Number(match[0]) : 0;
+    }
+    return Number(value);
+});
 }
