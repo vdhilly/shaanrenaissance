@@ -78,7 +78,6 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
           }).render(!0);
         }))
     )
-      return;
 
     if (this.isEditable) {
       html.find("button[data-action=add-coins]").click(this._onAddCoins.bind(this));
