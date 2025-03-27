@@ -225,7 +225,7 @@ async function onPuiser(event) {
         speaker: ChatMessage.getSpeaker({ actor }),
         content: await renderTemplate(messageTemplate, templateContext),
         sound: CONFIG.sounds.notification,
-        type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+        type: CONST.CHAT_MESSAGE_STYLES.OTHER,
         whisper: whispers,
       };
       ChatMessage.create(chatData);
@@ -400,9 +400,10 @@ async function onPuiserNecrose(event) {
         speaker: ChatMessage.getSpeaker({ actor }),
         content: await renderTemplate(messageTemplate, templateContext),
         sound: CONFIG.sounds.notification,
-        type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+        style: CONST.CHAT_MESSAGE_STYLES.OTHER, 
         whisper: whispers,
       };
+      
       ChatMessage.create(chatData);
     }
   }
