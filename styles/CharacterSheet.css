@@ -2590,6 +2590,15 @@ a.spéTestNécr label {
 .actor.sheet .itemCategory .liste-items .acquis-header .acquis-image {
   grid-area: acquis-item-img;
 }
+.actor.sheet .acquis-prestige {
+  display: flex;
+  gap:0.2em;
+  align-items: center;
+  font-weight: 500;
+  background-color: rgba(28, 28, 28, 0.1);
+  padding: 0.5em;
+  border-left: 1px solid var(--alt);
+}
 .actor.sheet .acquis-image {
   display: flex;
   cursor: pointer;
