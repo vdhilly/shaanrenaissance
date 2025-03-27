@@ -73,40 +73,38 @@ export class ItemSR extends Item {
   async _preCreate(data, options, user) {
     let icon = data.img;
     const type = data.type;
+    console.log(data)
 
-    if(icon.includes("navbar") || icon.includes("svg")){
-      switch (type) {
-        case "Armement":
-        case "Armimale":
-        case "Artefact":
-        case "Bâtiment":
-        case "Outil":
-        case "Protection":
-        case "Relation":
-        case "Richesse":
-        case "Technologie":
-        case "Transport":
-          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_acquis.webp";
-          break;
-        case "Manuscrit":
-          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_biographie.webp";
-          break;
-        case "Pouvoir":
-          if (icon && !icon.includes("domaines")) icon = "systems/shaanrenaissance/assets/icons/navbar/icon_pouvoir.webp";
-          break;
-        case "Symbiose":
-          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_symbiose.webp";
-          break;
-        case "Trihn":
-          icon = "systems/shaanrenaissance/assets/icons/navbar/icon_magie.webp";
-          break;
-      }
+    if (!icon || (icon.includes("navbar") || icon.includes("svg"))) {
+        const iconMap = {
+            "Armement": "icon_acquis.webp",
+            "Armimale": "icon_acquis.webp",
+            "Artefact": "icon_acquis.webp",
+            "Bâtiment": "icon_acquis.webp",
+            "Outil": "icon_acquis.webp",
+            "Protection": "icon_acquis.webp",
+            "Relation": "icon_acquis.webp",
+            "Richesse": "icon_acquis.webp",
+            "Technologie": "icon_acquis.webp",
+            "Transport": "icon_acquis.webp",
+            "Manuscrit": "icon_biographie.webp",
+            "Pouvoir": "icon_pouvoir.webp",
+            "Symbiose": "icon_symbiose.webp",
+            "Trihn": "icon_magie.webp"
+        };
+
+        if (type in iconMap && (type !== "Pouvoir" || !icon.includes("domaines"))) {
+            icon = `systems/shaanrenaissance/assets/icons/navbar/${iconMap[type]}`;
+        }
     }
 
-    await this.updateSource({ img: icon });
+    await super._preCreate(data, options, user);
 
-    return await super._preCreate(data, options, user);
-  }
+    if (icon !== data.img) {
+        await this.updateSource({ img: icon });
+    }
+}
+
   prepareActorData() {}
 }
 export const ItemProxySR = new Proxy(ItemSR, {
