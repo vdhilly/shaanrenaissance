@@ -38,6 +38,10 @@ export const RenderDialog = {
           }
         });
       }
+
+      if(element.querySelector(".puiser-dialog.necrose")){
+        element.classList.add("puiser-necrose")
+      }
     });
   },
 };

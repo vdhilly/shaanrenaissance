@@ -311,14 +311,14 @@ async function onPuiserNecrose(event) {
   if (isDominated) esprit = 0;
 
   if (esprit == 10) {
-    esprit = 0;
+    esprit = domain;
   }
   if (necrose == 10) {
     necrose = domain;
   }
   let choix = {};
   choix.bonus = spéBonus + acquisBonus;
-  if (esprit != 0 && esprit <= domain) {
+  if (esprit <= domain) {
     if (esprit > necrose || necrose > domain) {
       choix.choix1 = {
         value: esprit,
@@ -329,12 +329,12 @@ async function onPuiserNecrose(event) {
       };
     }
   }
-  if (esprit != 0 && esprit + necrose <= domain) {
+  if (esprit + necrose <= domain) {
     choix.choix2 = {
       value: esprit + necrose,
       diceValues: { esprit: esprit, necrose: necrose },
       label: { esprit: "esprit", necrose: "necrose" },
-      flavor: { esprit: "Esprit", necrose: "Nécrose" },
+      flavor: { esprit: "Esprit", necrose: "Necrose" },
       color: { esprit: "jaune", necrose: "noir" },
       checked: false,
     };
