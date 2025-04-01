@@ -38,10 +38,6 @@ export default class ShaanNPCSheet extends ActorSheetSR {
         },
       };
 
-    // if (!this.editable) {
-    //   console.log(this);
-    //   this._element[0];
-    // }
     this.itemSort(sheetData.items);
     this.itemFilter(sheetData, actorData);
     this.characterFilter(sheetData, actorData);

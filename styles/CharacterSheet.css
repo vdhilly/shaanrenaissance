@@ -2590,7 +2590,7 @@ a.spéTestNécr label {
 .actor.sheet .itemCategory .liste-items .acquis-header .acquis-image {
   grid-area: acquis-item-img;
 }
-.actor.sheet .acquis-prestige, .actor.sheet .acquis-price {
+.actor.sheet .acquis-prestige {
   display: flex;
   gap:0.2em;
   align-items: center;
@@ -2598,6 +2598,15 @@ a.spéTestNécr label {
   background-color: rgba(28, 28, 28, 0.1);
   padding: 0.5em;
   border-left: 1px solid var(--alt);
+  min-width: 40px;
+}
+.actor.sheet .acquis-price{
+  display: flex;
+  gap:0.2em;
+  align-items: center;
+  font-weight: 500;
+  background-color: rgba(28, 28, 28, 0.1);
+  padding: 0.5em;
 }
 .actor.sheet .acquis-image {
   display: flex;

@@ -33,7 +33,6 @@ export class ShaaniSR extends ActorSR {
     const members = [...existing, ...newMembers.map((m) => ({ uuid: m.uuid }))];
     await this.update({ system: { details: { members } } });
 
-    // await resetActors(newMembers);
   }
   async removeMembers(...remove) {
     const uuids = remove.map((d) => (typeof d === "string" ? d : d.uuid));
