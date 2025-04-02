@@ -73,7 +73,6 @@ export class ItemSR extends Item {
   async _preCreate(data, options, user) {
     let icon = data.img;
     const type = data.type;
-    console.log(data)
 
     if (!icon || (icon.includes("navbar") || icon.includes("svg"))) {
         const iconMap = {
@@ -93,7 +92,7 @@ export class ItemSR extends Item {
             "Trihn": "icon_magie.webp"
         };
 
-        if (type in iconMap && (type !== "Pouvoir" || !icon.includes("domaines"))) {
+        if (type in iconMap && (type !== "Pouvoir" || icon && !icon.includes("domaines"))) {
             icon = `systems/shaanrenaissance/assets/icons/navbar/${iconMap[type]}`;
         }
     }

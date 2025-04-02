@@ -189,7 +189,7 @@ shaanRenaissance.pouvoirs = {
     none: "",
     "1 Geste": "1 Geste",
     "1 Action": "1 Action",
-    "1 Action": "1 Action",
+    "2 Action": "2 Action",
     "1 Action par Cible": "1 Action par Cible",
     "1 Heure": "1 Heure",
     "1 Jour": "1 Jour",
