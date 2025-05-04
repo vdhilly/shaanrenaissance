@@ -14,7 +14,7 @@
             <div class="tab general" data-group="primary" data-tab="general">
                 <div class="batiment-details">
                     <div style="display:flex; flex-direction: row;">
-                        <div class="spés" style="width: 80%">
+                        <div class="spés" style="width: 60%">
                             <h3>
                                 <label class="details-label" for="{{options.id}}-batiment-spécialisations">{{localize "SRCreation.spé"}}</label>
                                 <input name="system.spécialisations" id="{{options.id}}-batiment-spécialisations" type="text" value="{{system.spécialisations}}"spellcheck="false"/>
@@ -24,6 +24,12 @@
                             <h3>
                                 <label class="details-label" for="{{options.id}}-batiment-price">{{localize "SR.valeur"}}</label>
                                 <input name="system.price" id="{{options.id}}-batiment-price" type="text" value="{{system.price}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="batiment-prestige" style="width: 20%">
+                            <h3>
+                                <label class="details-label" for="{{options.id}}-batiment-prestige">{{localize "SR.prestige"}}</label>
+                                <input name="system.acquis.prestige" id="{{options.id}}-batiment-prestige" type="text" value="{{system.acquis.prestige}}"spellcheck="false"/>
                             </h3>
                         </div>
                     </div>
@@ -39,11 +45,19 @@
                             <input name="system.ressources" id="{{options.id}}-batiment-ressources" type="text" value="{{system.ressources}}"spellcheck="false"/>
                         </h3>
                     </div>
-                    <div class="batiment-fabrication">
-                        <h3>
-                            <label class="details-label" for="{{options.id}}-batiment-fabrication">{{localize "SR.fabrication"}}</label>
-                            <input name="system.fabrication" id="{{options.id}}-batiment-fabrication" type="text" value="{{system.fabrication}}"spellcheck="false"/>
-                        </h3>
+                    <div style="display:flex;">
+                        <div class="batiment-fabrication" style="width:80%">
+                            <h3>
+                                <label class="details-label" for="{{options.id}}-batiment-fabrication">{{localize "SR.fabrication"}}</label>
+                                <input name="system.fabrication" id="{{options.id}}-batiment-fabrication" type="text" value="{{system.fabrication}}"spellcheck="false"/>
+                            </h3>
+                        </div>
+                        <div class="batiment-entretien">
+                            <h3>
+                            <label class="details-label" for="{{options.id}}-batiment-entretien">{{localize "SR.entretien"}}</label>
+                            <input name="system.acquis.entretien" id="{{options.id}}-batiment-entretien" type="text" value="{{system.acquis.entretien}}"spellcheck="false"/>
+                            </h3>
+                        </div>
                     </div>
                 </div>
             </div>
