@@ -22,7 +22,7 @@ var _ActorDirectorySR_instances,
         ? f.value
         : state.get(receiver);
     };
-export class ActorDirectorySR extends ActorDirectory {
+export class ActorDirectorySR extends foundry.applications.sidebar.tabs.ActorDirectory {
   constructor() {
     super(...arguments), _ActorDirectorySR_instances.add(this);
   }

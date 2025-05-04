@@ -1,4 +1,4 @@
-export default class ShaanTrihnSheet extends ItemSheet {
+export default class ShaanTrihnSheet extends foundry.appv1.sheets.ItemSheet {
   get template() {
     return `systems/shaanrenaissance/templates/items/${this.item.type}/sheet.hbs`;
   }

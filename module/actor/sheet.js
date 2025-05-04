@@ -3,7 +3,7 @@ import * as Dice from "../jets/dice.js";
 import { htmlQuery } from "../utils/utils.js";
 import { ShaaniSR } from "./Shaani/document.js";
 import { LootSR } from "./loot/LootSR.js";
-export class ActorSheetSR extends ActorSheet {
+export class ActorSheetSR extends foundry.appv1.sheets.ActorSheet {
   get template() {
     return `systems/shaanrenaissance/templates/actors/${this.actor.type}/sheet.hbs`;
   }

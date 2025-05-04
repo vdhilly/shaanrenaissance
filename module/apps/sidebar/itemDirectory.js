@@ -23,7 +23,7 @@ var _ItemDirectorySR_instances,
         : state.get(receiver);
     };
 
-export class ItemDirectorySR extends ItemDirectory {
+export class ItemDirectorySR extends foundry.applications.sidebar.tabs.ItemDirectory {
   constructor() {
     super(...arguments), _ItemDirectorySR_instances.add(this);
   }

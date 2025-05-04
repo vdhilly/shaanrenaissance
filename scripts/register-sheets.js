@@ -13,10 +13,10 @@ import { ShaanConditionSheet } from "../module/item/condition/sheet.js";
 import { TokenConfigSR } from "../module/token/TokenConfigSR.js";
 
 export function registerSheets() {
-  DocumentSheetConfig.registerSheet(ActiveEffect, "shaanrenaissance", SRActiveEffectConfig, { makeDefault: true, label: "test" });
-  DocumentSheetConfig.registerSheet(TokenDocument, "shaanrenaissance", TokenConfigSR, { makeDefault: true });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("shaanrenaissance", ShaanRItemSheet, {
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(ActiveEffect, "shaanrenaissance", SRActiveEffectConfig, { makeDefault: true, label: "test" });
+  foundry.applications.apps.DocumentSheetConfig.registerSheet(TokenDocument, "shaanrenaissance", TokenConfigSR, { makeDefault: true });
+  foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
+  foundry.documents.collections.Items.registerSheet("shaanrenaissance", ShaanRItemSheet, {
     types: [
       "Pouvoir",
       "Armement",
@@ -33,44 +33,44 @@ export function registerSheets() {
     ],
     label: "Acquis",
   });
-  Items.registerSheet("shaanrenaissance", ShaanTrihnSheet, {
+  foundry.documents.collections.Items.registerSheet("shaanrenaissance", ShaanTrihnSheet, {
     types: ["Trihn"],
     label: "Trihn",
   });
-  Items.registerSheet("shaanrenaissance", ShaanCreatorSet, {
+  foundry.documents.collections.Items.registerSheet("shaanrenaissance", ShaanCreatorSet, {
     types: ["Race", "Peuple", "Caste", "Métier"],
     label: "Character Developpement",
   });
-  Items.registerSheet("shaanrenaissance", ShaanConditionSheet, {
+  foundry.documents.collections.Items.registerSheet("shaanrenaissance", ShaanConditionSheet, {
     types: ["condition"],
     label: "Condition",
   });
-  Items.registerSheet("shaanrenaissance", symbioseSheet, {
+  foundry.documents.collections.Items.registerSheet("shaanrenaissance", symbioseSheet, {
     types: ["Symbiose"],
     label: "Symbiose",
   });
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("shaanrenaissance", ShaanPersonnageSheet, {
+  foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
+  foundry.documents.collections.Actors.registerSheet("shaanrenaissance", ShaanPersonnageSheet, {
     types: ["Personnage"],
     label: "Personnage",
   });
-  Actors.registerSheet("shaanrenaissance", ShaanNPCSheet, {
+  foundry.documents.collections.Actors.registerSheet("shaanrenaissance", ShaanNPCSheet, {
     types: ["PNJ"],
     label: "PNJ",
   });
-  Actors.registerSheet("shaanrenaissance", ShaanCreatureSheet, {
+  foundry.documents.collections.Actors.registerSheet("shaanrenaissance", ShaanCreatureSheet, {
     types: ["Créature"],
     label: "Créature",
   });
-  Actors.registerSheet("shaanrenaissance", ShaaniSheetSR, {
+  foundry.documents.collections.Actors.registerSheet("shaanrenaissance", ShaaniSheetSR, {
     types: ["Shaani"],
     label: "Shaani",
   });
-  Actors.registerSheet("shaanrenaissance", ShaanReseauSheet, {
+  foundry.documents.collections.Actors.registerSheet("shaanrenaissance", ShaanReseauSheet, {
     types: ["Réseau"],
     label: "Réseau",
   });
-  Actors.registerSheet("shaanrenaissance", ShaanLootSheetSR, {
+  foundry.documents.collections.Actors.registerSheet("shaanrenaissance", ShaanLootSheetSR, {
     types: ["Loot"],
     label: "Loot",
   });

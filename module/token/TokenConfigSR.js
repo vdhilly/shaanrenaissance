@@ -1,4 +1,4 @@
-export class TokenConfigSR extends TokenConfig {
+export class TokenConfigSR extends foundry.applications.sheets.TokenConfig {
   get template() {
     return "systems/shaanrenaissance/templates/scene/tokenConfig.hbs";
   }

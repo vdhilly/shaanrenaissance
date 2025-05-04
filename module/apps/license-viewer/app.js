@@ -1,4 +1,4 @@
-export class LicenseViewer extends Application {
+export class LicenseViewer extends foundry.applications.api.ApplicationV2 {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id: "license-viewer",

@@ -1,4 +1,4 @@
-export class TokenSR extends Token {
+export class TokenSR extends foundry.canvas.placeables.Token {
   #unlinkedVideo = false;
 
   #ring;
@@ -9,11 +9,11 @@ export class TokenSR extends Token {
     // Load token texture
     let texture;
     if (this._original) texture = this._original.texture?.clone();
-    else texture = await loadTexture(this.document.texture.src, { fallback: CONST.DEFAULT_TOKEN });
+    else texture = await foundry.canvas.loadTexture(this.document.texture.src, { fallback: CONST.DEFAULT_TOKEN });
 
     // Cache token ring subject texture if needed
     const ring = this.document.ring;
-    if (ring.enabled && !ring.subject.texture) await loadTexture(ring.subject.texture);
+    if (ring.enabled && !ring.subject.texture) await foundry.canvas.loadTexture(ring.subject.texture);
 
     // Manage video playback
     let video = game.video.getVideoSource(texture);
@@ -104,14 +104,14 @@ export class TokenSR extends Token {
   #drawTooltip() {
     let text = this._getTooltipText();
     const style = this._getTextStyle();
-    const tip = new PreciseText(text, style);
+    const tip = new foundry.canvas.containers.PreciseText(text, style);
     tip.anchor.set(0.5, 1);
     tip.position.set(this.w / 2, -2);
     return tip;
   }
   #drawNameplate() {
     const style = this._getTextStyle();
-    const name = new PreciseText(this.document.name, style);
+    const name = new foundry.canvas.containers.PreciseText(this.document.name, style);
     name.anchor.set(0.5, 0);
     name.position.set(this.w / 2, this.h + 2);
     return name;

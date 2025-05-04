@@ -22,7 +22,7 @@ var _CompendiumDirectorySR_instances,
         ? f.value
         : state.get(receiver);
     };
-export class CompendiumDirectorySR extends CompendiumDirectory {
+export class CompendiumDirectorySR extends foundry.applications.sidebar.tabs.CompendiumDirectory {
   constructor() {
     super(...arguments), _CompendiumDirectorySR_instances.add(this);
   }

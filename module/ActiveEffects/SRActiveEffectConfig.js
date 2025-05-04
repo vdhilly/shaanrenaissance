@@ -1,4 +1,4 @@
-export class SRActiveEffectConfig extends ActiveEffectConfig {
+export class SRActiveEffectConfig extends foundry.applications.sheets.ActiveEffectConfig {
   get template() {
     return "systems/shaanrenaissance/templates/items/partials/activeEffect-config.hbs";
   }

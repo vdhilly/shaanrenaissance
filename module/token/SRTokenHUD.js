@@ -1,4 +1,4 @@
-export class SRTokenHUD extends TokenHUD {
+export class SRTokenHUD extends foundry.applications.hud.TokenHUD {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {

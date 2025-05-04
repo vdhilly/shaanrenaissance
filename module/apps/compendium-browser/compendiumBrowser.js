@@ -3,7 +3,7 @@ import { getSelectedOrOwnActors, objectHasKey } from "../../utils/utils.js";
 import { PackLoader } from "./PackLoader.js";
 import * as browserTabs from "./tabs/index.js";
 
-export class compendiumBrowser extends Application {
+export class compendiumBrowser extends foundry.applications.api.ApplicationV2 {
   constructor(options = {}) {
     super(options),
       (this.dataTabsList = ["abilities", "bestiary", "acquis", "races", "castes", "people", "jobs"]),
