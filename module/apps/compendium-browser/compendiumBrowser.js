@@ -58,6 +58,7 @@ export class compendiumBrowser extends foundry.applications.api.ApplicationV2 {
     await super.close(options);
   }
   hookTab() {
+    console.log(this)
     const navigationTab = this._tabs[0],
       tabCallback = navigationTab.callback;
     return (

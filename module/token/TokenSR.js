@@ -8,28 +8,28 @@ export class TokenSR extends foundry.canvas.placeables.Token {
 
     // Load token texture
     let texture;
-    if (this._original) texture = this._original.texture?.clone();
-    else texture = await foundry.canvas.loadTexture(this.document.texture.src, { fallback: CONST.DEFAULT_TOKEN });
+    if ( this._original ) texture = this._original.texture?.clone();
+    else texture = await foundry.canvas.loadTexture(this.document.texture.src, {fallback: CONST.DEFAULT_TOKEN});
 
     // Cache token ring subject texture if needed
     const ring = this.document.ring;
-    if (ring.enabled && !ring.subject.texture) await foundry.canvas.loadTexture(ring.subject.texture);
+    if ( ring.enabled && ring.subject.texture ) await foundry.canvas.loadTexture(ring.subject.texture);
 
     // Manage video playback
     let video = game.video.getVideoSource(texture);
     this.#unlinkedVideo = !!video && !this._original;
-    if (this.#unlinkedVideo) {
+    if ( this.#unlinkedVideo ) {
       texture = await game.video.cloneTexture(video);
       video = game.video.getVideoSource(texture);
-      const playOptions = { volume: 0 };
-      if (this.document.getFlag("core", "randomizeVideo") !== false && Number.isFinite(video.duration)) {
+      const playOptions = {volume: 0};
+      if ( (this.document.getFlag("core", "randomizeVideo") !== false) && Number.isFinite(video.duration) ) {
         playOptions.offset = Math.random() * video.duration;
       }
       game.video.play(video, playOptions);
     }
     this.texture = texture;
 
-    // Draw the TokenMesh in the PrimaryCanvasGroup
+    // Draw the token's PrimarySpriteMesh in the PrimaryCanvasGroup
     this.mesh = canvas.primary.addToken(this);
 
     // Initialize token ring
@@ -38,19 +38,19 @@ export class TokenSR extends foundry.canvas.placeables.Token {
     // Draw the border
     this.border ||= this.addChild(new PIXI.Graphics());
 
-    // Draw the void of the TokenMesh
-    if (!this.voidMesh) {
+    // Draw the void of the token's PrimarySpriteMesh
+    if ( !this.voidMesh ) {
       this.voidMesh = this.addChild(new PIXI.Container());
       this.voidMesh.updateTransform = () => {};
-      this.voidMesh.render = (renderer) => this.mesh?._renderVoid(renderer);
+      this.voidMesh.render = renderer => this.mesh?._renderVoid(renderer);
     }
 
-    // Draw the detection filter of the TokenMesh
-    if (!this.detectionFilterMesh) {
+    // Draw the detection filter of the token's PrimarySpriteMesh
+    if ( !this.detectionFilterMesh ) {
       this.detectionFilterMesh = this.addChild(new PIXI.Container());
       this.detectionFilterMesh.updateTransform = () => {};
-      this.detectionFilterMesh.render = (renderer) => {
-        if (this.detectionFilter) this._renderDetectionFilter(renderer);
+      this.detectionFilterMesh.render = renderer => {
+        if ( this.detectionFilter ) this._renderDetectionFilter(renderer);
       };
     }
 
@@ -58,9 +58,14 @@ export class TokenSR extends foundry.canvas.placeables.Token {
     this.bars ||= this.addChild(this.#drawAttributeBars());
     this.tooltip ||= this.addChild(this.#drawTooltip());
     this.effects ||= this.addChild(new PIXI.Container());
-
-    this.target ||= this.addChild(new PIXI.Graphics());
+    this.targetArrows ||= this.addChild(new PIXI.Graphics());
+    this.targetPips ||= this.addChild(new PIXI.Graphics());
     this.nameplate ||= this.addChild(this.#drawNameplate());
+    this.sortableChildren = true;
+
+    // Initialize and draw the ruler
+    if ( this.ruler === undefined ) this.ruler = this._initializeRuler();
+    if ( this.ruler ) await this.ruler.draw();
 
     // Add filter effects
     this._updateSpecialStatusFilterEffects();
@@ -68,8 +73,8 @@ export class TokenSR extends foundry.canvas.placeables.Token {
     // Draw elements
     await this._drawEffects();
 
-    // Create all sources and perform initialization
-    this.initializeSources(); // TODO should this be removed?
+    // Initialize sources
+    if ( !this.isPreview ) this.initializeSources();
   }
   #initializeRing() {
     // Construct a TokenRing instance
