@@ -1,11 +1,11 @@
 import { compendiumBrowser } from "../../module/apps/compendium-browser/compendiumBrowser.js";
 import { StatusEffects } from "../../module/canvas/status-effect.js";
 import { SRTokenHUD } from "../../module/token/SRTokenHUD.js";
-import { activateSocketListeners } from "../socket.js";
 
 export const Ready = {
   listen: () => {
     Hooks.once("ready", function () {
+      console.log(game)
       canvas.hud.token = new SRTokenHUD();
       game.shaanRenaissance.compendiumBrowser = new compendiumBrowser();
       game.shaanRenaissance.StatusEffects = StatusEffects;
