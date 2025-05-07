@@ -8,6 +8,7 @@ export const Ready = {
       canvas.hud.token = new SRTokenHUD();
       game.shaanRenaissance.compendiumBrowser = new compendiumBrowser();
       game.shaanRenaissance.StatusEffects = StatusEffects;
+      console.log(game.shaanRenaissance)
       game.shaanRenaissance.StatusEffects.initialize();
       game.shaanRenaissance.ConditionManager.initialize();
 

@@ -422,7 +422,7 @@ export class ActorSheetSR extends foundry.appv1.sheets.ActorSheet {
           Transport: {},
           Bâtiment: {},
         };
-        const html = await renderTemplate(template, {
+        const html = await foundry.applications.handlebars.renderTemplate(template, {
           actor,
           type,
           config: CONFIG.shaanRenaissance,
@@ -576,7 +576,7 @@ async _addGraft(actor) {
 }
 
 async _getDialogOptions(template, extraData = {}) {
-    const htmlString = await renderTemplate(`systems/shaanrenaissance/templates/dialogs/${template}`, {
+    const htmlString = await foundry.applications.handlebars.renderTemplate(`systems/shaanrenaissance/templates/dialogs/${template}`, {
         actor: this.actor,
         config: CONFIG.shaanRenaissance,
         ...extraData,
@@ -641,7 +641,7 @@ async _getDialogOptions(template, extraData = {}) {
         let chatData = {
           user: game.user.id,
           speaker: ChatMessage.getSpeaker({ actor }),
-          content: await renderTemplate(template, templateContext),
+          content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
           sound: CONFIG.sounds.notification,
           type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         };
@@ -681,7 +681,7 @@ async _getDialogOptions(template, extraData = {}) {
         let chatData = {
           user: game.user.id,
           speaker: ChatMessage.getSpeaker({ actor }),
-          content: await renderTemplate(template, templateContext),
+          content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
           sound: CONFIG.sounds.notification,
           type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         };

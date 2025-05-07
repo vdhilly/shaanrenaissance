@@ -397,7 +397,7 @@ export class ShaaniSheetSR extends ActorSheetSR {
       shaandars,
       template = "systems/shaanrenaissance/templates/actors/Shaani/partials/defineShaandars.hbs",
     } = {}) {
-      const html = await renderTemplate(template, { actor, members, shaandars, config: CONFIG.shaanRenaissance });
+      const html = await foundry.applications.handlebars.renderTemplate(template, { actor, members, shaandars, config: CONFIG.shaanRenaissance });
 
       return new Promise((resolve) => {
         const data = {
@@ -538,7 +538,7 @@ export class ShaaniSheetSR extends ActorSheetSR {
         let chatData = {
           user: game.user.id,
           speaker: ChatMessage.getSpeaker({ actor }),
-          content: await renderTemplate(template, templateContext),
+          content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
           sound: CONFIG.sounds.notification,
           type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         };
@@ -579,7 +579,7 @@ export class ShaaniSheetSR extends ActorSheetSR {
         let chatData = {
           user: game.user.id,
           speaker: ChatMessage.getSpeaker({ actor }),
-          content: await renderTemplate(template, templateContext),
+          content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
           sound: CONFIG.sounds.notification,
           type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         };

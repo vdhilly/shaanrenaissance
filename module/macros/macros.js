@@ -32,7 +32,7 @@ export async function RemoveCoins(actors) {
   }
 }
 async function GetCredosOptions({ credos, template = "systems/shaanrenaissance/templates/dialogs/add-remove-credos.hbs" } = {}) {
-  const html = await renderTemplate(template, {
+  const html = await foundry.applications.handlebars.renderTemplate(template, {
     credos,
   });
   const config = CONFIG.shaanRenaissance;
@@ -82,7 +82,7 @@ export async function AddXP(actors) {
   }
 }
 async function GetXPOptions({ xp, template = "systems/shaanrenaissance/templates/dialogs/add-xp.hbs" } = {}) {
-  const html = await renderTemplate(template, {
+  const html = await foundry.applications.handlebars.renderTemplate(template, {
     xp,
   });
   const config = CONFIG.shaanRenaissance;
@@ -132,7 +132,7 @@ export async function AddPrestige(actors) {
   }
 }
 async function GetPrestigeOptions({ prestige, template = "systems/shaanrenaissance/templates/dialogs/add-prestige.hbs" } = {}) {
-  const html = await renderTemplate(template, {
+  const html = await foundry.applications.handlebars.renderTemplate(template, {
     prestige,
   });
   const config = CONFIG.shaanRenaissance;

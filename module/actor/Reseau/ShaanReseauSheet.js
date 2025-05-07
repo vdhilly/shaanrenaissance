@@ -52,38 +52,38 @@ export default class ShaanReseauSheet extends ActorSheetSR {
     this.itemFilter(sheetData, actorData);
     this.defineInitiative(sheetData, actorData);
 
-    sheetData.enrichedGMnotes = await TextEditor.enrichHTML(
+    sheetData.enrichedGMnotes = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       foundry.utils.getProperty(this.actor.system, "biography.campagne.gm"),
       { async: true }
     );
-    sheetData.enrichedTypeMembres = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "typesMembres"), {
+    sheetData.enrichedTypeMembres = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "typesMembres"), {
       async: true,
     });
-    sheetData.enrichedMotivations = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "motivation"), {
+    sheetData.enrichedMotivations = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "motivation"), {
       async: true,
     });
-    sheetData.enrichedMoyens = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "moyens"), {
+    sheetData.enrichedMoyens = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "moyens"), {
       async: true,
     });
-    sheetData.enrichedNotes = await TextEditor.enrichHTML(
+    sheetData.enrichedNotes = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       foundry.utils.getProperty(this.actor.system, "biography.campagne.notes"),
       { async: true }
     );
-    sheetData.enrichedAllies = await TextEditor.enrichHTML(
+    sheetData.enrichedAllies = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       foundry.utils.getProperty(this.actor.system, "biography.campagne.allies"),
       { async: true }
     );
-    sheetData.enrichedEnemies = await TextEditor.enrichHTML(
+    sheetData.enrichedEnemies = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       foundry.utils.getProperty(this.actor.system, "biography.campagne.enemies"),
       { async: true }
     );
-    sheetData.enrichedSchemes = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "Magic.schèmes"), {
+    sheetData.enrichedSchemes = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "Magic.schèmes"), {
       async: true,
     });
-    sheetData.enrichedAlchemy = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "Magic.alchimie"), {
+    sheetData.enrichedAlchemy = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "Magic.alchimie"), {
       async: true,
     });
-    sheetData.enrichedEnchants = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "Magic.enchantement"), {
+    sheetData.enrichedEnchants = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "Magic.enchantement"), {
       async: true,
     });
 

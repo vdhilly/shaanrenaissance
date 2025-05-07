@@ -223,7 +223,7 @@ async function onPuiser(event) {
       chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor }),
-        content: await renderTemplate(messageTemplate, templateContext),
+        content: await foundry.applications.handlebars.renderTemplate(messageTemplate, templateContext),
         sound: CONFIG.sounds.notification,
         type: CONST.CHAT_MESSAGE_STYLES.OTHER,
         whisper: whispers,
@@ -239,7 +239,7 @@ async function onPuiser(event) {
     result = null,
     template = "systems/shaanrenaissance/templates/chat/puiser-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       domain,
       diceList,
       choix,
@@ -398,7 +398,7 @@ async function onPuiserNecrose(event) {
       chatData = {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor }),
-        content: await renderTemplate(messageTemplate, templateContext),
+        content: await foundry.applications.handlebars.renderTemplate(messageTemplate, templateContext),
         sound: CONFIG.sounds.notification,
         style: CONST.CHAT_MESSAGE_STYLES.OTHER, 
         whisper: whispers,
@@ -415,7 +415,7 @@ async function onPuiserNecrose(event) {
     result = null,
     template = "systems/shaanrenaissance/templates/chat/puiserNecrose-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, { domain, choix, result });
+    const html = await foundry.applications.handlebars.renderTemplate(template, { domain, choix, result });
     const puiserData = {
       diceList: diceList,
       choix: choix,

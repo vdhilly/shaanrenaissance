@@ -198,11 +198,11 @@ export class ItemSummaryRenderer {
     var _a, _b, _c;
     const description = (0, isItemSystemData)(chatData)
         ? chatData.description.value
-        : await TextEditor.enrichHTML(item.description, {
+        : await foundry.applications.ux.TextEditor.implementation.enrichHTML(item.description, {
             rollData: item.getRollData(),
             async: !0,
           }),
-      summary = await renderTemplate(
+      summary = await foundry.applications.handlebars.renderTemplate(
         "systems/shaanrenaissance/templates/actors/partials/item-summary.hbs",
         {
           item,

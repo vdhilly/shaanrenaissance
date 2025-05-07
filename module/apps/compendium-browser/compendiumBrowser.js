@@ -9,7 +9,6 @@ export class compendiumBrowser extends foundry.applications.api.ApplicationV2 {
       (this.dataTabsList = ["abilities", "bestiary", "acquis", "races", "castes", "people", "jobs"]),
       (this.packLoader = new PackLoader()),
       (this.settings = game.settings.get("shaanrenaissance", "compendiumBrowserPacks")),
-      (this.navigationTab = this.hookTab()),
       (this.tabs = {
         abilities: new browserTabs.Abilities(this),
         bestiary: new browserTabs.Bestiary(this),
@@ -175,8 +174,18 @@ export class compendiumBrowser extends foundry.applications.api.ApplicationV2 {
   activateListeners($html) {
     var _a, _b, _c;
     super.activateListeners($html);
-    const html = $html[0],
-      activeTabName = this.activeTab;
+    const html = $html[0]
+
+    if (!this.navigationTab && this._tabs?.[0]) {
+      this.navigationTab = this._tabs[0];
+      const originalCallback = this.navigationTab.callback;
+      this.navigationTab.callback = async (event, tabs, active) => {
+        if (originalCallback) originalCallback(event, tabs, active);
+        await this.loadTab(active);
+      };
+    }
+
+    activeTabName = this.activeTab;
     if (
       (this.navigationTab.active !== activeTabName && this.navigationTab.activate(activeTabName), "settings" === activeTabName)
     ) {

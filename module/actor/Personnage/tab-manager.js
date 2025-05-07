@@ -2,7 +2,7 @@ export class PersonnageSheetTabManager {
   constructor(actor, link) {
     (this.actor = actor),
       (this.link = link),
-      renderTemplate(`systems/shaanrenaissance/templates/actors/${actor.type}/manage-tabs.hbs`).then((template) => {
+      foundry.applications.handlebars.renderTemplate(`systems/shaanrenaissance/templates/actors/${actor.type}/manage-tabs.hbs`).then((template) => {
         $(this.link).tooltipster({
           content: template,
           contentAsHTML: !0,

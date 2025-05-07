@@ -57,7 +57,7 @@ export class CompendiumBrowserTab {
       liElements = [];
     this.currentIndex = indexData;
     for (const entry of indexData) {
-      const htmlString = await renderTemplate(this.templatePath, {
+      const htmlString = await foundry.applications.handlebars.renderTemplate(this.templatePath, {
           entry,
           filterData: this.filterData,
         }),
@@ -142,7 +142,7 @@ export class CompendiumBrowserTab {
     if (!this.isInitialized) {
       throw new Error(`Compendium Browser Tab "${this.tabName}" is not initialized!`);
     }
-    const content = await renderTemplate("systems/shaanrenaissance/templates/compendium-browser/roll-table-dialog.hbs", {
+    const content = await foundry.applications.handlebars.renderTemplate("systems/shaanrenaissance/templates/compendium-browser/roll-table-dialog.hbs", {
       count: this.currentIndex.length,
       rollTables: game.tables.contents,
     });
@@ -168,7 +168,7 @@ export class CompendiumBrowserTab {
     if (!this.isInitialized) {
       throw new Error(`Compendium Browser Tab "${this.tabName}" is not initialized!`);
     }
-    const content = await renderTemplate("systems/shaanrenaissance/templates/compendium-browser/roll-table-dialog.hbs", {
+    const content = await foundry.applications.handlebars.renderTemplate("systems/shaanrenaissance/templates/compendium-browser/roll-table-dialog.hbs", {
       count: this.currentIndex.length,
       rollTables: game.tables.contents,
     });

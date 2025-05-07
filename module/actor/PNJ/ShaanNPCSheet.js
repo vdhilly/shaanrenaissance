@@ -214,7 +214,7 @@ export default class ShaanNPCSheet extends ActorSheetSR {
             Bâtiment: {},
             Trihn: {},
           };
-          const html = await renderTemplate(template, {
+          const html = await foundry.applications.handlebars.renderTemplate(template, {
             actor,
             type,
             config: CONFIG.shaanRenaissance,

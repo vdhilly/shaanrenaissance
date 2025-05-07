@@ -47,7 +47,7 @@ export class ItemSR extends Item {
           this.getRollData(),
           null !== (_c = htmlOptions.rollData) && void 0 !== _c ? _c : {}
         )),
-        (chatData.description.value = await TextEditor.enrichHTML(chatData.description.value, {
+        (chatData.description.value = await foundry.applications.ux.TextEditor.implementation.enrichHTML(chatData.description.value, {
           ...htmlOptions,
           async: !0,
         })),

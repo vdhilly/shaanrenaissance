@@ -285,7 +285,7 @@ export async function domainTest({
     difficulty = 0,
     template = "systems/shaanrenaissance/templates/chat/domainTest-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       actor,
       domain,
       spécialisation,
@@ -549,7 +549,7 @@ export async function SpéTest({
     difficulty = 0,
     template = "systems/shaanrenaissance/templates/chat/speTest-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       actor,
       domain,
       spécialisation,
@@ -831,7 +831,7 @@ export async function necroseTest({
     difficulty = 0,
     template = "systems/shaanrenaissance/templates/chat/necroseTest-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       actor,
       domain,
       spécialisation,
@@ -1089,7 +1089,7 @@ export async function SpéTestNécr({
     difficulty = 0,
     template = "systems/shaanrenaissance/templates/chat/speTest-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       actor,
       domain,
       spécialisation,
@@ -1265,7 +1265,7 @@ export async function shaaniTest({
     corps,
     template = "systems/shaanrenaissance/templates/actors/Shaani/chat/shaaniTest-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, { actor, esprit, ame, corps });
+    const html = await foundry.applications.handlebars.renderTemplate(template, { actor, esprit, ame, corps });
     const actorData = actor.toObject(!1);
 
     return new Promise((resolve) => {
@@ -1323,14 +1323,14 @@ export async function RollToCustomMessage(actor = null, rollResult, template, ex
     chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
-      content: await renderTemplate(template, templateContext),
+      content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
       sound: CONFIG.sounds.dice,
     };
   } else {
     chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
-      content: await renderTemplate(template, templateContext),
+      content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
       sound: CONFIG.sounds.dice,
     };
   }
@@ -1470,7 +1470,7 @@ export async function RegenHP({
     let chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
-      content: await renderTemplate(template, templateContext),
+      content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
       sound: CONFIG.sounds.dice,
       type: CONST.CHAT_MESSAGE_STYLES.OTHER,
     };
@@ -1484,7 +1484,7 @@ export async function RegenHP({
     malusCorps = null,
     template = "systems/shaanrenaissance/templates/chat/regen-dialog.hbs",
   } = {}) {
-    const html = await renderTemplate(template, {
+    const html = await foundry.applications.handlebars.renderTemplate(template, {
       actor,
       hp,
       malusEsprit,
@@ -1608,7 +1608,7 @@ export async function trihnTest({
     let chatData = {
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
-      content: await renderTemplate(template, templateContext),
+      content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
       sound: CONFIG.sounds.dice,
       type: CONST.CHAT_MESSAGE_STYLES.OTHER,
     };
