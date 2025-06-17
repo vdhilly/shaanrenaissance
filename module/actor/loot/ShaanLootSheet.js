@@ -41,7 +41,7 @@ export default class ShaanLootSheetSR extends ActorSheetSR {
     this.itemSort(sheetData.items);
     this.itemFilter(sheetData, actorData);
 
-    sheetData.enrichedGMnotes = await TextEditor.enrichHTML(foundry.utils.getProperty(this.actor.system, "details.description"), {
+    sheetData.enrichedGMnotes = await foundry.applications.ux.TextEditor.implementation.enrichHTML(foundry.utils.getProperty(this.actor.system, "details.description"), {
       async: true,
     });
 

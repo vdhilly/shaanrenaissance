@@ -4,7 +4,7 @@ export class SRActiveEffectConfig extends foundry.applications.sheets.ActiveEffe
   }
   async getData(options = {}) {
     const context = await super.getData(options);
-    context.descriptionHTML = await TextEditor.enrichHTML(this.object.description, { secrets: this.object.isOwner });
+    context.descriptionHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.description, { secrets: this.object.isOwner });
     const legacyTransfer = CONFIG.ActiveEffect.legacyTransferral;
     const labels = {
       transfer: {

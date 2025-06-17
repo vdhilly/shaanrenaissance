@@ -1,4 +1,4 @@
-.tab[data-tab].active {
+#compendium-browser .tab[data-tab].active {
   display: initial;
 }
 #compendium-browser > section.window-content > .content-box {
