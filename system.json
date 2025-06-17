@@ -15,8 +15,8 @@
   ],
   "version": "v2.5.0",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12"
+    "minimum": "13",
+    "verified": "13"
   },
   "esmodules": ["scripts/shaanRenaissance.js"],
   "scripts": ["greensock/dist/gsap.min.js", "lib/tooltipster.bundle.min.js"],
