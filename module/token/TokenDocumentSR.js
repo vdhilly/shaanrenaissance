@@ -1,3 +1,5 @@
+import { objectHasKey } from "../utils/utils.js";
+
 export class TokenDocumentSR extends TokenDocument {
   hasStatusEffect(statusId) {
     if (statusId === "dead") return !!this.actor?.statuses.has("dead");
