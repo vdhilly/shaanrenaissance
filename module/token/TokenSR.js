@@ -171,24 +171,41 @@ export class TokenSR extends foundry.canvas.placeables.Token {
     };
 
     const colors = {
-      0: 0xf8ed00, 
-      1: 0x5cc8fc, 
-      2: 0xdd5616, 
+      0: 0xf8ed00, // Esprit
+      1: 0x5cc8fc, // Âme
+      2: 0xdd5616, // Corps
     };
 
     const color = colors[number] ?? 0xffffff;
     
     bar.clear();
 
-    // Design PIXI v8
-    bar.rect(0, 0, this.w, h);
-    bar.fill({ color: 0x000000, alpha: 0.5 });
-    bar.stroke({ color: 0x000000, alpha: 0.9, width: 2, join: "round" });
+    // Rétrocompatibilité PIXI v7 / v8 robuste dans Foundry v14
+    // 1. Dessin du Background (Noir)
+    if ( typeof bar.rect === "function" ) {
+      bar.rect(0, 0, this.w, h);
+      bar.fill({ color: 0x000000, alpha: 0.5 });
+      bar.stroke({ color: 0x000000, alpha: 0.9, width: 2 });
+    } else {
+      // Version classique si .rect() n'est pas encore exposé sur l'instance
+      bar.beginFill(0x000000, 0.5)
+         .lineStyle(2, 0x000000, 0.9)
+         .drawRect(0, 0, this.w, h)
+         .endFill();
+    }
 
+    // 2. Dessin de la Jauge (Couleur)
     if ( pct > 0 ) {
-      bar.rect(1, 1, pct * (this.w - 2), h - 2);
-      bar.fill({ color: color, alpha: 0.8 });
-      bar.stroke({ color: 0x000000, alpha: 0.8, width: 1, join: "round" });
+      if ( typeof bar.rect === "function" ) {
+        bar.rect(1, 1, pct * (this.w - 2), h - 2);
+        bar.fill({ color: color, alpha: 0.8 });
+        bar.stroke({ color: 0x000000, alpha: 0.8, width: 1 });
+      } else {
+        bar.beginFill(color, 0.8)
+           .lineStyle(1, 0x000000, 0.8)
+           .drawRect(1, 1, pct * (this.w - 2), h - 2)
+           .endFill();
+      }
     }
 
     const posY = yPositions[number];
