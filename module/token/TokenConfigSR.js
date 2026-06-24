@@ -2,22 +2,20 @@ export class TokenConfigSR extends foundry.applications.sheets.TokenConfig {
   get template() {
     return "systems/shaanrenaissance/templates/scene/tokenConfig.hbs";
   }
+
   async getData(options = {}) {
     const alternateImages = await this._getAlternateTokenImages();
     const attributeSource = this.actor?.system instanceof foundry.abstract.DataModel ? this.actor?.type : this.actor?.system;
     const attributes = TokenDocument.implementation.getTrackedAttributes(attributeSource);
     const canBrowseFiles = game.user.hasPermission("FILES_BROWSE");
 
-    // Prepare Token data
     const doc = this.preview ?? this.document;
-    doc.bar3 = { attribute: "attribute.hpCorps" };
     const source = doc.toObject();
     const sourceDetectionModes = new Set(source.detectionModes.map((m) => m.id));
     const preparedDetectionModes = doc.detectionModes.filter((m) => !sourceDetectionModes.has(m.id));
 
-    // Return rendering context
     const data = {
-      fields: this.document.schema.fields, // Important to use the true document schema,
+      fields: this.document.schema.fields, 
       lightFields: this.document.schema.fields.light.fields,
       cssClasses: [this.isPrototype ? "prototype" : null].filter((c) => !!c).join(" "),
       isPrototype: this.isPrototype,
@@ -67,29 +65,30 @@ export class TokenConfigSR extends foundry.applications.sheets.TokenConfig {
     };
     return data;
   }
+
   _getSubmitData(updateData = {}) {
     const formData = foundry.utils.expandObject(super._getSubmitData(updateData));
 
-    // Prototype Token unpacking
     if (this.document instanceof foundry.data.PrototypeToken) {
       Object.assign(formData, formData.prototypeToken);
       delete formData.prototypeToken;
     }
 
-    // Mirror token scale
     if ("scale" in formData) {
       formData.texture.scaleX = formData.scale * (formData.mirrorX ? -1 : 1);
       formData.texture.scaleY = formData.scale * (formData.mirrorY ? -1 : 1);
     }
     ["scale", "mirrorX", "mirrorY"].forEach((k) => delete formData[k]);
 
-    // Clear detection modes array
     formData.detectionModes ??= [];
 
-    // Treat "None" as null for bar attributes
-    formData.bar1.attribute ||= null;
-    formData.bar2.attribute ||= null;
-    formData.bar3.attribute ||= null;
+    if ( formData.bar1 ) formData.bar1.attribute ||= null;
+    if ( formData.bar2 ) formData.bar2.attribute ||= null;
+    
+    if ( formData.bar3 ) {
+      formData["flags.shaanrenaissance.bar3.attribute"] = formData.bar3.attribute || null;
+      delete formData.bar3;
+    }
     return foundry.utils.flattenObject(formData);
   }
 }

@@ -1,5 +1,4 @@
 export class SRTokenHUD extends foundry.applications.hud.TokenHUD {
-  /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id: "token-hud",
@@ -9,21 +8,23 @@ export class SRTokenHUD extends foundry.applications.hud.TokenHUD {
 
   getData(options = {}) {
     let data = super.getData(options);
-    this.object.document.bar1 = { attribute: "attributes.hpEsprit" };
-    this.object.document.bar2 = { attribute: "attributes.hpAme" };
-    this.object.document.bar3 = { attribute: "attributes.hpCorps" };
-    const bar1 = this.object.document.getBarAttribute("bar1");
-    const bar2 = this.object.document.getBarAttribute("bar2");
-    const bar3 = this.object.document.getBarAttribute("bar3");
-    let bars = [bar1, bar2, bar3];
-    if (this.object.actor.type !== "Loot") {
+    const doc = this.object.document;
+
+    const bar1 = doc.getBarAttribute("bar1", { alternative: "attributes.hpEsprit" });
+    const bar2 = doc.getBarAttribute("bar2", { alternative: "attributes.hpAme" });
+    const bar3 = doc.getBarAttribute("bar3", { alternative: "attributes.hpCorps" });
+    
+    const bars = [bar1, bar2, bar3];
+
+    if (this.object.actor && this.object.actor.type !== "Loot") {
       bars.forEach((b) => {
-        if (b & b.value) {
+        if (b && typeof b.value === "number") {
           if (b.value > b.max) {
             b.value = b.max;
           }
         }
       });
+
       data = foundry.utils.mergeObject(data, {
         canConfigure: game.user.can("TOKEN_CONFIGURE"),
         canToggleCombat: ui.combat !== null,
