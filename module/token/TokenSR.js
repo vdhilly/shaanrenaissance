@@ -187,14 +187,12 @@ export class TokenSR extends foundry.canvas.placeables.Token {
       bar.fill({ color: 0x000000, alpha: 0.5 });
       bar.stroke({ color: 0x000000, alpha: 0.9, width: 2 });
     } else {
-      // Version classique si .rect() n'est pas encore exposé sur l'instance
       bar.beginFill(0x000000, 0.5)
          .lineStyle(2, 0x000000, 0.9)
          .drawRect(0, 0, this.w, h)
          .endFill();
     }
 
-    // 2. Dessin de la Jauge (Couleur)
     if ( pct > 0 ) {
       if ( typeof bar.rect === "function" ) {
         bar.rect(1, 1, pct * (this.w - 2), h - 2);

@@ -1,5 +1,5 @@
 export class SRActiveEffect extends ActiveEffect {
-  _applyAdd(actor, change, current, delta, changes) {
+  __applyChangeAdd(actor, change, current, delta, changes) {
     let update;
     const ct = foundry.utils.getType(current);
     switch (ct) {
