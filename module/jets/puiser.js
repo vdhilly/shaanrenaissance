@@ -1,15 +1,19 @@
 import { getSelectedOrOwnActors } from "../utils/utils.js";
 
+const PUISER_ACTOR_TYPES = ["Personnage", "PNJ", "Créature", "Shaani", "Réseau"];
+
+const PUISER_MESSAGE_TEMPLATE = "systems/shaanrenaissance/templates/chat/puiser.hbs";
+
 export function addChatListeners(app, html, data) {
   html.find("button.puiser").on("click", onPuiser);
   html.find("button.puiser-necrose").on("click", onPuiserNecrose);
 }
 
 async function onPuiser(event) {
-  const actors = getSelectedOrOwnActors(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]);
+  const actors = getSelectedOrOwnActors(PUISER_ACTOR_TYPES);
   if (!actors.length) return ui.notifications.warn("Vous devez sélectionner au moins un token.");
 
-  const chatCard = $(this.parentElement);
+  const chatCard = $(this).closest(".chat-card");
   const dice = chatCard.find("input.dice-value");
   const isParalyzed = chatCard.find(".die.Corps").attr("data-paralyzed") === "true";
   const isBewitched = chatCard.find(".die.Ame").attr("data-bewitched") === "true";
@@ -19,7 +23,6 @@ async function onPuiser(event) {
   const domainName = chatCard.find("span.domainName").text();
   const spéBonus = Number(chatCard.find("b.spéBonus").text());
   const acquisBonus = Number(chatCard.find("b.acquisBonus").text());
-  const messageTemplate = "systems/shaanrenaissance/templates/chat/puiser.hbs";
 
   let corps = isParalyzed ? 0 : Number(dice[0]?.value ?? 0);
   let ame = isBewitched ? 0 : Number(dice[1]?.value ?? 0);
@@ -41,15 +44,14 @@ async function onPuiser(event) {
     puiser2  = { value: ame, label: "ame", flavor: "Ame", color: "bleu", checked: false };
   }
 
-  if (baseDice.value === 10) baseDice.value = 0;
-  if (puiser1.value === 10) puiser1.value = 0;
-  if (puiser2.value === 10) puiser2.value = 0;
+  for (const d of [baseDice, puiser1, puiser2]) {
+    if (d.value === 10) d.value = 0;
+  }
 
   if (baseDice.value > domain && puiser1.value > domain && puiser2.value > domain) {
     return ui.notifications.error("Vous ne pouvez puiser dans aucun Trihn.");
   }
 
-  // Définition des choix
   const choix = { bonus: spéBonus + acquisBonus };
 
   if (puiser1.value !== 0 && puiser1.value <= domain) {
@@ -98,44 +100,22 @@ async function onPuiser(event) {
 
   const result = puiserOptions.result + spéBonus + acquisBonus;
 
-  for (const actor of actors) {
-    const attributes = actor.system.attributes;
-    const flavor = puiserOptions.flavor;
-    const updateData = {};
-
-    const flavor1 = `hp${flavor.flavor1}`;
-    if (attributes[flavor1]?.value > 0) {
-      updateData[`system.attributes.${flavor1}.value`] = attributes[flavor1].value - 1;
-    }
-
-    if (flavor.flavor2) {
-      const flavor2 = `hp${flavor.flavor2}`;
-      if (attributes[flavor2]?.value > 0) {
-        updateData[`system.attributes.${flavor2}.value`] = attributes[flavor2].value - 1;
-      }
-    }
-
-    if (Object.keys(updateData).length > 0 && puiserOptions.lose) {
-      await actor.update(updateData);
-      actor.sheet.render(false);
-    }
-
-    await _sendPuiserChatMessage(actor, result, flavor, messageTemplate);
-  }
+  await Promise.all(
+    actors.map((actor) => _applyPuiserToActor(actor, result, puiserOptions))
+  );
 }
 
 async function onPuiserNecrose(event) {
-  const actors = getSelectedOrOwnActors(["Personnage", "PNJ", "Créature", "Shaani", "Réseau"]);
+  const actors = getSelectedOrOwnActors(PUISER_ACTOR_TYPES);
   if (!actors.length) return ui.notifications.warn("Vous devez sélectionner au moins un token.");
 
-  const chatCard = $(this.parentElement);
+  const chatCard = $(this).closest(".chat-card");
   const dice = chatCard.find("input.dice-value");
   const isDominated = chatCard.find(".die.Esprit").attr("data-dominated") === "true";
 
   const domain = Number(chatCard.find("b.domain").text());
   const spéBonus = Number(chatCard.find("b.spéBonus").text());
   const acquisBonus = Number(chatCard.find("b.acquisBonus").text());
-  const messageTemplate = "systems/shaanrenaissance/templates/chat/puiser.hbs";
 
   let necrose = Number(dice[0]?.value ?? 0);
   let esprit = isDominated ? 0 : Number(dice[1]?.value ?? 0);
@@ -174,25 +154,37 @@ async function onPuiserNecrose(event) {
 
   const result = puiserOptions.result + spéBonus + acquisBonus;
 
-  for (const actor of actors) {
-    const updateData = {};
-
-    if (actor.system.attributes.hpEsprit?.value > 0) {
-      updateData["system.attributes.hpEsprit.value"] = actor.system.attributes.hpEsprit.value - 1;
-    }
-
-    if (Object.keys(updateData).length > 0 && puiserOptions.lose) {
-      await actor.update(updateData);
-      actor.sheet.render(false);
-    }
-
-    await _sendPuiserChatMessage(actor, result, puiserOptions.flavor, messageTemplate);
-  }
+  await Promise.all(
+    actors.map((actor) => _applyPuiserToActor(actor, result, puiserOptions))
+  );
 }
 
+async function _applyPuiserToActor(actor, result, puiserOptions) {
+  const attributes = actor.system.attributes;
+  const flavor = puiserOptions.flavor;
+  const updateData = {};
+
+  const flavor1 = `hp${flavor.flavor1}`;
+  if (attributes[flavor1]?.value > 0) {
+    updateData[`system.attributes.${flavor1}.value`] = attributes[flavor1].value - 1;
+  }
+
+  if (flavor.flavor2) {
+    const flavor2 = `hp${flavor.flavor2}`;
+    if (attributes[flavor2]?.value > 0) {
+      updateData[`system.attributes.${flavor2}.value`] = attributes[flavor2].value - 1;
+    }
+  }
+
+  if (Object.keys(updateData).length > 0 && puiserOptions.lose) {
+    await actor.update(updateData);
+  }
+
+  return _sendPuiserChatMessage(actor, result, flavor, PUISER_MESSAGE_TEMPLATE);
+}
 
 async function GetPuiserOptions({ domain = null, diceList = null, choix = {}, template = "" } = {}) {
-  const html = await renderTemplate(template, { domain, diceList, choix });
+  const html = await foudry.applications.handlebars.renderTemplate(template, { domain, diceList, choix });
 
   return new Promise((resolve) => {
     new Dialog({
@@ -251,7 +243,6 @@ async function _sendPuiserChatMessage(actor, result, flavor, template) {
   const rollMode = game.settings.get("core", "rollMode");
   let whispers = [];
 
-  // En V14, on filtre directement la collection des utilisateurs
   if (rollMode === "gmroll" || rollMode === "blindroll") {
     whispers = game.users.filter((u) => u.isGM).map((u) => u.id);
   } else if (rollMode === "selfroll") {
