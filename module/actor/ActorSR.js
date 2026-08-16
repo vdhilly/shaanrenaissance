@@ -2,30 +2,35 @@ import { CHARACTER_ACTOR_TYPES, CHARACTER_SHEET_TABS, ErrorSR, tupleHasValue } f
 import { ActorInventory } from "./Inventory/ActorInventory.js";
 import { ActorConditions } from "./conditions.js";
 import { TokenEffect } from "./token-effect.js";
+
 export class ActorSR extends Actor {
   constructor(...args) {
-    super(...args), (this.shaanis = new Set());
+    super(...args);
+    this.shaanis = new Set();
+    this.conditions = new ActorConditions();
   }
+
   get hasPlayerOwner() {
     return game.users.some((u) => !u.isGM && this.testUserPermission(u, "OWNER"));
   }
+
   get temporaryEffects() {
     const fromConditions = this.conditions.active.map((c) => new TokenEffect(c));
-
     return [...super.temporaryEffects, ...fromConditions].flat();
   }
+
   get primaryUpdater() {
-    // 1. The first active GM, sorted by ID
-    const { activeGM } = game.users;
-    if (activeGM) return activeGM;
+    // Correction V14 : activeGM n'existe plus, on utilise le tableau activeGMs
+    const activeGMs = game.users.activeGMs;
+    if (activeGMs.length > 0) return activeGMs.sort((a, b) => (a.id > b.id ? 1 : -1))[0];
 
     const activeUsers = game.users.filter((u) => u.active);
 
-    // 2. The user with this actor assigned
+    // L'utilisateur assigné à cet acteur
     const primaryPlayer = this.isToken ? null : activeUsers.find((u) => u.character && u.character.id === this.id);
     if (primaryPlayer) return primaryPlayer;
 
-    // 3. Anyone who can update the actor
+    // Utilisateur avec la permission d'édition
     const firstUpdater = game.users
       .filter((u) => this.canUserModify(u, "update"))
       .sort((a, b) => (a.id > b.id ? 1 : -1))
@@ -33,37 +38,39 @@ export class ActorSR extends Actor {
 
     return firstUpdater || null;
   }
+
   isOfType(...types) {
-    return types.some((t) => ("character" === t ? (0, tupleHasValue)(CHARACTER_ACTOR_TYPES, this.type) : this.type === t));
+    return types.some((t) => ("character" === t ? tupleHasValue(CHARACTER_ACTOR_TYPES, this.type) : this.type === t));
   }
+
   isLootableBy(user) {
     return this.canUserModify(user, "update");
   }
+
   _initialize(options) {
-    this.conditions = new ActorConditions();
     super._initialize(options);
   }
+
   prepareBaseData() {
-    var _a, _b, _c, _d, _e, _f, _g;
     super.prepareBaseData();
-    const { flags } = this;
-    this.flags.shaanRenaissance = foundry.utils.mergeObject(
-      null !== (_a = this.flags.shaanRenaissance) && void 0 !== _a ? _a : {}
-    );
-    flags.shaanRenaissance.sheetTabs = foundry.utils.mergeObject(
+    
+    this.flags.shaanRenaissance ??= {};
+    this.flags.shaanRenaissance.sheetTabs = foundry.utils.mergeObject(
       CHARACTER_SHEET_TABS.reduce(
         (tabs, tab) => ({
           ...tabs,
-          [tab]: !0,
+          [tab]: true,
         }),
         {}
       ),
-      null !== (_b = flags.shaanRenaissance.sheetTabs) && void 0 !== _b ? _b : {}
+      this.flags.shaanRenaissance.sheetTabs || {}
     );
   }
+
   hasCondition(...slugs) {
     return slugs.some((slug) => this.conditions.bySlug(slug, { active: true }).length > 0);
   }
+
   prepareEmbeddedDocuments() {
     super.prepareEmbeddedDocuments();
     const Items = this.items.filter((i) =>
@@ -84,26 +91,20 @@ export class ActorSR extends Actor {
     this.inventory = new ActorInventory(this, Items);
     this.prepareDataFromItems();
   }
+
   prepareDataFromItems() {
     for (const item of this.items) {
       item.prepareActorData?.();
     }
   }
+
+  // CORRECTION CRITIQUE V14 : Délégation directe au moteur standard de création de documents
   static async createDocuments(data = [], context = {}) {
-    if (context.parent?.pack) context.pack = context.parent.pack;
-    const { parent, pack, ...options } = context;
-    const created = await this.database.create(this.implementation, {
-      data,
-      options,
-      parent,
-      pack,
-    });
-    await this._onCreateDocuments(created, context);
-    return created;
+    return await super.createDocuments(data, context);
   }
+
   async modifyTokenAttribute(attribute, value, isDelta = false, isBar = true) {
     const current = foundry.utils.getProperty(this.system, attribute);
-    // Determine the updates to make to the actor data
     let updates;
     if (isBar) {
       if (isDelta) {
@@ -118,6 +119,7 @@ export class ActorSR extends Actor {
     const allowed = Hooks.call("modifyTokenAttribute", { attribute, value, isDelta, isBar }, updates);
     return allowed !== false ? this.update(updates) : this;
   }
+
   async _preCreate(data, options, user) {
     let icon = data.img;
     const type = data.type;
@@ -129,12 +131,12 @@ export class ActorSR extends Actor {
         break;
     }
 
-    await this.updateSource({ img: icon });
+    this.updateSource({ img: icon });
 
     return await super._preCreate(data, options, user);
-    
   }
 }
+
 export const ActorProxySR = new Proxy(ActorSR, {
   construct: (_target, args) => new CONFIG.shaanRenaissance.Actor.documentClasses[args[0].type](...args),
 });
