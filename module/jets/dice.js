@@ -291,7 +291,7 @@ export async function domainTest({
       spécialisation,
       difficulty,
     });
-    const actorData = actor.toObject(!1);
+    const actorData = actor.toObject(false);
     const config = CONFIG.shaanRenaissance;
 
     return new Promise((resolve) => {
@@ -303,25 +303,30 @@ export async function domainTest({
         buttons: {
           normal: {
             label: game.i18n.localize("chat.actions.roll"),
-            callback: (html) => resolve(_processdomainTestOptions(html[0].querySelector("form"))),
+            callback: (html) => {
+              const root = html instanceof jQuery ? html[0] : html;
+              return resolve(_processdomainTestOptions(root.querySelector("form")));
+            },
           },
           cancel: {
             label: game.i18n.localize("chat.actions.cancel"),
-            callback: (html) => resolve({ cancelled: true }),
+            callback: () => resolve({ cancelled: true }),
           },
         },
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
 
-      new CheckDialog(data, null).render(true);
+      // Remplacement de `null` par `{}` pour éviter l'erreur de fusion dans CheckDialog
+      new CheckDialog(data, {}).render(true);
     });
   }
+
   function _processdomainTestOptions(form) {
     return {
-      difficulty: form.difficulty?.value,
-      domain: form.domain?.value,
-      spécialisation: form.spécialisation?.value,
+      difficulty: form?.difficulty?.value,
+      domain: form?.domain?.value,
+      spécialisation: form?.spécialisation?.value,
     };
   }
 }
@@ -549,6 +554,7 @@ export async function SpéTest({
     difficulty = 0,
     template = "systems/shaanrenaissance/templates/chat/speTest-dialog.hbs",
   } = {}) {
+    // Utilisation de foundry.applications.handlebars.renderTemplate moderne pour v12+
     const html = await foundry.applications.handlebars.renderTemplate(template, {
       actor,
       domain,
@@ -556,7 +562,8 @@ export async function SpéTest({
       difficulty,
       description,
     });
-    const actorData = actor.toObject(!1);
+    
+    const actorData = actor.toObject(false);
     let spéBonusF;
     let spéAcquisF;
     const TestData = {
@@ -580,13 +587,14 @@ export async function SpéTest({
           },
           cancel: {
             label: game.i18n.localize("chat.actions.cancel"),
-            callback: (html) => resolve({ cancelled: true }),
+            callback: () => resolve({ cancelled: true }),
           },
         },
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new Dialog(data, null).render(true);
+      
+      new Dialog(data, {}).render(true);
     });
   }
   function _processdomainTestOptions(form) {
@@ -837,7 +845,7 @@ export async function necroseTest({
       spécialisation,
       difficulty,
     });
-    const actorData = actor.toObject(!1);
+    const actorData = actor.toObject(false);
     const config = CONFIG.shaanRenaissance;
 
     return new Promise((resolve) => {
@@ -849,24 +857,30 @@ export async function necroseTest({
         buttons: {
           normal: {
             label: game.i18n.localize("chat.actions.roll"),
-            callback: (html) => resolve(_processdomainTestOptions(html[0].querySelector("form"))),
+            callback: (html) => {
+              const root = html instanceof jQuery ? html[0] : html;
+              return resolve(_processdomainTestOptions(root.querySelector("form")));
+            },
           },
           cancel: {
             label: game.i18n.localize("chat.actions.cancel"),
-            callback: (html) => resolve({ cancelled: true }),
+            callback: () => resolve({ cancelled: true }),
           },
         },
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new CheckDialog(data, null).render(true);
+
+      // Corrigé: `{}` au lieu de `null`
+      new CheckDialog(data, {}).render(true);
     });
   }
+
   function _processdomainTestOptions(form) {
     return {
-      difficulty: form.difficulty?.value,
-      domain: form.domain?.value,
-      spécialisation: form.spécialisation?.value,
+      difficulty: form?.difficulty?.value,
+      domain: form?.domain?.value,
+      spécialisation: form?.spécialisation?.value,
     };
   }
 }
@@ -1096,7 +1110,7 @@ export async function SpéTestNécr({
       difficulty,
       description,
     });
-    const actorData = actor.toObject(!1);
+    const actorData = actor.toObject(false);
     const TestData = {
       domain: domain,
       domainLevel: domainLevel,
@@ -1115,24 +1129,30 @@ export async function SpéTestNécr({
         buttons: {
           normal: {
             label: game.i18n.localize("chat.actions.roll"),
-            callback: (html) => resolve(_processdomainTestOptions(html[0].querySelector("form"))),
+            callback: (html) => {
+              const root = html instanceof jQuery ? html[0] : html;
+              return resolve(_processdomainTestOptions(root.querySelector("form")));
+            },
           },
           cancel: {
             label: game.i18n.localize("chat.actions.cancel"),
-            callback: (html) => resolve({ cancelled: true }),
+            callback: () => resolve({ cancelled: true }),
           },
         },
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new Dialog(data, null).render(true);
+
+      // Corrigé: `{}` au lieu de `null`
+      new Dialog(data, {}).render(true);
     });
   }
+
   function _processdomainTestOptions(form) {
     return {
-      difficulty: parseInt(form.difficulty?.value),
-      domain: parseInt(form.domain?.value),
-      spécialisation: parseInt(form.spécialisation?.value),
+      difficulty: parseInt(form?.difficulty?.value),
+      domain: parseInt(form?.domain?.value),
+      spécialisation: parseInt(form?.spécialisation?.value),
     };
   }
 }
@@ -1266,7 +1286,7 @@ export async function shaaniTest({
     template = "systems/shaanrenaissance/templates/actors/Shaani/chat/shaaniTest-dialog.hbs",
   } = {}) {
     const html = await foundry.applications.handlebars.renderTemplate(template, { actor, esprit, ame, corps });
-    const actorData = actor.toObject(!1);
+    const actorData = actor.toObject(false);
 
     return new Promise((resolve) => {
       const data = {
@@ -1280,67 +1300,67 @@ export async function shaaniTest({
           normal: {
             label: game.i18n.localize("chat.actions.roll"),
             callback: (html) => {
-              const form = html[0].querySelector("form");
+              const root = html instanceof jQuery ? html[0] : html;
+              const form = root.querySelector("form");
               resolve(_processShaaniTestOptions(form));
             },
           },
           cancel: {
             label: game.i18n.localize("chat.actions.cancel"),
-            callback: (html) => resolve({ cancelled: true }),
+            callback: () => resolve({ cancelled: true }),
           },
         },
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
-      new CheckDialog(data, null).render(true);
+
+      // Corrigé: `{}` au lieu de `null`
+      new CheckDialog(data, {}).render(true);
     });
   }
+
   function _processShaaniTestOptions(form) {
     return {
       esprit: {
-        domain: form["esprit.domain"]?.value,
-        spe: form["esprit.spe"]?.value,
+        domain: form?.["esprit.domain"]?.value,
+        spe: form?.["esprit.spe"]?.value,
       },
       ame: {
-        domain: form["ame.domain"]?.value,
-        spe: form["ame.spe"]?.value,
+        domain: form?.["ame.domain"]?.value,
+        spe: form?.["ame.spe"]?.value,
       },
       corps: {
-        domain: form["corps.domain"]?.value,
-        spe: form["corps.spe"]?.value,
+        domain: form?.["corps.domain"]?.value,
+        spe: form?.["corps.spe"]?.value,
       },
     };
   }
 }
-export async function RollToCustomMessage(actor = null, rollResult, template, extraData) {
-  let templateContext = {
+export async function RollToCustomMessage(actor = null, rollResult, template, extraData = {}) {
+  const templateContext = {
     ...extraData,
     roll: rollResult,
     tooltip: await rollResult.getTooltip(),
   };
-  let chatData;
-  if (game.dice3d != undefined) {
-    chatData = {
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor }),
-      content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
-      sound: CONFIG.sounds.dice,
-    };
-  } else {
-    chatData = {
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor }),
-      content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
-      sound: CONFIG.sounds.dice,
-    };
-  }
-  ChatMessage.applyRollMode(chatData, "roll");
-  const chatMsg = await ChatMessage.create(chatData);
+
+  const content = await foundry.applications.handlebars.renderTemplate(template, templateContext);
+
+  const chatData = {
+    author: game.user.id,
+    speaker: ChatMessage.getSpeaker({ actor }),
+    content: content,
+    sound: CONFIG.sounds.dice,
+    rolls: [rollResult], // Permet à Foundry et Dice So Nice! d'associer le jet nativement
+  };
+
+  ChatMessage.applyMode(chatData, game.settings.get("core", "rollMode") || "roll");
+  
+  return await ChatMessage.create(chatData);
 }
 
 export async function RegenHP({
   actor = null,
-  extraMessageData,
+  extraMessageData = {},
   hp = null,
   malusEsprit = null,
   malusAme = null,
@@ -1386,11 +1406,10 @@ export async function RegenHP({
     malusAme,
     malusCorps,
   };
-  let rollResult = await new Roll(rollFormula, rollData).roll();
-  let dice3d;
-  if (game.dice3d != undefined) {
-    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
-    dice3d;
+  let rollResult = await new Roll(rollFormula, rollData).evaluate();
+  
+  if (game.dice3d) {
+    await game.dice3d.showForRoll(rollResult, game.user, true);
   }
 
   let regenEsprit;
@@ -1403,6 +1422,7 @@ export async function RegenHP({
   if (hpEspritF > hp.hpEsprit.max) {
     hpEspritF = hp.hpEsprit.max;
   }
+
   let regenAme;
   if (rollResult.terms[0].rolls[1].dice[0].total == 10 || rollResult.terms[0].rolls[1].total < 0) {
     regenAme = -1;
@@ -1413,6 +1433,7 @@ export async function RegenHP({
   if (hpAmeF > hp.hpAme.max) {
     hpAmeF = hp.hpAme.max;
   }
+
   let regenCorps;
   if (rollResult.terms[0].rolls[0].dice[0].total == 10 || rollResult.terms[0].rolls[0].total < 0) {
     regenCorps = -1;
@@ -1420,31 +1441,26 @@ export async function RegenHP({
     regenCorps = rollResult.terms[0].rolls[0].dice[0].total;
   }
   let hpCorpsF = hp.hpCorps.value + regenCorps;
-
   if (hpCorpsF > hp.hpCorps.max) {
     hpCorpsF = hp.hpCorps.max;
   }
+
   hp.hpEsprit.value = hpEspritF;
   hp.hpAme.value = hpAmeF;
   hp.hpCorps.value = hpCorpsF;
-  actor.update({
+
+  await actor.update({
     system: {
       attributes: {
-        hpEsprit: {
-          value: hpEspritF,
-        },
-        hpAme: {
-          value: hpAmeF,
-        },
-        hpCorps: {
-          value: hpCorpsF,
-        },
+        hpEsprit: { value: hpEspritF },
+        hpAme: { value: hpAmeF },
+        hpCorps: { value: hpCorpsF },
       },
     },
   });
-  actor.sheet.render();
+
   if (sendMessage) {
-    RegenToCustomMessage(actor, rollResult, messageTemplate, {
+    await RegenToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
       actor: actor,
       hp: hp,
@@ -1468,13 +1484,16 @@ export async function RegenHP({
     };
 
     let chatData = {
-      user: game.user.id,
+      author: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
       content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
       sound: CONFIG.sounds.dice,
-      type: CONST.CHAT_MESSAGE_STYLES.OTHER,
+      rolls: [rollResult],
+      style: CONST.CHAT_MESSAGE_STYLES?.OTHER ?? CONST.CHAT_MESSAGE_TYPES?.OTHER,
     };
-    ChatMessage.create(chatData);
+    
+    ChatMessage.applyMode(chatData, game.settings.get("core", "rollMode") || "roll");
+    return await ChatMessage.create(chatData);
   }
 
   async function GetRegenOptions({
@@ -1491,7 +1510,7 @@ export async function RegenHP({
       malusAme,
       malusCorps,
     });
-    const actorData = actor.toObject(!1);
+    const actorData = actor.toObject(false);
 
     return new Promise((resolve) => {
       const data = {
@@ -1502,32 +1521,37 @@ export async function RegenHP({
         buttons: {
           normal: {
             label: game.i18n.localize("chat.actions.roll"),
-            callback: (html) => resolve(_processHPRegenOptions(html[0].querySelector("form"))),
+            callback: (html) => {
+              const root = html instanceof jQuery ? html[0] : html;
+              return resolve(_processHPRegenOptions(root.querySelector("form")));
+            },
           },
           cancel: {
             label: game.i18n.localize("chat.actions.cancel"),
-            callback: (html) => resolve({ cancelled: true }),
+            callback: () => resolve({ cancelled: true }),
           },
         },
         default: "normal",
         close: () => resolve({ cancelled: true }),
       };
 
-      new Dialog(data, null).render(true);
+      // Corrigé: `{}` au lieu de `null`
+      new Dialog(data, {}).render(true);
     });
   }
+
   function _processHPRegenOptions(form) {
     return {
-      malusEsprit: form.malusEsprit?.value,
-      malusAme: form.malusAme?.value,
-      malusCorps: form.malusCorps?.value,
+      malusEsprit: form?.malusEsprit?.value,
+      malusAme: form?.malusAme?.value,
+      malusCorps: form?.malusCorps?.value,
     };
   }
 }
 
 export async function trihnTest({
   actor = null,
-  extraMessageData,
+  extraMessageData = {},
   hp = null,
   trihn = null,
   sendMessage = true,
@@ -1549,6 +1573,7 @@ export async function trihnTest({
     maxTest = hp.hpCorps.value;
     dice = "1d10[Corps]";
   }
+
   let rollFormula = `${dice}`;
   let rollData = {
     actor,
@@ -1556,27 +1581,29 @@ export async function trihnTest({
     trihn,
     maxTest,
   };
-  let rollResult = await new Roll(rollFormula, rollData).roll();
-  let dice3d;
-  if (game.dice3d != undefined) {
-    dice3d = game.dice3d.showForRoll(rollResult, game.user, true);
-    dice3d;
+
+  let rollResult = await new Roll(rollFormula, rollData).evaluate();
+
+  if (game.dice3d) {
+    await game.dice3d.showForRoll(rollResult, game.user, true);
   }
+
   let statuses = await processStatuses({ actor, race, state });
   let diceResult;
-  if (rollResult._total == 10) {
+  if (rollResult.total === 10) {
     diceResult = 0;
   } else {
-    diceResult = rollResult._total;
+    diceResult = rollResult.total;
     diceResult += statuses;
   }
+
   let isSuccess = true;
   if (diceResult <= 0 || diceResult > maxTest) {
     isSuccess = false;
   }
 
   if (sendMessage) {
-    trihnTestToCustomMessage(actor, rollResult, messageTemplate, {
+    await trihnTestToCustomMessage(actor, rollResult, messageTemplate, {
       ...extraMessageData,
       actor: actor,
       hp: hp,
@@ -1594,6 +1621,7 @@ export async function trihnTest({
       actorID: actor.uuid,
     });
   }
+
   async function trihnTestToCustomMessage(actor = null, rollResult, template, extraData) {
     let templateContext = {
       ...extraData,
@@ -1606,13 +1634,16 @@ export async function trihnTest({
     };
 
     let chatData = {
-      user: game.user.id,
+      author: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
       content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
       sound: CONFIG.sounds.dice,
-      type: CONST.CHAT_MESSAGE_STYLES.OTHER,
+      rolls: [rollResult],
+      style: CONST.CHAT_MESSAGE_STYLES?.OTHER ?? CONST.CHAT_MESSAGE_TYPES?.OTHER,
     };
-    ChatMessage.create(chatData);
+
+    ChatMessage.applyMode(chatData, game.settings.get("core", "rollMode") || "roll");
+    return await ChatMessage.create(chatData);
   }
 }
 function processStatuses({ actor, race, state, domain } = {}) {
