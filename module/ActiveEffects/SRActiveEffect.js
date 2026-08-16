@@ -1,5 +1,6 @@
 export class SRActiveEffect extends ActiveEffect {
-  __applyChangeAdd(actor, change, current, delta, changes) {
+  // En V14, la surcharge de la méthode d'addition s'effectue via _applyAdd
+  _applyAdd(actor, change, current, delta, changes) {
     let update;
     const ct = foundry.utils.getType(current);
     switch (ct) {

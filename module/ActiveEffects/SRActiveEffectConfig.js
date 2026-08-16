@@ -2,9 +2,17 @@ export class SRActiveEffectConfig extends foundry.applications.sheets.ActiveEffe
   get template() {
     return "systems/shaanrenaissance/templates/items/partials/activeEffect-config.hbs";
   }
-  async getData(options = {}) {
-    const context = await super.getData(options);
-    context.descriptionHTML = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.description, { secrets: this.object.isOwner });
+
+  // ApplicationV2 utilise _prepareContext à la place de getData
+  async _prepareContext(options = {}) {
+    const context = await super._prepareContext(options);
+    
+    // Support natif d'enrichHTML en V14
+    context.descriptionHTML = await TextEditor.enrichHTML(this.document.description, {
+      secrets: this.document.isOwner,
+      async: true
+    });
+
     const legacyTransfer = CONFIG.ActiveEffect.legacyTransferral;
     const labels = {
       transfer: {
@@ -13,27 +21,27 @@ export class SRActiveEffectConfig extends foundry.applications.sheets.ActiveEffe
       },
     };
 
-    // Status Conditions
+    // Gestion des statuts
+    const currentStatuses = context.statuses ?? Array.from(this.document.statuses);
     const statuses = CONFIG.statusEffects.map((s) => {
       return {
         id: s.id,
-        label: game.i18n.localize(s.name ?? /** @deprecated since v12 */ s.label),
-        selected: context.statuses.includes(s.id) ? "selected" : "",
+        label: game.i18n.localize(s.name ?? s.label),
+        selected: currentStatuses.includes(s.id) ? "selected" : "",
       };
     });
 
-    // Return rendering context
     return foundry.utils.mergeObject(context, {
       config: CONFIG.shaanRenaissance,
       labels,
-      effect: this.object, // Backwards compatibility
-      data: this.object,
-      isActorEffect: this.object.parent.documentName === "Actor",
-      isItemEffect: this.object.parent.documentName === "Item",
+      effect: this.document,
+      data: this.document,
+      isActorEffect: this.document.parent?.documentName === "Actor",
+      isItemEffect: this.document.parent?.documentName === "Item",
       submitText: "EFFECT.Submit",
       statuses,
-      modes: Object.entries(CONST.ACTIVE_EFFECT_MODES).reduce((obj, e) => {
-        obj[e[1]] = game.i18n.localize(`EFFECT.MODE_${e[0]}`);
+      modes: Object.entries(CONST.ACTIVE_EFFECT_MODES).reduce((obj, [key, val]) => {
+        obj[val] = game.i18n.localize(`EFFECT.MODE_${key}`);
         return obj;
       }, {}),
     });
