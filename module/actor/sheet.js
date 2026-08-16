@@ -610,85 +610,56 @@ async _getDialogOptions(template, extraData = {}) {
     });
 }
 
-  _onAcquisChat(event) {
+  async _onAcquisChat(event) {
     event.preventDefault();
-    let element = event.target;
-    let itemId = element.closest(".item").dataset.itemId;
-    let actor = this.actor;
-    let item = actor.items.get(itemId);
+    const itemId = event.currentTarget.closest(".item")?.dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    if (!item) return;
 
-    AcquisChat({
-      actor: actor,
-      acquis: item,
-    });
-
-    async function AcquisChat({ actor = null, acquis = null, extraMessageData = {}, sendMessage = true } = {}) {
-      const messageTemplate = "systems/shaanrenaissance/templates/chat/acquis-chat.hbs";
-
-      if (sendMessage) {
-        ToCustomMessage(actor, acquis, messageTemplate, {
-          ...extraMessageData,
-          actorID: actor.uuid,
-        });
-      }
-
-      async function ToCustomMessage(actor = null, acquis, template, extraData) {
-        let templateContext = {
-          ...extraData,
-          acquisData: acquis,
-        };
-
-        let chatData = {
-          user: game.user.id,
-          speaker: ChatMessage.getSpeaker({ actor }),
-          content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
-          sound: CONFIG.sounds.notification,
-          type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-        };
-
-        ChatMessage.create(chatData);
-      }
-    }
+    await this.AcquisChat({ actor: this.actor, acquis: item });
   }
-  _onPouvoirChat(event) {
+
+  async AcquisChat({ actor = null, acquis = null, extraMessageData = {}, sendMessage = true } = {}) {
+    if (!sendMessage || !acquis) return;
+    
+    const template = "systems/shaanrenaissance/templates/chat/acquis-chat.hbs";
+    return await this._toCustomItemMessage(actor, acquis, "acquisData", template, extraMessageData);
+  }
+
+  async _onPouvoirChat(event) {
     event.preventDefault();
-    let element = event.target;
-    let itemId = element.closest(".item").dataset.itemId;
-    let actor = this.actor;
-    let item = actor.items.get(itemId);
+    const itemId = event.currentTarget.closest(".item")?.dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    if (!item) return;
 
-    PouvoirChat({
-      actor: actor,
-      pouvoir: item,
-    });
+    await this.PouvoirChat({ actor: this.actor, pouvoir: item });
+  }
 
-    async function PouvoirChat({ actor = null, pouvoir = null, extraMessageData = {}, sendMessage = true } = {}) {
-      const messageTemplate = "systems/shaanrenaissance/templates/chat/pouvoir-chat.hbs";
+  async PouvoirChat({ actor = null, pouvoir = null, extraMessageData = {}, sendMessage = true } = {}) {
+    if (!sendMessage || !pouvoir) return;
 
-      if (sendMessage) {
-        ToCustomMessage(actor, pouvoir, messageTemplate, {
-          ...extraMessageData,
-          actorID: actor.uuid,
-        });
-      }
+    const template = "systems/shaanrenaissance/templates/chat/pouvoir-chat.hbs";
+    return await this._toCustomItemMessage(actor, pouvoir, "pouvoirData", template, extraMessageData);
+  }
 
-      async function ToCustomMessage(actor = null, pouvoir, template, extraData) {
-        let templateContext = {
-          ...extraData,
-          pouvoirData: pouvoir,
-        };
 
-        let chatData = {
-          user: game.user.id,
-          speaker: ChatMessage.getSpeaker({ actor }),
-          content: await foundry.applications.handlebars.renderTemplate(template, templateContext),
-          sound: CONFIG.sounds.notification,
-          type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-        };
+  async _toCustomItemMessage(actor, item, itemKey, template, extraData = {}) {
+    const templateContext = {
+      ...extraData,
+      actor,
+      [itemKey]: item,
+      actorID: actor?.uuid,
+    };
 
-        ChatMessage.create(chatData);
-      }
-    }
+    const chatData = {
+      author: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor }),
+      content: await renderTemplate(template, templateContext),
+      sound: CONFIG.sounds.notification,
+      style: CONST.CHAT_MESSAGE_STYLES?.OTHER ?? CONST.CHAT_MESSAGE_TYPES?.OTHER,
+    };
+
+    return await ChatMessage.create(chatData);
   }
   _onPouvoirUse(event) {
     let itemId = event.target.closest(".item").dataset.itemId;
