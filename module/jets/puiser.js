@@ -190,9 +190,6 @@ async function onPuiserNecrose(event) {
   }
 }
 
-// ==========================================
-// FONCTIONS FONCTIONNELLES & BOÎTES DE DIALOGUE
-// ==========================================
 
 async function GetPuiserOptions({ domain = null, diceList = null, choix = {}, template = "" } = {}) {
   const html = await renderTemplate(template, { domain, diceList, choix });
