@@ -2750,7 +2750,7 @@ a.spéTestNécr label {
   width: 100% !important;
   border-radius: 0;
 }
-.editor.prosemirror {
+.actor.sheet .editor.prosemirror {
   min-height: 500px !important;
 }
 .actor.sheet.character .tab.biography textarea:focus {
