@@ -20,17 +20,14 @@ export class ActorSR extends Actor {
   }
 
   get primaryUpdater() {
-    // Correction V14 : activeGM n'existe plus, on utilise le tableau activeGMs
     const activeGMs = game.users.activeGMs;
     if (activeGMs.length > 0) return activeGMs.sort((a, b) => (a.id > b.id ? 1 : -1))[0];
 
     const activeUsers = game.users.filter((u) => u.active);
 
-    // L'utilisateur assigné à cet acteur
     const primaryPlayer = this.isToken ? null : activeUsers.find((u) => u.character && u.character.id === this.id);
     if (primaryPlayer) return primaryPlayer;
 
-    // Utilisateur avec la permission d'édition
     const firstUpdater = game.users
       .filter((u) => this.canUserModify(u, "update"))
       .sort((a, b) => (a.id > b.id ? 1 : -1))
@@ -55,6 +52,7 @@ export class ActorSR extends Actor {
     super.prepareBaseData();
     
     this.flags.shaanRenaissance ??= {};
+    
     this.flags.shaanRenaissance.sheetTabs = foundry.utils.mergeObject(
       CHARACTER_SHEET_TABS.reduce(
         (tabs, tab) => ({
@@ -98,9 +96,15 @@ export class ActorSR extends Actor {
     }
   }
 
-  // CORRECTION CRITIQUE V14 : Délégation directe au moteur standard de création de documents
   static async createDocuments(data = [], context = {}) {
-    return await super.createDocuments(data, context);
+    if (context.parent?.pack) context.pack = context.parent.pack;
+    
+    const created = await CONFIG.DatabaseBackend.create(this, {
+      data,
+      ...context
+    });
+    
+    return created;
   }
 
   async modifyTokenAttribute(attribute, value, isDelta = false, isBar = true) {

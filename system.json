@@ -13,10 +13,10 @@
       "flags": {}
     }
   ],
-  "version": "v2.5.1",
+  "version": "v2.6",
   "compatibility": {
-    "minimum": "13",
-    "verified": "13"
+    "minimum": "14",
+    "verified": "14"
   },
   "esmodules": ["scripts/shaanRenaissance.js"],
   "scripts": ["greensock/dist/gsap.min.js", "lib/tooltipster.bundle.min.js"],
@@ -157,8 +157,8 @@
   },
   "initiative": "1d10 + @attributes.initiative.value",
   "url": "https://github.com/YoimPouet/shaanrenaissance",
-  "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv13/system.json",
-  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v2.5.1/shaanrenaissance.zip",
+  "manifest": "https://raw.githubusercontent.com/YoimPouet/shaanrenaissance/foundryv14/system.json",
+  "download": "https://github.com/YoimPouet/shaanrenaissance/releases/download/v2.6.0/shaanrenaissance.zip",
   "primaryTokenAttribute": "attributes.hpEsprit",
   "secondaryTokenAttribute": "attributes.hpAme",
   "socket": true

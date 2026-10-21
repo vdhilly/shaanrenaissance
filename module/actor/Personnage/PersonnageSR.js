@@ -3,10 +3,11 @@ import { ActorSR } from "../ActorSR.js";
 
 export class PersonnageSR extends ActorSR {
   prepareBaseData() {
-    var _a, _b;
     super.prepareBaseData();
-    const { flags } = this;
-    flags.shaanRenaissance.schemes = foundry.utils.mergeObject(
+    
+    this.flags.shaanRenaissance ??= {};
+    
+    this.flags.shaanRenaissance.schemes = foundry.utils.mergeObject(
       Object.keys(CHARACTER_SCHEMES).reduce((schemes, key) => {
         schemes[key] = {};
 
@@ -24,7 +25,7 @@ export class PersonnageSR extends ActorSR {
               subSubSchemes[subSubKey] = {
                 type: subSubKey,
                 learned: false,
-                title: game.i18n.localize(`SRSchemes.titles.${subSubSchemes}`),
+                title: game.i18n.localize(`SRSchemes.titles.${subSubSchemes}`), 
               };
               return subSubSchemes;
             }, {});
@@ -38,43 +39,44 @@ export class PersonnageSR extends ActorSR {
         schemes.learnedCountSpe = 0;
         return schemes;
       }, {}),
-      flags.shaanRenaissance.schemes || {}
+      this.flags.shaanRenaissance.schemes || {}
     );
   }
+
   _onUpdate(changed, options, user) {
     super._onUpdate(changed, options, user);
+    
+    if ( !this.shaanis ) return;
+
     for (const shaani of this.shaanis) {
-      for (const domainKey in shaani.system.details.shaandars) {
-        const shaandars = shaani.system.details.shaandars;
+      const shaandars = shaani.system.details?.shaandars;
+      if (!shaandars) continue;
+
+      for (const domainKey in shaandars) {
         const domain = shaandars[domainKey];
-        let shaandarIndex = -1;
-        for (let i = 0; i < domain.length; i++) {
-          if (domain[i]._id == this._id) {
-            shaandarIndex = i;
-            break;
-          }
-        }
+        if (!Array.isArray(domain)) continue;
+
+        let shaandarIndex = domain.findIndex(s => s._id === this._id);
+        if (shaandarIndex === -1) continue;
 
         const newShaandar = {
           _id: this._id,
           system: { ...domain[shaandarIndex]?.system, skills: this.system.skills },
         };
 
-        for (const shaandar of domain) {
-          if (shaandar._id == this._id) {
-            domain[shaandarIndex] = newShaandar;
-            shaani.update({ "system.details.shaandars": shaandars });
-          }
-        }
+        domain[shaandarIndex] = newShaandar;
+        shaani.update({ [`system.details.shaandars.${domainKey}`]: domain });
       }
 
-      if (shaani.sheet.rendered) {
+      if (shaani.sheet?.rendered) {
         shaani.sheet.render(false);
       }
     }
   }
+
   _onDelete(options, userId) {
     super._onDelete(options, userId);
+    if (!this.shaanis) return;
 
     for (const shaani of this.shaanis) {
       const updater = shaani.primaryUpdater;
